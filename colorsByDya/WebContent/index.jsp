@@ -1,4 +1,5 @@
-  <!-- Navbar ashan-->
+
+<!-- Navbar -->
   <header class="header">
    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/styles.css">
@@ -14,7 +15,7 @@
                       <li class="nav-item active"><a href="#" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only"></span></a></li>
                       <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">About</a></li>
                       <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-                      <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Log in</a></li>
+                      <li class="nav-item"><a href="./signin.jsp" class="nav-link text-uppercase font-weight-bold">Log in</a></li>
                       <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact US</a></li>
                   </ul>
               </div>
@@ -40,3 +41,5 @@
           </div>
       </div>
   </div>
+  
+  

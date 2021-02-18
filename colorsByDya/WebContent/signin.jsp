@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -15,8 +13,8 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/home.css" rel="stylesheet">
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -52,9 +50,14 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    <button id="btn1" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <h1 class="h3 mb-3 fw-normal">Don't Have Account</h1>
+    <button id="btn1" class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+    <p class="mt-5 mb-3 text-muted">Product by Dya 2021</p>
   </form>
 </main>
 
 
+    
+  </body>
+</html>
