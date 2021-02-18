@@ -7,7 +7,7 @@
     <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
       <nav class="navbar navbar-expand-lg fixed-top py-3">
-          <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">COLOURS BY DYA</a>
+          <div class="container"><img alt="logo" src="./pictures/Logo.png" width="100" height="100">
               <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
 
               <div id="navbarSupportedContent" class="collapse navbar-collapse">
