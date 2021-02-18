@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Artist_page</title>
+<title>#</title>
 <link type="text/css" rel="stylesheet" href="css/frontpage.css"/>
 <link rel="shortcut icon" href="favicon.ico">
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
@@ -19,17 +19,17 @@
 	<link rel="stylesheet" href="css/style1.css">
 	<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
-<h1>Online Art Gallery</h1>
+<h1>#</h1>
 <body>
 
  <div class="navbar">
   <a href="frontpage.jsp">Home</a>
-  <a href="About_us.jsp">About Us</a>
-   <a href="My_profile.jsp">My Profile</a>
-   <a href="Exhibition.jsp">Exhibitions</a>
-    <a href="gallery_option.jsp">Gallery options</a>
-     <a href="upload_paintings.jsp">Upload Paintings</a>
-      <a href="frontpage.jsp">Logout</a>
+  <a href="About_us.jsp">About </a>
+   <a href="My_profile.jsp">Gallery</a>
+   <a href="Exhibition.jsp">Logout</a>
+    <a href="gallery_option.jsp">#</a>
+     <a href="upload_paintings.jsp">#</a>
+      <a href="frontpage.jsp"></a>
       <a href="#" class="navbar1"><% HttpSession httpSession=request.getSession();
       								String id = request.getParameter("email");
       								httpSession.setAttribute("login1",id );

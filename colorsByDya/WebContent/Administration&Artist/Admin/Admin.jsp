@@ -7,7 +7,7 @@
 <title>Admin</title>
 <link type="text/css" rel="stylesheet" href="css/frontpage.css"/>
 </head>
-<h1>Online Art Gallery</h1>
+<h1>#</h1>
 <body>
 <head>
 <meta charset="utf-8">
@@ -76,14 +76,14 @@ Open in new window
 </div>
 
 <div id="buttons">
-        <button onclick="location.href = 'add_exhibition.jsp';" id="submit1">Add Exhibition</button>
-        <button onclick="location.href = 'add_customer.jsp';"id="cancel">Add Customer</button>
+        <button onclick="location.href = 'add_exhibition.jsp';" id="submit1">#</button>
+        <button onclick="location.href = 'add_customer.jsp';"id="cancel">#</button>
         <br></br> 
         <br></br> 
         <br></br> 
         <br></br> 
         <br></br> 
-        <button onclick="location.href = 'add_gallery.jsp';" id="gallery" margin-top: 600px; >Add Gallery</button>
+        <button onclick="location.href = 'add_gallery.jsp';" id="gallery" margin-top: 600px; >#</button>
 </div> 
 </div>
 <br><br>
