@@ -1,7 +1,8 @@
-  <!-- Navbar-->
+  <!-- Navbar ashan-->
   <header class="header">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/home.css">
     <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
       <nav class="navbar navbar-expand-lg fixed-top py-3">
