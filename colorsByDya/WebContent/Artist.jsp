@@ -30,10 +30,10 @@
     <a href="gallery_option.jsp">Gallery options</a>
      <a href="upload_paintings.jsp">Upload Paintings</a>
       <a href="frontpage.jsp">Logout</a>
-      <a href="#" class="navbar1"><% HttpSession httpSession=request.getSession();
+      <a href="" class="navbar1"><% HttpSession httpSession=request.getSession();
       								String id = request.getParameter("email");
       								httpSession.setAttribute("login1",id );
-      								out.println("hii "+httpSession.getAttribute("login1"));
+      								out.println(" "+httpSession.getAttribute("login1"));
       								String a = (String)httpSession.getAttribute("login1");
       
       
@@ -83,13 +83,13 @@ try {
          <<div class="item">
         		<div class="animate-box">
 	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxlVqMSd30Qah-lV4zXbDimmEc0-BYovuJMdDvvAhNIU6l79Nd" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Optio commodi quod vitae, vel, officiis similique quaerat odit dicta.</div>
+	        		<div class="fh5co-desc">#</div>
         		</div>
         	</div>
               	<div class="item">
         		<div class="animate-box">
 	        		<a href="images/img_30.jpg" class="image-popup fh5co-board-img"><img src="images/img_30.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam placeat.</div>
+	        		<div class="fh5co-desc">#</div>
         		</div>
         	</div> 
         </div>

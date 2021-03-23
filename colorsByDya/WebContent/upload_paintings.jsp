@@ -64,7 +64,7 @@
         <button class="btn" type="submit" name="Upload">Upload</button>
     
 </div>
-<% Connection conn=null;
+<%--  <% Connection conn=null;
         String url="jdbc:mysql://localhost:3306/";
     String dbName="art_gallery";
     String driver="com.mysql.jdbc.Driver";
@@ -129,7 +129,7 @@ catch (Exception e){
   out.println(e);  
 }  
 
-%>" </form>
+%>" </form> --%>
 
 <style>
 $font-family:   "Roboto";
