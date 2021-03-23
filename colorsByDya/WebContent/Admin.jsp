@@ -83,7 +83,7 @@ Open in new window
         <br></br> 
         <br></br> 
         <br></br> 
-        <button onclick="location.href = 'add_gallery.jsp';" id="gallery" margin-top: 600px; >Add Gallery</button>
+        <button onclick="location.href = 'add_gallery.jsp';" id="gallery" margin-top: 600px; >#</button>
 </div> 
 </div>
 <br><br>
