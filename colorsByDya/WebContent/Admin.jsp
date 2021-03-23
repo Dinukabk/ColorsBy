@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Admin</title>
+<title>Administration</title>
 <link type="text/css" rel="stylesheet" href="css/frontpage.css"/>
 </head>
-<h1>#</h1>
+<h1>Colors By Diyaa</h1>
 <body>
 <head>
 <meta charset="utf-8">
@@ -15,7 +15,9 @@
 
 </head>
 <body>
+
 <style> 
+
 #buttons {
     margin-top: 350px;
     overflow: hidden;
@@ -85,9 +87,9 @@ Open in new window
         <br></br> 
         <button onclick="location.href = 'add_gallery.jsp';" id="gallery" margin-top: 600px; >#</button>
 </div> 
-</div>
+
 <br><br>
-</div>
+
 
 </body>
  </html>
