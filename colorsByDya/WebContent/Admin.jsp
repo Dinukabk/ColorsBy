@@ -76,8 +76,8 @@ Open in new window
 </div>
 
 <div id="buttons">
-        <button onclick="location.href = 'add_exhibition.jsp';" id="submit1">Add Exhibition</button>
-        <button onclick="location.href = 'add_customer.jsp';"id="cancel">Add Customer</button>
+        <button onclick="location.href = 'add_exhibition.jsp';" id="submit1">Add Exhibitio</button>
+        <button onclick="location.href = 'add_customer.jsp';"id="cancel">#</button>
         <br></br> 
         <br></br> 
         <br></br> 
