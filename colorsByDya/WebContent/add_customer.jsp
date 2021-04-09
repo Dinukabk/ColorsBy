@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Add Customer</title>
 <link type="text/css" rel="stylesheet" href="css/frontpage.css" />
+<link type="text/css" rel="stylesheet" href="css/frontpage.css" />
 <style>
 /* General Styles */
 body {
@@ -148,6 +149,14 @@ input:required, textarea:required {
 }
 </style>
 </head>
+<h1>Colors By Diyaa</h1>
+<body>
+	<div class="navbar">
+		<a href="frontpage.jsp">Home</a> <a href="#news">About us</a> <a
+			href="#home">Change Password</a> <a href="frontpage.jsp">Logout</a>
+	</div>
+
+	>>>>>>> refs/remotes/origin/Ashan
 <h1>Online Art Gallery</h1>
 <body>
 	<div class="navbar">
@@ -199,41 +208,36 @@ input:required, textarea:required {
 			</div>
 			<div>
 				<%
-			String url = "jdbc:mysql://localhost:3306/";
-			String dbName = "art_gallery";
-			String driver = "com.mysql.jdbc.Driver";
-			String userName = "root";
-			String password = "rutuja8079";
-			String query= "select * from painting";
-			try
-			{
-				Class.forName(driver).newInstance();
-			    Connection conn = DriverManager.getConnection(url + dbName, userName, password);
+				String url = "jdbc:mysql://localhost:3306/";
+				String dbName = "art_gallery";
+				String driver = "com.mysql.jdbc.Driver";
+				String userName = "root";
+				String password = "rutuja8079";
+				String query = "select * from painting";
+				try {
+					Class.forName(driver).newInstance();
+					Connection conn = DriverManager.getConnection(url + dbName, userName, password);
 
-			    Statement st = conn.createStatement();
-			   
-			    ResultSet rs = st.executeQuery(query);
-			%>
+					Statement st = conn.createStatement();
+
+					ResultSet rs = st.executeQuery(query);
+				%>
 				<span class="required">Select Painting: </span> <select name="title">
 					<option value="Select Painting"></option>
 					<%
-			
-			while(rs.next())
-			{
-			 String title = rs.getString("title"); 
-			String email = rs.getString("email");
-		
-			%>
+					while (rs.next()) {
+						String title = rs.getString("title");
+						String email = rs.getString("email");
+					%>
 					<option value="<%=title%>"><%="Title : " + title + "		Email ID:" + email%></option>
 					<%
-			}
-			%>
+					}
+					%>
 				</select>
 				<%
-			}
-			catch (Exception e) {
-			   }
-			%>
+				} catch (Exception e) {
+				}
+				%>
 			</div>
 			<div>
 				<label for="Cost"> <span class="required">Cost of
