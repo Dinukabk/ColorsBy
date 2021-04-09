@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="p-3" style="background-color: rgba(255, 255, 255, 0.5);">
-		<form action="">
+		<form action="#" method="post">
 			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60"
 				height="36">
 			<p>Card Number:</p>
