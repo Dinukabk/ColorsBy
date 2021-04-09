@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="Styles/SpeRequest.css">
+<link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <title>Contact Us</title>
 
@@ -36,25 +37,25 @@
            <span>Instagram</span>
         </div>
       </div>
-      <div>
+      <div >
    <h2>We want to hear your feedback or Make a Special Request</h2>
-      <form>
+      <form action="#" method="post">
             <label>Full Name</label><br>
-            <input type="text" placeholder="Enter Full Name" class="contact-form-txt"><br>
+            <input type="text" placeholder="Enter Full Name" class="contact-form-txt" name="name"><br>
             <label>Phone Number</label><br>
-            <input type="text" placeholder="Enter Phone Number" class="contact-form-txt"><br>
+            <input type="text" placeholder="Enter Phone Number" class="contact-form-txt" name="phone"><br>
             <label>Email Address</label><br>
-            <input type="email" placeholder="Enter Email Address" class="contact-form-txt"><br>
+            <input type="email" placeholder="Enter Email Address" class="contact-form-txt" name="email"><br>
             <label>Address</label><br>
-            <input type="text" placeholder="Line 01" class="contact-form-txt">
-            <input type="text" placeholder="Line 02" class="contact-form-txt"><br>
-            <input type="text" placeholder="Postal Code" class="contact-form-txt">
-            <input type="text" placeholder="Country" class="contact-form-txt"><br>
-            <input type="text" placeholder="Province" class="contact-form-txt">
-            <input type="text" placeholder="City" class="contact-form-txt"><br>
-            <label>Choose the Artist</label>
+            <input type="text" placeholder="Line 01" class="contact-form-txt" name="add1">
+            <input type="text" placeholder="Line 02" class="contact-form-txt" name="add2"><br>
+            <input type="text" placeholder="Postal Code" class="contact-form-txt" name="add3">
+            <input type="text" placeholder="Country" class="contact-form-txt" name="add4"><br>
+            <input type="text" placeholder="Province" class="contact-form-txt" name="add5">
+            <input type="text" placeholder="City" class="contact-form-txt" name="add6"><br>
+            <label>Choose the Artist</label><br>
             <label>Message</label><br>
-            <textarea placeholder="Enter a message" class="contact-form-txtarea"></textarea>
+            <textarea placeholder="Enter a message" class="contact-form-txtarea" name="name"></textarea>
             <label>Upload Your photograph that you want to be drawn</label><br>
             <input type="file" name="photo" size="50"><br><br>
             <input type="reset" name="Reset" value="Reset">
