@@ -13,7 +13,7 @@
 <body>
 <div class="navbar">
   <a href="frontpage.jsp">Home</a>
-  <a href="likes.jsp">Paintings</a>
+  <a href="Paintings.jsp">Paintings</a>
    <a href="My_profile.jsp">My Profile</a>
     <a href="gallery_option.jsp">Gallery options</a>
      <a href="upload_painting.jsp">Upload Paintings</a>
