@@ -1,4 +1,4 @@
-package Art_Gallery;
+package art_Gallery;
 
 import java.io.IOException;
 import java.io.PrintWriter;
