@@ -76,18 +76,18 @@ Open in new window
 </div>
 
 <div id="buttons">
-        <button onclick="location.href = 'add_exhibition.jsp';" id="submit1">Add Exhibitio</button>
-        <button onclick="location.href = 'add_customer.jsp';"id="cancel">#</button>
+        <button onclick="location.href = 'add_exhibition.jsp';" id="submit1">Add Exhibition</button>
+        <button onclick="location.href = 'add_customer.jsp';"id="cancel">Add Customer</button>
         <br></br> 
         <br></br> 
         <br></br> 
         <br></br> 
         <br></br> 
-        <button onclick="location.href = 'add_gallery.jsp';" id="gallery" margin-top: 600px; >#</button>
+        <button onclick="location.href = 'add_gallery.jsp';" id="gallery" margin-top: 600px; >Add Gallery</button>
 </div> 
-</div>
+
 <br><br>
-</div>
+
 
 </body>
  </html>
