@@ -30,10 +30,10 @@
     <a href="gallery_option.jsp">Gallery options</a>
      <a href="upload_paintings.jsp">Upload Paintings</a>
       <a href="frontpage.jsp">Logout</a>
-      <a href="" class="navbar1"><% HttpSession httpSession=request.getSession();
+      <a href="#" class="navbar1"><% HttpSession httpSession=request.getSession();
       								String id = request.getParameter("email");
       								httpSession.setAttribute("login1",id );
-      								out.println(" "+httpSession.getAttribute("login1"));
+      								out.println("hii "+httpSession.getAttribute("login1"));
       								String a = (String)httpSession.getAttribute("login1");
       
       
@@ -97,7 +97,7 @@ try {
        </div>
 	</div>
 
-	 <footer id="fh5co-footer">
+	<footer id="fh5co-footer">
 		
 		<div class="container">
 			<div class="row row-padded">
@@ -109,7 +109,7 @@ try {
 						<a href="#"><i class="icon-dribbble"></i></a>
 						<a href="#"><i class="icon-youtube"></i></a>
 					</p>
-					<p><small>&copy;  All Rights Reserved. <br>Designed by: <a href="http://freehtml5.co/" target="_blank">ASHU</a> | Images by: <a href="http://pexels.com" target="_blank">Pexels</a> </small></p>
+					<p><small>&copy; All Rights Reserved. <br>Designed by: <a href="http://freehtml5.co/" target="_blank">Ashu</a></small></p>
 				</div>
 			</div>
 		</div>

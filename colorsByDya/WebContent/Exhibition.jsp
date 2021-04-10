@@ -7,13 +7,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="css/frontpage.css">
-<title>Events</title>
+<title>Event</title>
 </head>
 <h1>Colors By Diyaa</h1>
 <body>
 <div class="navbar">
   <a href="frontpage.jsp">Home</a>
-  <a href="Paintings.jsp">Paintings</a>
+  <a href="likes.jsp">Paintings</a>
    <a href="My_profile.jsp">My Profile</a>
     <a href="gallery_option.jsp">Gallery options</a>
      <a href="upload_painting.jsp">Upload Paintings</a>
@@ -23,12 +23,12 @@
 </div>
 <br>
 <br>
-<h2>Upcoming Events</h2>
+<h2>Upcoming Event</h2>
 <table>
 <tr>
-	<td>Events ID</td>
-	<td>Events Name</td>
-	<td>Event </td>
+	<td>Exhibition ID</td>
+	<td>Exhibition Name</td>
+	<td>Exhibition </td>
 	<td>Start Date</td>
 	<td>End Date</td>
 	<td>Details</td>
@@ -57,8 +57,8 @@ try {
     		<td><%= rs.getString("start_date") %></td>
     		<td><%= rs.getString("end_date") %></td>
     		<td><a href="details.jsp?value=<%= rs.getString("e_type")%>">Click Here</a></td>
-    		<!-- <td><a href="details.jsp" >Click Here</a> <input type = "button" id="clickhere" name="clickhere" value="click here"></td>
-    		 -->
+    		 <td><a href="details.jsp" >Click Here</a> <input type = "button" id="clickhere" name="clickhere" value="click here"></td>
+    		 
     		<script type="text/javascript">
     document.getElementById("clickhere").onclick = function () {
         location.href = "details.jsp";
@@ -108,7 +108,7 @@ hsession.setAttribute("s2", s1);
    
 %> --%>
         </table>
-    
+    </div>
     
 </body>
 </html>
