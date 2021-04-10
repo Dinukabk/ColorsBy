@@ -39,7 +39,7 @@
       </div>
       <div >
    <h2>We want to hear your feedback or Make a Special Request</h2>
-      <form action="#" method="post">
+      <form action="insertRequest" method="post">
             <label>Full Name</label><br>
             <input type="text" placeholder="Enter Full Name" class="contact-form-txt" name="name"><br>
             <label>Phone Number</label><br>
@@ -49,13 +49,13 @@
             <label>Address</label><br>
             <input type="text" placeholder="Line 01" class="contact-form-txt" name="add1">
             <input type="text" placeholder="Line 02" class="contact-form-txt" name="add2"><br>
-            <input type="text" placeholder="Postal Code" class="contact-form-txt" name="add3">
-            <input type="text" placeholder="Country" class="contact-form-txt" name="add4"><br>
-            <input type="text" placeholder="Province" class="contact-form-txt" name="add5">
-            <input type="text" placeholder="City" class="contact-form-txt" name="add6"><br>
+            <input type="text" placeholder="Postal Code" class="contact-form-txt" name="add_postal">
+            <input type="text" placeholder="Country" class="contact-form-txt" name="add_country"><br>
+            <input type="text" placeholder="Province" class="contact-form-txt" name="add_province">
+            <input type="text" placeholder="City" class="contact-form-txt" name="add_city"><br>
             <label>Choose the Artist</label><br>
             <label>Message</label><br>
-            <textarea placeholder="Enter a message" class="contact-form-txtarea" name="name"></textarea>
+            <textarea placeholder="Enter a message" class="contact-form-txtarea" name="message"></textarea>
             <label>Upload Your photograph that you want to be drawn</label><br>
             <input type="file" name="photo" size="50"><br><br>
             <input type="reset" name="Reset" value="Reset">
