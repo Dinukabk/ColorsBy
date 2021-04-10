@@ -91,7 +91,7 @@ try {
    %>
         	
         	
-         <<div class="item">
+        <!-- <<div class="item">
         		<div class="animate-box">
 	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxlVqMSd30Qah-lV4zXbDimmEc0-BYovuJMdDvvAhNIU6l79Nd" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Optio commodi quod vitae, vel, officiis similique quaerat odit dicta.</div>
@@ -120,7 +120,7 @@ try {
 						<a href="#"><i class="icon-dribbble"></i></a>
 						<a href="#"><i class="icon-youtube"></i></a>
 					</p>
-					<p><small>&copy; All Rights Reserved. <br>Designed by: <a href="http://freehtml5.co/" target="_blank">ASHU</a> | Images by: <a href="http://pexels.com" target="_blank">Pexels</a> </small></p>
+					<p><small>&copy;  All Rights Reserved. <br>Designed by: <a href="http://freehtml5.co/" target="_blank">Ashu</a> </small></p>
 				</div>
 			</div>
 		</div>
