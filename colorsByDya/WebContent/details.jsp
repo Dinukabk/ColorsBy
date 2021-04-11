@@ -5,6 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<h1>Colors By Diyaa</h1>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>like</title>
 <link type="text/css" rel="stylesheet" href="css/frontpage.css"/>
@@ -31,21 +32,14 @@
 <body>
 <div class="navbar">
   <a href="frontpage.jsp">Home</a>
-  <a href="likes.jsp">Paintings</a>
+  <a href="Exhibition.jsp">Exhibition</a>
   <!--  <a href="My_profile.jsp">My Profile</a>
     <a href="gallery_option.jsp">Gallery options</a>
      <a href="upload_paintings.jsp">Upload Paintings</a> -->
-     <a href="search.jsp">Search</a>
-      <a href="frontpage.jsp">Logout</a>
        <a href="#" class="navbar1">
-       
-     <% HttpSession httpSession=request.getSession();
-      								out.println("hii "+httpSession.getAttribute("login1"));
-      								String a = (String)session.getAttribute("login1");
-      								%>
- 
+     
 </div>
-<form action="likes.jsp" method="post"  onsubmit="index.jsp">
+<form action="details.jsp" method="post"  onsubmit="index.jsp">
 <div id="fh5co-main">
 		<div class="container">
 
@@ -63,8 +57,14 @@ String dbName = "art_gallery";
 String driver = "com.mysql.jdbc.Driver";
 String userName = "root";
 String password = "rutuja8079";
-String type = request.getParameter("search");
-String query= "select * from painting where (type like ?)";
+String type = request.getParameter("value");
+/* String query1= "select * from exhibition "; */
+String query= "select * from painting where type = ?";
+HttpSession hsession = request.getSession();
+
+String s3 = (String)hsession.getAttribute("s2");
+System.out.println("111"+s3);
+
 /* String query2="select * from gallery where g_id in(select * from artist where email = ?)";
 String query3 ="select * from painting where email = ?"; */
 
@@ -74,9 +74,10 @@ try {
 
     /* Statement st = conn.createStatement();
    
-    ResultSet rs = st.executeQuery(query) */;
+    ResultSet rs = st.executeQuery(query) ;
+    String type1 = rs.getString("e_type"); */
   	PreparedStatement p1 = conn.prepareStatement(query);
-    p1.setString(1, type+"%");
+    p1.setString(1, type);
    
     ResultSet rs = p1.executeQuery();
     while(rs.next()){
@@ -88,7 +89,7 @@ try {
 	        		<div class="image-popup fh5co-desc"><%= rs.getString("title") %>
 	        		
 	        		</div>
-	        		<a href="likes1.jsp?value=<%= rs.getString("title")%>">Like</a>
+	        		
 
         		</div>
         		</div>
@@ -100,6 +101,7 @@ try {
    catch (Exception e) {
 	   System.out.println(e.getMessage());
    }
+
    %>   </div>
 </div>
 </div>
