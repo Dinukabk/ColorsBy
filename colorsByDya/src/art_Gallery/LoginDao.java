@@ -1,34 +1,29 @@
-package Art_Gallery;
+package art_Gallery;
 
 import java.sql.*;
 
 public class LoginDao {
-	public static boolean validate(String name, String user,String pass) {        
+	public static boolean validate(String email, String pass) {        
         boolean status = false;
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
 
         String url = "jdbc:mysql://localhost:3306/";
-        String dbName = "art_gallery";
+        String dbName = "colorbydiyaa";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "root";
-        String password = "rutuja8079";
+        String password = "root";
         try {
             Class.forName(driver).newInstance();
             conn = DriverManager
                     .getConnection(url + dbName, userName, password);
 
-            pst = conn.prepareStatement("select * from login where email=? and usertype = ? and password=? ");
-            pst.setString(1, name);
-            pst.setString(2, user);
-            pst.setString(3, pass);
-           
-         
+            pst = conn.prepareStatement("select * from registered_customer where username=? and password=? ");
+            pst.setString(1, email);
+            pst.setString(2, pass);         
             rs = pst.executeQuery();
-            status = rs.next();
-           
-
+            status = rs.next();         
         } catch (Exception e) {
             System.out.println(e);
         } finally {

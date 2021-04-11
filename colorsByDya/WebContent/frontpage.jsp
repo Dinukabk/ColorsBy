@@ -36,7 +36,7 @@
     </button>
     <div class="dropdown-content1">
       <a href="index1.jsp">Admin</a>
-       <a href="index1.jsp">Customer</a> 
+       <a href="login_01.jsp">Customer</a> 
       <a href="index1.jsp">Artist</a>
     </div>
   </div>
