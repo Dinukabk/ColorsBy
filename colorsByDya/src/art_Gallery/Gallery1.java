@@ -2,8 +2,6 @@ package art_Gallery;
 
 import java.sql.*;
 
-import javax.servlet.RequestDispatcher;
-
 public class Gallery1 {
 	public static void validate() {
 		int i = 0;
