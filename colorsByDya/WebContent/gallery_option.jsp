@@ -29,7 +29,7 @@
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
-<h1>Colors By Diyaa</h1>
+<h1>Online Art Gallery</h1>
 <body>
 
  <div class="navbar">

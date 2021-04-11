@@ -1,7 +1,10 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  
+   
+   <%-- <%@ page import="javax.portlet.PortletPreferences" %> --%>
+<%-- <%@ taglib uri="/WEB-INF/tld/liferay-portlet.tld" prefix="portlet" %>
+<portlet:defineObjects /> --%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,36 +13,37 @@
 <title>Paintings</title>
 <link rel="stylesheet" href="css/frontpage.css">
 
- 
+<!-- <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script type="text/javascript" src="js/materialize.min.js"></script>  -->
 
 	<script type="text/javascript" href="js/frontpage.js"></script>
- <link rel="shortcut icon" href="favicon.ico">
+ -<link rel="shortcut icon" href="favicon.ico">
 
 	<!-- Google Webfonts -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	
-	
+	Animate.css
 	<link rel="stylesheet" href="css/animate.css">
-
+	Icomoon Icon Fonts
 	<link rel="stylesheet" href="css/icomoon.css">
-	
+	Magnific Popup
 	<link rel="stylesheet" href="css/magnific-popup.css">
-
+	Salvattore
 	<link rel="stylesheet" href="css/salvattore.css">
-	
+	Theme Style
 	<link rel="stylesheet" href="css/style1.css">
-	
-	<script src="js/modernizr-2.6.2.min.js"></script> 
+	Modernizr JS
+	<script src="js/modernizr-2.6.2.min.js"></script> -->
 </head>
-<h1>Colors By Diyaa</h1>
+<h1>Online Art Gallery</h1>
 <body>
 <div class="navbar">
   <a href="frontpage.jsp">Home</a>
   <a href="#news">Paintings</a>
   <a herf="search.jsp">Search</a>
-  
-  
 <!--   <div class="dropdown1">
     <button class="dropbtn1">SignUp
       <i class="fa fa-caret-down"></i>
@@ -460,7 +464,7 @@ function showSlides() {
 						<a href="#"><i class="icon-dribbble"></i></a>
 						<a href="#"><i class="icon-youtube"></i></a>
 					</p>
-					<p><small>&copy; All Rights Reserved. <br>Designed by: <a href="http://freehtml5.co/" target="_blank">ASHU</a> | Images by: <a href="http://pexels.com" target="_blank">Pexels</a> </small></p>
+					<p><small>&copy;  All Rights Reserved. <br>Designed by: <a href="http://freehtml5.co/" target="_blank">Ashu</a> </small></p>
 				</div>
 			</div>
 		</div>

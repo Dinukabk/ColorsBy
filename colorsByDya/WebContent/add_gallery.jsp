@@ -25,12 +25,12 @@ body {
      background: url('http://mumbaicoworking.com/wp-content/uploads/2017/06/Jehangir-Art-Gallery.jpg') no-repeat center center fixed;    
      background-size:cover;  
 } 
-html{
+/*html{
    background:url(http://phutora.com/img/friends3.jpg) no-repeat;
    background-size: cover;
    height:100%;
    background-color: #000;
-} 
+} */
 * {
    box-sizing:border-box;
    -webkit-box-sizing:border-box;

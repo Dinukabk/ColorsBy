@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Events</title>
+<title>Add Event</title>
 <link type="text/css" rel="stylesheet" href="css/frontpage.css"/>
 </head>
 <h1>Colors By Diyaa</h1>
@@ -24,12 +24,12 @@ body {
      background: url('https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAvYAAAAJDU4YTc5NjBhLWM5MjQtNDlmZS1iZGUwLTYwODUxNTBiNWRiNQ.jpg') no-repeat center center fixed;    
      background-size:cover;  
 } 
-html{
+/*html{
    background:url(http://phutora.com/img/friends3.jpg) no-repeat;
    background-size: cover;
    height:100%;
    background-color: #000;
-} 
+} */
 * {
    box-sizing:border-box;
    -webkit-box-sizing:border-box;
@@ -159,24 +159,24 @@ input:required, textarea:required {
 
 <div id="contact-form">
 	<div>
-		<h1>Exhibition Details</h1>  
+		<h1>Event Details</h1>  
 	</div>
 		   <form action="AddExhibition" method="post" >
 			<div>
 		      <label for="ID">
-		      	<span class="required">Exhibition ID:</span> 
+		      	<span class="required">Event ID:</span> 
 		      	<input type="text" id="ID" name="ID" value="" placeholder="Generate ID for exhibition" required="required" tabindex="1" autofocus="autofocus" />
 		      </label> 
 			</div>
 			<div>
 		      <label for="Name">
-		      	<span class="required">Exhibition Name: </span>
+		      	<span class="required">Event Name: </span>
 		      	<input type="text" id="name" name="Name" value="" placeholder="Name of Exhibition" tabindex="2" required="required" />
 		      </label>  
 			</div>
 			<div>
 		      <label for="type">
-		      	<span class="required">Exhibition Type: </span>
+		      	<span class="required">Event Type: </span>
 		      	<input type="text" id="type" name="Type" value="" placeholder="Enter Exhibition Type" tabindex="3" required="required" />
 		      </label>  
 			</div>

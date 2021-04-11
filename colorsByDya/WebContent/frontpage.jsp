@@ -16,10 +16,10 @@
  -<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body background="art_gallery_wall_background_wallpaper.jpg">
-<h2>COLORS BY DIYAA</h2>
+<h2>Colors By Diyaa</h2>
 <div class="navbar">
   <a href="frontpage.jsp">Home</a>
-  <a href="Paintings.jsp">Paintings</a>
+  <a href="visitorsignup.jsp">Paintings</a>
   <a href="Exhibition.jsp">Exhibitions</a>
   <div class="dropdown1">
     <button class="dropbtn1">SignUp
@@ -27,8 +27,8 @@
     </button>
     <div class="dropdown-content1">
       <a href="index.jsp">Artist</a>
-      <!-- <a href="#">Customer</a>
- -->    </div>
+       <a href="#">Customer</a>
+    </div>
   </div>
   <div class="dropdown1">
     <button class="dropbtn1">Login
@@ -36,7 +36,7 @@
     </button>
     <div class="dropdown-content1">
       <a href="index1.jsp">Admin</a>
-      <!-- <a href="index1.jsp">Customer</a> -->
+       <a href="login_01.jsp">Customer</a> 
       <a href="index1.jsp">Artist</a>
     </div>
   </div>
