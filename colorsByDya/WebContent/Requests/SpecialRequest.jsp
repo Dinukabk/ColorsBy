@@ -53,7 +53,28 @@
             <input type="text" placeholder="Country" class="contact-form-txt" name="add_country"><br>
             <input type="text" placeholder="Province" class="contact-form-txt" name="add_province">
             <input type="text" placeholder="City" class="contact-form-txt" name="add_city"><br>
-            <label>Choose the Artist</label><br>
+            <label>Choose the Artist</label>
+            	<%-- <select>
+            		<%
+            			try{
+            				Class.forName("com.mysql.jdbc.Driver");
+            				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
+            				Statement st = con.createStatement();
+            				String query = "select name from artist";
+            				//get table data
+            				ResultSet rs = st.executeQuery(query);
+            				//get artist name one by one
+            				while(rs.next()){
+            					%>
+            					<option><%=rs.getString("name") %></option>
+            					<%
+            				}
+            				
+            			}catch (Exception e){
+            				
+            			}
+            		%>
+            	</select> --%><br>
             <label>Message</label><br>
             <textarea placeholder="Enter a message" class="contact-form-txtarea" name="message"></textarea>
             <label>Upload Your photograph that you want to be drawn</label><br>
