@@ -27,7 +27,7 @@
     </button>
     <div class="dropdown-content1">
       <a href="index.jsp">Artist</a>
-       <a href="#">Customer</a>
+       <a href="index.jsp">Customer</a>
     </div>
   </div>
   <div class="dropdown1">

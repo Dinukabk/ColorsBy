@@ -45,10 +45,10 @@ public class Edit extends HttpServlet {
         PreparedStatement pst = null;
         ResultSet rs = null;
         String url = "jdbc:mysql://localhost:3306/";
-		String dbName = "art_gallery";
+		String dbName = "colorbydiyaa";
 	        String driver = "com.mysql.jdbc.Driver";
 	        String userName = "root";
-	        String password = "rutuja8079";
+	        String password = "root";
 	        String id = request.getParameter("field1");
 	        String email = request.getParameter("field22");
 	        String name = request.getParameter("field33");

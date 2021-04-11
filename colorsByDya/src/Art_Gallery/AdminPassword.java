@@ -41,12 +41,12 @@ public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletE
 
        {
         String url = "jdbc:mysql://localhost:3306/";
-        String dbName="art_gallery";
+        String dbName="colorbydiyaa";
         String driver = "com.mysql.jdbc.Driver";
 
         String user = "root";
 
-        String pass = "rutuja8079";
+        String pass = "root";
 
         HttpSession session=req.getSession();
         
@@ -91,7 +91,7 @@ public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletE
         {    
             Class.forName(driver).newInstance();
 
-            conn = DriverManager.getConnection(url+dbName,"root", "rutuja8079");
+            conn = DriverManager.getConnection(url+dbName,"root", "root");
             
 
                 try

@@ -10,10 +10,10 @@ public class LoginDao {
         ResultSet rs = null;
 
         String url = "jdbc:mysql://localhost:3306/";
-        String dbName = "art_gallery";
+        String dbName = "colorsbydiyaa";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "root";
-        String password = "rutuja8079";
+        String password = "root";
         try {
             Class.forName(driver).newInstance();
             conn = DriverManager

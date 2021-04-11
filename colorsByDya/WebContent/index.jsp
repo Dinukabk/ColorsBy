@@ -25,31 +25,31 @@
             </div>
             <div class="field-wrap">
             <label>
-              Adhaar no<span class="req">*</span>
+              username<span class="req">*</span>
             </label>
             <input type="text" name="ArtistId"  pattern="[0-9]{10}" required autocomplete="off" title="ID pattern =  Adhaar no(10 digit)"/>
           </div>
             <div class="field-wrap">
               <label>
-                State<span class="req">*</span>
+                password<span class="req">*</span>
               </label>
               <input type="text" name="state"  pattern="[A-Za-z]{1,}" required autocomplete="off" />
             </div>
             <div class="field-wrap">
               <label>
-                City<span class="req">*</span>
+                AddressLine 1<span class="req">*</span>
               </label>
               <input type="text" name="city"  pattern="[A-Za-z]{1,}" required autocomplete="off" />
             </div>
             <div class="field-wrap">
               <label>
-                Pincode<span class="req">*</span>
+                AddressLine 2<span class="req">*</span>
               </label>
               <input type="text" name="pincode" Pattern= "[0-9]{6}" required autocomplete="off" title="pincode should contain 6 digit " />
             </div>
             <div class="field-wrap">
               <label>
-                Mobile No:<span class="req">*</span>
+                City<span class="req">*</span>
               </label>
               <input type="text" name="mobileno" Pattern= "[789][0-9]{9}" required autocomplete="off" title="enter valid mobile no." />
             </div>
@@ -74,7 +74,7 @@
 
           <div class="field-wrap">
             <label>
-              Set A Password<span class="req">*</span>
+              Mobile No :<span class="req">*</span>
             </label>
             <input type="password" name="password" required autocomplete="off"/>
           </div>

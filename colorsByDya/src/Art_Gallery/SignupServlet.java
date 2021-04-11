@@ -56,7 +56,7 @@ public class SignupServlet extends HttpServlet {
         //Connection connection;  
         Connection conn=null;
         String url="jdbc:mysql://localhost:3306/";
-        String dbName="art_gallery";
+        String dbName="colorsbydiyaa";
         String driver="com.mysql.jdbc.Driver";
     
     try{  
