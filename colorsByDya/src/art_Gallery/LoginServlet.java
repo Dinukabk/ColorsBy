@@ -44,52 +44,30 @@ public class LoginServlet extends HttpServlet {
 		try {
 			Class.forName(driver).newInstance();
 			conn = DriverManager.getConnection(url + dbName, userName, password);
-
-			// pst = conn.prepareStatement("select * from login");
-			// pst.setString(1, name);
-			// pst.setString(2, pass);
-			// String user = pst.setString(3, );
-
-			// rs = pst.executeQuery();
 			st = conn.createStatement();
 			rs = st.executeQuery(query);
 			rs.next();
 			String user = rs.getString(2);
+			
+			// Getting the user ID to assign a variable for user ID in the session 
+			int userID = Integer.parseInt(rs.getString(1));
+			
+			// Assigning the user ID into the session
+			session.setAttribute("userID", userID);
+			
 			System.out.println("Hello " + user);
-			// String user;
+			
+			// Validating user from LoginDao.java
 			if (LoginDao.validate(n, p)) {
 				System.out.println("Logged in");
-				// out.print("You are on admin page");
-				RequestDispatcher rd = request.getRequestDispatcher("likes.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("userDashboard.jsp");
 				rd.forward(request, response);
 			} else {
 				System.out.println("Login Failed...");
 				out.print("<p style=\"color:red\">Sorry username or password error</p>");
-				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("login_01.jsp");
 				rd.include(request, response);
 			}
-
-				/*out.print("You are on artist page");
-				RequestDispatcher rd = request.getRequestDispatcher("Artist.jsp");
-				rd.forward(request, response);*/
-				
-			/*} else if (LoginDao.validate(n, p)) {
-				System.out.println("customer");
-
-				out.print("You are on customer page");
-				RequestDispatcher rd = request.getRequestDispatcher("likes.jsp");
-				rd.forward(request, response);
-			}*/
-			/*
-			 * if(user == "0"){ RequestDispatcher
-			 * rd=request.getRequestDispatcher("admin.jsp"); rd.forward(request,response); }
-			 * if( user == "1"){ RequestDispatcher
-			 * rd=request.getRequestDispatcher("Artist.jsp"); rd.forward(request,response);
-			 * } if( user == "2"){ RequestDispatcher
-			 * rd=request.getRequestDispatcher("customer.jsp");
-			 * rd.forward(request,response); }
-			 */
-
 			out.close();
 		} catch (Exception e) {
 			System.out.println(e);
