@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="#" method="post">
+	<form action="requestLog" method="post">
 		Username <input type="text" name="uid"><br>
 		Password <input type="password" name="pass"><br>
 		

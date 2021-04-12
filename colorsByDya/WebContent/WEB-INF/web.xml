@@ -187,5 +187,15 @@
 		<servlet-name>insertRequest</servlet-name>
 		<url-pattern>/insertRequest</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>requestLogin</servlet-name>
+		<servlet-class>art_Gallery.requestLoginServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>requestLogin</servlet-name>
+		<url-pattern>/requestLog</url-pattern>
+	</servlet-mapping>
 </web-app>
 
