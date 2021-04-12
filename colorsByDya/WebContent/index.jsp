@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 <head>
-<meta charset="utf-8">
-<title></title>
+<meta charset="ISO-8859-1">
+<title>Home - Colors by Diyaa</title>
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">

@@ -2,6 +2,7 @@ package art_Gallery;
 
 import java.sql.*;
 
+// Login validation function
 public class LoginDao {
 	public static boolean validate(String email, String pass) {        
         boolean status = false;
