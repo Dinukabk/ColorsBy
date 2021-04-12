@@ -177,4 +177,15 @@
 		<servlet-name>Pdf_generate</servlet-name>
 		<url-pattern>/Pdf_generate</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>insertRequest</servlet-name>
+		<servlet-class>art_Gallery.RequestServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>insertRequest</servlet-name>
+		<url-pattern>/insertRequest</url-pattern>
+	</servlet-mapping>
 </web-app>
+
