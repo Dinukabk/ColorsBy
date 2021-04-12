@@ -3,8 +3,6 @@ package art_Gallery;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-import java.util.List;
-
 
 
 public class RequestDBUtil {
@@ -25,7 +23,7 @@ public class RequestDBUtil {
 			
 			Connection con = DriverManager.getConnection(url, user, password);
 			Statement stmt = con.createStatement();
-			String sql = "insert into special_request values (0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"')";
+			String sql = "insert into special_request values (0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"',1,1)";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs > 0) {

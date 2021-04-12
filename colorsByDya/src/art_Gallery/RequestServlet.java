@@ -38,7 +38,7 @@ public class RequestServlet extends HttpServlet {
 			dis.forward(request, response);
 		}
 		else {
-			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
+			RequestDispatcher dis2 = request.getRequestDispatcher("requestUnsuccess.jsp");
 			dis2.forward(request, response);
 		}
 		
