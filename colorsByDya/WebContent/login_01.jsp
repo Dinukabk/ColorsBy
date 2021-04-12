@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login to Colors By Diyaa</title>
+<title>User login - Colors By Diyaa</title>
 <link
 	href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600'
 	rel='stylesheet' type='text/css'>
@@ -15,7 +15,7 @@
 <h2>Colors By Diyaa</h2>
 <div class="form">
 	<div id="login">
-		<h1>Login</h1>
+		<h1>Customer Login</h1>
 		<h2>Welcome Back!</h2>
 		<form action="LoginServlet" method="post">
 			<div class="field-wrap">
