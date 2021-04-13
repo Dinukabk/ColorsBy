@@ -10,26 +10,61 @@ import java.util.List;
 
 public class RequestDBUtil {
 	
+	private static Connection con = null;
+	private static Statement stmt = null;
+	private static ResultSet rs = null;
+	
 	public static List<Request> validate(String userName, String pass){
 		
 		ArrayList<Request> req = new ArrayList<>();
 		
-		//create DB connection
-		String url = "jdbc:mysql://localhost:3306/colorbydiyaa";
-		String user = "root";
-		String password = "root";
+		try {
+			
+			con = RequestDBConnector.getConnection();
+			stmt = con.createStatement();
+			String sql = "select * from special_request sr, artist a where a.name='"+userName+"' and a.pass='"+pass+"' and sr.artist_name=a.artist_id";
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				int request_id = rs.getInt(1);
+				String name = rs.getString(2);
+				int phone = rs.getInt(3);
+				String email = rs.getString(4);
+				String message = rs.getString(5);
+				String photograph = rs.getString(6);
+				String add_line_01 = rs.getString(7);
+				String add_line_02 = rs.getString(8);
+			    int postal_code = rs.getInt(9);
+				String province = rs.getString(10);
+				String city = rs.getString(11);
+				String country = rs.getString(12);
+				int artist_name = rs.getInt(13);
+				
+				Request r = new Request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,artist_name);
+				req.add(r);
+			}
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return req;
+		
+	}
+	
+	//////////////////customer login
+       public static List<Request> validateCus(String userName, String pass){
+		
+		ArrayList<Request> req = new ArrayList<>();
 		
 		//validate instead of session
 		
 		try {
-			
-			Class.forName("com.mysql.jdbc.Driver");
-			
-			Connection con = DriverManager.getConnection(url, user, password);
-			Statement stmt = con.createStatement();
-			
-			String sql = "select * from special_request sr, artist a where a.name='"+userName+"' and a.pass='"+pass+"' and sr.artist_name=a.artist_id";
-			ResultSet rs = stmt.executeQuery(sql);
+			con = RequestDBConnector.getConnection();
+			stmt = con.createStatement();
+			String sql = "select * from special_request sr, registered_customer rc where rc.username='"+userName+"' and rc.password='"+pass+"' and rc.customer_id=sr.c_customer_id";
+			rs = stmt.executeQuery(sql);
 			
 			if(rs.next()) {
 				int request_id = rs.getInt(1);
