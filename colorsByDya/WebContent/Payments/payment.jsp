@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../css/bootstrap.css">
+<meta charset="ISO-8859-1">
+<title>Colors by Diyaa</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/styles.css">
 <link rel="stylesheet" href="../css/home.css">
-<link rel="stylesheet" href="../css/stylesPayment.css">
-<meta charset="ISO-8859-1">
-<title>Colors by Diyaa</title>
+<!-- <link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/stylesPayment.css"> -->
 </head>
 <body>
 	<!-- Navbar -->
@@ -46,7 +46,22 @@
 		</header>
 	</div>
 
-	<div class="container"
+	<!-- Order Summary -->
+	<div class="container p-3 my-2 rounded col-md-4"
+		style="background-color: rgba(255, 255, 255, 0.5);">
+		<h3>Order Summary</h3>
+		<dl class="row">
+			<dt class="col-sm-9">Total:</dt>
+			<dd class="col-sm-3 text-right"><%
+				HttpSession httpSession = request.getSession(false);
+				if (httpSession != null) {
+					int id = httpSession.getAttribute("userID");				
+				}
+			%></dd>
+		</dl>
+	</div>
+	<!-- Card -->
+	<div class="container p-3 my-3 rounded"
 		style="background-color: rgba(255, 255, 255, 0.5);">
 		<form action="#" method="post">
 			<img alt="visa/master" src="../pictures/VisaAndMaster.png" width="60"

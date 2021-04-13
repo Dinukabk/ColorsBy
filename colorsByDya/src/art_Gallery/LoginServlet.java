@@ -27,10 +27,12 @@ public class LoginServlet extends HttpServlet {
 		String n = request.getParameter("email");
 		String p = request.getParameter("password");
 
+		// The session
 		HttpSession session = request.getSession(false);
 		if (session != null)
 			session.setAttribute("l_id", n);
 
+		// Making the DB connection
 		Connection conn = null;
 		Statement st = null;
 		ResultSet rs = null;
@@ -41,7 +43,8 @@ public class LoginServlet extends HttpServlet {
 		String userName = "root";
 		String password = "root";
 		String query = "select * from registered_customer";
-		try {
+		
+		try { // Connecting to the database
 			Class.forName(driver).newInstance();
 			conn = DriverManager.getConnection(url + dbName, userName, password);
 			st = conn.createStatement();
