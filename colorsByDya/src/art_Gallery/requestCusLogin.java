@@ -11,10 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/requestLoginServlet")
-public class requestLoginServlet extends HttpServlet {
+@WebServlet("/requestCusLogin")
+public class requestCusLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -22,16 +21,15 @@ public class requestLoginServlet extends HttpServlet {
 		String password = request.getParameter("pass");
 		
 		try {
-			List<Request> reqList = RequestDBUtil.validate(username, password);
-			request.setAttribute("reqList", reqList);
+			List<Request> reqCusList = RequestDBUtil.validateCus(username, password);
+			request.setAttribute("reqCusList", reqCusList);
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		RequestDispatcher dis = request.getRequestDispatcher("SpecialList.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("CustomerViewRequest.jsp");
 		dis.forward(request, response);
-		
 	}
 
 }

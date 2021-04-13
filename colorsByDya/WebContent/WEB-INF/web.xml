@@ -178,6 +178,7 @@
 		<url-pattern>/Pdf_generate</url-pattern>
 	</servlet-mapping>
 	
+	<!-- beginning of Loch -->
 	<servlet>
 		<servlet-name>insertRequest</servlet-name>
 		<servlet-class>art_Gallery.RequestServlet</servlet-class>
@@ -187,5 +188,26 @@
 		<servlet-name>insertRequest</servlet-name>
 		<url-pattern>/insertRequest</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>requestLogin</servlet-name>
+		<servlet-class>art_Gallery.requestLoginServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>requestLogin</servlet-name>
+		<url-pattern>/requestLog</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>requestCusLogin</servlet-name>
+		<servlet-class>art_Gallery.requestCusLogin</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>requestCusLogin</servlet-name>
+		<url-pattern>/requestCusLog</url-pattern>
+	</servlet-mapping>
+	<!-- end of Loch -->
 </web-app>
 

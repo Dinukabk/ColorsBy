@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Request cus Login</title>
 </head>
 <body>
-	<form action="#" method="post">
+	<form action="requestCusLog" method="post">
 		Username <input type="text" name="uid"><br>
 		Password <input type="password" name="pass"><br>
 		
