@@ -1,6 +1,7 @@
 package art_Gallery;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,11 +38,19 @@ public class UpdateRequestServlet extends HttpServlet {
 		isTrue = RequestDBUtil.updateRequest(request_id, name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country, c_customer_id, artist_name);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("requestSuccess.jsp");
+			
+			List<Request> reqCusList = RequestDBUtil.getRequestDetails(request_id);
+			request.setAttribute("reqCusList", reqCusList);
+			
+			RequestDispatcher dis = request.getRequestDispatcher("CustomerViewRequest.jsp");
 			dis.forward(request, response);
 		}
 		else {
-			RequestDispatcher dis = request.getRequestDispatcher("requestUnsuccess.jsp");
+			
+			List<Request> reqCusList = RequestDBUtil.getRequestDetails(request_id);
+			request.setAttribute("reqCusList", reqCusList);
+			
+			RequestDispatcher dis = request.getRequestDispatcher("CustomerViewRequest.jsp");
 			dis.forward(request, response);
 		}
 	}

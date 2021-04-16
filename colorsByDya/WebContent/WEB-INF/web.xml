@@ -218,6 +218,27 @@
 		<servlet-name>updateRequest</servlet-name>
 		<url-pattern>/updateRequest</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>deleteRequest</servlet-name>
+		<servlet-class>art_Gallery.DeleteRequestServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>deleteRequest</servlet-name>
+		<url-pattern>/deleteRequest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>negotiateInsert</servlet-name>
+		<servlet-class>art_Gallery.negotiateInsertServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>negotiateInsert</servlet-name>
+		<url-pattern>/negoInsert</url-pattern>
+	</servlet-mapping>
+	
 	<!-- end of Loch -->
 </web-app>
 

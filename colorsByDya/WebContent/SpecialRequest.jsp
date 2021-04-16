@@ -47,12 +47,12 @@
             <label>Email Address</label><br>
             <input type="email" placeholder="Enter Email Address" class="contact-form-txt" name="email"><br>
             <label>Address</label><br>
-            <input type="text" placeholder="Line 01" class="contact-form-txt" name="add1">
-            <input type="text" placeholder="Line 02" class="contact-form-txt" name="add2"><br>
-            <input type="text" placeholder="Postal Code" class="contact-form-txt" name="add_postal">
-            <input type="text" placeholder="Country" class="contact-form-txt" name="add_country"><br>
-            <input type="text" placeholder="Province" class="contact-form-txt" name="add_province">
-            <input type="text" placeholder="City" class="contact-form-txt" name="add_city"><br>
+            <input type="text" placeholder="Line 01" class="contact-form-txt" name="add_line_01">
+            <input type="text" placeholder="Line 02" class="contact-form-txt" name="add_line_02"><br>
+            <input type="text" placeholder="Postal Code" class="contact-form-txt" name="postal_code">
+            <input type="text" placeholder="Country" class="contact-form-txt" name="country"><br>
+            <input type="text" placeholder="Province" class="contact-form-txt" name="province">
+            <input type="text" placeholder="City" class="contact-form-txt" name="city"><br>
             <label>Choose the Artist</label>
             	<%-- <select>
             		<%
@@ -74,11 +74,11 @@
             				
             			}
             		%>
-            	</select> --%><br>
+            	</select><br> --%>
             <label>Message</label><br>
             <textarea placeholder="Enter a message" class="contact-form-txtarea" name="message"></textarea>
             <label>Upload Your photograph that you want to be drawn</label><br>
-            <input type="file" name="photo" size="50"><br><br>
+            <input type="file" name="photograph" size="50"><br><br>
             <input type="reset" name="Reset" value="Reset">
             <input type="submit" name="Submit" value="Send ">
          </form>

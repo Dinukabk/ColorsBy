@@ -82,5 +82,24 @@
 	<input type="button" name="update" value="Update Request">
 	</a>
 	
+	<c:url value="deleteRequest.jsp" var="reqdelete">
+		<c:param name="request_id" value="${request_id}"/>
+		<c:param name="name" value="${name}"/>
+		<c:param name="phone" value="${phone}"/>
+		<c:param name="email" value="${email}"/>
+		<c:param name="message" value="${message}"/>
+		<c:param name="photograph" value="${photograph}"/>
+		<c:param name="add_line_01" value="${add_line_01}"/>
+		<c:param name="add_line_02" value="${add_line_02}"/>
+		<c:param name="postal_code" value="${postal_code}"/>
+		<c:param name="province" value="${province}"/>
+		<c:param name="city" value="${city}"/>
+		<c:param name="country" value="${country}"/>
+		<c:param name="artist_name" value="${artist_name}"/>
+	</c:url>
+	<a href="${reqdelete}">
+	<input type="button" name="delete" value="Delete Request">
+	</a>
+	
 </body>
 </html>

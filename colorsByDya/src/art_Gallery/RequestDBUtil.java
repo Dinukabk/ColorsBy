@@ -111,7 +111,7 @@ public class RequestDBUtil {
 			
 			Connection con = DriverManager.getConnection(url, user, password);
 			Statement stmt = con.createStatement();
-			String sql = "insert into special_request values (0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"',1,1)";
+			String sql = "insert into special_request values (0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"')";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs > 0) {
@@ -137,6 +137,92 @@ public class RequestDBUtil {
 			stmt = con.createStatement();
 			String sql = "update special_request set name='"+name+"',phone='"+phone+"',email='"+email+"',message='"+message+"',photograph='"+photograph+"',add_line_01='"+add_line_01+"',add_line_02='"+add_line_02+"',postal_code='"+postal_code+"',province='"+province+"',city='"+city+"',country='"+country+"' where request_id='"+request_id+"'";
 			
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs>0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
+	
+	public static List<Request> getRequestDetails(String Id){
+		
+		int convertedID = Integer.parseInt(Id);
+		
+		ArrayList<Request> req = new ArrayList<>();
+		
+		try {
+			con = RequestDBConnector.getConnection();
+			stmt = con.createStatement();
+			String sql = "select * from special_request where request_id='"+convertedID+"'";
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				int request_id = rs.getInt(1);
+				String name = rs.getString(2);
+				int phone = rs.getInt(3);
+				String email = rs.getString(4);
+				String message = rs.getString(5);
+				String photograph = rs.getString(6);
+				String add_line_01 = rs.getString(7);
+				String add_line_02 = rs.getString(8);
+			    int postal_code = rs.getInt(9);
+				String province = rs.getString(10);
+				String city = rs.getString(11);
+				String country = rs.getString(12);
+				int artist_name = rs.getInt(13);
+				
+				Request r = new Request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,artist_name);
+				req.add(r);
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return req;
+	}
+	
+	public static boolean deleteRequest(String Id) {
+		
+		int convertedID = Integer.parseInt(Id);
+		
+		try {
+			con = RequestDBConnector.getConnection();
+			stmt = con.createStatement();
+			String sql = "delete from special_request where request_id='"+convertedID+"'";
+			int r = stmt.executeUpdate(sql);
+			
+			if(r>0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
+	
+	public static boolean insertNegotiate(String message) {
+		
+		boolean isSuccess = false;
+		
+		try {
+			con = RequestDBConnector.getConnection();
+			stmt = con.createStatement();
+			String sql = "insert into negotiate_price values(0,'"+message+"',1,1,0)";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs>0) {
