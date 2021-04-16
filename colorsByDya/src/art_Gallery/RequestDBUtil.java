@@ -10,6 +10,7 @@ import java.util.List;
 
 public class RequestDBUtil {
 	
+	private static boolean isSuccess;
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
@@ -128,4 +129,27 @@ public class RequestDBUtil {
 		return isSuccess;
 	}
 	
+	public static boolean updateRequest(String request_id,String name,String phone,String email,String message,String photograph,
+			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,String c_customer_id,String artist_name) {
+		
+		try {
+			con = RequestDBConnector.getConnection();
+			stmt = con.createStatement();
+			String sql = "update special_request set name='"+name+"',phone='"+phone+"',email='"+email+"',message='"+message+"',photograph='"+photograph+"',add_line_01='"+add_line_01+"',add_line_02='"+add_line_02+"',postal_code='"+postal_code+"',province='"+province+"',city='"+city+"',country='"+country+"' where request_id='"+request_id+"'";
+			
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs>0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
 }
