@@ -54,9 +54,12 @@ public class LoginServlet extends HttpServlet {
 			
 			// Getting the user ID to assign a variable for user ID in the session 
 			int userID = Integer.parseInt(rs.getString(1));
+			System.out.println("ID From the database: " + userID);
 			
 			// Assigning the user ID into the session
 			session.setAttribute("userID", userID);
+			int sUserID = (int) session.getAttribute("userID");
+			System.out.println("ID assigned to the session: " + sUserID);
 			
 			System.out.println("Hello " + user);
 			

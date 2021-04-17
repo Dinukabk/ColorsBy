@@ -33,11 +33,10 @@
 </head>
 <body>
 	<div class="navbar">
-		<a href="frontpage.jsp">Home</a> 
-		<a href="likes.jsp">Paintings</a> 
-		<a href="search.jsp">Search</a> 
-		<a href="index.jsp">Logout</a> 
-		<a href="#" class="navbar1"><%
+		<a href="frontpage.jsp">Home</a> <a href="likes.jsp">Paintings</a> <a
+			href="search.jsp">Search</a> <a href="index.jsp">Logout</a> <a
+			href="#" class="navbar1">
+			<%
 			HttpSession httpSession=request.getSession();
 			String id = request.getParameter("email");
 			httpSession.setAttribute("login1",id );

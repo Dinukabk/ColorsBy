@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Redirect to another page if a session doesn't exist -->
 <meta charset="ISO-8859-1">
 <title>Colors by Diyaa</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -52,12 +53,15 @@
 		<h3>Order Summary</h3>
 		<dl class="row">
 			<dt class="col-sm-9">Total:</dt>
-			<dd class="col-sm-3 text-right"><%
+			<%
 				HttpSession httpSession = request.getSession(false);
 				if (httpSession != null) {
-					int id = httpSession.getAttribute("userID");				
+					int sUserID = (int) session.getAttribute("userID");
+					System.out.println("Function Payment - User ID: " + sUserID);
+					request.setAttribute("sUserID", sUserID);
 				}
-			%></dd>
+			%>
+			<dd class="col-sm-3 text-right">${sUserID }</dd>
 		</dl>
 	</div>
 	<!-- Card -->
