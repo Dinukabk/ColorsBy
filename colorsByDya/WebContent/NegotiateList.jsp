@@ -26,7 +26,12 @@
 		<td>${nego.c_customer_id}</td>
 		<td>${nego.p_painting_id}</td>
 		<td>
+		
+		<form action="acceptNego" method="post">
 		<input type="button" name="accept" value="Accept">
+		</form>
+		
+		
 		<input type="button" name="reject" value="Reject">
 		</td>
 	</tr>

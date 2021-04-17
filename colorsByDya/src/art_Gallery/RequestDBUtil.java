@@ -236,7 +236,7 @@ public class RequestDBUtil {
 	}
 	
 	/////Artist login for negotiate price
-public static List<Negotiate> negotiateListValidate(String userName, String pass){
+    public static List<Negotiate> negotiateListValidate(String userName, String pass){
 		
 		ArrayList<Negotiate> req = new ArrayList<>();
 		
@@ -267,5 +267,50 @@ public static List<Negotiate> negotiateListValidate(String userName, String pass
 		
 		return req;
 		
+	}
+    
+    public static boolean updateNegoStatusAccept() {
+		
+		try {
+			con = RequestDBConnector.getConnection();
+			stmt = con.createStatement();
+			String sql = "update negotiate_price set accepted=1";
+			
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs>0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return isSuccess;
+	}
+    
+public static boolean updateNegoStatusReject(boolean accepted) {
+		
+		try {
+			con = RequestDBConnector.getConnection();
+			stmt = con.createStatement();
+			String sql = "update negotiate_price set accepted=0";
+			
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs>0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
 	}
 }
