@@ -39,21 +39,26 @@
       </div>
       <div >
    <h2>We want to hear your feedback or Make a Special Request</h2>
+   
       <form action="insertRequest" method="post">
+      
             <label>Full Name</label><br>
-            <input type="text" placeholder="Enter Full Name" class="contact-form-txt" name="name"><br>
+            <input type="text" placeholder="Enter Full Name" name="name"><br>
             <label>Phone Number</label><br>
-            <input type="text" placeholder="Enter Phone Number" class="contact-form-txt" name="phone"><br>
+            <input type="text" placeholder="Enter Phone Number" name="phone"><br>
             <label>Email Address</label><br>
-            <input type="email" placeholder="Enter Email Address" class="contact-form-txt" name="email"><br>
+            <input type="email" placeholder="Enter Email Address" name="email"><br>
             <label>Address</label><br>
-            <input type="text" placeholder="Line 01" class="contact-form-txt" name="add_line_01">
-            <input type="text" placeholder="Line 02" class="contact-form-txt" name="add_line_02"><br>
-            <input type="text" placeholder="Postal Code" class="contact-form-txt" name="postal_code">
-            <input type="text" placeholder="Country" class="contact-form-txt" name="country"><br>
-            <input type="text" placeholder="Province" class="contact-form-txt" name="province">
-            <input type="text" placeholder="City" class="contact-form-txt" name="city"><br>
+            <input type="text" placeholder="Line 01" name="add_line_01">
+            <input type="text" placeholder="Line 02" name="add_line_02"><br>
+            <input type="text" placeholder="Postal Code" name="postal_code">
+            <input type="text" placeholder="Country" name="country"><br>
+            <input type="text" placeholder="Province" name="province">
+            <input type="text" placeholder="City" name="city"><br>
             <label>Choose the Artist</label>
+            	<select>
+            		<option>Deepthi Wijewardana</option>
+            	</select>
             	<%-- <select>
             		<%
             			try{
@@ -74,11 +79,12 @@
             				
             			}
             		%>
-            	</select><br> --%>
+            	</select><br> --%><br>
             <label>Message</label><br>
-            <textarea placeholder="Enter a message" class="contact-form-txtarea" name="message"></textarea>
+            <textarea placeholder="Enter a message" name="message"></textarea>
             <label>Upload Your photograph that you want to be drawn</label><br>
             <input type="file" name="photograph" size="50"><br><br>
+            
             <input type="reset" name="Reset" value="Reset">
             <input type="submit" name="Submit" value="Send ">
          </form>

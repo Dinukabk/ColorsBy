@@ -239,6 +239,16 @@
 		<url-pattern>/negoInsert</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>negotiateRetrieve</servlet-name>
+		<servlet-class>art_Gallery.NegoLoginServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>negotiateRetrieve</servlet-name>
+		<url-pattern>/negoList</url-pattern>
+	</servlet-mapping>
+	
 	<!-- end of Loch -->
 </web-app>
 
