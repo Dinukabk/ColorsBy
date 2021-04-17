@@ -9,24 +9,53 @@
 </head>
 <body>
 	
-	<c:forEach var="req" items="${reqList}">
+	<table border="1">
 	
-	${req.request_id}
-	${req.name}
-	${req.phone}
-	${req.email}
-	${req.message}
-	${req.photograph}
-	${req.add_line_01}
-	${req.add_line_02}
-	${req.postal_code}
-	${req.province}
-	${req.city}
-	${req.country}
-	${req.c_customer_id}
-	${req.artist_name}
+	<tr>
+		<th>Request ID</th>
+		<th>Name</th>
+		<th>Phone Number</th>
+		<th>Email Address</th>
+		<th>Message</th>
+		<th>Photograph</th>
+		<th>Address line 01</th>
+		<th>Address line 02</th>
+		<th>Postal Code</th>
+		<th>Province</th>
+		<th>City</th>
+		<th>Country</th>
+		<th>Customer ID</th>
+		<th>Artist Name</th>
+		<th></th>
+	</tr>
+	
+	<c:forEach var="req" items="${reqList}">
+		
+	<tr>
+		<td>${req.request_id}</td>
+		<td>${req.name}</td>
+		<td>${req.phone}</td>
+		<td>${req.email}</td>
+		<td>${req.message}</td>
+		<td>${req.photograph}</td>
+		<td>${req.add_line_01}</td>
+		<td>${req.add_line_02}</td>
+		<td>${req.postal_code}</td>
+		<td>${req.province}</td>
+		<td>${req.city}</td>
+		<td>${req.country}</td>
+		<td>${req.c_customer_id}</td>
+		<td>${req.artist_name}</td>
+		
+		<td>
+			<input type="button" name="accept" value="Accept">
+			<input type="button" name="reject" value="Reject">
+			
+		</td>
+	</tr>	
 	
 	</c:forEach>
+	</table>
 	
 </body>
 </html>

@@ -15,7 +15,7 @@
 		String email = request.getParameter("email");
 		String message = request.getParameter("message");
 		String photograph = request.getParameter("photograph");
-		String add_line_01 = request.getParameter("add_line-01");
+		String add_line_01 = request.getParameter("add_line_01");
 		String add_line_02 = request.getParameter("add_line_02");
 		String postal_code = request.getParameter("postal_code");
 		String province = request.getParameter("province");
@@ -32,7 +32,7 @@
 		Email Address <input type="text" name="email" value="<%= email %>"><br>
 		Message <input type="text" name="message" value="<%= message %>"><br>
 		Photograph <input type="text" name="photograph" value="<%= photograph %>"><br>
-		Address line 01 <input type="text" name="add_line-01" value="<%= add_line_01 %>"><br>
+		Address line 01 <input type="text" name="add_line_01" value="<%= add_line_01 %>"><br>
 		Address line 02 <input type="text" name="add_line_02" value="<%= add_line_02 %>"><br>
 		Postal code <input type="text" name="postal_code" value="<%= postal_code %>"><br>
 		Province <input type="text" name="province" value="<%= province %>"><br>

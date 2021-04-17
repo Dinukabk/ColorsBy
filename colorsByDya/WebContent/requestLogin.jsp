@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Request Artist Login</title>
 </head>
 <body>
 	<form action="requestLog" method="post">

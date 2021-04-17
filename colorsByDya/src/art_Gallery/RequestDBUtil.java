@@ -291,7 +291,9 @@ public class RequestDBUtil {
 		return isSuccess;
 	}
     
-public static boolean updateNegoStatusReject(boolean accepted) {
+    public static boolean updateNegoStatusReject(String Id) {
+	
+	int convertedID = Integer.parseInt(Id);
 		
 		try {
 			con = RequestDBConnector.getConnection();

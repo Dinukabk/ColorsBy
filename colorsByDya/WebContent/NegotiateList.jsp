@@ -27,9 +27,7 @@
 		<td>${nego.p_painting_id}</td>
 		<td>
 		
-		<form action="acceptNego" method="post">
-		<input type="button" name="accept" value="Accept">
-		</form>
+		<input type="button" name="accept" onclick="location.href='NegoAcceptServlet'" value="Accept">
 		
 		
 		<input type="button" name="reject" value="Reject">
