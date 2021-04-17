@@ -19,13 +19,13 @@
   </div>
   
   <div>
-  	<form>
+  	<form action="negoInsert" method="post">
   		<label>Please enter the Price</label><br>
-  		<input type="text" placeholder="Price in LKR">
-  		<input type="submit" name="Submit" value="Send ">
+  		<input type="text" placeholder="Price in LKR" name="message">
+  		<input type="submit" name="Submit" value="Send">
   	</form>
   </div>
   
-  <input type="button" name="cartBtn" value="Add to cart">
+  <input type="button" name="cartBtn" value="Add to cart" disabled>
 </body>
 </html>

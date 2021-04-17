@@ -208,6 +208,47 @@
 		<servlet-name>requestCusLogin</servlet-name>
 		<url-pattern>/requestCusLog</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>updateRequest</servlet-name>
+		<servlet-class>art_Gallery.UpdateRequestServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>updateRequest</servlet-name>
+		<url-pattern>/updateRequest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>deleteRequest</servlet-name>
+		<servlet-class>art_Gallery.DeleteRequestServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>deleteRequest</servlet-name>
+		<url-pattern>/deleteRequest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>negotiateInsert</servlet-name>
+		<servlet-class>art_Gallery.negotiateInsertServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>negotiateInsert</servlet-name>
+		<url-pattern>/negoInsert</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>negotiateRetrieve</servlet-name>
+		<servlet-class>art_Gallery.NegoLoginServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>negotiateRetrieve</servlet-name>
+		<url-pattern>/negoList</url-pattern>
+	</servlet-mapping>
+	
 	<!-- end of Loch -->
 </web-app>
 

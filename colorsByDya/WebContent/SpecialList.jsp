@@ -23,6 +23,7 @@
 	${req.province}
 	${req.city}
 	${req.country}
+	${req.c_customer_id}
 	${req.artist_name}
 	
 	</c:forEach>

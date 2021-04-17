@@ -13,10 +13,11 @@ public class Request {
 	private String province;
 	private String city;
 	private String country;
+	private int c_customer_id;
 	private int artist_name;
 	
 	public Request(int request_id, String name, int phone, String email, String message, String photograph,
-			String add_line_01, String add_line_02, int postal_code, String province, String city, String country,
+			String add_line_01, String add_line_02, int postal_code, String province, String city, String country,int c_customer_id,
 			int artist_name) {
 		
 		this.request_id = request_id;
@@ -31,6 +32,7 @@ public class Request {
 		this.province = province;
 		this.city = city;
 		this.country = country;
+		this.c_customer_id = c_customer_id;
 		this.artist_name = artist_name;
 	}
 
@@ -80,6 +82,10 @@ public class Request {
 
 	public String getCountry() {
 		return country;
+	}
+	
+	public int getC_customer_id() {
+		return c_customer_id;
 	}
 
 	public int getArtist_name() {
