@@ -53,15 +53,7 @@
 		<h3>Order Summary</h3>
 		<dl class="row">
 			<dt class="col-sm-9">Total:</dt>
-			<%
-				HttpSession httpSession = request.getSession(false);
-				if (httpSession != null) {
-					int sUserID = (int) session.getAttribute("userID");
-					System.out.println("Function Payment - User ID: " + sUserID);
-					request.setAttribute("sUserID", sUserID);
-				}
-			%>
-			<dd class="col-sm-3 text-right">${sUserID }</dd>
+			<dd class="col-sm-3 text-right">${payTotal }</dd>
 		</dl>
 	</div>
 	<!-- Card -->
