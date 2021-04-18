@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	id="WebApp_ID" version="2.5">
+<web-app 
+
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+id="WebApp_ID" 
+version="2.5"
+>
+
+	
 	<display-name>Art_Gallery_System</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
@@ -14,7 +20,7 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
-<!-- 	<servlet>
+ 	<!-- <servlet>
 		<description></description>
 		<display-name>LoginServlet</display-name>
 		<servlet-name>LoginServlet</servlet-name>
@@ -23,7 +29,7 @@
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
-	</servlet-mapping> -->
+	</servlet-mapping>  -->
 
 	<servlet>
 		<description></description>
@@ -179,13 +185,35 @@
 		<url-pattern>/Pdf_generate</url-pattern>
 	</servlet-mapping>
 	
-	<!--  <servlet>
-  	<servlet-name> insertPainting</servlet-name>
-  	<servlet-class>art_Gallery.Servlet_upload_painting</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name> insertPainting</servlet-name>
-  	<url-pattern>/insertpaint</url-pattern>
-  </servlet-mapping> -->
+	<!-- GALLERY - START -->
+	
+	<servlet>
+  		<servlet-name> galleryLogin</servlet-name>
+  		<servlet-class>art_Gallery.Servlet_GalleryLogin</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name> galleryLogin</servlet-name>
+  		<url-pattern>/gallerylogin</url-pattern>
+  	</servlet-mapping>
+	
+	<servlet>
+  		<servlet-name> insertPainting</servlet-name>
+  		<servlet-class>art_Gallery.Servlet_InsertPainting</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name> insertPainting</servlet-name>
+  		<url-pattern>/insertpaint</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name> updatePainting</servlet-name>
+  		<servlet-class>art_Gallery.Servlet_updatePainting</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name> updatePainting</servlet-name>
+  		<url-pattern>/updatepaint</url-pattern>
+  	</servlet-mapping> 
+  	
+  	<!-- GALLERY - END -->
 	
 </web-app>

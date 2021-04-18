@@ -18,9 +18,9 @@ public class Painting {
 	private String frame;
 	
 	//Constructor
-	/*
-	public Painting(int painting_id, String title, String description, String price, String drawn_date, String category,
-			String weight, String length, String width, String image_url, String material, String in_stock,
+	
+	public Painting(int painting_id, String title, String description, double price, Date drawn_date, String category,
+			double weight, double length, double width, String image_url, String material, boolean in_stock,
 			String frame) {
 		
 		super();
@@ -37,23 +37,19 @@ public class Painting {
 		this.material = material;
 		this.in_stock = in_stock;
 		this.frame = frame;
-	}    */    //end of constructor
+	}  //end of constructor
 	
-	//Testing Constructor
-	
-	public Painting(int painting_id, String title, String description, double price, double weight,
-			double length, double width, String material, String frame) {
-		
-		this.painting_id = painting_id;
-		this.title = title;
-		this.description = description;
-		this.price = price;
-		this.weight = weight;
-		this.length = length;
-		this.width = width;
-		this.material = material;
-		this.frame = frame;
-	}
+	/*
+	 * //Testing Constructor
+	 * 
+	 * public Painting(int painting_id, String title, String description, double
+	 * price, double weight, double length, double width, String material, String
+	 * frame) {
+	 * 
+	 * this.painting_id = painting_id; this.title = title; this.description =
+	 * description; this.price = price; this.weight = weight; this.length = length;
+	 * this.width = width; this.material = material; this.frame = frame; }
+	 */
 	
 	
 
@@ -107,9 +103,7 @@ public class Painting {
 
 	public String getFrame() {
 		return frame;
-	}
-
-		
+	}	
 	
 
 }// end of class

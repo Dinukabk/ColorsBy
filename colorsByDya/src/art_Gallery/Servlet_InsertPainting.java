@@ -10,14 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/Servlet_upload_painting")
+@WebServlet("/Servlet_InsertPainting")
 
-public class Servlet_upload_painting extends HttpServlet {
+public class Servlet_InsertPainting extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+
 		 String title = request.getParameter("artworkTitle");
 		 String description = request.getParameter("artworkDescription");
 		 String price = request.getParameter("artworkFixedValue");
@@ -49,6 +50,7 @@ public class Servlet_upload_painting extends HttpServlet {
 			 RequestDispatcher dispatchFail = request.getRequestDispatcher("fail.jsp");
 			 dispatchFail.forward(request, response);
 		 }
-	}
+	
+	}// end of doPost method
 
-}
+} //end of class

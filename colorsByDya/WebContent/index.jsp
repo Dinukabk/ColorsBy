@@ -1,4 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>index</title>
 
+</head>
+
+<body>
 <!-- Navbar -->
 <header class="header" class="py-5 mt-5">
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -68,5 +78,8 @@
 		</div>
 	</div>
 </div>
+
+</body>
+</html>
 
 
