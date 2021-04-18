@@ -249,6 +249,16 @@
 		<url-pattern>/negoList</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>negoAccept</servlet-name>
+		<servlet-class>art_Gallery.NegoAcceptServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>negoAccept</servlet-name>
+		<url-pattern>/acceptNego</url-pattern>
+	</servlet-mapping>
+	
 	<!-- end of Loch -->
 </web-app>
 
