@@ -47,10 +47,10 @@
         <div id="fh5co-board" data-columns>
         <%
 String url = "jdbc:mysql://localhost:3306/";
-String dbName = "art_gallery";
+String dbName = "colorsbydiyaa";
 String driver = "com.mysql.jdbc.Driver";
 String userName = "root";
-String password = "rutuja8079";
+String password = "root";
 String a_id = null;
 String query= "select * from painting where email = '" + a + "'";
 try {
