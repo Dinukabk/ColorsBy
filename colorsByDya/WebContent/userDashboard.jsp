@@ -25,17 +25,21 @@
 
 				<div id="navbarSupportedContent" class="collapse navbar-collapse">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a href="#"
-							class="nav-link text-uppercase font-weight-bold">Home <span
-								class="sr-only"></span></a></li>
-						<li class="nav-item"><a href="#"
-							class="nav-link text-uppercase font-weight-bold">About</a></li>
-						<li class="nav-item"><a href="#"
-							class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-						<li class="nav-item"><a href="./index.jsp"
-							class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-						<li class="nav-item"><a href="./Payments/payment.jsp"
-							class="nav-link text-uppercase font-weight-bold">PaymentTemp</a></li>
+						<li class="nav-item active">
+							<a href="#" class="nav-link text-uppercase font-weight-bold">Home<span class="sr-only"></span></a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link text-uppercase font-weight-bold">About</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a>
+						</li>
+						<li class="nav-item">
+							<a href="./index.jsp" class="nav-link text-uppercase font-weight-bold">Log out</a>
+						</li>
+						<li class="nav-item">
+							<a onclick="location.href = 'PaymentControllerServlet'" class=nav-link text-uppercase font-weight-bold">PaymentTemp</a>
+						</li>
 					</ul>
 				</div>
 			</div>

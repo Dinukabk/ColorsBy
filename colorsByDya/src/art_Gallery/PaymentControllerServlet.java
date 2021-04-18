@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 public class PaymentControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
@@ -27,7 +27,7 @@ public class PaymentControllerServlet extends HttpServlet {
 			
 			request.setAttribute("payTotal", pTotal);
 			System.out.println("Payment total in servletRequest: " + request.getAttribute("payTotal"));
-			RequestDispatcher RD = request.getRequestDispatcher("./payment.jsp");
+			RequestDispatcher RD = request.getRequestDispatcher("./Payments/payment.jsp");
 			RD.forward(request, response);
 		}
 	}

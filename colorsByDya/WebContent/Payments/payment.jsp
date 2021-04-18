@@ -6,9 +6,9 @@
 <!-- Redirect to another page if a session doesn't exist -->
 <meta charset="ISO-8859-1">
 <title>Colors by Diyaa</title>
-<link rel="stylesheet" href="../css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/styles.css">
-<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/home.css">
 <!-- <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../css/stylesPayment.css"> -->
 </head>
@@ -18,7 +18,7 @@
 		<header class="header" class="py-5 mt-5">
 			<nav class="navbar navbar-expand-lg fixed-top py-3">
 				<div class="container">
-					<img alt="logo" src="../pictures/Logo.png" width="100" height="100">
+					<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
 					<button type="button" data-toggle="collapse"
 						data-target="#navbarSupportedContent"
 						aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -60,7 +60,7 @@
 	<div class="container p-3 my-3 rounded"
 		style="background-color: rgba(255, 255, 255, 0.5);">
 		<form action="#" method="post">
-			<img alt="visa/master" src="../pictures/VisaAndMaster.png" width="60"
+			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60"
 				height="36">
 			<p>Card Number:</p>
 			<input type="text" placeholder="Card Number">
