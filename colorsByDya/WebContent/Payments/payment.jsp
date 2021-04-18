@@ -5,7 +5,7 @@
 <head>
 <!-- Redirect to another page if a session doesn't exist -->
 <meta charset="ISO-8859-1">
-<title>Colors by Diyaa</title>
+<title>Payment - Colors by Diyaa</title>
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">
@@ -55,26 +55,10 @@
 			<dt class="col-sm-9">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
 		</dl>
+		<button type="button" class="btn btn-primary">Add payment
+			card</button>
 	</div>
-	<!-- Card -->
-	<div class="container p-3 my-3 rounded"
-		style="background-color: rgba(255, 255, 255, 0.5);">
-		<form action="#" method="post">
-			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60"
-				height="36">
-			<p>Card Number:</p>
-			<input type="text" placeholder="Card Number">
-			<p>Name on Card:</p>
-			<input type="text" placeholder="Name on Card">
-			<p>Expiration Date:</p>
-			<input type="text" placeholder="Expiration Date">
-			<p>CVV:</p>
-			<input type="text" placeholder="CVV"> <br> <input
-				type="checkbox" id="saveCard" name="saveCard"
-				value="Save this card for future uses"> <label
-				for="saveCard">Save this card for future uses</label><br>
-			<button type="submit" class="btn btn-primary">Pay now</button>
-		</form>
-	</div>
+
+
 </body>
 </html>

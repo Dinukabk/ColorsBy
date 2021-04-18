@@ -21,14 +21,26 @@ public class PaymentControllerServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			int userID = (int) session.getAttribute("userID");
+
+			// Getting payment total...
 			int pTotal = PaymentsDatabaseUtil.getCartTotal(userID);
+			boolean cardAvailability;
 			System.out.println("On payment servlet...");
 			System.out.println("Payment total: " + pTotal);
 			
 			request.setAttribute("payTotal", pTotal);
 			System.out.println("Payment total in servletRequest: " + request.getAttribute("payTotal"));
-			RequestDispatcher RD = request.getRequestDispatcher("./Payments/payment.jsp");
-			RD.forward(request, response);
+			
+			// Checking if a payment card available on user profile
+			cardAvailability = PaymentsDatabaseUtil.checkCard(userID);
+			System.out.println("Card availability in payment servlet: " + cardAvailability);
+			if (cardAvailability == true) {
+				RequestDispatcher RD = request.getRequestDispatcher("#");
+				RD.forward(request, response);
+			} else {
+				RequestDispatcher RD = request.getRequestDispatcher("./Payments/payment.jsp");
+				RD.forward(request, response);
+			}
 		}
 	}
 
