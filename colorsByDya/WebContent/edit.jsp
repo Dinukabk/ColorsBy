@@ -62,19 +62,19 @@ Gallery:<input type="text" name="field8" placeholder="gallery *"  >
 
 <br>
 <br>
-    	<fieldset>
+    	
 <form action="Edit" method="post">
 <fieldset>
 <legend><span class="number">1</span> Edit Info</legend>
 
-
+ID: <input type="text" name="field11" placeholder="artist_id *">
 email:<input type="text" name="field22" placeholder="email *"   >
 Name:<input type="text" name="field33" placeholder="name *"  >
 
-State:<input type="text" name="field44" placeholder="state *" >
+Province:<input type="text" name="field44" placeholder="province *" >
 City:<input type="text" name="field55" placeholder="city *"  >
-Pincode:<input type="text" name="field66" placeholder="pincode *"  >
-Phone no.:<input type="text" name="field77" placeholder="phone no *" " >
+Country:<input type="text" name="field66" placeholder="country *"  >
+Phone no.:<input type="text" name="field77" placeholder="phone_no *"  >
 
 <input type ="submit" value="edit" name="edit">
 
@@ -88,14 +88,14 @@ Phone no.:<input type="text" name="field77" placeholder="phone no *" " >
  %> 
  <%response.setContentType("text/html");  
  PrintWriter pw = response.getWriter(); 
- //String connectionURL = "jdbc:mysql://127.0.0.1:3306/newData";// newData is the database  
- //Connection connection;  
+ String connectionURL = "jdbc:mysql://127.0.0.1:3306/newData";// newData is the database  
+ Connection connection;  
  Connection conn=null;
  String url="jdbc:mysql://localhost:3306/";
- String dbName="Login";
+ String dbName="colorsbydiyaa";
  String driver="com.mysql.jdbc.Driver";
-//String dbUserName="root";
-//String dbPassword="root";
+String dbUserName="root";
+String dbPassword="root";
 
 try{  
 String field1 = request.getParameter("field11");  
@@ -108,7 +108,7 @@ String field7 = request.getParameter("field77");
 
 
 Class.forName(driver).newInstance();  
-conn = DriverManager.getConnection(url+dbName,"root", "rutuja8079");
+conn = DriverManager.getConnection(url+dbName,"root", "root");
 PreparedStatement pst =(PreparedStatement) conn.prepareStatement("update artist set email=?, a_name=?, state=?, city=?, pincode=?, phone=?  where a_id=?");//try2 is the name of the table  
 
 

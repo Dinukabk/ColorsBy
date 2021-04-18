@@ -12,48 +12,105 @@
 <h2>Colors By Diyaa</h2>
   <div class="form">
         <div id="signup">
-          <h1>Sign Up for Free</h1>
+          <h1>Sign Up </h1>
 
           <form action="SignupServlet" method="post">
 
           <!-- <div class="top-row"> -->
             <div class="field-wrap">
               <label>
-                Full Name<span class="req">*</span>
+                Artist ID<span class="req">*</span>
               </label>
-              <input type="text" name="fullname" pattern="[A-Za-z.\s]{1,}"required autocomplete="off" title="Fullname should only contain letters. e.g. john" />
+              <input type="text" name="artist_id" pattern="[A-Za-z.\s]{1,}"required autocomplete="off" />
             </div>
             <div class="field-wrap">
             <label>
-              username<span class="req">*</span>
+              Name<span class="req">*</span>
             </label>
-            <input type="text" name="ArtistId"  pattern="[0-9]{10}" required autocomplete="off" title="ID pattern =  Adhaar no(10 digit)"/>
+            <input type="text" name="name"  pattern="[A-Za-z.\s]{1,}" required autocomplete="off" "/>
           </div>
             <div class="field-wrap">
               <label>
-                password<span class="req">*</span>
+                Phone Number<span class="req">*</span>
               </label>
-              <input type="text" name="state"  pattern="[A-Za-z]{1,}" required autocomplete="off" />
+              <input type="text" name="phone_no"  pattern="[A-Za-z]{1,}" required autocomplete="off" />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Email<span class="req">*</span>
+              </label>
+              <input type="text" name="email" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Description<span class="req">*</span>
+              </label>
+              <input type="text" name="discription" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            
+            <div class="field-wrap">
+              <label>
+                Address Line 1<span class="req">*</span>
+              </label>
+              <input type="text" name="add_line_01"  pattern="[A-Za-z]{1,}" required autocomplete="off" />
             </div>
             <div class="field-wrap">
               <label>
-                AddressLine 1<span class="req">*</span>
+                Address Line 2<span class="req">*</span>
               </label>
-              <input type="text" name="city"  pattern="[A-Za-z]{1,}" required autocomplete="off" />
+              <input type="text" name="add_line_02" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
             </div>
             <div class="field-wrap">
               <label>
-                AddressLine 2<span class="req">*</span>
+                Postal Code<span class="req">*</span>
               </label>
-              <input type="text" name="pincode" Pattern= "[0-9]{6}" required autocomplete="off" title="pincode should contain 6 digit " />
+              <input type="text" name="postal_code" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
             </div>
+            
+            <div class="field-wrap">
+              <label>
+                Province<span class="req">*</span>
+              </label>
+              <input type="text" name="province" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
             <div class="field-wrap">
               <label>
                 City<span class="req">*</span>
               </label>
-              <input type="text" name="mobileno" Pattern= "[789][0-9]{9}" required autocomplete="off" title="enter valid mobile no." />
+              <input type="text" name="city" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
             </div>
             
+            <div class="field-wrap">
+              <label>
+                Country<span class="req">*</span>
+              </label>
+              <input type="text" name="country" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                User Name<span class="req">*</span>
+              </label>
+              <input type="text" name="username" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Password<span class="req">*</span>
+              </label>
+              <input type="text" name="password" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                A_Admin_ID<span class="req">*</span>
+              </label>
+              <input type="text" name="a_admin_id" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
 
             <!-- <div class="field-wrap">
               <label>
@@ -65,23 +122,10 @@
           <!-- </div> -->
           
 
-          <div class="field-wrap">
-            <label>
-              Email<span class="req">*</span>
-            </label>
-            <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required autocomplete="off" title="Enter valid email"/>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Mobile No :<span class="req">*</span>
-            </label>
-            <input type="password" name="password" required autocomplete="off"/>
-          </div>
-          
+         
           
 
-          <button type="submit" class="button button-block"/>Get Started</button>
+          <button type="submit" class="button button-block"/>Sign Up</button>
 
           </form>
 

@@ -20,9 +20,9 @@
 
             <div class="field-wrap">
             <label>
-              Email<span class="req">*</span>
+              username<span class="req">*</span>
             </label>
-            <input type="text"name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required autocomplete="off"  title="Enter valid email"/>
+            <input type="text"name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required autocomplete="off"  title="Enter valid username"/>
           </div>
         
 

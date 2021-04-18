@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html");  
         PrintWriter out = response.getWriter();  
         
-        String n=request.getParameter("email");  
+        String n=request.getParameter("username");  
         String p=request.getParameter("password"); 
         
         HttpSession session = request.getSession(false);

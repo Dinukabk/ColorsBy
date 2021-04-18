@@ -30,13 +30,13 @@
 <br>
 <%
 String url = "jdbc:mysql://localhost:3306/";
-String dbName = "art_gallery";
+String dbName = "colorsbydiyaa";
 String driver = "com.mysql.jdbc.Driver";
 String userName = "root";
-String password = "rutuja8079";
-String query= "select * from artist where email = '" + a +"'";
-/* String query2="select * from gallery where g_id in(select * from artist where email = ?)";
-String query3 ="select * from painting where email = ?"; */
+String password = "root";
+String query= "select * from artist where username = '" + a +"'";
+ /*String query2="select * from gallery where g_id in(select * from artist where username = ?)";
+String query3 ="select * from painting where username = ?"; */
 
 try {
     Class.forName(driver).newInstance();
@@ -56,17 +56,17 @@ try {
     	%>
     	<fieldset>
 <legend><span class="number">1</span> Artist Info</legend>
-<!-- <a href="edit.jsp"> Edit Info</a><br><br> -->
-Id:<input type="text" name="field1" placeholder="Name *" value="<%= rs.getString(1) %>"> 
-email:<input type="text" name="field2" placeholder="Artist ID *" value="<%= rs.getString(2) %>" >
-Name:<input type="text" name="field2" placeholder="State *" value="<%= rs.getString(3) %>" >
+<a href="edit.jsp"> Edit Info</a><br><br>
+Id:<input type="text" name="field1" placeholder="artist_id *" value="<%= rs.getString(1) %>"> 
+email:<input type="text" name="field2" placeholder="email *" value="<%= rs.getString(2) %>" >
+Name:<input type="text" name="field2" placeholder="name *" value="<%= rs.getString(3) %>" >
 
-State:<input type="text" name="field2" placeholder="city *" value="<%= rs.getString(4) %>" >
-City:<input type="text" name="field2" placeholder="pincode *" value="<%= rs.getString(5) %>" >
-Pincode:<input type="text" name="field2" placeholder="phone no *" value="<%= rs.getString(6) %>" >
-Phone no.:<input type="text" name="field2" placeholder="phone no *" value="<%= rs.getString(7) %>" >
+Province:<input type="text" name="field2" placeholder="province *" value="<%= rs.getString(4) %>" >
+City:<input type="text" name="field2" placeholder="city *" value="<%= rs.getString(5) %>" >
+Country:<input type="text" name="field2" placeholder="Country *" value="<%= rs.getString(6) %>" >
+Phone no.:<input type="text" name="field2" placeholder="phone_no *" value="<%= rs.getString(7) %>" >
 Gallery:<input type="text" name="field2" placeholder="phone no *" value="<%= rs.getString(8) %>" >
-</select>   
+  
 </fieldset>
 <fieldset>
 <legend><span class="number">2</span> Additional Info</legend>

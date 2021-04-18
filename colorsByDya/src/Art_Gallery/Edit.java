@@ -49,30 +49,31 @@ public class Edit extends HttpServlet {
 	        String driver = "com.mysql.jdbc.Driver";
 	        String userName = "root";
 	        String password = "root";
-	        String id = request.getParameter("field1");
-	        String email = request.getParameter("field22");
+	        
+	        String ano = request.getParameter("field11");
+	        String aname = request.getParameter("field22");
 	        String name = request.getParameter("field33");
-	        String state = request.getParameter("field44");
-	        String city= request.getParameter("field55");
-	        String pincode= request.getParameter("field66");
-	        String phone = request.getParameter("field77");
-	        String g_id = request.getParameter("field88");
+	        String phone = request.getParameter("field44");
+	        String email= request.getParameter("field55");
+	        String description= request.getParameter("field66");
+	        String address01 = request.getParameter("field77");
+	        String address02 = request.getParameter("field88");
 	        HttpSession session = request.getSession();
-	        String email1 = (String) session.getAttribute("login");
+	        String username = (String) session.getAttribute("login");
 	        try {
 	            Class.forName(driver).newInstance();
 	            conn = DriverManager
 	                    .getConnection(url + dbName, userName, password);
 
-	            pst = conn.prepareStatement("update artist set  email=?, a_name=?, state=?, city=?,pincode=?, phone=? where a_id=?");
-	            //pst.setString(1, id);
-	            pst.setString(1, email);
-	            pst.setString(2, name);
-	            pst.setString(3, state);
-	            pst.setString(4, city);
-	            pst.setString(5, pincode);
-	            pst.setString(6, phone);
-	            pst.setString(7, email1);
+	            pst = conn.prepareStatement("update artist set  artist_id=?, name=?, phone_no=?, email=?, description=?, add_line_01=?, add_line_02=?, postal_code=?, province=?, city=?, country=?, username=?, password=?, a_admin_id=? where artist_id=?");
+	            pst.setString(1, ano);
+	            pst.setString(1, aname);
+	            pst.setString(2, phone);
+	            pst.setString(3, email);
+	            pst.setString(4, description);
+	            pst.setString(5, address01);
+	            pst.setString(6, address02);
+	            pst.setString(7, username);
 	            System.out.println("ttttttt");
 	            
 	            pst.executeUpdate();
