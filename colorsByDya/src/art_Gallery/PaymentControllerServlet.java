@@ -3,6 +3,7 @@
 package art_Gallery;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,10 +22,10 @@ public class PaymentControllerServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) { // If a session exists
 			int userID = (int) session.getAttribute("userID");
-
+			
 			// Getting payment total...
 			int pTotal = PaymentsDatabaseUtil.getCartTotal(userID);
-			boolean cardAvailability;
+			Boolean cardAvailability;
 			System.out.println("On payment servlet...");
 			System.out.println("Payment total: " + pTotal);
 			
@@ -33,11 +34,17 @@ public class PaymentControllerServlet extends HttpServlet {
 			
 			// Checking if a payment card available on user profile
 			cardAvailability = PaymentsDatabaseUtil.checkCard(userID);
+			// List<Payment> paymentList = PaymentsDatabaseUtil.checkCardList(userID);
+			// Payment userName = paymentList.get(1);
+			String userName = PaymentsDatabaseUtil.getUserName(userID); 
+			
 			System.out.println("Card availability in payment servlet: " + cardAvailability);
 			if (cardAvailability == true) {
+				request.setAttribute("userName", userName);
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 				RD.forward(request, response);
 			} else {
+				request.setAttribute("userName", userName);
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/payment.jsp");
 				RD.forward(request, response);
 			}

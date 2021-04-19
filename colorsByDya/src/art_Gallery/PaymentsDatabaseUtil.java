@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PaymentsDatabaseUtil {
 	private static boolean cardAvailability;
+	private static String userName;
 	
 	public static int getCartTotal(int userID) {
 		String UIDConverted = Integer.toString(userID);
@@ -39,17 +42,19 @@ public class PaymentsDatabaseUtil {
 		ResultSet rs = null;
 		Connection con;
 		double cardNumber;
+		// String userName;
 		
 		try {
-			System.out.println("CID In check card function: " + UIDConverted);
+			System.out.println("Customer ID in check card function: " + UIDConverted);
 			con = DatabaseUtilizer.utilizeConnection();
-			pst = con.prepareStatement("SELECT cardNumber FROM registered_customer WHERE customer_id = ?");
+			pst = con.prepareStatement("SELECT full_name, cardNumber FROM registered_customer WHERE customer_id = ?");
 			pst.setString(1, UIDConverted);
 			rs = pst.executeQuery();
 			while (rs.next()) {
-				cardNumber = rs.getInt(1);
+				// userName = rs.getString(1);
+				cardNumber = rs.getInt(2);
 				System.out.println("Card number: " + cardNumber);
-				if (Double.toString(cardNumber) != "") {
+				if (cardNumber > 0) {
 					cardAvailability = true;
 					System.out.println("Card available...");
 				} else {
@@ -62,5 +67,65 @@ public class PaymentsDatabaseUtil {
 			e.printStackTrace();
 		}
 		return cardAvailability;
+	}
+	
+	public static List<Payment> checkCardList(int userID) {
+		ArrayList<Payment> paymentArrL = new ArrayList<>();
+		Connection con;
+		PreparedStatement pst;
+		String UIDConverted = Integer.toString(userID);
+		ResultSet rs;
+		Boolean cardAvailability;
+		
+		try {
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement("SELECT full_name, cardNumber FROM registered_customer WHERE customer_id = ?");
+			pst.setString(1, UIDConverted);
+			rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				String userName = rs.getString(1);
+				System.out.println("Username in checkCardList: " + rs.getString(1));
+				
+				int cardNumber = rs.getInt(2);
+				System.out.println("Card number in checkCardList: " + rs.getInt(2));
+				
+				if (cardNumber > 0) {
+					cardAvailability = true;
+				} else {
+					cardAvailability = false;
+				}
+				
+				Payment payment = new Payment(userName, cardAvailability);
+				System.out.println("Card availability in checkCardList: " + cardAvailability);
+				
+				paymentArrL.add(payment);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return paymentArrL;		
+	}
+	
+	public static String getUserName(int userID) {
+		Connection con;
+		PreparedStatement pst;
+		String UIDConverted = Integer.toString(userID);
+		ResultSet rs;
+		
+		try {
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement("SELECT full_name FROM registered_customer WHERE customer_id = ?");
+			pst.setString(1, UIDConverted);
+			rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				userName = rs.getString(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return userName;		
 	}
 }

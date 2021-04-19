@@ -27,17 +27,21 @@
 
 					<div id="navbarSupportedContent" class="collapse navbar-collapse">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item active"><a href="#"
-								class="nav-link text-uppercase font-weight-bold">Home <span
-									class="sr-only"></span></a></li>
-							<li class="nav-item"><a href="#"
-								class="nav-link text-uppercase font-weight-bold">About</a></li>
-							<li class="nav-item"><a href="#"
-								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-							<li class="nav-item"><a href="./index.jsp"
-								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-							<li class="nav-item"><a href="./Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">PaymentTemp</a></li>
+							<li class="nav-item active">
+								<a href="#" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only"></span></a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase font-weight-bold">About</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a>
+							</li>
+							<li class="nav-item">
+								<a onclick="location.href = 'SessionFlusher'" class="nav-link text-uppercase font-weight-bold">Log out</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase font-weight-bold">${userName }</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -46,26 +50,18 @@
 	</div>
 
 	<!-- Order Summary -->
-	<div class="container p-3 my-2 rounded col-md-4"
-		style="background-color: rgba(255, 255, 255, 0.5);">
+	<div class="container p-3 my-2 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 		<h3>Order Summary</h3>
 		<dl class="row">
 			<dt class="col-sm-9">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
 		</dl>
-		<button type="button" class="btn btn-primary">Add payment card</button>
-	</div>
-	
-	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-		<h5>Test</h5>
 	</div>
 	
 	<!-- Card -->
-	<div class="container p-3 my-3 rounded col-md-4"
-		style="background-color: rgba(255, 255, 255, 0.5);">
+	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 		<form action="#" method="post">
-			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60"
-				height="36">
+			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
 			<p>Card Number:</p>
 			<input type="text" placeholder="Card Number">
 			<p>Name on Card:</p>
@@ -73,10 +69,9 @@
 			<p>Expiration Date:</p>
 			<input type="text" placeholder="Expiration Date">
 			<p>CVV:</p>
-			<input type="text" placeholder="CVV"> <br> <input
-				type="checkbox" id="saveCard" name="saveCard"
-				value="Save this card for future uses"> <label
-				for="saveCard">Save this card for future uses</label><br>
+			<input type="text" placeholder="CVV"> <br> 
+			<input type="checkbox" id="saveCard" name="saveCard" value="Save this card for future uses"> 
+			<label for="saveCard">Save this card for future uses</label><br>
 			<button type="submit" class="btn btn-primary">Pay now</button>
 		</form>
 	</div>

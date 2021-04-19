@@ -36,10 +36,10 @@
 								class="nav-link text-uppercase font-weight-bold">About</a></li>
 							<li class="nav-item"><a href="#"
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-							<li class="nav-item"><a href="../index.jsp"
+							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">PaymentTemp</a></li>
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
 						</ul>
 					</div>
 				</div>
