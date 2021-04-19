@@ -30,53 +30,7 @@
     <a href="gallery_option.jsp">Gallery options</a>
      <a href="upload_paintings.jsp">Upload Paintings</a>
       <a href="frontpage.jsp">Logout</a>
-      <a href="#" class="navbar1"><% HttpSession httpSession=request.getSession();
-		/* String id = request.getParameter("email");
-		httpSession.setAttribute("login1",id ); */
-		out.println("hii "+httpSession.getAttribute("login1"));
-		String a = (String)httpSession.getAttribute("login1");
-      %></a>  
-</div>
-<div id="fh5co-main">
-		<div class="container">
-
-			<div class="row">
-
-        <div id="fh5co-board" data-columns>
-        <%
-String url = "jdbc:mysql://localhost:3306/";
-String dbName = "colorsbydiyaa";
-String driver = "com.mysql.jdbc.Driver";
-String userName = "root";
-String password = "root";
-String a_id = null;
-String query= "select * from painting where email = '" + a + "'";
-try {
-    Class.forName(driver).newInstance();
-    Connection conn = DriverManager.getConnection(url + dbName, userName, password);
-	
-    Statement st = conn.createStatement();
-    ResultSet rs = st.executeQuery(query);
     
-    while(rs.next()){
-    	%>
-    	<div class="item">
-        		<div class="animate-box">
-	        		<a href=<%= rs.getString("url") %> class="image-popup fh5co-board-img"><img src=<%= rs.getString("url") %> alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="image-popup fh5co-desc"><%= rs.getString("title") %>
-	        		
-	        		</div>
-        		</div>
-        		</div>
-   <%} %>
-   <%rs.close();
-   st.close();
-   conn.close();
-   }
-   catch (Exception e) {
-   }
-   %>
-        	
         	
          <<div class="item">
         		<div class="animate-box">
