@@ -51,14 +51,14 @@
             <label>Full Name</label><br>
             <input type="text" placeholder="Enter Full Name" name="name" class="SRInput"><br><br>
             <label>Phone Number</label><br>
-            <input type="text" placeholder="Enter Phone Number" name="phone" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput"><br><br>
+            <input type="text" placeholder="Enter Phone Number" name="phone" class="SRInput"><br><br>
             <label>Email Address</label><br>
             <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput"><br><br>
             <label>Message</label><br>
             <textarea placeholder="Enter a message" name="message" class="SRInput"></textarea><br><br>
             <label>Upload Your photograph that you want to be drawn</label><br>
-            <!-- <input type="file" name="photograph" size="50"><br><br> -->
-            <input type="text" placeholder="photograph" name="photograph">
+            <input type="file" name="photograph" size="50"><br><br>
+            <!-- <input type="text" placeholder="photograph" name="photograph"> -->
             <label>Address</label><br>
             <input type="text" placeholder="Line 01" name="add_line_01">
             <input type="text" placeholder="Line 02" name="add_line_02"><br>

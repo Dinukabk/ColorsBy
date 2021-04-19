@@ -121,7 +121,7 @@ public class RequestDBUtil {
 			 */
 			
 			String sql = "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
-					+ "values(0,'"+name+"',1234,'"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"',12,'"+province+"','"+city+"','"+country+"',1,3)";
+					+ "values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"',1,3)";
 			
 			// create the mysql insert preparedstatement
 			/* PreparedStatement preparedStmt = con.prepareStatement(sql); */
