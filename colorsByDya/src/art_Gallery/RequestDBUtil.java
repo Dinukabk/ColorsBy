@@ -1,6 +1,7 @@
 package art_Gallery;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -100,13 +101,41 @@ public class RequestDBUtil {
 	public static boolean insertSRequest(String name,String phone,String email,String message,String photograph,
 			String add_line_01,String add_line_02,String postal_code,String province,String city,String country) {
 		
+		
+		/*
+		 * int convertedPhone = Integer.parseInt(phone); int convertedPostalCode =
+		 * Integer.parseInt(postal_code);
+		 */
+		 
+		
 		boolean isSuccess = false;
 		
 		try {
 			
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "insert into special_request values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"',1,3)";
+			/*
+			 * String sql =
+			 * "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+			 * + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			 */
+			
+			String sql = "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+					+ "values(0,'"+name+"',1234,'"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"',12,'"+province+"','"+city+"','"+country+"',1,3)";
+			
+			// create the mysql insert preparedstatement
+			/* PreparedStatement preparedStmt = con.prepareStatement(sql); */
+			/*
+			 * preparedStmt.setInt (1, 0); preparedStmt.setString (2, name);
+			 * preparedStmt.setInt (3, 123); preparedStmt.setString (4, email);
+			 * preparedStmt.setString (5, message); preparedStmt.setString (6, photograph);
+			 * preparedStmt.setString (7, add_line_01); preparedStmt.setString (8,
+			 * add_line_02); preparedStmt.setInt (9, 12); preparedStmt.setString (10,
+			 * province); preparedStmt.setString (11, city); preparedStmt.setString (12,
+			 * country); preparedStmt.setInt (13, 1); preparedStmt.setInt (14, 3);
+			 */
+			
+			/* boolean rs = preparedStmt.execute(); */
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs > 0) {
@@ -126,6 +155,7 @@ public class RequestDBUtil {
 	
 	public static boolean updateRequest(String request_id,String name,String phone,String email,String message,String photograph,
 			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,String c_customer_id,String artist_name) {
+		
 		
 		try {
 			con = RequestDBConnector.getConnection();
