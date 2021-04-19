@@ -32,7 +32,7 @@
 							class="nav-link text-uppercase font-weight-bold">About</a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-						<li class="nav-item"><a href="./login_01.jsp"
+						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
 							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>

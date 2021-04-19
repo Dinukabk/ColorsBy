@@ -19,7 +19,7 @@ public class PaymentControllerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		if (session != null) {
+		if (session != null) { // If a session exists
 			int userID = (int) session.getAttribute("userID");
 
 			// Getting payment total...
@@ -35,12 +35,15 @@ public class PaymentControllerServlet extends HttpServlet {
 			cardAvailability = PaymentsDatabaseUtil.checkCard(userID);
 			System.out.println("Card availability in payment servlet: " + cardAvailability);
 			if (cardAvailability == true) {
-				RequestDispatcher RD = request.getRequestDispatcher("#");
+				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 				RD.forward(request, response);
 			} else {
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/payment.jsp");
 				RD.forward(request, response);
 			}
+		} else { // If session doesn't exist
+			RequestDispatcher RD = request.getRequestDispatcher("login_01.jsp");
+			RD.forward(request, response);
 		}
 	}
 

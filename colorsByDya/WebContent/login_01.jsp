@@ -12,6 +12,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 <h2>Colors By Diyaa</h2>
 <div class="form">
 	<div id="login">
@@ -19,27 +20,22 @@
 		<h2>Welcome Back!</h2>
 		<form action="LoginServlet" method="post">
 			<div class="field-wrap">
-				<label> Email<span class="req">*</span></label> <input type="text"
-					name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-					required autocomplete="off" title="Enter valid email" />
+				<label> Email<span class="req">*</span></label> 
+				<input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required autocomplete="off" title="Enter valid email" />
 			</div>
 			<div class="field-wrap">
 				<label> Password<span class="req">*</span>
 				</label> <input type="password" name="password" required autocomplete="off" />
 			</div>
-
 			<p class="forgot">
 				<a href="Forgot_password.jsp">Forgot Password?</a>
 			</p>
-			<button class="button button-block" />
-			Log In
-			</button>
+			<button class="button button-block" />Log In</button>
 		</form>
 	</div>
 </div>
 <!-- /form -->
-<script
-	src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="js/index.js"></script>
 </body>
 </html>

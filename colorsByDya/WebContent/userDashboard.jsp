@@ -35,7 +35,7 @@
 							<a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a>
 						</li>
 						<li class="nav-item">
-							<a href="./index.jsp" class="nav-link text-uppercase font-weight-bold">Log out</a>
+							<a onclick="location.href = 'SessionFlusher'" class="nav-link text-uppercase font-weight-bold">Log out</a>
 						</li>
 						<li class="nav-item">
 							<a onclick="location.href = 'PaymentControllerServlet'" class=nav-link text-uppercase font-weight-bold">PaymentTemp</a>

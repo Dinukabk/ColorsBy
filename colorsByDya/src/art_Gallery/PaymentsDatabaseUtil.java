@@ -43,7 +43,7 @@ public class PaymentsDatabaseUtil {
 		try {
 			System.out.println("CID In check card function: " + UIDConverted);
 			con = DatabaseUtilizer.utilizeConnection();
-			pst = con.prepareStatement("SELECT card_no FROM payment WHERE c_customer_id=?");
+			pst = con.prepareStatement("SELECT cardNumber FROM registered_customer WHERE customer_id = ?");
 			pst.setString(1, UIDConverted);
 			rs = pst.executeQuery();
 			while (rs.next()) {
