@@ -21,6 +21,8 @@
 
 
 	<%
+	// Catch data coming through the url from Artworks.jsp page
+	
 		String painting_id = request.getParameter("painting_id");
 		String title = request.getParameter("title");
 		String description = request.getParameter("description");
@@ -34,6 +36,8 @@
 		String material = request.getParameter("material");
 		String in_stock = request.getParameter("in_stock");
 		String frame = request.getParameter("frame");
+		String a_artist_id = request.getParameter("a_artist_id");
+		String c_cart_id = request.getParameter("c_cart_id");
 	%>
 	
 	
@@ -90,6 +94,14 @@
 		<tr>
 			<td>Frame</td>
 			<td><input type="text" name="frame" value="<%= frame %>"></td>
+		</tr>
+		<tr>
+			<td>Artist ID</td>
+			<td><input type="text" name="a_artist_id" value="<%= a_artist_id %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Cart ID</td>
+			<td><input type="text" name="c_cart_id" value="<%= c_cart_id %>" readonly></td>
 		</tr>
 		
 	</table>

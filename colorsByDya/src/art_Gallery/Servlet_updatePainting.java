@@ -1,7 +1,7 @@
 package art_Gallery;
 
 import java.io.IOException;
-import java.util.List;
+//import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,6 +19,7 @@ public class Servlet_updatePainting extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		// Assign the updated data coming from Gallery_UpdatePainting.jsp page form
 		String painting_id = request.getParameter("painting_id");
 		String title = request.getParameter("title");
 		String description = request.getParameter("description");
@@ -32,10 +33,12 @@ public class Servlet_updatePainting extends HttpServlet {
 		String material = request.getParameter("material");
 		String in_stock = request.getParameter("in_stock");
 		String frame = request.getParameter("frame");
+		String a_artist_id = request.getParameter("a_artist_id");
+		String c_cart_id = request.getParameter("c_cart_id");             // Then send this data to DBUtil to store in the database
 		
 		boolean updateSuccess;
 		
-		updateSuccess = PaintingDBUtil.updatePainting(painting_id, title, description, price, drawn_date, category, weight, length, width, image_url, material, in_stock, frame); 
+		updateSuccess = PaintingDBUtil.updatePainting(painting_id, title, description, price, drawn_date, category, weight, length, width, image_url, material, in_stock, frame, a_artist_id, c_cart_id); 
 		
 		if(updateSuccess == true) {
 			
@@ -43,15 +46,15 @@ public class Servlet_updatePainting extends HttpServlet {
 			//List<Customer> cusDetails = PaintingDBUtil.displayPaintingList(painting_id);
 			//request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dispatch = request.getRequestDispatcher("success.jsp");
-			dispatch.forward(request, response);
+			RequestDispatcher dispatch1 = request.getRequestDispatcher("success.jsp");
+			dispatch1.forward(request, response);
 		}
 		else {
 			//List<Customer> cusDetails = PaintingDBUtil.getCustomerDetails(id);
 			//request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dispatch = request.getRequestDispatcher("fail.jsp");
-			dispatch.forward(request, response);
+			RequestDispatcher dispatch2 = request.getRequestDispatcher("fail.jsp");
+			dispatch2.forward(request, response);
 		}
 	}
 

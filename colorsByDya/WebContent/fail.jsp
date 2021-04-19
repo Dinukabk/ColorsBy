@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1> Insert Fail</h1>
+<h1> Fail</h1>
 
 </body>
 </html>

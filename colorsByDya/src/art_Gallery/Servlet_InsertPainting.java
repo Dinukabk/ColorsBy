@@ -23,24 +23,24 @@ public class Servlet_InsertPainting extends HttpServlet {
 		 String description = request.getParameter("artworkDescription");
 		 String price = request.getParameter("artworkFixedValue");
 		 
-		 //Date drawn_date = request.getParameter("drawnDate");
+		 String drawn_date = request.getParameter("drawnDate");
 		 
-		 //String category = request.getParameter("artworkCategory");
+		 String category = request.getParameter("artworkCategory");
 		 String weight = request.getParameter("artworkWeight");
 		 String length = request.getParameter("artworkLength");
 		 String width = request.getParameter("artworkWidth");
 		 
-		 //String image_url = request.getParameter("imagePainting");
+		 String image_url = request.getParameter("imagePainting");
 		 
 		 String material = request.getParameter("artworkMaterial");
 		 
-		 //boolean in_stock = request.getParameter();
+		 //String in_stock = request.getParameter();
 		 
 		 String frame = request.getParameter("artworkFrame");
 		 
 		 boolean insertSuccess;
 		 
-		 insertSuccess = PaintingDBUtil.insertPainting(title, description, price, weight, length, width, material, frame);
+		 insertSuccess = PaintingDBUtil.insertPainting(title, description, price, drawn_date, category, weight, length, width, image_url, material, frame);
 		 
 		 if(insertSuccess == true) {
 			 RequestDispatcher dispatchSuccess = request.getRequestDispatcher("success.jsp");

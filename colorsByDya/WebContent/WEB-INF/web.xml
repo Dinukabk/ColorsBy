@@ -20,6 +20,7 @@ version="2.5"
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+
  	<!-- <servlet>
 		<description></description>
 		<display-name>LoginServlet</display-name>
@@ -185,7 +186,7 @@ version="2.5"
 		<url-pattern>/Pdf_generate</url-pattern>
 	</servlet-mapping>
 	
-	<!-- GALLERY - START -->
+		<!-- GALLERY - START -->
 	
 	<servlet>
   		<servlet-name> galleryLogin</servlet-name>
@@ -197,11 +198,11 @@ version="2.5"
   	</servlet-mapping>
 	
 	<servlet>
-  		<servlet-name> insertPainting</servlet-name>
+  		<servlet-name>insertPainting</servlet-name>
   		<servlet-class>art_Gallery.Servlet_InsertPainting</servlet-class>
   	</servlet>
   	<servlet-mapping>
-  		<servlet-name> insertPainting</servlet-name>
+  		<servlet-name>insertPainting</servlet-name>
   		<url-pattern>/insertpaint</url-pattern>
   	</servlet-mapping>
   	
@@ -214,6 +215,101 @@ version="2.5"
   		<url-pattern>/updatepaint</url-pattern>
   	</servlet-mapping> 
   	
+  	<servlet>
+  		<servlet-name> deletePainting</servlet-name>
+  		<servlet-class>art_Gallery.Servlet_deletePainting</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name> deletePainting</servlet-name>
+  		<url-pattern>/deletepaint</url-pattern>
+  	</servlet-mapping> 
+  	
   	<!-- GALLERY - END -->
 	
+	<!-- beginning of Loch -->
+	<servlet>
+		<servlet-name>insertRequest</servlet-name>
+		<servlet-class>art_Gallery.RequestServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>insertRequest</servlet-name>
+		<url-pattern>/insertRequest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>requestLogin</servlet-name>
+		<servlet-class>art_Gallery.requestLoginServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>requestLogin</servlet-name>
+		<url-pattern>/requestLog</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>requestCusLogin</servlet-name>
+		<servlet-class>art_Gallery.requestCusLogin</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>requestCusLogin</servlet-name>
+		<url-pattern>/requestCusLog</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>updateRequest</servlet-name>
+		<servlet-class>art_Gallery.UpdateRequestServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>updateRequest</servlet-name>
+		<url-pattern>/updateRequest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>deleteRequest</servlet-name>
+		<servlet-class>art_Gallery.DeleteRequestServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>deleteRequest</servlet-name>
+		<url-pattern>/deleteRequest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>negotiateInsert</servlet-name>
+		<servlet-class>art_Gallery.negotiateInsertServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>negotiateInsert</servlet-name>
+		<url-pattern>/negoInsert</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>negotiateRetrieve</servlet-name>
+		<servlet-class>art_Gallery.NegoLoginServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>negotiateRetrieve</servlet-name>
+		<url-pattern>/negoList</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>negoAccept</servlet-name>
+		<servlet-class>art_Gallery.NegoAcceptServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>negoAccept</servlet-name>
+		<url-pattern>/acceptNego</url-pattern>
+	</servlet-mapping>
+	<!-- end of Loch -->
+	
+	<!-- Payment -->
+		<!-- for testing purposes -->
+	<!-- End of payment servlets -->
 </web-app>
+

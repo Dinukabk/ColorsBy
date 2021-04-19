@@ -35,7 +35,9 @@
 		</div>
 		<div>
 			<label>Price</label> 
+			<input type="text" id="artworkFixedValue" name="artworkFixedValue" placeholder="Enter Price of the Artwork here">
 			
+			<!--  
 			<input type="radio" id="artworkRadioNegotiate" name="radio_price" value="artworkRadioNegotiate"> 
 	  			
 			<label for="negotiate">Negotiate Price</label><br>
@@ -44,10 +46,14 @@
 			<label for="fixed">Fixed Price</label><br>
 			
 			<input type="number" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" placeholder="Enter Price of the Artwork here">
-						
+					
+					-->	
 		</div>
 		<div>
 			<label>Category</label> 
+			<input type="text" id="artworkCategory" name="artworkCategory" placeholder="Enter Category of the Artwork here">
+			
+			<!--  
 			<select name="artworkCategory" id="category">
 				<option value="abstract">Abstract</option>
 				<option value="nature">Nature</option>
@@ -59,6 +65,8 @@
 	       		<option value="pencilSketch">Pencil sketch</option>
 				<option value="other">Other</option>
 			</select>
+				-->
+				
 		</div>
 		<div>
 			<label>Drawn Date</label>
@@ -67,10 +75,13 @@
 		
 		<div>
 			<label>Select Artwork : </label>
-			<input type="file" id="imagePainting" name="imagePainting" accept="image/*" >
-			<!-- required
+			<input type="text" id="imagePainting" name="imagePainting" placeholder="Enter Image of the Artwork here">
+			
+			<!--
+			<input type="file" id="imagePainting" name="imagePainting" accept="image/*" required
 				oninvalid="this.setCustomValidity('Upload your Artwork Here')"
-	  			oninput="this.setCustomValidity('')" -->
+	  			oninput="this.setCustomValidity('')" > 
+	  			-->
 		</div>
 		<div>
 			<label>Length</label>
@@ -94,7 +105,8 @@
 			<input type="text" id="artworkFrame" name="artworkFrame" placeholder="Enter Frame of the Artwork here">
 		</div>
 		
-		<input type="submit" value="Upload">
+		<br>
+		<input type="submit" name="upload"value="Upload">
 
 </form>
 

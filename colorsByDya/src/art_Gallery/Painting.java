@@ -16,12 +16,14 @@ public class Painting {
 	private String material;
 	private boolean in_stock;
 	private String frame;
+	private int a_artist_id;
+	private int c_cart_id;
 	
 	//Constructor
 	
 	public Painting(int painting_id, String title, String description, double price, Date drawn_date, String category,
 			double weight, double length, double width, String image_url, String material, boolean in_stock,
-			String frame) {
+			String frame, int a_artist_id, int c_cart_id) {
 		
 		super();
 		this.painting_id = painting_id;
@@ -37,6 +39,9 @@ public class Painting {
 		this.material = material;
 		this.in_stock = in_stock;
 		this.frame = frame;
+		this.a_artist_id = a_artist_id;
+		this.c_cart_id = c_cart_id;
+		
 	}  //end of constructor
 	
 	/*
@@ -103,6 +108,14 @@ public class Painting {
 
 	public String getFrame() {
 		return frame;
+	}
+
+	public int getA_artist_id() {
+		return a_artist_id;
+	}
+
+	public int getC_cart_id() {
+		return c_cart_id;
 	}	
 	
 

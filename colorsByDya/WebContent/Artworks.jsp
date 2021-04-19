@@ -21,6 +21,7 @@
 </head>
 <body>
 
+
 	<table>
 		<c:forEach var="paint" items="${paintingDetails}">
 		
@@ -37,6 +38,8 @@
 		<c:set var="material" value="${paint.material}"/>
 		<c:set var="in_stock" value="${paint.in_stock}"/>
 		<c:set var="frame" value="${paint.frame}"/>
+		<c:set var="a_artist_id" value="${paint.a_artist_id}"/>
+		<c:set var="c_cart_id" value="${paint.c_cart_id}"/>
 		
 		<tr>
 			<td>Artwork ID</td>
@@ -90,13 +93,17 @@
 			<td> Frame </td>
 			<td>${paint.frame}</td>
 		</tr>
-	
-		</c:forEach>
+		<tr>
+			<td> Artist ID </td>
+			<td>${paint.a_artist_id}</td>
+		</tr>
+		<tr>
+			<td> Cart ID </td>
+			<td>${paint.c_cart_id}</td>
+		</tr>
 		
-		</table><br>
-		
-		  
-		<c:url value="Gallery_UpdatePainting.jsp" var="painitngUpdate">
+		<c:url value="Gallery_UpdatePainting.jsp" var="paintingUpdate">
+		<!-- What data should be carried when going to Gallery_UpdatePaonting page -->
 		
 			<c:param name="painting_id" value="${painting_id}"/>
 			<c:param name="title" value="${title}"/>
@@ -105,18 +112,57 @@
 			<c:param name="drawn_date" value="${drawn_date}"/>
 			<c:param name="category" value="${category}"/>
 			<c:param name="weight" value="${weight}"/>
-			<c:param name="length" value="${lenth}"/>
+			<c:param name="length" value="${length}"/>
 			<c:param name="width" value="${width}"/>
 			<c:param name="image_url" value="${image_url}"/>
 			<c:param name="material" value="${material}"/>
 			<c:param name="in_stock" value="${in_stock}"/>
 			<c:param name="frame" value="${frame}"/>
+			<c:param name="a_artist_id" value="${a_artist_id}"/>
+			<c:param name="c_cart_id" value="${c_cart_id}"/>
 			
 		</c:url>
 		
-		<a href="${painitngUpdate}">
-		<input type="button" name="edit" value="EDIT">
-		</a>
+		<c:url value="Gallery_DeletePainting.jsp" var="paintingDelete">
+		<!-- What data should be carried when going to Gallery_UpdatePaonting page -->
+		
+			<c:param name="painting_id" value="${painting_id}"/>
+			<c:param name="title" value="${title}"/>
+			<c:param name="description" value="${description}"/>
+			<c:param name="price" value="${price}"/>
+			<c:param name="drawn_date" value="${drawn_date}"/>
+			<c:param name="category" value="${category}"/>
+			<c:param name="weight" value="${weight}"/>
+			<c:param name="length" value="${length}"/>
+			<c:param name="width" value="${width}"/>
+			<c:param name="image_url" value="${image_url}"/>
+			<c:param name="material" value="${material}"/>
+			<c:param name="in_stock" value="${in_stock}"/>
+			<c:param name="frame" value="${frame}"/>
+			<c:param name="a_artist_id" value="${a_artist_id}"/>
+			<c:param name="c_cart_id" value="${c_cart_id}"/>
+			
+		</c:url>
+		
+		
+		
+		
+		<tr>
+			<td> 
+				<a href="${paintingUpdate}">
+				<input type="button" name="edit" value="EDIT"> </a>
+		 	</td>
+			<td> 
+				<a href="${paintingDelete}">
+				<input type="button" name="delete" value="DELETE"> </a>
+		 	</td>
+		</tr>
+				
+		</c:forEach>
+		
+		</table><br>
+			
+		
 		
 		<!--
 		

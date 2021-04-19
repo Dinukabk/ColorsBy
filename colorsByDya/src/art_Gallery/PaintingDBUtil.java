@@ -3,6 +3,7 @@ package art_Gallery;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,9 @@ public class PaintingDBUtil {
 		try {
 			connect = DBConnect_Painting.getConnection();
 			statement = connect.createStatement();
+			
 			String sql = "select * from artist where name='"+username+"' and password='"+password+"'";
+			
 			resultSet = statement.executeQuery(sql);
 			
 			if (resultSet.next()) {
@@ -38,11 +41,21 @@ public class PaintingDBUtil {
 	}// validate() end
 	
 	
-	public static boolean insertPainting (String painting_id, String title, String description, String price, String drawn_date, String category,
-			String weight, String length, String width, String image_url, String material, String in_stock,
-			String frame) {
+	// INSERT
+	public static boolean insertPainting (String title, String description, String price, String drawn_date, String category,
+			String weight, String length, String width, String image_url, String material, String frame) {
 		
-		boolean isSuccess = false;
+		isSuccess = false;
+		
+		//double price2 = Double.parseDouble(price);
+		
+		//Date drawn_date2 = Date.parse(drawn_date);
+		//double weight2 = Double.parseDouble(weight);
+		//double length2 = Double.parseDouble(length);
+		//double width2 = Double.parseDouble(width);
+		//String image_url = resultSet.getString(10);
+		//boolean in_stock = Double.parseDouble(price);
+		
 		
 		/*
 		 * create db connection 
@@ -55,24 +68,25 @@ public class PaintingDBUtil {
 		try {
 			
 			connect = DBConnect_Painting.getConnection();
-    		statement = connect.createStatement();
+			statement = connect.createStatement();
+			
+			//INSERT INTO `colorbydiyaa`.`registered_customer` (`full_name`, `username`, `password`) VALUES ('cus2', 'user2', 'pass');
     		
-    		String sql = "insert into painting (title, description, price, weight, length, width, material, frame) values('"+title+"', '"+description+"', '"+price+"', '"+weight+"', '"+length+"', '"+width+"', '"+material+"', '"+frame+"')";
+    		String sql = "insert into painting (title, description, price, drawn_date ,weight, length, width, image_url ,material, frame) values('"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"','"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', '"+frame+"')";
     		
-    	    
+			//String sql = "INSERT INTO painting VALUES(0, '"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"', '"+category+"','"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', 'false' ,'"+frame+"',2 , 1)";
+			
     		int resultSet = statement.executeUpdate(sql);
     		
     		if(resultSet > 0) {
-				isSuccess = true;
+    			isSuccess = true;
 			}
 			else {
 				isSuccess = false;
-			}			
-			
-		}// insert - try end
+			}
+    	}// insert - try end
 		
-		catch(Exception e) {
-			
+		catch(Exception e) {			
 			e.printStackTrace();
 		}
 		
@@ -113,9 +127,11 @@ public class PaintingDBUtil {
     			String material = resultSet.getString(11);
     			boolean in_stock = resultSet.getBoolean(12);
     			String frame = resultSet.getString(13);
+    			int a_artist_id = resultSet.getInt(14);
+    			int c_cart_id = resultSet.getInt(15);
     			
     			// pass above values into Painting Class constructor as parameters
-    			Painting objectPaint = new Painting(paintingID,  title,  description,  price,  drawn_date,  category,  weight,  length,  width,  image_url,  material,  in_stock,  frame);
+    			Painting objectPaint = new Painting(paintingID,  title,  description,  price,  drawn_date,  category,  weight,  length,  width,  image_url,  material,  in_stock,  frame, a_artist_id, c_cart_id);
     			
     			painting.add(objectPaint);
     			
@@ -132,16 +148,16 @@ public class PaintingDBUtil {
 	
 	// Update
 	
-	// Assign the variables in the Servlet as Parameters here
-	public static boolean updatePainting (String painting_id, String title, String description, String price, String drawn_date, String category,
-			String weight, String length, String width, String image_url, String material, String in_stock, String frame) {
+	// Pass the variables in the Servlet as Parameters here
+	public static boolean updatePainting (String painting_id, String title, String description, String price, String drawn_date, String category, String weight, String length, String width, String image_url, String material, String in_stock, String frame, String a_artist_id, String c_cart_id) {
     	
     	try {
     		
     		connect = DBConnect_Painting.getConnection();
     		statement = connect.createStatement();
     		    		
-    		String sql = "update painting set title='"+title+"' , description='"+description+"' , price='"+price+"' , drawn_date='"+drawn_date+"', category= '"+category+"', weight='"+weight+"' , length='"+length+"' , width='"+width+"' , image_url= '"+image_url+"', material='"+material+"' , in_stock= '"+in_stock+"', frame='"+frame+"'" + "where painting_id='"+painting_id+"'";  
+    		String sql = "UPDATE painting SET title='"+title+"' , description='"+description+"' , price='"+price+"' , drawn_date='"+drawn_date+"', category= '"+category+"', weight='"+weight+"' , length='"+length+"' , width='"+width+"' , image_url= '"+image_url+"', material='"+material+"' , in_stock= '"+in_stock+"', frame='"+frame+"', a_artist_id='"+a_artist_id+"',  c_cart_id='"+c_cart_id+"'"
+    				+ "WHERE painting_id='"+painting_id+"'"; 
     		
     		int resultSet = statement.executeUpdate(sql);
     		
@@ -159,5 +175,35 @@ public class PaintingDBUtil {
     	
     	return isSuccess;
     }// end of Update
-
-}
+	
+	
+	// DELETE
+	public static boolean deletePainting(String painting_id) {
+    	
+    	int convId = Integer.parseInt(painting_id);
+    	
+    	try {
+    		
+    		connect = DBConnect_Painting.getConnection();
+    		statement = connect.createStatement();
+    		
+    		String sql = "delete from painting where painting_id='"+convId+"'";
+    		
+    		int resultSet = statement.executeUpdate(sql);
+    		
+    		if (resultSet > 0) {
+    			isSuccess = true;
+    		}
+    		else {
+    			isSuccess = false;
+    		}
+    		
+    	}
+    	catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    	return isSuccess;
+    }
+	
+} // end of class
