@@ -20,7 +20,7 @@ public class NegoLoginServlet extends HttpServlet {
 		String password = request.getParameter("pass");
 		
 		try {
-			List<Negotiate> negoArtList = RequestDBUtil.negotiateListValidate(username, password);
+			List<NegoAll> negoArtList = RequestDBUtil.negotiateListValidate(username, password);
 			request.setAttribute("negoArtList", negoArtList);
 		}
 		catch(Exception e) {

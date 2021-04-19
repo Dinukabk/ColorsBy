@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="Styles/SpeRequest.css">
+<link rel="stylesheet" href="css/SpeRequest.css">
 <link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <title>Contact Us</title>
@@ -28,10 +28,13 @@
    </div>
    
    <div class="wrapper">
+   		<a href="https://www.facebook.com/Deepthiwije/">
         <div class="buttonIcon">
            <div class="icon"><i class="fab fa-facebook-f"></i></div>
            <span>Facebook</span>
         </div>
+        </a>
+        
         <div class="buttonIcon">
            <div class="icon"><i class="fab fa-instagram"></i></div>
            <span>Instagram</span>
@@ -40,7 +43,7 @@
       <div >
    <h2>We want to hear your feedback or Make a Special Request</h2>
    
-      <form action="insertRequest" method="post">
+      <form action="insertRequest" method="post" class="specialRForm">
       
             <label>Full Name</label><br>
             <input type="text" placeholder="Enter Full Name" name="name"><br>
