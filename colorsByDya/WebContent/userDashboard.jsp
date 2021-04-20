@@ -46,8 +46,27 @@
 
 
 	<!-- For demo purpose -->
-
-
+<!-- footer -->
+<div class="container">
+				
+				<div >
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button <span
+								class="sr-only"></span></a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button</a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button</a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button</a></li>
+							<!-- Miyuru's button -->
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button</a></li>
+							<!-- Miyuru's button end-->
+					</ul>
+				</div>
+			</div>
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
 </body>
