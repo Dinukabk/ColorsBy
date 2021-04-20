@@ -7,7 +7,7 @@
 <title>Entering Delivery User Account page</title>
 </head>
 <body>
-	<form action="log" method="post">
+	<form action="DeliveryLoginServlet" method="post">
 		
 		User Name <input type="text" name="uid" placeholder="Enter your username"><br>
 		Password <input type="password" name="pass" placeholder="Enter your password"><br>
