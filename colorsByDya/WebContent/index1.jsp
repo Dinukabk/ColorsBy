@@ -22,7 +22,7 @@
             <label>
               username<span class="req">*</span>
             </label>
-            <input type="text"name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required autocomplete="off"  title="Enter valid username"/>
+            <input type="text"name="username"  />
           </div>
         
 
@@ -30,7 +30,7 @@
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password" name="password" required autocomplete="off"/>
+            <input type="password" name="pass" />
           </div>
 
           <p class="forgot"><a href="Forgot_password.jsp">Forgot Password?</a></p>
