@@ -32,9 +32,9 @@
 							class="nav-link text-uppercase font-weight-bold">About</a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-						<li class="nav-item"><a href="./login_01.jsp"
+						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
 							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
-						<li class="nav-item"><a href="#"
+						<li class="nav-item"><a onclick="location.href = 'SpecialReqNavServlet'"
 							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>
 					</ul>
 				</div>
@@ -46,7 +46,7 @@
 	<!-- For demo purpose -->
 	<div class="container">
 		<div class="pt-5 text-white">
-			<header class="py-5 mt-5">
+			<div class="py-5 mt-5">
 				<h1 class="display-4">This is test project</h1>
 				<p class="lead mb-0">Get ready gys this is the home page heshan
 					make this</p>
@@ -55,7 +55,7 @@
 					<!-- <a href="https://bootstrapious.com" class="text-white">
 																	<u>Bootstrapious</u></a> -->
 				</p>
-			</header>
+			</div>
 			<div class="py-5">
 				<p class="lead">
 					A- <strong class="font-weight-bold">We need your ideas.we
