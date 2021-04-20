@@ -35,10 +35,10 @@
 							<a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a>
 						</li>
 						<li class="nav-item">
-							<a onclick="location.href = 'SessionFlusher'" class="nav-link text-uppercase font-weight-bold">Log out</a>
+							<a href="SpecialRequest.jsp" class="nav-link text-uppercase font-weight-bold">Contact Us</a>
 						</li>
 						<li class="nav-item">
-							<a onclick="location.href = 'PaymentControllerServlet'" class=nav-link text-uppercase font-weight-bold">PaymentTemp</a>
+							<a onclick="location.href = 'SessionFlusher'" class="nav-link text-uppercase font-weight-bold">Log out</a>
 						</li>
 					</ul>
 				</div>
@@ -51,30 +51,15 @@
 	<div class="container">
 		<div class="pt-5 text-white">
 			<header class="py-5 mt-5">
-				<h1 class="display-4">This is test project</h1>
-				<p class="lead mb-0">Get ready gys this is the home page heshan
-					make this</p>
-				<p class="lead mb-0">
-					LEADER Miyuru
-					<!-- <a href="https://bootstrapious.com" class="text-white">
-																	<u>Bootstrapious</u></a> -->
-				</p>
+				<h1 class="display-4">User Dash</h1>
+				<div class="container p-3 my-2 rounded col-md-4 float-left" style="background-color: rgba(255, 255, 255, 0.5);">
+					<button type="button" class="btn btn-primary" onclick="location.href = 'PaymentControllerServlet'">Temporary Payment Button</button>
+				</div><br><br><br><br>
+				<p class="lead mb-0">Test 03</p>
 			</header>
 			<div class="py-5">
-				<p class="lead">
-					A- <strong class="font-weight-bold">We need your ideas.we
-						need a fixed colour </strong> if you have a any idea leave a comment in
-					discode group <strong class="font-weight-bold">recusandae
-					</strong>placeat! Voluptatum voluptate, ex modi illum quas nam distinctio.
-				</p>
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur
-					adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-					exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate
-					velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-					occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-					mollit anim id est laborum.</p>
+				<p class="lead">Strong<strong class="font-weight-bold">Test 3</strong> Test 2 <strong class="font-weight-bold"> Test 04</strong>Test 05</p>
+				<p class="lead">Lorem ipsum dolor sit amet </p>
 			</div>
 		</div>
 	</div>
