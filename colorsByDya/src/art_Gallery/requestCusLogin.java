@@ -17,12 +17,13 @@ public class requestCusLogin extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String username = request.getParameter("uid");
-		String password = request.getParameter("pass");
+		// String username = request.getParameter("uid");
+		// String password = request.getParameter("pass");
+		// HttpSession 
 		
 		try {
-			List<Request> reqCusList = RequestDBUtil.validateCus(username, password);
-			request.setAttribute("reqCusList", reqCusList);
+			// List<Request> reqCusList = RequestDBUtil.validateCus(username, password);
+			// request.setAttribute("reqCusList", reqCusList);
 		}
 		catch(Exception e) {
 			e.printStackTrace();

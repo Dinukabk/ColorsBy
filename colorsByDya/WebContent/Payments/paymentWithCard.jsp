@@ -55,6 +55,7 @@
 		<dl class="row">
 			<dt class="col-sm-9">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
+			<!-- <h1>Test</h1> -->
 		</dl>
 	</div>
 	

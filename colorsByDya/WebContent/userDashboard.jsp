@@ -55,19 +55,40 @@
 		<div class="pt-5 text-white">
 			<header class="py-5 mt-5">
 				<h1 class="display-4">User Dash</h1>
-				<div class="container p-3 my-2 rounded col-md-4 float-left" style="background-color: rgba(255, 255, 255, 0.5);">
-					<button type="button" class="btn btn-primary" onclick="location.href = 'PaymentControllerServlet'">Temporary Payment Button</button>
+				<div class="container p-3 my-2 rounded  float-left" style="background-color: rgba(255, 255, 255, 0.5);">
+					<button type="button" class="btn btn-primary" onclick="location.href = 'PaymentControllerServlet'">Temp Payment Button</button>
+					<button type="button" class="btn btn-primary" onclick="location.href = ''">Edit Profile</button>
+					<button type="button" class="btn btn-primary" onclick="location.href = ''">Temp Shopping Cart</button>
+					<button type="button" class="btn btn-primary" onclick="location.href = 'requestCusLogin'">View My Requests</button>
 				</div><br><br><br><br>
 				<p class="lead mb-0">Test 03</p>
 			</header>
 			<div class="py-5">
 				<p class="lead">Strong<strong class="font-weight-bold">Test 3</strong> Test 2 <strong class="font-weight-bold"> Test 04</strong>Test 05</p>
 				<p class="lead">Lorem ipsum dolor sit amet </p>
-			</div>
-		</div>
-	</div>
-
+<!-- footer
+<div class="container">
+				
+				<div >
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button <span
+								class="sr-only"></span></a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button</a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button</a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button</a></li>
+							Miyuru's button
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Button</a></li>
+							Miyuru's button end
+					</ul>
+				</div>
+			</div> -->
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
+
