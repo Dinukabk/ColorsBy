@@ -21,26 +21,23 @@
 	Srting DPID = request.getParameter("dpid");
 	Srting DUID = request.getParameter("dusid");
 	Srting DPSW = request.getParameter("dpsw");
-
-
-	
 	
 	%>
 
 		
 	<font action="#" method = "post">
-		Delivery ID <input type ="text" name="DeliId" value =""><br>
-		Full Name <input type ="text" name="name" value =""><br>
-		Address Line 01 <input type="text" name="addLineOne" value =""><br>
-		Address Line 02 <input type="text" name="addLineTwo" value =""><br>
-		Postal Code <input type="text" name="PostalCo" value =""><br>
-		Province <input type="text" name="DeliveryPro" value =""><br>
-		City  <input type="text" name="eliveryCityy" value =""><br>
-		Country  <input type="text" name="DelivertCountry" value =""><br>
-		Status  <input type="text" name="Delivery Status" value =""><br>
-		Payment Id  <input type="text" name="DPid" value =""><br>
-		Username <input type="text" name="Uid" value =""><br>
-		Password <input type="password" name="psw" value =""><br>
+		Delivery ID <input type ="text" name="DeliId" value ="<%= DID%>"><br>
+		Full Name <input type ="text" name="name" value ="<%=DFNAME %>"><br>
+		Address Line 01 <input type="text" name="addLineOne" value ="<%=DLINEONE %>"><br>
+		Address Line 02 <input type="text" name="addLineTwo" value ="<%= DLINETWO%>"><br>
+		Postal Code <input type="text" name="PostalCo" value ="<%= DPCODE%>"><br>
+		Province <input type="text" name="DeliveryPro" value ="<%=DPROVINCE %>"><br>
+		City  <input type="text" name="eliveryCityy" value ="<%= DCITY%>"><br>
+		Country  <input type="text" name="DelivertCountry" value ="<%=DCOUNTRY %>"><br>
+		Status  <input type="text" name="Delivery Status" value ="<%=DSTATUS %>"><br>
+		Payment Id  <input type="text" name="DPid" value ="<%=DPID %>"><br>
+		Username <input type="text" name="Uid" value ="<%= DUID%>"><br>
+		Password <input type="password" name="psw" value ="<%=DPSW %>"><br>
 		
 		<input type="submit" name="submit" value ="Update My Data"><br>
 		
