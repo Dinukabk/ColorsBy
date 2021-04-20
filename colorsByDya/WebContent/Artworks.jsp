@@ -103,7 +103,7 @@
 		</tr>
 		
 		<c:url value="Gallery_UpdatePainting.jsp" var="paintingUpdate">
-		<!-- What data should be carried when going to Gallery_UpdatePaonting page -->
+		<!-- What data should be carried when going to Gallery_UpdatePainting page -->
 		
 			<c:param name="painting_id" value="${painting_id}"/>
 			<c:param name="title" value="${title}"/>
@@ -124,7 +124,7 @@
 		</c:url>
 		
 		<c:url value="Gallery_DeletePainting.jsp" var="paintingDelete">
-		<!-- What data should be carried when going to Gallery_UpdatePaonting page -->
+		<!-- What data should be carried when going to Gallery_UpdatePainting page -->
 		
 			<c:param name="painting_id" value="${painting_id}"/>
 			<c:param name="title" value="${title}"/>
@@ -144,9 +144,6 @@
 			
 		</c:url>
 		
-		
-		
-		
 		<tr>
 			<td> 
 				<a href="${paintingUpdate}">
@@ -161,23 +158,6 @@
 		</c:forEach>
 		
 		</table><br>
-			
-		
-		
-		<!--
-		
-		<br>
-		<c:url value="deletecustomer.jsp" var="cusdelete">
-			<c:param name="id" value="${id}" />
-			<c:param name="name" value="${name}" />
-			<c:param name="email" value="${email}" />
-			<c:param name="uname" value="${username}" />
-			<c:param name="pass" value="${password}" />
-		</c:url>
-		<a href="${cusdelete}">
-		<input type="button" name="delete" value="Delete My Account">
-		</a>
-	-->
 	
 
 </body>

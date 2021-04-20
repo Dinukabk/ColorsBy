@@ -14,7 +14,7 @@
 	    var artworkRadioFixed = document.getElementById("artworkRadioFixed");
 	    var artworkFixedValue = document.getElementById("artworkFixedValue");
 	    artworkFixedValue.style.display = artworkRadioFixed.checked ? "block" : "none";
-}
+	}
 
 </script>
 

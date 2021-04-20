@@ -1,7 +1,10 @@
 package art_Gallery;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -15,6 +18,12 @@ public class PaintingDBUtil {
 	private static Statement statement = null;
 	private static ResultSet resultSet = null;
 	
+	/*FileInputStream fs=null;
+	PreparedStatement ps=null;
+	 
+	File f=new File("/home/prashant/Documents/image/mainjava.jpg");
+    fs=new FileInputStream(f);
+	*/
 	// validate user
 	public static boolean validate(String username, String password) {
 		
@@ -124,6 +133,8 @@ public class PaintingDBUtil {
     			String frame = resultSet.getString(13);
     			int a_artist_id = resultSet.getInt(14);
     			int c_cart_id = resultSet.getInt(15);
+    			
+    			//InputStream is = rs.getBinaryStream(columnIndex);
     			
     			// pass above values into Painting Class constructor as parameters
     			Painting objectPaint = new Painting(paintingID,  title,  description,  price,  drawn_date,  category,  weight,  length,  width,  image_url,  material,  in_stock,  frame, a_artist_id, c_cart_id);
