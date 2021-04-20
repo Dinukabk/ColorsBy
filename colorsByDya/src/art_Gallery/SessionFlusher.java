@@ -20,6 +20,7 @@ public class SessionFlusher extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			session.invalidate();
+			System.out.println("Session flushed...");
 			RequestDispatcher RD = request.getRequestDispatcher("index.jsp");
 			RD.forward(request, response);
 		} else {
