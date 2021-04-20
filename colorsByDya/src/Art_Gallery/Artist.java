@@ -4,12 +4,12 @@ public class Artist {
 	
 private int artist_id;
 private String name;
-private int phone_no;
+private String phone_no;
 private String email;
 private String description;
 private String add_line_01;
 private String add_line_02;
-private int postal_code;
+private String postal_code;
 private String province;
 private String city;
 private String country;
@@ -17,9 +17,12 @@ private String username;
 private String password;
 private int a_admin_id;
 
-public Artist(int artist_id, String name, int phone_no, String email, String description, String add_line_01,
-		String add_line_02, int postal_code, String province, String city, String country, String username,
+
+
+public Artist(int artist_id, String name, String phone_no, String email, String description, String add_line_01,
+		String add_line_02, String postal_code, String province, String city, String country, String username,
 		String password, int a_admin_id) {
+	// TODO Auto-generated constructor stub
 	super();
 	this.artist_id = artist_id;
 	this.name = name;
@@ -37,7 +40,7 @@ public Artist(int artist_id, String name, int phone_no, String email, String des
 	this.a_admin_id = a_admin_id;
 }
 
-public int getArtist_id() {
+public  int getArtist_id() {
 	return artist_id;
 }
 
@@ -48,7 +51,7 @@ public String getName() {
 
 
 
-public int getPhone_no() {
+public String getPhone_no() {
 	return phone_no;
 }
 
@@ -81,7 +84,7 @@ public String getAdd_line_02() {
 
 
 
-public int getPostal_code() {
+public String getPostal_code() {
 	return postal_code;
 }
 

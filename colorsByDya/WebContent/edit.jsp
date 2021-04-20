@@ -52,10 +52,12 @@ Gallery:<input type="text" name="field8" placeholder="gallery *"  >
   <a href="frontpage.jsp">Home</a>
   <a href="paintings.jsp">Paintings</a>
   <a href="Exhibition.jsp">Exhibitions</a>
- <a href=""WebContent/css/icomoon.css"frontpage.jsp">Logout</a>
+ <a href="frontpage.jsp">Logout</a>
   </div>
   
-</div>
+  
+  
+
 <div class="form-style-5">
 
 <br>

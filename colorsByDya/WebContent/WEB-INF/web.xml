@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <display-name>Art_Gallery_System</display-name>
+  <display-name>Colors By Diyaa</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -159,4 +159,31 @@
     <servlet-name>Pdf_generate</servlet-name>
     <url-pattern>/Pdf_generate</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    
+    <servlet-name>ArtistInsert</servlet-name>
+    <servlet-class>Art_Gallery.ArtistInsert</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>ArtistInsert</servlet-name>
+  <url-pattern>/insert</url-pattern>
+  
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>updateArtist</servlet-name>
+  <servlet-class>Art_Gallery.updateArtistServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>updateArtist</servlet-name>
+  <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+ 
 </web-app>
