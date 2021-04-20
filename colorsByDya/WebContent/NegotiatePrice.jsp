@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/home.css">
 <title>Negotiate Price - Colors by Diyaa</title>
+
+<script src="js/Request.js"></script>
+
 </head>
 <body>
   <h1>Negotiate the Price of the Painting</h1>
@@ -26,13 +29,14 @@
   </div></center><br><br>
   
   <div>
-  	<form action="negoInsert" method="post">
+  	<form name="negoForm" action="negoInsert" method="post" onsubmit="return validateForm()">
   		<label>Please enter the Price</label><br>
-  		<input type="text" placeholder="Price in LKR" name="message">
+  		<input type="number" placeholder="Price in LKR" name="message">
+  		
   		<input type="submit" name="Submit" value="Send">
   	</form>
   </div>
-  
+  <br>
   <input type="button" name="cartBtn" value="Add to cart" disabled></div>
 </body>
 </html>
