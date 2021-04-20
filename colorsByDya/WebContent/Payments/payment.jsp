@@ -55,8 +55,7 @@
 			<dt class="col-sm-9">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
 		</dl>
-		<button type="button" class="btn btn-primary">Add payment
-			card</button>
+		<button type="button" class="btn btn-primary" onclick="location.href = 'PaymentAddCardServlet'">Add payment card</button>
 	</div>
 
 

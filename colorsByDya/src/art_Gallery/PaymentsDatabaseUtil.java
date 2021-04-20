@@ -10,6 +10,7 @@ import java.util.List;
 public class PaymentsDatabaseUtil {
 	private static boolean cardAvailability;
 	private static String userName;
+	private static boolean querySuccess;
 	
 	public static int getCartTotal(int userID) {
 		String UIDConverted = Integer.toString(userID);
@@ -127,5 +128,35 @@ public class PaymentsDatabaseUtil {
 		}
 		
 		return userName;		
+	}
+	
+	public static boolean addPaymentCard(int userID, String cardNo, String nameOnCard, String expDate, String cvv, String checkbox) {
+		Connection con;
+		PreparedStatement pst;
+		int rs;
+		String UIDConverted = Integer.toString(userID);
+
+		try {
+
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement(
+					"UPDATE registered_customer SET cardNumber = ?, nameOnCard = ?, expDate = ?, cvv = ? WHERE (customer_id = ?);");
+			pst.setString(1, cardNo);
+			pst.setString(2, nameOnCard);
+			pst.setString(3, expDate);
+			pst.setString(4, cvv);
+			pst.setString(5, UIDConverted);
+			rs = pst.executeUpdate();
+
+			if (rs > 0) {
+				querySuccess = true;
+			} else {
+				querySuccess = false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return querySuccess;
 	}
 }

@@ -63,15 +63,13 @@
 		<form action="#" method="post">
 			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
 			<p>Card Number:</p>
-			<input type="text" placeholder="Card Number">
+			<input type="text" placeholder="Card Number" value="${cardNumber }" disabled>
 			<p>Name on Card:</p>
-			<input type="text" placeholder="Name on Card">
+			<input type="text" placeholder="Name on Card" value="${nameOnCard }" disabled>
 			<p>Expiration Date:</p>
-			<input type="text" placeholder="Expiration Date">
+			<input type="text" placeholder="Expiration Date" value="${expDate }" disabled>
 			<p>CVV:</p>
-			<input type="text" placeholder="CVV"> <br> 
-			<input type="checkbox" id="saveCard" name="saveCard" value="Save this card for future uses"> 
-			<label for="saveCard">Save this card for future uses</label><br>
+			<input type="text" placeholder="CVV" value="${CVV }" disabled> <br> 
 			<button type="submit" class="btn btn-primary">Pay now</button>
 		</form>
 	</div>

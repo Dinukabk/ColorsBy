@@ -5,7 +5,7 @@
 <head>
 <!-- Redirect to another page if a session doesn't exist -->
 <meta charset="ISO-8859-1">
-<title>Payment - Colors by Diyaa</title>
+<title>Add a card - Colors by Diyaa</title>
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">
@@ -38,8 +38,9 @@
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+							<li class="nav-item">
+								<a href="../Payments/payment.jsp" class="nav-link text-uppercase font-weight-bold">${userName }</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -47,18 +48,22 @@
 		</header>
 	</div>
 
-	<!-- Order Summary -->
-	<div class="container p-3 my-2 rounded col-md-4"
-		style="background-color: rgba(255, 255, 255, 0.5);">
-		<h3>Order Summary</h3>
-		<dl class="row">
-			<dt class="col-sm-9">Total:</dt>
-			<dd class="col-sm-3 text-right">${payTotal }</dd>
-		</dl>
-		<button type="button" class="btn btn-primary">Add payment
-			card</button>
+	<!-- Card -->
+	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
+		<form action="PaymentAddCardFormServlet" method="post">
+			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
+			<p>Card Number:</p>
+			<input type="text" name="cardNumber" placeholder="Card Number">
+			<p>Name on Card:</p>
+			<input type="text" name="nameOnCard" placeholder="Name on Card">
+			<p>Expiration Date:</p>
+			<input type="text" name="expDate" placeholder="Expiration Date">
+			<p>CVV:</p>
+			<input type="text" name="cvv" placeholder="CVV"> <br> 
+			<input type="checkbox" id="saveCard" name="saveCard" value="Save this card for future uses"> 
+			<label for="saveCard">Save this card for future uses</label><br>
+			<button type="submit" class="btn btn-primary">Pay now</button>
+		</form>
 	</div>
-
-
 </body>
 </html>
