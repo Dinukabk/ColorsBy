@@ -3,7 +3,6 @@ package art_Gallery;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,13 +68,9 @@ public class PaintingDBUtil {
 			
 			connect = DBConnect_Painting.getConnection();
 			statement = connect.createStatement();
-			
-			//INSERT INTO `colorbydiyaa`.`registered_customer` (`full_name`, `username`, `password`) VALUES ('cus2', 'user2', 'pass');
-    		
-    		String sql = "insert into painting (title, description, price, drawn_date ,weight, length, width, image_url ,material, frame) values('"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"','"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', '"+frame+"')";
-    		
-			//String sql = "INSERT INTO painting VALUES(0, '"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"', '"+category+"','"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', 'false' ,'"+frame+"',2 , 1)";
-			
+			    		
+    		String sql = "insert into painting (title, description, price, drawn_date ,category ,weight, length, width, image_url ,material, frame) values('"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"','"+category+"' ,'"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', '"+frame+"')";
+    					
     		int resultSet = statement.executeUpdate(sql);
     		
     		if(resultSet > 0) {
@@ -117,7 +112,7 @@ public class PaintingDBUtil {
     			int paintingID = resultSet.getInt(1);
     			String title = resultSet.getString(2);
     			String description = resultSet.getString(3);
-    			double price = resultSet.getDouble(4);
+    			String price = resultSet.getString(4);
     			Date drawn_date = resultSet.getDate(5);
     			String category = resultSet.getString(6);
     			double weight = resultSet.getDouble(7);
@@ -146,7 +141,7 @@ public class PaintingDBUtil {
 	} // displayPaintingList end
 	
 	
-	// Update
+	// 	UPDATE
 	
 	// Pass the variables in the Servlet as Parameters here
 	public static boolean updatePainting (String painting_id, String title, String description, String price, String drawn_date, String category, String weight, String length, String width, String image_url, String material, String in_stock, String frame, String a_artist_id, String c_cart_id) {

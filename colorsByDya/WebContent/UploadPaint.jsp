@@ -9,7 +9,14 @@
 
 <link rel="stylesheet" href="../css/frontpage.css">
 
-<script type="text/javascript" src="js_Gallery.js"></script>
+<script type="text/javascript">
+	function ShowHideDiv() {
+	    var artworkRadioFixed = document.getElementById("artworkRadioFixed");
+	    var artworkFixedValue = document.getElementById("artworkFixedValue");
+	    artworkFixedValue.style.display = artworkRadioFixed.checked ? "block" : "none";
+}
+
+</script>
 
 </head>
 <body>
@@ -34,38 +41,39 @@
 	  			oninput="this.setCustomValidity('')"	>
 		</div>
 		<div>
-			<label>Price</label> 
-			<input type="text" id="artworkFixedValue" name="artworkFixedValue" placeholder="Enter Price of the Artwork here">
+			<label style="float: left">Price</label> 
+			<!-- <input type="text" id="artworkFixedValue" name="artworkFixedValue" placeholder="Enter Price of the Artwork here"> -->
 			
-			<!--  
-			<input type="radio" id="artworkRadioNegotiate" name="radio_price" value="artworkRadioNegotiate"> 
+			 
+			<input type="radio" style="float: left" id="artworkRadioNegotiate" name="radio_price" value="Negotiate Price" onclick="ShowHideDiv()"> 
 	  			
-			<label for="negotiate">Negotiate Price</label><br>
+			<label for="negotiate" style="float: left">Negotiate Price</label>
 			
-			<input type="radio" id="artworkRadioFixed" name="radio_price" value="artworkRadioFixed">
-			<label for="fixed">Fixed Price</label><br>
+			<input type="radio" style="float: left" id="artworkRadioFixed" name="radio_price" value="artworkRadioFixed" onclick="ShowHideDiv()">
+			<label for="fixed">Fixed Price</label>
 			
-			<input type="number" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" placeholder="Enter Price of the Artwork here">
+			<input type="number" style="display: none" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" placeholder="Enter Price of the Artwork here" >
 					
-					-->	
+					
 		</div>
 		<div>
 			<label>Category</label> 
+			<!-- 
 			<input type="text" id="artworkCategory" name="artworkCategory" placeholder="Enter Category of the Artwork here">
-			
-			<!--  
+			 -->
+			 
 			<select name="artworkCategory" id="category">
-				<option value="abstract">Abstract</option>
-				<option value="nature">Nature</option>
-				<option value="blacknWhite">Black n White</option>
-				<option value="oilPainting">Oil painting</option>
-	      		<option value="watercolor">Watercolour</option>
-	      		<option value="postercolor">Postercolour</option>
-	      		<option value="acrylic">Acrylic</option>
-	       		<option value="pencilSketch">Pencil sketch</option>
-				<option value="other">Other</option>
+				<option value="Abstract">Abstract</option>
+				<option value="Nature">Nature</option>
+				<option value="Black and White">Black n White</option>
+				<option value="Oil Painting">Oil painting</option>
+	      		<option value="Watercolor">Watercolour</option>
+	      		<option value="Postercolor">Postercolour</option>
+	      		<option value="Acrylic">Acrylic</option>
+	       		<option value="Pencil Sketch">Pencil sketch</option>
+				<option value="Other">Other</option>
 			</select>
-				-->
+				
 				
 		</div>
 		<div>
@@ -75,13 +83,13 @@
 		
 		<div>
 			<label>Select Artwork : </label>
-			<input type="text" id="imagePainting" name="imagePainting" placeholder="Enter Image of the Artwork here">
-			
 			<!--
+			<input type="text" id="imagePainting" name="imagePainting" placeholder="Enter Image of the Artwork here">
+			-->
 			<input type="file" id="imagePainting" name="imagePainting" accept="image/*" required
 				oninvalid="this.setCustomValidity('Upload your Artwork Here')"
 	  			oninput="this.setCustomValidity('')" > 
-	  			-->
+	  			
 		</div>
 		<div>
 			<label>Length</label>

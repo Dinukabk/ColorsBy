@@ -6,7 +6,7 @@ public class Painting {
 	private int painting_id;
 	private String title;
 	private String description;
-	private double price;
+	private String price;
 	private Date drawn_date;
 	private String category;
 	private double weight;
@@ -21,7 +21,7 @@ public class Painting {
 	
 	//Constructor
 	
-	public Painting(int painting_id, String title, String description, double price, Date drawn_date, String category,
+	public Painting(int painting_id, String title, String description, String price, Date drawn_date, String category,
 			double weight, double length, double width, String image_url, String material, boolean in_stock,
 			String frame, int a_artist_id, int c_cart_id) {
 		
@@ -70,7 +70,7 @@ public class Painting {
 		return description;
 	}
 
-	public double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 

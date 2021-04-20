@@ -21,7 +21,24 @@ public class Servlet_InsertPainting extends HttpServlet {
 
 		 String title = request.getParameter("artworkTitle");
 		 String description = request.getParameter("artworkDescription");
-		 String price = request.getParameter("artworkFixedValue");
+		 
+		 String price;
+		 String price2 = request.getParameter("radio_price");
+		 
+		 if ("Negotiate Price".equals(price2)) {
+			 price = request.getParameter("radio_price");
+		 }
+		 else {
+			 price = request.getParameter("artworkFixedValue");
+		 }
+		  /*
+		 if(request.getParameter("artworkFixedValue") != null) {
+			  price = request.getParameter("artworkFixedValue");
+		 }
+		 else {
+			 price = request.getParameter("radio_price");
+		 }
+		 */
 		 
 		 String drawn_date = request.getParameter("drawnDate");
 		 
@@ -40,7 +57,7 @@ public class Servlet_InsertPainting extends HttpServlet {
 		 
 		 boolean insertSuccess;
 		 
-		 insertSuccess = PaintingDBUtil.insertPainting(title, description, price, drawn_date, category, weight, length, width, image_url, material, frame);
+		insertSuccess = PaintingDBUtil.insertPainting(title, description, price, drawn_date, category, weight, length, width, image_url, material, frame);
 		 
 		 if(insertSuccess == true) {
 			 RequestDispatcher dispatchSuccess = request.getRequestDispatcher("success.jsp");

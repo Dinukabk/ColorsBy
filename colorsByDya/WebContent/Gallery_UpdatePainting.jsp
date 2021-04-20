@@ -58,6 +58,17 @@
 		<tr>
 			<td> Price</td>
 			<td><input type="text" name="price" value="<%= price %>"></td>
+			<td>
+				<input type="radio" id="artworkRadioNegotiate" name="radio_price" value="Negotiate Price" onclick="ShowHideDiv()"> 
+	  			<label for="negotiate" >Negotiate Price</label>
+			</td>
+			<td>
+				<input type="radio" style="float: left" id="artworkRadioFixed" name="radio_price" value="artworkRadioFixed" onclick="ShowHideDiv()">
+				<label for="fixed">Fixed Price</label>
+			</td>
+			<td>
+				<input type="number" style="display: none" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" placeholder="Enter Price of the Artwork here" >
+			</td>
 		</tr>
 		<tr>
 			<td>Drawn Date</td>
@@ -65,7 +76,20 @@
 		</tr>
 		<tr>
 			<td>Category</td>
-			<td><input type="text" name="category" value="<%= category %>"></td>
+			
+			<td>
+				<select name="category" id="category" value="<%= category %>">
+					<option value="Abstract">Abstract</option>
+					<option value="Nature">Nature</option>
+					<option value="Black and White">Black n White</option>
+					<option value="Oil Painting">Oil painting</option>
+		      		<option value="Watercolor">Watercolour</option>
+		      		<option value="Postercolor">Postercolour</option>
+		      		<option value="Acrylic">Acrylic</option>
+		       		<option value="Pencil Sketch">Pencil sketch</option>
+					<option value="Other">Other</option>
+				</select>
+			</td>
 		</tr>	
 		<tr>
 			<td>Weight</td>
@@ -89,7 +113,7 @@
 		</tr>
 		<tr>
 			<td>In-Stock</td>
-			<td><input type="text" name="in_stock" value="<%= in_stock %>" readonly></td>
+			<td><input type="text" name="in_stock" value="<%= in_stock %>"></td>
 		</tr>
 		<tr>
 			<td>Frame</td>
