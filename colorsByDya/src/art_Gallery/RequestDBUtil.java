@@ -1,6 +1,7 @@
 package art_Gallery;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -55,17 +56,22 @@ public class RequestDBUtil {
 	}
 	
 	//////////////////customer login
-       public static List<Request> validateCus(String userName, String pass){
+       public static List<Request> validateCus(int userID){
 		
 		ArrayList<Request> req = new ArrayList<>();
-		
-		//validate instead of session
+		PreparedStatement pst;
+		String UIDConverted = Integer.toString(userID);
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "select * from special_request sr, registered_customer rc where rc.username='"+userName+"' and rc.password='"+pass+"' and rc.customer_id=sr.c_customer_id";
-			rs = stmt.executeQuery(sql);
+			// String sql = "SELECT * FROM special_request sr, registered_customer rc WHERE rc.customer_id='"+userID+"' and rc.customer_id=sr.c_customer_id";
+			System.out.println("User ID in RequestDBUtil" + UIDConverted);
+			pst = con.prepareStatement("SELECT * FROM special_request sr, registered_customer rc WHERE rc.customer_id=? and rc.customer_id=sr.c_customer_id");
+			pst.setString(1, UIDConverted);
+			rs = pst.executeQuery();
+			// rs = stmt.executeQuery(sql);
+			System.out.println("After query execution...");
 			
 			while(rs.next()) {
 				int request_id = rs.getInt(1);
