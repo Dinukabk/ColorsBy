@@ -178,7 +178,7 @@
 		<url-pattern>/insertRequest</url-pattern>
 	</servlet-mapping>
 	
-<<<<<<< HEAD
+
 	<!-- gayashan -->
 	
 	 <servlet>
@@ -202,7 +202,7 @@
          </servlet-mapping>
 	<!-- gayashanEnd -->
 	
-=======
+
 	<servlet>
 		<servlet-name>requestLogin</servlet-name>
 		<servlet-class>art_Gallery.requestLoginServlet</servlet-class>
@@ -273,6 +273,6 @@
 		<url-pattern>/acceptNego</url-pattern>
 	</servlet-mapping>
   <!-- end of Loch -->
->>>>>>> refs/remotes/origin/master
+
 </web-app>
 
