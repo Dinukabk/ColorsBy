@@ -247,5 +247,6 @@
 		<servlet-name>negoAccept</servlet-name>
 		<url-pattern>/acceptNego</url-pattern>
 	</servlet-mapping>
+  <!-- end of Loch -->
 </web-app>
 

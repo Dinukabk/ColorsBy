@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/req2.css">
 <link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<title>Contact Us</title>
+<title>Contact us - Colors by Diyaa</title>
 
 </head>
 <body>
