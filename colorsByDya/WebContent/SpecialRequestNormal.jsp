@@ -6,6 +6,9 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="css/req2.css">
 <link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/home.css">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <title>Contact us - Colors by Diyaa</title>
 </head>
@@ -40,5 +43,8 @@
       </div>
       
    </div>
+   
+   <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
+   If you want to make a Special Request please <a href="index.jsp">LOG/REGISTER</a></div>
 </body>
 </html>

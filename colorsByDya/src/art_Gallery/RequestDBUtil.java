@@ -317,14 +317,15 @@ public class RequestDBUtil {
 	 * return req; }
 	 */
     
-    public static boolean updateNegoStatusAccept(String Id) {
+    public static boolean updateNegoStatusAccept(String ID) {
     	
-		int convertedID = Integer.parseInt(Id);
+    	//PreparedStatement pst;
+		int UIDConverted = Integer.parseInt(ID);
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "update negotiate_price set accepted=1 where price_req_id='"+convertedID+"'";
+			String sql = "update negotiate_price set accepted=1 where price_req_id='"+UIDConverted+"'";
 			
 			int rs = stmt.executeUpdate(sql);
 			

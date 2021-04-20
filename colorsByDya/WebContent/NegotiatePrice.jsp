@@ -5,7 +5,10 @@
 <head>
 <link rel="stylesheet" href="Styles/NegotiatePrice.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/home.css">
+<title>Negotiate Price - Colors by Diyaa</title>
 </head>
 <body>
   <h1>Negotiate the Price of the Painting</h1>

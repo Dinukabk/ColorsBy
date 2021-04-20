@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/req2.css">
 <link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -42,7 +45,7 @@
       
    </div>
    
-   <div >
+   <div>
       <form action="insertRequest" method="post" class="specialRForm">
       
       <fieldset>
