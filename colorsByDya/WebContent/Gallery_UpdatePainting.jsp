@@ -63,7 +63,7 @@
 	  			<label for="negotiate" >Negotiate Price</label>
 			</td>
 			<td>
-				<input type="radio" style="float: left" id="artworkRadioFixed" name="radio_price" value="artworkRadioFixed" onclick="ShowHideDiv()">
+				<input type="radio" id="artworkRadioFixed" name="radio_price" value="artworkRadioFixed" onclick="ShowHideDiv()">
 				<label for="fixed">Fixed Price</label>
 			</td>
 			<td>
