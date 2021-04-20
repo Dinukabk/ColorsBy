@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="Styles/SpeRequest.css">
+<link rel="stylesheet" href="css/req2.css">
 <link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<title>Contact Us</title>
+<title>Contact us - Colors by Diyaa</title>
 
 </head>
 <body>
@@ -22,44 +22,59 @@
         <h3>Phone Number</h3>
         <p>0714727470</p><br><br>
         <h3>Address</h3>
-        <p>blabla bla</p>
-      </div>
-      
-   </div>
-   
-   <div class="wrapper">
+        <p>blabla bla</p><br>
+        <div class="wrapper">
+   		<a href="https://www.facebook.com/Deepthiwije/">
         <div class="buttonIcon">
            <div class="icon"><i class="fab fa-facebook-f"></i></div>
            <span>Facebook</span>
         </div>
+        </a>
+        
         <div class="buttonIcon">
            <div class="icon"><i class="fab fa-instagram"></i></div>
            <span>Instagram</span>
         </div>
       </div>
-      <div >
-   <h2>We want to hear your feedback or Make a Special Request</h2>
+      <!-- form -->
+      
+      </div>
+      
+   </div>
    
-      <form action="insertRequest" method="post">
+   <div >
+      <form action="insertRequest" method="post" class="specialRForm">
+      
+      <fieldset>
+      <legend style="padding:20px 0; font-size:30px;">We like to have a Special Request from you:</legend>
       
             <label>Full Name</label><br>
-            <input type="text" placeholder="Enter Full Name" name="name"><br>
+            <input type="text" placeholder="Enter Full Name" name="name" class="SRInput"><br><br>
             <label>Phone Number</label><br>
-            <input type="text" placeholder="Enter Phone Number" name="phone"><br>
+            <input type="text" placeholder="Enter Phone Number" name="phone" class="SRInput"><br><br>
             <label>Email Address</label><br>
-            <input type="email" placeholder="Enter Email Address" name="email"><br>
+            <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput"><br><br>
+            <label>Message</label><br>
+            <textarea placeholder="Enter a message" name="message" class="SRInput"></textarea><br><br>
+            <label>Upload Your photograph that you want to be drawn</label><br>
+            <input type="file" name="photograph" size="50"><br><br>
+            <!-- <input type="text" placeholder="photograph" name="photograph"> -->
             <label>Address</label><br>
             <input type="text" placeholder="Line 01" name="add_line_01">
             <input type="text" placeholder="Line 02" name="add_line_02"><br>
-            <input type="text" placeholder="Postal Code" name="postal_code">
-            <input type="text" placeholder="Country" name="country"><br>
-            <input type="text" placeholder="Province" name="province">
-            <input type="text" placeholder="City" name="city"><br>
+            <input type="text" placeholder="Postal Code" name="postal_code">   
+            <input type="text" placeholder="Province" name="province"><br>
+            <input type="text" placeholder="City" name="city">
+            <input type="text" placeholder="Country" name="country"><br><br>
             <label>Choose the Artist</label>
-            	<select>
+            	<!-- <select>
             		<option>Deepthi Wijewardana</option>
-            	</select>
-            	<%-- <select>
+            	</select><br><br> -->
+            	<%@page import="java.sql.DriverManager"%>
+				<%@page import="java.sql.ResultSet"%>
+				<%@page import="java.sql.Statement"%>
+				<%@page import="java.sql.Connection"%>
+            	<select>
             		<%
             			try{
             				Class.forName("com.mysql.jdbc.Driver");
@@ -79,18 +94,21 @@
             				
             			}
             		%>
-            	</select><br> --%><br>
-            <label>Message</label><br>
-            <textarea placeholder="Enter a message" name="message"></textarea>
-            <label>Upload Your photograph that you want to be drawn</label><br>
-            <input type="file" name="photograph" size="50"><br><br>
+            	</select><br><br>
+            
+            
             
             <input type="reset" name="Reset" value="Reset">
-            <input type="submit" name="Submit" value="Send ">
+            <input type="submit" name="submit" value="Send ">
+            
+            </fieldset>
          </form>
    
    
    </div>
+   
+   
+      
 
 </body>
 </html>

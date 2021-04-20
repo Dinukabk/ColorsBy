@@ -37,6 +37,9 @@
 						<li class="nav-item">
 							<a onclick="location.href = 'SessionFlusher'" class="nav-link text-uppercase font-weight-bold">Log out</a>
 						</li>
+						<li class="nav-item">
+							<a onclick="location.href = 'SpecialReqNavServlet'" class="nav-link text-uppercase font-weight-bold">Contact US</a>
+						</li>
 					</ul>
 				</div>
 			</div>
