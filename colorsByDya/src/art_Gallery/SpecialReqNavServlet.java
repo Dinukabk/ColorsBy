@@ -1,7 +1,6 @@
 package art_Gallery;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +16,7 @@ public class SpecialReqNavServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		// Get session
+    // Get session
 		HttpSession session = request.getSession(false);
 
 		if (session.getAttribute("userID") != null) {
@@ -30,5 +29,4 @@ public class SpecialReqNavServlet extends HttpServlet {
 			RD.forward(request, response);
 		}
 	}
-
 }

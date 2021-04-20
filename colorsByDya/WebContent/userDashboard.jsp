@@ -35,6 +35,9 @@
 							<a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a>
 						</li>
 						<li class="nav-item">
+							<a href="SpecialRequest.jsp" class="nav-link text-uppercase font-weight-bold">Contact Us</a>
+						</li>
+						<li class="nav-item">
 							<a onclick="location.href = 'SessionFlusher'" class="nav-link text-uppercase font-weight-bold">Log out</a>
 						</li>
 						<li class="nav-item">
@@ -53,7 +56,7 @@
 			<header class="py-5 mt-5">
 				<h1 class="display-4">User Dash</h1>
 				<div class="container p-3 my-2 rounded col-md-4 float-left" style="background-color: rgba(255, 255, 255, 0.5);">
-					<button type="button" class="btn btn-primary" onclick="location.href = 'PaymentControllerServlet'">Payment</button>
+					<button type="button" class="btn btn-primary" onclick="location.href = 'PaymentControllerServlet'">Temporary Payment Button</button>
 				</div><br><br><br><br>
 				<p class="lead mb-0">Test 03</p>
 			</header>
