@@ -18,22 +18,27 @@ public class NegoAcceptServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		/*
-		 * String price_req_id = request.getParameter("price_req_id");
-		 * 
-		 * boolean isTrue;
-		 * 
-		 * isTrue = RequestDBUtil.updateNegoStatusAccept(price_req_id);
-		 * 
-		 * if(isTrue == true) {
-		 * 
-		 * RequestDispatcher dis = request.getRequestDispatcher("requestSuccess.jsp");
-		 * dis.forward(request, response); } else {
-		 * 
-		 * RequestDispatcher dis = request.getRequestDispatcher("requestUnsuccess.jsp");
-		 * dis.forward(request, response); }
-		 */
-		 try
+		try {
+		  String price_req_id = request.getParameter("price_req_id");
+		  
+		  boolean isTrue;
+		  
+		  isTrue = RequestDBUtil.updateNegoStatusAccept(price_req_id);
+		  
+		  if(isTrue == true) {
+		  
+		  RequestDispatcher dis = request.getRequestDispatcher("requestSuccess.jsp");
+		  dis.forward(request, response); 
+		  } 
+		  else {
+		  
+		  RequestDispatcher dis = request.getRequestDispatcher("requestUnsuccess.jsp");
+		  dis.forward(request, response); 
+		  }
+		  
+		}
+		 
+		 /*try
 	        {  
 	            Class.forName("oracle.jdbc.driver.OracleDriver");  
 	            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root"); 
@@ -48,10 +53,10 @@ public class NegoAcceptServlet extends HttpServlet {
 	            //stmt.executeUpdate(sql);
 	            //out.close();
 	            //stmt.executeUpdate("UPDATE APPROVAL SET STATUS='approved' WHERE EMAIL='e'");                  
-	        }
+	        }*/
 	        catch (Exception e2) 
 	        {
-
+	        	e2.printStackTrace();
 	        }
 	}
 

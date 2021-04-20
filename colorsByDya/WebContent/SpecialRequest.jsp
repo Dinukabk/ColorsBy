@@ -66,11 +66,15 @@
             <input type="text" placeholder="Province" name="province"><br>
             <input type="text" placeholder="City" name="city">
             <input type="text" placeholder="Country" name="country"><br><br>
-            <!-- <label>Choose the Artist</label>
-            	<select>
+            <label>Choose the Artist</label>
+            	<!-- <select>
             		<option>Deepthi Wijewardana</option>
             	</select><br><br> -->
-            	<%-- <select>
+            	<%@page import="java.sql.DriverManager"%>
+				<%@page import="java.sql.ResultSet"%>
+				<%@page import="java.sql.Statement"%>
+				<%@page import="java.sql.Connection"%>
+            	<select>
             		<%
             			try{
             				Class.forName("com.mysql.jdbc.Driver");
@@ -90,7 +94,7 @@
             				
             			}
             		%>
-            	</select><br> --%><br>
+            	</select><br><br>
             
             
             
