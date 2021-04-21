@@ -36,12 +36,10 @@
 							
 						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
 							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
-<<<<<<< HEAD
+
 						<li class="nav-item"><a onclick="location.href = 'ArtistLoginRedirector'"
 							class="nav-link text-uppercase font-weight-bold">Log in as an Artist</a></li>
-=======
-							
->>>>>>> refs/remotes/origin/achini
+
 						<li class="nav-item"><a onclick="location.href = 'SpecialReqNavServlet'"
 							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>
 					</ul>
