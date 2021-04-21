@@ -8,7 +8,7 @@
 <title>Add a card - Colors by Diyaa</title>
 <script src="./js/payments.js"></script>
 
-<link rel="stylesheet" href="./css/frontpage.css">
+<!-- <link rel="stylesheet" href="./css/frontpage.css"> -->
 
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
@@ -72,7 +72,7 @@
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
 
-<style>
+<!-- <style>
 $font-family:   "Roboto";
 $font-size:     14px;
 
@@ -179,6 +179,6 @@ body {
     -webkit-transform: translate3d(10px, 0, 0);
     transform: translate3d(10px, 0, 0);
   }	
-	
+	 -->
 </body>
 </html>

@@ -7,7 +7,7 @@
 <!-- Redirect to another page if a session doesn't exist -->
 <meta charset="ISO-8859-1">
 <title>Payment with card - Colors by Diyaa</title>
-<link rel="stylesheet" href="./css/frontpage.css">
+<!-- <link rel="stylesheet" href="./css/frontpage.css"> -->
 
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
@@ -91,7 +91,7 @@
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
 	
-<style>
+<!-- <style>
 $font-family:   "Roboto";
 $font-size:     14px;
 
@@ -197,6 +197,6 @@ body {
   20%, 40%, 60%, 80% {
     -webkit-transform: translate3d(10px, 0, 0);
     transform: translate3d(10px, 0, 0);
-  }	
+  }	 -->
 </body>
 </html>
