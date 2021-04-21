@@ -22,7 +22,7 @@ public class negotiateInsertServlet extends HttpServlet {
 		isTrue = RequestDBUtil.insertNegotiate(message);
 		
 		if(isTrue==true) {
-			RequestDispatcher dis = request.getRequestDispatcher("requestSuccess.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("Paintings.jsp");
 			dis.forward(request, response);
 		}
 		else {
