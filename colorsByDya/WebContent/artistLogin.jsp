@@ -1,10 +1,12 @@
+<!-- Artist Login -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Login to Colors By Diyaa</title>
+  <title>Artist - Login to Colors By Diyaa</title>
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -16,7 +18,7 @@
           <h1> Login</h1>
           <h2>Welcome Back!</h2>
 
-          <form action="LoginServlet" method="post">
+          <form action="ArtistLoginServlet" method="post">
 
             <div class="field-wrap">
             <label>
