@@ -163,7 +163,7 @@
     <description></description>
     
     <servlet-name>ArtistInsert</servlet-name>
-    <servlet-class>Art_Gallery.ArtistInsert</servlet-class>
+    <servlet-class>art_Gallery.ArtistInsert</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -174,7 +174,7 @@
   
   <servlet>
   <servlet-name>updateArtist</servlet-name>
-  <servlet-class>Art_Gallery.updateArtistServlet</servlet-class>
+  <servlet-class>art_Gallery.updateArtistServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
