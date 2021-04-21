@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">
 </head>
+<<<<<<< HEAD
 <body>
 	<!-- Navbar -->
 	<header class="header" class="py-5 mt-5">
@@ -22,6 +23,12 @@
 					class="navbar-toggler navbar-toggler-right">
 					<i class="fa fa-bars"></i>
 				</button>
+=======
+<h2>Colors By Diyaa</h2>
+  <div class="form">
+        <div id="signup">
+          <h1>Sign Up </h1>
+>>>>>>> refs/remotes/origin/Ashan
 
 				<div id="navbarSupportedContent" class="collapse navbar-collapse">
 					<ul class="navbar-nav ml-auto">
@@ -42,6 +49,104 @@
 		</nav>
 	</header>
 
+<<<<<<< HEAD
+=======
+          <!-- <div class="top-row"> -->
+            <div class="field-wrap">
+              <label>
+                Artist ID<span class="req">*</span>
+              </label>
+              <input type="text" name="artist_id" pattern="[A-Za-z.\s]{1,}"required autocomplete="off" />
+            </div>
+            <div class="field-wrap">
+            <label>
+              Name<span class="req">*</span>
+            </label>
+            <input type="text" name="name"  pattern="[A-Za-z.\s]{1,}" required autocomplete="off" "/>
+          </div>
+            <div class="field-wrap">
+              <label>
+                Phone Number<span class="req">*</span>
+              </label>
+              <input type="text" name="phone_no"  pattern="[A-Za-z]{1,}" required autocomplete="off" />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Email<span class="req">*</span>
+              </label>
+              <input type="text" name="email" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Description<span class="req">*</span>
+              </label>
+              <input type="text" name="discription" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            
+            <div class="field-wrap">
+              <label>
+                Address Line 1<span class="req">*</span>
+              </label>
+              <input type="text" name="add_line_01"  pattern="[A-Za-z]{1,}" required autocomplete="off" />
+            </div>
+            <div class="field-wrap">
+              <label>
+                Address Line 2<span class="req">*</span>
+              </label>
+              <input type="text" name="add_line_02" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            <div class="field-wrap">
+              <label>
+                Postal Code<span class="req">*</span>
+              </label>
+              <input type="text" name="postal_code" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Province<span class="req">*</span>
+              </label>
+              <input type="text" name="province" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                City<span class="req">*</span>
+              </label>
+              <input type="text" name="city" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Country<span class="req">*</span>
+              </label>
+              <input type="text" name="country" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                User Name<span class="req">*</span>
+              </label>
+              <input type="text" name="username" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Password<span class="req">*</span>
+              </label>
+              <input type="text" name="password" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                A_Admin_ID<span class="req">*</span>
+              </label>
+              <input type="text" name="a_admin_id" Pattern= "[A-Za-z]{1,}" required autocomplete="off"  />
+            </div>
+>>>>>>> refs/remotes/origin/Ashan
 
 	<!-- For demo purpose -->
 	<div class="container">
@@ -75,7 +180,33 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
+=======
+         
+          
+
+          <button type="submit" class="button button-block"/>Sign Up</button>
+
+          </form>
+
+        </div>
+
+     <!-- tab-content -->
+
+</div> 
+<!-- /form -->
+<%-- <% /* String passThis = request.getParameter("loginid");
+        request.setAttribute("param1",passThis); */
+        HttpSession httpSession = request.getSession();
+        String id = request.getParameter("email");
+        httpSession.setAttribute("login1",id );
+        %> --%>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+>>>>>>> refs/remotes/origin/Ashan
 </body>
 </html>

@@ -2,36 +2,33 @@ package art_Gallery;
 
 import java.sql.*;
 
-// Login validation function
 public class LoginDao {
-	private static int userID;
-	
-	public static int validate(String email, String pass) {        
-        // boolean status = false;
+	public static boolean validate(String name, String user,String pass) {        
+        boolean status = false;
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
-        String userName;
 
+        String url = "jdbc:mysql://localhost:3306/";
+        String dbName = "colorsbydiyaa";
+        String driver = "com.mysql.jdbc.Driver";
+        String userName = "root";
+        String password = "root";
         try {
-            // DB Connection
-        	conn = DatabaseUtilizer.utilizeConnection();
-        	pst = conn.prepareStatement("SELECT customer_id, full_name FROM registered_customer WHERE username=? and password=? ");
-            pst.setString(1, email);
-            pst.setString(2, pass);         
+            Class.forName(driver).newInstance();
+            conn = DriverManager
+                    .getConnection(url + dbName, userName, password);
+
+            pst = conn.prepareStatement("select * from login where username=? and usertype = ? and password=? ");
+            pst.setString(1, name);
+            pst.setString(2, user);
+            pst.setString(3, pass);
+           
+         
             rs = pst.executeQuery();
-            
-            // Final output
-            // status = rs.next();
-            
-            // Assigning userID to the session
-            while (rs.next()) {
-            	userID = rs.getInt(1);
-            	userName = rs.getString(2);
-            	CustomerSession CS = new CustomerSession(userName);
-            	return userID;
-            }
-            
+            status = rs.next();
+           
+
         } catch (Exception e) {
             System.out.println(e);
         } finally {
@@ -57,6 +54,6 @@ public class LoginDao {
                 }
             }
         }
-		return userID;
+        return status;
     }
 }

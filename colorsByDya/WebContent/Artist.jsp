@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="java.io.*"%>
+  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,73 +31,45 @@
     <a href="gallery_option.jsp">Gallery options</a>
      <a href="upload_paintings.jsp">Upload Paintings</a>
       <a href="frontpage.jsp">Logout</a>
-      <a href="#" class="navbar1"><% HttpSession httpSession=request.getSession();
-      								String id = request.getParameter("email");
-      								httpSession.setAttribute("login1",id );
-      								out.println("hii "+httpSession.getAttribute("login1"));
-      								String a = (String)httpSession.getAttribute("login1");
-      
-      
-      %></a>  
-</div>
-<div id="fh5co-main">
-		<div class="container">
 
-			<div class="row">
-
-        <div id="fh5co-board" data-columns>
-        <%
-String url = "jdbc:mysql://localhost:3306/";
-String dbName = "art_gallery";
-String driver = "com.mysql.jdbc.Driver";
-String userName = "root";
-String password = "rutuja8079";
-String a_id = null;
-String query= "select * from painting where email = '" + a + "'";
-try {
-    Class.forName(driver).newInstance();
-    Connection conn = DriverManager.getConnection(url + dbName, userName, password);
-	
-    Statement st = conn.createStatement();
-    ResultSet rs = st.executeQuery(query);
-    
-    while(rs.next()){
-    	%>
-    	<div class="item">
-        		<div class="animate-box">
-	        		<a href=<%= rs.getString("url") %> class="image-popup fh5co-board-img"><img src=<%= rs.getString("url") %> alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="image-popup fh5co-desc"><%= rs.getString("title") %>
-	        		
-	        		</div>
-        		</div>
-        		</div>
-   <%} %>
-   <%rs.close();
-   st.close();
-   conn.close();
-   }
-   catch (Exception e) {
-   }
-   %>
         	
         	
-         <<div class="item">
+         <div class="item">
         		<div class="animate-box">
 	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxlVqMSd30Qah-lV4zXbDimmEc0-BYovuJMdDvvAhNIU6l79Nd" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">#</div>
+	        		<div class="fh5co-desc"></div>
         		</div>
         	</div>
               	<div class="item">
         		<div class="animate-box">
 	        		<a href="images/img_30.jpg" class="image-popup fh5co-board-img"><img src="images/img_30.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">#</div>
+	        		<div class="fh5co-desc"></div>
         		</div>
         	</div> 
         </div>
-        </div>
-       </div>
-	</div>
+        
+        <c:forEach   var="art" items="${artistDetails }">
 
+${art.artist_id}
+${art.name}
+${art.phone_no}
+${art.email}
+${art.description}
+${art.add_line_01}
+${art.add_line_02}
+${art.postal_code}
+${art.provincce}
+${art.city}
+${art.country}
+${art.username}
+${art.password}
+${art.a_admin_id}
+
+</c:forEach>
+
+
+        
+       
 	<footer id="fh5co-footer">
 		
 		<div class="container">

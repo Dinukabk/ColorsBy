@@ -11,169 +11,180 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
+
 public class AdminPassword extends HttpServlet
 
 {
 
-	/**
+   /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException, IOException
 
-	{
-		doPost(req, res);
+    {
+        doPost(req,res);
 
-	}
+     }
 
-	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+  public void doPost(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
 
-	{
+    {
+	  
+     
+	  res.setContentType("text/html");  
+      PrintWriter pw = res.getWriter();  
+      Connection conn=null;
+        try
 
-		res.setContentType("text/html");
-		PrintWriter pw = res.getWriter();
-		Connection conn = null;
-		try
+       {
+        String url = "jdbc:mysql://localhost:3306/";
+        String dbName="colorbydiyaa";
+        String driver = "com.mysql.jdbc.Driver";
 
-		{
-			String url = "jdbc:mysql://localhost:3306/";
-			String dbName = "art_gallery";
-			String driver = "com.mysql.jdbc.Driver";
+        String user = "root";
 
-			String user = "root";
+        String pass = "root";
 
-			String pass = "rutuja8079";
+        HttpSession session=req.getSession();
+        
+        String email=req.getParameter("email");
+        String oldpwd=req.getParameter("oldpwd");
 
-			HttpSession session = req.getSession();
+        String newpwd=req.getParameter("newpwd");
 
-			String email = req.getParameter("email");
-			String oldpwd = req.getParameter("oldpwd");
+        String cnfpwd=req.getParameter("cnfpwd");
 
-			String newpwd = req.getParameter("newpwd");
+        if (newpwd.equals("") || cnfpwd.equals(""))
 
-			String cnfpwd = req.getParameter("cnfpwd");
+            {
 
-			if (newpwd.equals("") || cnfpwd.equals(""))
+                    pw.println("New Password and Comfirm password , both are required.");
+                    String msg = "New Password and Comfirm password , both are required.";
+                    req.setAttribute("reg", msg);
 
-			{
+                getServletContext().getRequestDispatcher("ChangePassword.jsp").forward(req,res);
 
-				pw.println("New Password and Comfirm password , both are required.");
-				String msg = "New Password and Comfirm password , both are required.";
-				req.setAttribute("reg", msg);
+                return;    
 
-				getServletContext().getRequestDispatcher("ChangePassword.jsp").forward(req, res);
+                }
 
-				return;
+                else if (!newpwd.equals(cnfpwd))
 
-			}
+            {
 
-			else if (!newpwd.equals(cnfpwd))
+                 pw.println("Your New password and confirm password does not match.");
 
-			{
+                 String msg = "Your New password and confirm password does not match.";
+                 req.setAttribute("reg", msg);
 
-				pw.println("Your New password and confirm password does not match.");
+                  getServletContext().getRequestDispatcher("ChangePassword.jsp").forward(req,res);
 
-				String msg = "Your New password and confirm password does not match.";
-				req.setAttribute("reg", msg);
+                return;
 
-				getServletContext().getRequestDispatcher("ChangePassword.jsp").forward(req, res);
+                }
 
-				return;
+        try
 
-			}
+        {    
+            Class.forName(driver).newInstance();
 
-			try
+            conn = DriverManager.getConnection(url+dbName,"root", "root");
+            
 
-			{
-				Class.forName(driver).newInstance();
+                try
 
-				conn = DriverManager.getConnection(url + dbName, "root", "rutuja8079");
+                {
 
-				try
+                     PreparedStatement ps=conn.prepareStatement("update login set password= ? where email=? and password= ?");
 
-				{
+                    try
 
-					PreparedStatement ps = conn
-							.prepareStatement("update login set password= ? where email=? and password= ?");
+                    {
 
-					try
+               
 
-					{
+                        ps.setString(1,newpwd);
 
-						ps.setString(1, newpwd);
+                        ps.setString(2, email );
 
-						ps.setString(2, email);
+                        ps.setString(3, oldpwd);
 
-						ps.setString(3, oldpwd);
+                        int i= ps.executeUpdate();
 
-						int i = ps.executeUpdate();
+                     if(i==0)
 
-						if (i == 0)
+                     {
 
-						{
+                       pw.println("Password doesnot Change..Try Again…");
+                       String msg = "Password doesnot Change..Try Again…";
+                        req.setAttribute("reg", msg);
 
-							pw.println("Password doesnot Change..Try Again…");
-							String msg = "Password doesnot Change..Try Again…";
-							req.setAttribute("reg", msg);
+                        RequestDispatcher rd=req.getRequestDispatcher("Forgot_password.jsp");  
+                        rd.forward(req,res);  
 
-							RequestDispatcher rd = req.getRequestDispatcher("Forgot_password.jsp");
-							rd.forward(req, res);
 
-							return;
+                    return;
 
-						}
+                     }
 
-						else {
-							pw.println("Your password Change Successfully….");
-							String msg = "Your password Change Successfully….";
-							req.setAttribute("reg", msg);
-							RequestDispatcher rd = req.getRequestDispatcher("Admin.jsp");
-							rd.forward(req, res);
-						}
+                    else
+                    {
+                      pw.println("Your password Change Successfully….");
+                       String msg = "Your password Change Successfully….";
+                        req.setAttribute("reg", msg);
+                        	RequestDispatcher rd=req.getRequestDispatcher("Admin.jsp");  
+                            rd.forward(req,res); 
+                        }
 
-						return;
+                        
 
-					}
+                    return;
+                    
 
-					finally
+                    }
 
-					{
+                    finally
 
-						ps.close();
+                    {
 
-					}
+                        ps.close();
 
-				}
+                    }
 
-				finally
+                }
 
-				{
+                finally
 
-					conn.close();
+                {
 
-				}
+                    conn.close();
 
-			}
+                }   
 
-			catch (Exception e)
+            }
 
-			{
+        catch(Exception e)
 
-				e.getMessage();
+        {
 
-			}
+            e.getMessage();
 
-		}
+        }
 
-		catch (Exception e)
+       }
 
-		{
+    catch(Exception e)
 
-			e.getMessage();
+    {
 
-		}
+        e.getMessage();
 
-	}
+    }
+
+   }
 
 }
+
