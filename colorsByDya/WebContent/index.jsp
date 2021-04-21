@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -30,10 +31,13 @@
 								class="sr-only"></span></a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link text-uppercase font-weight-bold">About</a></li>
-						<li class="nav-item"><a href="#"
+							
+						<li class="nav-item"><a onclick="location.href = 'Servlet_Gallery_All'"
 							class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+							
 						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
 							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
+							
 						<li class="nav-item"><a onclick="location.href = 'SpecialReqNavServlet'"
 							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>
 					</ul>
@@ -79,3 +83,4 @@
 	<script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
+

@@ -34,13 +34,31 @@ public class PaymentControllerServlet extends HttpServlet {
 			
 			// Checking if a payment card available on user profile
 			cardAvailability = PaymentsDatabaseUtil.checkCard(userID);
-			// List<Payment> paymentList = PaymentsDatabaseUtil.checkCardList(userID);
-			// Payment userName = paymentList.get(1);
 			String userName = PaymentsDatabaseUtil.getUserName(userID); 
 			
 			System.out.println("Card availability in payment servlet: " + cardAvailability);
+			
 			if (cardAvailability == true) {
+				System.out.println("Trying to add card details to servlet");
+				List<Payment> cardDetails = PaymentsDatabaseUtil.getCardDetails(userID);
+				System.out.println("Card details added to the servlet...");
+				
+//				int cardNo = cardDetails.get(0).getCardNo();
+//				String nameOnCard = cardDetails.get(1).getNameOnCard();
+//				int expDate = cardDetails.get(2).getExpDate();
+//				int cvv = cardDetails.get(3).getCvv();
+//				System.out.println("Card no: " + cardNo);
+//				System.out.println("Card name: " + nameOnCard);
+//				System.out.println("Card exp: " + expDate);
+//				System.out.println("Card cvv: " + cvv);
+//				
 				request.setAttribute("userName", userName);
+				request.setAttribute("cardDetails", cardDetails);
+//				request.setAttribute("cardNo", cardNo);
+//				request.setAttribute("nameOnCard", nameOnCard);
+//				request.setAttribute("expDate", expDate);
+//				request.setAttribute("cvv", cvv);
+				
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 				RD.forward(request, response);
 			} else {

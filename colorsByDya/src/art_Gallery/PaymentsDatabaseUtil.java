@@ -11,6 +11,7 @@ public class PaymentsDatabaseUtil {
 	private static boolean cardAvailability;
 	private static String userName;
 	private static boolean querySuccess;
+	private static ArrayList<Payment> cardList = new ArrayList<>();
 	
 	public static int getCartTotal(int userID) {
 		String UIDConverted = Integer.toString(userID);
@@ -70,44 +71,6 @@ public class PaymentsDatabaseUtil {
 		return cardAvailability;
 	}
 	
-	public static List<Payment> checkCardList(int userID) {
-		ArrayList<Payment> paymentArrL = new ArrayList<>();
-		Connection con;
-		PreparedStatement pst;
-		String UIDConverted = Integer.toString(userID);
-		ResultSet rs;
-		Boolean cardAvailability;
-		
-		try {
-			con = DatabaseUtilizer.utilizeConnection();
-			pst = con.prepareStatement("SELECT full_name, cardNumber FROM registered_customer WHERE customer_id = ?");
-			pst.setString(1, UIDConverted);
-			rs = pst.executeQuery();
-			
-			while(rs.next()) {
-				String userName = rs.getString(1);
-				System.out.println("Username in checkCardList: " + rs.getString(1));
-				
-				int cardNumber = rs.getInt(2);
-				System.out.println("Card number in checkCardList: " + rs.getInt(2));
-				
-				if (cardNumber > 0) {
-					cardAvailability = true;
-				} else {
-					cardAvailability = false;
-				}
-				
-				Payment payment = new Payment(userName, cardAvailability);
-				System.out.println("Card availability in checkCardList: " + cardAvailability);
-				
-				paymentArrL.add(payment);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return paymentArrL;		
-	}
-	
 	public static String getUserName(int userID) {
 		Connection con;
 		PreparedStatement pst;
@@ -137,7 +100,6 @@ public class PaymentsDatabaseUtil {
 		String UIDConverted = Integer.toString(userID);
 
 		try {
-
 			con = DatabaseUtilizer.utilizeConnection();
 			pst = con.prepareStatement(
 					"UPDATE registered_customer SET cardNumber = ?, nameOnCard = ?, expDate = ?, cvv = ? WHERE (customer_id = ?);");
@@ -158,5 +120,38 @@ public class PaymentsDatabaseUtil {
 			e.printStackTrace();
 		}
 		return querySuccess;
+	}
+	
+	public static List<Payment> getCardDetails(int userID){
+		String UIDConverted = Integer.toString(userID);
+		PreparedStatement pst;
+		Connection con;
+		ResultSet RS;
+		
+		try {
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement("SELECT cardNumber, nameOnCard, expDate, cvv FROM registered_customer WHERE customer_id=?");
+			pst.setString(1, UIDConverted);
+			RS = pst.executeQuery();
+			
+			while (RS.next()) {
+				int cardNo = RS.getInt(1);
+				String nameOnCard = RS.getString(2);
+				int expDate = RS.getInt(3);
+				int cvv = RS.getInt(4);
+				System.out.println("Card Number: " + cardNo);
+				System.out.println("Name on card: " + nameOnCard);
+				System.out.println("Expiry date: " + expDate);
+				System.out.println("CVV: " + cvv);
+				
+				Payment cardObj = new Payment(cardNo, nameOnCard, expDate, cvv);
+				System.out.println("Trying to add card details to payment.java");
+				cardList.add(cardObj);
+				System.out.println("Added...");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cardList;
 	}
 }

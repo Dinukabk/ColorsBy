@@ -64,15 +64,31 @@
 		<form action="#" method="post">
 			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
 			<p>Card Number:</p>
-			<input type="text" placeholder="Card Number" value="${cardNumber }" disabled>
+			<input type="text" placeholder="Card Number" value="${cardNo }" disabled>
 			<p>Name on Card:</p>
 			<input type="text" placeholder="Name on Card" value="${nameOnCard }" disabled>
 			<p>Expiration Date:</p>
 			<input type="text" placeholder="Expiration Date" value="${expDate }" disabled>
 			<p>CVV:</p>
-			<input type="text" placeholder="CVV" value="${CVV }" disabled> <br> 
+			<input type="text" placeholder="CVV" value="${cvv }" disabled> <br> 
 			<button type="submit" class="btn btn-primary">Pay now</button>
 		</form>
+	</div>
+
+	<!-- testDiv -->
+	<div class="container p-3 my-3 rounded col-md-4"
+		style="background-color: rgba(255, 255, 255, 0.5);">
+		<c:forEach var="card" items="${cardDetails }">
+
+			<tr>
+				<td>${card.cardNo}</td>
+				<td>${card.nameOnCard}</td>
+				<td>${card.expDate}</td>
+				<td>${card.cvv}</td>
+
+			</tr>
+
+		</c:forEach>
 	</div>
 </body>
 </html>
