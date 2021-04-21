@@ -26,7 +26,7 @@ public class RequestDBUtil {
 			
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "select * from special_request sr, artist a where a.name='"+userName+"' and a.pass='"+pass+"' and sr.artist_name=a.artist_id";
+			String sql = "select * from special_request sr, artist a where a.username='"+userName+"' and a.password='"+pass+"' and sr.artist_name=a.artist_id";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
@@ -327,7 +327,7 @@ public class RequestDBUtil {
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "select rc.full_name,rc.phone_no,p.title,p.image_url,np.message from negotiate_price np, artist a, painting p, registered_customer rc where a.name='"+userName+"' and a.pass='"+pass+"' and np.p_painting_id=p.painting_id and p.a_artist_id=a.artist_id and np.c_customer_id=rc.customer_id";
+			String sql = "select rc.full_name,rc.phone_no,p.title,p.image_url,np.message from negotiate_price np, artist a, painting p, registered_customer rc where a.username='"+userName+"' and a.password='"+pass+"' and np.p_painting_id=p.painting_id and p.a_artist_id=a.artist_id and np.c_customer_id=rc.customer_id";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
