@@ -151,8 +151,8 @@
             
             
             
-            <input  type="reset" name="Reset" value="Reset">
-            <input  type="submit" name="submit" value="Send ">
+            <input class = "btn btn1" type="reset" name="Reset" value="Reset">
+            <input class = "btn btn2" type="submit" name="submit" value="Send ">
             
             </fieldset>
          </form>
@@ -238,7 +238,7 @@ body {
 
 
 
-.btn {
+/* .btn {
     display: block;
     width: 100%;
     padding: 20px;
@@ -253,7 +253,7 @@ body {
     &:hover {
         background: darken($color-primary, 5%);
     }
-}
+} */
 
 @keyframes NO {
   from, to {
