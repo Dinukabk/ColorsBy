@@ -69,6 +69,8 @@
 						<td><%=rs.getString("frame") %></td>
 						<td><%=rs.getInt("a_artist_id") %></td>
 						<td><%=rs.getInt("c_cart_id") %></td>
+						<td><input type="button" id="negotiateButton" value="NEGOTIATE PRICE"></td>
+						<td><input type="button" id="cartButton" value="ADD TO CART"></td>
 						</tr>
 						
 			

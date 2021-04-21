@@ -4,38 +4,35 @@
 	<%@ page import="java.sql.*"%>
 <%@ page import="java.io.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	
-
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Upload Painting</title>
 
 <link rel="stylesheet" href="css/frontpage.css">
-<!-- 
+ 
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">
- -->
-<script type="text/javascript">
-	function ShowHideDiv() {
-	    var artworkRadioFixed = document.getElementById("artworkRadioFixed");
-	    var artworkFixedValue = document.getElementById("artworkFixedValue");
-	    artworkFixedValue.style.display = artworkRadioFixed.checked ? "block" : "none";
-	}
 
-</script>
+<script src="js/Gallery_JScript.js"></script>
 
+<!-- Preview image links -->
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+ 
 </head>
 <body>
 
 	
 <h2>Colors By Diyaa</h2>
 
-<div class="user">
+
+<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 
 	<form action="insertpaint" method="post" class="form">
-
+	<div style="float:;">
 		<div class="form__group">
 			<label>Title</label> 
 			<input type="text" id="artworkTitle" name="artworkTitle" placeholder="Enter Title of the Artwork here" required
@@ -49,18 +46,18 @@
 	  			oninput="this.setCustomValidity('')"	 class="form__input">
 		</div>
 		<div class="form__group">
-			<label style="float: left">Price</label> 
+			<label style="float: left">Price</label><br> 
 			<!-- <input type="text" id="artworkFixedValue" name="artworkFixedValue" placeholder="Enter Price of the Artwork here"> -->
 			
 			 
-			<input type="radio" style="float: left" id="artworkRadioNegotiate" name="radio_price" value="Negotiate Price" onclick="ShowHideDiv()"> 
+			<input type="radio" id="artworkRadioNegotiate" name="radio_price" value="Negotiate Price" onclick="ShowHideDiv()"> 
 	  			
-			<label for="negotiate" style="float: left">Negotiate Price</label>
+			<label for="negotiate">Negotiate Price</label>
 			
-			<input type="radio" style="float: left" id="artworkRadioFixed" name="radio_price" value="artworkRadioFixed" onclick="ShowHideDiv()">
+			<input type="radio" id="artworkRadioFixed" name="radio_price" value="artworkRadioFixed" onclick="ShowHideDiv()">
 			<label for="fixed">Fixed Price</label>
 			
-			<input type="number" style="display: none" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" placeholder="Enter Price of the Artwork here" >
+			<input type="number" class="form__input" style="display: none" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" placeholder="Enter Price of the Artwork here" >
 					
 					
 		</div>
@@ -86,39 +83,42 @@
 		</div>
 		<div>
 			<label>Drawn Date</label>
-			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here">
+			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here"  class="form__input">
 		</div>
 		
 		<div>
-			<label>Select Artwork : </label>
-			<!--
-			<input type="text" id="imagePainting" name="imagePainting" placeholder="Enter Image of the Artwork here">
-			-->
-			<input type="file" id="imagePainting" name="imagePainting" accept="image/*" required
+			<label>Select Artwork : </label> 
+			
+			<input type="file" onchange="readURL(this);" class="form__input" id="imagePainting" name="imagePainting" accept="image/*" required
 				oninvalid="this.setCustomValidity('Upload your Artwork Here')"
-	  			oninput="this.setCustomValidity('')" > 
+	  			oninput="this.setCustomValidity('')" >
+	  		<img id="imageGallery" src="#" alt="Selected Image" /> 
 	  			
 		</div>
+		</div>
+	
+		<div style="float:;">
 		<div>
 			<label>Length</label>
-			<input type="text" id="artworkLength" name="artworkLength" placeholder="Enter Length of the Artwork here">
+			<input type="text"  class="form__input" id="artworkLength" name="artworkLength" placeholder="Enter Length of the Artwork here">
 		</div>
 		<div>
 			<label>Width</label>
-			<input type="text" id="artworkWidth" name="artworkWidth" placeholder="Enter Width of the Artwork here">
+			<input type="text"  class="form__input" id="artworkWidth" name="artworkWidth" placeholder="Enter Width of the Artwork here">
 		</div>
 		
 		<div>
 			<label>Weight</label>
-			<input type="number" id="artworkWeight" name="artworkWeight" placeholder="Enter Weight of the Artwork here">
+			<input type="number"  class="form__input" id="artworkWeight" name="artworkWeight" placeholder="Enter Weight of the Artwork here">
 		</div>
 		<div>
 			<label>Material</label>
-			<input type="text" id="artworkMaterial" name="artworkMaterial" placeholder="Enter Material of the Artwork here">
+			<input type="text"  class="form__input" id="artworkMaterial" name="artworkMaterial" placeholder="Enter Material of the Artwork here">
 		</div>
 		<div>
 			<label>Frame</label>
-			<input type="text" id="artworkFrame" name="artworkFrame" placeholder="Enter Frame of the Artwork here">
+			<input type="text"  class="form__input" id="artworkFrame" name="artworkFrame" placeholder="Enter Frame of the Artwork here">
+		</div>
 		</div>
 		
 		<br>
@@ -186,6 +186,7 @@ body {
 }
 
 .form__input {
+	border-radius: 6px;
     display: block;
     width: 100%;
     padding: 20px;
@@ -260,6 +261,11 @@ body {
     100% {
         background-position: 0 0
     }
+}
+
+@media (min-width: 576px)
+.container {
+    max-width: 540px;
 }
 </style>
 
