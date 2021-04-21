@@ -13,9 +13,9 @@
 			font-family: Hind SemiBold;
 		}
 	
-		table, th, td {
+		/* table, th, td {
   			border: 1px solid black;
-		}
+		} */
 	</style>
 	
 	<link rel="stylesheet" href="css/frontpage.css">
@@ -29,8 +29,10 @@
 
 	<!-- <a onclick="location.href = 'Servlet_Gallery_All'" class="nav-link text-uppercase font-weight-bold">ADD NEW PAINTING</a> -->
 	<button><a href="UploadPaint.jsp">ADD NEW PAINTING </a></button> <br>
+	
+	<div class="table-responsive">
 
-	<table>
+	<table style="max-width: 340px;">
 		<c:forEach var="paint" items="${paintingDetails}">
 		
 		<c:set var="painting_id" value="${paint.painting_id}"/>
@@ -153,19 +155,23 @@
 		</c:url>
 		
 		<tr>
-			<td> 
+			<td> <div>
 				<a href="${paintingUpdate}">
-				<input type="button" name="edit" value="EDIT"> </a>
+				<input type="button" name="edit" value="EDIT" style="width:100%"> </a>
+				</div>
 		 	</td>
-			<td> 
+			<td> <div>
 				<a href="${paintingDelete}">
-				<input type="button" name="delete" value="DELETE"> </a>
+				<input type="button" name="delete" value="DELETE" style="width:100%"> </a>
+				</div>
 		 	</td>
 		</tr>
 				
 		</c:forEach>
 		
-		</table><br>
+		</table>
+		</div>
+		<br>
 	
 
 </body>

@@ -31,7 +31,7 @@ public class PaintingDBUtil {
 			connect = DBConnect_Painting.getConnection();
 			statement = connect.createStatement();
 			
-			String sql = "select * from artist where name='"+username+"' and password='"+password+"'";
+			String sql = "select * from artist where username='"+username+"' and password='"+password+"'";
 			
 			resultSet = statement.executeQuery(sql);
 			
