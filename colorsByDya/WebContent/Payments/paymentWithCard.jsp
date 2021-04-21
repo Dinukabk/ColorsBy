@@ -56,15 +56,17 @@
 		<dl class="row">
 			<dt class="col-sm-9">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
-			<!-- <h1>Test</h1> -->
+			<dt class="col-sm-9">Delivery Method:</dt>
+			<dd class="col-sm-3 text-right">NULL</dd>
 		</dl>
+		<button type="button" class="btn btn-primary" onclick="location.href = ''">Chose Delivery Method</button>
 	</div>
-
+	
 	<!-- Card -->
 	<div class="container p-3 my-3 rounded col-md-4"
 		style="background-color: rgba(255, 255, 255, 0.5);">
 		<form action="#" method="post">
-			<c:forEach var="card" items="${cardDetails }">
+			<c:forEach var="card" begin="0" end="0" items="${cardDetails }">
 				<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60"
 					height="36">
 				<p>Card Number:</p>
@@ -84,18 +86,5 @@
 		</form>
 	</div>
 
-	<%-- <!-- testDiv -->
-	<div class="container p-3 my-3 rounded col-md-4"
-		style="background-color: rgba(255, 255, 255, 0.5);">
-		<c:forEach var="card" items="${cardDetails }">
-			<tr>
-				<td>${card.cardNo}</td>
-				<td>${card.nameOnCard}</td>
-				<td>${card.expDate}</td>
-				<td>${card.cvv}</td>
-			</tr>
-
-		</c:forEach>
-	</div> --%>
 </body>
 </html>
