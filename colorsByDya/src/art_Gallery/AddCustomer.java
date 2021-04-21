@@ -15,7 +15,6 @@ public class AddCustomer extends HttpServlet {
 
 	public AddCustomer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
