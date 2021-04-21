@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
 <link rel="stylesheet" href="css/frontpage.css">
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -20,6 +21,8 @@
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="css/common.css">
 
 </head>
 <body>
@@ -113,8 +116,8 @@
             
             
             
-            <input type="reset" name="Reset" value="Reset">
-            <input type="submit" name="submit" value="Send ">
+            <input class = "btn btn1" type="reset" name="Reset" value="Reset">
+            <input class = "btn btn2" type="submit" name="submit" value="Send ">
             
             </fieldset>
          </form>
