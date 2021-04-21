@@ -26,6 +26,41 @@
 
 </head>
 <body>
+
+	<!-- Navbar -->
+	<div class="container" style="height: 132px;">
+		<header class="header" class="py-5 mt-5">
+			<nav class="navbar navbar-expand-lg fixed-top py-3">
+				<div class="container">
+					<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+					<button type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation"
+						class="navbar-toggler navbar-toggler-right">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<div id="navbarSupportedContent" class="collapse navbar-collapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Home <span
+									class="sr-only"></span></a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">About</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
+								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
+							<li class="nav-item"><a href="../Payments/payment.jsp"
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div><!-- end header -->
+	
     <h1>Contact Us</h1>
    <div class="contact-in">
    
@@ -116,15 +151,18 @@
             
             
             
-            <input class = "btn btn1" type="reset" name="Reset" value="Reset">
-            <input class = "btn btn2" type="submit" name="submit" value="Send ">
+            <input  type="reset" name="Reset" value="Reset">
+            <input  type="submit" name="submit" value="Send ">
             
             </fieldset>
          </form>
    
    
    </div>
-
+	
+	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
+	
 <style>
 $font-family:   "Roboto";
 $font-size:     14px;
