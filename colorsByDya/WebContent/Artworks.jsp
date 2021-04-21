@@ -18,6 +18,8 @@
 		}
 	</style>
 	
+	<link rel="stylesheet" href="css/frontpage.css">
+	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/home.css">
@@ -25,6 +27,8 @@
 </head>
 <body>
 
+	<!-- <a onclick="location.href = 'Servlet_Gallery_All'" class="nav-link text-uppercase font-weight-bold">ADD NEW PAINTING</a> -->
+	<button><a href="UploadPaint.jsp">ADD NEW PAINTING </a></button> <br>
 
 	<table>
 		<c:forEach var="paint" items="${paintingDetails}">

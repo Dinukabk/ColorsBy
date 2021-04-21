@@ -8,13 +8,33 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/Servlet_InsertPainting")
 
 public class Servlet_InsertPainting extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	/*
+	// Insert session
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		// Get session
+		HttpSession session = request.getSession(false);
 
+		 if (session.getAttribute("userID") != null) {
+		System.out.println("No user ID Detected in session...");
+		RequestDispatcher RD = request.getRequestDispatcher("Gallery_All_Logged.jsp");
+		RD.forward(request, response);
+		} else {
+		System.out.println("User ID detected in the session...");
+		RequestDispatcher RD = request.getRequestDispatcher("Gallery_All.jsp");
+		RD.forward(request, response);
+		}
+	}
+*/
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

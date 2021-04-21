@@ -16,18 +16,14 @@
 		}
 	</style>
 	
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="css/frontpage.css">
+ 
+<link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">
-	
-	<script type="text/javascript">
-		function ShowHideDiv() {
-		    var artworkRadioFixed = document.getElementById("artworkRadioFixed");
-		    var artworkFixedValue = document.getElementById("artworkFixedValue");
-		    artworkFixedValue.style.display = artworkRadioFixed.checked ? "block" : "none";
-		}
 
-</script>
+<script src="js/Gallery_JScript.js"></script>
+
 	
 </head>
 <body>
@@ -53,6 +49,7 @@
 		String c_cart_id = request.getParameter("c_cart_id");
 	%>
 	
+	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	
 	<form action="updatepaint" method="post">
 	<table>
@@ -71,17 +68,6 @@
 		<tr>
 			<td> Price</td>
 			<td><input type="text" name="price" value="<%= price %>"></td>
-			<td>
-				<input type="radio" id="artworkRadioNegotiate" name="radio_price" value="Negotiate Price" onclick="ShowHideDiv()"> 
-	  			<label for="negotiate" >Negotiate Price</label>
-			</td>
-			<td>
-				<input type="radio" id="artworkRadioFixed" name="radio_price" value="artworkRadioFixed" onclick="ShowHideDiv()">
-				<label for="fixed">Fixed Price</label>
-			</td>
-			<td>
-				<input type="number" style="display: none" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" placeholder="Enter Price of the Artwork here" >
-			</td>
 		</tr>
 		<tr>
 			<td>Drawn Date</td>
@@ -124,14 +110,15 @@
 			<td>Material</td>
 			<td><input type="text" name="material" value="<%= material %>"></td>
 		</tr>
-		<tr>
+		<%-- <tr>
 			<td>In-Stock</td>
 			<td><input type="text" name="in_stock" value="<%= in_stock %>"></td>
-		</tr>
+		</tr> --%>
 		<tr>
 			<td>Frame</td>
 			<td><input type="text" name="frame" value="<%= frame %>"></td>
 		</tr>
+		<%-- 
 		<tr>
 			<td>Artist ID</td>
 			<td><input type="text" name="a_artist_id" value="<%= a_artist_id %>" readonly></td>
@@ -139,7 +126,7 @@
 		<tr>
 			<td>Cart ID</td>
 			<td><input type="text" name="c_cart_id" value="<%= c_cart_id %>" readonly></td>
-		</tr>
+		</tr> --%>
 		
 	</table>
 	<br>
@@ -147,6 +134,7 @@
 	
 	</form>
 
+	</div>
 
 </body>
 </html>

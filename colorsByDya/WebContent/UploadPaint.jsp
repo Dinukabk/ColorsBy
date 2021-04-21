@@ -22,6 +22,15 @@
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
  
+ <style>
+    select:invalid{
+        color: gray;
+    }
+    option{
+        color: black;
+    }
+</style>
+ 
 </head>
 <body>
 
@@ -31,19 +40,21 @@
 
 <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 
-	<form action="insertpaint" method="post" class="form">
+	<form action="insertpaint" method="post" class="form" name="insertForm" onsubmit="return validateForm()">
 	<div style="float:;">
 		<div class="form__group">
 			<label>Title</label> 
 			<input type="text" id="artworkTitle" name="artworkTitle" placeholder="Enter Title of the Artwork here" required
 				oninvalid="this.setCustomValidity('Enter Title Here')"
-	  			oninput="this.setCustomValidity('')"	 class="form__input">
+	  			oninput="this.setCustomValidity('')" class="form__input">
 		</div>
 		<div class="form__group">
 			<label>Description</label>
+			<textarea rows="" cols="" id="artworkDescription" name="artworkDescription" placeholder="Enter Description of the Artwork here" class="form__input"></textarea>
+	  			<!-- required oninvalid= "alert('You must fill out the form!');"
 			<input type="text" id="artworkDescription" name="artworkDescription" placeholder="Enter Description of the Artwork here" required
 				oninvalid="this.setCustomValidity('Enter Description Here')"
-	  			oninput="this.setCustomValidity('')"	 class="form__input">
+	  			oninput="this.setCustomValidity('')"	 class="form__input"> -->
 		</div>
 		<div class="form__group">
 			<label style="float: left">Price</label><br> 
@@ -67,7 +78,11 @@
 			<input type="text" id="artworkCategory" name="artworkCategory" placeholder="Enter Category of the Artwork here">
 			 -->
 			 
-			<select name="artworkCategory" id="category"  class="form__input">
+			<select name="artworkCategory" id="category"  class="form__input" required
+				oninvalid="this.setCustomValidity('Choose a category here')"
+	  			oninput="this.setCustomValidity('')">
+	  			
+				<option value="" disabled selected hidden>Choose a category</option>
 				<option value="Abstract">Abstract</option>
 				<option value="Nature">Nature</option>
 				<option value="Black and White">Black n White</option>
@@ -83,7 +98,7 @@
 		</div>
 		<div>
 			<label>Drawn Date</label>
-			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here"  class="form__input">
+			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here" min="2014-05-11" max="2014-05-20"  class="form__input">
 		</div>
 		
 		<div>
@@ -91,7 +106,7 @@
 			<!--onchange="readURL(this);"  -->
 			
 			<input type="file"  onchange="readURL(this);" class="form__input" id="imagePainting" name="imagePainting" accept="image/*" required
-				oninvalid="this.setCustomValidity('Upload your Artwork Here')"
+				oninvalid="this.setCustomValidity('Upload your image Here')"
 	  			oninput="this.setCustomValidity('')" >
 	  		<img id="imageGallery" src="#" alt="Selected Image" /> 
 	  			
