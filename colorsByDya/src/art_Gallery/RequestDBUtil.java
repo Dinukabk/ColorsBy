@@ -122,17 +122,20 @@ public class RequestDBUtil {
 			
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
+			
 			/*
 			 * String sql =
 			 * "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+			 * 
 			 * + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			 */
+
+			  String sql ="insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+			  + "values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"',1,3)";
+			 
+			//create the mysql insert preparedstatement
+			//PreparedStatement preparedStmt = con.prepareStatement(sql); 
 			
-			String sql = "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
-					+ "values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"',1,3)";
-			
-			// create the mysql insert preparedstatement
-			/* PreparedStatement preparedStmt = con.prepareStatement(sql); */
 			/*
 			 * preparedStmt.setInt (1, 0); preparedStmt.setString (2, name);
 			 * preparedStmt.setInt (3, 123); preparedStmt.setString (4, email);
@@ -142,6 +145,7 @@ public class RequestDBUtil {
 			 * province); preparedStmt.setString (11, city); preparedStmt.setString (12,
 			 * country); preparedStmt.setInt (13, 1); preparedStmt.setInt (14, 3);
 			 */
+			 
 			
 			/* boolean rs = preparedStmt.execute(); */
 			int rs = stmt.executeUpdate(sql);
