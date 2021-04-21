@@ -13,6 +13,7 @@ public class DatabaseUtilizer{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url, userName, password);
+			System.out.println("connect!");
 		} catch (Exception e) {
 			System.out.println("DBConnection is not success...!");
 		}
