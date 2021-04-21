@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -52,6 +51,7 @@
 		<div class="pt-5 text-white">
 			<div class="py-5 mt-5">
 				<h1 class="display-4">This is test project</h1>
+		
 				<p class="lead mb-0">Get ready gys this is the home page heshan
 					make this</p>
 				<p class="lead mb-0">
