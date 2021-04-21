@@ -183,6 +183,21 @@
   </servlet-mapping>
   
   
+	<servlet>
+		<servlet-name>deleteArtist</servlet-name>
+		<servlet-class>art_Gallery.DeleteArtistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteArtist</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+	
+	
+  
+  
+  
+  
+  
   
   
  
