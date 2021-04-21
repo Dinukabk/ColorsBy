@@ -5,7 +5,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Negotiate List</title>
+<title>Negotiate List - Colors by Diyaa</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 	

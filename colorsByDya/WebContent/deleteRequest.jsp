@@ -4,7 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/home.css">
+<title>Delete - Colors by Diyaa</title>
 </head>
 <body>
 
@@ -25,6 +28,7 @@
 		String artist_name = request.getParameter("artist_name");
 	%>
 	
+	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	<form action="deleteRequest" method="post">
 		Request ID <input type="text" name="request_id" value="<%= request_id %>" readonly><br>
 		Name <input type="text" name="name" value="<%= name %>" readonly><br>
@@ -43,6 +47,7 @@
 		
 		<input type="submit" name="submit" value="Delete Request"><br>
 	</form>
+	</div>
 	
 </body>
 </html>
