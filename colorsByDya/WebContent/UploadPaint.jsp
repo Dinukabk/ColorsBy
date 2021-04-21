@@ -88,8 +88,9 @@
 		
 		<div>
 			<label>Select Artwork : </label> 
+			<!--onchange="readURL(this);"  -->
 			
-			<input type="file" onchange="readURL(this);" class="form__input" id="imagePainting" name="imagePainting" accept="image/*" required
+			<input type="file"  onchange="readURL(this);" class="form__input" id="imagePainting" name="imagePainting" accept="image/*" required
 				oninvalid="this.setCustomValidity('Upload your Artwork Here')"
 	  			oninput="this.setCustomValidity('')" >
 	  		<img id="imageGallery" src="#" alt="Selected Image" /> 
@@ -122,7 +123,7 @@
 		</div>
 		
 		<br>
-		<input type="submit" name="upload"value="Upload">
+		<input type="submit" name="upload"value="Upload" class="btn">
 </div>
 </form>
 
@@ -150,7 +151,7 @@ body {
     height: 100vh
 }
 
-.user {
+/* .user {
     width: 90%;
     max-width: 340px;
     margin: 10vh auto;
@@ -169,7 +170,7 @@ body {
     font-weight: 500;
     color: white;
 }
-
+ */
 .form {
     margin-top: 40px;
     border-radius: 6px;

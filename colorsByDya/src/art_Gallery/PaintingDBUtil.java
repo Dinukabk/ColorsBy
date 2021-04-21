@@ -17,8 +17,8 @@ public class PaintingDBUtil {
 	private static Connection connect = null;
 	private static Statement statement = null;
 	private static ResultSet resultSet = null;
-	
-	/*FileInputStream fs=null;
+	/*
+	FileInputStream fs=null;
 	PreparedStatement ps=null;
 	 
 	File f=new File("/home/prashant/Documents/image/mainjava.jpg");
@@ -97,7 +97,8 @@ public class PaintingDBUtil {
 		return isSuccess;		
 	} // insertPainting end
 	
-	// Retrieve data
+	
+	// 	RETRIEVE
 	
 	public static List<Painting> displayPaintingList(String username, String password){
 		
