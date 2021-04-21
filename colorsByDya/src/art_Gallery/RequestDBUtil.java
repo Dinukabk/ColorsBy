@@ -18,16 +18,22 @@ public class RequestDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-	public static List<Request> validate(String userName, String pass){
+	public static List<Request> validate(int artistUserID) {
+		String UIDConverted = Integer.toString(artistUserID);
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		Connection con;
 		
 		ArrayList<Request> req = new ArrayList<>();
 		
 		try {
-			
-			con = RequestDBConnector.getConnection();
-			stmt = con.createStatement();
-			String sql = "select * from special_request sr, artist a where a.username='"+userName+"' and a.password='"+pass+"' and sr.artist_name=a.artist_id";
-			rs = stmt.executeQuery(sql);
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement("SELECT * FROM special_request sr, artist a WHERE sr.artist_name=a.artist_id AND a.artist_id=?");
+			pst.setString(1, UIDConverted);
+			rs = pst.executeQuery();
+			// stmt = con.createStatement();
+			// String sql = "select * from special_request sr, artist a where a.username='"+userName+"' and a.password='"+pass+"' and sr.artist_name=a.artist_id";
+			// rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
 				int request_id = rs.getInt(1);
