@@ -57,11 +57,10 @@ Gallery:<input type="text" name="field8" placeholder="gallery *"  >
   
   
   
+  
+  
+  
 
-<div class="form-style-5">
-
-<br>
-<br>
     	
 
 
@@ -70,7 +69,7 @@ Gallery:<input type="text" name="field8" placeholder="gallery *"  >
 
  
  
-</div>
+
 </form>
 </body>
 </html>
