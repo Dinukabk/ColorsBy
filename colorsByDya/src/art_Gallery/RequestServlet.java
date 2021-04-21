@@ -1,6 +1,8 @@
 package art_Gallery;
 
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 //import java.io.InputStream;
 
@@ -30,7 +32,7 @@ public class RequestServlet extends HttpServlet {
 	    String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
 		String message = request.getParameter("message");
-	    String photograph = request.getParameter("photograph");
+	    String photograph = request.getParameter("photograph");// to get path of the image
 		//Part filePart = request.getPart("photograph");
 		String add_line_01 = request.getParameter("add_line_01");
 		String add_line_02 = request.getParameter("add_line_02");
@@ -38,6 +40,13 @@ public class RequestServlet extends HttpServlet {
 		String province = request.getParameter("province");
 		String city = request.getParameter("city");
 		String country = request.getParameter("country");
+		
+		
+		
+		
+		//fis contains bits and binaries of video
+		
+		//store data into Database and call the getconnection method
 		
 		/*
 		 * InputStream inputStream = null;
