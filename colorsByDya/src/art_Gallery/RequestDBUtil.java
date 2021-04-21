@@ -61,6 +61,7 @@ public class RequestDBUtil {
 		ArrayList<Request> req = new ArrayList<>();
 		PreparedStatement pst;
 		String UIDConverted = Integer.toString(userID);
+		//String imgConverted = blob.toString(userID);
 		
 		try {
 			con = RequestDBConnector.getConnection();
@@ -70,6 +71,8 @@ public class RequestDBUtil {
 			pst = con.prepareStatement("SELECT * FROM special_request sr, registered_customer rc WHERE rc.customer_id=? and rc.customer_id=sr.c_customer_id");
 			pst.setString(1, UIDConverted);
 			rs = pst.executeQuery();
+			
+			//pst.setBlob(6, photograph);
 			// rs = stmt.executeQuery(sql);
 			System.out.println("After query execution...");
 			
@@ -320,13 +323,17 @@ public class RequestDBUtil {
     public static boolean updateNegoStatusAccept(String ID) {
     	
     	//PreparedStatement pst;
-		int UIDConverted = Integer.parseInt(ID);
+		//int UIDConverted = Integer.parseInt(ID);
+    	//PreparedStatement pst;
+		//int UIDConverted = String.tont(ID);
+		int UIDConverted = Integer.valueOf(ID);
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "update negotiate_price set accepted=1 where price_req_id='"+UIDConverted+"'";
-			
+			//String sql = "update negotiate_price set accepted=1 where price_req_id='"+UIDConverted+"'";
+			String sql = "update negotiate_price set accepted=1 where price_req_id=1";
+			System.out.println("User ID in RequestDBUtil" + UIDConverted);
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs>0) {

@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/home.css">
 <title>Negotiate Price - Colors by Diyaa</title>
 
-<script src="js/Request.js"></script>
+<script src="js/negoPrice.js"></script>
 
 </head>
 <body>
@@ -37,6 +37,8 @@
   	</form>
   </div>
   <br>
-  <input type="button" name="cartBtn" value="Add to cart" disabled></div>
+  <input type="button" id="cart" name="cartBtn" value="Add to cart" disabled></div>
+  
+  <button onclick="buttonEnable()">Try it</button>
 </body>
 </html>
