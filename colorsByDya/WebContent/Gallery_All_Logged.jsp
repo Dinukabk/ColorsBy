@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,7 +71,10 @@
 						<td><%=rs.getString("frame") %></td>
 						<td><%=rs.getInt("a_artist_id") %></td>
 						<td><%=rs.getInt("c_cart_id") %></td>
-						<td><input type="button" id="negotiateButton" value="NEGOTIATE PRICE"></td>
+						
+						<td>
+							<input type="button" id="negotiateButton" value="NEGOTIATE PRICE">
+						</td>
 						<td><input type="button" id="cartButton" value="ADD TO CART"></td>
 						</tr>
 						
