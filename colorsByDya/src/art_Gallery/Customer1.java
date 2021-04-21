@@ -1,4 +1,7 @@
 package art_Gallery;
+
+/*Refer code only do not edit*/
+/*Get user details in JSP an put the details to java class */
 /*
  * package Art_Gallery;
  * 

@@ -237,6 +237,31 @@ version="2.5"
 		<url-pattern>/insertRequest</url-pattern>
 	</servlet-mapping>
 	
+
+	<!-- gayashan -->
+	
+	 <servlet>
+       	<servlet-name>login</servlet-name>
+         	<servlet-class>art_Gallery.Delivery.LoginServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>login</servlet-name>
+         	<url-pattern>/log</url-pattern>
+         </servlet-mapping>
+         
+         <servlet>
+         		<servlet-name>deliveryInsert</servlet-name>
+         		<servlet-class>art_Gallery.DeliveryInsert</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>deliveryInsert</servlet-name>
+         	<url-pattern>/Deliveyinsert</url-pattern>
+         </servlet-mapping>
+	<!-- gayashanEnd -->
+	
+
 	<servlet>
 		<servlet-name>requestLogin</servlet-name>
 		<servlet-class>art_Gallery.requestLoginServlet</servlet-class>
@@ -306,10 +331,7 @@ version="2.5"
 		<servlet-name>negoAccept</servlet-name>
 		<url-pattern>/acceptNego</url-pattern>
 	</servlet-mapping>
-	<!-- end of Loch -->
-	
-	<!-- Payment -->
-		<!-- for testing purposes -->
-	<!-- End of payment servlets -->
+  <!-- end of Loch -->
+
 </web-app>
 

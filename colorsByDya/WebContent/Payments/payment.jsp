@@ -36,10 +36,10 @@
 								class="nav-link text-uppercase font-weight-bold">About</a></li>
 							<li class="nav-item"><a href="#"
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-							<li class="nav-item"><a href="../index.jsp"
+							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">PaymentTemp</a></li>
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
 						</ul>
 					</div>
 				</div>
@@ -55,8 +55,7 @@
 			<dt class="col-sm-9">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
 		</dl>
-		<button type="button" class="btn btn-primary">Add payment
-			card</button>
+		<button type="button" class="btn btn-primary" onclick="location.href = 'PaymentAddCardServlet'">Add payment card</button>
 	</div>
 
 

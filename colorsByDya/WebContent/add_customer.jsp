@@ -156,22 +156,6 @@ input:required, textarea:required {
 			href="#home">Change Password</a> <a href="frontpage.jsp">Logout</a>
 	</div>
 
-	>>>>>>> refs/remotes/origin/Ashan
-<h1>Online Art Gallery</h1>
-<body>
-	<div class="navbar">
-		<a href="frontpage.jsp">Home</a> <a href="#news">About us</a> <a
-			href="#home">Change Password</a> <a href="frontpage.jsp">Logout</a>
-	</div>
-
-	<!-- 
-  ****************************************
-  Contest Entry for Treehouse:
-  "Design a Contact Form"
-  Submitted by Lisa Wagner
-  ****************************************
--->
-
 	<div id="contact-form">
 		<div>
 			<h1>Customers Details</h1>

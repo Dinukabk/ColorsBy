@@ -31,11 +31,21 @@
 	
 		<table border="2">
 			<tr>
-				<td>user ID</td>
-				<td>Birthday</td>
-				<td>Gender</td>
-				<td>First Name</td>
-				<td>Last Name</td>
+				<td>Painting ID</td>
+				<td>Title</td>
+				<td>Description</td>
+				<td>Price</td>
+				<td>Drawn Date</td>
+				<td>Category</td>
+				<td>Weight</td>
+				<td>Length</td>
+				<td>Width</td>
+				<td>Image</td>
+				<td>Material</td>
+				<td>In-stock</td>
+				<td>Frame</td>
+				<td>Artist ID</td>
+				<td>Cart ID</td>
 			</tr>
 			<%
 				try
@@ -55,11 +65,24 @@
 			
 			%>
 			
-						<tr><td><%=rs.getInt("userID") %></td></tr>
-						<tr><td><%=rs.getDate("dob") %></td></tr>
-						<tr><td><%=rs.getString("gender") %></td></tr>
-						<tr><td><%=rs.getString("firstName") %></td></tr>
-						<tr><td><%=rs.getString("lastName") %></td></tr>
+						<tr>
+						<td><%=rs.getInt("painting_id") %></td>
+						<td><%=rs.getString("title") %></td>
+						<td><%=rs.getString("description") %></td>
+						<td><%=rs.getString("price") %></td>
+						<td><%=rs.getDate("drawn_date") %></td>
+						<td><%=rs.getString("category") %></td>
+						<td><%=rs.getDouble("weight") %></td>
+						<td><%=rs.getDouble("length") %></td>
+						<td><%=rs.getDouble("width") %></td>
+						<td><%=rs.getString("image_url") %></td>
+						<td><%=rs.getString("material") %></td>
+						<td><%=rs.getString("in_stock") %></td>
+						<td><%=rs.getString("frame") %></td>
+						<td><%=rs.getInt("a_artist_id") %></td>
+						<td><%=rs.getInt("c_cart_id") %></td>
+						</tr>
+						
 			
 			 <%
 			

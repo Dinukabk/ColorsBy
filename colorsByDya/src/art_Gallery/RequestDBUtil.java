@@ -1,6 +1,7 @@
 package art_Gallery;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -55,17 +56,22 @@ public class RequestDBUtil {
 	}
 	
 	//////////////////customer login
-       public static List<Request> validateCus(String userName, String pass){
+       public static List<Request> validateCus(int userID){
 		
 		ArrayList<Request> req = new ArrayList<>();
-		
-		//validate instead of session
+		PreparedStatement pst;
+		String UIDConverted = Integer.toString(userID);
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "select * from special_request sr, registered_customer rc where rc.username='"+userName+"' and rc.password='"+pass+"' and rc.customer_id=sr.c_customer_id";
-			rs = stmt.executeQuery(sql);
+			// String sql = "SELECT * FROM special_request sr, registered_customer rc WHERE rc.customer_id='"+userID+"' and rc.customer_id=sr.c_customer_id";
+			System.out.println("User ID in RequestDBUtil" + UIDConverted);
+			pst = con.prepareStatement("SELECT * FROM special_request sr, registered_customer rc WHERE rc.customer_id=? and rc.customer_id=sr.c_customer_id");
+			pst.setString(1, UIDConverted);
+			rs = pst.executeQuery();
+			// rs = stmt.executeQuery(sql);
+			System.out.println("After query execution...");
 			
 			while(rs.next()) {
 				int request_id = rs.getInt(1);
@@ -100,13 +106,41 @@ public class RequestDBUtil {
 	public static boolean insertSRequest(String name,String phone,String email,String message,String photograph,
 			String add_line_01,String add_line_02,String postal_code,String province,String city,String country) {
 		
+		
+		/*
+		 * int convertedPhone = Integer.parseInt(phone); int convertedPostalCode =
+		 * Integer.parseInt(postal_code);
+		 */
+		 
+		
 		boolean isSuccess = false;
 		
 		try {
 			
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "insert into special_request values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"',1,3)";
+			/*
+			 * String sql =
+			 * "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+			 * + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			 */
+			
+			String sql = "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+					+ "values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"',1,3)";
+			
+			// create the mysql insert preparedstatement
+			/* PreparedStatement preparedStmt = con.prepareStatement(sql); */
+			/*
+			 * preparedStmt.setInt (1, 0); preparedStmt.setString (2, name);
+			 * preparedStmt.setInt (3, 123); preparedStmt.setString (4, email);
+			 * preparedStmt.setString (5, message); preparedStmt.setString (6, photograph);
+			 * preparedStmt.setString (7, add_line_01); preparedStmt.setString (8,
+			 * add_line_02); preparedStmt.setInt (9, 12); preparedStmt.setString (10,
+			 * province); preparedStmt.setString (11, city); preparedStmt.setString (12,
+			 * country); preparedStmt.setInt (13, 1); preparedStmt.setInt (14, 3);
+			 */
+			
+			/* boolean rs = preparedStmt.execute(); */
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs > 0) {
@@ -126,6 +160,7 @@ public class RequestDBUtil {
 	
 	public static boolean updateRequest(String request_id,String name,String phone,String email,String message,String photograph,
 			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,String c_customer_id,String artist_name) {
+		
 		
 		try {
 			con = RequestDBConnector.getConnection();
@@ -236,27 +271,26 @@ public class RequestDBUtil {
 	}
 	
 	/////Artist login for negotiate price
-    public static List<Negotiate> negotiateListValidate(String userName, String pass){
+    public static List<NegoAll> negotiateListValidate(String userName, String pass){
 		
-		ArrayList<Negotiate> req = new ArrayList<>();
+		ArrayList<NegoAll> req = new ArrayList<>();
 		
 		//validate instead of session
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "select * from negotiate_price np, artist a, painting p where a.name='"+userName+"' and a.pass='"+pass+"' and np.p_painting_id=p.painting_id and p.a_artist_id=a.artist_id";
+			String sql = "select rc.full_name,rc.phone_no,p.image_url,np.message from negotiate_price np, artist a, painting p, registered_customer rc where a.name='"+userName+"' and a.pass='"+pass+"' and np.p_painting_id=p.painting_id and p.a_artist_id=a.artist_id and np.c_customer_id=rc.customer_id";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
-
-				int price_req_id = rs.getInt(1);
-				String message = rs.getString(2);
-				int c_customer_id = rs.getInt(3);
-				int p_painting_id = rs.getInt(4);
-				boolean accepted = rs.getBoolean(5);
 				
-				Negotiate n = new Negotiate(price_req_id,message,c_customer_id,p_painting_id,accepted);
+				String full_name = rs.getString("full_name");
+				String phone_no = rs.getString("phone_no");
+				String image_url = rs.getString("image_url");
+				String message = rs.getString("message");
+				
+				NegoAll n = new NegoAll(full_name,phone_no,image_url,message);
 				req.add(n);
 			}
 			
@@ -269,12 +303,28 @@ public class RequestDBUtil {
 		
 	}
     
-    public static boolean updateNegoStatusAccept() {
+    //paint retrieving for the negotiate List
+	/*
+	 * public static List<RequestCustomer> negoPaintValidate(String userName, String
+	 * pass){
+	 * 
+	 * ArrayList<RequestCustomer> req = new ArrayList<>();
+	 * 
+	 * try { con = RequestDBConnector.getConnection(); stmt = con.createStatement();
+	 * String sql = "select * from registered_customer rc"; } catch(Exception e) {
+	 * e.printStackTrace(); }
+	 * 
+	 * return req; }
+	 */
+    
+    public static boolean updateNegoStatusAccept(String Id) {
+    	
+		int convertedID = Integer.parseInt(Id);
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "update negotiate_price set accepted=1";
+			String sql = "update negotiate_price set accepted=1 where price_req_id='"+convertedID+"'";
 			
 			int rs = stmt.executeUpdate(sql);
 			
@@ -291,9 +341,7 @@ public class RequestDBUtil {
 		return isSuccess;
 	}
     
-    public static boolean updateNegoStatusReject(String Id) {
-	
-	int convertedID = Integer.parseInt(Id);
+    public static boolean updateNegoStatusReject() {
 		
 		try {
 			con = RequestDBConnector.getConnection();

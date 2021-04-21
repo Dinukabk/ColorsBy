@@ -9,28 +9,29 @@
 </head>
 <body>
 	
-	<table>
+	<%-- <%String price_req_id = request.getParameter("price_req_id");%> --%>
+	<table border="1">
 	<c:forEach var="nego" items="${negoArtList}">
 	
 	<tr>
-		<th>Negotiate price ID</th>
+		<th>Customer Name</th>
+		<th>Phone Number</th>
+		<th>Painting</th>
 		<th>Price</th>
-		<th>Customer ID</th>
-		<th>Painting ID</th>
 		<th></th>
 	</tr>
 	
 	<tr>
-		<td>${nego.price_req_id}</td>
+		<td>${nego.full_name}</td>
+		<td>${nego.phone_no}</td>
+		<td>${nego.image_url}</td>
 		<td>${nego.message}</td>
-		<td>${nego.c_customer_id}</td>
-		<td>${nego.p_painting_id}</td>
 		<td>
 		
 		<input type="button" name="accept" onclick="location.href='NegoAcceptServlet'" value="Accept">
 		
 		
-		<input type="button" name="reject" value="Reject">
+		<input type="button" name="reject" onclick="location.href='NegoRejectServlet'" value="Reject">
 		</td>
 	</tr>
 
