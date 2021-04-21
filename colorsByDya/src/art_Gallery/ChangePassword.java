@@ -1,4 +1,4 @@
-package Art_Gallery;
+package art_Gallery;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 
 
-public class AdminPassword extends HttpServlet
+public class ChangePassword extends HttpServlet
 
 {
 
@@ -33,7 +33,9 @@ public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletE
 
     {
 	  
-     
+      String n=req.getParameter("email");  
+      String p=req.getParameter("password"); 
+      
 	  res.setContentType("text/html");  
       PrintWriter pw = res.getWriter();  
       Connection conn=null;
@@ -135,7 +137,7 @@ public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletE
                       pw.println("Your password Change Successfully….");
                        String msg = "Your password Change Successfully….";
                         req.setAttribute("reg", msg);
-                        	RequestDispatcher rd=req.getRequestDispatcher("Admin.jsp");  
+                        	RequestDispatcher rd=req.getRequestDispatcher("index1.jsp");  
                             rd.forward(req,res); 
                         }
 
