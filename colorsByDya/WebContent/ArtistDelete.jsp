@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/frontpage.css">
+
 	<meta charset="ISO-8859-1">
 	<title>Insert title here</title>
 </head>
@@ -18,8 +21,7 @@
  
 <div class="form-style-5">
 
-
-	<%
+<%
 	String artist_id = request.getParameter("artist_id");
 	String name = request.getParameter("name");
 	String phone_no = request.getParameter("phone_no");
@@ -34,12 +36,12 @@
 	String username = request.getParameter("username");
 	String password = request.getParameter("password");
 	String a_admin_id = request.getParameter("a_admin_id");
-	%>
-
-	<h1>Artist Account Delete</h1>
-
 	
-	<form action="delete" method="post">
+	%>
+	
+	<h1>Customer Account Delete</h1>
+
+	<form action="DeleteArtistServlet" method="post">
 	<table>
 		<tr>
 			<td>Artist ID</td>

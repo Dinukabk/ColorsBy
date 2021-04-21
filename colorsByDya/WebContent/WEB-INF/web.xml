@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<element>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <display-name>Colors By Diyaa</display-name>
+  <display-name>Art_Gallery_System</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -13,7 +15,7 @@
     <description></description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>Art_Gallery.LoginServlet</servlet-class>
+    <servlet-class>art_Gallery.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
@@ -23,7 +25,7 @@
     <description></description>
     <display-name>SignupServlet</display-name>
     <servlet-name>SignupServlet</servlet-name>
-    <servlet-class>Art_Gallery.SignupServlet</servlet-class>
+    <servlet-class>art_Gallery.SignupServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SignupServlet</servlet-name>
@@ -33,7 +35,7 @@
     <description></description>
     <display-name>Gallery</display-name>
     <servlet-name>Gallery</servlet-name>
-    <servlet-class>Art_Gallery.Gallery</servlet-class>
+    <servlet-class>art_Gallery.Gallery</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Gallery</servlet-name>
@@ -43,7 +45,7 @@
     <description></description>
     <display-name>Customer</display-name>
     <servlet-name>Customer</servlet-name>
-    <servlet-class>Art_Gallery.Customer</servlet-class>
+    <servlet-class>art_Gallery.Customer</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Customer</servlet-name>
@@ -53,7 +55,7 @@
     <description></description>
     <display-name>Signupservlet1</display-name>
     <servlet-name>Signupservlet1</servlet-name>
-    <servlet-class>Art_Gallery.Signupservlet1</servlet-class>
+    <servlet-class>art_Gallery.Signupservlet1</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Signupservlet1</servlet-name>
@@ -63,7 +65,7 @@
     <description></description>
     <display-name>UploadPainting</display-name>
     <servlet-name>UploadPainting</servlet-name>
-    <servlet-class>Art_Gallery.UploadPainting</servlet-class>
+    <servlet-class>art_Gallery.UploadPainting</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>UploadPainting</servlet-name>
@@ -73,7 +75,7 @@
     <description></description>
     <display-name>JoinGallery</display-name>
     <servlet-name>JoinGallery</servlet-name>
-    <servlet-class>Art_Gallery.JoinGallery</servlet-class>
+    <servlet-class>art_Gallery.JoinGallery</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>JoinGallery</servlet-name>
@@ -83,7 +85,7 @@
     <description></description>
     <display-name>Options</display-name>
     <servlet-name>Options</servlet-name>
-    <servlet-class>Art_Gallery.Options</servlet-class>
+    <servlet-class>art_Gallery.Options</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Options</servlet-name>
@@ -93,7 +95,7 @@
     <description></description>
     <display-name>AddGallery</display-name>
     <servlet-name>AddGallery</servlet-name>
-    <servlet-class>Art_Gallery.AddGallery</servlet-class>
+    <servlet-class>art_Gallery.AddGallery</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddGallery</servlet-name>
@@ -103,7 +105,7 @@
     <description></description>
     <display-name>AddExhibition</display-name>
     <servlet-name>AddExhibition</servlet-name>
-    <servlet-class>Art_Gallery.AddExhibition</servlet-class>
+    <servlet-class>art_Gallery.AddExhibition</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddExhibition</servlet-name>
@@ -113,7 +115,7 @@
     <description></description>
     <display-name>Edit</display-name>
     <servlet-name>Edit</servlet-name>
-    <servlet-class>Art_Gallery.Edit</servlet-class>
+    <servlet-class>art_Gallery.Edit</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Edit</servlet-name>
@@ -123,7 +125,7 @@
     <description></description>
     <display-name>AddCustomer</display-name>
     <servlet-name>AddCustomer</servlet-name>
-    <servlet-class>Art_Gallery.AddCustomer</servlet-class>
+    <servlet-class>art_Gallery.AddCustomer</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddCustomer</servlet-name>
@@ -133,7 +135,7 @@
     <description></description>
     <display-name>ChangePassword</display-name>
     <servlet-name>ChangePassword</servlet-name>
-    <servlet-class>Art_Gallery.ChangePassword</servlet-class>
+    <servlet-class>art_Gallery.ChangePassword</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ChangePassword</servlet-name>
@@ -143,7 +145,7 @@
     <description></description>
     <display-name>AdminPassword</display-name>
     <servlet-name>AdminPassword</servlet-name>
-    <servlet-class>Art_Gallery.AdminPassword</servlet-class>
+    <servlet-class>art_Gallery.AdminPassword</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminPassword</servlet-name>
@@ -153,13 +155,14 @@
     <description></description>
     <display-name>Pdf_generate</display-name>
     <servlet-name>Pdf_generate</servlet-name>
-    <servlet-class>Art_Gallery.Pdf_generate</servlet-class>
+    <servlet-class>art_Gallery.Pdf_generate</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Pdf_generate</servlet-name>
     <url-pattern>/Pdf_generate</url-pattern>
   </servlet-mapping>
-  <servlet>
+  
+   <servlet>
     <description></description>
     
     <servlet-name>ArtistInsert</servlet-name>
@@ -168,37 +171,40 @@
   
   <servlet-mapping>
   <servlet-name>ArtistInsert</servlet-name>
-  <url-pattern>/insert</url-pattern>
+  <url-pattern>/ArtistInsert</url-pattern>
   
   </servlet-mapping>
   
   <servlet>
-  <servlet-name>updateArtist</servlet-name>
+  <servlet-name>updateArtistServlet</servlet-name>
   <servlet-class>art_Gallery.updateArtistServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  <servlet-name>updateArtist</servlet-name>
-  <url-pattern>/update</url-pattern>
+  <servlet-name>updateArtistServlet</servlet-name>
+  <url-pattern>/updateArtistServlet</url-pattern>
   </servlet-mapping>
   
   
 	<servlet>
-		<servlet-name>deleteArtist</servlet-name>
+		<servlet-name>DeleteArtistServlet</servlet-name>
 		<servlet-class>art_Gallery.DeleteArtistServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>deleteArtist</servlet-name>
-		<url-pattern>/delete</url-pattern>
+		<servlet-name>DeleteArtistServlet</servlet-name>
+		<url-pattern>/DeleteArtistServlet</url-pattern>
 	</servlet-mapping>
 	
 	
   
   
   
+ 
   
   
   
   
  
 </web-app>
+
+</element>

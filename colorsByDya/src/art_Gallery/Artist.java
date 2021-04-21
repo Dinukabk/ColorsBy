@@ -2,7 +2,7 @@ package art_Gallery;
 
 public class Artist {
 	
-private int artist_id;
+private String artist_id;
 private String name;
 private String phone_no;
 private String email;
@@ -15,13 +15,13 @@ private String city;
 private String country;
 private String username;
 private String password;
-private int a_admin_id;
+private String a_admin_id;
 
 
 
-public Artist(int artist_id, String name, String phone_no, String email, String description, String add_line_01,
+public Artist(String artist_id, String name, String phone_no, String email, String description, String add_line_01,
 		String add_line_02, String postal_code, String province, String city, String country, String username,
-		String password, int a_admin_id) {
+		String password, String a_admin_id) {
 	// TODO Auto-generated constructor stub
 	super();
 	this.artist_id = artist_id;
@@ -40,7 +40,7 @@ public Artist(int artist_id, String name, String phone_no, String email, String 
 	this.a_admin_id = a_admin_id;
 }
 
-public  int getArtist_id() {
+public  String getArtist_id() {
 	return artist_id;
 }
 
@@ -124,7 +124,7 @@ public String getPassword() {
 
 
 
-public int getA_admin_id() {
+public String getA_admin_id() {
 	return a_admin_id;
 }
 

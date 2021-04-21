@@ -47,7 +47,7 @@
 	%>
 	
 	
-	<form action="update" method="post">
+	<form action="updateArtistServlet" method="post">
 	<table>
 		<tr>
 			<td>Artist ID</td>

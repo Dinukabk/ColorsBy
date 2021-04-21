@@ -14,7 +14,7 @@
         <div id="signup">
           <h1>Insert Artist Details</h1>
 
-          <form action="insert" method="post">
+          <form action="ArtistInsert" method="post">
 
           <!-- <div class="top-row"> -->
             <div class="field-wrap">
