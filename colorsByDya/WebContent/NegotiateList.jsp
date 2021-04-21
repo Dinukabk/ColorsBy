@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-	
+	<h1>Negotiate Price Requests</h1>
 	<%-- <%String price_req_id = request.getParameter("price_req_id");%> --%>
 	<table border="1">
 	
