@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Delivery Success Retrive page here</title>
+<title>Delivery Thank You here</title>
 </head>
 <body>
-	<h1>Delivery Details</h1>
+
+	<h2>Thank You!!</h2>
 	
-	
+	<input type="button" name="submit" value="FINISH">
 </body>
 </html>
