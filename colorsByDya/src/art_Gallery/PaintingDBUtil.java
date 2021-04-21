@@ -100,26 +100,24 @@ public class PaintingDBUtil {
 	
 	// 	RETRIEVE
 	
-	public static List<Painting> displayPaintingList(String username, String password){
-		
-		// id String to int conversion
-		//int convertedID = Integer.parseInt(painting_id);
-		
+	public static List<Painting> displayPaintingList(int artistUserID){
+		String UIDConverted = Integer.toString(artistUserID);
+		System.out.println("User ID in DB util: " + UIDConverted);
+		PreparedStatement pst = null;
+		ResultSet resultSet = null;
+		Connection con;
 		ArrayList<Painting> painting = new ArrayList<>();
 		
 		try {
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement("SELECT * FROM painting p, artist a WHERE p.a_artist_id = a.artist_id AND a.artist_id=?");
+			pst.setString(1, UIDConverted);
+			resultSet = pst.executeQuery();
 			
-			connect = DBConnect_Painting.getConnection();
-    		statement = connect.createStatement();
-    		
-    		//String sql = "select * from painting where painting_id ='"+convertedID+"'";
-    		String sql = "select * from painting p, artist a where a.name='"+username+"' and a.password='"+password+"' and p.a_artist_id = a.artist_id";
-    	    
-    		resultSet = statement.executeQuery(sql);
-    		
-    		while(resultSet.next()) {
+			while(resultSet.next()) {
     			
     			int paintingID = resultSet.getInt(1);
+    			System.out.println("Retrieved Painting ID: " + paintingID);
     			String title = resultSet.getString(2);
     			String description = resultSet.getString(3);
     			String price = resultSet.getString(4);
@@ -135,11 +133,7 @@ public class PaintingDBUtil {
     			int a_artist_id = resultSet.getInt(14);
     			int c_cart_id = resultSet.getInt(15);
     			
-    			//InputStream is = rs.getBinaryStream(columnIndex);
-    			
-    			// pass above values into Painting Class constructor as parameters
     			Painting objectPaint = new Painting(paintingID,  title,  description,  price,  drawn_date,  category,  weight,  length,  width,  image_url,  material,  in_stock,  frame, a_artist_id, c_cart_id);
-    			
     			painting.add(objectPaint);
     			
     		} // end of While

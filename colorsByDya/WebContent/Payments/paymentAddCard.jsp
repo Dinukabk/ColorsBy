@@ -53,13 +53,13 @@
 		<form action="PaymentAddCardFormServlet" method="post">
 			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
 			<p>Card Number:</p>
-			<input type="text" name="cardNumber" placeholder="Card Number">
+			<input type="number" name="cardNumber" placeholder="Card Number">
 			<p>Name on Card:</p>
 			<input type="text" name="nameOnCard" placeholder="Name on Card">
 			<p>Expiration Date:</p>
-			<input type="text" name="expDate" placeholder="Expiration Date">
+			<input type="number" name="expDate" placeholder="Expiration Date">
 			<p>CVV:</p>
-			<input type="text" name="cvv" placeholder="CVV"> <br> 
+			<input type="number" name="cvv" placeholder="CVV"> <br> 
 			<input type="checkbox" id="saveCard" name="saveCard" value="Save this card for future uses"> 
 			<label for="saveCard">Save this card for future uses</label><br>
 			<button type="submit" class="btn btn-primary">Pay now</button>
