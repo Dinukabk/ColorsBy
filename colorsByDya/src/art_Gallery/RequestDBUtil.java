@@ -1,5 +1,8 @@
 package art_Gallery;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,16 +18,22 @@ public class RequestDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-	public static List<Request> validate(String userName, String pass){
+	public static List<Request> validate(int artistUserID) {
+		String UIDConverted = Integer.toString(artistUserID);
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		Connection con;
 		
 		ArrayList<Request> req = new ArrayList<>();
 		
 		try {
-			
-			con = RequestDBConnector.getConnection();
-			stmt = con.createStatement();
-			String sql = "select * from special_request sr, artist a where a.name='"+userName+"' and a.pass='"+pass+"' and sr.artist_name=a.artist_id";
-			rs = stmt.executeQuery(sql);
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement("SELECT * FROM special_request sr, artist a WHERE sr.artist_name=a.artist_id AND a.artist_id=?");
+			pst.setString(1, UIDConverted);
+			rs = pst.executeQuery();
+			// stmt = con.createStatement();
+			// String sql = "select * from special_request sr, artist a where a.username='"+userName+"' and a.password='"+pass+"' and sr.artist_name=a.artist_id";
+			// rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
 				int request_id = rs.getInt(1);
@@ -61,6 +70,7 @@ public class RequestDBUtil {
 		ArrayList<Request> req = new ArrayList<>();
 		PreparedStatement pst;
 		String UIDConverted = Integer.toString(userID);
+		//String imgConverted = blob.toString(userID);
 		
 		try {
 			con = RequestDBConnector.getConnection();
@@ -70,6 +80,8 @@ public class RequestDBUtil {
 			pst = con.prepareStatement("SELECT * FROM special_request sr, registered_customer rc WHERE rc.customer_id=? and rc.customer_id=sr.c_customer_id");
 			pst.setString(1, UIDConverted);
 			rs = pst.executeQuery();
+			
+			//pst.setBlob(6, photograph);
 			// rs = stmt.executeQuery(sql);
 			System.out.println("After query execution...");
 			
@@ -119,31 +131,72 @@ public class RequestDBUtil {
 			
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			/*
-			 * String sql =
-			 * "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
-			 * + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-			 */
 			
-			String sql = "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
-					+ "values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+"','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+city+"','"+country+"',1,3)";
 			
-			// create the mysql insert preparedstatement
-			/* PreparedStatement preparedStmt = con.prepareStatement(sql); */
-			/*
-			 * preparedStmt.setInt (1, 0); preparedStmt.setString (2, name);
-			 * preparedStmt.setInt (3, 123); preparedStmt.setString (4, email);
-			 * preparedStmt.setString (5, message); preparedStmt.setString (6, photograph);
-			 * preparedStmt.setString (7, add_line_01); preparedStmt.setString (8,
-			 * add_line_02); preparedStmt.setInt (9, 12); preparedStmt.setString (10,
-			 * province); preparedStmt.setString (11, city); preparedStmt.setString (12,
-			 * country); preparedStmt.setInt (13, 1); preparedStmt.setInt (14, 3);
-			 */
+			 String sql =
+			 "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+			 
+			 + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			 
+
+				/*
+				 * String sql
+				 * ="insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+				 * + "values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+
+				 * "','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+
+				 * city+"','"+country+"',1,3)";
+				 */
+			 
+			//create the mysql insert preparedstatement
+			PreparedStatement preparedStmt = con.prepareStatement(sql);
+			
+			//URL url=getClass().getResource("/music/Whitewoods - College Kill Dream.mp3");
+		    //System.out.println(url.toString());
+			///FileInputStream fis = null;
+		    //String fileName = "\"C:/apache-tomcat-6.0.16/\r\n" + "  webapps/example/\"+\"images\\"+photograph;
+			
+			//take video file from given path so we use FileInputStream
+			//fis = new FileInputStream(new File(fileName));
+			
+			
+			 preparedStmt.setInt (1, 0);
+			 preparedStmt.setString (2, name);
+			 preparedStmt.setInt (3, 123); 
+			 preparedStmt.setString (4, email);
+			 preparedStmt.setString (5, message); 
+			 preparedStmt.setString (6, photograph);
+			 preparedStmt.setString (7, add_line_01); 
+			 preparedStmt.setString (8,add_line_02); 
+			 preparedStmt.setInt (9, 12); 
+			 preparedStmt.setString (10, province); 
+			 preparedStmt.setString (11, city); 
+			 preparedStmt.setString (12,country); 
+			 preparedStmt.setInt (13, 1); 
+			 preparedStmt.setInt (14, 3);
+			 
+			 int n = preparedStmt.executeUpdate();
+				/*
+				 * if(n>0) {
+				 * response.getWriter().println("<center>successfully uploaded</center>");
+				 * 
+				 * }
+				 */
+			  
+				/*
+				 * try { //PreparedStatement ps =
+				 * con.prepareStatement("insert into special_request(file) values(?)");
+				 * //ps.setBinaryStream(3, fis); //inser data to the database int n =
+				 * ps.executeUpdate(); if(n>0) {
+				 * response.getWriter().println("<center>successfully uploaded</center>");
+				 * 
+				 * } } catch(Exception e) { System.out.println(e); }
+				 */
+			 
 			
 			/* boolean rs = preparedStmt.execute(); */
-			int rs = stmt.executeUpdate(sql);
+			//int rs = stmt.executeUpdate(sql);
 			
-			if(rs > 0) {
+			if(n > 0) {
 				isSuccess = true;
 			}
 			else {
@@ -280,17 +333,18 @@ public class RequestDBUtil {
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "select rc.full_name,rc.phone_no,p.image_url,np.message from negotiate_price np, artist a, painting p, registered_customer rc where a.name='"+userName+"' and a.pass='"+pass+"' and np.p_painting_id=p.painting_id and p.a_artist_id=a.artist_id and np.c_customer_id=rc.customer_id";
+			String sql = "select rc.full_name,rc.phone_no,p.title,p.image_url,np.message from negotiate_price np, artist a, painting p, registered_customer rc where a.username='"+userName+"' and a.password='"+pass+"' and np.p_painting_id=p.painting_id and p.a_artist_id=a.artist_id and np.c_customer_id=rc.customer_id";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
 				
 				String full_name = rs.getString("full_name");
 				String phone_no = rs.getString("phone_no");
+				String title = rs.getString("title");
 				String image_url = rs.getString("image_url");
 				String message = rs.getString("message");
 				
-				NegoAll n = new NegoAll(full_name,phone_no,image_url,message);
+				NegoAll n = new NegoAll(full_name,phone_no,title,image_url,message);
 				req.add(n);
 			}
 			
@@ -320,13 +374,17 @@ public class RequestDBUtil {
     public static boolean updateNegoStatusAccept(String ID) {
     	
     	//PreparedStatement pst;
-		int UIDConverted = Integer.parseInt(ID);
+		//int UIDConverted = Integer.parseInt(ID);
+    	//PreparedStatement pst;
+		//int UIDConverted = String.tont(ID);
+		int UIDConverted = Integer.valueOf(ID);
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "update negotiate_price set accepted=1 where price_req_id='"+UIDConverted+"'";
-			
+			//String sql = "update negotiate_price set accepted=1 where price_req_id='"+UIDConverted+"'";
+			String sql = "update negotiate_price set accepted=1 where price_req_id=1";
+			System.out.println("User ID in RequestDBUtil" + UIDConverted);
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs>0) {

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,6 +15,7 @@
 	<div id="login d-flex justify-content-center" >
 		<center><img alt="logo" src="./pictures/Logo.png" width="300" height="300"></center>
 		<h1 class="h1 text-center mb-5 text-dark">Customer Login</h1>
+		
 		<form action="LoginServlet" method="post">
 			<div class="field-wrap">
 				<label class="text-dark h6">Email<span class="req text-danger">*</span></label> 
