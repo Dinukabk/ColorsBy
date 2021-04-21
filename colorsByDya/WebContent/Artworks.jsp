@@ -17,6 +17,10 @@
   			border: 1px solid black;
 		}
 	</style>
+	
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/home.css">
 
 </head>
 <body>

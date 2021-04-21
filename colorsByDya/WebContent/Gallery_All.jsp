@@ -22,89 +22,61 @@
 <body>
 	<h1>Gallery</h1>
 	
-	<table>
-		<c:forEach var="paint" items="${paintingDetails}">
-		
-		<c:set var="painting_id" value="${paint.painting_id}"/>
-		<c:set var="title" value="${paint.title}"/>
-		<c:set var="description" value="${paint.description}"/>
-		<c:set var="price" value="${paint.price}"/>
-		<c:set var="drawn_date" value="${paint.drawn_date}"/>
-		<c:set var="category" value="${paint.category}"/>
-		<c:set var="weight" value="${paint.weight}"/>
-		<c:set var="length" value="${paint.length}"/>
-		<c:set var="width" value="${paint.width}"/>
-		<c:set var="image_url" value="${paint.image_url}"/>
-		<c:set var="material" value="${paint.material}"/>
-		<c:set var="in_stock" value="${paint.in_stock}"/>
-		<c:set var="frame" value="${paint.frame}"/>
-		<c:set var="a_artist_id" value="${paint.a_artist_id}"/>
-		<c:set var="c_cart_id" value="${paint.c_cart_id}"/>
-		
-		<tr>
-			<td>Artwork ID</td>
-			<td>${paint.painting_id}</td>
-		</tr>
-		<tr>
-			<td> Title </td>
-			<td>${paint.title}</td>
-		</tr>
-		<tr>
-			<td>Description</td>
-			<td>${paint.description}</td>
-		</tr>
-		<tr>
-			<td>Price</td>
-			<td>${paint.price}</td>
-		</tr>
-		<tr>
-			<td>Drawn Date</td>
-			<td>${paint.drawn_date}</td>
-		</tr>
-		<tr>
-			<td>Category</td>
-			<td>${paint.category}</td>
-		</tr>
-		<tr>
-			<td> Weight</td>
-			<td>${paint.weight}</td>
-		</tr>
-		<tr>
-			<td>Length</td>
-			<td>${paint.length}</td>
-		</tr>
-		<tr>
-			<td>Width</td>
-			<td>${paint.width}</td>
-		</tr>
-		<tr>
-			<td> Image </td>
-			<td>${paint.image_url}</td>
-		</tr>
-		<tr>
-			<td> Material</td>
-			<td>${paint.material}</td>
-		</tr>
-		<tr>
-			<td> In-stock </td>
-			<td>${paint.in_stock}</td>
-		</tr>
-		<tr>
-			<td> Frame </td>
-			<td>${paint.frame}</td>
-		</tr>
-		<tr>
-			<td> Artist ID </td>
-			<td>${paint.a_artist_id}</td>
-		</tr>
-		<tr>
-			<td> Cart ID </td>
-			<td>${paint.c_cart_id}</td>
-		</tr>
-		
-		</c:forEach>
-		
-	</table>
+	<%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.Statement" %>
+	<%@ page import="java.sql.Connection" %>
+	<%@ page import="java.sql.DriverManager" %>
+	
+	<form method="post">
+	
+		<table border="2">
+			<tr>
+				<td>user ID</td>
+				<td>Birthday</td>
+				<td>Gender</td>
+				<td>First Name</td>
+				<td>Last Name</td>
+			</tr>
+			<%
+				try
+				{
+					Class.forName("com.mysql.jdbc.Driver");
+					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+					String username="root";
+					String password="root";
+					String query="select * from painting";
+					
+					Connection conn=DriverManager.getConnection(url, username, password);
+					Statement stmt=conn.createStatement();
+					ResultSet rs=stmt.executeQuery(query);
+					
+					while(rs.next())
+					{
+			
+			%>
+			
+						<tr><td><%=rs.getInt("userID") %></td></tr>
+						<tr><td><%=rs.getDate("dob") %></td></tr>
+						<tr><td><%=rs.getString("gender") %></td></tr>
+						<tr><td><%=rs.getString("firstName") %></td></tr>
+						<tr><td><%=rs.getString("lastName") %></td></tr>
+			
+			 <%
+			
+					}
+			%>
+		</table>
+		<%
+			rs.close();
+			stmt.close();
+			conn.close();
+			}
+			catch(Exception e)
+			{
+			e.printStackTrace();
+			}
+		%>
+	</form>
 	
 	
 
