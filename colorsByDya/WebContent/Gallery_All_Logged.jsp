@@ -85,7 +85,7 @@
 	
 	<form method="post">
 	
-		<table border="2">
+		<!-- <table border="2">
 			<tr>
 				<th>Painting ID</th>
 				<th>Title</th>
@@ -102,7 +102,7 @@
 				<th>Frame</th>
 				<th>Artist ID</th>
 				<th>Cart ID</th>
-			</tr>
+			</tr> -->
 			
 			<%
 				try
@@ -145,13 +145,13 @@
         	<div class="item">
         		<div class="animate-box">
 	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/img_23.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Lights</div>
+	        		<div class="fh5co-desc">Black and white</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
 	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/img_3.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Amazing Abstract</div>
+	        		<div class="fh5co-desc"> Abstract</div>
         		</div>
         	</div>
         	<div class="item">
@@ -163,13 +163,13 @@
         	<div class="item">
         		<div class="animate-box">
 	        		<a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="images/img_5.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
+	        		<div class="fh5co-desc"></div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
 	        		<a href="images/img_6.jpg" class="image-popup fh5co-board-img"><img src="images/img_6.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Sequi, eaque suscipit accusamus. Necessitatibus libero, unde a nesciunt repellendus!</div>
+	        		<div class="fh5co-desc"></div>
         		</div>
         	</div>
         	
@@ -179,7 +179,7 @@
 	</div>
 			
 			
-			
+			<%-- 
 						<tr>
 						<td><%=rs.getInt("painting_id") %></td>
 						<td><%=rs.getString("title") %></td>
@@ -203,7 +203,7 @@
 						<td><input type="button" id="cartButton" value="ADD TO CART"></td>
 						</tr>
 						
-			
+			 --%>
 			 <%
 			
 					}

@@ -29,7 +29,7 @@ public class Servlet_deletePainting extends HttpServlet {
 			//List<Customer> cusDetails = PaintingDBUtil.displayPaintingList(painting_id);
 			//request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dispatch1 = request.getRequestDispatcher("Artworks.jsp");
+			RequestDispatcher dispatch1 = request.getRequestDispatcher("Artist.jsp");
 			dispatch1.forward(request, response);
 		}
 		else {

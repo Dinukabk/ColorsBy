@@ -74,7 +74,7 @@
 		String c_cart_id = request.getParameter("c_cart_id");
 	%>
 	
-	<h1>Delete Painting</h1>
+	
 	
 	<form action="deletepaint" method="post">
 	

@@ -83,7 +83,7 @@ public class Servlet_InsertPainting extends HttpServlet {
 		insertSuccess = PaintingDBUtil.insertPainting(title, description, price, drawn_date, category, weight, length, width, image_url, material, frame);
 		 
 		 if(insertSuccess == true) {
-			 RequestDispatcher dispatchSuccess = request.getRequestDispatcher("userDashboard.jsp");
+			 RequestDispatcher dispatchSuccess = request.getRequestDispatcher("Artist.jsp");
 			 dispatchSuccess.forward(request, response);
 		 }
 		 else {
