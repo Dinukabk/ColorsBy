@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Gallery Logged</title>
 
-<link rel="stylesheet" href="css/frontpage.css"> 
+<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
 	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
@@ -55,7 +55,7 @@
 	</div>
 
 
-	<h1>Gallery Logged</h1>
+	
 	
 	<%@ page import="java.sql.ResultSet" %>
 	<%@ page import="java.sql.Statement" %>
@@ -66,21 +66,21 @@
 	
 		<table border="2">
 			<tr>
-				<td>Painting ID</td>
-				<td>Title</td>
-				<td>Description</td>
-				<td>Price</td>
-				<td>Drawn Date</td>
-				<td>Category</td>
-				<td>Weight</td>
-				<td>Length</td>
-				<td>Width</td>
-				<td>Image</td>
-				<td>Material</td>
-				<td>In-stock</td>
-				<td>Frame</td>
-				<td>Artist ID</td>
-				<td>Cart ID</td>
+				<th>Painting ID</th>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Drawn Date</th>
+				<th>Category</th>
+				<th>Weight</th>
+				<th>Length</th>
+				<th>Width</th>
+				<th>Image</th>
+				<th>Material</th>
+				<th>In-stock</th>
+				<th>Frame</th>
+				<th>Artist ID</th>
+				<th>Cart ID</th>
 			</tr>
 			<%
 				try
