@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/styles_Gallery.css">
 <title>Delete - Colors by Diyaa</title>
 </head>
 <body>
