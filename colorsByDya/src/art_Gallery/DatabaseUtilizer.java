@@ -1,4 +1,4 @@
- package art_Gallery;
+package art_Gallery;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

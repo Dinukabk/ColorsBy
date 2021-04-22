@@ -173,7 +173,7 @@ public class RequestDBUtil {
 			 preparedStmt.setString (11, city); 
 			 preparedStmt.setString (12,country); 
 			 preparedStmt.setInt (13, 1); 
-			 preparedStmt.setInt (14, 3);
+			 preparedStmt.setInt (14, 201);
 			 
 			 int n = preparedStmt.executeUpdate();
 				/*
