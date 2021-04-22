@@ -16,6 +16,7 @@
 <title>Contact us - Colors by Diyaa</title>
 
 <script src="js/Request.js"></script>
+<script src="js/request22.js"></script>
 <script src="js/Gallery_JScript.js"></script>
 
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
@@ -95,7 +96,7 @@
    </div>
    
    <div>
-      <form name="requestForm" action="insertRequest" method="post" class="specialRForm" onsubmit="return validateForm()">
+      <form name="requestForm" action="insertRequest" method="post" class="specialRForm" onsubmit="return validateForm()" >
       
       <fieldset>
       <legend style="padding:20px 0; font-size:30px;">We like to have a Special Request from you:</legend>

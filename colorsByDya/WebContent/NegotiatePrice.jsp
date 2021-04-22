@@ -62,7 +62,7 @@
   <center>
   <div>
   <!-- painting retrieve -->
-  <img src="images/deepthi_01.jpg" alt="Negotiate paint" width="300px" hight="300px">
+  <img src="images/deepthi_02.JPG" alt="Negotiate paint" width="300px" hight="300px">
   </div></center><br><br>
   
   <div>
