@@ -8,6 +8,27 @@
 <meta charset="ISO-8859-1">
 <title>Gallery Logged</title>
 
+<!-- Gallery testing links -->
+<script type="text/javascript" href="js/frontpage.js"></script>
+ -<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Google Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	
+	Animate.css
+	<link rel="stylesheet" href="css/animate.css">
+	Icomoon Icon Fonts
+	<link rel="stylesheet" href="css/icomoon.css">
+	Magnific Popup
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	Salvattore
+	<link rel="stylesheet" href="css/salvattore.css">
+	Theme Style
+	<link rel="stylesheet" href="css/style1.css">
+	Modernizr JS
+	<script src="js/modernizr-2.6.2.min.js"></script>
+
 <!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
 	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -82,6 +103,7 @@
 				<th>Artist ID</th>
 				<th>Cart ID</th>
 			</tr>
+			
 			<%
 				try
 				{
@@ -99,6 +121,64 @@
 					{
 			
 			%>
+			
+			
+			
+			<!--Gallery testing  -->
+			
+			<div id="fh5co-main">
+		<div class="container">
+
+			<div class="row">
+
+        <div id="fh5co-board" data-columns>
+
+        	<div class="item">
+        		<div class="animate-box">
+        			
+	        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
+	        		<img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
+        		</div>
+        		<div class="fh5co-desc"><input type="button" id="negotiateButton" value="NEGOTIATE PRICE">
+        		<input type="button" id="cartButton" value="ADD TO CART"><h4>Nature</h4></div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/img_23.jpg" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Lights</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/img_3.jpg" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Amazing Abstract</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/img_4.jpg" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Colour Pencils</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="images/img_5.jpg" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_6.jpg" class="image-popup fh5co-board-img"><img src="images/img_6.jpg" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Sequi, eaque suscipit accusamus. Necessitatibus libero, unde a nesciunt repellendus!</div>
+        		</div>
+        	</div>
+        	
+        	</div>
+        </div>
+       </div>
+	</div>
+			
+			
 			
 						<tr>
 						<td><%=rs.getInt("painting_id") %></td>
@@ -144,6 +224,22 @@
 	
 <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
+
+
+	jQuery
+	<script src="js/jquery.min.js"></script>
+	jQuery Easing
+	<script src="js/jquery.easing.1.3.js"></script>
+	Bootstrap
+	<script src="js/bootstrap.min.js"></script>
+	Waypoints
+	<script src="js/jquery.waypoints.min.js"></script>
+	Magnific Popup
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	Salvattore
+	<script src="js/salvattore.min.js"></script>
+	Main JS
+	<script src="js/main1.js"></script>
 
 
 </body>
