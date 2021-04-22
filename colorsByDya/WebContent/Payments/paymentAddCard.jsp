@@ -53,7 +53,10 @@
 	</div>
 
 	<!-- Card -->
-	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
+	<div class="container p-3 my-3 rounded col-md-4" style="
+			background-color: rgba(255, 255, 255, 0.9); 
+			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+		">
 		<form name="paymentForm" action="PaymentAddCardFormServlet" method="post" class="form" onsubmit="return validateForm()">
 			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
 			<p>Card Number:</p>

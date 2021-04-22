@@ -48,8 +48,10 @@
 	</div>
 
 	<!-- Order Summary -->
-	<div class="container p-3 my-2 rounded col-md-4"
-		style="background-color: rgba(255, 255, 255, 0.5);">
+	<div class="container p-3 my-2 rounded col-md-4" style="
+			background-color: rgba(255, 255, 255, 0.9); 
+			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+		">
 		<h3>Order Summary</h3>
 		<dl class="row">
 			<dt class="col-sm-9">Total:</dt>
