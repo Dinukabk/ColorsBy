@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Home - Colors by Diyaa</title>
 
-<link rel="stylesheet" href="css/frontpage.css"> 
+<!-- <link rel="stylesheet" href="css/frontpage.css">  -->
 	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">

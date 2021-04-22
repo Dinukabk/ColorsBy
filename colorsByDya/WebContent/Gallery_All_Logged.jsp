@@ -136,8 +136,8 @@
         	<div class="item">
         		<div class="animate-box">
         			
-	        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
-	        		<img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/deepthi_02.JPG" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
+	        		<img src="images/deepthi_02.JPG" alt="Free HTML5 Bootstrap template"></a>
         		</div>
         		<div class="fh5co-desc"><input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
         		<input type="button" id="cartButton" value="ADD TO CART"><h4>Nature</h4></div>
