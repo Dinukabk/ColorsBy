@@ -56,14 +56,14 @@ public class Servlet_updatePainting extends HttpServlet {
 			//List<Customer> cusDetails = PaintingDBUtil.displayPaintingList(painting_id);
 			//request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dispatch1 = request.getRequestDispatcher("userDashboard.jsp");
+			RequestDispatcher dispatch1 = request.getRequestDispatcher("Artist.jsp");
 			dispatch1.forward(request, response);
 		}
 		else {
 			//List<Customer> cusDetails = PaintingDBUtil.getCustomerDetails(id);
 			//request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dispatch2 = request.getRequestDispatcher("userDashboard.jsp");
+			RequestDispatcher dispatch2 = request.getRequestDispatcher("fail.jsp");
 			dispatch2.forward(request, response);
 		}
 	}
