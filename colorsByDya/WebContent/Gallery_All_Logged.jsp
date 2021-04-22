@@ -198,7 +198,7 @@
 						<td><%=rs.getInt("c_cart_id") %></td>
 						
 						<td>
-							<input type="button" id="negotiateButton" value="NEGOTIATE PRICE">
+							<input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
 						</td>
 						<td><input type="button" id="cartButton" value="ADD TO CART"></td>
 						</tr>
