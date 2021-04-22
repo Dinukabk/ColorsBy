@@ -277,31 +277,31 @@ function showSlides() {
 
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="images/DSC00099.JPG" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="images/DSC00099.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
         		</div>
         		<div class="fh5co-desc">Nature</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/DSC00095.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/img_23.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Lights</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/DSC00097.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/img_3.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Amazing Abstract</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/DSC00100.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/img_4.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Colour Pencils</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="images/DSC00103.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="images/img_5.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
         		</div>
         	</div>
