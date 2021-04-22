@@ -33,27 +33,37 @@ public class Servlet_updatePainting extends HttpServlet {
 		String material = request.getParameter("material");
 		String in_stock = request.getParameter("in_stock");
 		String frame = request.getParameter("frame");
-		String a_artist_id = request.getParameter("a_artist_id");
-		String c_cart_id = request.getParameter("c_cart_id");             // Then send this data to DBUtil to store in the database
+		/*
+		 * String a_artist_id = request.getParameter("a_artist_id"); String c_cart_id =
+		 * request.getParameter("c_cart_id");
+		 */           // Then send this data to DBUtil to store in the database
 		
 		boolean updateSuccess;
 		
-		updateSuccess = PaintingDBUtil.updatePainting(painting_id, title, description, price, drawn_date, category, weight, length, width, image_url, material, in_stock, frame, a_artist_id, c_cart_id); 
+		/*
+		 * updateSuccess = PaintingDBUtil.updatePainting(painting_id, title,
+		 * description, price, drawn_date, category, weight, length, width, image_url,
+		 * material, in_stock, frame, a_artist_id, c_cart_id);
+		 * 
+		 * 		 */
 		
+		updateSuccess = PaintingDBUtil.updatePainting(painting_id, title,
+				 description, price, drawn_date, category, weight, length, width, image_url,
+				 material, in_stock,frame);
 		if(updateSuccess == true) {
 			
 			// passing updated data
 			//List<Customer> cusDetails = PaintingDBUtil.displayPaintingList(painting_id);
 			//request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dispatch1 = request.getRequestDispatcher("Artworks.jsp");
+			RequestDispatcher dispatch1 = request.getRequestDispatcher("userDashboard.jsp");
 			dispatch1.forward(request, response);
 		}
 		else {
 			//List<Customer> cusDetails = PaintingDBUtil.getCustomerDetails(id);
 			//request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dispatch2 = request.getRequestDispatcher("Artworks.jsp");
+			RequestDispatcher dispatch2 = request.getRequestDispatcher("userDashboard.jsp");
 			dispatch2.forward(request, response);
 		}
 	}

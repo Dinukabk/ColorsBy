@@ -78,7 +78,7 @@
 		<div class="form__group">
 			<label>Title</label> 
 			<input type="text" id="artworkTitle" name="artworkTitle" placeholder="Enter Title of the Artwork here" required
-				oninvalid="this.setCustomValidity('Enter Title Here')"
+				oninvalid="this.setCustomValidity('Enter Title Here')" oninvalid= "alert('Please enter the Title');"
 	  			oninput="this.setCustomValidity('')" class="form__input">
 		</div>
 		<div class="form__group">

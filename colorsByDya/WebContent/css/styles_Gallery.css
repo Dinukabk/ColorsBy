@@ -74,23 +74,6 @@ body {
 
 
 
-.btn {
-    display: block;
-    width: 100%;
-    padding: 20px;
-    font-family: $font-family;
-    -webkit-appearance: none;
-    outline: 0;
-    border: 0;
-    color: black;
-    background: var(--color-primary);
-    transition: 0.3s;
-    
-    &:hover {
-        background: darken(var(--color-primary), 5%);
-    }
-}
-
 @keyframes NO {
   from, to {
     -webkit-transform: translate3d(0, 0, 0);
@@ -151,60 +134,9 @@ body {
     height: 100vh
 }
 
-/* .user {
-    width: 90%;
-    max-width: 340px;
-    margin: 10vh auto;
-}
-
-.user__header {
-    text-align: center;
-    opacity: 0;
-    transform: translate3d(0, 500px, 0);
-    animation: arrive 500ms ease-in-out 0.7s forwards;
-}
-
-.user__title {
-    font-size: $font-size;
-    margin-bottom: -10px;
-    font-weight: 500;
-    color: white;
-}
- */
-.form {
-    margin-top: 40px;
-    border-radius: 6px;
-    overflow: hidden;
-    opacity: 0;
-    transform: translate3d(0, 500px, 0);
-    animation: arrive 500ms ease-in-out 0.9s forwards;
-}
-
-.form--no {
-    animation: NO 1s ease-in-out;
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-}
-
-.form__input {
-	border-radius: 6px;
-    display: block;
-    width: 100%;
-    padding: 20px;
-    font-family: $font-family;
-    -webkit-appearance: none;
-    border: 0;
-    outline: 0;
-    transition: 0.3s;
-    
-    &:focus {
-        background: darken(#fff, 3%);
-    }
-}
-
-
-
 .btn {
+	width:auto; 
+	margin:0 auto;
     display: block;
     width: 100%;
     padding: 20px;
@@ -262,4 +194,23 @@ body {
     100% {
         background-position: 0 0
     }
+}
+
+
+
+* {box-sizing:border-box}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

@@ -55,30 +55,13 @@ public class PaintingDBUtil {
 		
 		isSuccess = false;
 		
-		//double price2 = Double.parseDouble(price);
-		
-		//Date drawn_date2 = Date.parse(drawn_date);
-		//double weight2 = Double.parseDouble(weight);
-		//double length2 = Double.parseDouble(length);
-		//double width2 = Double.parseDouble(width);
-		//String image_url = resultSet.getString(10);
-		//boolean in_stock = Double.parseDouble(price);
-		
-		
-		/*
-		 * create db connection 
-		 * 
-		 * String db_url ="jdbc:mysql://localhost:3306/colorbydiyaa"; 
-		 * String db_username = "root";
-		 * String db_password = "root";
-		 */
 		
 		try {
 			
 			connect = DBConnect_Painting.getConnection();
 			statement = connect.createStatement();
 			    		
-    		String sql = "insert into painting (title, description, price, drawn_date ,category ,weight, length, width, image_url ,material, frame) values('"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"','"+category+"' ,'"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', '"+frame+"')";
+    		String sql = "insert into painting (title, description, price, drawn_date ,category ,weight, length, width, image_url ,material, frame, a_artist_id, c_cart_id) values('"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"','"+category+"' ,'"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', '"+frame+"', 1, 1)";
     					
     		int resultSet = statement.executeUpdate(sql);
     		
@@ -150,14 +133,14 @@ public class PaintingDBUtil {
 	// 	UPDATE
 	
 	// Pass the variables in the Servlet as Parameters here
-	public static boolean updatePainting (String painting_id, String title, String description, String price, String drawn_date, String category, String weight, String length, String width, String image_url, String material, String in_stock, String frame, String a_artist_id, String c_cart_id) {
+	public static boolean updatePainting (String painting_id, String title, String description, String price, String drawn_date, String category, String weight, String length, String width, String image_url, String material, String in_stock, String frame) {
     	
     	try {
     		
     		connect = DBConnect_Painting.getConnection();
     		statement = connect.createStatement();
     		    		
-    		String sql = "UPDATE painting SET title='"+title+"' , description='"+description+"' , price='"+price+"' , drawn_date='"+drawn_date+"', category= '"+category+"', weight='"+weight+"' , length='"+length+"' , width='"+width+"' , image_url= '"+image_url+"', material='"+material+"' , in_stock= '"+in_stock+"', frame='"+frame+"', a_artist_id='"+a_artist_id+"',  c_cart_id='"+c_cart_id+"'"
+    		String sql = "UPDATE painting SET title='"+title+"' , description='"+description+"' , price='"+price+"' , drawn_date='"+drawn_date+"', category= '"+category+"', weight='"+weight+"' , length='"+length+"' , width='"+width+"' , image_url= '"+image_url+"', material='"+material+"' , in_stock= 1, frame='"+frame+"'"
     				+ "WHERE painting_id='"+painting_id+"'"; 
     		
     		int resultSet = statement.executeUpdate(sql);
