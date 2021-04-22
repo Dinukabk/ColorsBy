@@ -89,11 +89,11 @@
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	
 	<form action="updatepaint" method="post" onsubmit="return validateForm()">
-	<table style="border: 0px;"><%-- 
+	<table style="border: 0px;">
 		<tr>
 			<td>Painting ID</td>
 			<td><input type="text" name=painting_id value="<%= painting_id %>" readonly></td>
-		</tr> --%>
+		</tr> 
 		<tr>
 			<td>Title</td>
 			<td><input type="text" name="title" value="<%= title %>" required oninvalid= "alert('Please enter the title');"></td>
