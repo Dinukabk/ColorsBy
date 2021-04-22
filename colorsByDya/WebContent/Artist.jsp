@@ -31,7 +31,8 @@
 		<a href="My_profile.jsp">My Profile</a> 
 		<a href="Exhibition.jsp">Exhibitions</a>
 		<a href="gallery_option.jsp">Gallery options</a> 
-		<a onclick="location.href = 'Servlet_GalleryLogin'">ARTWORKS</a>
+		<a onclick="location.href = 'Servlet_GalleryLogin'">Artwork</a>
+		<a onclick="location.href = 'Servlet_AddPainting'">Upload Painting</a>
 		<a onclick="location.href = 'requestLoginServlet'">Special Requests</a>
 		<a onclick="location.href = 'NegoLoginServlet'">Negotiate Price Requests</a>
 		<a href="frontpage.jsp">Logout</a> 

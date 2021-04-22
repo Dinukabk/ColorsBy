@@ -27,6 +27,71 @@
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
 	
+	
+	
+ <div id="fh5co-main">
+		<div class="container">
+
+			<div class="row">
+
+        <div id="fh5co-board" data-columns>
+
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/DSC00099.JPG" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="images/DSC00099.JPG" alt="Free HTML5 Bootstrap template"></a>
+        		</div>
+        		<div class="fh5co-desc">Nature</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/DSC00095.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Lights</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/DSC00097.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Amazing Abstract</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/DSC00100.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Colour Pencils</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="images/DSC00103.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_6.jpg" class="image-popup fh5co-board-img"><img src="images/img_6.jpg" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Sequi, eaque suscipit accusamus. Necessitatibus libero, unde a nesciunt repellendus!</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_7.jpg" class="image-popup fh5co-board-img"><img src="images/img_7.jpg" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Necessitatibus distinctio eos ipsam cum hic temporibus assumenda deleniti, soluta.</div>
+        		</div>
+        	</div>
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="images/img_8.jpg" class="image-popup fh5co-board-img"><img src="images/img_8.jpg" alt="Free HTML5 Bootstrap template"></a>
+	        		<div class="fh5co-desc">Debitis voluptatum est error nulla voluptate eum maiores animi quasi?</div>
+        		</div>
+        	</div>
+        	
+        	</div>
+        </div>
+       </div>
+	</div>
+	
+	
+	
 	<form method="post">
 	
 		<table border="2">
@@ -83,6 +148,12 @@
 						<td><%=rs.getInt("c_cart_id") %></td>
 						</tr>
 						
+						<div class="item">
+	        				<div class="animate-box">
+			        		<a href="images/DSC00099.JPG" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="images/DSC00099.JPG" alt="Free HTML5 Bootstrap template"></a>
+			        		</div>
+		        			<div class="fh5co-desc">Nature</div>
+		        		</div>
 			
 			 <%
 			

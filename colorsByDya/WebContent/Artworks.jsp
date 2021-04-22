@@ -8,25 +8,58 @@
 <meta charset="ISO-8859-1">
 <title>Artist_ Artwork</title>
 
-<style type="text/css">
-		body{
-			font-family: Hind SemiBold;
-		}
-	
-		table, th, td {
-  			border: 1px solid black;
-		}
-	</style>
+	 <!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
 	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/home.css">
+	
+	<link rel="stylesheet" href="css/styles_Gallery.css">
+	
 
 </head>
 <body>
 
+	<!-- Navbar -->
+	<div class="container" style="height: 132px;">
+		<header class="header" class="py-5 mt-5">
+			<nav class="navbar navbar-expand-lg fixed-top py-3">
+				<div class="container">
+					<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+					<button type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation"
+						class="navbar-toggler navbar-toggler-right">
+						<i class="fa fa-bars"></i>
+					</button>
 
-	<table>
+					<div id="navbarSupportedContent" class="collapse navbar-collapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Home <span
+									class="sr-only"></span></a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">About</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
+								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
+							<li class="nav-item"><a href="../Payments/payment.jsp"
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
+
+
+
+		
+	<div class="table-responsive" style="width:auto; margin:0 auto;">
+
+	<table >
 		<c:forEach var="paint" items="${paintingDetails}">
 		
 		<c:set var="painting_id" value="${paint.painting_id}"/>
@@ -46,65 +79,37 @@
 		<c:set var="c_cart_id" value="${paint.c_cart_id}"/>
 		
 		<tr>
-			<td>Artwork ID</td>
-			<td>${paint.painting_id}</td>
+			<!-- <th>Artwork ID</th> -->
+			<th> Title </th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Drawn Date</th>
+			<th>Category</th>
+			<th> Weight</th>
+			<th>Length</th>
+			<th>Width</th>
+			<th> Image </th>
+			<th> Material</th>
+			<!-- <th> In-stock </th> -->
+			<th> Frame </th>
 		</tr>
-		<tr>
-			<td> Title </td>
+		<tr>	
+			
+			<%-- <td>${paint.painting_id}</td> --%>
 			<td>${paint.title}</td>
-		</tr>
-		<tr>
-			<td>Description</td>
 			<td>${paint.description}</td>
-		</tr>
-		<tr>
-			<td>Price</td>
 			<td>${paint.price}</td>
-		</tr>
-		<tr>
-			<td>Drawn Date</td>
 			<td>${paint.drawn_date}</td>
-		</tr>
-		<tr>
-			<td>Category</td>
 			<td>${paint.category}</td>
-		</tr>
-		<tr>
-			<td> Weight</td>
 			<td>${paint.weight}</td>
-		</tr>
-		<tr>
-			<td>Length</td>
 			<td>${paint.length}</td>
-		</tr>
-		<tr>
-			<td>Width</td>
 			<td>${paint.width}</td>
-		</tr>
-		<tr>
-			<td> Image </td>
 			<td>${paint.image_url}</td>
-		</tr>
-		<tr>
-			<td> Material</td>
 			<td>${paint.material}</td>
-		</tr>
-		<tr>
-			<td> In-stock </td>
-			<td>${paint.in_stock}</td>
-		</tr>
-		<tr>
-			<td> Frame </td>
+			<%-- <td>${paint.in_stock}</td> --%>
 			<td>${paint.frame}</td>
-		</tr>
-		<tr>
-			<td> Artist ID </td>
-			<td>${paint.a_artist_id}</td>
-		</tr>
-		<tr>
-			<td> Cart ID </td>
-			<td>${paint.c_cart_id}</td>
-		</tr>
+		
+		
 		
 		<c:url value="Gallery_UpdatePainting.jsp" var="paintingUpdate">
 		<!-- What data should be carried when going to Gallery_UpdatePainting page -->
@@ -128,7 +133,7 @@
 		</c:url>
 		
 		<c:url value="Gallery_DeletePainting.jsp" var="paintingDelete">
-		<!-- What data should be carried when going to Gallery_UpdatePainting page -->
+		<!-- What data should be carried when going to Gallery_DeletePainting page -->
 		
 			<c:param name="painting_id" value="${painting_id}"/>
 			<c:param name="title" value="${title}"/>
@@ -148,21 +153,27 @@
 			
 		</c:url>
 		
-		<tr>
-			<td> 
+		
+			<td> <div>
 				<a href="${paintingUpdate}">
-				<input type="button" name="edit" value="EDIT"> </a>
+				<input type="button" name="edit" value="EDIT" style="width:100%"> </a>
+				</div>
 		 	</td>
-			<td> 
+			<td> <div>
 				<a href="${paintingDelete}">
-				<input type="button" name="delete" value="DELETE"> </a>
+				<input type="button" name="delete" value="DELETE" style="width:100%"> </a>
+				</div>
 		 	</td>
 		</tr>
 				
 		</c:forEach>
 		
-		</table><br>
-	
+		</table>
+		</div>
+		<br><br>
+		
+<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
 
 </body>
 </html>

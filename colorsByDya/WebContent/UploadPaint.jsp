@@ -9,7 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>Upload Painting</title>
 
-<link rel="stylesheet" href="css/frontpage.css">
+<!-- <link rel="stylesheet" href="css/frontpage.css"> -->
  
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
@@ -22,28 +22,72 @@
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
  
+ <style>
+    select:invalid{
+        color: gray;
+    }
+    option{
+        color: black;
+    }
+</style>
+ 
 </head>
 <body>
 
-	
-<h2>Colors By Diyaa</h2>
+<!-- Navbar -->
+	<div class="container" style="height: 132px;">
+		<header class="header" class="py-5 mt-5">
+			<nav class="navbar navbar-expand-lg fixed-top py-3">
+				<div class="container">
+					<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+					<button type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation"
+						class="navbar-toggler navbar-toggler-right">
+						<i class="fa fa-bars"></i>
+					</button>
 
+					<div id="navbarSupportedContent" class="collapse navbar-collapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Home <span
+									class="sr-only"></span></a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">About</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
+								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
+							<li class="nav-item"><a href="../Payments/payment.jsp"
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
+
+	
+<br>
 
 <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 
-	<form action="insertpaint" method="post" class="form">
+	<form action="insertpaint" method="post" class="form" name="insertForm" onsubmit="return validateForm()">
 	<div style="float:;">
 		<div class="form__group">
 			<label>Title</label> 
 			<input type="text" id="artworkTitle" name="artworkTitle" placeholder="Enter Title of the Artwork here" required
-				oninvalid="this.setCustomValidity('Enter Title Here')"
-	  			oninput="this.setCustomValidity('')"	 class="form__input">
+				oninvalid="this.setCustomValidity('Enter Title Here')" oninvalid= "alert('Please enter the Title');"
+	  			oninput="this.setCustomValidity('')" class="form__input">
 		</div>
 		<div class="form__group">
 			<label>Description</label>
+			<textarea rows="" cols="" id="artworkDescription" name="artworkDescription" placeholder="Enter Description of the Artwork here" class="form__input"></textarea>
+	  			<!-- required oninvalid= "alert('You must fill out the form!');"
 			<input type="text" id="artworkDescription" name="artworkDescription" placeholder="Enter Description of the Artwork here" required
 				oninvalid="this.setCustomValidity('Enter Description Here')"
-	  			oninput="this.setCustomValidity('')"	 class="form__input">
+	  			oninput="this.setCustomValidity('')"	 class="form__input"> -->
 		</div>
 		<div class="form__group">
 			<label style="float: left">Price</label><br> 
@@ -67,7 +111,11 @@
 			<input type="text" id="artworkCategory" name="artworkCategory" placeholder="Enter Category of the Artwork here">
 			 -->
 			 
-			<select name="artworkCategory" id="category"  class="form__input">
+			<select name="artworkCategory" id="category"  class="form__input" required
+				oninvalid="this.setCustomValidity('Choose a category here')"
+	  			oninput="this.setCustomValidity('')">
+	  			
+				<option value="" disabled selected hidden>Choose a category</option>
 				<option value="Abstract">Abstract</option>
 				<option value="Nature">Nature</option>
 				<option value="Black and White">Black n White</option>
@@ -79,11 +127,11 @@
 				<option value="Other">Other</option>
 			</select>
 				
-				
+				<!--  -->
 		</div>
 		<div>
 			<label>Drawn Date</label>
-			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here"  class="form__input">
+			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here" min="1970-01-01" max="2021-04-22"  class="form__input">
 		</div>
 		
 		<div>
@@ -91,7 +139,7 @@
 			<!--onchange="readURL(this);"  -->
 			
 			<input type="file"  onchange="readURL(this);" class="form__input" id="imagePainting" name="imagePainting" accept="image/*" required
-				oninvalid="this.setCustomValidity('Upload your Artwork Here')"
+				oninvalid="this.setCustomValidity('Upload your image Here')"
 	  			oninput="this.setCustomValidity('')" >
 	  		<img id="imageGallery" src="#" alt="Selected Image" /> 
 	  			
@@ -135,7 +183,7 @@ $font-size:     14px;
 
 $color-primary: #ABA194;
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -263,13 +311,15 @@ body {
         background-position: 0 0
     }
 }
-
+ */
 @media (min-width: 576px)
 .container {
     max-width: 540px;
 }
 </style>
 
+<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
 	
 </body>
 </html>

@@ -22,3 +22,31 @@ function readURL(input) {
                 reader.readAsDataURL(input.files[0]);
             }
         }
+
+// Form filled validation
+function validateForm() {
+	var x1 = document.forms["insertForm"]["artworkTitle"].value;
+      if (x1 == "") {
+	    alert("Title must be filled out");
+	    return false;
+	  }
+
+	/*var x2 = document.forms["insertForm"]["radio_price"].value;
+      if (x2 == "") {
+	    alert("Price Number must be filled out");
+	    return false;
+	  }*/
+
+	var x3 = document.forms["insertForm"]["artworkCategory"].value;
+      if (x3 == "") {
+	    alert("Category must be chosen");
+	    return false;
+	  }
+	  
+	var x4 = document.forms["insertForm"]["imagePainting"].value;
+      if (x4 == "") {
+	    alert("Image must be selected");
+	    return false;
+	  }
+
+}

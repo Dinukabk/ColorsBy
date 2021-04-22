@@ -277,25 +277,25 @@ function showSlides() {
 
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP5gbBJlpb9xTj7CYBT-p4e-oqjniHdvwe8tnMG0Srr-SfbxZ5" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP5gbBJlpb9xTj7CYBT-p4e-oqjniHdvwe8tnMG0Srr-SfbxZ5" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
         		</div>
         		<div class="fh5co-desc">Nature</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/img_23.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Lights</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="https://images.pexels.com/photos/207153/pexels-photo-207153.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/img_3.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Amazing Abstract</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/4.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/img_4.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Colour Pencils</div>
         		</div>
         	</div>
