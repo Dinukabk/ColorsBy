@@ -60,13 +60,13 @@
 		<div class="pt-5 text-white">
 			<div class="py-5 mt-5">
 				<h1 class="display-4">Colors by Diyaa</h1>
-				<p class="lead mb-0">Test</p>
-				<p class="lead mb-0">Test</p>
+				<!-- <p class="lead mb-0">Test</p> -->
+				<!-- <p class="lead mb-0">Test</p> -->
 			</div>
-			<div class="py-5">
+			<!-- <div class="py-5">
 				<p class="lead">Test<strong class="font-weight-bold">Test</strong>Test<strong class="font-weight-bold">Test</strong>Test</p>
 				<p class="lead">Test</p>
-			</div>
+			</div> -->
 		</div>
 	</div>
 

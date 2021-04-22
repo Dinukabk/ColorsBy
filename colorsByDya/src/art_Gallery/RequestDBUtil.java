@@ -307,7 +307,7 @@ public class RequestDBUtil {
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "insert into negotiate_price values(0,'"+message+"',1,1,0)";
+			String sql = "insert into negotiate_price values(0,'"+message+"',1,304,0)";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs>0) {
