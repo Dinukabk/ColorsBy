@@ -104,11 +104,11 @@
 		</tr>
 		<tr>
 			<td> Price</td>
-			<td><input type="text" name="price" value="<%= price %>" required oninvalid= "alert('Please enter the price');"></td>
+			<td><input type="text" name="price" value="<%= price %>" required oninvalid= "alert('Please enter the price');" > LKR</td>
 		</tr>
 		<tr>
 			<td>Drawn Date</td>
-			<td><input type="text" name="drawn_date" value="<%= drawn_date %>"></td>
+			<td><input type="date" name="drawn_date" value="<%= drawn_date %>" min="1970-01-01" max="2021-04-22"></td>
 		</tr>
 		<tr>
 			<td>Category</td>
@@ -129,15 +129,15 @@
 		</tr>	
 		<tr>
 			<td>Weight</td>
-			<td><input type="number" name="weight" value="<%= weight %>"></td>
+			<td><input type="number" name="weight" value="<%= weight %>"> kg</td>
 		</tr>
 		<tr>
 			<td>Length</td>
-			<td><input type="number" name="length" value="<%= length %>"></td>
+			<td><input type="number" name="length" value="<%= length %>"> cm</td>
 		</tr>
 		<tr>
 			<td>Width</td>
-			<td><input type="number" name="width" value="<%= width %>"></td>
+			<td><input type="number" name="width" value="<%= width %>"> cm</td>
 		</tr>
 		<tr>
 			<td>Image</td>

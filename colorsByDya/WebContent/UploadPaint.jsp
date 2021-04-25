@@ -90,7 +90,7 @@
 	  			oninput="this.setCustomValidity('')"	 class="form__input"> -->
 		</div>
 		<div class="form__group">
-			<label style="float: left">Price</label><br> 
+			<label style="float: left">Price in LKR</label><br> 
 			<!-- <input type="text" id="artworkFixedValue" name="artworkFixedValue" placeholder="Enter Price of the Artwork here"> -->
 			
 			 
@@ -148,16 +148,16 @@
 	
 		<div style="float:;">
 		<div>
-			<label>Length</label>
-			<input type="text"  class="form__input" id="artworkLength" name="artworkLength" placeholder="Enter Length of the Artwork here">
+			<label>Length in cm</label>
+			<input type="text"  class="form__input" id="artworkLength" name="artworkLength" placeholder="Enter Length of the Artwork here"> 
 		</div>
 		<div>
-			<label>Width</label>
+			<label>Width in cm</label>
 			<input type="text"  class="form__input" id="artworkWidth" name="artworkWidth" placeholder="Enter Width of the Artwork here">
 		</div>
 		
 		<div>
-			<label>Weight</label>
+			<label>Weight in kg</label>
 			<input type="number"  class="form__input" id="artworkWeight" name="artworkWeight" placeholder="Enter Weight of the Artwork here">
 		</div>
 		<div>
