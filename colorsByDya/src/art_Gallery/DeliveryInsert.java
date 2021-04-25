@@ -27,13 +27,16 @@ public class DeliveryInsert extends HttpServlet {
 		String province = request.getParameter("DeliveryPro");
 		String City = request.getParameter("eliveryCityy");
 		String Country = request.getParameter("DelivertCountry");
+		int pid = Integer.parseInt(request.getParameter("Pid"));
 		
 		boolean isTrue;
 		
-		isTrue = DeliveryDBUtil.insertDeliery(fullName, AdddLineOne, AdddLineTwo, postalCord, province, City, Country);
+		isTrue = DeliveryDBUtil.insertDeliery(fullName, AdddLineOne, AdddLineTwo, postalCord, province, City, Country,pid);
 		
-		if(isTrue == true) {			
+		if(isTrue == true) {
+			request.setAttribute("pid", pid);
 			RequestDispatcher dis = request.getRequestDispatcher("DeliverySuccess.jsp");
+			
 			dis.forward(request, response);
 
 		} else {
