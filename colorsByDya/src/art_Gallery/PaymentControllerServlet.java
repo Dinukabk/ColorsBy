@@ -1,5 +1,3 @@
-// JSP's data passes to this controller 
-
 package art_Gallery;
 
 import java.io.IOException;
@@ -39,10 +37,21 @@ public class PaymentControllerServlet extends HttpServlet {
 			System.out.println("Card availability in payment servlet: " + cardAvailability);
 			
 			if (cardAvailability == true) {
-				List<Payment> cardDetails = PaymentsDatabaseUtil.getCardDetails(userID);
-				System.out.println("Card details added to the servlet...");
+				List<Payment> cardDetails = null;
+				cardDetails = PaymentsDatabaseUtil.getCardDetails(userID);
+				int cardNo = PaymentsDatabaseUtil.getCardNo();
+				String nameOnCard = PaymentsDatabaseUtil.getNameOnCard();
+				int expDate = PaymentsDatabaseUtil.getExpDate();
+				int cvv = PaymentsDatabaseUtil.getCVV();
+				
+				System.out.println("Card details added to the servlet..."); // @
+				System.out.println(cardDetails);
 				
 				request.setAttribute("userName", userName);
+				request.setAttribute("cardNo", cardNo);
+				request.setAttribute("nameOnCard", nameOnCard);
+				request.setAttribute("expDate", expDate);
+				request.setAttribute("cvv", cvv);
 				request.setAttribute("cardDetails", cardDetails);
 				
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
