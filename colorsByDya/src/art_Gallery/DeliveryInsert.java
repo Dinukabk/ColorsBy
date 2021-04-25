@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/DeliveryInsert")
@@ -15,7 +16,10 @@ public class DeliveryInsert extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String DeliId = request.getParameter("Did");
+		
+		// HttpSession session = request.getSession(false);
+		// String userID = (String) session.getAttribute("userID");
+		
 		String fullName = request.getParameter("Fname");
 		String AdddLineOne = request.getParameter("addLineOne");
 		String AdddLineTwo = request.getParameter("addLineTwo");
@@ -23,22 +27,16 @@ public class DeliveryInsert extends HttpServlet {
 		String province = request.getParameter("DeliveryPro");
 		String City = request.getParameter("eliveryCityy");
 		String Country = request.getParameter("DelivertCountry");
-		String Status = request.getParameter("Delivery");
-		String paymentId = request.getParameter("DPid");
-		String Username = request.getParameter("Uid");
-		String Password = request.getParameter("psw");
-		
 		
 		boolean isTrue;
 		
-		isTrue = DeliveryDBUtil.insertDeliery(DeliId, fullName, AdddLineOne, AdddLineTwo, postalCord, province, City, Country, Status, paymentId, Username, Password);
+		isTrue = DeliveryDBUtil.insertDeliery(fullName, AdddLineOne, AdddLineTwo, postalCord, province, City, Country);
 		
-		if(isTrue == true) {
-			
+		if(isTrue == true) {			
 			RequestDispatcher dis = request.getRequestDispatcher("DeliverySuccess.jsp");
 			dis.forward(request, response);
 
-		}else {
+		} else {
 			RequestDispatcher dis2 = request.getRequestDispatcher("DeliveryUnSuccess.jsp");
 			dis2.forward(request, response);
 		}

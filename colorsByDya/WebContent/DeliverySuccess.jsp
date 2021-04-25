@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>DeliverySuccess page here</title>
+<title>Delivery Success Retrive page here</title>
 </head>
 <body>
-	<h1>DeliverySuccess</h1>
+	<h1>Delivery Details</h1>
+	
+	
 </body>
 </html>

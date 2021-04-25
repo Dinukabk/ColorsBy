@@ -1,4 +1,4 @@
-package Art_Gallery;
+package art_Gallery;
 
 public class Artist {
 	

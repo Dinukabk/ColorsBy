@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Redirect to another page if a session doesn't exist -->
 <meta charset="ISO-8859-1">
 <title>Payment with card - Colors by Diyaa</title>
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/styles.css">
-<link rel="stylesheet" href="./css/home.css">
+	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./css/bootstrap.min.css" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./css/styles.css" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./css/home.css" rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<!-- Navbar -->
-	<div class="container" style="height: 132px;">
+	<div class="container text-dark" style="height: 132px;">
 		<header class="header" class="py-5 mt-5">
 			<nav class="navbar navbar-expand-lg fixed-top py-3">
 				<div class="container">
@@ -50,45 +52,37 @@
 	</div>
 
 	<!-- Order Summary -->
-	<div class="container p-3 my-2 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-		<h3>Order Summary</h3>
+	<div class="container p-3 my-2 rounded col-md-4 form" style="
+			background-color: rgba(255, 255, 255, 0.9); 
+			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+		">
+		<p class="h3">Order Summary</p>
 		<dl class="row">
 			<dt class="col-sm-9">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
-			<!-- <h1>Test</h1> -->
+			<dt class="col-sm-9">Delivery Method:</dt>
+			<dd class="col-sm-3 text-right">NULL</dd>
 		</dl>
+		<button type="button" class="btn btn-primary" onclick="location.href = ''">Chose Delivery Method</button>
 	</div>
 	
 	<!-- Card -->
-	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-		<form action="#" method="post">
+	<div class="container p-3 my-3 rounded col-md-4" style="
+			background-color: rgba(255, 255, 255, 0.9); 
+			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+		">
+		<form action="#" method="post" class="form">
 			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
-			<p>Card Number:</p>
-			<input type="text" placeholder="Card Number" value="${cardNo }" disabled>
-			<p>Name on Card:</p>
-			<input type="text" placeholder="Name on Card" value="${nameOnCard }" disabled>
-			<p>Expiration Date:</p>
-			<input type="text" placeholder="Expiration Date" value="${expDate }" disabled>
-			<p>CVV:</p>
-			<input type="text" placeholder="CVV" value="${cvv }" disabled> <br> 
+			<p>Card Number:</p> <input type="text" placeholder="Card Number" value="${cardNo }" disabled>
+			<p>Name on Card:</p> <input type="text" placeholder="Name on Card" value="${nameOnCard }" disabled>
+			<p>Expiration Date:</p> <input type="text" placeholder="Expiration Date" value="${expDate }" disabled>
+			<p>CVV:</p> <input type="text" placeholder="CVV" value="${cvv }" disabled>
+			<br>
 			<button type="submit" class="btn btn-primary">Pay now</button>
 		</form>
 	</div>
 
-	<!-- testDiv -->
-	<div class="container p-3 my-3 rounded col-md-4"
-		style="background-color: rgba(255, 255, 255, 0.5);">
-		<c:forEach var="card" items="${cardDetails }">
-
-			<tr>
-				<td>${card.cardNo}</td>
-				<td>${card.nameOnCard}</td>
-				<td>${card.expDate}</td>
-				<td>${card.cvv}</td>
-
-			</tr>
-
-		</c:forEach>
-	</div>
+	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
