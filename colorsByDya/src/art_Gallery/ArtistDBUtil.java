@@ -82,7 +82,7 @@ public static List<Artist> getArtist(String username) {
     	try {
     		con = DBConnect.getConnection();
     		stmt = con.createStatement();
-    	    String sql = "insert into artist values ('"+name+"', '"+phone_no+"', '"+email+"', '"+description+"', '"+add_line_01+"', '"+add_line_02+"', '"+postal_code+"', '"+province+"', '"+city+"', '"+country+"', '"+username+"', '"+password+"')";
+    	    String sql = "insert into artist values (0,'"+name+"', '"+phone_no+"', '"+email+"', '"+description+"', '"+add_line_01+"', '"+add_line_02+"', '"+postal_code+"', '"+province+"', '"+city+"', '"+country+"', '"+username+"', '"+password+"',0)";
     		int rs = stmt.executeUpdate(sql);
     		
     		if(rs > 0) {

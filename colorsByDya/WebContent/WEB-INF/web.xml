@@ -166,7 +166,7 @@
     <description></description>
     
     <servlet-name>ArtistInsert</servlet-name>
-    <servlet-class>art_Gallery.ArtistInsert</servlet-class>
+    <servlet-class>art_Gallery.ArtistInsertssssss</servlet-class>
   </servlet>
   
   <servlet-mapping>
