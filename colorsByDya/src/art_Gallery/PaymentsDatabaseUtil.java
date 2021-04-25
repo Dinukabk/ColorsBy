@@ -12,6 +12,10 @@ public class PaymentsDatabaseUtil {
 	private static String userName;
 	private static boolean querySuccess;
 	private static ArrayList<Payment> cardList = new ArrayList<>();
+	private static int cardNo;
+	private static String nameOnCard;
+	private static int expDate;
+	private static int cvv;
 	
 	public static int getCartTotal(int userID) {
 		String UIDConverted = Integer.toString(userID);
@@ -122,36 +126,50 @@ public class PaymentsDatabaseUtil {
 		return querySuccess;
 	}
 	
-	public static List<Payment> getCardDetails(int userID){
+	public static List<Payment> getCardDetails(int userID) { // Get card details as a list
 		String UIDConverted = Integer.toString(userID);
-		PreparedStatement pst;
-		Connection con;
-		ResultSet RS;
+		PreparedStatement pst = null;
+		Connection con = null;
+		ResultSet RS = null;
 		
 		try {
 			con = DatabaseUtilizer.utilizeConnection();
-			pst = con.prepareStatement("SELECT cardNumber, nameOnCard, expDate, cvv FROM registered_customer WHERE customer_id=?");
+			pst = con.prepareStatement("SELECT cardNumber, nameOnCard, expDate, cvv "
+					+ "FROM registered_customer "
+					+ "WHERE customer_id=?");
 			pst.setString(1, UIDConverted);
 			RS = pst.executeQuery();
 			
 			while (RS.next()) {
-				int cardNo = RS.getInt(1);
-				String nameOnCard = RS.getString(2);
-				int expDate = RS.getInt(3);
-				int cvv = RS.getInt(4);
-				System.out.println("Card Number: " + cardNo);
-				System.out.println("Name on card: " + nameOnCard);
-				System.out.println("Expiry date: " + expDate);
-				System.out.println("CVV: " + cvv);
-				
-				Payment cardObj = new Payment(cardNo, nameOnCard, expDate, cvv);
-				System.out.println("Trying to add card details to payment.java");
+				cardNo = RS.getInt(1);
+				nameOnCard = RS.getString(2);
+				expDate = RS.getInt(3);
+				cvv = RS.getInt(4);
+								
+				Payment cardObj = null;
+				cardObj = new Payment(cardNo, nameOnCard, expDate, cvv);
 				cardList.add(cardObj);
-				System.out.println("Added...");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		return cardList;
+	}
+	
+	public static int getCardNo() {
+		return cardNo;
+	}
+	
+	public static String getNameOnCard() {
+		return nameOnCard;
+	}
+	
+	public static int getExpDate() {
+		return expDate;
+	}
+	
+	public static int getCVV() {
+		return cvv;
 	}
 }
