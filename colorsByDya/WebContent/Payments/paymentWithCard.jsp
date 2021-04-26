@@ -53,32 +53,89 @@
 
 	<!-- Order Summary -->
 	<div class="container p-3 my-2 rounded col-md-4 form" style="
-			background-color: rgba(255, 255, 255, 0.9); 
+			background-color: rgba(255, 255, 255, 0.7); 
 			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 		">
 		<p class="h3">Order Summary</p>
 		<dl class="row">
-			<dt class="col-sm-9">Total:</dt>
+			<dt class="col-sm-9 text-dark h6">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
-			<dt class="col-sm-9">Delivery Method:</dt>
+			<dt class="col-sm-9 text-dark h6">Delivery Method:</dt>
 			<dd class="col-sm-3 text-right">NULL</dd>
 		</dl>
-		<button type="button" class="btn btn-primary" onclick="location.href = ''">Chose Delivery Method</button>
+		<button type="button" class="btn btn-light border border-primary" onclick="location.href = ''">Chose Delivery Method</button>
 	</div>
 	
 	<!-- Card -->
 	<div class="container p-3 my-3 rounded col-md-4" style="
-			background-color: rgba(255, 255, 255, 0.9); 
+			background-color: rgba(255, 255, 255, 0.7); 
 			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 		">
+<!-- 			background-image: url("./pictures/paper.gif"); -->
 		<form action="#" method="post" class="form">
-			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
-			<p>Card Number:</p> <input type="text" placeholder="Card Number" value="${cardNo }" disabled>
-			<p>Name on Card:</p> <input type="text" placeholder="Name on Card" value="${nameOnCard }" disabled>
-			<p>Expiration Date:</p> <input type="text" placeholder="Expiration Date" value="${expDate }" disabled>
-			<p>CVV:</p> <input type="text" placeholder="CVV" value="${cvv }" disabled>
-			<br>
-			<button type="submit" class="btn btn-primary">Pay now</button>
+			<table class="table table-borderless form-check">
+				<tr>
+					<td>
+						<p class="h5 text-dark">Confirm Your Card Details</p>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text-dark h6 text-right">Card Number:</p>
+					</td>
+					<td>
+						<input type="text" class="border border-dark bg-light rounded pl-1" placeholder="Card Number" value="${cardNo }" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text-dark h6 text-right">Name on Card:</p>
+					</td>
+					<td>
+						<input type="text" class="border border-dark bg-light rounded pl-1" placeholder="Name on Card" value="${nameOnCard }" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text-dark h6 text-right">Expiration Date:</p>
+					</td>
+					<td>
+						<input type="text" class="border border-dark bg-light rounded pl-1" placeholder="Expiration Date" value="${expDate }" disabled>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<p class="text-dark h6 text-right">CVV:</p>
+					</td>
+					<td>
+						<input type="text" class="border border-dark bg-light rounded pl-1" placeholder="CVV" value="${cvv }" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<button type="submit" class="btn btn-primary border border-primary mb-2">Pay now</button><br/>
+						<button type="" class="btn btn-light border border-primary">Edit or Change Card</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<!-- <button type="" class="btn btn-light border border-dark">Edit/ Change Details</button> -->
+					</td>
+				</tr>			
+			</table>
 		</form>
 	</div>
 
