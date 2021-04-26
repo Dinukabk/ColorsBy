@@ -4,17 +4,13 @@
 <html>
 <head>
 <!-- Redirect to another page if a session doesn't exist -->
-<meta charset="ISO-8859-1">
-<title>Add a card - Colors by Diyaa</title>
-<script src="./js/payments.js"></script>
-
-<!-- <link rel="stylesheet" href="./css/frontpage.css"> -->
-
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/styles.css">
-<link rel="stylesheet" href="./css/home.css">
-<!-- <link rel="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" href="../css/stylesPayment.css"> -->
+	<meta charset="ISO-8859-1">
+	<title>Add a card - Colors by Diyaa</title>
+		<script src="./js/payments.js"></script>
+		<link rel="stylesheet" href="./css/bootstrap.css" type='text/css'>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/styles.css">
+		<link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
 	<!-- Navbar -->
@@ -54,22 +50,73 @@
 
 	<!-- Card -->
 	<div class="container p-3 my-3 rounded col-md-4" style="
-			background-color: rgba(255, 255, 255, 0.9); 
+			background-color: rgba(255, 255, 255, 0.7); 
 			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 		">
 		<form name="paymentForm" action="PaymentAddCardFormServlet" method="post" class="form" onsubmit="return validateForm()">
-			<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
-			<p>Card Number:</p>
-			<input type="number" name="cardNumber" placeholder="Card Number">
-			<p>Name on Card:</p>
-			<input type="text" name="nameOnCard" placeholder="Name on Card">
-			<p>Expiration Date:</p>
-			<input type="number" name="expDate" placeholder="Expiration Date">
-			<p>CVV:</p>
-			<input type="number" name="cvv" placeholder="CVV"> <br> 
-			<input type="checkbox" id="saveCard" name="saveCard" value="Save this card for future uses"> 
-			<label for="saveCard">Save this card for future uses</label><br>
-			<button type="submit" class="btn btn-primary">Pay now</button>
+			<table class="table table-borderless form-check">
+				<tr>
+					<td>
+						<p class="h5 text-dark">Enter Your Card Details</p>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<img alt="visa/master" src="./pictures/VisaAndMaster.png" width="60" height="36">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text-dark h6 text-right">Card Number:</p>
+					</td>
+					<td>
+						<input type="number" name="cardNumber" class="border border-dark bg-light rounded pl-1" placeholder="Card Number">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text-dark h6 text-right">Name on Card:</p>
+					</td>
+					<td>
+						<input type="text" class="border border-dark bg-light rounded pl-1" name="nameOnCard" placeholder="Name on Card">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text-dark h6 text-right">Expiration Date:</p>
+					</td>
+					<td>
+						<input type="number" class="border border-dark bg-light rounded pl-1" name="expDate" placeholder="Expiration Date">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text-dark h6 text-right">CVV:</p>
+					</td>
+					<td>
+						<input type="number" class="border border-dark bg-light rounded pl-1" name="cvv" placeholder="CVV"> <br> 
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<input type="checkbox" class="css-checkbox" id="saveCard" name="saveCard" value="Save this card for future uses"> 
+						<label for="saveCard" class="css-label lite-green-check text-dark h6">Save this card for future uses</label><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<button type="submit" class="btn btn-primary">Pay now</button>
+					</td>
+				</tr>
+			</table>
 		</form>
 	</div>
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
