@@ -16,6 +16,7 @@ public class PaymentsDatabaseUtil {
 	private static String nameOnCard;
 	private static int expDate;
 	private static int cvv;
+	private static int rsInt = 0;
 	
 	public static int getCartTotal(int userID) {
 		String UIDConverted = Integer.toString(userID);
@@ -155,6 +156,36 @@ public class PaymentsDatabaseUtil {
 		}
 		
 		return cardList;
+	}
+	
+	public static boolean editCard(int userID, String nameOnCard, String cardNumber, String cvv, String date) {
+		String UIDConverted = Integer.toString(userID);
+		PreparedStatement pst = null;
+		Connection con = null;
+		
+		try { // Updating the table
+			// Getting connection
+			con = DatabaseUtilizer.utilizeConnection();
+			
+			// Preparing statement
+			pst = con.prepareStatement("UPDATE registered_customer SET cardNumber = ?, nameOnCard = ?, expDate = ?, cvv = ? WHERE customer_id = ?");
+			pst.setString(1, cardNumber);
+			pst.setString(2, nameOnCard);
+			pst.setString(3, date);
+			pst.setString(4, cvv);
+			pst.setString(5, UIDConverted);
+			
+			// Executing update
+			rsInt = pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		if (rsInt > 0) { // Returning the update information
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public static int getCardNo() {

@@ -37,22 +37,13 @@ public class PaymentControllerServlet extends HttpServlet {
 			System.out.println("Card availability in payment servlet: " + cardAvailability);
 			
 			if (cardAvailability == true) {
-				List<Payment> cardDetails = null;
-				cardDetails = PaymentsDatabaseUtil.getCardDetails(userID);
-				int cardNo = PaymentsDatabaseUtil.getCardNo();
-				String nameOnCard = PaymentsDatabaseUtil.getNameOnCard();
-				int expDate = PaymentsDatabaseUtil.getExpDate();
-				int cvv = PaymentsDatabaseUtil.getCVV();
-				
-				System.out.println("Card details added to the servlet..."); // @
-				System.out.println(cardDetails);
+				PaymentsDatabaseUtil.getCardDetails(userID);
 				
 				request.setAttribute("userName", userName);
-				request.setAttribute("cardNo", cardNo);
-				request.setAttribute("nameOnCard", nameOnCard);
-				request.setAttribute("expDate", expDate);
-				request.setAttribute("cvv", cvv);
-				request.setAttribute("cardDetails", cardDetails);
+				request.setAttribute("cardNo", PaymentsDatabaseUtil.getCardNo());
+				request.setAttribute("nameOnCard", PaymentsDatabaseUtil.getNameOnCard());
+				request.setAttribute("expDate", PaymentsDatabaseUtil.getExpDate());
+				request.setAttribute("cvv", PaymentsDatabaseUtil.getCVV());
 				
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 				RD.forward(request, response);
