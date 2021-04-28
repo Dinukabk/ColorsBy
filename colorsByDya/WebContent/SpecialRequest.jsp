@@ -102,11 +102,11 @@
       <legend style="padding:20px 0; font-size:30px;">We like to have a Special Request from you:</legend>
       
             <label>Full Name</label><br>
-            <input type="text" placeholder="Enter Full Name" name="name" class="SRInput" class="form__input"><br><br>
+            <input type="text" placeholder="Enter Full Name" name="name" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Name');"><br><br>
             <label>Phone Number</label><br>
-            <input type="number" placeholder="Enter Phone Number" name="phone" class="SRInput" class="form__input"><br><br>
+            <input type="number" placeholder="Enter Phone Number" name="phone" class="SRInput" class="form__input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required oninvalid= "alert('Please enter the Phone Number');"><br><br>
             <label>Email Address</label><br>
-            <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput" class="form__input"><br><br>
+            <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Email Address');"><br><br>
             <label>Message</label><br>
             <textarea placeholder="Enter a message" name="message" class="SRInput" class="form__input"></textarea><br><br>
             <label>Upload Your photograph that you want to be drawn</label><br>
