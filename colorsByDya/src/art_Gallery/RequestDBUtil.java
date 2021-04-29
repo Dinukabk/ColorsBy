@@ -173,7 +173,7 @@ public class RequestDBUtil {
 			 preparedStmt.setString (11, city); 
 			 preparedStmt.setString (12,country); 
 			 preparedStmt.setInt (13, 1); 
-			 preparedStmt.setInt (14, 201);
+			 preparedStmt.setInt (14, 3);
 			 
 			 int n = preparedStmt.executeUpdate();
 				/*
@@ -307,7 +307,7 @@ public class RequestDBUtil {
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "insert into negotiate_price values(0,'"+message+"',1,304,0)";
+			String sql = "insert into negotiate_price values(0,'"+message+"',1,1,0)";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs>0) {
