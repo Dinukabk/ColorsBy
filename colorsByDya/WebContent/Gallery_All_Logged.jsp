@@ -83,28 +83,8 @@
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
 	
-	<form method="post">
 	
-		<!-- <table border="2">
-			<tr>
-				<th>Painting ID</th>
-				<th>Title</th>
-				<th>Description</th>
-				<th>Price</th>
-				<th>Drawn Date</th>
-				<th>Category</th>
-				<th>Weight</th>
-				<th>Length</th>
-				<th>Width</th>
-				<th>Image</th>
-				<th>Material</th>
-				<th>In-stock</th>
-				<th>Frame</th>
-				<th>Artist ID</th>
-				<th>Cart ID</th>
-			</tr> -->
-			
-			<%
+	<%
 				try
 				{
 					Class.forName("com.mysql.jdbc.Driver");
@@ -122,9 +102,99 @@
 			
 			%>
 			
-			
-			
 			<!--Gallery testing  -->
+			
+			<div id="fh5co-main">
+				<div class="container">
+
+					<div class="row">
+
+        				<div id="fh5co-board" data-columns>
+
+        					<div class="item">
+        						<div class="animate-box">
+        			
+					        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
+					        		<img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
+        						</div>
+        						<div class="fh5co-desc">
+        		
+					        		<% if(rs.getString("price").equals("Negotiate Price")){ %>
+					        		<input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
+					        		<% } %>
+					             		
+					        		<input type="button" id="cartButton" value="ADD TO CART">
+					        		<h4><b><%=rs.getString("title") %></b></h4>
+					        		<h6>by <%=rs.getString("a_artist_id") %></h6>
+					        		<h5><b> <%=rs.getString("price") %> </b></h5>
+					        	</div>
+        		
+        					</div>
+        					
+        				</div>
+        			</div>
+      	 		</div>
+			</div>
+			
+			<%
+					}
+			
+			rs.close();
+			stmt.close();
+			conn.close();
+			}
+			catch(Exception e)
+			{
+			e.printStackTrace();
+			}
+		%>
+			
+	
+	<!--
+	<form method="post">
+	
+		 <table border="2">
+			<tr>
+				<th>Painting ID</th>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Drawn Date</th>
+				<th>Category</th>
+				<th>Weight</th>
+				<th>Length</th>
+				<th>Width</th>
+				<th>Image</th>
+				<th>Material</th>
+				<th>In-stock</th>
+				<th>Frame</th>
+				<th>Artist ID</th>
+				<th>Cart ID</th>
+			</tr> -->
+						
+			
+			<%--
+			 <%
+				try
+				{
+					Class.forName("com.mysql.jdbc.Driver");
+					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+					String username="root";
+					String password="root";
+					String query="select * from painting";
+					
+					Connection conn=DriverManager.getConnection(url, username, password);
+					Statement stmt=conn.createStatement();
+					ResultSet rs=stmt.executeQuery(query);
+					
+					while(rs.next())
+					{
+			
+			%>
+			 --%>
+			
+			<%-- 
+			Gallery testing  
 			
 			<div id="fh5co-main">
 		<div class="container">
@@ -139,9 +209,21 @@
 	        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
 	        		<img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
         		</div>
-        		<div class="fh5co-desc"><input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
-        		<input type="button" id="cartButton" value="ADD TO CART"><h4>Nature</h4></div>
+        		<div class="fh5co-desc">
+        		
+        		<% if(rs.getString("price") == "Negotiate Price"){ %>
+        		<input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
+        		<% } %>
+        		
+        		<input type="button" id="cartButton" value="ADD TO CART">
+        		<h4><b><%=rs.getString("title") %></b></h4>
+        		<h6>by <%=rs.getString("a_artist_id") %></h6>
+        		<h5><b> <%=rs.getString("price") %> </b></h5>
+        		</div>
+        		
         	</div>
+        	
+        	  
         	<div class="item">
         		<div class="animate-box">
 	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/img_23.jpg" alt="Free HTML5 Bootstrap template"></a>
@@ -153,30 +235,14 @@
 	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/img_3.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc"> Abstract</div>
         		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/img_4.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Colour Pencils</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="images/img_5.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc"></div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/img_6.jpg" class="image-popup fh5co-board-img"><img src="images/img_6.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc"></div>
-        		</div>
-        	</div>
         	
-        	</div>
+        	
+        	
+        	 </div>
         </div>
        </div>
-	</div>
+	</div> 
+	  --%>
 			
 			
 			<%-- 
@@ -203,11 +269,14 @@
 						<td><input type="button" id="cartButton" value="ADD TO CART"></td>
 						</tr>
 						
-			 --%>
+			 
 			 <%
 			
 					}
 			%>
+			
+			
+			
 		</table>
 		<%
 			rs.close();
@@ -220,6 +289,8 @@
 			}
 		%>
 	</form>
+	
+	--%>
 	
 	
 <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
