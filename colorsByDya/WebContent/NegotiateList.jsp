@@ -47,9 +47,20 @@
 			</nav>
 		</header>
 	</div>
+	
+	 
+	
+	<%@page import="java.sql.*"%>
+	<%@page import="java.io.*"%>
+	<%@page import="javax.servlet.ServletException"%>
+	<%@page import="javax.servlet.annotation.WebServlet"%>
+	<%@page import="javax.servlet.http.HttpServlet"%>
+	<%@page import="javax.servlet.http.HttpServletRequest"%>
+	<%@page import="javax.servlet.http.HttpServletResponse"%>
+	
 
 	<h1>Negotiate Price Requests</h1>
-	<%-- <%String price_req_id = request.getParameter("price_req_id");%> --%>
+	<%String price_req_id = request.getParameter("price_req_id");%> 
 	<table border="1">
 	
 	
@@ -70,10 +81,10 @@
 		<td>${nego.message}</td>
 		<td>
 		
-		<input type="button" name="accept" onclick="location.href='NegoAcceptServlet'" value="Accept">
+		<%-- <input type="button" name="accept" onclick="location.href='NegoAcceptServlet?price_req_id=<%= price_req_id %>'" value="Accept"> --%>
+		<input type="button" name="accept" value="Accept" onclick="location.href='NegoAcceptServlet?price_req_id=<%= price_req_id %>'">
 		
-		
-		<input type="button" name="reject" onclick="location.href='NegoRejectServlet'" value="Reject">
+		<input type="button" name="reject" onclick="location.href='NegoRejectServlet?'" value="Reject">
 		</td>
 	</tr>
 

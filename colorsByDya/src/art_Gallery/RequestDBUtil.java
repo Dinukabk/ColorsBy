@@ -383,20 +383,21 @@ public class RequestDBUtil {
 	 * return req; }
 	 */
     
-    public static boolean updateNegoStatusAccept(String ID) {
+    public static boolean updateNegoStatusAccept(String price_req_id) {
     	
     	//PreparedStatement pst;
 		//int UIDConverted = Integer.parseInt(ID);
     	//PreparedStatement pst;
 		//int UIDConverted = String.tont(ID);
-		int UIDConverted = Integer.valueOf(ID);
+		//int UIDConverted = Integer.valueOf(price_req_id);
+		int convertedID = Integer.parseInt(price_req_id);
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
 			//String sql = "update negotiate_price set accepted=1 where price_req_id='"+UIDConverted+"'";
-			String sql = "update negotiate_price set accepted=1 where price_req_id=1";
-			System.out.println("User ID in RequestDBUtil" + UIDConverted);
+			String sql = "update negotiate_price set accepted=1 where price_req_id='"+convertedID+"'";
+			System.out.println("User ID in RequestDBUtil" + convertedID);
 			int rs = stmt.executeUpdate(sql);
 			
 			
@@ -435,4 +436,29 @@ public class RequestDBUtil {
 		
 		return isSuccess;
 	}
+    
+    //accept Special request update
+    public static boolean updateSpecialAccept(String request_id,String name,String phone,String email,String message,String photograph,
+			String add_line_01,String add_line_02,String postal_code,String province,String city,String country) {
+    	
+    	try {
+    		con = RequestDBConnector.getConnection();
+			stmt = con.createStatement();
+			String sql = "update special_request set accept=1 where request_id='"+request_id+"'";
+			
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs>0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    	return isSuccess;
+    }
 }

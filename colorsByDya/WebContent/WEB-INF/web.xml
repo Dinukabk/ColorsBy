@@ -331,6 +331,16 @@ version="2.5"
 		<servlet-name>negoAccept</servlet-name>
 		<url-pattern>/acceptNego</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>specialAccept</servlet-name>
+		<servlet-class>art_Gallery.acceptSRservlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>specialAccept</servlet-name>
+		<url-pattern>/requestAccept</url-pattern>
+	</servlet-mapping>
   <!-- end of Loch -->
 
 </web-app>
