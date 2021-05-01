@@ -60,11 +60,12 @@
 	
 
 	<h1>Negotiate Price Requests</h1>
-	<%String price_req_id = request.getParameter("price_req_id");%> 
+	<%-- <%String price_req_id = request.getParameter("price_req_id");%>  --%>
 	<table border="1">
 	
 	
 	<tr>
+		<th>Negotiate ID</th>
 		<th>Customer Name</th>
 		<th>Phone Number</th>
 		<th>Title</th>
@@ -73,7 +74,16 @@
 		<th></th>
 	</tr>
 	<c:forEach var="nego" items="${negoArtList}">
+	
+	<c:set var="price_req_id" value="${nego.price_req_id}"/>
+	<c:set var="full_name" value="${nego.full_name}"/>
+	<c:set var="phone_no" value="${nego.phone_no}"/>
+	<c:set var="title" value="${nego.title}"/>
+	<c:set var="image_url" value="${nego.image_url}"/>
+	<c:set var="message" value="${nego.message}"/>
+	
 	<tr>
+		<td>${nego.price_req_id}</td>
 		<td>${nego.full_name}</td>
 		<td>${nego.phone_no}</td>
 		<td>${nego.title}</td>
@@ -82,7 +92,19 @@
 		<td>
 		
 		<%-- <input type="button" name="accept" onclick="location.href='NegoAcceptServlet?price_req_id=<%= price_req_id %>'" value="Accept"> --%>
-		<input type="button" name="accept" value="Accept" onclick="location.href='NegoAcceptServlet?price_req_id=<%= price_req_id %>'">
+		<c:url value="acceptNego.jsp" var="negoAccept">
+			<c:param name="price_req_id" value="${price_req_id}"/>
+			<c:param name="full_name" value="${full_name}"/>
+			<c:param name="phone_no" value="${phone_no}"/>
+			<c:param name="title" value="${title}"/>
+			<c:param name="image_url" value="${image_url}"/>
+			<c:param name="message" value="${message}"/>
+		</c:url>
+		
+		
+		<a href="${negoAccept}">
+		<input type="button" name="accept" value="Accept">
+		</a>
 		
 		<input type="button" name="reject" onclick="location.href='NegoRejectServlet?'" value="Reject">
 		</td>

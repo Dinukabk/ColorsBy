@@ -15,6 +15,10 @@
 
 <title>Customer View Request</title>
 </head>
+                <%@page import="java.sql.DriverManager"%>
+				<%@page import="java.sql.ResultSet"%>
+				<%@page import="java.sql.Statement"%>
+				<%@page import="java.sql.Connection"%>
 <body>
 
 	<!-- Navbar -->
@@ -129,11 +133,39 @@
 		
 	</c:url>
 	
-	<td>
+	<%-- <%
+	try{
+	Class.forName("com.mysql.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
+    Statement st = con.createStatement();
+    String query = "select accept from special_request";
+    //get table data
+	ResultSet rs = st.executeQuery(query);
+	if(rs.next()){
+    %> --%>
+            					
+	
+	<%-- <% if(rs.getString("price").equals("Negotiate Price")){ %>
+					        		<input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
+					        		<% } %> --%> 
+	<%--  -->
+	 <% if(rs.getString("accept").equals("1") || rs.getString("request_id").equals("request_id")){ %>
 	<a href="${requpdate}">
 	<input type="button" id="disButton" name="update" value="Update Request">
 	</a>
+	<%
+	 }
+     }
+	}catch (Exception e){
+    	 e.printStackTrace();   				
+     }
+     --%>
+     <td>
+     <a href="${requpdate}">
+	<input type="button" id="disButton" name="update" value="Update Request">
+	</a>
 	</td>
+	
 	
 	<c:url value="deleteRequest.jsp" var="reqdelete">
 		<c:param name="request_id" value="${request_id}"/>
