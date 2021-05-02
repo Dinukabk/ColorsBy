@@ -102,7 +102,7 @@
 		<td>${req.phone}</td>
 		<td>${req.email}</td>
 		<td>${req.message}</td>
-		<td>${req.photograph}</td>
+		<td><img src="images/${req.photograph}" width="200px" height="200px"/></td>
 		<td>${req.add_line_01}</td>
 		<td>${req.add_line_02}</td>
 		<td>${req.postal_code}</td>
@@ -133,38 +133,68 @@
 		
 	</c:url>
 	
-	<%-- <%
-	try{
-	Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
-    Statement st = con.createStatement();
-    String query = "select accept from special_request";
-    //get table data
-	ResultSet rs = st.executeQuery(query);
-	if(rs.next()){
-    %> --%>
-            					
+	<%-- <%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.Statement" %>
+	<%@ page import="java.sql.Connection" %>
+	<%@ page import="java.sql.DriverManager" %>
 	
-	<%-- <% if(rs.getString("price").equals("Negotiate Price")){ %>
-					        		<input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
-					        		<% } %> --%> 
-	<%--  -->
-	 <% if(rs.getString("accept").equals("1") || rs.getString("request_id").equals("request_id")){ %>
-	<a href="${requpdate}">
-	<input type="button" id="disButton" name="update" value="Update Request">
-	</a>
+	
 	<%
-	 }
-     }
-	}catch (Exception e){
-    	 e.printStackTrace();   				
-     }
-     --%>
+				try
+				{
+					Class.forName("com.mysql.jdbc.Driver");
+					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+					String username="root";
+					String password="root";
+					String query="select accept from special_request where request_id=${req.request_id}";
+					
+					Connection conn=DriverManager.getConnection(url, username, password);
+					Statement stmt=conn.createStatement();
+					ResultSet rs=stmt.executeQuery(query);
+					
+					if(rs.next())
+					{
+			
+			%>
+	
      <td>
-     <a href="${requpdate}">
-	<input type="button" id="disButton" name="update" value="Update Request">
-	</a>
+     
+     <% 
+     boolean accept = rs.getBoolean("accept");
+     //Boolean.compare(boolean a, boolean b)
+     // boolean
+     /*  boolean bool = true;
+      System.out.println("Boolean Value: "+bool);
+      int val = (bool) ? 1 : 0;
+      // Integer
+      System.out.println("Integer value: "+val); */
+      int val = (accept) ? 1 : 0;
+     if(val == 0){ %>
+			<a href="${requpdate}">
+			<input type="button" id="disButton" name="update" value="Update Request">
+			</a>
+	<% } %>
+     
+     
 	</td>
+	
+	<%
+					}
+			
+			rs.close();
+			stmt.close();
+			conn.close();
+			}
+			catch(Exception e)
+			{
+			e.printStackTrace();
+			}
+		%> --%>
+		<td>
+		<a href="${requpdate}">
+			<input type="button" id="disButton" name="update" value="Update Request">
+			</a>
+		</td>
 	
 	
 	<c:url value="deleteRequest.jsp" var="reqdelete">

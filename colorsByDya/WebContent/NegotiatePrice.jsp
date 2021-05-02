@@ -74,7 +74,50 @@
   	</form>
   </div>
   <br>
-  <input type="button" id="cart" name="cartBtn" value="Add to cart" disabled></div>
+    <%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.Statement" %>
+	<%@ page import="java.sql.Connection" %>
+	<%@ page import="java.sql.DriverManager" %>
+  
+  <%
+				try
+				{
+					Class.forName("com.mysql.jdbc.Driver");
+					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+					String username="root";
+					String password="root";
+					String query="select * from negotiate_price;";
+					
+					Connection conn=DriverManager.getConnection(url, username, password);
+					Statement stmt=conn.createStatement();
+					ResultSet rs=stmt.executeQuery(query);
+					
+					while(rs.next())
+					{
+			
+			%>
+			
+			<% 
+			boolean accepted = rs.getBoolean("accepted");
+			int val = (accepted) ? 1 : 0;
+			if(val == 1){ %>
+					       <input type="button" id="cart" name="cartBtn" value="Add to cart">
+			<% } %>
+			
+			<%
+					}
+			
+			rs.close();
+			stmt.close();
+			conn.close();
+			}
+			catch(Exception e)
+			{
+			e.printStackTrace();
+			}
+		%>
+  
+  </div>
   
   <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
