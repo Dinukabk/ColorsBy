@@ -16,6 +16,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	
+		
+	
 	Animate.css
 	<link rel="stylesheet" href="css/animate.css">
 	Icomoon Icon Fonts
@@ -28,8 +30,8 @@
 	<link rel="stylesheet" href="css/style1.css">
 	Modernizr JS
 	<script src="js/modernizr-2.6.2.min.js"></script>
-
-<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
+	
+	<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
 	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
@@ -37,9 +39,27 @@
 	
 	<link rel="stylesheet" href="css/styles_Gallery.css">
 
+<style type="text/css">
+
+</style>
+
+
+.btnNC {
+  background-color: blue; 
+  border: none; 
+  color: white; 
+  padding: 12px 16px; 
+  font-size: 16px; 
+  cursor: pointer; 
+}
+
+
+.btnNC:hover {
+  background-color: RoyalBlue;
+}
+
 </head>
 <body>
-
 
 	<!-- Navbar -->
 	<div class="container" style="height: 132px;">
@@ -84,7 +104,7 @@
 	<%@ page import="java.sql.DriverManager" %>
 	
 	
-	<%
+	<%-- <%
 				try
 				{
 					Class.forName("com.mysql.jdbc.Driver");
@@ -100,43 +120,83 @@
 					while(rs.next())
 					{
 			
-			%>
+			%> --%>
+			
 			
 			<!--Gallery testing  -->
 			
 			<div id="fh5co-main">
 				<div class="container">
-
 					<div class="row">
+					
+				
+					
 
         				<div id="fh5co-board" data-columns>
+        				
+        				<%
+				try
+				{
+					Class.forName("com.mysql.jdbc.Driver");
+					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+					String username="root";
+					String password="root";
+					//String query="select * from painting";
+					
+					String query="select * from painting p, artist a WHERE p.a_artist_id = a.artist_id";
+					
+					/* "SELECT * FROM painting p, artist a WHERE p.a_artist_id = a.artist_id AND a.artist_id=?" */
+					
+					Connection conn=DriverManager.getConnection(url, username, password);
+					Statement stmt=conn.createStatement();
+					ResultSet rs=stmt.executeQuery(query);
+					
+					while(rs.next())
+					{
+			
+			%>
 
         					<div class="item">
-        						<div class="animate-box">
+        						<div class="animate-box">  
         			
-					        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
-					        		<img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
+					        		<a href="images/deepthi_02.JPG" class="image-popup fh5co-board-img">
+					        		<%-- title="<%=rs.getString("title") %>" --%>
+					        		
+					        		<img src="images/deepthi_02.JPG" alt="Free HTML5 Bootstrap template"></a>
         						</div>
         						<div class="fh5co-desc">
-        		
+        											        		
+					        		<h3><b><%=rs.getString("title") %></b></h3>
+					        		<%-- <h6>by <%=rs.getString("p.a_artist_id") %></h6> --%>
+					        		<h6>by <%=rs.getString("a.name") %></h6>
+					        		
+					        		
 					        		<% if(rs.getString("price").equals("Negotiate Price")){ %>
-					        		<input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
-					        		<% } %>
+					        		<!-- <input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'"> -->
+					        		<button class="btnNC" style="background-color: ash; border: none; border-radius: 5px; color: black; padding: 5px 5px; font-size: 10px; cursor: pointer;">
+					        		<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" title="NEGOTIATE PRICE"> NEGOTIATE
+					        		</button>
+					        		
+					        		<% } 
+					        		else
+					        		{ %> 
+					        		
+					        			<h5><b>Rs. <%=rs.getString("price") %>.00</b></h5>
+					        		<%} %>
+					        		
 					             		
-					        		<input type="button" id="cartButton" value="ADD TO CART">
-					        		<h4><b><%=rs.getString("title") %></b></h4>
-					        		<h6>by <%=rs.getString("a_artist_id") %></h6>
-					        		<h5><b> <%=rs.getString("price") %> </b></h5>
+					        		<!-- <input type="button" id="cartButton" value="ADD TO CART"> -->
+					        		<button class="btnNC" style="background-color: ash; border: none; border-radius: 5px; color: black; margin-left: 15px; padding: 5px 5px; font-size: 10px; cursor: pointer;">
+					        		<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href='negoNavServlet'" title="ADD TO CART"> ADD TO CART
+					        		</button>					        
+					        		
+					        		
 					        	</div>
         		
         					</div>
         					
-        				</div>
-        			</div>
-      	 		</div>
-			</div>
-			
-			<%
+        					
+        					<%
 					}
 			
 			rs.close();
@@ -148,6 +208,25 @@
 			e.printStackTrace();
 			}
 		%>
+        					
+        					
+        				</div>
+        			</div>
+      	 		</div>
+			</div>
+			
+			<%-- <%
+					}
+			
+			rs.close();
+			stmt.close();
+			conn.close();
+			}
+			catch(Exception e)
+			{
+			e.printStackTrace();
+			}
+		%> --%>
 			
 	
 	<!--
