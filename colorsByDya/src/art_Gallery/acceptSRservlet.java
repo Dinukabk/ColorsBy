@@ -2,6 +2,7 @@ package art_Gallery;
 
 import java.io.IOException;
 
+import javax.mail.MessagingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,6 +38,13 @@ public class acceptSRservlet extends HttpServlet {
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("requestSuccess.jsp");
 			dis.forward(request, response);
+			
+			try {
+				MailUtil.sendMail(email);
+			} catch (MessagingException e) {
+				
+				e.printStackTrace();
+			}
 		}
 		else {
 			RequestDispatcher dis = request.getRequestDispatcher("requestUnsuccess.jsp");

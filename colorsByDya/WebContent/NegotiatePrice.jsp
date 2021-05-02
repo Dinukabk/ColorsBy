@@ -86,7 +86,7 @@
 					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
 					String username="root";
 					String password="root";
-					String query="select * from negotiate_price;";
+					String query="select * from negotiate_price";
 					
 					Connection conn=DriverManager.getConnection(url, username, password);
 					Statement stmt=conn.createStatement();
@@ -99,7 +99,9 @@
 			
 			<% 
 			boolean accepted = rs.getBoolean("accepted");
+			System.out.println("Boolean Value: "+accepted);
 			int val = (accepted) ? 1 : 0;
+			System.out.println("Integer value: "+val);
 			if(val == 1){ %>
 					       <input type="button" id="cart" name="cartBtn" value="Add to cart">
 			<% } %>

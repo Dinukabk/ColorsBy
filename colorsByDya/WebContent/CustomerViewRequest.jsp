@@ -133,7 +133,7 @@
 		
 	</c:url>
 	
-	<%-- <%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.ResultSet" %>
 	<%@ page import="java.sql.Statement" %>
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
@@ -146,13 +146,13 @@
 					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
 					String username="root";
 					String password="root";
-					String query="select accept from special_request where request_id=${req.request_id}";
+					String query="select * from special_request";
 					
 					Connection conn=DriverManager.getConnection(url, username, password);
 					Statement stmt=conn.createStatement();
 					ResultSet rs=stmt.executeQuery(query);
 					
-					if(rs.next())
+					while(rs.next())
 					{
 			
 			%>
@@ -161,6 +161,7 @@
      
      <% 
      boolean accept = rs.getBoolean("accept");
+     System.out.println("Boolean Value: "+accept);
      //Boolean.compare(boolean a, boolean b)
      // boolean
      /*  boolean bool = true;
@@ -168,7 +169,9 @@
       int val = (bool) ? 1 : 0;
       // Integer
       System.out.println("Integer value: "+val); */
+      
       int val = (accept) ? 1 : 0;
+      System.out.println("Integer value: "+val);
      if(val == 0){ %>
 			<a href="${requpdate}">
 			<input type="button" id="disButton" name="update" value="Update Request">
@@ -189,12 +192,12 @@
 			{
 			e.printStackTrace();
 			}
-		%> --%>
-		<td>
+		%> 
+		<%-- <td>
 		<a href="${requpdate}">
 			<input type="button" id="disButton" name="update" value="Update Request">
 			</a>
-		</td>
+		</td> --%>
 	
 	
 	<c:url value="deleteRequest.jsp" var="reqdelete">

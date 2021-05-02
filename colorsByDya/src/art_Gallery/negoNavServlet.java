@@ -34,12 +34,7 @@ public class negoNavServlet extends HttpServlet {
 					RD.forward(request, response);
 				}
 				
-				try {
-					MailUtil.sendMail("lochanawijerathna27@gmail.com");
-				} catch (MessagingException e) {
-					
-					e.printStackTrace();
-				}
+				
 	}
 
 }
