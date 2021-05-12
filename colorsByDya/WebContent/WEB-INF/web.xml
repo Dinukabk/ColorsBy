@@ -337,13 +337,13 @@ version="2.5"
   <!-- Dev start -->
   
 	  <servlet>
-	  	<servlet-name>insertEvnt</servlet-name>
+	  	<servlet-name>insertEvent</servlet-name>
 	  	<servlet-class>art_Gallery.EveInsertServlet</servlet-class>
 	  </servlet>
 	  
 	  <servlet-mapping>
-	  	<servlet-name>insertEvnt</servlet-name>
-	  	<url-pattern>/insertEve</url-pattern>
+	  	<servlet-name>insertEvent</servlet-name>
+	  	<url-pattern>/insertEvent</url-pattern>
 	  </servlet-mapping>
   
 
