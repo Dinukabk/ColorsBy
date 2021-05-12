@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Insert events</title>
 
 <!-- <link rel="stylesheet" href="css/frontpage.css">  -->
 	
@@ -13,11 +13,21 @@
 	<link rel="stylesheet" href="./css/home.css">
 	
 	<link rel="stylesheet" href="styles_Gallery.css">
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script>
+  		$( function() {
+    		$( "#datepicker" ).datepicker();
+  		} );
+  	</script>
 
 </head>
 <body>
 
-	<!-- Navbar -->
+	<!-- Navbar 
 	<header class="header" class="py-5 mt-5">
 		<nav class="navbar navbar-expand-lg fixed-top py-3">
 			<div class="container">
@@ -53,23 +63,43 @@
 			</div>
 		</nav>
 	</header>
-	
-		<!-- For demo purpose -->
-	<div class="container">
-		<div class="pt-5 text-white">
-			<div class="py-5 mt-5">
-				<h1 class="display-4">Colors by Diyaa</h1>
-				<!-- <p class="lead mb-0">Test</p> -->
-				<!-- <p class="lead mb-0">Test</p> -->
-			</div>
-			<!-- <div class="py-5">
-				<p class="lead">Test<strong class="font-weight-bold">Test</strong>Test<strong class="font-weight-bold">Test</strong>Test</p>
-				<p class="lead">Test</p>
-			</div> -->
-		</div>
-	</div>
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
+	-->
+	
+	
+	 <form action="#" method="post">
+	 
+	 	<input type="text" name="name" placeholder="Enter event name" ><br>
+	 	
+	 	<input type="text" name="date" id="datepicker" placeholder="Enter event date" ><br>
+	 	
+	 	<input type="number" name="status" placeholder="Enter event status" ><br>
+	 	
+	 	<input type="text" name="description" placeholder="Enter description" ><br>
+	 	
+	 	<input type="number" name="adminID" placeholder="Enter admin ID" ><br>
+	 	
+	 	
+	 	
+	 	
+	 	<input type="submit" name="submitEvent" value="Insert Event"><br>
+	 	
+	 </form>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
