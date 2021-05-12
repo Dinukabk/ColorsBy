@@ -332,6 +332,41 @@ version="2.5"
 		<url-pattern>/acceptNego</url-pattern>
 	</servlet-mapping>
   <!-- end of Loch -->
+  
+  
+  <!-- Dev start -->
+  
+	  <servlet>
+	  	<servlet-name>insertEvnt</servlet-name>
+	  	<servlet-class>art_Gallery.EveInsertServlet</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>insertEvnt</servlet-name>
+	  	<url-pattern>/insertEve</url-pattern>
+	  </servlet-mapping>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </web-app>
 

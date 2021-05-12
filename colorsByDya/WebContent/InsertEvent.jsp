@@ -68,7 +68,7 @@
 	-->
 	
 	
-	 <form action="#" method="post">
+	 <form action="insertEve" method="post">
 	 
 	 	<input type="text" name="name" placeholder="Enter event name" ><br>
 	 	

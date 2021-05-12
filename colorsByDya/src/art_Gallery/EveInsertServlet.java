@@ -1,6 +1,8 @@
 package art_Gallery;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +23,20 @@ public class EveInsertServlet extends HttpServlet {
 		String description = request.getParameter("description");
 		String adminID = request.getParameter(String.valueOf("adminID"));
 		
+		boolean t;
 		
+		t = eventDBUtil.insertEvent(name, date, status, description, adminID);
+		
+		if(t == true) 
+		{
+			RequestDispatcher dis = request.getRequestDispatcher("thankyou.jsp");
+			dis.forward(request, response);
+		}
+		else
+		{
+			RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
+			dis.forward(request, response);
+		}
 		
 		
 		
