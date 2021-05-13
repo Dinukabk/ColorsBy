@@ -344,7 +344,7 @@ public class RequestDBUtil {
 			// stmt = con.createStatement();
 			pst = con.prepareStatement("SELECT np.price_req_id,rc.full_name,rc.phone_no,p.title,p.image_url,np.message "
 					+ "FROM negotiate_price np, artist a, painting p, registered_customer rc "
-					+ "WHERE np.p_painting_id=p.painting_id and p.a_artist_id=? "
+					+ "WHERE np.p_painting_id=p.painting_id and p.a_artist_id=a.artist_id and p.a_artist_id=? "
 					+ "AND np.c_customer_id=rc.customer_id");
 			// String sql = "select rc.full_name,rc.phone_no,p.title,p.image_url,np.message from negotiate_price np, artist a, painting p, registered_customer rc where a.username='"+artistUserID+"' and np.p_painting_id=p.painting_id and p.a_artist_id=? and np.c_customer_id=rc.customer_id";
 			// rs = stmt.executeQuery(sql);
@@ -491,4 +491,48 @@ public class RequestDBUtil {
     	
     	return isSuccess;
     }
+    
+    //customer negotiate price list
+     public static List<NegoAll> negotiateCustomerList(int userID){
+    	
+    	String UIDConverted = Integer.toString(userID);
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		Connection con;
+		
+		ArrayList<NegoAll> req = new ArrayList<>();
+		
+		try {
+			con = RequestDBConnector.getConnection();
+			// stmt = con.createStatement();
+			pst = con.prepareStatement("SELECT np.price_req_id,rc.full_name,rc.phone_no,p.title,p.image_url,np.message "
+					+ "FROM negotiate_price np, artist a, painting p, registered_customer rc "
+					+ "WHERE np.p_painting_id=p.painting_id and p.a_artist_id=a.artist_id "
+					+ "AND np.c_customer_id=rc.customer_id AND np.c_customer_id=?");
+			// String sql = "select rc.full_name,rc.phone_no,p.title,p.image_url,np.message from negotiate_price np, artist a, painting p, registered_customer rc where a.username='"+artistUserID+"' and np.p_painting_id=p.painting_id and p.a_artist_id=? and np.c_customer_id=rc.customer_id";
+			// rs = stmt.executeQuery(sql);
+			pst.setString(1, UIDConverted);
+			rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				
+				int price_req_id = rs.getInt("price_req_id");
+				String full_name = rs.getString("full_name");
+				String phone_no = rs.getString("phone_no");
+				String title = rs.getString("title");
+				String image_url = rs.getString("image_url");
+				String message = rs.getString("message");
+				
+				NegoAll n = new NegoAll(price_req_id,full_name,phone_no,title,image_url,message);
+				req.add(n);
+			}
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return req;
+		
+	}
 }

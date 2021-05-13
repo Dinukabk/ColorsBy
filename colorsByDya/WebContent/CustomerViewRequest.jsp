@@ -133,7 +133,7 @@
 		
 	</c:url>
 	
-	<%@ page import="java.sql.ResultSet" %>
+	<%-- <%@ page import="java.sql.ResultSet" %>
 	<%@ page import="java.sql.Statement" %>
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
@@ -155,9 +155,9 @@
 					while(rs.next())
 					{
 			
-			%>
+			%> --%>
 	
-     <td>
+     <%-- <td>
      
      <% 
      boolean accept = rs.getBoolean("accept");
@@ -192,12 +192,17 @@
 			{
 			e.printStackTrace();
 			}
-		%> 
+		%>  --%>
 		<%-- <td>
 		<a href="${requpdate}">
 			<input type="button" id="disButton" name="update" value="Update Request">
 			</a>
 		</td> --%>
+		<td>
+			<a href="${requpdate}">
+			<input type="button" id="disButton" name="update" value="Update Request">
+			</a>
+		</td>
 	
 	
 	<c:url value="deleteRequest.jsp" var="reqdelete">
