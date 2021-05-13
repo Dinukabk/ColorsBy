@@ -508,7 +508,7 @@ public class RequestDBUtil {
 			pst = con.prepareStatement("SELECT np.price_req_id,rc.full_name,rc.phone_no,p.title,p.image_url,np.message "
 					+ "FROM negotiate_price np, artist a, painting p, registered_customer rc "
 					+ "WHERE np.p_painting_id=p.painting_id and p.a_artist_id=a.artist_id "
-					+ "AND np.c_customer_id=rc.customer_id AND np.c_customer_id=?");
+					+ "AND np.c_customer_id=rc.customer_id AND np.accepted=1 AND np.c_customer_id=?");
 			// String sql = "select rc.full_name,rc.phone_no,p.title,p.image_url,np.message from negotiate_price np, artist a, painting p, registered_customer rc where a.username='"+artistUserID+"' and np.p_painting_id=p.painting_id and p.a_artist_id=? and np.c_customer_id=rc.customer_id";
 			// rs = stmt.executeQuery(sql);
 			pst.setString(1, UIDConverted);
