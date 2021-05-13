@@ -23,7 +23,7 @@ public class eventDBUtil {
 			
 			boolean stats = Boolean.parseBoolean(status);
 			int admin = Integer.parseInt(adminID);
-			String sql = "insert into event (0,  '"+name+"', '"+date+"', '"+stats+"', '"+description+"', '"+admin+"')";  
+			String sql = "insert into event values (0,  '"+name+"', '"+date+"', '"+stats+"', '"+description+"', '"+admin+"')";  
 			
 			int result = stmt.executeUpdate(sql);
 			
