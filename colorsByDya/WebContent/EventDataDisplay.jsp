@@ -90,17 +90,16 @@ h1{
 
 
 
-	<form action="retrieveEvent" method="post">
+	<c:forEach var = "Eve" items="#{eveDetails}">
 	
-		Event name  <input type = "text" name="EventName" placeholder = "Enter event name"><br>
-		
-		Admin ID  <input type = "number" name="AdminID" placeholder = "Enter admin ID"><br>
-		
-		<input type="submit" name="submit" value="Check event">
+		ID			=		${Eve.id} <br>
+		Name		=		${Eve.name} <br>
+		Date		=		${Eve.date}<br>
+		Status		=		${Eve.status}<br>
+		Description =		${Eve.description}<br>
+		AdminID		= 		${Eve.adminID}<br>
 	
-	
-	</form>
-
+	</c:forEach>
 
 
 

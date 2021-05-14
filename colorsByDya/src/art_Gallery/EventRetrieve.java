@@ -1,6 +1,9 @@
 package art_Gallery;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +21,19 @@ public class EventRetrieve extends HttpServlet {
 		String eventName = request.getParameter("EventName");
 		String adminID = String.valueOf(request.getParameter("AdminID"));
 		
+		try
+		{
+			List<EventClass> eveDetails = eventDBUtil.validate(eventName, adminID);
+			request.setAttribute("eveDetails", eveDetails);
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		RequestDispatcher dis = request.getRequestDispatcher("EventDataDisplay.jsp");
+		dis.forward(request, response);
 		
 		
 		

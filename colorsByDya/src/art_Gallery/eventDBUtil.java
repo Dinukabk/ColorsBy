@@ -75,7 +75,8 @@ public class eventDBUtil {
 		int adID = Integer.parseInt(adminID);
 				
 				
-		String sql = "select * from event where name = '"+Ename+"' and a_admin_id = '"+adID+"'";
+		String sql = "use colorbydiyaa;"
+				+ "select * from event where name = '"+Ename+"' and a_admin_id = '"+adID+"'";
 		
 		try {
 			rs = stmt.executeQuery(sql);

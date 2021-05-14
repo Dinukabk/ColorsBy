@@ -348,7 +348,15 @@ version="2.5"
   
 
 
-
+	<servlet>
+		<servlet-name>retrieveEvent</servlet-name>
+		<servlet-class>art_Gallery.EventRetrieve</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>retrieveEvent</servlet-name>
+		<url-pattern>/retrieveEvent</url-pattern>
+	</servlet-mapping>
+	
 
 
 
