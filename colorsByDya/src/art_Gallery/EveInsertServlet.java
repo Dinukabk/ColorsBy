@@ -30,7 +30,7 @@ public class EveInsertServlet extends HttpServlet {
 		
 		if(t == true) 
 		{
-			RequestDispatcher dis = request.getRequestDispatcher("thankyou.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("success.jsp");
 			dis.forward(request, response);
 		}
 		else
