@@ -117,17 +117,11 @@ public class RequestDBUtil {
 		
 	}
 	
-	
+	//insert request
 	public static boolean insertSRequest(String name,String phone,String email,String message,String photograph,
-			String add_line_01,String add_line_02,String postal_code,String province,String city,String country) {
+			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,String artist_name) {
 		
-		
-		/*
-		 * int convertedPhone = Integer.parseInt(phone); int convertedPostalCode =
-		 * Integer.parseInt(postal_code);
-		 */
-		 
-		
+		int artName=3;
 		boolean isSuccess = false;
 		
 		try {
@@ -135,78 +129,93 @@ public class RequestDBUtil {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
 			
+			//artist name
 			
-			 String sql =
-			 "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
-			 
-			 + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-			 
+				con = RequestDBConnector.getConnection();
+				Statement st = con.createStatement();
+				String query = "select artist_id from artist where name='"+artist_name+"'";
+				//get table data
+				ResultSet rs = st.executeQuery(query);
+				if(rs.next()){
+					 artName = rs.getInt(1);
+					 System.out.println(artName);
+				}//end of if next	 
+					 
+				
+			String sql =
+					 "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+					 
+					 + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+					 
 
-				/*
-				 * String sql
-				 * ="insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
-				 * + "values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+
-				 * "','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+
-				 * city+"','"+country+"',1,3)";
-				 */
-			 
-			//create the mysql insert preparedstatement
-			PreparedStatement preparedStmt = con.prepareStatement(sql);
-			
-			//URL url=getClass().getResource("/music/Whitewoods - College Kill Dream.mp3");
-		    //System.out.println(url.toString());
-			///FileInputStream fis = null;
-		    //String fileName = "\"C:/apache-tomcat-6.0.16/\r\n" + "  webapps/example/\"+\"images\\"+photograph;
-			
-			//take video file from given path so we use FileInputStream
-			//fis = new FileInputStream(new File(fileName));
-			
-			
-			 preparedStmt.setInt (1, 0);
-			 preparedStmt.setString (2, name);
-			 preparedStmt.setInt (3, 123); 
-			 preparedStmt.setString (4, email);
-			 preparedStmt.setString (5, message); 
-			 preparedStmt.setString (6, photograph);
-			 preparedStmt.setString (7, add_line_01); 
-			 preparedStmt.setString (8,add_line_02); 
-			 preparedStmt.setInt (9, 12); 
-			 preparedStmt.setString (10, province); 
-			 preparedStmt.setString (11, city); 
-			 preparedStmt.setString (12,country); 
-			 preparedStmt.setInt (13, 1); 
-			 preparedStmt.setInt (14, 3);
-			 
-			 int n = preparedStmt.executeUpdate();
-				/*
-				 * if(n>0) {
-				 * response.getWriter().println("<center>successfully uploaded</center>");
-				 * 
-				 * }
-				 */
-			  
-				/*
-				 * try { //PreparedStatement ps =
-				 * con.prepareStatement("insert into special_request(file) values(?)");
-				 * //ps.setBinaryStream(3, fis); //inser data to the database int n =
-				 * ps.executeUpdate(); if(n>0) {
-				 * response.getWriter().println("<center>successfully uploaded</center>");
-				 * 
-				 * } } catch(Exception e) { System.out.println(e); }
-				 */
-			 
-			
-			/* boolean rs = preparedStmt.execute(); */
-			//int rs = stmt.executeUpdate(sql);
-			
-			if(n > 0) {
-				isSuccess = true;
-			}
-			else {
-				isSuccess = false;
-			}
+						/*
+						 * String sql
+						 * ="insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
+						 * + "values(0,'"+name+"','"+phone+"','"+email+"','"+message+"','"+photograph+
+						 * "','"+add_line_01+"','"+add_line_02+"','"+postal_code+"','"+province+"','"+
+						 * city+"','"+country+"',1,3)";
+						 */
+					 
+					//create the mysql insert preparedstatement
+					PreparedStatement preparedStmt = con.prepareStatement(sql);
+					
+					//URL url=getClass().getResource("/music/Whitewoods - College Kill Dream.mp3");
+				    //System.out.println(url.toString());
+					///FileInputStream fis = null;
+				    //String fileName = "\"C:/apache-tomcat-6.0.16/\r\n" + "  webapps/example/\"+\"images\\"+photograph;
+					
+					//take video file from given path so we use FileInputStream
+					//fis = new FileInputStream(new File(fileName));
+					
+					
+					 preparedStmt.setInt (1, 0);
+					 preparedStmt.setString (2, name);
+					 preparedStmt.setInt (3, 123); 
+					 preparedStmt.setString (4, email);
+					 preparedStmt.setString (5, message); 
+					 preparedStmt.setString (6, photograph);
+					 preparedStmt.setString (7, add_line_01); 
+					 preparedStmt.setString (8,add_line_02); 
+					 preparedStmt.setInt (9, 12); 
+					 preparedStmt.setString (10, province); 
+					 preparedStmt.setString (11, city); 
+					 preparedStmt.setString (12,country); 
+					 preparedStmt.setInt (13, 1); 
+					 preparedStmt.setInt (14, artName);
+					 
+					 int n = preparedStmt.executeUpdate();
+						/*
+						 * if(n>0) {
+						 * response.getWriter().println("<center>successfully uploaded</center>");
+						 * 
+						 * }
+						 */
+					  
+						/*
+						 * try { //PreparedStatement ps =
+						 * con.prepareStatement("insert into special_request(file) values(?)");
+						 * //ps.setBinaryStream(3, fis); //inser data to the database int n =
+						 * ps.executeUpdate(); if(n>0) {
+						 * response.getWriter().println("<center>successfully uploaded</center>");
+						 * 
+						 * } } catch(Exception e) { System.out.println(e); }
+						 */
+					 
+					
+					/* boolean rs = preparedStmt.execute(); */
+					//int rs = stmt.executeUpdate(sql);
+				
+					
+					if(n > 0) {
+						isSuccess = true;
+					}
+					else {
+						isSuccess = false;
+					}
 				
 		}
+		
+		
 		catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -214,6 +223,7 @@ public class RequestDBUtil {
 		return isSuccess;
 	}
 	
+	//update request
 	public static boolean updateRequest(String request_id,String name,String phone,String email,String message,String photograph,
 			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,String c_customer_id,String artist_name,String accept) {
 		

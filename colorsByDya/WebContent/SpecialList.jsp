@@ -89,13 +89,13 @@
 			<input type="button" name="accept" value="Accept">
 			</a>
 			
-			<input type="button" name="reject" value="Reject">
-			
 		</td>
 	</tr>	
 	
 	</c:forEach>
 	</table>
+	
+	<input type="button" name="report" value="Generate Report" onclick="location.href='PDFrequestServlet'">
 
 <style>
 $font-family:   "Roboto";

@@ -140,7 +140,7 @@
             				//get artist name one by one
             				while(rs.next()){
             					%>
-            					<option><%=rs.getString("name") %></option>
+            					<option name="artist_name"><%=rs.getString("name") %></option>
             					<%
             				}
             				

@@ -106,7 +106,6 @@
 		<input type="button" name="accept" value="Accept">
 		</a>
 		
-		<input type="button" name="reject" onclick="location.href='NegoRejectServlet?'" value="Reject">
 		</td>
 	</tr>
 
