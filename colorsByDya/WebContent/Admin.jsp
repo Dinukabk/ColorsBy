@@ -66,17 +66,17 @@ Open in new window
      </div>
 
  <div class= "image">
-<img src="http://www.flash-slideshow-maker.com/slide-show/image/flash-photo-gallery-6.jpg" style="float: left; height: 15em; margin-right: 10%; margin-bottom: 0.5em; margin-top: 5%">
+<img src="https://www.thechannels.org/wp-content/uploads/2016/09/MTWTsuno3-edit-1.jpg" style="float: left; height: 15em; margin-right: 10%; margin-bottom: 0.5em; margin-top: 5%">
 </div>
 <div class= "image">
-<img src="https://onlinemastery.co.uk/wp-content/uploads/2016/02/avatar-1.jpg" style="float: left; height: 15em; margin-right: 1%; margin-bottom: 0.5em; margin-top: 5%">
+<img src="https://www.thechannels.org/wp-content/uploads/2016/09/MTWTsuno3-edit-1.jpg" style="float: left; height: 15em; margin-right: 1%; margin-bottom: 0.5em; margin-top: 5%">
 </div>
 <div class= "image">
-<img src="https://assets.aucklandartgallery.com/assets/media/2017-lindauer-install-6.jpg" style="float: left; height: 15em; margin-right: 10px; margin-bottom: 0.5em; margin-top: 10%">
+<img src="https://1.bp.blogspot.com/-r3YNBP3Cohk/Wa0p9Wjy9YI/AAAAAAAAkeM/OssgRUkyRv4J0duhN72SgM3q9NnZXWInQCLcBGAs/s1600/corey_barksdale_art.jpg" style="float: left; height: 15em; margin-right: 10px; margin-bottom: 0.5em; margin-top: 10%">
 </div>
 
 <div id="buttons">
-        <button onclick="location.href = 'add_exhibition.jsp';" id="submit1">Add Exhibition</button>
+        <button onclick="location.href = 'add_exhibition.jsp';" id="submit1">Add Event</button>
         <button onclick="location.href = 'add_customer.jsp';"id="cancel">Add Customer</button>
         <br></br> 
         <br></br> 

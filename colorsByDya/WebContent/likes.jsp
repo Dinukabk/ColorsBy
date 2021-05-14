@@ -35,13 +35,17 @@
 	<div class="navbar">
 		<a href="frontpage.jsp">Home</a> <a href="likes.jsp">Paintings</a> <a
 			href="search.jsp">Search</a> <a href="index.jsp">Logout</a> <a
-			href="#" class="navbar1"> <% HttpSession httpSession=request.getSession();
+			href="#" class="navbar1">
+			<%
+			HttpSession httpSession=request.getSession();
 			String id = request.getParameter("email");
 			httpSession.setAttribute("login1",id );
 			if(id != null) {
 				out.println("hii "+httpSession.getAttribute("login1"));
 			}
-			String a = (String)httpSession.getAttribute("login1");%>
+			String a = (String)httpSession.getAttribute("login1");
+			%>
+		</a>
 	</div>
 	<form action="likes1.jsp" method="post" onsubmit="index.jsp">
 		<div id="fh5co-main">

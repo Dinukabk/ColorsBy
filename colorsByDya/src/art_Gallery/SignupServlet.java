@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class SignupServlet extends HttpServlet {
@@ -55,34 +56,45 @@ public class SignupServlet extends HttpServlet {
         //Connection connection;  
         Connection conn=null;
         String url="jdbc:mysql://localhost:3306/";
-        String dbName="art_gallery";
+        String dbName="colorsbydiyaa";
         String driver="com.mysql.jdbc.Driver";
     
     try{  
-      String aname = request.getParameter("fullname");  
-      String ano = request.getParameter("ArtistId");  
-      String state = request.getParameter("state");  
-      String city = request.getParameter("city");  
-      String pincode = request.getParameter("pincode"); 
-      String pno = request.getParameter("mobileno");  
-      String email= request.getParameter("email");  
+      String ano = request.getParameter("artist_id");  
+      String aname = request.getParameter("name");  
+      String phone = request.getParameter("phone_no");  
+      String email = request.getParameter("email");  
+      String description = request.getParameter("description"); 
+      String address01 = request.getParameter("add_line_01");  
+      String address02 = request.getParameter("add_line_02");  
+      String postalcode= request.getParameter("postal_code");  
+      String province = request.getParameter("province");
+      String city = request.getParameter("city");
+      String country = request.getParameter("country");
+      String username = request.getParameter("username");
       String pwd = request.getParameter("password");  
+      String a_admin_id= request.getParameter("a_admin_id");  
       
 
       Class.forName(driver).newInstance();  
-      conn = DriverManager.getConnection(url+dbName,"root", "rutuja8079");
-      PreparedStatement pst =(PreparedStatement) conn.prepareStatement("insert into artist (a_id, email, a_name, state, city, pincode, phone,g_id ) values(?,?,?,?,?,?,?,?)");//try2 is the name of the table  
-     PreparedStatement pst1 =(PreparedStatement) conn.prepareStatement("insert into login values(?,1,?)");//try2 is the name of the table  
+      conn = DriverManager.getConnection(url+dbName,"root", "root");
+      PreparedStatement pst =(PreparedStatement) conn.prepareStatement("insert into artist (artist_id, name, phone_no, email, description, add_line_01, add_line_02, postal_code, province, city, country, username, password, a_admin_id ) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");//try2 is the name of the table  
+     PreparedStatement pst1 =(PreparedStatement) conn.prepareStatement("insert into login values(?,1,?)");//try2 is the name of the table
 
       pst.setString(1,ano);  
-      pst.setString(2,email);
-      pst.setString(3,aname);        
-      pst.setString(4,state);
-      pst.setString(5,city);
-      pst.setString(6,pincode);
-      pst.setString(7,pno);
-      pst.setString(8, "G1");
-      pst1.setString(1,email);
+      pst.setString(2,aname);
+      pst.setString(3,phone);        
+      pst.setString(4,email);
+      pst.setString(5,description);
+      pst.setString(6,address01);
+      pst.setString(7,address02);
+      pst.setString(8,postalcode);
+      pst.setString(9,province);
+      pst.setString(10,city);
+      pst.setString(11,country);
+      pst.setString(12,a_admin_id);
+
+      pst1.setString(1,username);
       pst1.setString(2,pwd);
       
       

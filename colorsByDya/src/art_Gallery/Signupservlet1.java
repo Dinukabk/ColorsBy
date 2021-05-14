@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class Signupservlet1 extends HttpServlet {
@@ -55,18 +56,18 @@ public class Signupservlet1 extends HttpServlet {
         //Connection connection;  
         Connection conn=null;
         String url="jdbc:mysql://localhost:3306/";
-        String dbName="art_gallery";
+        String dbName="colorsbydiyaa";
         String driver="com.mysql.jdbc.Driver";
     //String dbUserName="root";
     //String dbPassword="root";
 
     try{  
-      String email= request.getParameter("email");  
+      String email= request.getParameter("username");  
       String pwd = request.getParameter("password1");  
       
 
       Class.forName(driver).newInstance();  
-      conn = DriverManager.getConnection(url+dbName,"root", "rutuja8079"); 
+      conn = DriverManager.getConnection(url+dbName,"root", "root"); 
      PreparedStatement pst1 =(PreparedStatement) conn.prepareStatement("insert into login values(?,2,?)");//try2 is the name of the table  
 
       

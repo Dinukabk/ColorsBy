@@ -15,7 +15,6 @@ public class AddCustomer extends HttpServlet {
 
 	public AddCustomer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -26,9 +25,7 @@ public class AddCustomer extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
-		// String connectionURL = "jdbc:mysql://127.0.0.1:3306/newData";// newData is
-		// the database
-		// Connection connection;
+
 		Connection conn = null;
 		String url = "jdbc:mysql://localhost:3306/";
 		String dbName = "art_gallery";
