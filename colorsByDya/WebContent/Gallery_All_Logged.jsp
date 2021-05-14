@@ -85,26 +85,7 @@
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
 	
-	
-	<%-- <%
-				try
-				{
-					Class.forName("com.mysql.jdbc.Driver");
-					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-					String username="root";
-					String password="root";
-					String query="select * from painting";
-					
-					Connection conn=DriverManager.getConnection(url, username, password);
-					Statement stmt=conn.createStatement();
-					ResultSet rs=stmt.executeQuery(query);
-					
-					while(rs.next())
-					{
-			
-			%> --%>
-			
-			
+				
 			<!--Gallery testing  -->
 			
 			<div id="fh5co-main">
@@ -146,7 +127,7 @@
 					        		
 					        		<img src="images/<%=rs.getString("image_url") %>" alt="Free HTML5 Bootstrap template"></a>
 					        		
-					        		<a href="#" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
+					        		<a href="Gallery_singlePainting_Details.jsp?painting_id=<%= rs.getInt("painting_id")%>&artistName=<%=rs.getString("a.name")%>" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
 					        		
         						</div>
         						<div class="fh5co-desc">
@@ -205,62 +186,7 @@
       	 		</div>
 			</div>
 			
-			<%-- <%
-					}
 			
-			rs.close();
-			stmt.close();
-			conn.close();
-			}
-			catch(Exception e)
-			{
-			e.printStackTrace();
-			}
-		%> --%>
-			
-	
-	<!--
-	<form method="post">
-	
-		 <table border="2">
-			<tr>
-				<th>Painting ID</th>
-				<th>Title</th>
-				<th>Description</th>
-				<th>Price</th>
-				<th>Drawn Date</th>
-				<th>Category</th>
-				<th>Weight</th>
-				<th>Length</th>
-				<th>Width</th>
-				<th>Image</th>
-				<th>Material</th>
-				<th>In-stock</th>
-				<th>Frame</th>
-				<th>Artist ID</th>
-				<th>Cart ID</th>
-			</tr> -->
-						
-			
-			<%--
-			 <%
-				try
-				{
-					Class.forName("com.mysql.jdbc.Driver");
-					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-					String username="root";
-					String password="root";
-					String query="select * from painting";
-					
-					Connection conn=DriverManager.getConnection(url, username, password);
-					Statement stmt=conn.createStatement();
-					ResultSet rs=stmt.executeQuery(query);
-					
-					while(rs.next())
-					{
-			
-			%>
-			 --%>
 			
 			<%-- 
 			Gallery testing  
