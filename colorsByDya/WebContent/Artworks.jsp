@@ -104,7 +104,7 @@
 			<td>${paint.weight}</td>
 			<td>${paint.length}</td>
 			<td>${paint.width}</td>
-			<td>${paint.image_url}</td>
+			<td><img src="images/${paint.image_url}" width="100px"></td>
 			<td>${paint.material}</td>
 			<%-- <td>${paint.in_stock}</td> --%>
 			<td>${paint.frame}</td>
