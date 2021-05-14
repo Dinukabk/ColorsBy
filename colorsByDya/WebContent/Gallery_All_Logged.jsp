@@ -127,7 +127,7 @@
 					        		
 					        		<img src="images/<%=rs.getString("image_url") %>" alt="Free HTML5 Bootstrap template"></a>
 					        		
-					        		<a href="Gallery_singlePainting_Details.jsp?painting_id=<%= rs.getInt("painting_id")%>&artistName=<%=rs.getString("a.name")%>" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
+					        		<a target="_blank" href="Gallery_singlePainting_Details.jsp?painting_id=<%= rs.getInt("painting_id")%>&artistName=<%=rs.getString("a.name")%>" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
 					        		
         						</div>
         						<div class="fh5co-desc">
