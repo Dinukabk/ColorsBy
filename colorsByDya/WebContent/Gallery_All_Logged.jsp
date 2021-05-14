@@ -23,7 +23,7 @@
 	Icomoon Icon Fonts
 	<link rel="stylesheet" href="css/icomoon.css">
 	Magnific Popup
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/magnific-popup.css?version=1">
 	Salvattore
 	<link rel="stylesheet" href="css/salvattore.css">
 	Theme Style
@@ -37,26 +37,8 @@
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/home.css">
 	
-	<link rel="stylesheet" href="css/styles_Gallery.css">
+	<link rel="stylesheet" href="css/styles_Gallery.css?version=2">
 
-<style type="text/css">
-
-</style>
-
-
-.btnNC {
-  background-color: blue; 
-  border: none; 
-  color: white; 
-  padding: 12px 16px; 
-  font-size: 16px; 
-  cursor: pointer; 
-}
-
-
-.btnNC:hover {
-  background-color: RoyalBlue;
-}
 
 </head>
 <body>
@@ -159,10 +141,10 @@
         					<div class="item">
         						<div class="animate-box">  
         			
-					        		<a href="images/deepthi_02.JPG" class="image-popup fh5co-board-img">
+					        		<a href="images/<%=rs.getString("image_url") %>" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
 					        		<%-- title="<%=rs.getString("title") %>" --%>
 					        		
-					        		<img src="images/deepthi_02.JPG" alt="Free HTML5 Bootstrap template"></a>
+					        		<img src="images/<%=rs.getString("image_url") %>" alt="Free HTML5 Bootstrap template"></a>
         						</div>
         						<div class="fh5co-desc">
         											        		
@@ -173,8 +155,9 @@
 					        		
 					        		<% if(rs.getString("price").equals("Negotiate Price")){ %>
 					        		<!-- <input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'"> -->
-					        		<button class="btnNC" style="background-color: ash; border: none; border-radius: 5px; color: black; padding: 5px 5px; font-size: 10px; cursor: pointer;">
-					        		<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" title="NEGOTIATE PRICE"> NEGOTIATE
+					        		<button class="btnNC">
+					        		<!-- style="background-color: #B2BEB5; border: none; border-radius: 5px; color: black; padding: 5px 5px; font-size: 10px; cursor: pointer;"> -->
+					        		<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" data-title="NEGOTIATE PRICE"> NEGOTIATE
 					        		</button>
 					        		
 					        		<% } 
@@ -182,13 +165,18 @@
 					        		{ %> 
 					        		
 					        			<h5><b>Rs. <%=rs.getString("price") %>.00</b></h5>
+					        			
+					        			<!-- <input type="button" id="cartButton" value="ADD TO CART"> -->
+						        		<button class="btnNC">
+						        		<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href=' '" title="ADD TO CART"> ADD TO CART
+						        		</button>
+					        		
 					        		<%} %>
 					        		
+					        		
+					        		
 					             		
-					        		<!-- <input type="button" id="cartButton" value="ADD TO CART"> -->
-					        		<button class="btnNC" style="background-color: ash; border: none; border-radius: 5px; color: black; margin-left: 15px; padding: 5px 5px; font-size: 10px; cursor: pointer;">
-					        		<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href='negoNavServlet'" title="ADD TO CART"> ADD TO CART
-					        		</button>					        
+					        							        
 					        		
 					        		
 					        	</div>
