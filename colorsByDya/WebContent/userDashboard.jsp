@@ -62,8 +62,9 @@
 					<button type="button" class="btn btn-primary"
 						onclick="location.href = ''">Temp Shopping Cart</button>
 					<button type="button" class="btn btn-primary"
-						onclick="location.href = 'requestCusLogin'">View My
-						Requests</button>
+						onclick="location.href = 'requestCusLogin'">View My Requests</button>
+					<button type="button" class="btn btn-primary"
+						onclick="location.href = 'NegoCusListServlet'">Negotiate Price Requests</button>
 				</div>
 				<br> <br> <br> <br>
 				<p class="lead mb-0">Test 03</p>
