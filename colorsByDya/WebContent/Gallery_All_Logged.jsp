@@ -27,14 +27,14 @@
 	Salvattore
 	<link rel="stylesheet" href="css/salvattore.css">
 	Theme Style
-	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" href="css/style1.css?version=1">
 	Modernizr JS
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	
 	<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
 	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/styles.css?version=1">
 	<link rel="stylesheet" href="./css/home.css">
 	
 	<link rel="stylesheet" href="css/styles_Gallery.css?version=2">
@@ -139,14 +139,18 @@
 			%>
 
         					<div class="item">
-        						<div class="animate-box">  
+        						<div class="animate-box"> 
         			
 					        		<a href="images/<%=rs.getString("image_url") %>" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
 					        		<%-- title="<%=rs.getString("title") %>" --%>
 					        		
 					        		<img src="images/<%=rs.getString("image_url") %>" alt="Free HTML5 Bootstrap template"></a>
+					        		
+					        		<a href="#" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
+					        		
         						</div>
         						<div class="fh5co-desc">
+        						
         											        		
 					        		<h3><b><%=rs.getString("title") %></b></h3>
 					        		<%-- <h6>by <%=rs.getString("p.a_artist_id") %></h6> --%>
@@ -173,13 +177,11 @@
 					        		
 					        		<%} %>
 					        		
-					        		
-					        		
-					             		
-					        							        
-					        		
+					        		<!-- <a href="#" style = "text-align:right"> View more details </a> -->
 					        		
 					        	</div>
+					        	
+					        	
         		
         					</div>
         					
