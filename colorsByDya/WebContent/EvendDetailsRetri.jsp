@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Get event details</title>
-
+<!--  
 <style>
 input[], select {
   width: 50%;
@@ -25,9 +25,9 @@ input[], select {
 
 h1{
 	color : gray;
-}
-</style>	
 
+</style>	
+}
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/home.css">
@@ -44,7 +44,7 @@ h1{
     		$( "#datepicker" ).datepicker();
   		} );
   	</script>
-
+-->
 </head>
 <body>
 
@@ -90,7 +90,7 @@ h1{
 
 
 
-	<form action="#" method="post">
+	<form>
 	
 		Event name  <input type = "text" name="EventName" placeholder = "Enter event name"><br>
 		
