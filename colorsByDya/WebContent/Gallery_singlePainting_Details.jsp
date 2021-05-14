@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +9,15 @@
 <title>Gallery - Single painting details</title>
 </head>
 <body>
+
+	<%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.Statement" %>
+	<%@ page import="java.sql.Connection" %>
+	<%@ page import="java.sql.DriverManager" %>
+	
+	<%@ page import="java.sql.PreparedStatement" %>
+	
+
 	<h3> Single painting details </h3>
 	
 	 <%
@@ -26,22 +37,44 @@
 			String username="root";
 			String password="root";
 			
-			String query="select * from painting";
-			
-			//String query="select * from painting p, artist a WHERE p.a_artist_id = a.artist_id";
-			
-			/* "SELECT * FROM painting p, artist a WHERE p.a_artist_id = a.artist_id AND a.artist_id=?" */
-			
+			/*
+			String query="SELECT * FROM painting";
 			Connection conn=DriverManager.getConnection(url, username, password);
 			Statement stmt=conn.createStatement();
 			ResultSet rs=stmt.executeQuery(query);
+			*/
+			
+			
+			String query= "SELECT * FROM painting WHERE painting_id=?";
+			Connection conn=DriverManager.getConnection(url, username, password);
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setInt(1, painting_id);
+			
+			ResultSet rs=ps.executeQuery();
+			
 			
 			while(rs.next())
 			{
-				if(rs.getInt("painting_id") ==){ 
+				
+		
 		%>
 		
-	 <% } %>
+			<h3><b><%=rs.getString("title")%></b></h3>
+			<img src="images/<%=rs.getString("image_url")%>" width="200px">
+			
+	 <%
+			} // end of While
+		
+			rs.close();
+			ps.close();
+			//stmt.close();
+			conn.close();
+		}
+		catch(Exception e)
+		{
+		e.printStackTrace();
+		}
+		%>
 	 
 
 </body>
