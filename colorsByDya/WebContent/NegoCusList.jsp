@@ -1,23 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/frontpage.css">
-
-<link rel="stylesheet" href="Styles/NegotiatePrice.css">
-<link rel="stylesheet" href="css/req2.css">
 <meta charset="ISO-8859-1">
+<title>Negotiate List - Colors by Diyaa</title>
+<link rel="stylesheet" href="css/frontpage.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/home.css">
-<title>Negotiate Price - Colors by Diyaa</title>
-
-<script src="js/negoPrice.js"></script>
-
 </head>
 <body>
-
 	<!-- Navbar -->
 	<div class="container" style="height: 132px;">
 		<header class="header" class="py-5 mt-5">
@@ -52,80 +46,36 @@
 		</header>
 	</div>
 
-  <h1>Negotiate the Price of the Painting</h1><br><br>
-  
-  <div class="contact-in">
-  		<h3>We recommend you to contact the Artist before entering the Negotiate Price. Otherwise request may reject</h3>
-  </div><br><br>
-  
-  <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-  <center>
-  <div>
-  <!-- painting retrieve -->
-  <img src="images/deepthi_02.JPG" alt="Negotiate paint" width="300px" hight="300px">
-  </div></center><br><br>
-  
-  <div>
-  	<form name="negoForm" action="negoInsert" method="post" onsubmit="return validateForm()">
-  		<label>Please enter the Price</label><br>
-  		<input type="number" placeholder="Price in LKR" name="message" class="form__input"><br>
-  		
-  		<input type="submit" name="Submit" value="Send">
-  	</form>
-  </div>
-  <br>
-    <%-- <%@ page import="java.sql.ResultSet" %>
-	<%@ page import="java.sql.Statement" %>
-	<%@ page import="java.sql.Connection" %>
-	<%@ page import="java.sql.DriverManager" %>
-  
-  <%
-				try
-				{
-					Class.forName("com.mysql.jdbc.Driver");
-					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-					String username="root";
-					String password="root";
-					String query="select * from negotiate_price";
-					
-					Connection conn=DriverManager.getConnection(url, username, password);
-					Statement stmt=conn.createStatement();
-					ResultSet rs=stmt.executeQuery(query);
-					
-					while(rs.next())
-					{
-			
-			%>
-			
-			<% 
-			boolean accepted = rs.getBoolean("accepted");
-			System.out.println("Boolean Value: "+accepted);
-			int val = (accepted) ? 1 : 0;
-			System.out.println("Integer value: "+val);
-			if(val == 1){ %>
-					       <input type="button" id="cart" name="cartBtn" value="Add to cart">
-			<% } %>
-			
-			<%
-					}
-			
-			rs.close();
-			stmt.close();
-			conn.close();
-			}
-			catch(Exception e)
-			{
-			e.printStackTrace();
-			}
-		%> --%>
-  
-  </div>
-  
-  <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
+	<table border="1">
+	
+	
+	<tr>
+		<th>Negotiate ID</th>
+		<th>Customer Name</th>
+		<th>Phone Number</th>
+		<th>Title</th>
+		<th>Painting</th>
+		<th>Price</th>
+		<th></th>
+	</tr>
+	<c:forEach var="nego" items="${negoCusList}">
+	
+	<tr>
+		<td>${nego.price_req_id}</td>
+		<td>${nego.full_name}</td>
+		<td>${nego.phone_no}</td>
+		<td>${nego.title}</td>
+		<td>${nego.image_url}</td>
+		<td>${nego.message}</td>
+		<td><input type="button" name="cart" value="Add to Cart"></td>
+	</tr>
+	</c:forEach>
+	</table>
+	
+	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
-  
-  <!-- <button onclick="buttonEnable()">Try it</button> -->
-  <style>
+	
+<style>
 $font-family:   "Roboto";
 $font-size:     14px;
 
@@ -264,6 +214,7 @@ body {
 .container {
     max-width: 540px;
 }
-</style>
+</style>	
+
 </body>
 </html>

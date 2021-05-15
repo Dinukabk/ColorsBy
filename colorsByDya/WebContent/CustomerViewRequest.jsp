@@ -10,8 +10,15 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/home.css">
+
+<script src="js/Request.js"></script>
+
 <title>Customer View Request</title>
 </head>
+                <%@page import="java.sql.DriverManager"%>
+				<%@page import="java.sql.ResultSet"%>
+				<%@page import="java.sql.Statement"%>
+				<%@page import="java.sql.Connection"%>
 <body>
 
 	<!-- Navbar -->
@@ -95,7 +102,7 @@
 		<td>${req.phone}</td>
 		<td>${req.email}</td>
 		<td>${req.message}</td>
-		<td>${req.photograph}</td>
+		<td><img src="images/${req.photograph}" width="200px" height="200px"/></td>
 		<td>${req.add_line_01}</td>
 		<td>${req.add_line_02}</td>
 		<td>${req.postal_code}</td>
@@ -126,11 +133,77 @@
 		
 	</c:url>
 	
-	<td>
-	<a href="${requpdate}">
-	<input type="button" name="update" value="Update Request">
-	</a>
+	<%-- <%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.Statement" %>
+	<%@ page import="java.sql.Connection" %>
+	<%@ page import="java.sql.DriverManager" %>
+	
+	
+	<%
+				try
+				{
+					Class.forName("com.mysql.jdbc.Driver");
+					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+					String username="root";
+					String password="root";
+					String query="select * from special_request";
+					
+					Connection conn=DriverManager.getConnection(url, username, password);
+					Statement stmt=conn.createStatement();
+					ResultSet rs=stmt.executeQuery(query);
+					
+					while(rs.next())
+					{
+			
+			%> --%>
+	
+     <%-- <td>
+     
+     <% 
+     boolean accept = rs.getBoolean("accept");
+     System.out.println("Boolean Value: "+accept);
+     //Boolean.compare(boolean a, boolean b)
+     // boolean
+     /*  boolean bool = true;
+      System.out.println("Boolean Value: "+bool);
+      int val = (bool) ? 1 : 0;
+      // Integer
+      System.out.println("Integer value: "+val); */
+      
+      int val = (accept) ? 1 : 0;
+      System.out.println("Integer value: "+val);
+     if(val == 0){ %>
+			<a href="${requpdate}">
+			<input type="button" id="disButton" name="update" value="Update Request">
+			</a>
+	<% } %>
+     
+     
 	</td>
+	
+	<%
+					}
+			
+			rs.close();
+			stmt.close();
+			conn.close();
+			}
+			catch(Exception e)
+			{
+			e.printStackTrace();
+			}
+		%>  --%>
+		<%-- <td>
+		<a href="${requpdate}">
+			<input type="button" id="disButton" name="update" value="Update Request">
+			</a>
+		</td> --%>
+		<td>
+			<a href="${requpdate}">
+			<input type="button" id="disButton" name="update" value="Update Request">
+			</a>
+		</td>
+	
 	
 	<c:url value="deleteRequest.jsp" var="reqdelete">
 		<c:param name="request_id" value="${request_id}"/>
@@ -151,7 +224,7 @@
 	
 	<td>
 	<a href="${reqdelete}">
-	<input type="button" name="delete" value="Delete Request">
+	<input type="button" id="disButton" name="delete" value="Delete Request">
 	</a>
 	</td>
 	

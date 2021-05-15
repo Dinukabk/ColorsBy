@@ -2,6 +2,7 @@ package art_Gallery;
 
 import java.io.IOException;
 
+import javax.mail.MessagingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,13 @@ public class negotiateInsertServlet extends HttpServlet {
 		if(isTrue==true) {
 			RequestDispatcher dis = request.getRequestDispatcher("Gallery_All_Logged.jsp");
 			dis.forward(request, response);
+			
+			try {
+				MailUtil.sendMail("lochanawijerathna27@gmail.com");
+			} catch (MessagingException e) {
+				
+				e.printStackTrace();
+			}
 		}
 		else {
 			RequestDispatcher dis2 = request.getRequestDispatcher("requestUnsuccess.jsp");
