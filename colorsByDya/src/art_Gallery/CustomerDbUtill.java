@@ -9,24 +9,22 @@ import java.util.List;
 
 public class CustomerDbUtill {
 	
+	private static Connection con = null;
+	private static Statement stmt = null;
+	private static ResultSet rs = null;
+	
+	
 	public static List<CustomerNew> validate(String userName, String password){
 		
 		ArrayList<CustomerNew> cus = new ArrayList<>();
-		
-		//create Db connection
-		String url = "jdbc:mysql://localhost:3306/colorbydiyaa";
-		String user = "root";
-		String pass = "root";
-		
+			
 		//Validate
 		
 		try {
-			
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url,user,pass);
-			Statement stmt = con.createStatement();	
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
 			String sql = "select * from registered_customer where username='"+userName+"' and password='"+password+"'";
-			ResultSet rs = stmt.executeQuery(sql);
+			rs = stmt.executeQuery(sql);
 			
 			if(rs.next()) {
 				int id = rs.getInt(1);
@@ -55,19 +53,14 @@ public class CustomerDbUtill {
 	}
 	
 //customer details insert
-	public static boolean insertcustomer(String fname,String pNumber,String Address1,String Address2,String pCode,String City,String Province,String Country,String UserName,String Password) {
+	public static boolean insertcustomer(String fname,String UserName,String Password,String pNumber,String Address1,String Address2,String pCode,String Province,String City,String Country) {
 		
 		boolean isSuccess = false;
-		//create Db connection
-				String url = "jdbc:mysql://localhost:3306/colorbydiyaa";
-				String user = "root";
-				String pass = "root";
 				
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url,user,pass);
-			Statement stmt = con.createStatement();	
 			
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
 			String sql = "INSERT INTO registered_customer VALUES (0,'"+fname+"','"+UserName+"','"+Password+"','"+pNumber+"','"+Address1+"','"+Address2+"','"+pCode+"','"+Province+"','"+City+"','"+Country+"')";
 			int rs = stmt.executeUpdate(sql);
 			

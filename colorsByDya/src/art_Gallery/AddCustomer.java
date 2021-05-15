@@ -21,16 +21,28 @@ public class AddCustomer extends HttpServlet {
 		
 		String fname = request.getParameter("fullname");
 		String pNumber = request.getParameter("phoneNo");
-		String Assress1 = request.getParameter("Address1");
+		String Address1 = request.getParameter("Address1");
 		String Address2 = request.getParameter("Address1");
 		String pCode = request.getParameter("PCode");
-		String Ciyt = request.getParameter("City");
+		String City = request.getParameter("City");
 		String Province = request.getParameter("Province");
 		String Country = request.getParameter("Country");
 		String UserName = request.getParameter("username");
 		String Password = request.getParameter("password");
 		
-
+		boolean isTrue;
+		
+		isTrue = CustomerDbUtill.insertcustomer(fname, UserName, Password, pNumber, Address1, Address2, pCode, Province, City, Country);
+		
+		if(isTrue == true) {
+			
+			RequestDispatcher dis = request.getRequestDispatcher("login_01.jsp");
+			dis.forward(request, response);
+		}else {
+			RequestDispatcher dis2 = request.getRequestDispatcher("add_customer.jsp");
+			dis2.forward(request, response);
+			
+		}
 		
 		
 		

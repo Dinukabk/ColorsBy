@@ -83,6 +83,19 @@
 				<!--  data retreve part start-->
 				<table>
 				<c:forEach var="cus" items="${cusDeatils}">
+				
+				<c:set var="id" value="${cus.customer_id}"/>
+				<c:set var="fname" value="${cus.full_name}"/>
+				<c:set var="username" value="${cus.username}"/>
+				<c:set var="Password" value="${cus.password}"/>
+				<c:set var="PhoneNo" value="${cus.phone_no}"/>
+				<c:set var="address1" value="${cus.add_line_01}"/>
+				<c:set var="address2" value="${cus.add_line_02}"/>
+				<c:set var="pCode" value="${cus.postal_code}"/>
+				<c:set var="Provence" value="${cus.province}"/>
+				<c:set var="City" value="${cus.city}"/>
+				<c:set var="Country" value="${cus.country}"/>
+				
 	<tr>
 		<td>ID</td>
 		<td>fullname</td>
