@@ -20,7 +20,7 @@ body {
     animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
     
-    background: linear-gradient(45deg, #A2C7E5 10%, #000000 90%);
+    background: linear-gradient(45deg, #000000 10%, #A2C7E5 90%);
      
    /*  background: linear-gradient(45deg, #0b6b5b 10%, #A2C7E5 90%); */
     height: 100vh
