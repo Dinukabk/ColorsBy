@@ -23,40 +23,22 @@
 	Icomoon Icon Fonts
 	<link rel="stylesheet" href="css/icomoon.css">
 	Magnific Popup
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/magnific-popup.css?version=1">
 	Salvattore
 	<link rel="stylesheet" href="css/salvattore.css">
 	Theme Style
-	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" href="css/style1.css?version=1">
 	Modernizr JS
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	
 	<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
 	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/styles.css?version=1">
 	<link rel="stylesheet" href="./css/home.css">
 	
 	<link rel="stylesheet" href="css/styles_Gallery.css">
 
-<style type="text/css">
-
-</style>
-
-
-.btnNC {
-  background-color: blue; 
-  border: none; 
-  color: white; 
-  padding: 12px 16px; 
-  font-size: 16px; 
-  cursor: pointer; 
-}
-
-
-.btnNC:hover {
-  background-color: RoyalBlue;
-}
 
 </head>
 <body>
@@ -103,26 +85,7 @@
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
 	
-	
-	<%-- <%
-				try
-				{
-					Class.forName("com.mysql.jdbc.Driver");
-					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-					String username="root";
-					String password="root";
-					String query="select * from painting";
-					
-					Connection conn=DriverManager.getConnection(url, username, password);
-					Statement stmt=conn.createStatement();
-					ResultSet rs=stmt.executeQuery(query);
-					
-					while(rs.next())
-					{
-			
-			%> --%>
-			
-			
+				
 			<!--Gallery testing  -->
 			
 			<div id="fh5co-main">
@@ -157,14 +120,18 @@
 			%>
 
         					<div class="item">
-        						<div class="animate-box">  
+        						<div class="animate-box"> 
         			
-					        		<a href="images/deepthi_02.JPG" class="image-popup fh5co-board-img">
+					        		<a href="images/<%=rs.getString("image_url") %>" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
 					        		<%-- title="<%=rs.getString("title") %>" --%>
 					        		
-					        		<img src="images/deepthi_02.JPG" alt="Free HTML5 Bootstrap template"></a>
+					        		<img src="images/<%=rs.getString("image_url") %>" alt="Free HTML5 Bootstrap template"></a>
+					        		
+					        		<a target="_blank" href="Gallery_singlePainting_Details.jsp?painting_id=<%= rs.getInt("painting_id")%>&artistName=<%=rs.getString("a.name")%>" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
+					        		
         						</div>
         						<div class="fh5co-desc">
+        						
         											        		
 					        		<h3><b><%=rs.getString("title") %></b></h3>
 					        		<%-- <h6>by <%=rs.getString("p.a_artist_id") %></h6> --%>
@@ -173,8 +140,9 @@
 					        		
 					        		<% if(rs.getString("price").equals("Negotiate Price")){ %>
 					        		<!-- <input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'"> -->
-					        		<button class="btnNC" style="background-color: ash; border: none; border-radius: 5px; color: black; padding: 5px 5px; font-size: 10px; cursor: pointer;">
-					        		<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" title="NEGOTIATE PRICE"> NEGOTIATE
+					        		<button class="btnNC">
+					        		<!-- style="background-color: #B2BEB5; border: none; border-radius: 5px; color: black; padding: 5px 5px; font-size: 10px; cursor: pointer;"> -->
+					        		<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" data-title="NEGOTIATE PRICE"> NEGOTIATE
 					        		</button>
 					        		
 					        		<% } 
@@ -182,16 +150,19 @@
 					        		{ %> 
 					        		
 					        			<h5><b>Rs. <%=rs.getString("price") %>.00</b></h5>
+					        			
+					        			<!-- <input type="button" id="cartButton" value="ADD TO CART"> -->
+						        		<button class="btnNC">
+						        		<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href=' '" title="ADD TO CART"> ADD TO CART
+						        		</button>
+					        		
 					        		<%} %>
 					        		
-					             		
-					        		<!-- <input type="button" id="cartButton" value="ADD TO CART"> -->
-					        		<button class="btnNC" style="background-color: ash; border: none; border-radius: 5px; color: black; margin-left: 15px; padding: 5px 5px; font-size: 10px; cursor: pointer;">
-					        		<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href='negoNavServlet'" title="ADD TO CART"> ADD TO CART
-					        		</button>					        
-					        		
+					        		<!-- <a href="#" style = "text-align:right"> View more details </a> -->
 					        		
 					        	</div>
+					        	
+					        	
         		
         					</div>
         					
@@ -215,62 +186,7 @@
       	 		</div>
 			</div>
 			
-			<%-- <%
-					}
 			
-			rs.close();
-			stmt.close();
-			conn.close();
-			}
-			catch(Exception e)
-			{
-			e.printStackTrace();
-			}
-		%> --%>
-			
-	
-	<!--
-	<form method="post">
-	
-		 <table border="2">
-			<tr>
-				<th>Painting ID</th>
-				<th>Title</th>
-				<th>Description</th>
-				<th>Price</th>
-				<th>Drawn Date</th>
-				<th>Category</th>
-				<th>Weight</th>
-				<th>Length</th>
-				<th>Width</th>
-				<th>Image</th>
-				<th>Material</th>
-				<th>In-stock</th>
-				<th>Frame</th>
-				<th>Artist ID</th>
-				<th>Cart ID</th>
-			</tr> -->
-						
-			
-			<%--
-			 <%
-				try
-				{
-					Class.forName("com.mysql.jdbc.Driver");
-					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-					String username="root";
-					String password="root";
-					String query="select * from painting";
-					
-					Connection conn=DriverManager.getConnection(url, username, password);
-					Statement stmt=conn.createStatement();
-					ResultSet rs=stmt.executeQuery(query);
-					
-					while(rs.next())
-					{
-			
-			%>
-			 --%>
 			
 			<%-- 
 			Gallery testing  

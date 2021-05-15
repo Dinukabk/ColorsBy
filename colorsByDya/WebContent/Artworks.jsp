@@ -55,6 +55,7 @@
 	</div>
 
 
+	<input type="button" name="report" value="Generate Report" onclick="location.href='Servlet_Gallery_Paint_PDF'">
 
 		
 	<div class="table-responsive" style="width:auto; margin:0 auto;">
@@ -104,7 +105,7 @@
 			<td>${paint.weight}</td>
 			<td>${paint.length}</td>
 			<td>${paint.width}</td>
-			<td>${paint.image_url}</td>
+			<td><img src="images/${paint.image_url}" width="100px"></td>
 			<td>${paint.material}</td>
 			<%-- <td>${paint.in_stock}</td> --%>
 			<td>${paint.frame}</td>
