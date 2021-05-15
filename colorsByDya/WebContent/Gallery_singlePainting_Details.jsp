@@ -7,8 +7,35 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Gallery - Single painting details</title>
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/icomoon.css">
+
+<link rel="stylesheet" href="css/magnific-popup.css?version=1">
+
+<link rel="stylesheet" href="css/salvattore.css">
+
+<link rel="stylesheet" href="css/style1.css?version=1">
+	
+	
+
+<!-- <link rel="stylesheet" href="css/frontpage.css">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/styles.css?version=1">
+<link rel="stylesheet" href="./css/home.css"> -->
+<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css?">
+
+<script type="text/javascript" href="js/frontpage.js"></script>
+ -<link rel="shortcut icon" href="favicon.ico">
+ <script src="js/modernizr-2.6.2.min.js"></script>
+
 </head>
 <body>
+	<header></header>
+	<main>
 
 	<%@ page import="java.sql.ResultSet" %>
 	<%@ page import="java.sql.Statement" %>
@@ -17,8 +44,6 @@
 	
 	<%@ page import="java.sql.PreparedStatement" %>
 	
-
-	<h3> Single painting details </h3>
 	
 	 <%
 		int painting_id =Integer.parseInt(request.getParameter("painting_id")); 
@@ -26,8 +51,7 @@
 		
 	%> 
 	
-	 <h1> <%=Integer.parseInt(request.getParameter("painting_id"))%> </h1> 
-	 <h1> <%=request.getParameter("artistName")%> </h1>
+	 
 	 
 	 <%
 		try
@@ -59,8 +83,77 @@
 		
 		%>
 		
-			<h3><b><%=rs.getString("title")%></b></h3>
-			<img src="images/<%=rs.getString("image_url")%>" width="200px">
+			
+			
+			<!-- div placement testing  -->
+			<div class="flex-container" style="width : 100%;">
+
+			  <div class="flex-child" style="width : 65%">
+			  
+			    
+			    <img src="images/<%=rs.getString("image_url")%>" width="70%" height="auto" >	 			
+			    
+			  </div>
+			  
+			  <div class="flex-child" style="width : 35%">
+			    
+			    
+			    <%-- <h1> <%=Integer.parseInt(request.getParameter("painting_id"))%> </h1> --%>
+			    <h3 class="artwork_single_title"><b><%=rs.getString("title")%></b></h3>
+			    <h6 class="artworks_by"> by <%=request.getParameter("artistName")%> </h6>
+			    <h5><b>"</b> <i> <%=rs.getString("description")%> </i> <b>"</b></h5>
+			    
+			    <div class="artworks_cat">
+			    	<table>
+			    		<tr>
+			    		<% if(!rs.getString("category").isEmpty()) {%>
+			    			<td> Category:</td>
+			    			<td> <%=rs.getString("category")%></td>
+			    			<% } %>
+			    		</tr>
+			    		<tr>
+			    		<% if(!rs.getString("material").isEmpty()) {%>
+			    			<td> Material:</td>
+			    			<td> <%=rs.getString("material")%></td>
+			    			<% } %>
+			    		</tr>
+			    		<tr>
+			    		<% if(!rs.getString("frame").isEmpty()) {%>
+			    			<td> Frame:</td>
+			    			<td> <%=rs.getString("frame")%></td>
+			    			<% } %>
+			    		</tr>
+			    		<tr>
+			    		<% if(!rs.getString("drawn_date").isEmpty()) {%>
+			    			<td> Date:</td>
+			    			<td> <%=rs.getString("drawn_date")%></td>
+			    			<% } %>
+			    		</tr>
+			    		<tr>
+			    		<% if(!rs.getString("width").isEmpty()) {%>
+			    			<td> Size:</td>
+			    			<td> <%=rs.getString("length")%> x <%=rs.getString("width")%> &nbsp INCHES</td>
+			    			<% } %>
+			    		</tr>
+			    		<tr>
+			    		<% if(!rs.getString("weight").isEmpty()) {%>
+			    			<td> Weight:</td>
+			    			<td> <%=rs.getString("weight")%> &nbsp KG</td>
+			    			<% } %>
+			    		</tr>
+			    	</table>
+			    	<%-- 
+			    	<span class="column width-6"> Category : </span>
+			    	<span class="column width-6"><%=rs.getString("category")%></span>
+			    	
+			   
+			    	 --%>
+			    </div>
+				
+			    
+			  </div>
+			  
+			</div>
 			
 	 <%
 			} // end of While
@@ -75,6 +168,10 @@
 		e.printStackTrace();
 		}
 		%>
+		
+		</main>
+		
+		<footer></footer>
 	 
 
 </body>
