@@ -73,7 +73,7 @@
 	 
 	 	<input type="text" name="name" placeholder="Enter event name" ><br>
 	 	
-	 	<input type="text" name="date" id="datepicker" placeholder="Enter event date" ><br>
+	 	<input type="date" name="date" id="datepicker" placeholder="Enter event date" ><br>
 	 	
 	 	<input type="number" name="status" placeholder="Enter event status" ><br>
 	 	

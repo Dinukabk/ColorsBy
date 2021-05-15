@@ -19,7 +19,7 @@ public class EveInsertServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String name = request.getParameter("name");
-		String date = request.getParameter("date");
+		String date = request.getParameter(String.valueOf("date"));
 		String status =  request.getParameter(String.valueOf("status"));
 		String description = request.getParameter("description");
 		String adminID = request.getParameter(String.valueOf("adminID"));
