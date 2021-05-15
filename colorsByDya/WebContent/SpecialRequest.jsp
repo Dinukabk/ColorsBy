@@ -25,6 +25,21 @@
 
 <link rel="stylesheet" href="css/common.css">
 
+<script>
+	function phonenumber(phone)
+	{
+	  var phone = /^\d{10}$/;
+	  if((inputtxt.value.match(phone))){
+		 return true;
+	}
+	  else
+	        {
+	        alert("Phone number should contain TEN numbers");
+	        return false;
+	        }
+	}
+</script>
+
 </head>
 <body>
 
@@ -94,9 +109,10 @@
       </div>
       
    </div>
+   <!-- onsubmit="return validateForm()" -->
    
    <div>
-      <form name="requestForm" action="insertRequest" method="post" class="specialRForm" onsubmit="return validateForm()" >
+      <form name="requestForm" action="insertRequest" method="post" class="specialRForm" onsubmit="function phonenumber(phone)">
       
       <fieldset>
       <legend style="padding:20px 0; font-size:30px;">We like to have a Special Request from you:</legend>

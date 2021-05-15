@@ -32,7 +32,7 @@ public class NegoAcceptServlet extends HttpServlet {
 			RequestDispatcher dis = request.getRequestDispatcher("requestSuccess.jsp");
 			dis.forward(request, response);
 			try {
-				MailUtil.sendMail("it19971490@my.sliit.lk");
+				MailUtilCustomer.sendMail("it19971490@my.sliit.lk");
 			} catch (MessagingException e) {
 				
 				e.printStackTrace();

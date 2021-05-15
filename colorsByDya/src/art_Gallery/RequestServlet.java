@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 //import java.io.InputStream;
 
-
+import javax.mail.MessagingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -66,11 +66,13 @@ public class RequestServlet extends HttpServlet {
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("SpecialRequest.jsp");
 			dis.forward(request, response);
-			/*
-			 * System.out.println("<script type=\"text/javascript\">");
-			 * System.out.println("alert('User or password incorrect');");
-			 * System.out.println("</script>");
-			 */
+			
+			try {
+				MailUtil.sendMail("lochanawijerathna27@gmail.com");
+			} catch (MessagingException e) {
+				
+				e.printStackTrace();
+			}
 		}
 		else {
 			RequestDispatcher dis2 = request.getRequestDispatcher("requestUnsuccess.jsp");

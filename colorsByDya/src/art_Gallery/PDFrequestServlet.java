@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -40,6 +41,7 @@ public class PDFrequestServlet extends HttpServlet {
 
 		if (session.getAttribute("artistUserID") != null) {
 			System.out.println("No user ID Detected in session...");
+		    int artistUserID = (int) session.getAttribute("artistUserID");
 			
 			Connection con = null;
 			Statement stmt = null;
@@ -51,8 +53,25 @@ public class PDFrequestServlet extends HttpServlet {
 			try {
 				PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("D://TestReq.pdf"));
 				document.open();
-				document.add(new Paragraph("These are the Requests"));
+				//document.add(new Paragraph("Special Requests"));
 				System.out.println("Reading this");
+				Paragraph p = new Paragraph();
+				p.add("Special Requests");
+				p.setAlignment(Element.ALIGN_CENTER);
+				document.add(p);
+				
+				document.add(new Paragraph(" "));
+				document.add(new Paragraph(" "));
+				
+				/*
+				con = RequestDBConnector.getConnection();
+				stmt = con.createStatement();
+				String sql_1 = "SELECT COUNT(*) from special_request;";
+				ResultSet rs1 = stmt.executeQuery(sql_1);
+				document.add(new Paragraph(String.valueOf(rs1.getInt("COUNT(*)"))));
+				*/
+				
+				document.add(new Paragraph(" "));
 				
 				 PdfPTable table = new PdfPTable(5); 
 				 table.setWidthPercentage(105);
@@ -82,9 +101,9 @@ public class PDFrequestServlet extends HttpServlet {
 					 cells[j].setBackgroundColor(BaseColor.GRAY);
 				 }
 				 
-				 con = RequestDBConnector.getConnection();
+				 	con = RequestDBConnector.getConnection();
 					stmt = con.createStatement();
-					String sql = "select sr.request_id,sr.name,sr.phone,sr.message,sr.photograph FROM special_request sr, artist a WHERE sr.artist_name=a.artist_id AND a.artist_id=3";
+					String sql = "select sr.request_id,sr.name,sr.phone,sr.message,sr.photograph FROM special_request sr, artist a WHERE sr.artist_name=a.artist_id AND a.artist_id=3 AND sr.accept=1";
 					rs = stmt.executeQuery(sql);
 					
 					while(rs.next()) {
@@ -103,7 +122,8 @@ public class PDFrequestServlet extends HttpServlet {
 				 
 				 document.add(table);
 				 
-				 
+				 //Image img = Image.getInstance("D:\\deepthi_02");
+				 //document.add(img);
 				
 				document.close();
 				writer.close();

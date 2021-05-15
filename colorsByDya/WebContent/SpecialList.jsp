@@ -13,6 +13,19 @@
 <link rel="stylesheet" href="css/req2.css">
 <link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
 <title>Special Request list</title>
+
+<script type="text/javascript">
+function myFunction() {
+	  document.getElementById("testBtn").style.color = "red";
+	  document.getElementById("testBtn").value = "red";
+	}
+	
+function disableButton(){
+	document.getElementById(testBtn).disabled = true;
+	alert("Button has been disabled.");
+}
+</script>
+
 </head>
 <body>
 	<h1>Special Requests</h1><br>
@@ -86,7 +99,7 @@
 			</c:url>
 			
 			<a href="${prAccept}">
-			<input type="button" name="accept" value="Accept">
+			<input type="button" id="acceptSpecialArt" onclick="myFunction()" name="accept" value="Accept">
 			</a>
 			
 		</td>
@@ -96,6 +109,7 @@
 	</table>
 	
 	<input type="button" name="report" value="Generate Report" onclick="location.href='PDFrequestServlet'">
+	<input type="button" value="test" id="testBtn" onclick="myFunction()">
 
 <style>
 $font-family:   "Roboto";

@@ -40,7 +40,7 @@ public class acceptSRservlet extends HttpServlet {
 			dis.forward(request, response);
 			
 			try {
-				MailUtil.sendMail(email);
+				MailUtilCustomer.sendMail("it19971490@my.sliit.lk");
 			} catch (MessagingException e) {
 				
 				e.printStackTrace();
