@@ -54,5 +54,37 @@ public class CustomerDbUtill {
 		
 	}
 	
-
+//customer details insert
+	public static boolean insertcustomer(String fname,String pNumber,String Address1,String Address2,String pCode,String City,String Province,String Country,String UserName,String Password) {
+		
+		boolean isSuccess = false;
+		//create Db connection
+				String url = "jdbc:mysql://localhost:3306/colorbydiyaa";
+				String user = "root";
+				String pass = "root";
+				
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,user,pass);
+			Statement stmt = con.createStatement();	
+			
+			String sql = "INSERT INTO registered_customer VALUES (0,'"+fname+"','"+UserName+"','"+Password+"','"+pNumber+"','"+Address1+"','"+Address2+"','"+pCode+"','"+Province+"','"+City+"','"+Country+"')";
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+			isSuccess = true;	
+			}else {
+				isSuccess = false;
+			}
+			
+			
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
+	
+	
 }

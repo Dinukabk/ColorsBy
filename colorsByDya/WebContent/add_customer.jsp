@@ -162,72 +162,67 @@ input:required, textarea:required {
 		</div>
 		<form action="AddCustomer" method="post">
 			<div>
-				<label for="ID"> <span class="required">Customer ID:</span>
-					<input type="text" id="ID" name="ID" value="" pattern="[C][0-9]"
-					placeholder="Generate ID for Customer" required="required"
-					tabindex="1" autofocus="autofocus"
-					title="ID pattern = C(any number) i.e C1" />
+				<label for="ID"> <span class="required">Full Name</span>
+					<input type="text" id="" name="fullname" value="" pattern=""
+					placeholder="Full Name" required="required" autofocus="autofocus"
+					 />
 				</label>
 			</div>
 			<div>
-				<label for="Name"> <span class="required">Customer
-						Name: </span> <input type="text" id="name" name="Name" value=""
-					pattern="[A-Za-z.\s]{1,}" placeholder="Name of Customer"
-					tabindex="2" required="required"
-					title="Fullname should only contain letters. e.g. john" />
+				<label for="Name"> <span class="required">Phone Number
+						 </span> <input type="text" id="" name="phoneNo" value=""
+					pattern="" placeholder="Phone Number" required="required"
+					 />
 				</label>
 			</div>
 			<div>
-				<label for="Address"> <span class="required">Customer
-						Address: </span> <input type="text" id="Address" name="Address" value=""
-					placeholder="Enter Address" tabindex="3" required="required" />
+				<label for="Address"> <span class="required">Address Line1
+						 </span> <input type="text" id="" name="Address1" value=""
+					placeholder="Line 1" required="required" />
 				</label>
 			</div>
 			<div>
-				<label for="Phone no"> <span class="required">Enter
-						Phone Number: </span> <input type="" id="Pno" name="Pno" value=""
-					Pattern="[789][0-9]{9}" placeholder="Enter Mobile Number"
-					tabindex="4" required="required" title="enter valid mobile no." />
+				<label for="Address"> <span class="required">Address Line2
+						 </span> <input type="text" id="" name="Address2" value=""
+					placeholder="Line" required="required" />
 				</label>
 			</div>
 			<div>
-				<%
-				String url = "jdbc:mysql://localhost:3306/";
-				String dbName = "art_gallery";
-				String driver = "com.mysql.jdbc.Driver";
-				String userName = "root";
-				String password = "rutuja8079";
-				String query = "select * from painting";
-				try {
-					Class.forName(driver).newInstance();
-					Connection conn = DriverManager.getConnection(url + dbName, userName, password);
-
-					Statement st = conn.createStatement();
-
-					ResultSet rs = st.executeQuery(query);
-				%>
-				<span class="required">Select Painting: </span> <select name="title">
-					<option value="Select Painting"></option>
-					<%
-					while (rs.next()) {
-						String title = rs.getString("title");
-						String email = rs.getString("email");
-					%>
-					<option value="<%=title%>"><%="Title : " + title + "		Email ID:" + email%></option>
-					<%
-					}
-					%>
-				</select>
-				<%
-				} catch (Exception e) {
-				}
-				%>
+				<label for="Phone no"> <span class="required">Postal Code
+						 </span> <input type="" id="" name="PCode" value=""
+					Pattern="" placeholder="Postal Code" required="required"
+					 />
+				</label>
 			</div>
 			<div>
-				<label for="Cost"> <span class="required">Cost of
-						Painting: </span> <input type="text" id="Cost" name="Cost" value=""
-					placeholder="Enter cost of painting" tabindex="5"
-					required="required" />
+				<label for="Phone no"> <span class="required">City
+						 </span> <input type="" id="" name="City" value=""
+					Pattern="" placeholder="City" required="required" />
+				</label>
+			</div>
+			<div>
+				<label for="Phone no"> <span class="required">Province
+						 </span> <input type="" id="" name="Province" value=""
+					Pattern="" placeholder="Province"
+				    required="required" />
+				</label>
+			</div>
+			<div>
+				<label for="Phone no"> <span class="required">Country
+						 </span> <input type="" id="" name="Country" value=""
+					Pattern="" placeholder="Country" required="required" />
+				</label>
+			</div>
+			<div>
+				<label for="Cost"> <span class="required">User Name
+						 </span> <input type="text" id="" name="username" value=""
+					placeholder="User Name" required="required" />
+				</label>
+			</div>
+				<div>
+				<label for="Cost"> <span class="required">Password
+						 </span> <input type="text" id="" name="password" value=""
+					placeholder="Password" required="required" />
 				</label>
 			</div>
 			<div>

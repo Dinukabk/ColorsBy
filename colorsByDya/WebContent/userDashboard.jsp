@@ -9,6 +9,16 @@
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">
+
+	<style type="text/css">
+	
+		table, th, td {
+  			border: 2px solid black;
+  			padding: 2px;
+  			text-align: center;
+		}
+	</style>
+
 </head>
 <body>
 	<!-- Navbar -->
@@ -68,49 +78,41 @@
 						onclick="location.href = 'NegoCusListServlet'">Negotiate Price Requests</button>
 				</div>
 				<br> <br> <br> <br>
-				<p class="lead mb-0">Test 03</p>
+				<p class="lead mb-0">USER DEATILS</p>
 				
 				<!--  data retreve part start-->
-				
 				<table>
-	<c:forEach var="cus" items="${cusDetails}">
-	
-	<c:set var="id" value="${cus.customer_id}"/>
-	<c:set var="name" value="${cus.full_name}"/>
-	<c:set var="email" value="${cus.username}"/>
-	<c:set var="phone" value="${cus.passU}"/>
-	<c:set var="username" value="${cus.phone_no}"/>
-	<c:set var="password" value="${cus.add_line_01}"/>
-	<c:set var="name" value="${cus.add_line_02}"/>
-	<c:set var="email" value="${cus.postal_code}"/>
-	<c:set var="phone" value="${cus.province}"/>
-	<c:set var="username" value="${cus.city}"/>
-	<c:set var="password" value="${cus.city}"/>
-	
+				<c:forEach var="cus" items="${cusDeatils}">
 	<tr>
-		<td>Customer ID</td>
-		<td>${cus.id}</td>
+		<td>ID</td>
+		<td>fullname</td>
+		<td>Username</td>
+		<td>Password</td>
+		<td>Phone No</td>
+		<td>Address line1</td>
+		<td>Address line2</td>
+		<td>Postal Code</td>
+		<td>Provence</td>
+		<td>City</td>
+		<td>Country</td>
 	</tr>
 	<tr>
-		<td>Customer Name</td>
-		<td>${cus.name}</td>
+		
+		<td>${cus.customer_id}</td>
+		<td>${cus.full_name}</td>
+		<td>${cus.username}</td>
+		<td>${cus.password}</td>
+		<td>${cus.phone_no}</td>
+		<td>${cus.add_line_01}</td>
+		<td>${cus.add_line_02}</td>
+		<td>${cus.postal_code}</td>
+		<td>${cus.province}</td>
+		<td>${cus.city}</td>
+		<td>${cus.country}</td>
 	</tr>
-	<tr>
-		<td>Customer Email</td>
-		<td>${cus.email}</td>
-	</tr>
-	<tr>
-		<td>Customer Phone</td>
-		<td>${cus.phone}</td>
-	</tr>
-	<tr>
-		<td>Customer User Name</td>
-		<td>${cus.userName}</td>
-	</tr>
-
-	</c:forEach>
-	</table>
-				
+		
+				</c:forEach>
+				</table>
 				
 			</header>
 			<div class="py-5">
