@@ -55,14 +55,17 @@
   <h1>Negotiate the Price of the Painting</h1><br><br>
   
   <div class="contact-in">
-  		<h3>We recommend you to contact the Artist before entering the Negotiate Price. Otherwise request may reject</h3>
+  <center>
+  		<h3>We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
+  		<h2> Otherwise request may reject</h2>
+  </center>
   </div><br><br>
   
   <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
   <center>
   <div>
   <!-- painting retrieve -->
-  <img src="images/deepthi_02.JPG" alt="Negotiate paint" width="300px" hight="300px">
+  <!-- <img src="images/deepthi_02.JPG" alt="Negotiate paint" width="300px" hight="300px"> -->
   </div></center><br><br>
   
   <div>
@@ -74,50 +77,7 @@
   	</form>
   </div>
   <br>
-    <%-- <%@ page import="java.sql.ResultSet" %>
-	<%@ page import="java.sql.Statement" %>
-	<%@ page import="java.sql.Connection" %>
-	<%@ page import="java.sql.DriverManager" %>
-  
-  <%
-				try
-				{
-					Class.forName("com.mysql.jdbc.Driver");
-					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-					String username="root";
-					String password="root";
-					String query="select * from negotiate_price";
-					
-					Connection conn=DriverManager.getConnection(url, username, password);
-					Statement stmt=conn.createStatement();
-					ResultSet rs=stmt.executeQuery(query);
-					
-					while(rs.next())
-					{
-			
-			%>
-			
-			<% 
-			boolean accepted = rs.getBoolean("accepted");
-			System.out.println("Boolean Value: "+accepted);
-			int val = (accepted) ? 1 : 0;
-			System.out.println("Integer value: "+val);
-			if(val == 1){ %>
-					       <input type="button" id="cart" name="cartBtn" value="Add to cart">
-			<% } %>
-			
-			<%
-					}
-			
-			rs.close();
-			stmt.close();
-			conn.close();
-			}
-			catch(Exception e)
-			{
-			e.printStackTrace();
-			}
-		%> --%>
+    
   
   </div>
   

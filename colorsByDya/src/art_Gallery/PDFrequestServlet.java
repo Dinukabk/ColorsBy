@@ -50,6 +50,7 @@ public class PDFrequestServlet extends HttpServlet {
 			ResultSet rs = null;
 			
 			String count;
+			String acceptCount;
 			
 	        Document document = new Document();
 	        System.out.println("coming to servlet");
@@ -71,21 +72,29 @@ public class PDFrequestServlet extends HttpServlet {
 				document.add(new Paragraph(" "));
 				document.add(new Paragraph(" "));
 				
+				List listR = new List(List.UNORDERED);
+				
 				//counting all requests
 				String sql_1 = "SELECT COUNT(*) AS RCount from special_request where artist_name=3";
 				rs = stmt.executeQuery(sql_1);
 				System.out.println(rs);
 				//String count = String.valueOf(rs.getInt(stmt.executeQuery(sql_1)));
+				
 				if(rs.next()) {
 					count = String.valueOf(rs.getInt("RCount"));
 					System.out.println(count);
-					
-					List listR = new List(List.UNORDERED);
 					listR.add(new ListItem("No of Requests : " + count));
-					listR.add(new ListItem("No of Accepted Requests : "));
-					document.add(listR);
+				}
+				//counting accepted requests
+				String sql_2 = "SELECT COUNT(*) AS RCountA from special_request where artist_name=3 AND accept=1";
+				rs = stmt.executeQuery(sql_2);
+				
+				if(rs.next()) {
+					acceptCount = String.valueOf(rs.getInt("RCountA"));
+					listR.add(new ListItem("No of Accepted Requests : " + acceptCount));
 				}
 				
+				document.add(listR);
 				
 				
 				/*

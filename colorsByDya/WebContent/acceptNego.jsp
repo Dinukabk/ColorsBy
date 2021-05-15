@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Accept - Colors by Diyaa</title>
 </head>
 <body>
 

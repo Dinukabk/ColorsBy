@@ -108,7 +108,8 @@ function disableButton(){
 	</c:forEach>
 	</table>
 	
-	<input type="button" name="report" value="Generate Report" onclick="location.href='PDFrequestServlet'">
+    <input type="button" name="report" value="Generate Report" onclick="location.href='PDFrequestServlet'"> 
+	<!-- <a location.href="PDFrequestServlet" download="Request.pdf">Download</a> -->
 	<input type="button" value="test" id="testBtn" onclick="myFunction()">
 
 <style>
