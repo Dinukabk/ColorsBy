@@ -25,6 +25,8 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.Image;
+import com.itextpdf.text.List;
+import com.itextpdf.text.ListItem;
 
 
 @WebServlet("/PDFrequestServlet")
@@ -47,10 +49,16 @@ public class PDFrequestServlet extends HttpServlet {
 			Statement stmt = null;
 			ResultSet rs = null;
 			
+			String count;
+			
 	        Document document = new Document();
 	        System.out.println("coming to servlet");
 			
 			try {
+				
+				con = RequestDBConnector.getConnection();
+				stmt = con.createStatement();
+				
 				PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("D://TestReq.pdf"));
 				document.open();
 				//document.add(new Paragraph("Special Requests"));
@@ -62,6 +70,23 @@ public class PDFrequestServlet extends HttpServlet {
 				
 				document.add(new Paragraph(" "));
 				document.add(new Paragraph(" "));
+				
+				//counting all requests
+				String sql_1 = "SELECT COUNT(*) AS RCount from special_request where artist_name=3";
+				rs = stmt.executeQuery(sql_1);
+				System.out.println(rs);
+				//String count = String.valueOf(rs.getInt(stmt.executeQuery(sql_1)));
+				if(rs.next()) {
+					count = String.valueOf(rs.getInt("RCount"));
+					System.out.println(count);
+					
+					List listR = new List(List.UNORDERED);
+					listR.add(new ListItem("No of Requests : " + count));
+					listR.add(new ListItem("No of Accepted Requests : "));
+					document.add(listR);
+				}
+				
+				
 				
 				/*
 				con = RequestDBConnector.getConnection();
@@ -101,8 +126,7 @@ public class PDFrequestServlet extends HttpServlet {
 					 cells[j].setBackgroundColor(BaseColor.GRAY);
 				 }
 				 
-				 	con = RequestDBConnector.getConnection();
-					stmt = con.createStatement();
+				 	
 					String sql = "select sr.request_id,sr.name,sr.phone,sr.message,sr.photograph FROM special_request sr, artist a WHERE sr.artist_name=a.artist_id AND a.artist_id=3 AND sr.accept=1";
 					rs = stmt.executeQuery(sql);
 					
