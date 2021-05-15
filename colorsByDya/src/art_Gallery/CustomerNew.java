@@ -14,64 +14,80 @@ public class CustomerNew {
 	private String city;
 	private String country;
 	
-	public CustomerNew(int customer_id, String full_name2, String username2, String passU, String phone_no2, String add_line_012,
-			String add_line_022, int postal_code, String province2, String city2, String country2) {
+	public CustomerNew(int customer_id, String full_name, String username, String passU, String phone_no, String add_line_01,
+			String add_line_02, int postal_code, String province, String city, String country) {
 		this.customer_id = customer_id;
-		this.full_name = full_name2;
-		this.username = username2;
+		this.full_name = full_name;
+		this.username = username;
 		this.password = passU;
-		this.phone_no = phone_no2;
-		this.add_line_01 = add_line_012;
-		this.add_line_02 = add_line_022;
+		this.phone_no = phone_no;
+		this.add_line_01 = add_line_01;
+		this.add_line_02 = add_line_02;
 		this.postal_code = postal_code;
-		this.province = province2;
-		this.city = city2;
-		this.country = country2;
+		this.province = province;
+		this.city = city;
+		this.country = country;
 	}
 
 	public int getCustomer_id() {
 		return customer_id;
 	}
 
-	public char getFull_name() {
+
+	public String getFull_name() {
 		return full_name;
 	}
 
-	public char getUsername() {
+
+	public String getUsername() {
 		return username;
 	}
 
-	public char getPassword() {
+
+
+	public String getPassword() {
 		return password;
 	}
 
-	public char getPhone_no() {
+
+
+	public String getPhone_no() {
 		return phone_no;
 	}
 
-	public char getAdd_line_01() {
+
+	public String getAdd_line_01() {
 		return add_line_01;
 	}
 
-	public char getAdd_line_02() {
+
+	public String getAdd_line_02() {
 		return add_line_02;
 	}
+
 
 	public int getPostal_code() {
 		return postal_code;
 	}
 
-	public char getProvince() {
+
+
+	public String getProvince() {
 		return province;
 	}
 
-	public char getCity() {
+
+
+	public String getCity() {
 		return city;
 	}
 
-	public char getCountry() {
+
+
+	public String getCountry() {
 		return country;
 	}
+
 
 			
 	

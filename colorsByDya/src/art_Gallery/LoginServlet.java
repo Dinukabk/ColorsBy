@@ -29,9 +29,17 @@ public class LoginServlet extends HttpServlet {
 		String n = request.getParameter("email");
 		String p = request.getParameter("password");
 		
+		try {
 		List<CustomerNew> cusDeatils = CustomerDbUtill.validate(n, p);
+		request.setAttribute("cusDeatils", cusDeatils);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 		
 		
+		RequestDispatcher dis = request.getRequestDispatcher("userDashboard.jsp");
+		dis.forward(request, response);
 
 //		// The session
 //		HttpSession session = request.getSession(false);

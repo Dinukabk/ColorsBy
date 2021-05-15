@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,6 +69,49 @@
 				</div>
 				<br> <br> <br> <br>
 				<p class="lead mb-0">Test 03</p>
+				
+				<!--  data retreve part start-->
+				
+				<table>
+	<c:forEach var="cus" items="${cusDetails}">
+	
+	<c:set var="id" value="${cus.customer_id}"/>
+	<c:set var="name" value="${cus.full_name}"/>
+	<c:set var="email" value="${cus.username}"/>
+	<c:set var="phone" value="${cus.passU}"/>
+	<c:set var="username" value="${cus.phone_no}"/>
+	<c:set var="password" value="${cus.add_line_01}"/>
+	<c:set var="name" value="${cus.add_line_02}"/>
+	<c:set var="email" value="${cus.postal_code}"/>
+	<c:set var="phone" value="${cus.province}"/>
+	<c:set var="username" value="${cus.city}"/>
+	<c:set var="password" value="${cus.city}"/>
+	
+	<tr>
+		<td>Customer ID</td>
+		<td>${cus.id}</td>
+	</tr>
+	<tr>
+		<td>Customer Name</td>
+		<td>${cus.name}</td>
+	</tr>
+	<tr>
+		<td>Customer Email</td>
+		<td>${cus.email}</td>
+	</tr>
+	<tr>
+		<td>Customer Phone</td>
+		<td>${cus.phone}</td>
+	</tr>
+	<tr>
+		<td>Customer User Name</td>
+		<td>${cus.userName}</td>
+	</tr>
+
+	</c:forEach>
+	</table>
+				
+				
 			</header>
 			<div class="py-5">
 				<p class="lead">

@@ -23,7 +23,7 @@ public class CustomerDbUtill {
 		try {
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url,userName,password);
+			Connection con = DriverManager.getConnection(url,user,pass);
 			Statement stmt = con.createStatement();	
 			String sql = "select * from registered_customer where username='"+userName+"' and password='"+password+"'";
 			ResultSet rs = stmt.executeQuery(sql);
