@@ -11,14 +11,13 @@ import java.util.List;
 
 public class eventDBUtil {
 	
+	private static boolean isSuccess;
 	private static Connection con = null ;
 	private static Statement stmt = null ;
 	private static ResultSet rs = null;
 	
 	
 	public static boolean insertEvent(String name, String date, String status, String description, String adminID ) {
-		
-		boolean isSuccess = false;
 		
 		try 
 		{
@@ -55,6 +54,8 @@ public class eventDBUtil {
 		return isSuccess;	
 		
 	}
+	
+	
 	
 	
 	
@@ -111,6 +112,76 @@ public class eventDBUtil {
 		
 		
 	}
+	
+	
+	
+	
+	
+	public static boolean updateEvent(String id, String name, String date, String status, String description, String adminID)
+	{
+		
+		try
+		{
+			con = EventDBconnect.getConnection();
+			stmt = con.createStatement();
+			
+			int ID = Integer.parseInt(id);
+			boolean sts = Boolean.valueOf(status);
+			int aid = Integer.parseInt(adminID);
+			
+			String sql = "update customer set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
+					+ "where id = '"+ID+"'";
+			
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0)
+			{
+				isSuccess = true;
+			}
+			else
+			{
+				isSuccess = false;
+			}
+			
+			
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			
+		}
+		
+		
+		return isSuccess;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 

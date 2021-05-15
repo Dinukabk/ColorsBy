@@ -112,17 +112,17 @@ h1{
 		
 		<c:url value = "EventUpdate.jsp" var="eveupdate">
 			
-			<c:param name = "id" value = "${id }"/>
+			<c:param id = "id" value = "${id }"/>
 			<c:param name = "name" value = "${name}"/>
-			<c:param name = "date" value = "${date}"/>
-			<c:param name = "status" value = "${status}"/>
-			<c:param name = "description" value = "${description}"/>
-			<c:param name = "adminId" value = "${adminId}"/>
+			<c:param date = "date" value = "${date}"/>
+			<c:param status = "status" value = "${status}"/>
+			<c:param description = "description" value = "${description}"/>
+			<c:param adminId  = "adminId" value = "${adminId}"/>
 		 	
 		</c:url>
 		
 		
-		<a href="">
+		<a href="${eveupdate}" >
 		<input type="button" name="update" value="Update my data">
 		</a>
 	

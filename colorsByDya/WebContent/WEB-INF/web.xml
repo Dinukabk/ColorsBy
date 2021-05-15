@@ -359,8 +359,14 @@ version="2.5"
 	
 
 
-
-
+	<servlet>
+		<servlet-name>updateEvent</servlet-name>
+		<servlet-class>art_Gallery.EventUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateEvent</servlet-name>
+		<url-pattern>/updateEvent</url-pattern>
+	</servlet-mapping>
 
 
 

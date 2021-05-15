@@ -75,19 +75,31 @@
 	
 	
 
+
+
+	<%
+	String id = request.getParameter("id");
+	String name = request.getParameter("name");
+	String date = request.getParameter("date");
+	String status = request.getParameter("status");
+	String description = request.getParameter("description");
+	String adminID = request.getParameter("adminId");
+	%>
 	
 	
-	<form action="#" method="post">
+	<form action="updateEvent" method="post">
 		
-		Update event name				<input type="text" name="Uname" placeholder="Enter event name" ><br>
+		ID								<input type="text" name="ID" placeholder="ID" value="<%=id%>>" readonly><br>
+		
+		Update event name				<input type="text" name="Uname" placeholder="Enter event name" value="<%=name%>>" ><br>
 	 	
-	 	Update event date				<input type="text" name="Udate" id="datepicker" placeholder="Enter event date" ><br>
+	 	Update event date				<input type="text" name="Udate" id="datepicker" placeholder="Enter event date" value="<%=date%>>" ><br>
 	 	
-	 	Update event status				<input type="number" name="Ustatus" placeholder="Enter event status" ><br>
+	 	Update event status				<input type="number" name="Ustatus" placeholder="Enter event status" value="<%=status%>>" ><br>
 	 	
-	 	Update event description		<input type="text" name="Udescription" placeholder="Enter description" ><br>
+	 	Update event description		<input type="text" name="Udescription" placeholder="Enter description" value="<%=description%>>" ><br>
 	 	
-	 	Enter AdminID					<input type="number" name="UadminID" placeholder="Enter admin ID" ><br>
+	 	AdminID							<input type="number" name="UadminID" placeholder="Enter admin ID" value="<%=adminID%>>" readonly ><br>
 	 	
 	 	
 	 	
