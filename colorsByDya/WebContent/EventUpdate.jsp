@@ -4,30 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Get event details</title>
+<title>Update event</title>
 
-<style>
-input[], select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
-.container {
-  border-radius: 1px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-h1{
-	color : gray;
-}
-</style>	
-
+<!-- <link rel="stylesheet" href="css/frontpage.css">  -->
+	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/home.css">
@@ -45,10 +26,14 @@ h1{
   		} );
   	</script>
 
+
+
+
 </head>
 <body>
 
-<!-- Navbar 
+
+	<!-- Navbar 
 	<header class="header" class="py-5 mt-5">
 		<nav class="navbar navbar-expand-lg fixed-top py-3">
 			<div class="container">
@@ -87,72 +72,33 @@ h1{
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
 	-->
+	
+	
 
-
-
-	<c:forEach var = "Eve" items="#{eveDetails}">
 	
 	
-	
-		<c:set var="id" value = "${Eve.id}"/>
-		<c:set var="name" value = "${Eve.name}"/>
-		<c:set var="date" value = "${Eve.date}"/>
-		<c:set var="status" value = "${Eve.status}"/>
-		<c:set var="description" value = "${Eve.description}"/>
-		<c:set var="adminId" value = "${Eve.adminID}"/>
-	
-	
-	
-		ID			=		${Eve.id} <br>
-		Name		=		${Eve.name} <br>
-		Date		=		${Eve.date}<br>
-		Status		=		${Eve.status}<br>
-		Description =		${Eve.description}<br>
-		AdminID		= 		${Eve.adminID}<br>
+	<form action="#" method="post">
 		
-		<c:url value = "EventUpdate.jsp" var="eveupdate">
-			
-			<c:param name = "id" value = "${id }"/>
-			<c:param name = "name" value = "${name}"/>
-			<c:param name = "date" value = "${date}"/>
-			<c:param name = "status" value = "${status}"/>
-			<c:param name = "description" value = "${description}"/>
-			<c:param name = "adminId" value = "${adminId}"/>
-		 	
-		</c:url>
-		
-		
-		<a href="">
-		<input type="button" name="update" value="Update my data">
-		</a>
+		Update event name				<input type="text" name="Uname" placeholder="Enter event name" ><br>
+	 	
+	 	Update event date				<input type="text" name="Udate" id="datepicker" placeholder="Enter event date" ><br>
+	 	
+	 	Update event status				<input type="number" name="Ustatus" placeholder="Enter event status" ><br>
+	 	
+	 	Update event description		<input type="text" name="Udescription" placeholder="Enter description" ><br>
+	 	
+	 	Enter AdminID					<input type="number" name="UadminID" placeholder="Enter admin ID" ><br>
+	 	
+	 	
+	 	
+	 	
+	 	<input type="submit" name="UsubmitEvent" value="Insert Event"><br>
 	
-	</c:forEach>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	</form>
+	
+	
+	
+	 
 </body>
 </html>
