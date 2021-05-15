@@ -1,6 +1,7 @@
 package art_Gallery;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,11 +11,11 @@ import java.util.List;
 public class PaymentsDatabaseUtil {
 	private static boolean cardAvailability;
 	private static String userName;
-	private static boolean querySuccess;
+	private static int querySuccess;
 	private static ArrayList<Payment> cardList = new ArrayList<>();
 	private static int cardNo;
 	private static String nameOnCard;
-	private static int expDate;
+	private static Date expDate;
 	private static int cvv;
 	private static int rsInt = 0;
 	
@@ -49,19 +50,20 @@ public class PaymentsDatabaseUtil {
 		ResultSet rs = null;
 		Connection con;
 		double cardNumber;
-		// String userName;
 		
 		try {
 			System.out.println("Customer ID in check card function: " + UIDConverted);
+			
 			con = DatabaseUtilizer.utilizeConnection();
-			pst = con.prepareStatement("SELECT full_name, cardNumber FROM registered_customer WHERE customer_id = ?");
-			pst.setString(1, UIDConverted);
+			pst = con.prepareStatement("SELECT card_id, card_number FROM rc_card WHERE customer_id = ?");
+			pst.setInt(1, userID);
 			rs = pst.executeQuery();
+			
 			while (rs.next()) {
-				// userName = rs.getString(1);
 				cardNumber = rs.getInt(2);
+				System.out.println("Test print on check card method on payment DBUtil...");
 				System.out.println("Card number: " + cardNumber);
-				if (cardNumber > 0) {
+				if (cardNumber > 0) { // #develop | Here we have to develop the code to check if there's a valid card number or not
 					cardAvailability = true;
 					System.out.println("Card available...");
 				} else {
@@ -98,29 +100,23 @@ public class PaymentsDatabaseUtil {
 		return userName;		
 	}
 	
-	public static boolean addPaymentCard(int userID, String cardNo, String nameOnCard, String expDate, String cvv, String checkbox) {
+	public static int addPaymentCard(int userID, String cardNo, String nameOnCard, String expDate, String cvv, String checkbox) {
 		Connection con;
 		PreparedStatement pst;
-		int rs;
-		String UIDConverted = Integer.toString(userID);
+		int cardNoConverted = Integer.parseInt(cardNo);
+		Date dateConverted = Date.valueOf(expDate);
+		int cvvConverted = Integer.parseInt(cvv);
 
 		try {
 			con = DatabaseUtilizer.utilizeConnection();
-			pst = con.prepareStatement(
-					"UPDATE registered_customer SET cardNumber = ?, nameOnCard = ?, expDate = ?, cvv = ? WHERE (customer_id = ?);");
-			pst.setString(1, cardNo);
-			pst.setString(2, nameOnCard);
-			pst.setString(3, expDate);
-			pst.setString(4, cvv);
-			pst.setString(5, UIDConverted);
-			rs = pst.executeUpdate();
-
-			if (rs > 0) {
-				querySuccess = true;
-			} else {
-				querySuccess = false;
-			}
-
+			pst = con.prepareStatement("INSERT INTO rc_card (customer_id, card_number, name_on_card, expiry_date, cvv) VALUES (?, ?, ?, ?, ?);");
+			pst.setInt(1, userID);
+			pst.setInt(2, cardNoConverted);
+			pst.setString(3, nameOnCard);
+			pst.setDate(4, dateConverted);
+			pst.setInt(5, cvvConverted);
+			querySuccess = pst.executeUpdate();
+			System.out.println("Query: " + querySuccess);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -135,8 +131,8 @@ public class PaymentsDatabaseUtil {
 		
 		try {
 			con = DatabaseUtilizer.utilizeConnection();
-			pst = con.prepareStatement("SELECT cardNumber, nameOnCard, expDate, cvv "
-					+ "FROM registered_customer "
+			pst = con.prepareStatement("SELECT card_number, name_on_card, expiry_date, cvv "
+					+ "FROM rc_card "
 					+ "WHERE customer_id=?");
 			pst.setString(1, UIDConverted);
 			RS = pst.executeQuery();
@@ -144,7 +140,7 @@ public class PaymentsDatabaseUtil {
 			while (RS.next()) {
 				cardNo = RS.getInt(1);
 				nameOnCard = RS.getString(2);
-				expDate = RS.getInt(3);
+				expDate = RS.getDate(3);
 				cvv = RS.getInt(4);
 								
 				Payment cardObj = null;
@@ -168,7 +164,7 @@ public class PaymentsDatabaseUtil {
 			con = DatabaseUtilizer.utilizeConnection();
 			
 			// Preparing statement
-			pst = con.prepareStatement("UPDATE registered_customer SET cardNumber = ?, nameOnCard = ?, expDate = ?, cvv = ? WHERE customer_id = ?");
+			pst = con.prepareStatement("UPDATE rd_card SET card_number = ?, name_on_card = ?, expiry_date = ?, cvv = ? WHERE customer_id = ?");
 			pst.setString(1, cardNumber);
 			pst.setString(2, nameOnCard);
 			pst.setString(3, date);
@@ -196,7 +192,7 @@ public class PaymentsDatabaseUtil {
 		return nameOnCard;
 	}
 	
-	public static int getExpDate() {
+	public static Date getExpDate() {
 		return expDate;
 	}
 	

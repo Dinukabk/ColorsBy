@@ -42,7 +42,7 @@
 								<a onclick="location.href = 'SessionFlusher'" class="nav-link text-uppercase font-weight-bold">Log out</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase font-weight-bold">${userName }</a>
+								<a onclick="location.href = 'LoginRedirector'" class="nav-link text-uppercase font-weight-bold">${userName }</a>
 							</li>
 						</ul>
 					</div>
@@ -109,7 +109,7 @@
 						<p class="text-dark h6 text-right">Expiration Date:</p>
 					</td>
 					<td>
-						<input type="number" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="Expiration Date" value="${expDate }" disabled>
+						<input type="date" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="Expiration Date" value="${expDate }" disabled>
 					</td>
 				</tr>	
 				<tr>

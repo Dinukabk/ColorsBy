@@ -1,12 +1,14 @@
 package art_Gallery;
 
+import java.sql.Date;
+
 public class Payment {
 	private int cardNo;
 	private String nameOnCard;
-	private int expDate;
+	private Date expDate;
 	private int cvv;
 	
-	public Payment(int cardNo, String nameOnCard, int expDate, int cvv) {
+	public Payment(int cardNo, String nameOnCard, Date expDate, int cvv) {
 		this.cardNo = cardNo;
 		this.nameOnCard = nameOnCard;
 		this.expDate = expDate;
@@ -29,11 +31,11 @@ public class Payment {
 		this.nameOnCard = nameOnCard;
 	}
 
-	public int getExpDate() {
+	public Date getExpDate() {
 		return expDate;
 	}
 
-	public void setExpDate(int expDate) {
+	public void setExpDate(Date expDate) {
 		this.expDate = expDate;
 	}
 
