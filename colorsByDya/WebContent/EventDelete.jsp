@@ -4,30 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Get event details</title>
+<title>Delete event</title>
 
-<style>
-input[], select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
-.container {
-  border-radius: 1px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
 
-h1{
-	color : gray;
-}
-</style>	
-
+<!-- <link rel="stylesheet" href="css/frontpage.css">  -->
+	
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/home.css">
@@ -44,6 +26,12 @@ h1{
     		$( "#datepicker" ).datepicker();
   		} );
   	</script>
+
+
+
+
+
+
 
 </head>
 <body>
@@ -90,78 +78,40 @@ h1{
 
 
 
-	<c:forEach var = "Eve" items="#{eveDetails}">
+
+	<%
+	String id = request.getParameter("id");
+	String name = request.getParameter("name");
+	String date = request.getParameter("date");
+	String status = request.getParameter("status");
+	String description = request.getParameter("description");
+	String adminID = request.getParameter("adminId");
+	%>
+
+
+
+	<form action="deleteEvent" method="post">
+		
+		ID								<input type="text" name="DID" placeholder="ID" value="<%=id%>>" readonly><br>
+		
+		Event name						<input type="text" name="Dname" placeholder="Enter event name" value="<%=name%>>" readonly><br>
+	 	
+	 	Event date						<input type="text" name="Ddate" id="datepicker" placeholder="Enter event date" value="<%=date%>>" readonly><br>
+	 	
+	 	Event status					<input type="number" name="Dstatus" placeholder="Enter event status" value="<%=status%>>" readonly><br>
+	 		
+	 	Event description				<input type="text" name="Ddescription" placeholder="Enter description" value="<%=description%>>" readonly><br>
+	 	
+	 	AdminID							<input type="number" name="DadminID" placeholder="Enter admin ID" value="<%=adminID%>>" readonly ><br>
+	 	
+	 	
+	 	
+	 	
+	 	<input type="submit" name="DsubmitEvent" value="Delete Event"><br>
 	
 	
+	</form>
 	
-		<c:set var="id" value = "${Eve.id}"/>
-		<c:set var="name" value = "${Eve.name}"/>
-		<c:set var="date" value = "${Eve.date}"/>
-		<c:set var="status" value = "${Eve.status}"/>
-		<c:set var="description" value = "${Eve.description}"/>
-		<c:set var="adminId" value = "${Eve.adminID}"/>
-	
-	
-	
-		ID			=		${Eve.id} <br>
-		Name		=		${Eve.name} <br>
-		Date		=		${Eve.date}<br>
-		Status		=		${Eve.status}<br>
-		Description =		${Eve.description}<br>
-		AdminID		= 		${Eve.adminID}<br>
-		
-		</c:forEach>
-		
-		<c:url value = "EventUpdate.jsp" var="eveupdate">
-			
-			
-			<c:param id = "id" value = "${id }"/>
-			<c:param name = "name" value = "${name}"/>
-			<c:param date = "date" value = "${date}"/>
-			<c:param status = "status" value = "${status}"/>
-			<c:param description = "description" value = "${description}"/>
-			<c:param adminId  = "adminId" value = "${adminId}"/>
-		 	
-		</c:url>
-		
-		
-		<a href="${eveupdate}" >
-		<input type="button" name="update" value="Update event">
-		</a>
-		
-		<br>
-		
-		
-		<c:url value="EventDelete.jsp" var="eveDelete">
-		
-		
-			<c:param id = "id" value = "${id }"/>
-			<c:param name = "name" value = "${name}"/>
-			<c:param date = "date" value = "${date}"/>
-			<c:param status = "status" value = "${status}"/>
-			<c:param description = "description" value = "${description}"/>
-			<c:param adminId  = "adminId" value = "${adminId}"/>
-			
-			
-		</c:url>	
-		
-		<a href="eveDelete">
-		<input type="button" name="delete" value="Delete event">
-		</a>
-		
-		
-		
-	
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -157,7 +157,37 @@ public class eventDBUtil {
 	}
 	
 	
-	
+	public static boolean deleteEvent(String id) 
+	{
+		int ID = Integer.parseInt(id);
+		
+		try
+		{
+			
+			con = EventDBconnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "delete from event where event_id='"+ID+"'";
+			int r = stmt.executeUpdate(sql);
+			
+			if(r > 0)
+			{
+				isSuccess = true;
+			}
+			else
+			{
+				isSuccess = false;
+			}
+			
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+		
+	}
 	
 	
 	

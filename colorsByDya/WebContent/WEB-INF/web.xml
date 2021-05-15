@@ -369,6 +369,16 @@ version="2.5"
 	</servlet-mapping>
 
 
+	<servlet>
+		<servlet-name>deleteEvent</servlet-name>
+		<servlet-class>art_Gallery.EventDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteEvent</servlet-name>
+		<url-pattern>/deleteEvent</url-pattern>
+	</servlet-mapping>
+	
+
 
 
 
