@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css?version=1">
 <link rel="stylesheet" href="./css/home.css"> -->
-<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css?">
+<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css?version=3">
 
 <script type="text/javascript" href="js/frontpage.js"></script>
  -<link rel="shortcut icon" href="favicon.ico">
@@ -142,12 +142,24 @@
 			    			<% } %>
 			    		</tr>
 			    	</table>
-			    	<%-- 
-			    	<span class="column width-6"> Category : </span>
-			    	<span class="column width-6"><%=rs.getString("category")%></span>
 			    	
-			   
-			    	 --%>
+			    </div>
+			    <div class="single_painitng_price">
+			    	<% if(rs.getString("price").equals("Negotiate Price")){ %>
+		        		<button class="btnNC" style="margin-top:10px;">
+		        			<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" data-title="NEGOTIATE PRICE"> NEGOTIATE
+		        		</button>
+	        		<% } 
+			    	
+	        		else
+	        		{ %> 
+	        		
+	        			<h5><b>Rs. <%=rs.getString("price") %>.00</b></h5>
+		        		<button class="btnNC" style="margin-top:10px;">
+		        			<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href=' '" title="ADD TO CART"> ADD TO CART
+		        		</button>
+	        		
+	        		<%} %>
 			    </div>
 				
 			    

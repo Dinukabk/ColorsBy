@@ -19,10 +19,10 @@ body {
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
-    /* 
-    background: linear-gradient(45deg, #ffffff 10%, #A2C7E5 90%);
-     */
-    background: linear-gradient(45deg, #0b6b5b 10%, #A2C7E5 90%);
+    
+    background: linear-gradient(45deg, #A2C7E5 10%, #000000 90%);
+     
+   /*  background: linear-gradient(45deg, #0b6b5b 10%, #A2C7E5 90%); */
     height: 100vh
 }
 
@@ -203,6 +203,16 @@ a[data-title] {
 user agent stylesheet
 div {
     display: block;
+}
+
+.single_painitng_price {
+	color: #000;
+    font-family: latobold;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+	
 }
 
 
