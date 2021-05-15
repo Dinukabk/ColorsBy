@@ -55,6 +55,7 @@
 	</div>
 
 
+	<input type="button" name="report" value="Generate Report" onclick="location.href='Servlet_Gallery_Paint_PDF'">
 
 		
 	<div class="table-responsive" style="width:auto; margin:0 auto;">
