@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,12 +129,13 @@
 					
 										
 				} // if ends
-				//if(rs.getBoolean("status").equals(""))
-	
-
-		 
+				
         
 			} //end of while
+				%>
+				
+			<c:set var="total_sales" value="${total_sales}"/>
+			<% 
 				
 			total_sales = abstrct + nature + bNw + oil + watercol + postercol + acrylic + pencil + other;
 			
@@ -188,6 +191,7 @@
 			highest_sales_rate = max * 100.0 /  total_sales;
 			
 			System.out.println(highest_sales_category);
+			System.out.println(max);
 			System.out.println(highest_sales_rate);
 			System.out.println(total_sales);
 			
@@ -202,6 +206,8 @@
 		%>
 		
 		<h4> Highest sales rate category : ${highest_sales_category}</h4>
+		<%=request.getParameter("total_sales")%>
+		
 		<h4> Highest sales rate : ${highest_sales_rate}</h4>
 		<h4> Total Sales : ${total_sales}</h4>
 		
