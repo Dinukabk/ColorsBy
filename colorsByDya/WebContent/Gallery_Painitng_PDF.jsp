@@ -84,7 +84,7 @@
 			
 			abstrct = nature = bNw = oil = watercol = postercol = acrylic = pencil = other = 0;
 			
-			int max=0;
+			int max;
 			String highest_sales_category = "";
 			int total_sales=0;
 			double highest_sales_rate = 0.0;
@@ -132,13 +132,10 @@
 				
         
 			} //end of while
-				%>
 				
-			<c:set var="total_sales" value="${total_sales}"/>
-			<% 
 				
 			total_sales = abstrct + nature + bNw + oil + watercol + postercol + acrylic + pencil + other;
-			
+			max= abstrct;
 				
 			if(abstrct>nature && abstrct>bNw  && abstrct>oil  && abstrct>watercol  && abstrct>postercol  && abstrct>acrylic  && abstrct>pencil  && abstrct>other){
 				max = abstrct;
@@ -182,7 +179,7 @@
 			
 			else if(other>nature && other>bNw  && other>oil  && other>watercol  && other>postercol  && other>acrylic  && other>pencil  && other>abstrct){
 				max = other;
-				highest_sales_category = "Other";
+				highest_sales_category = "other";
 			}
 			
 			else
@@ -190,11 +187,30 @@
 			
 			highest_sales_rate = max * 100.0 /  total_sales;
 			
+			
+			System.out.println("abstract = " +abstrct);
+			System.out.println("nature = " +nature);
+			System.out.println("bNw = " +bNw);
+			System.out.println("oil = "+oil);
+			System.out.println("watercol = " +watercol);
+			System.out.println("postercol = " +postercol);
+			System.out.println("acrylic = " +acrylic);
+			System.out.println("pencil = " +pencil);
+			System.out.println("other = " +other);
+			
+			System.out.println("");
 			System.out.println(highest_sales_category);
 			System.out.println(max);
 			System.out.println(highest_sales_rate);
 			System.out.println(total_sales);
+			%>
 			
+			<h4> Highest sales rate category : <%=highest_sales_category%> </h4>
+			
+			<h4> Highest sales rate : <%=highest_sales_rate%></h4>
+			<h4> Total Sales : <%=total_sales%></h4>
+			
+	<% 		
 			rs.close();
 			stmt.close();
 			conn.close();
@@ -205,11 +221,7 @@
 		}
 		%>
 		
-		<h4> Highest sales rate category : ${highest_sales_category}</h4>
-		<%=request.getParameter("total_sales")%>
 		
-		<h4> Highest sales rate : ${highest_sales_rate}</h4>
-		<h4> Total Sales : ${total_sales}</h4>
 		
 			<!-- </tr>
 		</table>
