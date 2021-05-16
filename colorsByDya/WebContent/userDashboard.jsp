@@ -145,8 +145,31 @@
 				
 				
 				<a href="${cusupdate}">
-				<input type="button" name Update value="UPDATE DEATILS">
+				<input type="button" name= "Update" value="UPDATE DEATILS">
 				</a>
+				
+				
+				<c:url value="DeleteCustomerNew.jsp" var="cusdelete">
+				
+				<c:param name="id" value="${id}"/>
+				<c:param name="fname" value="${fname}"/>
+				<c:param name="username" value="${username}"/>
+				<c:param name="Password" value="${Password}"/>
+				<c:param name="PhoneNo" value="${PhoneNo}"/>
+				<c:param name="address1" value="${address1}"/>
+				<c:param name="address2" value="${address2}"/>
+				<c:param name="pCode" value="${pCode}"/>
+				<c:param name="Provence" value="${Provence}"/>
+				<c:param name="City" value="${City}"/>
+				<c:param name="Country" value="${Country}"/>
+				
+				</c:url>
+				
+				<a href="${cusdelete}">
+				<input type="button" name= "delete" value="Delet Account">
+				</a>
+				 
+				
 				
 				
 			</header>

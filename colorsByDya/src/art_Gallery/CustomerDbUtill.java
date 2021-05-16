@@ -104,9 +104,9 @@ public class CustomerDbUtill {
 		
 	}
 //Details retreve 
-	public static List<CustomerNew> getCustomerDetails(String id){
+	public static List<CustomerNew> getCustomerDetails(String Id){
 		
-		int convertedID = Integer.parseInt(id);
+		int convertedID = Integer.parseInt(Id);
 		
 		ArrayList<CustomerNew> cus = new ArrayList<>();
 		
