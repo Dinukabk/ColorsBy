@@ -182,7 +182,7 @@ input:required, textarea:required {
 		<form action="CustomerUpdateServlet" method="post">
 		<div>
 				<label for="ID"> <span class="required">Customer ID</span>
-					<input type="text" id="" name="ID" value="<%= id %>" readonly
+					<input type="text" id="" name="id" value="<%= id %>" readonly
 					placeholder="ID"  autofocus="autofocus"
 					 />
 				</label>

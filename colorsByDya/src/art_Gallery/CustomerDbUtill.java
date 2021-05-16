@@ -80,12 +80,12 @@ public class CustomerDbUtill {
 		return isSuccess;
 	}
 //customer update
-	public static boolean UpdateCustomer(String ID,String fname,String UserName,String Password,String pNumber,String Address1,String Address2,String pCode,String Province,String City,String Country) {
+	public static boolean UpdateCustomer(String fname,String UserName,String Password,String pNumber,String Address1,String Address2,String pCode,String Province,String City,String Country,String id) {
 		
 		try {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-			String sql = "update registered_customer set full_name='"+fname+"',username='"+UserName+"',password='"+Password+"',phone_no='"+pNumber+"',add_line_01='"+Address1+"',add_line_02='"+Address2+"',postal_code='"+pCode+"',province='"+Province+"',city='"+City+"',country='"+Country+"'" + "where id='"+ID+"'";
+			String sql = "UPDATE registered_customer SET full_name ='"+fname+"',username ='"+UserName+"',password ='"+Password+"',phone_no ='"+pNumber+"',add_line_01 ='"+Address1+"',add_line_02 ='"+Address2+"',postal_code='"+pCode+"',province='"+Province+"',city='"+City+"',country='"+Country+"'" + " WHERE customer_id ='"+id+"'";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs > 0 ) {
@@ -103,6 +103,28 @@ public class CustomerDbUtill {
 		return isSuccess;
 		
 	}
+//Details retreve 
+	public static List<CustomerNew> getCustomerDetails(String id){
+		
+		ArrayList<CustomerNew> cus = new ArrayList<>();
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql= "SELECT * FROM registered_customer ";
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return cus;
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

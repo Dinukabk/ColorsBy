@@ -16,7 +16,7 @@ public class CustomerUpdateServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String ID = request.getParameter("ID");
+		String id = request.getParameter("id");
 		String fname = request.getParameter("fullname");
 		String pNumber = request.getParameter("phoneNo");
 		String Address1 = request.getParameter("Address1");
@@ -30,7 +30,7 @@ public class CustomerUpdateServlet extends HttpServlet {
 
 		boolean isTrue;
 		
-		isTrue = CustomerDbUtill.UpdateCustomer(ID, fname, UserName, Password, pNumber, Address1, Address2, pCode, Province, City, Country);
+		isTrue = CustomerDbUtill.UpdateCustomer(fname, UserName, Password, pNumber, Address1, Address2, pCode, Province, City, Country,id);
 		
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("login_01.jsp");
