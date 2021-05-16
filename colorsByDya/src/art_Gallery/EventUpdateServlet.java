@@ -19,7 +19,7 @@ public class EventUpdateServlet extends HttpServlet {
 		
 		String id = request.getParameter("ID");
 		String name = request.getParameter("Uname");
-		String date = request.getParameter("Udate");//check here
+		String date = request.getParameter("Udate");
 		String status = request.getParameter("Ustatus");
 		String description = request.getParameter("Udescription");
 		String adminID = request.getParameter("UadminID");

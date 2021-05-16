@@ -19,7 +19,7 @@ public class EventRetrieve extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String eventName = request.getParameter("EventName");
-		String adminID = String.valueOf(request.getParameter("AdminID"));
+		String adminID = request.getParameter("AdminID");
 		
 		try
 		{

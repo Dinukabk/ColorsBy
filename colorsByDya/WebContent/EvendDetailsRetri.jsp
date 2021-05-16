@@ -5,9 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Get event details</title>
-
+<!--  
 <style>
-input[], select {
+input[text], select {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -23,10 +23,7 @@ input[], select {
   padding: 20px;
 }
 
-h1{
-	color : gray;
-}
-</style>	
+</style>	-->
 
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
@@ -44,11 +41,102 @@ h1{
     		$( "#datepicker" ).datepicker();
   		} );
   	</script>
+  	
+  	
+  	  	
+	<style type ="text/css">
+		
+	  *{
+		margin:0;
+		padding:0;
+		}
+		
+		.topic{
+			width:800px;
+			background-color:rgb(0,0,0,6);
+			margin:auto;
+			color:#FFFFFF;
+			padding:200px 0px 10px 0px;
+			text-align:center;
+			border-radius:15px 15px 0px 0px:;
+		}
+		
+		
+		
+		.main{
+		
+			background-color:;
+			width:800px;
+			margin:auto;
+		}
+		
+		form{
+			padding:10px;
+		}
+		
+		h4{
+			color : white;
+			font-weight : 700;
+		}
+		
+		
+		input {
+  			background: #fff;
+  			color: #525865;
+  			border: 1.2px solid #d1d1d1;							
+  			border-radius: 3px;
+ 			font-family: Roboto;
+  			line-height: 1.5;
+  			width: 350px;
+  			height: 40px;
+		}
+		
+		.inname{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		.indate{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		
+		.insta{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		.des{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		.inad{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+	
+	
+	
+	
+	</style>
+	
+  	
+  	
+  	
+  	
 
 </head>
 <body>
 
-<!-- Navbar 
+<!-- Navbar -->
 	<header class="header" class="py-5 mt-5">
 		<nav class="navbar navbar-expand-lg fixed-top py-3">
 			<div class="container">
@@ -86,22 +174,31 @@ h1{
 	</header>
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
-	-->
+	
+	
+	<div class="topic">
+	<h1>RETRIEVE EVENT</h1>
+	</div>
 
-
-
+	<div class="main">
 	<form action="retrieveEvent" method="post">
 	
-		Event name  <input type = "text" name="EventName" placeholder = "Enter event name"><br>
+	
+		<div class="inname">
+		<h4>Event name</h4>		 	 <input type = "text" name="EventName" placeholder = "Enter event name"><br>
+		</div>
 		
-		Admin ID  <input type = "number" name="AdminID" placeholder = "Enter admin ID"><br>
+		<div class="inname">
+		<h4>Admin ID</h4>	 		 <input type = "text" name="AdminID" placeholder = "Enter admin ID"><br>
+		</div>
 		
-		<input type="submit" name="submit" value="Check event">
+		<center>
+		<input type="submit" name="submit" value="Check event"></center>
 	
 	
 	</form>
 
-
+	</div>
 
 
 

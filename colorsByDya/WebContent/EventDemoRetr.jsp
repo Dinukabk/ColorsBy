@@ -172,7 +172,7 @@
 	%>
 
 	<div class="topic">
-	<h1>DELETE EVENT</h1>
+	<h1>RETRIEVE EVENT</h1>
 	</div>
 
 	<div class="main">
@@ -202,18 +202,17 @@
 	 	</div>
 	 	
 	 	
-	 	<!--  
-	 	<center>
-	 	<input type="submit" name="DsubmitEvent" value="Delete Event"><br></center>
-		-->
-	
+	 	
 	</form>
-		
-	<center>
-	<a href="success.jsp">
-	 	<input type="submit" name="UsubmitEvent" value="Delete Event"><br></center></a>
-		
 	
+	<center>
+	<a href="EventUpdate.jsp">
+		<input type="submit" name="UsubmitEvent" value="Update Event">
+		</a>
+		
+	<a href="EventDelete.jsp">	
+		<input type="submit" name="DsubmitEvent" value="Delete Event">
+	</a>
 	
 	</div>
 

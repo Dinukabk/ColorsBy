@@ -78,7 +78,6 @@
 			padding-left : 220px;
 			padding-bottom : 20px;
 			font-size:16px;
-			float:right;
 		}
 		
 		.indate{
@@ -170,11 +169,11 @@
 	
 	 <div class="indate">
 	 	<h2>Date</h2>
-	 	<input type="date" name="date" id="datepicker" placeholder="Enter event date" ><br></div>
+	 	<input type="text" name="date" id="datepicker" placeholder="Enter event date" ><br></div>
 
 	 <div class="insta">	
 	 	<h2>Status</h2>
-	 	<input type="number" name="status" placeholder="Enter event status" ><br></div>
+	 	<input type="text" name="status" placeholder="Enter event status" ><br></div>
 	
 	 <div class="des">	
 	 	<h2>Description</h2>
@@ -182,7 +181,7 @@
 
 	<div class="inad">
 	 	<h2>AdminID</h2>
-	 	<input type="number" name="adminID" placeholder="Enter admin ID" ><br></div>
+	 	<input type="text" name="adminID" placeholder="Enter admin ID" ><br></div>
 	 	
 	 	
 	 	<center>
