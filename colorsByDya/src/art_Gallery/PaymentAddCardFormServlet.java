@@ -23,12 +23,6 @@ public class PaymentAddCardFormServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		int userID = (int) session.getAttribute("userID");
 		
-		// System.out.println("Credit card number: " + cardNumber);
-		// System.out.println("Name on credit card: " + nameOnCard);
-		// System.out.println("Expiration date: " + expDate);
-		// System.out.println("CVV Number: " + CVV);
-		// System.out.println("Check box: " + saveCard);
-		
 		if (saveCard != null) { // If save card checkBox is ticked...
 			Boolean querySuccess = PaymentsDatabaseUtil.addPaymentCard(userID, cardNumber, nameOnCard, expDate, CVV, saveCard);
 			if (querySuccess == true) { // If query executed correctly

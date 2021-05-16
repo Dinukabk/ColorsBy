@@ -29,5 +29,4 @@ public class LoginRedirector extends HttpServlet {
 			RD.forward(request, response);
 		}
 	}
-
 }

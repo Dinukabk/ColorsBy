@@ -90,7 +90,7 @@
 						<p class="text-dark h6 text-right">Expiration Date:</p>
 					</td>
 					<td>
-						<input type="number" class="border border-dark bg-light rounded pl-1" name="expDate" placeholder="Expiration Date">
+						<input type="date" class="border border-dark bg-light rounded pl-1" name="expDate" placeholder="Expiration Date">
 					</td>
 				</tr>
 				<tr>
