@@ -22,7 +22,7 @@ public class DeleteCustomerServlet extends HttpServlet {
 		isTrue = CustomerDbUtill.deleteCustomer(id);
 		
 		if(isTrue == true) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login_01.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("add_customer.jsp");
 			dispatcher.forward(request, response);
 		}
 		else {
