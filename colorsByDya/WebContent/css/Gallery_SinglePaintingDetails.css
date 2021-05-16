@@ -129,14 +129,14 @@ a[data-title] {
 }
 
 
-/* SIngle painting details jsp -- div placement side by side */
+/********** SIngle painting details jsp -- div placement side by side ---- FLEXBOX ************/
 .flex-container {
     display: flex;
 }
 
 .flex-child {
     flex: 1;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     padding:20px;
 }  
 

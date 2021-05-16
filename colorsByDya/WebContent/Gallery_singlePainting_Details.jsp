@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css?version=1">
 <link rel="stylesheet" href="./css/home.css"> -->
-<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css">
+<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css?">
 
 <script type="text/javascript" href="js/frontpage.js"></script>
  -<link rel="shortcut icon" href="favicon.ico">
