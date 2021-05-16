@@ -9,35 +9,35 @@
 <title>Gallery Logged</title>
 
 <!-- Gallery testing links -->
-<script type="text/javascript" href="js/frontpage.js"></script>
- -<link rel="shortcut icon" href="favicon.ico">
 
-	<!-- Google Webfonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+ <link rel="shortcut icon" href="favicon.ico">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
 	
-		
-	
-	
-	<link rel="stylesheet" href="css/animate.css">
-	
-	<link rel="stylesheet" href="css/icomoon.css">
-	
-	<link rel="stylesheet" href="css/magnific-popup.css?version=1">
-	
-	<link rel="stylesheet" href="css/salvattore.css">
-	
-	<link rel="stylesheet" href="css/style1.css?version=1">
-	
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	
-	<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
-	
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/styles.css?version=1">
-	<link rel="stylesheet" href="css/home.css">
-	
-	<!-- <link rel="stylesheet" href="css/styles_Gallery.css"> -->
+
+
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/icomoon.css">
+
+<link rel="stylesheet" href="css/magnific-popup.css?version=1">
+
+<link rel="stylesheet" href="css/salvattore.css">
+
+<link rel="stylesheet" href="css/style1.css?version=1">
+
+<script src="js/modernizr-2.6.2.min.js"></script>
+
+<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css?version=1">
+<link rel="stylesheet" href="css/home.css">
+
+<link rel="stylesheet" href="css/styles_Gallery.css"> 
 
 
 </head>
@@ -92,32 +92,28 @@
 				<div class="container">
 					<div class="row">
 					
-				
-					
-
-        				<div id="fh5co-board" data-columns>
+						<div id="fh5co-board" data-columns>
         				
-        				<%
-				try
-				{
-					Class.forName("com.mysql.jdbc.Driver");
-					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-					String username="root";
-					String password="root";
-					//String query="select * from painting";
-					
-					String query="select * from painting p, artist a WHERE p.a_artist_id = a.artist_id";
-					
-					/* "SELECT * FROM painting p, artist a WHERE p.a_artist_id = a.artist_id AND a.artist_id=?" */
-					
-					Connection conn=DriverManager.getConnection(url, username, password);
-					Statement stmt=conn.createStatement();
-					ResultSet rs=stmt.executeQuery(query);
-					
-					while(rs.next())
+	        				<%
+					try
 					{
-			
-			%>
+						Class.forName("com.mysql.jdbc.Driver");
+						String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+						String username="root";
+						String password="root";
+						//String query="select * from painting";
+						
+						String query="select * from painting p, artist a WHERE p.a_artist_id = a.artist_id";
+						
+						/* "SELECT * FROM painting p, artist a WHERE p.a_artist_id = a.artist_id AND a.artist_id=?" */
+						
+						Connection conn=DriverManager.getConnection(url, username, password);
+						Statement stmt=conn.createStatement();
+						ResultSet rs=stmt.executeQuery(query);
+						
+						while(rs.next())
+						{
+						%>
 
         					<div class="item">
         						<div class="animate-box"> 
@@ -130,20 +126,15 @@
 					        		<a target="_blank" href="Gallery_singlePainting_Details.jsp?painting_id=<%= rs.getInt("painting_id")%>&artistName=<%=rs.getString("a.name")%>" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
 					        		
         						</div>
-        						<div class="fh5co-desc">
-        						
-        											        		
+        						<div class="fh5co-desc">  		
 					        		<h3><b><%=rs.getString("title") %></b></h3>
-					        		<%-- <h6>by <%=rs.getString("p.a_artist_id") %></h6> --%>
 					        		<h6>by <%=rs.getString("a.name") %></h6>
 					        		
+					        		<%if(rs.getString("price").equals("Negotiate Price")){ %>
 					        		
-					        		<% if(rs.getString("price").equals("Negotiate Price")){ %>
-					        		<!-- <input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'"> -->
-					        		<button class="btnNC">
-					        		<!-- style="background-color: #B2BEB5; border: none; border-radius: 5px; color: black; padding: 5px 5px; font-size: 10px; cursor: pointer;"> -->
-					        		<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" data-title="NEGOTIATE PRICE"> NEGOTIATE
-					        		</button>
+						        		<button class="btnNC">
+						        			<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" data-title="NEGOTIATE PRICE"> NEGOTIATE
+						        		</button>
 					        		
 					        		<% } 
 					        		else
@@ -151,33 +142,25 @@
 					        		
 					        			<h5><b>Rs. <%=rs.getString("price") %>.00</b></h5>
 					        			
-					        			<!-- <input type="button" id="cartButton" value="ADD TO CART"> -->
 						        		<button class="btnNC">
-						        		<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href=' '" title="ADD TO CART"> ADD TO CART
+						        			<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href=' '" title="ADD TO CART"> ADD TO CART
 						        		</button>
 					        		
 					        		<%} %>
-					        		
-					        		<!-- <a href="#" style = "text-align:right"> View more details </a> -->
-					        		
 					        	</div>
-					        	
-					        	
-        		
         					</div>
         					
-        					
         					<%
-					}
-			
-			rs.close();
-			stmt.close();
-			conn.close();
-			}
-			catch(Exception e)
-			{
-			e.printStackTrace();
-			}
+					} //WHILE ends
+				
+				rs.close();
+				stmt.close();
+				conn.close();
+				}
+				catch(Exception e)
+				{
+				e.printStackTrace();
+				}
 		%>
         					
         					
@@ -287,25 +270,25 @@
 	
 	--%>
 	
-	
+<script type="text/javascript" href="js/frontpage.js"></script>	
 <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 
 
-	jQuery
-	<script src="js/jquery.min.js"></script>
-	jQuery Easing
-	<script src="js/jquery.easing.1.3.js"></script>
-	Bootstrap
-	<script src="js/bootstrap.min.js"></script>
-	Waypoints
-	<script src="js/jquery.waypoints.min.js"></script>
-	Magnific Popup
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	Salvattore
-	<script src="js/salvattore.min.js"></script>
-	Main JS
-	<script src="js/main1.js"></script>
+	
+<script src="js/jquery.min.js"></script>
+
+<script src="js/jquery.easing.1.3.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/jquery.waypoints.min.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<script src="js/salvattore.min.js"></script>
+
+<script src="js/main1.js"></script>
 
 
 </body>

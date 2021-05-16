@@ -61,7 +61,7 @@ public class PaintingDBUtil {
 			connect = DBConnect_Painting.getConnection();
 			statement = connect.createStatement();
 			    		
-    		String sql = "insert into painting (title, description, price, drawn_date ,category ,weight, length, width, image_url ,material, frame, a_artist_id) values('"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"','"+category+"' ,'"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', '"+frame+"', 4 )";
+    		String sql = "insert into painting (title, description, price, drawn_date ,category ,weight, length, width, image_url ,material, frame, a_artist_id) values('"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"','"+category+"' ,'"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', '"+frame+"', 1 )";
     					
     		int resultSet = statement.executeUpdate(sql);
     		
