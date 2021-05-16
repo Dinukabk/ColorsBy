@@ -68,7 +68,7 @@ public class RequestServlet extends HttpServlet {
 			dis.forward(request, response);
 			
 			try {
-				MailUtil.sendMail("lochanawijerathna27@gmail.com");
+				MailUtil.sendMail("it19971490@my.sliit.lk");
 			} catch (MessagingException e) {
 				
 				e.printStackTrace();

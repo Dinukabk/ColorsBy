@@ -57,7 +57,7 @@
   <div class="contact-in">
   <center>
   		<h3>We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
-  		<h2> Otherwise request may reject</h2>
+  		<h2> Otherwise request may be rejected</h2>
   </center>
   </div><br><br>
   

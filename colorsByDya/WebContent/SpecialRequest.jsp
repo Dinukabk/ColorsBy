@@ -17,7 +17,7 @@
 
 <script src="js/Request.js"></script>
 <script src="js/request22.js"></script>
-<script src="js/Gallery_JScript.js"></script>
+<script src="js/Gallery_JScript.js"></script> 
 
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -120,9 +120,9 @@
             <label>Full Name</label><br>
             <input type="text" placeholder="Enter Full Name" name="name" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Name');"><br><br>
             <label>Phone Number</label><br>
-            <input type="number" placeholder="Enter Phone Number" name="phone" class="SRInput" class="form__input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required oninvalid= "alert('Please enter the Phone Number');"><br><br>
+            <input type="" placeholder="Enter Phone Number" name="phone" class="SRInput" class="form__input" pattern="[0][0-9]{9}" required oninvalid= "alert('Please enter valid Phone Number');" ><br><br>
             <label>Email Address</label><br>
-            <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Email Address');"><br><br>
+            <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Email Address');" title="Enter valid email"><br><br>
             <label>Message</label><br>
             <textarea placeholder="Enter a message" name="message" class="SRInput" class="form__input"></textarea><br><br>
             <label>Upload Your photograph that you want to be drawn</label><br>
@@ -177,8 +177,8 @@
    
    </div>
 	
-	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
-	<script type="text/javascript" src="./js/script.js"></script>
+	<script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 	
 <style>
 $font-family:   "Roboto";

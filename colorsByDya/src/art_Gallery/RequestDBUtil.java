@@ -545,4 +545,53 @@ public class RequestDBUtil {
 		return req;
 		
 	}
+     
+     //searching function
+     public static List<Request> searchFunction(int artistUserID, String nameInput) {
+ 		String UIDConverted = Integer.toString(artistUserID);
+ 		PreparedStatement pst = null;
+ 		ResultSet rs = null;
+ 		Connection con;
+ 		
+ 		ArrayList<Request> req = new ArrayList<>();
+ 		
+ 		try {
+ 			con = DatabaseUtilizer.utilizeConnection();
+ 			pst = con.prepareStatement("SELECT * FROM special_request sr, artist a WHERE sr.artist_name=a.artist_id AND sr.name='"+nameInput+"' AND a.artist_id=?");
+ 			pst.setString(1, UIDConverted);
+ 			rs = pst.executeQuery();
+ 			// stmt = con.createStatement();
+ 			// String sql = "select * from special_request sr, artist a where a.username='"+userName+"' and a.password='"+pass+"' and sr.artist_name=a.artist_id";
+ 			// rs = stmt.executeQuery(sql);
+ 			
+ 			while(rs.next()) {
+ 				int request_id = rs.getInt(1);
+ 				String name = rs.getString(2);
+ 				int phone = rs.getInt(3);
+ 				String email = rs.getString(4);
+ 				String message = rs.getString(5);
+ 				String photograph = rs.getString(6);
+ 				String add_line_01 = rs.getString(7);
+ 				String add_line_02 = rs.getString(8);
+ 			    int postal_code = rs.getInt(9);
+ 				String province = rs.getString(10);
+ 				String city = rs.getString(11);
+ 				String country = rs.getString(12);
+ 				int c_customer_id = rs.getInt(13);
+ 				int artist_name = rs.getInt(14);
+ 				boolean accept = rs.getBoolean(15);
+ 				
+ 				Request r = new Request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name,accept);
+ 				req.add(r);
+ 			}
+ 			
+ 		}
+ 		catch(Exception e) {
+ 			e.printStackTrace();
+ 		}
+ 		
+ 		return req;
+ 		
+ 	}
+     
 }

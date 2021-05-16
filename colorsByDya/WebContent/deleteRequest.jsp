@@ -67,12 +67,13 @@
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	<form action="deleteRequest" method="post" class="form">
+		<img name="photograph" src="images/<%=photograph%>" width="200px" height="200px"/><br>
 		Request ID <input type="text" name="request_id" value="<%= request_id %>" readonly><br>
 		Name <input type="text" name="name" value="<%= name %>" readonly><br>
 		Phone Number <input type="text" name="phone" value="<%= phone %>" readonly><br>
 		Email Address <input type="text" name="email" value="<%= email %>" readonly><br>
 		Message <input type="text" name="message" value="<%= message %>" readonly><br>
-		Photograph <input type="text" name="photograph" value="<%= photograph %>" readonly><br>
+		<%-- Photograph <input type="text" name="photograph" value="<%= photograph %>" readonly><br> --%>
 		Address line 01 <input type="text" name="add_line-01" value="<%= add_line_01 %>" readonly><br>
 		Address line 02 <input type="text" name="add_line_02" value="<%= add_line_02 %>" readonly><br>
 		Postal code <input type="text" name="postal_code" value="<%= postal_code %>" readonly><br>
