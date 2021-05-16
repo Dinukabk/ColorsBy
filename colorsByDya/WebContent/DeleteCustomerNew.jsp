@@ -177,12 +177,10 @@ input:required, textarea:required {
 		
 		%>
 		
-		
-		
-		<form action="#" method="post">
+		<form action="DeleteCustomerServlet" method="post">
 		<div>
 				<label for="ID"> <span class="required">Customer ID</span>
-					<input type="text" id="" name="id" value="<%= id %>" readonly
+					<input type="text" id="" name="cusid" value="<%= id %>" readonly
 					placeholder="ID"  autofocus="autofocus"
 					 />
 				</label>
@@ -190,65 +188,65 @@ input:required, textarea:required {
 			<div>
 				<label for="ID"> <span class="required">Full Name</span>
 					<input type="text" id="" name="fullname" value="<%= fname %>" pattern=""
-					placeholder="Full Name"  autofocus="autofocus"
+					placeholder="Full Name"  autofocus="autofocus" readonly
 					 />
 				</label>
 			</div>
 			<div>
 				<label for="Name"> <span class="required">Phone Number
 						 </span> <input type="text" id="" name="phoneNo" value="<%= PhoneNo %>"
-					pattern="" placeholder="Phone Number"
+					pattern="" placeholder="Phone Number" readonly
 					 />
 				</label>
 			</div>
 			<div>
 				<label for="Address"> <span class="required">Address Line1
 						 </span> <input type="text" id="" name="Address1" value="<%= address1 %>"
-					placeholder="Line 1"  />
+					placeholder="Line 1"  readonly />
 				</label>
 			</div>
 			<div>
 				<label for="Address"> <span class="required">Address Line2
 						 </span> <input type="text" id="" name="Address2" value="<%= address2 %>"
-					placeholder="Line" />
+					placeholder="Line" readonly />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">Postal Code
 						 </span> <input type="" id="" name="PCode" value="<%= pCode %>"
-					Pattern="" placeholder="Postal Code"
+					Pattern="" placeholder="Postal Code" readonly
 					 />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">City
 						 </span> <input type="" id="" name="City" value="<%= City %>"
-					Pattern="" placeholder="City"  />
+					Pattern="" placeholder="City"  readonly />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">Province
 						 </span> <input type="" id="" name="Province" value="<%= Provence %>"
-					Pattern="" placeholder="Province"
+					Pattern="" placeholder="Province" readonly
 				    />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">Country
 						 </span> <input type="" id="" name="Country" value="<%= Country %>"
-					Pattern="" placeholder="Country" />
+					Pattern="" placeholder="Country" readonly/>
 				</label>
 			</div>
 			<div>
 				<label for="Cost"> <span class="required">User Name
 						 </span> <input type="text" id="" name="username" value="<%= username %>"
-					placeholder="User Name"  />
+					placeholder="User Name"  readonly />
 				</label>
 			</div>
 				<div>
 				<label for="Cost"> <span class="required">Password
 						 </span> <input type="password" id="" name="password" value="<%= Password %>"
-					placeholder="Password"  />
+					placeholder="Password" readonly  />
 				</label>
 			</div>
 			<div>

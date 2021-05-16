@@ -139,7 +139,32 @@ public class CustomerDbUtill {
 		}
 		return cus;
 	}
-	
+//Delete Customer
+	public static boolean deleteCustomer(String id) {
+		
+		int convID = Integer.parseInt(id);
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "DELETE FROM registered_customer  WHERE customer_id='"+convID+"'";
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		}catch(Exception e) {
+			e.getStackTrace();
+		}
+		
+		
+		
+		return isSuccess;
+	}
 	
 	
 	
