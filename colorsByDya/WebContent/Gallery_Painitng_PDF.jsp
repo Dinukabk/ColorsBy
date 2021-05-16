@@ -109,6 +109,7 @@
 			
 	<% 		
 			rs_1.close();
+			rs_2.close();
 			stmt.close();
 			conn.close();
 		}
