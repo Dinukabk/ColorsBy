@@ -24,11 +24,104 @@
     		$( "#datepicker" ).datepicker();
   		} );
   	</script>
+		
+
+	<style type ="text/css">
+		
+	  *{
+		margin:0;
+		padding:0;
+		}
+		
+		.topic{
+			width:800px;
+			background-color:rgb(0,0,0,6);
+			margin:auto;
+			color:#FFFFFF;
+			padding:200px 0px 10px 0px;
+			text-align:center;
+			border-radius:15px 15px 0px 0px:;
+		}
+		
+		
+		
+		.main{
+		
+			background-color:;
+			width:800px;
+			margin:auto;
+		}
+		
+		form{
+			padding:10px;
+		}
+		
+		h2{
+			width : 125px;
+			color : white;
+			fint-size:18px;
+			font-weight : 700;
+		}
+		
+		.inname{
+			padding-left : 350px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		input {
+  			background: #fff;
+  			color: #525865;
+  			border: 1.2px solid #d1d1d1;							
+  			border-radius: 3px;
+ 			font-family: Roboto;
+  			line-height: 1.5;
+  			width: 350px;
+  			height: 40px;
+		}
+		
+		.inname{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		.indate{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		
+		.insta{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		.des{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		.inad{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+	
+	
+	
+	
+	</style>
+	
 
 </head>
 <body>
 
-	<!-- Navbar 
+	<!-- Navbar -->
 	<header class="header" class="py-5 mt-5">
 		<nav class="navbar navbar-expand-lg fixed-top py-3">
 			<div class="container">
@@ -66,43 +159,45 @@
 	</header>
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
-	-->
 	
 	
+	
+	<div class="topic">
+	<h1>Insert event</h1>
+	</div>
+	
+	<div class="main">
 	 <form action="insertEvent" method="post">
-	 
-	 	<input type="text" name="name" placeholder="Enter event name" ><br>
+		
+	<div class="inname">
+		<h2>Name</h2>
+		<input type="text" name="name" placeholder="Enter event name" ><br></div>
+	
+	 <div class="indate">
+	 	<h2>Date</h2>
+	 	<input type="date" name="date" id="datepicker" placeholder="Enter event date" ><br></div>
+
+	 <div class="insta">	
+	 	<h2>Status</h2>
+	 	<input type="number" name="status" placeholder="Enter event status" ><br></div>
+	
+	 <div class="des">	
+	 	<h2>Description</h2>
+	 	<input type="text" name="description" placeholder="Enter description" ><br></div>
+
+	<div class="inad">
+	 	<h2>AdminID</h2>
+	 	<input type="number" name="adminID" placeholder="Enter admin ID" ><br></div>
 	 	
-	 	<input type="date" name="date" id="datepicker" placeholder="Enter event date" ><br>
 	 	
-	 	<input type="number" name="status" placeholder="Enter event status" ><br>
-	 	
-	 	<input type="text" name="description" placeholder="Enter description" ><br>
-	 	
-	 	<input type="number" name="adminID" placeholder="Enter admin ID" ><br>
-	 	
-	 	
-	 	
-	 	
-	 	<input type="submit" name="submitEvent" value="Insert Event"><br>
+	 	<center>
+	 	<input type="submit" name="submitEvent" id="button" value="Insert Event"><br></center>
 	 	
 	 </form>
 	
+	</div>
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 
 </body>
 </html>
