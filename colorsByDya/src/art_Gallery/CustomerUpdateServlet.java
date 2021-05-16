@@ -1,6 +1,7 @@
 package art_Gallery;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,10 +34,18 @@ public class CustomerUpdateServlet extends HttpServlet {
 		isTrue = CustomerDbUtill.UpdateCustomer(fname, UserName, Password, pNumber, Address1, Address2, pCode, Province, City, Country,id);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("login_01.jsp");
+			
+			//after update get the details and update
+			List<CustomerNew> cusDeatils = CustomerDbUtill.getCustomerDetails(id);
+			request.setAttribute("cusDeatils", cusDeatils);
+			
+			RequestDispatcher dis = request.getRequestDispatcher("userDashboard.jsp");
 			dis.forward(request, response);
 			
 		}else {
+			List<CustomerNew> cusDeatils = CustomerDbUtill.getCustomerDetails(id);
+			request.setAttribute("cusDeatils", cusDeatils);
+			
 			RequestDispatcher dis = request.getRequestDispatcher("userDashboard.jsp");
 			dis.forward(request, response);
 			

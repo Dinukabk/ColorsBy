@@ -106,12 +106,33 @@ public class CustomerDbUtill {
 //Details retreve 
 	public static List<CustomerNew> getCustomerDetails(String id){
 		
+		int convertedID = Integer.parseInt(id);
+		
 		ArrayList<CustomerNew> cus = new ArrayList<>();
 		
 		try {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-			String sql= "SELECT * FROM registered_customer ";
+			String sql= "SELECT * FROM registered_customer WHERE customer_id='"+convertedID+"' ";
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				
+				int id = rs.getInt(1);
+				String fname = rs.getString(2);
+				String username  = rs.getString(3);
+				String password = rs.getString(4);
+				String PNo = rs.getString(5);
+				String addL1 = rs.getString(6);
+				String addL2 = rs.getString(7);
+				int postalC = rs.getInt(8);
+				String province = rs.getString(9);
+				String city = rs.getString(10);
+				String country = rs.getString(11);
+				
+				CustomerNew c = new CustomerNew(id, fname, username, password, PNo, addL1,addL2,postalC,province, city,country);
+				cus.add(c);
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
