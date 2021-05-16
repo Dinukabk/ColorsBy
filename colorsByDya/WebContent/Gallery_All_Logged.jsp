@@ -18,26 +18,26 @@
 	
 		
 	
-	Animate.css
+	
 	<link rel="stylesheet" href="css/animate.css">
-	Icomoon Icon Fonts
+	
 	<link rel="stylesheet" href="css/icomoon.css">
-	Magnific Popup
+	
 	<link rel="stylesheet" href="css/magnific-popup.css?version=1">
-	Salvattore
+	
 	<link rel="stylesheet" href="css/salvattore.css">
-	Theme Style
+	
 	<link rel="stylesheet" href="css/style1.css?version=1">
-	Modernizr JS
+	
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	
 	<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
 	
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/styles.css?version=1">
-	<link rel="stylesheet" href="./css/home.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css?version=1">
+	<link rel="stylesheet" href="css/home.css">
 	
-	<link rel="stylesheet" href="css/styles_Gallery.css">
+	<!-- <link rel="stylesheet" href="css/styles_Gallery.css"> -->
 
 
 </head>
@@ -288,8 +288,8 @@
 	--%>
 	
 	
-<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
-<script type="text/javascript" src="./js/script.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 
 	jQuery
