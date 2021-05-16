@@ -158,70 +158,96 @@ input:required, textarea:required {
 
 	<div id="contact-form">
 		<div>
-			<h1>Update Customers Details</h1>
+			<h1>Update User Details</h1>
 		</div>
-		<form action="AddCustomer" method="post">
+		
+		<%
+		String id = request.getParameter("id");
+		String fname = request.getParameter("fname");
+		String username = request.getParameter("username");
+		String Password  = request.getParameter("Password");
+		String PhoneNo = request.getParameter("PhoneNo");
+		String address1 = request.getParameter("address1");
+		String address2 = request.getParameter("address2");
+		String pCode = request.getParameter("pCode");
+		String Provence = request.getParameter("Provence");
+		String City = request.getParameter("City");
+		String Country = request.getParameter("Country");
+	
+		
+		%>
+		
+		
+		
+		<form action="CustomerUpdateServlet" method="post">
+		<div>
+				<label for="ID"> <span class="required">Customer ID</span>
+					<input type="text" id="" name="ID" value="<%= id %>" readonly
+					placeholder="ID"  autofocus="autofocus"
+					 />
+				</label>
+			</div>
 			<div>
 				<label for="ID"> <span class="required">Full Name</span>
-					<input type="text" id="" name="fullname" value="" pattern=""
+					<input type="text" id="" name="fullname" value="<%= fname %>" pattern=""
 					placeholder="Full Name"  autofocus="autofocus"
 					 />
 				</label>
 			</div>
 			<div>
 				<label for="Name"> <span class="required">Phone Number
-						 </span> <input type="text" id="" name="phoneNo" value=""
+						 </span> <input type="text" id="" name="phoneNo" value="<%= PhoneNo %>"
 					pattern="" placeholder="Phone Number"
 					 />
 				</label>
 			</div>
 			<div>
 				<label for="Address"> <span class="required">Address Line1
-						 </span> <input type="text" id="" name="Address1" value=""
+						 </span> <input type="text" id="" name="Address1" value="<%= address1 %>"
 					placeholder="Line 1"  />
 				</label>
 			</div>
 			<div>
 				<label for="Address"> <span class="required">Address Line2
-						 </span> <input type="text" id="" name="Address2" value=""
+						 </span> <input type="text" id="" name="Address2" value="<%= address2 %>"
 					placeholder="Line" />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">Postal Code
-						 </span> <input type="" id="" name="PCode" value=""
+						 </span> <input type="" id="" name="PCode" value="<%= pCode %>"
 					Pattern="" placeholder="Postal Code"
 					 />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">City
-						 </span> <input type="" id="" name="City" value=""
+						 </span> <input type="" id="" name="City" value="<%= City %>"
 					Pattern="" placeholder="City"  />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">Province
-						 </span> <input type="" id="" name="Province" value=""
+						 </span> <input type="" id="" name="Province" value="<%= Provence %>"
 					Pattern="" placeholder="Province"
 				    />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">Country
-						 </span> <input type="" id="" name="Country" value=""
+						 </span> <input type="" id="" name="Country" value="<%= Country %>"
 					Pattern="" placeholder="Country" />
 				</label>
 			</div>
 			<div>
 				<label for="Cost"> <span class="required">User Name
-						 </span> <input type="text" id="" name="username" value=""
+						 </span> <input type="text" id="" name="username" value="<%= username %>"
 					placeholder="User Name"  />
 				</label>
 			</div>
 				<div>
 				<label for="Cost"> <span class="required">Password
-						 </span> <input type="text" id="" name="password" value=""
+						 </span> <input type="password" id="" name="password" value="<%= Password %>"
 					placeholder="Password"  />
 				</label>
 			</div>

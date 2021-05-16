@@ -9,6 +9,7 @@ import java.util.List;
 
 public class CustomerDbUtill {
 	
+	private static boolean isSuccess;
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
@@ -78,6 +79,32 @@ public class CustomerDbUtill {
 		
 		return isSuccess;
 	}
+//customer update
+	public static boolean UpdateCustomer(String ID,String fname,String UserName,String Password,String pNumber,String Address1,String Address2,String pCode,String Province,String City,String Country) {
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "update registered_customer set full_name='"+fname+"',username='"+UserName+"',password='"+Password+"',phone_no='"+pNumber+"',add_line_01='"+Address1+"',add_line_02='"+Address2+"',postal_code='"+pCode+"',province='"+Province+"',city='"+City+"',country='"+Country+"'" + "where id='"+ID+"'";
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0 ) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+		return isSuccess;
+		
+	}
+	
+	
 	
 	
 }

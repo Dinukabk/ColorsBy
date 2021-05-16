@@ -127,6 +127,28 @@
 				</c:forEach>
 				</table>
 				
+		<c:url value="UpdateCustomerNew.jsp" var="cusupdate">
+		
+				<c:param name="id" value="${id}"/>
+				<c:param name="fname" value="${fname}"/>
+				<c:param name="username" value="${username}"/>
+				<c:param name="Password" value="${Password}"/>
+				<c:param name="PhoneNo" value="${PhoneNo}"/>
+				<c:param name="address1" value="${address1}"/>
+				<c:param name="address2" value="${address2}"/>
+				<c:param name="pCode" value="${pCode}"/>
+				<c:param name="Provence" value="${Provence}"/>
+				<c:param name="City" value="${City}"/>
+				<c:param name="Country" value="${Country}"/>
+
+	</c:url>
+				
+				
+				<a href="${cusupdate}">
+				<input type="button" name Update value="UPDATE DEATILS">
+				</a>
+				
+				
 			</header>
 			<div class="py-5">
 				<p class="lead">

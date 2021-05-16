@@ -354,7 +354,16 @@ version="2.5"
   <!-- end of Loch -->
 <!-- sasiru -->
 
-
+CustomerUpdateServlet
+<servlet>
+		<servlet-name>CustomerUpdateServlet</servlet-name>
+		<servlet-class>art_Gallery.CustomerUpdateServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CustomerUpdateServlet</servlet-name>
+		<url-pattern>/CustomerUpdateServlet</url-pattern>
+	</servlet-mapping>
 
 </web-app>
 </element>
