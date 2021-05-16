@@ -73,7 +73,7 @@
 		Phone Number <input type="text" name="phone" value="<%= phone %>"><br>
 		Email Address <input type="text" name="email" value="<%= email %>"><br>
 		Message <input type="text" name="message" value="<%= message %>"><br>
-		Photograph <input type="text" name="photograph" value="<%= photograph %>"><br> 
+		Photograph <input type="text" name="photograph" value="<%= photograph %>" readonly><br> 
 		Address line 01 <input type="text" name="add_line_01" value="<%= add_line_01 %>"><br>
 		Address line 02 <input type="text" name="add_line_02" value="<%= add_line_02 %>"><br>
 		Postal code <input type="text" name="postal_code" value="<%= postal_code %>"><br>

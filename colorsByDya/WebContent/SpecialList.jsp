@@ -112,6 +112,8 @@ function disableButton(){
 
 	<h1>Special Requests</h1><br>
 	
+	<input type="button" name="report" value="Generate Report" onclick="location.href='Request_PDF_Generate.jsp'">
+	
 	<div class="topnav">
 	<div class="search-container">
     <form action="#" method="post">
@@ -137,7 +139,7 @@ function disableButton(){
 		<th>City</th>
 		<th>Country</th>
 		<th>Customer ID</th>
-		<th>Artist Name</th>
+		
 		<th></th>
 	</tr>
 	
@@ -170,7 +172,7 @@ function disableButton(){
 		<td>${req.city}</td>
 		<td>${req.country}</td>
 		<td>${req.c_customer_id}</td>
-		<td>${req.artist_name}</td>
+		<%-- <td>${req.artist_name}</td> --%>
 		
 		<td>
 		
@@ -199,9 +201,9 @@ function disableButton(){
 	</c:forEach>
 	</table>
 	
-    <input type="button" name="report" value="Generate Report" onclick="location.href='PDFrequestServlet'"> 
+    <!-- <input type="button" name="report" value="Generate Report" onclick="location.href='PDFrequestServlet'">  -->
 	<!-- <a location.href="PDFrequestServlet" download="Request.pdf">Download</a> -->
-	<input type="button" value="test" id="testBtn" onclick="myFunction()">
+	<!-- <input type="button" value="test" id="testBtn" onclick="myFunction()"> -->
 
 <style>
 $font-family:   "Roboto";
