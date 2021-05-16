@@ -63,12 +63,6 @@
 			font-weight : 700;
 		}
 		
-		.inname{
-			padding-left : 350px;
-			padding-bottom : 20px;
-			font-size:16px;
-		}
-		
 		input {
   			background: #fff;
   			color: #525865;
@@ -84,6 +78,7 @@
 			padding-left : 220px;
 			padding-bottom : 20px;
 			font-size:16px;
+			float:right;
 		}
 		
 		.indate{
@@ -163,7 +158,7 @@
 	
 	
 	<div class="topic">
-	<h1>Insert event</h1>
+	<h1>INSERT EVENT</h1>
 	</div>
 	
 	<div class="main">
