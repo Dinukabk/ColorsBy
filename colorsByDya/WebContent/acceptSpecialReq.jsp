@@ -16,6 +16,40 @@
 
 </head>
 <body>
+
+	<!-- Navbar -->
+	<div class="container" style="height: 132px;">
+		<header class="header" class="py-5 mt-5">
+			<nav class="navbar navbar-expand-lg fixed-top py-3">
+				<div class="container">
+					<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+					<button type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation"
+						class="navbar-toggler navbar-toggler-right">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<div id="navbarSupportedContent" class="collapse navbar-collapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Home <span
+									class="sr-only"></span></a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">About</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
+								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
+							<li class="nav-item"><a href="../Payments/payment.jsp"
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
 	
 	<h1>Accept Special Request</h1><br>
 	<center><h3>Once you accept the Special Request you cannot change that</h3></center>
@@ -38,18 +72,19 @@
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	<form action="requestAccept" method="post">
+		<img name="photograph" src="images/<%=photograph%>" width="200px" height="200px"/><br>
 		Request ID <input type="text" name="request_id" value="<%=request_id%>" readonly><br>
 		Customer Name <input type="text" name="name" value="<%=name%>" readonly><br>
 		Phone number <input type="text" name="phone" value="<%=phone%>" readonly><br>
 		Email Address <input type="text" name="email" value="<%=email%>" readonly><br>
 		Message <input type="text" name="message" value="<%=message%>" readonly><br>
-		Photograph <input type="text" name="photograph" value="<%=photograph%>" readonly><br>
+		<%-- Photograph <input type="text" name="photograph" value="<%=photograph%>" readonly><br> --%>
 		Address line 01 <input type="text" name="add_line_01" value="<%=add_line_01%>" readonly><br>
 		Address line 02 <input type="text" name="add_line_02" value="<%=add_line_02%>" readonly><br>
 		Postal code <input type="text" name="postal_code" value="<%=postal_code%>" readonly><br>
 		Province <input type="text" name="province" value="<%=province%>" readonly><br>
 		City <input type="text" name="city" value="<%=city%>" readonly><br>
-		Country <input type="text" name="country" value="<%=country%>" readonly><br>
+		Country <input type="text" name="country" value="<%=country%>" readonly><br><br>
 		
 		<input type="submit" name="submit" value="Accept Request"><br>
 		

@@ -105,7 +105,7 @@
 		<td>${req.phone}</td>
 		<td>${req.email}</td>
 		<td>${req.message}</td>
-		<td><img src="images/${req.photograph}" width="200px" height="200px"/></td>
+		<td><img src="images/${req.photograph}" width="100px" height="100px"/></td>
 		<td>${req.add_line_01}</td>
 		<td>${req.add_line_02}</td>
 		<td>${req.postal_code}</td>

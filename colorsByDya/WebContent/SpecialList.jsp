@@ -12,9 +12,11 @@
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/req2.css">
 <link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Special Request list</title>
 
 <script type="text/javascript">
+
 function myFunction() {
 	  document.getElementById("testBtn").style.color = "red";
 	  document.getElementById("testBtn").value = "red";
@@ -26,9 +28,63 @@ function disableButton(){
 }
 </script>
 
+<style>
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+</style>
+
 </head>
 <body>
 	<h1>Special Requests</h1><br>
+	
+	<div class="topnav">
+	<div class="search-container">
+    <form action="#" method="post">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  </div>
 	
 	<table border="1">
 	
@@ -71,7 +127,7 @@ function disableButton(){
 		<td>${req.phone}</td>
 		<td>${req.email}</td>
 		<td>${req.message}</td>
-		<td><img src="images/${req.photograph}" width="200px" height="200px"/></td>
+		<td><img src="images/${req.photograph}" width="100px" height="100px"/></td>
 		<td>${req.add_line_01}</td>
 		<td>${req.add_line_02}</td>
 		<td>${req.postal_code}</td>

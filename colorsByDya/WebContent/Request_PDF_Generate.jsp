@@ -76,8 +76,8 @@
 			
 	%>	
 	
-	<h1>No of Requests :</h1>
-	<h3><%=rs1.getInt("RCount")%></h3>
+	<h3>No of Requests : <%=rs1.getInt("RCount")%></h3>
+	<%-- <h3><%=rs1.getInt("RCount")%></h3> --%>
 	
 	<%
 	//counting accepted requests
@@ -90,8 +90,9 @@
 	} 
 	%>
 	
-	<h1>No of Accepted Requests :</h1>
-	<h3><%=rs2.getInt("RCountA")%></h3>
+	
+	<h3>No of Accepted Requests : <%=rs2.getInt("RCountA")%></h3>
+	<%-- <h3><%=rs2.getInt("RCountA")%></h3> --%>
 			<table>
 				<tr>
 					<th>Request ID</th>
