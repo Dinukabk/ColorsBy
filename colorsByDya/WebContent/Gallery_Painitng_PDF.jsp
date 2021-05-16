@@ -26,7 +26,7 @@
 	<%@ page import="java.sql.DriverManager" %>
 			
 				
-		<h1> Artwork Sales - Category Report.</h1>
+		&nbsp<h1> Artwork Sales - Category Report.</h1> <br>
 	
 	<%
 		try
@@ -51,19 +51,26 @@
 				      " GROUP BY category"+
 				      " ORDER BY Sales_Count desc"+ 
 				      " )"+
-				" SELECT tt.category as Category , MAX(tt.Sales_Count) as Max_Sales_Count"+
+				" SELECT tt.category as Category , MAX(tt.Sales_Count) as Max_Sales_Count, SUM(tt.Sales_Count) AS Total_Sales"+
 				" FROM temp_table tt";
 				
 			ResultSet rs_1 = stmt.executeQuery(query_1);
 			
-			
+			double sales_rate = 0.0;
 			
 			while(rs_1.next())
 			{ 
 				%>
 				
-				<h3> Highest Sales Rate Category : <%=rs_1.getString("Category")%></h3>
-				<h3> Highest Sales count : <%=rs_1.getInt("Max_Sales_Count")%></h3>
+				<h4> Highest Sales Rate Category : <%=rs_1.getString("Category")%></h4>
+				<h4> Highest Sales Count : <%=rs_1.getInt("Max_Sales_Count")%></h4>
+				
+				<% 
+				sales_rate = (rs_1.getInt("Max_Sales_Count")*100.0) /rs_1.getInt("Total_Sales");
+				%>
+				
+				<h4> Highest Sales Percentage : <%=sales_rate%>%</h4>
+				<h4> Total Sales Count : <%=rs_1.getInt("Total_Sales")%></h4>
 			<%
 			} //end of while
 			
@@ -84,7 +91,6 @@
 						<th>Sales Count</th>
 					</tr>
 					
-					
 			<%
 			
 			while(rs_2.next())
@@ -95,17 +101,11 @@
 						<td><%=rs_2.getString("Category")%></td>
 						<td><%=rs_2.getInt("Sales_Count")%></td>
 					</tr>
-				
-				
 			<%
 			} //end of while
 			%>
 			
 			</table>
-				
-				
-			
-			
 			
 	<% 		
 			rs_1.close();
@@ -119,18 +119,11 @@
 		}
 		%>
 		
-
-		
-		
-		
 	</div>
 	
 	<div id="elementH"></div>
 
-	
-	
-	
-	<%System.out.println("Read upto here..."); %>
+
 	
 	<!-- jQuery library -->
 <script src="js/jquery.min.js"></script>
@@ -155,7 +148,7 @@
 		    }
 		};
 		
-		doc.fromHTML(elementHTML, 5, 5, {
+		doc.fromHTML(elementHTML, 30, 15, {
 		    'width': 500,
 		    'elementHandlers': specialElementHandlers
 		});
