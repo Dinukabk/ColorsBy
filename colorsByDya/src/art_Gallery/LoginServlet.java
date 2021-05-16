@@ -36,25 +36,21 @@ public class LoginServlet extends HttpServlet {
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		
-		
-		RequestDispatcher dis = request.getRequestDispatcher("userDashboard.jsp");
-		dis.forward(request, response);
 
-//		// The session
-//		HttpSession session = request.getSession(false);
-//		if (session != null) {
-//			// session.setAttribute("l_id", n);
-//			int login = LoginDao.validate(n, p);
-//			if (login > 0) {
-//				session.setAttribute("userID", login);
-//				RequestDispatcher RD = request.getRequestDispatcher("userDashboard.jsp");
-//				RD.forward(request, response);
-//			} else {
-//				RequestDispatcher RD = request.getRequestDispatcher("login_01.jsp");
-//				RD.forward(request, response);
-//			}
-//		}
+		// The session
+	HttpSession session = request.getSession(false);
+	if (session != null) {
+			// session.setAttribute("l_id", n);
+			int login = LoginDao.validate(n, p);
+			if (login > 0) {
+				session.setAttribute("userID", login);
+				RequestDispatcher RD = request.getRequestDispatcher("userDashboard.jsp");
+				RD.forward(request, response);
+			} else {
+				RequestDispatcher RD = request.getRequestDispatcher("login_01.jsp");
+				RD.forward(request, response);
+			}
+		}
 
 	}
 }
