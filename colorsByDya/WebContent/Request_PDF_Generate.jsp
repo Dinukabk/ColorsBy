@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>PDF report</title>
+<title>PDF report of Requests</title>
 
 <!-- jQuery library -->
 <script src="js/jquery.min.js"></script>
@@ -69,7 +69,7 @@
 			ResultSet rs1 = stmt.executeQuery(sql_1);
 			
 			if(rs1.next()) {
-				String count = String.valueOf(rs1.getInt("RCount"));
+				double count = rs1.getInt("RCount");
 				System.out.println(count);
 				//listR.add(new ListItem("No of Requests : " + count));
 			}
@@ -85,18 +85,22 @@
 	ResultSet rs2 = stmt.executeQuery(sql_2);
 	
 	if(rs2.next()) {
-		String acceptCount = String.valueOf(rs2.getInt("RCountA"));
+		double acceptCount = rs2.getInt("RCountA");
 		//listR.add(new ListItem("No of Accepted Requests : " + acceptCount));
+		
 	} 
 	%>
 	
 	
 	<h3>No of Accepted Requests : <%=rs2.getInt("RCountA")%></h3>
+	
+	
 	<%-- <h3><%=rs2.getInt("RCountA")%></h3> --%>
+	
 			<table>
 				<tr>
 					<th>Request ID</th>
-					<th>Customer Name</th>
+					<th>Customer</th>
 					<th>Phone Number</th>
 					<th>Message</th>					
 				</tr>	
@@ -132,11 +136,15 @@
 		
 		</div> -->
 	
-	
+	<%-- <%double perc = (rs2.getInt("RCountA")*100.0)/rs1.getInt("RCount"); %> --%>
         					
         <%
 			} //end of while
-			
+				
+		/* double perc = (rs2.getInt("RCountA")*100.0)/rs1.getInt("RCount"); */ %>
+		
+		
+		<% 
 			rs.close();
 			stmt.close();
 			conn.close();
@@ -149,7 +157,7 @@
 		
 			</tr>
 		</table>
-		
+		<%-- <h3>No of Accepted Percentage : <%=perc%></h3> --%>
 	</div>
 	
 	<div id="elementH"></div>

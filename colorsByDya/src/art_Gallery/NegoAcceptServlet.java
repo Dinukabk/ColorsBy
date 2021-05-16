@@ -29,7 +29,7 @@ public class NegoAcceptServlet extends HttpServlet {
 		isTrue = RequestDBUtil.updateNegoAccept(price_req_id, full_name, phone_no, title, image_url, message);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("requestSuccess.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("Artist.jsp");
 			dis.forward(request, response);
 			try {
 				MailUtilCustomer.sendMail("lochanawijerathna27@gmail.com");

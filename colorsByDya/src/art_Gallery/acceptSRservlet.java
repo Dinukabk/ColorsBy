@@ -36,7 +36,7 @@ public class acceptSRservlet extends HttpServlet {
 		isTrue = RequestDBUtil.updateSpecialAccept(request_id, name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("requestSuccess.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("Artist.jsp");
 			dis.forward(request, response);
 			
 			try {
