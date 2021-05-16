@@ -20,7 +20,7 @@ public class EveInsertServlet extends HttpServlet {
 		
 		String name = request.getParameter("name");
 		String date = request.getParameter("date");
-		String status =  request.getParameter("status");
+		String status = request.getParameter("status");
 		String description = request.getParameter("description");
 		String adminID = request.getParameter("adminID");
 		

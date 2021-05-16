@@ -114,15 +114,12 @@ h1{
 		</c:forEach>
 		
 		<c:url value = "EventUpdate.jsp" var="eveupdate">
-			
-			
-			<c:param id = "id" value = "${id }"/>
-			<c:param name = "name" value = "${name}"/>
-			<c:param date = "date" value = "${date}"/>
-			<c:param status = "status" value = "${status}"/>
-			<c:param description = "description" value = "${description}"/>
-			<c:param adminId  = "adminId" value = "${adminId}"/>
-		 	
+			<c:param id = "Id" value = "${id}"/>
+			<c:param name = "Name" value = "${name}"/>
+			<c:param date = "Date" value = "${date}"/>
+			<c:param status = "Status" value = "${status}"/>
+			<c:param description = "Description" value = "${description}"/>
+			<c:param adminId  = "AdminId" value = "${adminId}"/>		 	
 		</c:url>
 		
 		
@@ -134,17 +131,15 @@ h1{
 		
 		
 		<c:url value="EventDelete.jsp" var="eveDelete">
-		
-		
-			<c:param id = "id" value = "${id }"/>
+			<c:param id = "id" value = "${id}"/>
 			<c:param name = "name" value = "${name}"/>
 			<c:param date = "date" value = "${date}"/>
 			<c:param status = "status" value = "${status}"/>
 			<c:param description = "description" value = "${description}"/>
-			<c:param adminId  = "adminId" value = "${adminId}"/>
-			
-			
+			<c:param adminId  = "adminId" value = "${adminId}"/>	
 		</c:url>	
+		
+		
 		
 		<a href="eveDelete">
 		<input type="button" name="delete" value="Delete event">

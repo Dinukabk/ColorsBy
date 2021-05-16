@@ -24,7 +24,7 @@ public class eventDBUtil {
 			con = EventDBconnect.getConnection();
 			stmt = con.createStatement();
 			
-			boolean stats = Boolean.parseBoolean(status);
+			int stats = Integer.parseInt(status);
 			int admin = Integer.parseInt(adminID);
 			
 			String sql = "insert into event values (0,  '"+name+"', '"+date+"', '"+stats+"', '"+description+"', '"+admin+"')";  
@@ -76,8 +76,7 @@ public class eventDBUtil {
 		int adID = Integer.parseInt(adminID);
 				
 				
-		String sql = "use colorbydiyaa;"
-				+ "select * from event where name = '"+Ename+"' and a_admin_id = '"+adID+"'";
+		String sql = "select * from event where name = '"+Ename+"' and a_admin_id = '"+adID+"'";
 		
 		try {
 			rs = stmt.executeQuery(sql);
@@ -93,7 +92,7 @@ public class eventDBUtil {
 				int id = rs.getInt(1);
 				String name = rs.getString(2);
 				Date date = rs.getDate(3);
-				Boolean status = rs.getBoolean(4);
+				int status = rs.getInt(4);
 				String description = rs.getString(5);
 				int adminId = rs.getInt(6);
 				

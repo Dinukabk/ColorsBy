@@ -6,12 +6,12 @@ public class EventClass {
 	private int id;
 	private String name;
 	private Date date;
-	private boolean status;
+	private int status;
 	private String description;
 	private int adminID;
 	
 	
-	public EventClass(int id, String name, Date date, boolean status, String description, int adminID) {
+	public EventClass(int id, String name, Date date, int status, String description, int adminID) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -37,7 +37,7 @@ public class EventClass {
 	}
 
 
-	public boolean isStatus() {
+	public int isStatus() {
 		return status;
 	}
 

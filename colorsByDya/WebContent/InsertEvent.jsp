@@ -19,6 +19,7 @@
   	
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	
   	<script>
   		$( function() {
     		$( "#datepicker" ).datepicker();
@@ -155,7 +156,7 @@
 	<script type="text/javascript" src="./js/script.js"></script>
 	
 	
-	
+	 
 	<div class="topic">
 	<h1>INSERT EVENT</h1>
 	</div>
