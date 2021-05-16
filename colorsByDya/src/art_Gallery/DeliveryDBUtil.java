@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ibm.db2.jcc.a.d;
+
 public class DeliveryDBUtil {
 	
 	//second time coding 
@@ -84,6 +86,8 @@ public static List<DeliveryCustomer> validate(String userName, String password){
 		}
 		return isSuccess;
 	}
+	
+	
 	//Retrieve information from delivery table
 	public static DeliveryCustomer retriveDeliveryInfo(int pid) throws SQLException {
 	
@@ -144,9 +148,106 @@ public static List<DeliveryCustomer> validate(String userName, String password){
 			
 	}
 	
+//	//get cus
+//	public static List<DeliveryCustomer> getCustomer(String userName) {
+//		
+//		ArrayList<DeliveryCustomer> customer = new ArrayList<>();
+//		
+//		try {
+//			
+//			con = DBConnect.getConnection();
+//			stmt = con.createStatement();
+//			String sql = "select * from customer where username='"+userName+"'";
+//			rs = stmt.executeQuery(sql);
+//			
+//			while (rs.next()) {
+//				int id = rs.getInt(1);
+//				String name = rs.getString(2);
+//				String email = rs.getString(3);
+//				String phone = rs.getString(4);
+//				String username = rs.getString(5);
+//				String password = rs.getString(6);
+//				
+//				DeliveryCustomer cus = new delivery(delivery_id,full_name,add_line_01,add_line_02,postal_code,province, city, country, status, p_payment_id);
+//				cus.add(cus);
+//			}
+//			
+//		} catch (Exception e) {
+//			
+//		}
+//		
+//		return customer;	
+//	}
+	
 
 	
+//	//getcust de method
+//	 
+//    public static List<Customer> getCustomerDetails(String Id) {
+//    	
+//    	int convertedID = Integer.parseInt(Id);
+//    	
+//    	ArrayList<DeliveryCustomer> cus = new ArrayList<>();
+//    	
+//    	try {
+//    		
+//    		con = DBConnect.getConnection();
+//    		stmt = con.createStatement();
+//    		String sql = "select * from delivery where delivery_id='"+convertedID+"'";
+//    		rs = stmt.executeQuery(sql);
+//    		
+//    		while(rs.next()) {
+//    			int id = rs.getInt(1);
+//    			String name = rs.getString(2);
+//    			String email = rs.getString(3);
+//    			String phone = rs.getString(4);
+//    			String username = rs.getString(5);
+//    			String password = rs.getString(6);
+//    			
+//    			DeliveryCustomer c = new delivery(delivery_id,full_name,add_line_01,add_line_02,postal_code,province, city, country, status, p_payment_id);
+//    			cus.add(c);
+//    		}
+//    		
+//    	}
+//    	catch(Exception e) {
+//    		e.printStackTrace();
+//    	}	
+//    	return cus;	
+//    }
 	
+	
+	
+	
+	
+	//Delete method
+//	public static boolean deleteDelivery(String id) {
+//		con = DBConnect.getConnection();
+//		
+//		String deletequery = "delete from colorbydiyaa.delivery where id= ?;";
+//		PreparedStatement preparedStatement = con.prepareStatement(deletequery);
+//	
+//		preparedStatement.setInt(1, d.delivery_id());
+//		preparedStatement.setString(2, d.getAdd_line_01());
+//		preparedStatement.setString(3, d.getAdd_line_02());
+//		preparedStatement.setInt(4, d.getPostal_code());
+//		preparedStatement.setString(5, d.getProvince());
+//		preparedStatement.setString(6, d.getCity());
+//		preparedStatement.setString(7, d.getCountry());
+//		preparedStatement.setInt(8, d.getDelivery_id());
+//		
+//		int res = preparedStatement.executeUpdate();
+//		if(res == 1) {
+//			return true;
+//		}
+//		else {
+//			return false;
+//		}
+//    }
+//	
+//	
+	
+	
+		
 	
 	
 }

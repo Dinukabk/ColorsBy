@@ -3,7 +3,7 @@
   
     background-color: #dddddd;
 	position: absolute;
-	margin-top: 50px;
+	margin-top: 132px;
 	margin-left: 382px;
 	
 	padding: 10px 20px 30px 20px;
@@ -13,37 +13,13 @@
 .myDiv2{
 	background-color: #dddddd;
 	position: absolute;
-	margin-top: 50px;
+	margin-top: 132px;
 	margin-left: 709px;
 	
 	padding: 10px 20px 30px 20px;
 	border-radius: 7px;
 	
 }
-
-.myDiv3 {
-	background-color: #dddddd;
-	position: absolute;
-	margin-top: 40px;
-	margin-left: 306px;
-	
-	padding: 10px 20px 30px 20px;
-	border-radius: 7px;
-	
-}
-
-
-.myDiv4 {
-	background-color: #dddddd;
-	position: absolute;
-	margin-top: 40px;
-	margin-left: 313px;
-	
-	padding: 10px 20px 30px 20px;
-	border-radius: 7px;
-	cursor: pointer;
-}
-
 
 .myDiv5 {
 	background-color: #dddddd;
@@ -54,6 +30,29 @@
 	padding: 10px 20px 30px 20px;
 	border-radius: 7px;
 	cursor: pointer;
+}
+
+.update1 {
+	  background-color: #dddddd;
+	position: absolute;
+	margin-top: 132px;
+	margin-left: 382px;
+	
+	padding: 10px 20px 30px 20px;
+ 	border-radius: 7px;
+	
+}
+
+
+.myDiv7{
+	 background-color: #dddddd;
+	position: absolute;
+	margin-top: 132px;
+	margin-left: 382px;
+	
+	padding: 10px 20px 30px 20px;
+ 	border-radius: 7px;
+	
 }
 
 .myDiv8 {

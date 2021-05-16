@@ -12,93 +12,107 @@
 
 	<link rel="stylesheet" href="./DeliveryCss/DeIiveryDesing.css">
 	<!-- header-->
-	<link type="text/css" rel="stylesheet" href="css/frontpage.css"/>
-	<link rel="stylesheet" href="css/style1.css"> 
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/home.css">
 	
-		<style>
-body  {
-  background-image: url("./DeliveryImage/25.jpg");
-  background-repeat: no-repeat, repeat;
-  background-color: white;
-  background-position: center;
-  background-size: cover;
- 
-}		
-#contact-form {
-	background-color: rgba(221, 221, 221, 1);
-	padding: 10px 20px 30px 20px;
-	max-width: 100%;
-	float: left;
-	left: 49%;
-	position: absolute;
-	margin-top: 30px;
-	margin-left: -260px;
-	border-radius: 7px;
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-}
-#contact-form input, #contact-form select, #contact-form textarea {
-	border-radius: 1px;
-}
-#contact-form input:focus, #contact-form select:focus, #contact-form textarea:focus
-	{
-	background-color: #E5E6E7;
-}
-#contact-form button[type="submit"] {
-	cursor: pointer;
-	width: 100%;
-	border-radius: 56px;
-}
+	<script>
+		function myFunction2() {
+		  location.replace("./DeliveryThankU.jsp")
+		  
+		}
+	</script>
 	
-input[type=text], select, textarea {
-  
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  
-}
+<style>
 
-input[type=submit] {
-  background-color: #333333;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-  
-}
+.btn1 {
+		background-color: #dddddd;
+		position: absolute;
+		margin-top: 464px;
+		margin-left: 920px;
+		
+		padding: 10px 20px 30px 20px;
+	 	border-radius: 7px;
+		
+		}
+	
+	.btn2 {
+		background-color: #dddddd;
+		position: absolute;
+		margin-top: 464px;
+		margin-left: 382px;
+		
+		padding: 10px 20px 30px 20px;
+	 	border-radius: 7px;
+		
+	}
+	.btn3{
+		background-color: #dddddd;
+		position: absolute;
+		margin-top: 464px;
+		margin-left: 643px;
+		
+		padding: 10px 20px 30px 20px;
+	 	border-radius: 7px;
+	}
+	
+	
+	.update1{
+		background-color: #dddddd;
+		position: absolute;
+		margin-top: 118px;
+		margin-left: 382px;
+		
+		padding: 10px 20px 30px 20px;
+	 	border-radius: 7px;
+	}
 </style>
 	
-	
 </head>
-<body>
 
-<h1>Colors By Diyaa</h1>
-<div class="navbar">
-  <a href="frontpage.jsp">Home</a>
-  <a href="About_us.jsp">About Us</a>
-   <a href="My_profile.jsp">My Profile</a>
-   <a href="Exhibition.jsp">Exhibitions</a>
-    <a href="gallery_option.jsp">Gallery options</a>
-     <a href="upload_paintings.jsp">Upload Paintings</a>
-      <a href="frontpage.jsp">Logout</a>
-      <a href="#" class="navbar1"><% HttpSession httpSession=request.getSession();
-      								String id = request.getParameter("email");
-      								httpSession.setAttribute("login1",id );
-      								out.println(""+httpSession.getAttribute("login1"));
-      								String a = (String)httpSession.getAttribute("login1");
+<body>
+<!-- Navbar -->
+	<header class="header" class="py-5 mt-5">
+		<nav class="navbar navbar-expand-lg fixed-top py-3">
+			<div class="container">
+				<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+				<button type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation"
+					class="navbar-toggler navbar-toggler-right">
+					<i class="fa fa-bars"></i>
+				</button>
+
+				<div id="navbarSupportedContent" class="collapse navbar-collapse">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Home <span
+								class="sr-only"></span></a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">About</a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
+							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
+						<li class="nav-item"><a onclick="location.href = 'SpecialReqNavServlet'"
+							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
       
-      
-      %></a>  
-      
+   
     <!-- data retrieve  test pass -->
     <%int pid = (int)request.getAttribute("pid");%>
 	<%DeliveryCustomer d = DeliveryDBUtil.retriveDeliveryInfo(pid);%>
       
- 
-</div>
+      
+	<div class="update1">
 	<h1>Delivery Details inserted Successfully</h1><br>
-	<div id="contact-form">
+		
 	<table>
 	<form action="Deliveyinsert" method ="post">
 	
@@ -137,17 +151,75 @@ input[type=submit] {
 		<td>Country </td> 
 		<td><input type="text" name="DelivertCountry" value="<%=d.getCountry()%>"   readonly></td>
 	</tr>
-	</table><br>
+	</table><br><br><br>
 		
 	</form>
-	<form method="post" action="<%=request.getContextPath()%>/DeliveryRetriveEditServlet">
-		<input type="hidden" name = "P_id" value="<%=d.getP_payment_id()%>">
-		<input type="submit" name="submit" value ="Update My Data">
+	</div>
 	
-		<input type="submit" name="submit" value ="cancel My Delivery">
-		<input type="submit" name="submit" value ="Confirm My Delivery"><br>
+	<div class="#">
+		<form method="post" action="<%=request.getContextPath()%>/DeliveryRetriveEditServlet">
+			<input type="hidden" name = "P_id" value="<%=d.getP_payment_id()%>">
+			<div class="btn1">
+				<input type="submit" name="submit" value ="Update My Data">
+			</div>
+		</form>
 		
-	</form>
+		
+		
+		
+		
+	<!-- Delete part Start-->
+	<c:forEach var = "cus " items = "${DeliCusDetails}">
+	
+	<c:set var ="Did" value ="${cus.delivery_id}"/>
+	<c:set var ="DFname" value ="${cus.full_name}"/>
+	<c:set var ="lineOne" value ="${cus.add_line_01}"/>
+	<c:set var ="lineTwo" value ="${cus.add_line_02}"/>
+	<c:set var ="PCode" value ="${cus.postal_code}"/>
+	<c:set var ="Dprovince" value ="${cus.province}"/>
+	<c:set var ="Dcity" value ="${cus.city}"/>
+	<c:set var ="Dcountry" value ="${cus.country}"/>
+	<c:set var ="Dstatus" value ="${cus.status}"/>
+	<c:set var ="DPId" value ="${cus.p_payment_id}"/>
+	
+	</c:forEach>
+		
+	<!--Delete Button  -->	
+	<c:url value = "DeliveryDelete.jsp" var = "deliDelete">	
+		
+		<c:param name="DeliID" value="${Did}"/>
+		<c:param name="dfname" value="${DFname}"/>
+		<c:param name="lineone" value="${lineOne}"/>
+		<c:param name="linetwo" value="${lineTwo}"/>
+		<c:param name="dpcode" value="${PCode}"/>
+		<c:param name="dprovi" value="${Dprovince}"/>
+		<c:param name="dcity" value="${Dcity}"/>
+		<c:param name="dcontry" value="${Dcountry}"/>
+		<c:param name="dstatus" value="${Dstatus}"/>
+		<c:param name="dpid" value="${DPId}"/>
+	</c:url> 
+	 
+	
+	<form method="post" action="<%=request.getContextPath()%>/DeliveryDeleteServelet">
+			<div class="btn2">
+				<input type="hidden" name = "P_id" value="<%=d.getP_payment_id()%>"></button>
+				<input type="submit" name="submit" value ="Cancel My Order">
+			</div>
+	</form>	
+	<!--Delete part End	-->
+		
+		
+		
+		
+		
+		
+		
+		<div class="btn3">
+			<button onclick="myFunction2()">Confirm My Delivery</button><br>
+		</div>
+	</div>
+		
+	
 
 </body>
 </html>

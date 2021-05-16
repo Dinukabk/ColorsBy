@@ -200,6 +200,19 @@
          	<servlet-name>deliveryInsert</servlet-name>
          	<url-pattern>/Deliveyinsert</url-pattern>
          </servlet-mapping>
+         
+         <servlet>
+         	<servlet-name>DeleteDelivery</servlet-name>
+         	<servlet-class>art_Gallery.DeliveryDeleteServelet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>DeleteDelivery</servlet-name>
+         	<url-pattern>/delete</url-pattern>
+         </servlet-mapping>
+         
+         
+         
 	<!-- gayashanEnd -->
 	
 

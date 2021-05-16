@@ -8,8 +8,9 @@
 
 	<link rel="stylesheet" href="./DeliveryCss/DeIiveryDesing.css">
 	<!-- header css -->
-	<link type="text/css" rel="stylesheet" href="css/frontpage.css"/>
-	<link rel="stylesheet" href="css/style1.css"> 
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/home.css">
 	
 	
 	<script>
@@ -47,129 +48,84 @@
 	
 	</script>
 	
-<style>
-	
-body  {
-  background-image: url("./DeliveryImage/20.jpg");
-  background-repeat: no-repeat, repeat;
-  background-color: white;
-  background-position: center;
-  background-size: cover;
-}
 
-input{
-	border-radius: 20px;
-}	
-#contact-form {
-	background-color: rgba(221, 221, 221, 1);
-	padding: 10px 20px 30px 20px;
-	max-width: 100%;
-	float: left;
-	left: 56%;
-	position: absolute;
-	margin-top: 30px;
-	margin-left: -260px;
-	
-	
-}
-#contact-form input, #contact-form select, #contact-form textarea {
-	border-radius: 1px;
-	
-}
-
-
-
-#contact-form textarea {
-	width: 100%;
-	height: 150px;
-}
-
-#contact-form button[type="submit"] {
-	cursor: pointer;
-	width: 100%;
-		
-}
-input[type=submit] {
-  background-color: #333333;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-  
-}
-
-
-
-</style>
-	
 </head>
 <body>
 
+	<!-- Navbar -->
+	<header class="header" class="py-5 mt-5">
+		<nav class="navbar navbar-expand-lg fixed-top py-3">
+			<div class="container">
+				<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+				<button type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation"
+					class="navbar-toggler navbar-toggler-right">
+					<i class="fa fa-bars"></i>
+				</button>
 
-<h1>Colors By Diyaa</h1>
-<div class="navbar">
-  <a href="frontpage.jsp">Home</a>
-  <a href="About_us.jsp">About Us</a>
-   <a href="My_profile.jsp">My Profile</a>
-   <a href="Exhibition.jsp">Exhibitions</a>
-    <a href="gallery_option.jsp">Gallery options</a>
-     <a href="upload_paintings.jsp">Upload Paintings</a>
-      <a href="frontpage.jsp">Logout</a>
-      <a href="#" class="navbar1"><% HttpSession httpSession=request.getSession();
-      								String id = request.getParameter("email");
-      								httpSession.setAttribute("login1",id );
-      								out.println(""+httpSession.getAttribute("login1"));
-      								String a = (String)httpSession.getAttribute("login1");
-      
-      
-      %></a>  
-     
-      
-</div>
-	<h2 aling ="center">Fill The Details Required For Delivery </h2> 
-	<div id="contact-form">	
+				<div id="navbarSupportedContent" class="collapse navbar-collapse">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Home <span
+								class="sr-only"></span></a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">About</a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
+							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
+						<li class="nav-item"><a onclick="location.href = 'SpecialReqNavServlet'"
+							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<div class="myDiv7">
+	<h2 aling ="center">Confirm The Details Required For Delivery </h2> <br>
 	<table>
 	<form action="Deliveyinsert" method ="post" onsubmit="return InsertValidation()">
 	
 	<tr>
 		<td>Full Name</td> 
-		<td><input type="text" name="Fname" id="Fname" ></td> 
+		<td><input type="text" name="Fname" id="Fname" placeholder="Eg: Thusi Alia"></td> 
 	</tr>
 		
 	<tr>	
 		<td>Address Line 01 </td>
-		<td><input type="text" name="addLineOne" id="addLineOne" ></td>
+		<td><input type="text" name="addLineOne" id="addLineOne" placeholder="Eg: Road"></td>
 	</tr>
 		
 	<tr>	
 		<td>Address Line 02 </td>
-		<td><input type="text" name="addLineTwo" id="addLineTwo" ></td>
+		<td><input type="text" name="addLineTwo" id="addLineTwo" placeholder="Eg: Gampaha" ></td>
 	</tr>
 			
 	<tr>
 		<td>Postal Code </td>
-		<td><input type="text" name="PostalCo" id="PostalCo" ></td>
+		<td><input type="text" name="PostalCo" id="PostalCo" pattern="[0-9]{5}" placeholder="Eg: 12378"></td>
 	</tr>
 	
 	<tr>	
 		<td>Province </td>
-		<td><input type="text" name="DeliveryPro" id="DeliveryPro" ></td>
+		<td><input type="text" name="DeliveryPro" id="DeliveryPro" placeholder="Eg: Westen"></td>
 	</tr>
 	
 	<tr>
 		<td>City</td>  
-		<td><input type="text" name="eliveryCityy" id="eliveryCityy" ></td>
+		<td><input type="text" name="eliveryCityy" id="eliveryCityy" placeholder="Eg: Gampaha"></td>
 	</tr>
 
 	<tr>
 		<td>Country </td> 
-		<td><input type="text" name="DelivertCountry" id="DelivertCountry" ></td>
+		<td><input type="text" name="DelivertCountry" id="DelivertCountry" placeholder="Eg: Sri Lanka"></td>
 	</tr>
 		<tr>
 		<td>PaymentID</td> 
-		<td><input type="text" id="Pid" name="Pid"></td>
+		<td><input type="text" id="Pid" name="Pid" placeholder="Eg: Sri Lanka"></td>
 	</tr>
 		
 		

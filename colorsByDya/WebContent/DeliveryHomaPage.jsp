@@ -6,121 +6,53 @@
 <meta charset="ISO-8859-1">
 <title>Delivery Home here</title>
 
-<link rel="stylesheet" href="./DeliveryCss/DeIiveryDesing.css">
-	<!-- header css -->
-	<link type="text/css" rel="stylesheet" href="css/frontpage.css"/>
-	<link rel="stylesheet" href="css/style1.css"> 
-	
-	
-	
-	
-	
-	
-	<style>
-	
-body  {
-  background-image: url("./DeliveryImage/24.jpg");
-  background-repeat: no-repeat, repeat;
-  background-color: white;
-  background-position: left;
-  
-}	
-	
-	
-#contact-form {
-	background-color: rgba(221, 221, 221, 1);
-	padding: 10px 20px 30px 20px;
-	max-width: 100%;
-	float: left;
-	left: 56%;
-	position: absolute;
-	margin-top: 30px;
-	margin-left: -260px;
-	border-radius: 7px;
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-}
-#contact-form input, #contact-form select, #contact-form textarea {
-	border-radius: 1px;
-	
-}
-
-
-
-#contact-form input:focus, #contact-form select:focus, #contact-form textarea:focus
-	{
-	background-color: #E5E6E7;
-}
-
-
-
-
-#contact-form textarea {
-	width: 100%;
-	height: 150px;
-}
-
-#contact-form button[type="submit"] {
-	cursor: pointer;
-	width: 100%;
+	<link rel="stylesheet" href="./DeliveryCss/DeIiveryDesing.css">
+		<!-- header css -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/home.css">
 		
-}
+	
 
-input[type=text] {
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-}
 
-input[type=text]:focus {
-  width: 100%;
-}
-
-input[type=submit] {
-  background-color: #333333;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  float: right;
-    
-}
-
-</style>
 	
 	
 </head>
 <body>
 
 
-<h1>Colors By Diyaa</h1>
-<div class="navbar">
-  <a href="frontpage.jsp">Home</a>
-  <a href="About_us.jsp">About Us</a>
-   <a href="My_profile.jsp">My Profile</a>
-   <a href="Exhibition.jsp">Exhibitions</a>
-    <a href="gallery_option.jsp">Gallery options</a>
-     <a href="upload_paintings.jsp">Upload Paintings</a>
-      <a href="frontpage.jsp">Logout</a>
-      <a href="#" class="navbar1">
-       <% HttpSession httpSession=request.getSession();
-      								String id = request.getParameter("email");
-      								httpSession.setAttribute("login1",id );
-      								out.println(""+httpSession.getAttribute("login1"));
-      								String a = (String)httpSession.getAttribute("login1");
-      %></a> 
-      
-      
+<!-- Navbar -->
+	<header class="header" class="py-5 mt-5">
+		<nav class="navbar navbar-expand-lg fixed-top py-3">
+			<div class="container">
+				<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+				<button type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation"
+					class="navbar-toggler navbar-toggler-right">
+					<i class="fa fa-bars"></i>
+				</button>
 
-</div>
+				<div id="navbarSupportedContent" class="collapse navbar-collapse">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Home <span
+								class="sr-only"></span></a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">About</a></li>
+						<li class="nav-item"><a href="#"
+							class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
+							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
+						<li class="nav-item"><a onclick="location.href = 'SpecialReqNavServlet'"
+							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
 
 
 	
@@ -134,8 +66,18 @@ input[type=submit] {
 	creating a label in FedEx Ship Manager<br>
 	
 	
+	<br><center><button onclick="myFunction1()">HOME DELIVERY</button></center><br>
+		
+	<script>
+		function myFunction1() {
+		  location.replace("./DeliveryInsert.jsp")
+		  
+		}
+	</script>
 	
-	<br><center><input type="button" name="submit" value ="HOME DELIVERY"></center><br>
+	
+	
+	
 </div>
 
 <div class="myDiv2">
@@ -147,7 +89,16 @@ input[type=submit] {
 	recurring delivery needs with <br>
 	regularly scheduled pickups<br>
 	
-	<br><center><input type="button" name="submit" value ="PERSONALY PIC IT UP"></center><br>
+	
+	<br><center><button onclick="myFunction2()">CONTACT THE ARTIST</button></center><br>
+		
+	<script>
+		function myFunction2() {
+		  location.replace("./DeliveryPersonalyPicIt.jsp")
+		  
+		}
+	</script>
+	
 </div>
 
 </body>

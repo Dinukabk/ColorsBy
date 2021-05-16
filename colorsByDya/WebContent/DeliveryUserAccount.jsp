@@ -21,8 +21,7 @@
 	<c:set var ="Dcountry" value ="${cus.country}"/>
 	<c:set var ="Dstatus" value ="${cus.status}"/>
 	<c:set var ="DPId" value ="${cus.p_payment_id}"/>
-	<c:set var ="DusID" value ="${cus.username}"/>
-	<c:set var ="Dpsw" value ="${cus.password}"/>
+
 	
 	
 	
@@ -94,8 +93,7 @@
 		<c:param name="dcontry" value="${Dcountry}"/>
 		<c:param name="dstatus" value="${Dstatus}"/>
 		<c:param name="dpid" value="${DPId}"/>
-		<c:param name="dusid" value="${DusID}"/>
-		<c:param name="dpsw" value="${Dpsw}"/>
+		
 		
 	</c:url>
 	
