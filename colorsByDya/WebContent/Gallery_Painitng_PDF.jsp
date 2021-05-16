@@ -64,13 +64,44 @@
 				
 				<h3> Highest Sales Rate Category : <%=rs_1.getString("Category")%></h3>
 				<h3> Highest Sales count : <%=rs_1.getInt("Max_Sales_Count")%></h3>
+			<%
+			} //end of while
+			
+			
+			String query_2 = " SELECT p.category as Category, COUNT(*) AS Sales_Count"+
+				      " FROM painting p, artist a, payment pay"+ 
+				      " WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id=1 AND pay.status=true"+
+				      " GROUP BY category"+
+				      " ORDER BY Sales_Count desc";
+				
+			ResultSet rs_2 = stmt.executeQuery(query_2);
+			
+			%>
+			
+			<table>
+					<tr>
+						<th>Category</th>
+						<th>Sales Count</th>
+					</tr>
+					
+					
+			<%
+			
+			while(rs_2.next())
+			{ 
+				%>
+					<tr>
+						
+						<td><%=rs_2.getString("Category")%></td>
+						<td><%=rs_2.getInt("Sales_Count")%></td>
+					</tr>
 				
 				
-				
-        
 			<%
 			} //end of while
 			%>
+			
+			</table>
 				
 				
 			
