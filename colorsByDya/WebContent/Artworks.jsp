@@ -9,12 +9,14 @@
 <title>Artist_ Artwork</title>
 
 	 <!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
+	 
+	 <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 	
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/styles.css">
-	<link rel="stylesheet" href="./css/home.css">
+	<link rel="stylesheet" href="./css/bootstrap.min.css?">
+	<link rel="stylesheet" href="./css/styles.css?">
+	<link rel="stylesheet" href="./css/home.css?">
 	
-	<link rel="stylesheet" href="css/styles_Gallery.css">
+	<link rel="stylesheet" href="css/styles_Gallery.css?">
 	
 
 </head>
@@ -61,7 +63,7 @@
 		
 	<div class="table-responsive" style="width:auto; margin:0 auto;">
 
-	<table >
+	<table id ="myTable">
 		<c:forEach var="paint" items="${paintingDetails}">
 		
 		<c:set var="painting_id" value="${paint.painting_id}"/>
@@ -176,6 +178,15 @@
 		
 <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
+
+
 
 </body>
 </html>

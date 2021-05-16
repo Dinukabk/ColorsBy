@@ -17,7 +17,8 @@
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 	
-
+<!-- SEARCH BAR LINKS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="css/animate.css">
 
@@ -37,11 +38,12 @@
 <link rel="stylesheet" href="css/styles.css?version=1">
 <link rel="stylesheet" href="css/home.css">
 
-<link rel="stylesheet" href="css/styles_Gallery.css"> 
+<link rel="stylesheet" href="css/styles_Gallery.css?version=6"> 
 
 
 </head>
 <body>
+
 
 	<!-- Navbar -->
 	<div class="container" style="height: 132px;">
@@ -78,6 +80,15 @@
 	</div>
 
 
+<!-- SEARCH BAR  -->
+	<div class="topnav">
+	    <div class="search-container">
+		    <form action="#" method="post">
+		      <input type="text" id="search-input" placeholder="Search.." name="search">
+		      <button type="submit"><i class="fa fa-search"></i></button>
+		    </form>
+	  	</div>
+	 </div>
 	
 	
 	<%@ page import="java.sql.ResultSet" %>
@@ -101,14 +112,12 @@
 						String url="jdbc:mysql://localhost:3306/colorbydiyaa";
 						String username="root";
 						String password="root";
-						//String query="select * from painting";
 						
-						String query="select * from painting p, artist a WHERE p.a_artist_id = a.artist_id";
-						
-						/* "SELECT * FROM painting p, artist a WHERE p.a_artist_id = a.artist_id AND a.artist_id=?" */
 						
 						Connection conn=DriverManager.getConnection(url, username, password);
 						Statement stmt=conn.createStatement();
+						
+						String query="select * from painting p, artist a WHERE p.a_artist_id = a.artist_id";
 						ResultSet rs=stmt.executeQuery(query);
 						
 						while(rs.next())
