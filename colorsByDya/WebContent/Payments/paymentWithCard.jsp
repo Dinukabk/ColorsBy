@@ -42,7 +42,7 @@
 								<a onclick="location.href = 'SessionFlusher'" class="nav-link text-uppercase font-weight-bold">Log out</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase font-weight-bold">${userName }</a>
+								<a onclick="location.href = 'LoginRedirector'" class="nav-link text-uppercase font-weight-bold">${userName }</a>
 							</li>
 						</ul>
 					</div>
@@ -109,7 +109,7 @@
 						<p class="text-dark h6 text-right">Expiration Date:</p>
 					</td>
 					<td>
-						<input type="number" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="Expiration Date" value="${expDate }" disabled>
+						<input type="date" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="Expiration Date" value="${expDate }" disabled>
 					</td>
 				</tr>	
 				<tr>
@@ -123,7 +123,7 @@
 				<tr>
 					<td>
 						<input type="submit" class="btn btn-light border border-primary" value="Edit or Change Card" formaction="PaymentEditRedirector"/>
-						<button onclick="location.href = ''" class="btn btn-light border border-primary">Delete Card</button>
+						<input type="submit" class="btn btn-light border border-primary" value="Delete Card" formaction="PaymentDeleteCardServlet"/>
 					</td>
 					<td>
 						<button type="submit" class="btn btn-primary border border-primary mb-2">Pay now</button>
