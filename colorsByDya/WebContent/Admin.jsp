@@ -22,17 +22,14 @@
   margin-left: 20px;
   position: centre
 }
-
 #buttons :first-child {
     float: left;
 }
-
 #buttons :nth-child(2) {
     margin-right: 270px;
     float: right;
     padding: 10px 25px;
 }
-
 button  {
     background: rgba(10, 190, 81, 1);
     padding: 10px 25px;
@@ -43,51 +40,55 @@ button  {
     outline: none;
 }
 Open in new window
-
-
 </style>
 <script type="text/javascript">
     document.getElementById("submit1").onclick = function () {
-        location.href = "add_exhibition.jsp";
+        location.href = "artistList.jsp";
     };
     document.getElementById("cancel").onclick = function () {
-        location.href = "add_customer.jsp";
+        location.href = "ArtistInsert.jsp";
     };
     document.getElementById("gallery").onclick = function () {
-        location.href = "add_gallery.jsp";
+        location.href = "ArtistInsert.jsp";
     };
     
 </script>
  <div class="navbar">
   <a href="frontpage.jsp">Home</a>
-  <a href="About_us.jsp">About us</a>
+  <a href="ArtistInsert.jsp">Add Artist</a>
    <a href="Change_password.jsp">Change Password</a>
     <a href="frontpage.jsp">Logout</a>
      </div>
-
  <div class= "image">
-<img src="https://www.thechannels.org/wp-content/uploads/2016/09/MTWTsuno3-edit-1.jpg" style="float: left; height: 15em; margin-right: 10%; margin-bottom: 0.5em; margin-top: 5%">
+<img src="http://www.flash-slideshow-maker.com/slide-show/image/flash-photo-gallery-6.jpg" style="float: left; height: 15em; margin-right: 10%; margin-bottom: 0.5em; margin-top: 5%">
 </div>
 <div class= "image">
-<img src="https://www.thechannels.org/wp-content/uploads/2016/09/MTWTsuno3-edit-1.jpg" style="float: left; height: 15em; margin-right: 1%; margin-bottom: 0.5em; margin-top: 5%">
+<img src="https://onlinemastery.co.uk/wp-content/uploads/2016/02/avatar-1.jpg" style="float: left; height: 15em; margin-right: 1%; margin-bottom: 0.5em; margin-top: 5%">
 </div>
 <div class= "image">
-<img src="https://1.bp.blogspot.com/-r3YNBP3Cohk/Wa0p9Wjy9YI/AAAAAAAAkeM/OssgRUkyRv4J0duhN72SgM3q9NnZXWInQCLcBGAs/s1600/corey_barksdale_art.jpg" style="float: left; height: 15em; margin-right: 10px; margin-bottom: 0.5em; margin-top: 10%">
+<img src="https://assets.aucklandartgallery.com/assets/media/2017-lindauer-install-6.jpg" style="float: left; height: 15em; margin-right: 10px; margin-bottom: 0.5em; margin-top: 10%">
 </div>
-
 <div id="buttons">
-        <button onclick="location.href = 'add_exhibition.jsp';" id="submit1">Add Event</button>
-        <button onclick="location.href = 'add_customer.jsp';"id="cancel">Add Customer</button>
+        <button onclick="location.href = 'artistList.jsp';" id="submit1">Artist List</button>
+      
         <br></br> 
         <br></br> 
+        <button onclick="location.href = 'ArtistInsert.jsp';" id="gallery" margin-top: 600px; >Add Artist</button>
+        
         <br></br> 
         <br></br> 
+        <button onclick="location.href = '#';" id="cart" margin-top: 600px; >Delivery Report</button>
+       
         <br></br> 
-        <button onclick="location.href = 'add_gallery.jsp';" id="gallery" margin-top: 600px; >Add Gallery</button>
+        <br></br> 
+        <button onclick="location.href = 'ArtistInsert.jsp';" id="" margin-top: 600px; >Add Artist</button>
+        
+        <br></br> 
+        <br></br> 
+        <button onclick="location.href = '#';" id="" margin-top: 600px; >Payment Report</button>
 </div> 
-
+</div>
 <br><br>
-
-
+</div>
 </body>
  </html>
