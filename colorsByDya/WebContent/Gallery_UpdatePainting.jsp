@@ -102,7 +102,7 @@
 		</div>
 		<div class="form__group">
 			<label>Description</label>
-			<textarea class="form__input" rows="" cols="" name="description" value="<%= description %>"></textarea>
+			<textarea class="form__input" rows="" cols="" name="description" value=""><%= description %></textarea>
 			<%-- <input type="text" class="form__input" name="description" value="<%= description %>"> --%>
 		</div>
 		<div class="form__group">

@@ -60,14 +60,14 @@
 
 	
 	
-	<div id="content" class="table-responsive" style="width:auto;">
+	<div id="content" class="table-responsive" style="width:auto; text-align:center;">
 	
 	<%@ page import="java.sql.ResultSet" %>
 	<%@ page import="java.sql.Statement" %>
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
 			
-		<div style="text-align:center;">		
+				
 		<h1> Artwork Sales - Category Report.</h1> <br>
 	
 	<%
@@ -104,17 +104,17 @@
 			{ 
 				%>
 				
-				<h6> Highest Sales Rate Category : <%=rs_1.getString("Category")%></h6>
-				<h6> Highest Sales Count : <%=rs_1.getInt("Max_Sales_Count")%></h6>
+				<h5> Highest Sales Rate Category : <%=rs_1.getString("Category")%></h5>
+				<h5> Highest Sales Count : <%=rs_1.getInt("Max_Sales_Count")%></h5>
 				
 				<% 
 				sales_rate = (rs_1.getInt("Max_Sales_Count")*100.0) /rs_1.getInt("Total_Sales");
 				%>
 				
-				<h6> Highest Sales Percentage : <%=sales_rate%>%</h6>
-				<h6> Total Sales Count : <%=rs_1.getInt("Total_Sales")%></h6>
+				<h5> Highest Sales Percentage : <%=sales_rate%>%</h5>
+				<h5> Total Sales Count : <%=rs_1.getInt("Total_Sales")%></h5>
 				
-				</div> <br><br><br>
+				 <br><br><br>
 			<%
 			} //end of while
 			
@@ -200,7 +200,7 @@
 		});
 
 		// Save the PDF
-		doc.save('sample-document.pdf');
+		doc.save('Artwork Sales_Category Report.pdf');
 		
 	}
 </script>

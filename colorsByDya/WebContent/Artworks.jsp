@@ -58,12 +58,17 @@
 
 
 	<!-- <input type="button" name="report" value="Generate JAVA Report" onclick="location.href='Servlet_Gallery_Paint_PDF'"> <br> -->
-	<input type="button" class="btn"  name="report" value="View Report" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp'"> <br>
-
+	
+	<!-- <input type="button" class="btn"  name="report" value="View Report" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp'"> <br> -->
+	<button class="btn" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp'">
+		<img id="pdfButton" alt="" src="images/summarize_black_24dp.svg" width="30px"> VIEW REPORT
+	</button> <br><br>
+	
+	
 		
 	<div class="table-responsive" style="width:auto; margin:0 auto;">
 
-	<table id ="myTable">
+	<table>
 		<c:forEach var="paint" items="${paintingDetails}">
 		
 		<c:set var="painting_id" value="${paint.painting_id}"/>

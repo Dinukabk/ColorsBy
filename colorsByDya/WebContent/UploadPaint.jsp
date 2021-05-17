@@ -148,11 +148,11 @@
 		<div style="float:;">
 		<div>
 			<label>Length in cm</label>
-			<input type="text"  class="form__input" id="artworkLength" name="artworkLength" placeholder="Enter Length of the Artwork here"> 
+			<input type="number"  class="form__input" id="artworkLength" name="artworkLength" placeholder="Enter Length of the Artwork here"> 
 		</div>
 		<div>
 			<label>Width in cm</label>
-			<input type="text"  class="form__input" id="artworkWidth" name="artworkWidth" placeholder="Enter Width of the Artwork here">
+			<input type="number"  class="form__input" id="artworkWidth" name="artworkWidth" placeholder="Enter Width of the Artwork here">
 		</div>
 		
 		<div>
