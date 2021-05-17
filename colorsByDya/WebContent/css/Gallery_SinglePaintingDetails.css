@@ -18,17 +18,19 @@ body {
     font-size: var(--font-size);
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
+   /*  transform: translate3d(0, 0, 0); */
     
-   /*  background: linear-gradient(45deg, #5eeb6c 10%, #A2C7E5 90%); */
-    background: linear-gradient(45deg, #6ad9a5 10%, #A2C7E5 90%); 
+    background: linear-gradient(45deg, #04404a 10%, #A2C7E5 90%); 
      
-   /*  background: linear-gradient(45deg, #0b6b5b 10%, #A2C7E5 90%); */
-    height: 100vh
+   /*  background: linear-gradient(45deg, #0b6b5b 10%, #A2C7E5 90%); 
+    height: 100vh */
 }
 
 /******Button ******/
 .btn {
+	font-weight: bold;
+	text-transform: uppercase!important;
+	
 	width:auto; 
 	margin:0 auto;
     display: block;
@@ -38,8 +40,9 @@ body {
     -webkit-appearance: none;
     outline: 0;
     border: 0;
-    color: black;
-    background: $color-primary;
+    color: #fff;
+    background: rgb(127 169 195 / 22%);
+    /* background: $color-primary; */
     transition: 0.3s;
     
     &:hover {
