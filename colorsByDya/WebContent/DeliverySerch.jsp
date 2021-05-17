@@ -53,16 +53,14 @@
 							do{
 								String Province = rs.getString("province");
 								out.println("<option value = '" +"'>"+ Province + "</option>");
-								
-								
+															
 							}
 							while(rs.next());
 							out.println("</select>");
 							rs.close();
 							out.println("</td></tr>");
 							out.println("</tr><td colspan=2 alingn=center> <input type=submit value=Retrive></td></tr>);
-							
-							
+								
 						}
 						else{
 							out.println("<tr>");
@@ -81,13 +79,8 @@
 					%>
 					
 				</dev>
-		
-		
 			</form>
-		
-		
 		</dev>
-	
 	</dev>
 
 </body>

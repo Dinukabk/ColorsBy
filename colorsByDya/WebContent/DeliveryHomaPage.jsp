@@ -63,8 +63,7 @@
 		  location.replace("./DeliveryInsert.jsp")
 		  
 		}
-	</script>
-	
+	</script>	
 </div>
 
 <div class="myDiv2">
@@ -75,8 +74,7 @@
 	your routine and plan ahead for in <br>
 	recurring delivery needs with pickup <br>
 	regularly scheduled pickups pickup<br>
-	
-	
+
 	<br><center><button onclick="myFunction2()">CONTACT THE ARTIST</button></center><br>
 		
 	<script>
