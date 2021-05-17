@@ -74,52 +74,7 @@ body {
     }
 }
 
-
-/****************************************
-@keyframes NO {
-  from, to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
-  }
-}
-
-@keyframes arrive {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, 50px, 0);
-    }
-    
-    100% {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes move {
-    0% {
-        background-position: 0 0
-    }
-
-    50% {
-        background-position: 100% 0
-    }
-
-    100% {
-        background-position: 0 0
-    }
-} ******************************************************/
-
-//testing
+/***** Testing ****/
 * {
     margin: 0;
     padding: 0;
@@ -127,32 +82,36 @@ body {
 }
 
 body {
-    font-family: $font-family;
-    font-size: $font-size;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
+    /* transform: translate3d(0, 0, 0); */
    /*  background: linear-gradient(45deg, #046148 10%, #A2C7E5 90%); */
-    background: linear-gradient(45deg, #5eeb6c 10%, #A2C7E5 90%);
-    height: 100vh
+    background: linear-gradient(45deg, #04404a 10%, #4ca1af 90%);
+    /* height: 100vh */
 }
 
 .btn {
+	font-weight: bold;
+	text-transform: uppercase!important;
+	
 	width:auto; 
 	margin:0 auto;
     display: block;
     width: 100%;
     padding: 20px;
-    font-family: $font-family;
+    font-family: var(--font-family);
     -webkit-appearance: none;
     outline: 0;
     border: 0;
-    color: black;
-    background: $color-primary;
+    color: #fff;
+    background: rgb(127 169 195 / 22%);
+    /* background: var(--color-primary); */
     transition: 0.3s;
     
     &:hover {
-        background: darken($color-primary, 5%);
+        background: darken(var(--color-primary), 5%);
     }
 }
 
