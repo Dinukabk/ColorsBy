@@ -12,8 +12,6 @@
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/home.css">
 		
-	
-	
 	<style>
 	.myDiv3 {
 	background-color: #dddddd;
@@ -26,7 +24,6 @@
 	
 }
 	</style>
-	
 	
 </head>
 <body>
@@ -64,8 +61,6 @@
 		</nav>
 	</header>
 
-	
-
 	<div class="myDiv3">
 		<p><b><center>Personally pick it up Option</center></b></p>
 		
@@ -80,9 +75,6 @@
 		better world, and that belief guides everything we do. We deliver joy during the holidays. We deliver hope to <br>
 		survivors jnsnx of natural disasters. Customers count on our diverse portfolio of<br>
 		
-		
-		
-		
 	<center><button onclick="myFunction1()">NEXT</button></center>
 		
 	<script>
@@ -90,11 +82,8 @@
 		  location.replace("./DeliveryThankU.jsp")
 		  
 		}
-	</script>
-		
-		
+	</script>	
 	</div>
-	
 	
 </body>
 </html>

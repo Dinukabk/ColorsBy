@@ -11,15 +11,9 @@
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/home.css">
-		
-	
-
-
-	
 	
 </head>
 <body>
-
 
 <!-- Navbar -->
 	<header class="header" class="py-5 mt-5">
@@ -52,9 +46,6 @@
 			</div>
 		</nav>
 	</header>
-
-
-
 	
 <div class="myDiv1">
 	<p><b><center>GET HOME DELIVERY OPTION</center></b></p>
@@ -65,7 +56,6 @@
 	through the pickup application or while <br>
 	creating a label in FedEx Ship Manager<br>
 	
-	
 	<br><center><button onclick="myFunction1()">HOME DELIVERY</button></center><br>
 		
 	<script>
@@ -75,19 +65,16 @@
 		}
 	</script>
 	
-	
-	
-	
 </div>
 
 <div class="myDiv2">
 	
 	<p><b><center>PERSONALY PIC IT UP OPTION</center></b></p>
 	Do you send shipments on a regular<br>
-	schedule If so, you can simplify<br>
-	your routine and plan ahead for <br>
-	recurring delivery needs with <br>
-	regularly scheduled pickups<br>
+	schedule If so, you can simplify a<br>
+	your routine and plan ahead for in <br>
+	recurring delivery needs with pickup <br>
+	regularly scheduled pickups pickup<br>
 	
 	
 	<br><center><button onclick="myFunction2()">CONTACT THE ARTIST</button></center><br>
@@ -100,6 +87,5 @@
 	</script>
 	
 </div>
-
 </body>
 </html>

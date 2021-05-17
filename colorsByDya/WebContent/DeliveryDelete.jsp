@@ -51,7 +51,6 @@
 
 
 
-<%DeliveryCustomer d = (DeliveryCustomer)request.getAttribute("ObDeliDelite");%>
 	
 	<form action="<%=request.getContextPath()%>/DeliveryUpdateServlet" method ="post" onsubmit="return InsertValidation()">
 	

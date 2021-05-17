@@ -21,11 +21,8 @@
 	
 		<dev class="form-group">
 			<h2>Find My previous Orders</h2>
-		
 		</dev>
-		
 		<br>
-		
 		<dev class = "form-group>"
 		
 			<form method="get" action = "DeliverySerchSeverlet">
@@ -33,8 +30,6 @@
 				<dev class = "form-group>"
 					
 					<h3>Select The Province</h3>
-					
-					
 					
 					<%
 					Connection con;
@@ -46,7 +41,7 @@
 						Class.forName("com.mysql.jdbc.Driver");
 			            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
 			            pst = con.prepareStatement("select distinct province from delivery");
-				    rs=pst.executeQuery();
+				        rs=pst.executeQuery();
 						
 						if(rs.next())
 						{
@@ -83,7 +78,6 @@
 						
 						e.printStackTrace();
 					}
-										
 					%>
 					
 				</dev>
