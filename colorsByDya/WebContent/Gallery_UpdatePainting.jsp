@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">
 
-<link rel="stylesheet" href="css/styles_Gallery.css?version=2">
+<link rel="stylesheet" href="css/styles_Gallery.css">
 
 <!-- Preview image links -->
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
@@ -91,7 +91,7 @@
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	
-	<form action="updatepaint" method="post" onsubmit="return validateForm()">
+	<form action="updatepaint" method="post" onsubmit="return validateForm()" class="form">
 		<div class="form__group">
 			<label>Painting ID</label>
 			<input class="form__input" type="text" name=painting_id value="<%= painting_id %>" readonly>
