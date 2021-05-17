@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="./css/home.css">
 
 <link rel="stylesheet" href="css/styles_Gallery.css?">
-<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css?version=3">
+<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css?version=1">
 
 
 </head>
@@ -54,7 +54,7 @@
 	</div>
 
 	<br><br>
-	<button onclick="generate_PDF();" class="btn">
+	<button onclick="generate_PDF();" class="btn text-uppercase font-weight-bold" style="color:#fff;">
 		<img id="pdfButton" alt="" src="images/file_download_black_24dp.svg" width="30px"> DOWNLOAD REPORT
 	</button> <br><br>
 
