@@ -8,25 +8,67 @@
 <meta charset="ISO-8859-1">
 <title>PDF report</title>
 
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/home.css">
+
+<link rel="stylesheet" href="css/styles_Gallery.css?">
+<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css?version=3">
 
 
 </head>
 <body>
 
+<!-- Navbar -->
+	<div class="container" style="height: 132px;">
+		<header class="header" class="py-5 mt-5">
+			<nav class="navbar navbar-expand-lg fixed-top py-3">
+				<div class="container">
+					<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+					<button type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation"
+						class="navbar-toggler navbar-toggler-right">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<div id="navbarSupportedContent" class="collapse navbar-collapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Home <span
+									class="sr-only"></span></a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">About</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
+								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
+							<li class="nav-item"><a href="../Payments/payment.jsp"
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
+
 	<br><br>
-	<button onclick="generate_PDF();">Download Report</button> <br><br>
+	<button onclick="generate_PDF();" class="btn">
+		<img id="pdfButton" alt="" src="images/file_download_black_24dp.svg" width="30px"> DOWNLOAD REPORT
+	</button> <br><br>
 
 	
 	
-	<div id="content">
+	<div id="content" class="table-responsive" style="width:auto;">
 	
 	<%@ page import="java.sql.ResultSet" %>
 	<%@ page import="java.sql.Statement" %>
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
 			
-				
-		&nbsp<h1> Artwork Sales - Category Report.</h1> <br>
+		<div style="text-align:center;">		
+		<h1> Artwork Sales - Category Report.</h1> <br>
 	
 	<%
 		try
@@ -62,15 +104,17 @@
 			{ 
 				%>
 				
-				<h4> Highest Sales Rate Category : <%=rs_1.getString("Category")%></h4>
-				<h4> Highest Sales Count : <%=rs_1.getInt("Max_Sales_Count")%></h4>
+				<h6> Highest Sales Rate Category : <%=rs_1.getString("Category")%></h6>
+				<h6> Highest Sales Count : <%=rs_1.getInt("Max_Sales_Count")%></h6>
 				
 				<% 
 				sales_rate = (rs_1.getInt("Max_Sales_Count")*100.0) /rs_1.getInt("Total_Sales");
 				%>
 				
-				<h4> Highest Sales Percentage : <%=sales_rate%>%</h4>
-				<h4> Total Sales Count : <%=rs_1.getInt("Total_Sales")%></h4>
+				<h6> Highest Sales Percentage : <%=sales_rate%>%</h6>
+				<h6> Total Sales Count : <%=rs_1.getInt("Total_Sales")%></h6>
+				
+				</div> <br><br><br>
 			<%
 			} //end of while
 			
@@ -122,7 +166,8 @@
 		
 	</div>
 	
-	<div id="elementH"></div>
+	<div id="elementH"></div> <br><br><br><br><br><br>
+	
 
 
 	
@@ -159,6 +204,12 @@
 		
 	}
 </script>
+
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
 
 </body>
 </html>

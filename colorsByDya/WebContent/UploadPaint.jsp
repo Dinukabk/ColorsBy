@@ -19,8 +19,7 @@
 
 <!-- Preview image links -->
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
  
  <style>
     select:invalid{
@@ -73,7 +72,7 @@
 
 <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 
-	<form action="insertpaint" method="post" class="form" name="insertForm" onsubmit="return validateForm()">
+	<form action="insertpaint" method="post" class="form form--no" name="insertForm" onsubmit="return validateForm()">
 	<div style="float:;">
 		<div class="form__group">
 			<label>Title</label> 
@@ -131,7 +130,7 @@
 		</div>
 		<div>
 			<label>Drawn Date</label>
-			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here" min="1970-01-01" max="2021-04-22"  class="form__input">
+			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here" min="1970-01-01" max="2021-05-17"  class="form__input">
 		</div>
 		
 		<div>
@@ -317,6 +316,9 @@ body {
     max-width: 540px;
 }
 </style>
+
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
 <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>

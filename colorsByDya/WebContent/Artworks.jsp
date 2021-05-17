@@ -57,8 +57,8 @@
 	</div>
 
 
-	<input type="button" name="report" value="Generate JAVA Report" onclick="location.href='Servlet_Gallery_Paint_PDF'"> <br>
-	<input type="button" name="report" value="View Report" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp'"> <br>
+	<!-- <input type="button" name="report" value="Generate JAVA Report" onclick="location.href='Servlet_Gallery_Paint_PDF'"> <br> -->
+	<input type="button" class="btn"  name="report" value="View Report" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp'"> <br>
 
 		
 	<div class="table-responsive" style="width:auto; margin:0 auto;">

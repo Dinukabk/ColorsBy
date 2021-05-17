@@ -22,7 +22,10 @@
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">
 
-<link rel="stylesheet" href="css/styles_Gallery.css">
+<link rel="stylesheet" href="css/styles_Gallery.css?version=2">
+
+<!-- Preview image links -->
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 
 <script src="js/Gallery_JScript.js"></script>
 
@@ -89,6 +92,71 @@
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	
 	<form action="updatepaint" method="post" onsubmit="return validateForm()">
+		<div class="form__group">
+			<label>Painting ID</label>
+			<input class="form__input" type="text" name=painting_id value="<%= painting_id %>" readonly>
+		</div>
+		<div class="form__group">
+			<label>Title</label>
+			<input class="form__input" type="text" name="title" value="<%= title %>" required oninvalid= "alert('Please enter the title');">
+		</div>
+		<div class="form__group">
+			<label>Description</label>
+			<textarea class="form__input" rows="" cols="" name="description" value="<%= description %>"></textarea>
+			<%-- <input type="text" class="form__input" name="description" value="<%= description %>"> --%>
+		</div>
+		<div class="form__group">
+			<label>Price (LKR)</label>
+			<input type="text" class="form__input" name="price" value="<%= price %>" required oninvalid= "alert('Please enter the price');" > 
+		</div>
+		<div class="form__group">
+			<label>Drawn Date</label>
+			<input type="date" class="form__input" name="drawn_date" value="<%= drawn_date %>" min="1970-01-01" max="2021-05-17">
+		</div>
+		<div class="form__group">
+			<label>Category</label>
+			<select name="category" class="form__input" id="category" value="<%= category %>" required oninvalid= "alert('Please choose a category');">
+					<option value="Abstract">Abstract</option>
+					<option value="Nature">Nature</option>
+					<option value="Black and White">Black n White</option>
+					<option value="Oil Painting">Oil painting</option>
+		      		<option value="Watercolor">Watercolour</option>
+		      		<option value="Postercolor">Postercolour</option>
+		      		<option value="Acrylic">Acrylic</option>
+		       		<option value="Pencil Sketch">Pencil sketch</option>
+					<option value="Other">Other</option>
+				</select>
+		</div>
+		<div class="form__group">
+			<label>Weight (KG)</label>
+			<input type="number" class="form__input" name="weight" value="<%= weight %>"> 
+		</div>
+		<div class="form__group">
+			<label>Length (CM)</label>
+			<input type="number" class="form__input" name="length" value="<%= length %>"> 
+		</div>
+		<div class="form__group">
+			<label>Width (CM)</label>
+			<input type="number" class="form__input" name="width" value="<%= width %>">
+		</div>
+		<div class="form__group">
+			<label>Image</label>
+			<input type="text" class="form__input" name="image_url" value="<%= image_url %>" readonly>
+		</div>
+		<div class="form__group">
+			<label>Material</label>
+			<input type="text" class="form__input" name="material" value="<%= material %>">
+		</div>
+		<div class="form__group">
+			<label>Frame</label>
+			<input type="text" class="form__input" name="frame" value="<%= frame %>">
+		</div>
+		
+		
+		
+		
+	<%-- 	
+		
 	<table style="border: 0px;">
 		<tr>
 			<td>Painting ID</td>
@@ -96,7 +164,7 @@
 		</tr> 
 		<tr>
 			<td>Title</td>
-			<td><input type="text" name="title" value="<%= title %>" required oninvalid= "alert('Please enter the title');"></td>
+			<td><input class="form__input" type="text" name="title" value="<%= title %>" required oninvalid= "alert('Please enter the title');"></td>
 		</tr>
 		<tr>
 			<td>Description</td>
@@ -147,31 +215,22 @@
 			<td>Material</td>
 			<td><input type="text" name="material" value="<%= material %>"></td>
 		</tr>
-		<%-- <tr>
-			<td>In-Stock</td>
-			<td><input type="text" name="in_stock" value="<%= in_stock %>"></td>
-		</tr> --%>
+		
 		<tr>
 			<td>Frame</td>
 			<td><input type="text" name="frame" value="<%= frame %>"></td>
 		</tr>
-		<%-- 
-		<tr>
-			<td>Artist ID</td>
-			<td><input type="text" name="a_artist_id" value="<%= a_artist_id %>" readonly></td>
-		</tr>
-		<tr>
-			<td>Cart ID</td>
-			<td><input type="text" name="c_cart_id" value="<%= c_cart_id %>" readonly></td>
-		</tr> --%>
 		
 	</table>
-	<br>
-	<input type="submit" name="submit" value="Update">
+	<br> --%>
+	<input type="submit" name="submit" value="UPDATE" class="btn">
 	
 	</form>
 
 	</div>
+
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
 <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
