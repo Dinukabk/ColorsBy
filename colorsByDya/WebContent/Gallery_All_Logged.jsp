@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="css/styles.css?version=1">
 <link rel="stylesheet" href="css/home.css">
 
-<link rel="stylesheet" href="css/styles_Gallery.css"> 
+<link rel="stylesheet" href="css/styles_Gallery.css?"> 
 
 
 </head>
