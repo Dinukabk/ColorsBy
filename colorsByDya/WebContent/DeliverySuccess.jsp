@@ -205,7 +205,7 @@
 
 		<!--Delete part Start	-->
 		<form method="post"
-			action="<%=request.getContextPath()%>/DeliveryDeleteServelet">
+			action="DeliveryDeleteServelet">
 			<div class="btn2">
 				<input type="hidden" name="P_id" value="<%=d.getP_payment_id()%>">
 				<br> <input type="submit" name="submit" value="Cancel My Order">

@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-    pageEncoding="ISO-8859-1"%>
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
 		<br>
 		<dev class = "form-group>"
 		
-			<form method="get" action = "DeliverySerchSeverlet">
+			<form method="post" action = "DeliverySerchSeverlet">
 		
 				<dev class = "form-group>"
 					
@@ -39,7 +40,7 @@
 					try
 					{
 						Class.forName("com.mysql.jdbc.Driver");
-			            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
+			            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa?autoReconnect=true&useSSL=false","root","root");
 			            pst = con.prepareStatement("select distinct province from delivery");
 				        rs=pst.executeQuery();
 						
@@ -48,7 +49,7 @@
 							out.println("<tr>");
 							out.print("<td> chose name</td>");
 							out.println("<tr>");
-							out.println("<select name = 'combo'>")
+							out.println("<select name = 'combo'>");
 							
 							do{
 								String Province = rs.getString("province");
@@ -59,7 +60,7 @@
 							out.println("</select>");
 							rs.close();
 							out.println("</td></tr>");
-							out.println("</tr><td colspan=2 alingn=center> <input type=submit value=Retrive></td></tr>);
+							out.println("</tr><td colspan=2 alingn=center> <input type=submit value=Retrive></td></tr>");
 								
 						}
 						else{

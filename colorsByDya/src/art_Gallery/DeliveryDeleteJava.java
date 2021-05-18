@@ -22,7 +22,7 @@ public class DeliveryDeleteJava {
 				stmt = conn.createStatement();
 				
 				//executing the sql query
-				String sql = "delete from delivery where p_payment_id='1000'";
+				String sql = "delete from delivery where delivery_id='159'";
 				int numberAffectedRow = stmt.executeUpdate(sql);
 				
 				System.out.println("Row affected: " + numberAffectedRow);
