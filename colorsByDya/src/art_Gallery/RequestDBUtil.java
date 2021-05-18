@@ -125,6 +125,8 @@ public class RequestDBUtil {
 		boolean isSuccess = false;
 		//String UIDConverted = Integer.toString(userID);
 		int convertedID = Integer.parseInt("1");
+		int convertedPhone = Integer.parseInt(phone);
+		int convertedPostalCode = Integer.parseInt(postal_code);
 		
 		try {
 			
@@ -177,13 +179,13 @@ public class RequestDBUtil {
 					
 					 preparedStmt.setInt (1, 0);
 					 preparedStmt.setString (2, name);
-					 preparedStmt.setInt (3, 123456789); 
+					 preparedStmt.setInt (3, convertedPhone); 
 					 preparedStmt.setString (4, email);
 					 preparedStmt.setString (5, message); 
 					 preparedStmt.setString (6, photograph);
 					 preparedStmt.setString (7, add_line_01); 
 					 preparedStmt.setString (8,add_line_02); 
-					 preparedStmt.setInt (9, 12); 
+					 preparedStmt.setInt (9, convertedPostalCode); 
 					 preparedStmt.setString (10, province); 
 					 preparedStmt.setString (11, city); 
 					 preparedStmt.setString (12,country); 
