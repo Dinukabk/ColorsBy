@@ -157,11 +157,8 @@ h1{
 			<c:param name  = "admnId" value = "${adminId}"/>	
 			
 			
-			
-				 	
 		</c:url>
-		
-		
+	
 		<a href="${eveupdate}" >
 		<input type="button" name="update" value="Update event">
 		</a>

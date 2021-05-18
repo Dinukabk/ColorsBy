@@ -126,7 +126,7 @@ public class eventDBUtil {
 			stmt = con.createStatement();
 			
 			int ID = Integer.parseInt(id);
-			boolean sts = Boolean.valueOf(status);
+			int sts = Integer.parseInt(status);
 			int aid = Integer.parseInt(adminID);
 			
 			String sql = "update event set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
