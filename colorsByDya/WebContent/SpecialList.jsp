@@ -14,18 +14,14 @@
 <link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Special Request list</title>
+<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript">
+$('#search-input').on('keyup',function(){
+	var value = $(this).val()
+	console.log('Value:',value)
+})
 
-function myFunction() {
-	  document.getElementById("testBtn").style.color = "red";
-	  document.getElementById("testBtn").value = "red";
-	}
-	
-function disableButton(){
-	document.getElementById(testBtn).disabled = true;
-	alert("Button has been disabled.");
-}
 </script>
 
 <style>
@@ -112,12 +108,12 @@ function disableButton(){
 
 	<h1>Special Requests</h1><br>
 	
-	<input type="button" name="report" value="Generate Report" onclick="location.href='Request_PDF_Generate.jsp'">
+	<input type="button" class="btn btn-secondary" name="report" value="Generate Report" onclick="location.href='Request_PDF_Generate.jsp'">
 	
 	<div class="topnav">
 	<div class="search-container">
     <form action="#" method="post">
-      <input type="text" placeholder="Search.." name="search">
+      <input type="text" id="search-input" placeholder="Search.." name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
@@ -192,7 +188,7 @@ function disableButton(){
 			</c:url>
 			
 			<a href="${prAccept}">
-			<input type="button" id="acceptSpecialArt" onclick="myFunction()" name="accept" value="Accept">
+			<input type="button" class="btn btn-secondary" id="acceptSpecialArt" name="accept" value="Accept">
 			</a>
 			
 		</td>

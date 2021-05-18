@@ -142,7 +142,7 @@
 					        		<!-- <input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'"> -->
 					        		<button class="btnNC">
 					        		<!-- style="background-color: #B2BEB5; border: none; border-radius: 5px; color: black; padding: 5px 5px; font-size: 10px; cursor: pointer;"> -->
-					        		<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" data-title="NEGOTIATE PRICE"> NEGOTIATE
+					        		<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet?painting_id=<%= rs.getInt("painting_id")%>'" data-title="NEGOTIATE PRICE"> NEGOTIATE
 					        		</button>
 					        		
 					        		<% } 

@@ -86,7 +86,7 @@
 		City <input type="text" name="city" value="<%=city%>" readonly><br>
 		Country <input type="text" name="country" value="<%=country%>" readonly><br><br>
 		
-		<input type="submit" name="submit" value="Accept Request"><br>
+		<input type="submit" class="btn btn-secondary" name="submit" value="Accept Request"><br>
 		
 	</form>
 	</div>

@@ -54,12 +54,74 @@
 
   <h1>Negotiate the Price of the Painting</h1><br><br>
   
-  <div class="contact-in">
+  <%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.Statement" %>
+	<%@ page import="java.sql.Connection" %>
+	<%@ page import="java.sql.DriverManager" %>
+	
+	<%@ page import="java.sql.PreparedStatement" %>
+	
+	
+	 <%
+	 int painting_id =Integer.parseInt(request.getParameter("painting_id")); 
+		
+	%>  
+	
+	<%
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+			String username="root";
+			String password="root";
+			
+			/*
+			String query="SELECT * FROM painting";
+			Connection conn=DriverManager.getConnection(url, username, password);
+			Statement stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery(query);
+			*/
+			
+			
+			String query= "SELECT * FROM painting WHERE painting_id=?";
+			Connection conn=DriverManager.getConnection(url, username, password);
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setInt(1, painting_id);
+			
+			ResultSet rs=ps.executeQuery();
+			
+			
+			if(rs.next())
+			{
+				
+		
+		%>
+		
+		<div class="contact-in">
   <center>
   		<h3>We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
   		<h2> Otherwise request may be rejected</h2>
   </center>
   </div><br><br>
+		
+		<center>
+		<img src="images/<%=rs.getString("image_url")%>" width="200px" height="auto" >
+		</center>
+		
+		<%
+			} // end of While
+		
+			rs.close();
+			ps.close();
+			//stmt.close();
+			conn.close();
+		}
+		catch(Exception e)
+		{
+		e.printStackTrace();
+		}
+		%> 
+  
   
   <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
   <center>
@@ -72,14 +134,18 @@
   	<form name="negoForm" action="negoInsert" method="post" onsubmit="return validateForm()">
   		<label>Please enter the Price</label><br>
   		<input type="number" placeholder="Price in LKR" name="message" class="form__input"><br>
+  		<%-- <input name="painting_id" value="<%=rs.getInt("painting_id")%>" class="form__input"><br> --%>
+  		<input type="hidden" name="painting_id" value="<%= painting_id %>" readonly><br>
   		
-  		<input type="submit" name="Submit" value="Send">
+  		<input type="submit" class="btn btn-secondary" name="Submit" value="Send">
   	</form>
   </div>
   <br>
     
   
   </div>
+  
+  
   
   <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>

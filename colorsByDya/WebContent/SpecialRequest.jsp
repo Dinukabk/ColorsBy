@@ -23,7 +23,7 @@
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
-<link rel="stylesheet" href="css/common.css">
+<!-- <link rel="stylesheet" href="css/common.css"> -->
 
 <script>
 	function phonenumber(phone)
@@ -168,8 +168,8 @@
             
             
             
-            <input class = "btn btn1" type="reset" name="Reset" value="Reset">
-            <input class = "btn btn2" type="submit" name="submit" value="Send ">
+            <input class="btn btn-secondary" type="reset" name="Reset" value="Reset">
+            <input class="btn btn-secondary" type="submit" name="submit" value="Send ">
             
             </fieldset>
          </form>

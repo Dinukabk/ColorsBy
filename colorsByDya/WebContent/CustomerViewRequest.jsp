@@ -211,7 +211,7 @@
 		<!-- Original one -->
 		 <td>
 			<a href="${requpdate}">
-			<input type="button" id="disButton" name="update" value="Update Request">
+			<input type="button" id="disButton" class="btn btn-secondary" name="update" value="Update Request">
 			</a>
 		</td> 
 	
@@ -235,7 +235,7 @@
 	
 	<td>
 	<a href="${reqdelete}">
-	<input type="button" id="disButton" name="delete" value="Delete Request">
+	<input type="button" id="disButton" class="btn btn-secondary" name="delete" value="Delete Request">
 	</a>
 	</td>
 	

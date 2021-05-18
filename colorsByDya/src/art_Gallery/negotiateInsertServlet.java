@@ -17,10 +17,13 @@ public class negotiateInsertServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String message = request.getParameter("message");
+		int painting_id =Integer.parseInt(request.getParameter("painting_id"));
+		System.out.println("painting id insert"+painting_id);
+		//String intString = Integer.toString(painting_id);
 		
 		boolean isTrue;
 		
-		isTrue = RequestDBUtil.insertNegotiate(message);
+		isTrue = RequestDBUtil.insertNegotiate(message,painting_id);
 		
 		if(isTrue==true) {
 			RequestDispatcher dis = request.getRequestDispatcher("Gallery_All_Logged.jsp");

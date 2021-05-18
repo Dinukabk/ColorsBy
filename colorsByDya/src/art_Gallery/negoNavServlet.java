@@ -21,6 +21,10 @@ public class negoNavServlet extends HttpServlet {
 	
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		//getting painting id
+		int painting_id =Integer.parseInt(request.getParameter("painting_id"));
+		System.out.println("painting id "+painting_id);
+		
 		// Get session
 				HttpSession session = request.getSession(false);
 

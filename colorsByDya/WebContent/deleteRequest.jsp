@@ -47,6 +47,8 @@
 			</nav>
 		</header>
 	</div>
+	
+	<h1>Delete Request</h1>
 
 	<%
 		String request_id = request.getParameter("request_id");
@@ -81,9 +83,9 @@
 		City <input type="text" name="city" value="<%= city %>" readonly><br>
 		Country <input type="text" name="country" value="<%= country %>" readonly><br>
 		Customer ID <input type="text" name="c_customer_id" value="<%= c_customer_id %>" readonly><br>
-		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br>
+		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br><br>
 		
-		<input type="submit" name="submit" value="Delete Request"><br>
+		<input type="submit" class="btn btn-secondary" name="submit" value="Delete Request"><br>
 	</form>
 	</div>
 	

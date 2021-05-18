@@ -103,7 +103,7 @@
 		
 		
 		<a href="${negoAccept}">
-		<input type="button" name="accept" value="Accept">
+		<input type="button" class="btn btn-secondary" name="accept" value="Accept">
 		</a>
 		
 		</td>

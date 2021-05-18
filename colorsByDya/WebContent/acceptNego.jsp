@@ -71,7 +71,7 @@
 		Phone Number <input type="text" name="phone_no" value="<%=phone_no%>" readonly><br>
 		Price <input type="text" name="message" value="<%=message%>" readonly><br><br>
 		
-		<input type="submit" name="submit" value="Accept Negotiate Price"><br>
+		<input type="submit" class="btn btn-secondary" name="submit" value="Accept Negotiate Price"><br>
 	</form>
 	</div>
 	

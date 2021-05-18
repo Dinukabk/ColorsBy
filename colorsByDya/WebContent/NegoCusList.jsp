@@ -64,7 +64,7 @@
 		<td>${nego.title}</td>
 		<td><img src="images/${nego.image_url}" width="100px" height="100px"/></td>
 		<td>${nego.message}</td>
-		<td><input type="button" name="cart" value="Add to Cart"></td>
+		<td><input type="button" class="btn btn-secondary" name="cart" value="Add to Cart"></td>
 	</tr>
 	</c:forEach>
 	</table>

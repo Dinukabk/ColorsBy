@@ -47,6 +47,8 @@
 			</nav>
 		</header>
 	</div>
+	
+	<h1>Update Request</h1>
 
 	<%
 		String request_id = request.getParameter("request_id");
@@ -81,11 +83,12 @@
 		City <input type="text" name="city" value="<%= city %>"><br>
 		Country <input type="text" name="country" value="<%= country %>"><br>
 		Customer ID <input type="text" name="c_customer_id" value="<%= c_customer_id %>" readonly><br>
-		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br>
+		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br><br>
 		
-		<input type="submit" name="submit" value="Update Request"><br>
+		<input type="submit" class="btn btn-secondary" name="submit" value="Update Request"><br>
 	</form>
 	</div>
+	
 	
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>

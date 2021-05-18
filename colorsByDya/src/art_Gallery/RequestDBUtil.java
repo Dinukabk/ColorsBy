@@ -119,27 +119,34 @@ public class RequestDBUtil {
 	
 	//insert request
 	public static boolean insertSRequest(String name,String phone,String email,String message,String photograph,
-			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,String artist_name) {
+			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,String c_customer_id,String artist_name) {
 		
 		int artName=3;
 		boolean isSuccess = false;
+		//String UIDConverted = Integer.toString(userID);
+		int convertedID = Integer.parseInt("1");
 		
 		try {
 			
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
 			
-			//artist name
-			
-				con = RequestDBConnector.getConnection();
-				Statement st = con.createStatement();
+			try {
+				//artist name
 				String query = "select artist_id from artist where name='"+artist_name+"'";
+				
 				//get table data
-				ResultSet rs = st.executeQuery(query);
-				if(rs.next()){
-					 artName = rs.getInt(1);
+				ResultSet rs1 = stmt.executeQuery(query);
+				if(rs1.next()){
+					 artName = rs1.getInt("artist_id");
 					 System.out.println(artName);
-				}//end of if next	 
+				}//end of if next	
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			 
 					 
 				
 			String sql =
@@ -170,7 +177,7 @@ public class RequestDBUtil {
 					
 					 preparedStmt.setInt (1, 0);
 					 preparedStmt.setString (2, name);
-					 preparedStmt.setInt (3, 1234567); 
+					 preparedStmt.setInt (3, 123456789); 
 					 preparedStmt.setString (4, email);
 					 preparedStmt.setString (5, message); 
 					 preparedStmt.setString (6, photograph);
@@ -180,7 +187,7 @@ public class RequestDBUtil {
 					 preparedStmt.setString (10, province); 
 					 preparedStmt.setString (11, city); 
 					 preparedStmt.setString (12,country); 
-					 preparedStmt.setInt (13, 1); 
+					 preparedStmt.setInt (13, convertedID); 
 					 preparedStmt.setInt (14, artName);
 					 
 					 int n = preparedStmt.executeUpdate();
@@ -313,14 +320,15 @@ public class RequestDBUtil {
 		return isSuccess;
 	}
 	
-	public static boolean insertNegotiate(String message) {
+	public static boolean insertNegotiate(String message, int painting_id) {
 		
 		boolean isSuccess = false;
+		String paintConverted = Integer.toString(painting_id);
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "insert into negotiate_price values(0,'"+message+"',1,1,0)";
+			String sql = "insert into negotiate_price values(0,'"+message+"',1,'"+paintConverted+"',0)";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs>0) {
