@@ -18,12 +18,37 @@ body {
     font-size: var(--font-size);
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
+   /*  transform: translate3d(0, 0, 0); */
     
-    background: linear-gradient(45deg, #000000 10%, #A2C7E5 90%);
+    background: linear-gradient(45deg, #04404a 10%, #A2C7E5 90%); 
      
-   /*  background: linear-gradient(45deg, #0b6b5b 10%, #A2C7E5 90%); */
-    height: 100vh
+   /*  background: linear-gradient(45deg, #0b6b5b 10%, #A2C7E5 90%); 
+    height: 100vh */
+    min-height: 110vh;
+}
+
+/******Button ******/
+.btn {
+	font-weight: bold;
+	text-transform: uppercase!important;
+	
+	width:auto; 
+	margin:0 auto;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family: $font-family;
+    -webkit-appearance: none;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    background: rgb(127 169 195 / 22%);
+    /* background: $color-primary; */
+    transition: 0.3s;
+    
+    &:hover {
+        background: darken($color-primary, 5%);
+    }
 }
 
 
@@ -129,14 +154,14 @@ a[data-title] {
 }
 
 
-/* SIngle painting details jsp -- div placement side by side */
+/********** SIngle painting details jsp -- div placement side by side ---- FLEXBOX ************/
 .flex-container {
     display: flex;
 }
 
 .flex-child {
     flex: 1;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     padding:20px;
 }  
 

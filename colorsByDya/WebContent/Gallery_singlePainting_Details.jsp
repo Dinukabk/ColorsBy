@@ -7,34 +7,63 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Gallery - Single painting details</title>
-<!-- Google Webfonts -->
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
 <link rel="stylesheet" href="css/animate.css">
-
 <link rel="stylesheet" href="css/icomoon.css">
-
 <link rel="stylesheet" href="css/magnific-popup.css?version=1">
-
 <link rel="stylesheet" href="css/salvattore.css">
 
-<link rel="stylesheet" href="css/style1.css?version=1">
-	
-	
 
-<!-- <link rel="stylesheet" href="css/frontpage.css">
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/styles.css?version=1">
-<link rel="stylesheet" href="./css/home.css"> -->
-<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css?version=1">
+<link rel="stylesheet" href="css/home.css">
+
+
+<link rel="stylesheet" href="css/Gallery_SinglePaintingDetails.css?">
 
 <script type="text/javascript" href="js/frontpage.js"></script>
- -<link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
  <script src="js/modernizr-2.6.2.min.js"></script>
 
 </head>
 <body>
-	<header></header>
+	<header>
+		<!-- Navbar -->
+	<div class="container" style="height: 132px;">
+		<header class="header" class="py-5 mt-5">
+			<nav class="navbar navbar-expand-lg fixed-top py-3">
+				<div class="container">
+					<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+					<button type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation"
+						class="navbar-toggler navbar-toggler-right">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<div id="navbarSupportedContent" class="collapse navbar-collapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Home <span
+									class="sr-only"></span></a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">About</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
+								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold"><%=request.getParameter("cusUsername")%></a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
+	</header>
+	
+	
 	<main>
 
 	<%@ page import="java.sql.ResultSet" %>
@@ -184,6 +213,9 @@
 		</main>
 		
 		<footer></footer>
+		
+<script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 	 
 
 </body>
