@@ -9,31 +9,22 @@
 <title>Gallery Logged</title>
 
 <!-- Gallery testing links -->
-
- <link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 
 <!-- Google Webfonts -->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-	
 <!-- SEARCH BAR LINKS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="css/animate.css">
-
 <link rel="stylesheet" href="css/icomoon.css">
-
 <link rel="stylesheet" href="css/magnific-popup.css?version=1">
-
 <link rel="stylesheet" href="css/salvattore.css">
 
-<link rel="stylesheet" href="css/style1.css?version=1">
+<link rel="stylesheet" href="css/style1.css?version=1"> 
 
-<script src="js/modernizr-2.6.2.min.js"></script>
-
-<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
-
+<!-- <script src="js/modernizr-2.6.2.min.js"></script> -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/styles.css?version=1">
 <link rel="stylesheet" href="css/home.css">
@@ -59,7 +50,7 @@
 						<i class="fa fa-bars"></i>
 					</button>
 
-					<div id="navbarSupportedContent" class="collapse navbar-collapse">
+					<div id="navbarSupportedContent" class="collapse navbar-collapse" style="font-size:16px">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item active"><a href="#"
 								class="nav-link text-uppercase font-weight-bold">Home <span
@@ -132,7 +123,8 @@
 					        		
 					        		<img src="images/<%=rs.getString("image_url") %>" alt="Free HTML5 Bootstrap template"></a>
 					        		
-					        		<a target="_blank" href="Gallery_singlePainting_Details.jsp?painting_id=<%= rs.getInt("painting_id")%>&artistName=<%=rs.getString("a.name")%>" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
+					        		<!-- VIEW MORE DETAILS -->
+					        		<a target="_blank" href="Gallery_singlePainting_Details.jsp?painting_id=<%= rs.getInt("painting_id")%>&artistName=<%=rs.getString("a.name")%>&cusUsername=${cusUsername}" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
 					        		
         						</div>
         						<div class="fh5co-desc">  		
@@ -141,7 +133,7 @@
 					        		
 					        		<%if(rs.getString("price").equals("Negotiate Price")){ %>
 					        		
-						        		<button class="btnNC">
+						        		<button class="btnNC" onclick="location.href='negoNavServlet'">
 						        			<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" data-title="NEGOTIATE PRICE"> NEGOTIATE
 						        		</button>
 					        		
@@ -151,7 +143,7 @@
 					        		
 					        			<h5><b>Rs. <%=rs.getString("price") %>.00</b></h5>
 					        			
-						        		<button class="btnNC">
+						        		<button class="btnNC" onclick="location.href=' '">
 						        			<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href=' '" title="ADD TO CART"> ADD TO CART
 						        		</button>
 					        		
@@ -279,10 +271,9 @@
 	
 	--%>
 	
-<script type="text/javascript" href="js/frontpage.js"></script>	
+<!-- <script type="text/javascript" href="js/frontpage.js"></script>	 -->
 <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
-
 
 	
 <script src="js/jquery.min.js"></script>

@@ -18,6 +18,27 @@
 
 <body>
 
+<%
+	// Catch data coming through the url from Artworks.jsp page
+	
+		String painting_id = request.getParameter("painting_id");
+		String title = request.getParameter("title");
+		String description = request.getParameter("description");
+		String price = request.getParameter("price");
+		String drawn_date = request.getParameter("drawn_date");
+		String category = request.getParameter("category");
+		String weight = request.getParameter("weight");
+		String length = request.getParameter("length");
+		String width = request.getParameter("width");
+		String image_url = request.getParameter("image_url");
+		String material = request.getParameter("material");
+		String in_stock = request.getParameter("in_stock");
+		String frame = request.getParameter("frame");
+		String a_artist_id = request.getParameter("a_artist_id");
+		String artistUserName = request.getParameter("artistUserName");
+	%>
+
+
 	<!-- Navbar -->
 	<div class="container" style="height: 132px;">
 		<header class="header" class="py-5 mt-5">
@@ -44,7 +65,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold"><%= artistUserName %></a></li>
 						</ul>
 					</div>
 				</div>
@@ -54,25 +75,7 @@
 
 
 
-	<%
-	// Catch data coming through the url from Artworks.jsp page
-	
-		String painting_id = request.getParameter("painting_id");
-		String title = request.getParameter("title");
-		String description = request.getParameter("description");
-		String price = request.getParameter("price");
-		String drawn_date = request.getParameter("drawn_date");
-		String category = request.getParameter("category");
-		String weight = request.getParameter("weight");
-		String length = request.getParameter("length");
-		String width = request.getParameter("width");
-		String image_url = request.getParameter("image_url");
-		String material = request.getParameter("material");
-		String in_stock = request.getParameter("in_stock");
-		String frame = request.getParameter("frame");
-		String a_artist_id = request.getParameter("a_artist_id");
-		String c_cart_id = request.getParameter("c_cart_id");
-	%>
+	<!-- Was Here -->
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.2);">
 	

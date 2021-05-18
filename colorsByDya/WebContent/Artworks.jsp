@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="./css/styles.css?">
 	<link rel="stylesheet" href="./css/home.css?">
 	
-	<link rel="stylesheet" href="css/styles_Gallery.css?">
+	<link rel="stylesheet" href="css/styles_Gallery.css?version=2">
 	
 
 </head>
@@ -85,7 +85,7 @@
 		<c:set var="in_stock" value="${paint.in_stock}"/>
 		<c:set var="frame" value="${paint.frame}"/>
 		<c:set var="a_artist_id" value="${paint.a_artist_id}"/>
-		<c:set var="c_cart_id" value="${paint.c_cart_id}"/>
+		<c:set var="artistUserName" value="${artistUserName}"/>
 		
 		<tr>
 			<!-- <th>Artwork ID</th> -->
@@ -137,7 +137,7 @@
 			<c:param name="in_stock" value="${in_stock}"/>
 			<c:param name="frame" value="${frame}"/>
 			<c:param name="a_artist_id" value="${a_artist_id}"/>
-			<c:param name="c_cart_id" value="${c_cart_id}"/>
+			<c:param name="artistUserName" value="${artistUserName}"/>
 			
 		</c:url>
 		
@@ -158,7 +158,7 @@
 			<c:param name="in_stock" value="${in_stock}"/>
 			<c:param name="frame" value="${frame}"/>
 			<c:param name="a_artist_id" value="${a_artist_id}"/>
-			<c:param name="c_cart_id" value="${c_cart_id}"/>
+			<c:param name="artistUserName" value="${artistUserName}"/>
 			
 		</c:url>
 		
