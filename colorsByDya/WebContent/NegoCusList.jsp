@@ -68,6 +68,15 @@
 		<td>${nego.image_url}</td>
 		<td>${nego.message}</td>
 		<td><input type="button" name="cart" value="Add to Cart"></td>
+		<%-- <form action="addCart" method="post" >
+                            		<input type="hidden" name="id" id="id" value="<%=rs.getInt("p_painting_id") %>" />
+		                    		<input type="number" class="form-control" style="width:30%" name="quantity" id="quantity" min="1" max="5" required>
+		                    		<br>
+		                    		<button class="btnNC" type="submit">
+						        		<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" title="ADD TO CART"> ADD TO CART
+						        		</button>
+		                        </form> --%>
+		
 	</tr>
 	</c:forEach>
 	</table>

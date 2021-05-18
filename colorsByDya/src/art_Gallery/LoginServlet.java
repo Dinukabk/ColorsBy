@@ -15,11 +15,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
@@ -27,15 +34,14 @@ public class LoginServlet extends HttpServlet {
 		String n = request.getParameter("email");
 		String p = request.getParameter("password");
 
-		// The session
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession();
 		if (session != null) {
 			// session.setAttribute("l_id", n);
 			int login = LoginDao.validate(n, p);
 			if (login > 0) {
-				session.setAttribute("userID", login);
-				RequestDispatcher RD = request.getRequestDispatcher("userDashboard.jsp");
-				RD.forward(request, response);
+				session.setAttribute("userID",login);
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/userDashboard.jsp");
+				dispatcher.forward(request, response);
 			} else {
 				RequestDispatcher RD = request.getRequestDispatcher("login_01.jsp");
 				RD.forward(request, response);
