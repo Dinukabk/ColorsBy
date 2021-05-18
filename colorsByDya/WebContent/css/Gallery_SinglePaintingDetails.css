@@ -24,6 +24,7 @@ body {
      
    /*  background: linear-gradient(45deg, #0b6b5b 10%, #A2C7E5 90%); 
     height: 100vh */
+    min-height: 110vh;
 }
 
 /******Button ******/
