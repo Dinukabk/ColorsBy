@@ -24,7 +24,7 @@ public class Servlet_Gallery_All extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		// Get session
 		HttpSession session = request.getSession(false);
@@ -34,7 +34,7 @@ public class Servlet_Gallery_All extends HttpServlet {
 
 		 //if (session.getAttribute("userID") != null) {
 			 String cusUsername = PaintingDBUtil.getUserName(userID);
-			 request.setAttribute("userName", cusUsername);
+			 request.setAttribute("cusUsername", cusUsername);
 			 
 			 System.out.println("No user ID Detected in session...");
 			 RequestDispatcher RD = request.getRequestDispatcher("Gallery_All_Logged.jsp");

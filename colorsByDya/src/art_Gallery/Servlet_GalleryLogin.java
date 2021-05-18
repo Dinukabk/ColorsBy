@@ -21,6 +21,7 @@ public class Servlet_GalleryLogin extends HttpServlet {
 		
 		if (session != null) {
 			int artistUserID = (int) session.getAttribute("artistUserID");
+			request.setAttribute("artistUserID", artistUserID);
 			
 			String artistUserName = PaintingDBUtil.getArtistUsername(artistUserID);
 			request.setAttribute("artistUserName", artistUserName);

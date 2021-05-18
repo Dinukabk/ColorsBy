@@ -193,7 +193,7 @@ public class PaintingDBUtil {
     		statement = connect.createStatement();
     		    		
     		String sql = "UPDATE painting SET title='"+title+"' , description='"+description+"' , price='"+price+"' , drawn_date='"+drawn_date+"', category= '"+category+"', weight='"+weight+"' , length='"+length+"' , width='"+width+"' , image_url= '"+image_url+"', material='"+material+"' , in_stock= 1, frame='"+frame+"'"
-    				+ "WHERE painting_id='"+painting_id+"'"; 
+    				+ " WHERE painting_id='"+painting_id+"'"; 
     		
     		int resultSet = statement.executeUpdate(sql);
     		
