@@ -153,12 +153,12 @@ input:required, textarea:required {
 <body>
 	<div class="navbar">
 		<a href="frontpage.jsp">Home</a> <a href="#news">About us</a> <a
-			href="#home">Change Password</a> <a href="frontpage.jsp">Logout</a>
+			href="#home"></a> <a href="frontpage.jsp"></a>
 	</div>
 
 	<div id="contact-form">
 		<div>
-			<h1>Customers Details</h1>
+			<h1>Customers Register</h1>
 		</div>
 		<form action="AddCustomer" method="post">
 			<div>
@@ -214,14 +214,20 @@ input:required, textarea:required {
 				</label>
 			</div>
 			<div>
-				<label for="Cost"> <span class="required">User Name
+				<label for="Cost"> <span class="required">Gmail
 						 </span> <input type="text" id="" name="username" value=""
-					placeholder="User Name" required="required" />
+					placeholder="mail" required="required" />
 				</label>
 			</div>
 				<div>
 				<label for="Cost"> <span class="required">Password
-						 </span> <input type="text" id="" name="password" value=""
+						 </span> <input type="password" id="" name="password" value=""
+					placeholder="Password" required="required" />
+				</label>
+			</div>
+			<div>
+				<label for="Cost"> <span class="required">Re-enter the Password
+						 </span> <input type="password" id="" name="password" value=""
 					placeholder="Password" required="required" />
 				</label>
 			</div>

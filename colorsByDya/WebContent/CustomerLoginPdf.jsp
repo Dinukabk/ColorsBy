@@ -43,7 +43,15 @@
 			Connection conn=DriverManager.getConnection(url, username, password);
 			Statement stmt=conn.createStatement();
 			
-			String query_1 = "";
+			String query_1 =  " WITH temp_table AS"+ 
+				" ("+ " SELECT p.category as Category, COUNT(*) AS Sales_Count"+
+				      " FROM painting p, artist a, payment pay"+ 
+				      " WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id=1 AND pay.status=true"+
+				      " GROUP BY category"+
+				      " ORDER BY Sales_Count desc"+ 
+				      " )"+
+				" SELECT tt.category as Category , MAX(tt.Sales_Count) as Max_Sales_Count, SUM(tt.Sales_Count) AS Total_Sales"+
+				" FROM temp_table tt";
 				
 			ResultSet rs_1 = stmt.executeQuery(query_1);
 			
