@@ -69,7 +69,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -109,6 +109,16 @@
       </div>
       
    </div>
+  <%--  <%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.Statement" %>
+	<%@ page import="java.sql.Connection" %>
+	<%@ page import="java.sql.DriverManager" %>
+	<%@ page import="java.sql.PreparedStatement" %> --%>
+   
+   <%-- <%
+	 int userID =Integer.parseInt(request.getParameter("userID")); 
+		
+	%> --%>
    <!-- onsubmit="return validateForm()" -->
    <!-- enctype="multipart/form-data" -->
    <div>
@@ -136,6 +146,7 @@
             <input type="text" placeholder="Province" name="province"><br>
             <input type="text" placeholder="City" name="city">
             <input type="text" placeholder="Country" name="country"><br><br>
+            <input type="hidden" name="userID" value="${userID}" readonly>
             <label>Choose the Artist</label>
             	<!-- <select>
             		<option>Deepthi Wijewardana</option>

@@ -40,7 +40,8 @@ public class RequestServlet extends HttpServlet {
 		String province = request.getParameter("province");
 		String city = request.getParameter("city");
 		String country = request.getParameter("country");
-		String c_customer_id = request.getParameter("1");
+		//String userID = request.getParameter("userID");
+		int userID =Integer.parseInt(request.getParameter("userID"));
 		String artist_name = request.getParameter("artist_name");
 		
 		
@@ -62,7 +63,7 @@ public class RequestServlet extends HttpServlet {
 		
 		boolean isTrue;
 		
-		isTrue = RequestDBUtil.insertSRequest(name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country,c_customer_id,artist_name);
+		isTrue = RequestDBUtil.insertSRequest(name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country,userID,artist_name);
 		
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("SpecialRequest.jsp");

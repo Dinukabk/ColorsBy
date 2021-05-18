@@ -44,7 +44,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -135,7 +135,8 @@
   		<label>Please enter the Price</label><br>
   		<input type="number" placeholder="Price in LKR" name="message" class="form__input"><br>
   		<%-- <input name="painting_id" value="<%=rs.getInt("painting_id")%>" class="form__input"><br> --%>
-  		<input type="hidden" name="painting_id" value="<%= painting_id %>" readonly><br>
+  		<input type="hidden" name="painting_id" value="<%= painting_id %>" readonly>
+  		<input type="hidden" name="userID" value="${userID}" readonly><br>
   		
   		<input type="submit" class="btn btn-secondary" name="Submit" value="Send">
   	</form>

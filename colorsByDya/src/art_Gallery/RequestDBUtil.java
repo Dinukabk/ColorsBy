@@ -18,6 +18,31 @@ public class RequestDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
+	private static String cusUsername;
+	
+	// GET SESSION USERNAME --> CUSTOMER
+		public static String getUserName(int userID) {
+			Connection con;
+			PreparedStatement pst;
+			String UIDConverted = Integer.toString(userID);
+			ResultSet rs;
+			
+			try {
+				con = DatabaseUtilizer.utilizeConnection();
+				pst = con.prepareStatement("SELECT full_name FROM registered_customer WHERE customer_id = ?");
+				pst.setString(1, UIDConverted);
+				rs = pst.executeQuery();
+				
+				while(rs.next()) {
+					cusUsername = rs.getString(1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return cusUsername;		
+		}
+	
 	///request artist login
 	public static List<Request> validate(int artistUserID) {
 		String UIDConverted = Integer.toString(artistUserID);
@@ -119,12 +144,13 @@ public class RequestDBUtil {
 	
 	//insert request
 	public static boolean insertSRequest(String name,String phone,String email,String message,String photograph,
-			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,String c_customer_id,String artist_name) {
+			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,int userID,String artist_name) {
 		
 		int artName=3;
+		System.out.println(artist_name);
 		boolean isSuccess = false;
 		//String UIDConverted = Integer.toString(userID);
-		int convertedID = Integer.parseInt("1");
+		//int convertedID = Integer.parseInt(userID);
 		int convertedPhone = Integer.parseInt(phone);
 		int convertedPostalCode = Integer.parseInt(postal_code);
 		
@@ -148,9 +174,6 @@ public class RequestDBUtil {
 				e.printStackTrace();
 			}
 			
-			 
-					 
-				
 			String sql =
 					 "insert into special_request(request_id,name,phone,email,message,photograph,add_line_01,add_line_02,postal_code,province,city,country,c_customer_id,artist_name) "
 					 
@@ -189,8 +212,8 @@ public class RequestDBUtil {
 					 preparedStmt.setString (10, province); 
 					 preparedStmt.setString (11, city); 
 					 preparedStmt.setString (12,country); 
-					 preparedStmt.setInt (13, convertedID); 
-					 preparedStmt.setInt (14, artName);
+					 preparedStmt.setInt (13, userID); 
+					 preparedStmt.setInt (14, 3);
 					 
 					 int n = preparedStmt.executeUpdate();
 						/*
@@ -322,15 +345,16 @@ public class RequestDBUtil {
 		return isSuccess;
 	}
 	
-	public static boolean insertNegotiate(String message, int painting_id) {
+	public static boolean insertNegotiate(String message,int userID, int painting_id) {
 		
 		boolean isSuccess = false;
 		String paintConverted = Integer.toString(painting_id);
+		String idConverted = Integer.toString(userID);
 		
 		try {
 			con = RequestDBConnector.getConnection();
 			stmt = con.createStatement();
-			String sql = "insert into negotiate_price values(0,'"+message+"',1,'"+paintConverted+"',0)";
+			String sql = "insert into negotiate_price values(0,'"+message+"','"+idConverted+"','"+paintConverted+"',0)";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs>0) {
