@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Get event details</title>
-
+<!-- 
 <style>
 input[], select {
   width: 50%;
@@ -41,15 +41,12 @@ h1{
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   	<script>
-  		$( function() {
-    		$( "#datepicker" ).datepicker();
-  		} );
-  	</script>
-
+ -->
+ 
 </head>
 <body>
 
-<!-- Navbar 
+ <!-- Navbar 
 	<header class="header" class="py-5 mt-5">
 		<nav class="navbar navbar-expand-lg fixed-top py-3">
 			<div class="container">
@@ -87,39 +84,81 @@ h1{
 	</header>
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
-	-->
+ -->
 
 
 
-	<c:forEach var = "Eve" items="#{eveDetails}">
+	<table>
+		<c:forEach var = "eve" items="${eveDetails}">
+		<c:set var="id" value = "${eve.id}"/>
+		<c:set var="name" value = "${eve.name}"/>
+		<c:set var="date" value = "${eve.date}"/>
+		<c:set var="status" value = "${eve.status}"/>
+		<c:set var="description" value = "${eve.description}"/>
+		<c:set var="adminId" value = "${eve.adminID}"/> 
+	
+	<tr>
+		<td>ID	</td>			
+		<td>${eve.id} </td>
+	</tr>
+	
+		
+	<tr>	
+		<td>Name</td>				
+		<td>${eve.name} </td>
+	</tr>	
 	
 	
-	
-		<c:set var="id" value = "${Eve.id}"/>
-		<c:set var="name" value = "${Eve.name}"/>
-		<c:set var="date" value = "${Eve.date}"/>
-		<c:set var="status" value = "${Eve.status}"/>
-		<c:set var="description" value = "${Eve.description}"/>
-		<c:set var="adminId" value = "${Eve.adminID}"/>
+	<tr>	
+		<td>Date</td>			
+		<td>${eve.date}</td>
+	</tr>	
 	
 	
+	<tr>
+		<td>Status	</td>		
+		<td>${eve.status}</td>
+	</tr>	
 	
-		ID			=		${Eve.id} <br>
-		Name		=		${Eve.name} <br>
-		Date		=		${Eve.date}<br>
-		Status		=		${Eve.status}<br>
-		Description =		${Eve.description}<br>
-		AdminID		= 		${Eve.adminID}<br>
+		
+	<tr>
+		<td>Description </td>	
+		<td>${eve.description}</td>	
+	</tr>	
+	
+		
+	<tr>	
+		<td>AdminID	</td>			
+		<td>${eve.adminID}</td>
+	</tr>	
+	
 		
 		</c:forEach>
+		</table>
 		
 		<c:url value = "EventUpdate.jsp" var="eveupdate">
-			<c:param id = "Id" value = "${id}"/>
-			<c:param name = "Name" value = "${name}"/>
-			<c:param date = "Date" value = "${date}"/>
-			<c:param status = "Status" value = "${status}"/>
-			<c:param description = "Description" value = "${description}"/>
-			<c:param adminId  = "AdminId" value = "${adminId}"/>		 	
+		
+		
+			<c:param name = "id" value = "${id}"/>
+			
+			
+			<c:param name = "name" 	value = "${name}"/>
+			
+			
+			<c:param name = "date" 	value = "${date}"/>
+			
+			
+			<c:param name = "status" value = "${status}"/>
+			
+			
+			<c:param name = "description" value = "${description}"/>
+			
+			
+			<c:param name  = "admnId" value = "${adminId}"/>	
+			
+			
+			
+				 	
 		</c:url>
 		
 		
@@ -131,46 +170,21 @@ h1{
 		
 		
 		<c:url value="EventDelete.jsp" var="eveDelete">
-			<c:param id = "id" value = "${id}"/>
+			<c:param name = "id" value = "${id}"/>
 			<c:param name = "name" value = "${name}"/>
-			<c:param date = "date" value = "${date}"/>
-			<c:param status = "status" value = "${status}"/>
-			<c:param description = "description" value = "${description}"/>
-			<c:param adminId  = "adminId" value = "${adminId}"/>	
+			<c:param name = "date" value = "${date}"/>
+			<c:param name = "status" value = "${status}"/>
+			<c:param name = "description" value = "${description}"/>
+			<c:param name  = "adminId" value = "${adminId}"/>	
 		</c:url>	
 		
 		
 		
-		<a href="eveDelete">
+		<a href="${eveDelete}">
 		<input type="button" name="delete" value="Delete event">
 		</a>
 		
 		
-		
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

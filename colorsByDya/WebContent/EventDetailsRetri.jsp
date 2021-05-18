@@ -189,11 +189,12 @@ input[text], select {
 		</div>
 		
 		<div class="inname">
-		<h4>Admin ID</h4>	 		 <input type = "text" name="AdminID" placeholder = "Enter admin ID"><br>
+		<h4>AdminID</h4>	 		 <input type = "text" name="AdminID" placeholder = "Enter admin ID"><br>
 		</div>
 		
 		<center>
-		<input type="submit" name="submit" value="Check event"></center>
+		<input type="submit" name="submit" value="Check event">
+		</center>
 	
 	
 	</form>

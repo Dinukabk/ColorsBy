@@ -91,10 +91,11 @@ public class eventDBUtil {
 				
 				int id = rs.getInt(1);
 				String name = rs.getString(2);
-				Date date = rs.getDate(3);
+				String date = rs.getString(3);
 				int status = rs.getInt(4);
 				String description = rs.getString(5);
 				int adminId = rs.getInt(6);
+				
 				
 				EventClass e = new EventClass(id,name,date,status,description,adminId);
 				
@@ -128,7 +129,7 @@ public class eventDBUtil {
 			boolean sts = Boolean.valueOf(status);
 			int aid = Integer.parseInt(adminID);
 			
-			String sql = "update customer set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
+			String sql = "update event set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
 					+ "where id = '"+ID+"'";
 			
 			int rs = stmt.executeUpdate(sql);

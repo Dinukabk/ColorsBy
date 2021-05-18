@@ -186,7 +186,8 @@
 	 	
 	 	
 	 	<center>
-	 	<input type="submit" name="submitEvent" id="button" value="Insert Event"><br></center>
+	 	<input type="submit" name="submitEvent" id="button" value="Insert Event"><br>
+	 	</center>
 	 	
 	 </form>
 	

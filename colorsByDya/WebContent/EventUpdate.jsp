@@ -181,41 +181,44 @@
 	<div class="main">
 	<form action="updateEvent" method="post">
 		<div class="inname">
-		<h4>ID	</h4>							<input type="text" name="ID" placeholder="ID" value="5" readonly><br>
+		<h4>ID	</h4>							<input type="text" name="ID" placeholder="ID" value="<%=id%>" readonly><br>
 		</div>
 		
 		
 		<div class="inname">
-		<h4>Update event name</h4>				<input type="text" name="Uname" placeholder="Enter event name" value="test3" ><br>
+		<h4>Update event name</h4>				<input type="text" name="Uname" placeholder="Enter event name" value="<%=name%>" ><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="indate">
-	 	<h4>Update event date</h4>				<input type="text" name="Udate" id="datepicker" placeholder="Enter event date" value="05/17/2021" ><br>
+	 	<h4>Update event date</h4>				<input type="text" name="Udate" id="datepicker" placeholder="Enter event date" value="<%=date%>" ><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="insta">
-	 	<h4>Update event status</h4>			<input type="number" name="Ustatus" placeholder="Enter event status" value="1" ><br>
+	 	<h4>Update event status</h4>			<input type="number" name="Ustatus" placeholder="Enter event status" value="<%=status%>" ><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="des">
-	 	<h4>Update event description</h4>		<input type="text" name="Udescription" placeholder="Enter description" value="test3" ><br>
+	 	<h4>Update event description</h4>		<input type="text" name="Udescription" placeholder="Enter description" value="<%=description%>" ><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="inad">
-	 	<h4>AdminID	</h4>						<input type="number" name="UadminID" placeholder="Enter admin ID" value="1" readonly ><br>
+	 	<h4>AdminID	</h4>						<input type="number" name="UadminID" placeholder="Enter admin ID" value="<%=adminID%>" readonly ><br>
 	 	</div>
 	 	
+	 	
+	 	<center>
+	 	<input type="submit" name="UsubmitEvent" value="Update Event"><br>
+	 	</center>
 	
 	
 	</form>
 	
-	<center>
-	<a href="success.jsp">
-	 	<input type="submit" name="UsubmitEvent" value="Update Event"><br></center></a>
+		
+	
 	
 	
 	</div>
