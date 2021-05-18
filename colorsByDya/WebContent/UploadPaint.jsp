@@ -183,8 +183,8 @@ body {
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">${artistUserName}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -292,6 +292,9 @@ body {
 			<label>Frame</label>
 			<input type="text"  class="form__input" id="artworkFrame" name="artworkFrame" placeholder="Enter Frame of the Artwork here">
 		</div>
+		
+		<input type="hidden" name="artistUserID" value="${artistUserID}">
+		
 		</div>
 		
 		<br>
