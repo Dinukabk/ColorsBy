@@ -60,7 +60,7 @@
 					<button type="button" class="btn btn-primary"
 						onclick="location.href = ''">Edit Profile</button>
 					<button type="button" class="btn btn-primary"
-						onclick="location.href = ''">Temp Shopping Cart</button>
+						onclick="location.href = 'myCart.jsp'">Shopping Cart</button>
 					<button type="button" class="btn btn-primary"
 						onclick="location.href = 'requestCusLogin'">View My Requests</button>
 					<button type="button" class="btn btn-primary"
