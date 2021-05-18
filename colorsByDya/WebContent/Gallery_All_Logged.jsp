@@ -133,8 +133,8 @@
 					        		
 					        		<%if(rs.getString("price").equals("Negotiate Price")){ %>
 					        		
-						        		<button class="btnNC" onclick="location.href='negoNavServlet'">
-						        			<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" data-title="NEGOTIATE PRICE"> NEGOTIATE
+						        		<button class="btnNC" onclick="location.href='negoNavServlet?painting_id=<%= rs.getInt("painting_id")%>'">
+						        			<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet?painting_id=<%= rs.getInt("painting_id")%>'" data-title="NEGOTIATE PRICE"> NEGOTIATE
 						        		</button>
 					        		
 					        		<% } 
@@ -171,105 +171,6 @@
 			</div>
 			
 			
-			
-			<%-- 
-			Gallery testing  
-			
-			<div id="fh5co-main">
-		<div class="container">
-
-			<div class="row">
-
-        <div id="fh5co-board" data-columns>
-
-        	<div class="item">
-        		<div class="animate-box">
-        			
-	        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
-	        		<img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
-        		</div>
-        		<div class="fh5co-desc">
-        		
-        		<% if(rs.getString("price") == "Negotiate Price"){ %>
-        		<input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
-        		<% } %>
-        		
-        		<input type="button" id="cartButton" value="ADD TO CART">
-        		<h4><b><%=rs.getString("title") %></b></h4>
-        		<h6>by <%=rs.getString("a_artist_id") %></h6>
-        		<h5><b> <%=rs.getString("price") %> </b></h5>
-        		</div>
-        		
-        	</div>
-        	
-        	  
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/img_23.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Black and white</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/img_3.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc"> Abstract</div>
-        		</div>
-        	
-        	
-        	
-        	 </div>
-        </div>
-       </div>
-	</div> 
-	  --%>
-			
-			
-			<%-- 
-						<tr>
-						<td><%=rs.getInt("painting_id") %></td>
-						<td><%=rs.getString("title") %></td>
-						<td><%=rs.getString("description") %></td>
-						<td><%=rs.getString("price") %></td>
-						<td><%=rs.getDate("drawn_date") %></td>
-						<td><%=rs.getString("category") %></td>
-						<td><%=rs.getDouble("weight") %></td>
-						<td><%=rs.getDouble("length") %></td>
-						<td><%=rs.getDouble("width") %></td>
-						<td><%=rs.getString("image_url") %></td>
-						<td><%=rs.getString("material") %></td>
-						<td><%=rs.getString("in_stock") %></td>
-						<td><%=rs.getString("frame") %></td>
-						<td><%=rs.getInt("a_artist_id") %></td>
-						<td><%=rs.getInt("c_cart_id") %></td>
-						
-						<td>
-							<input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
-						</td>
-						<td><input type="button" id="cartButton" value="ADD TO CART"></td>
-						</tr>
-						
-			 
-			 <%
-			
-					}
-			%>
-			
-			
-			
-		</table>
-		<%
-			rs.close();
-			stmt.close();
-			conn.close();
-			}
-			catch(Exception e)
-			{
-			e.printStackTrace();
-			}
-		%>
-	</form>
-	
-	--%>
 	
 <!-- <script type="text/javascript" href="js/frontpage.js"></script>	 -->
 <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
@@ -277,17 +178,11 @@
 
 	
 <script src="js/jquery.min.js"></script>
-
 <script src="js/jquery.easing.1.3.js"></script>
-
 <script src="js/bootstrap.min.js"></script>
-
 <script src="js/jquery.waypoints.min.js"></script>
-
 <script src="js/jquery.magnific-popup.min.js"></script>
-
 <script src="js/salvattore.min.js"></script>
-
 <script src="js/main1.js"></script>
 
 
