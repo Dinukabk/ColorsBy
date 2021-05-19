@@ -48,15 +48,38 @@
 	</div>
 
 	<!-- Report Button -->
-	<div class="container p-3 my-2 rounded col-md-4 form" style="
+	<div id="content" class="container p-3 my-2 rounded col-md-4 form" style="
 			background-color: rgba(255, 255, 255, 0.7); 
 			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 		">
+		<table>
+			<tr>
+				<td>Customer Name</td>
+				<td>Painting Name</td>
+				<td>Paid Amount</td>
+				<td>Payment Status</td>
+				<td>Payment Date</td>
+			</tr>
+			<tr>
+				<td>Bhashana Liyanage</td>
+				<td>Flowers</td>
+				<td>50000</td>
+				<td>Paid</td>
+				<td>2021/04/01</td>
+			</tr>
+			<tr>
+				<td>Tharana Liyanage</td>
+				<td>River</td>
+				<td>50000</td>
+				<td>Paid</td>
+				<td>2021/02/01</td>
+			</tr>
+		</table>
 		<button type="button" class="btn btn-light border border-primary" onclick="generate_PDF();">Generate a report of payments</button>
 	</div>
 	
 	<!-- Report -->
-	<div id="content">
+	<div id="content1">
 	    <%@ page import="java.sql.Connection" %>
 	    <%@ page import="java.sql.PreparedStatement" %>
 	    <%@ page import="java.sql.SQLException" %>
@@ -73,8 +96,6 @@
             String username="root";
             String password="root";
             PreparedStatement pst = null;
-            
-            //String query="select p.painting_id, p.title, p.category, pay.status FROM painting p, artist a, payment pay WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id=1";
             
             Connection conn = DriverManager.getConnection(url, username, password);
             pst = conn.prepareStatement("SELECT card_id, customer_id FROM rc_card");
