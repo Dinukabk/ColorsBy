@@ -2,6 +2,7 @@ package art_Gallery;
 
 import java.io.IOException;
 
+import javax.mail.MessagingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,6 +33,8 @@ public class negoNavServlet extends HttpServlet {
 					RequestDispatcher RD = request.getRequestDispatcher("index.jsp");
 					RD.forward(request, response);
 				}
+				
+				
 	}
 
 }

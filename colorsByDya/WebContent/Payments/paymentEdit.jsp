@@ -94,7 +94,7 @@
 					<p class="text-dark h6 text-right">Expiration Date:</p>
 				</td>
 				<td>
-					<input type="number" name="expDate" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="Expiration Date" value="${expDate }">
+					<input type="date" name="expDate" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="Expiration Date" value="${expDate }">
 				</td>
 			</tr>	
 			<tr>

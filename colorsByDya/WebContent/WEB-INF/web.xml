@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<element>
 <web-app 
 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -322,7 +322,7 @@ version="2.5"
 		<url-pattern>/negoList</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>negoAccept</servlet-name>
 		<servlet-class>art_Gallery.NegoAcceptServlet</servlet-class>
 	</servlet>
@@ -330,8 +330,28 @@ version="2.5"
 	<servlet-mapping>
 		<servlet-name>negoAccept</servlet-name>
 		<url-pattern>/acceptNego</url-pattern>
+	</servlet-mapping> -->
+	
+	<servlet>
+		<servlet-name>specialAccept</servlet-name>
+		<servlet-class>art_Gallery.acceptSRservlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>specialAccept</servlet-name>
+		<url-pattern>/requestAccept</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>negoAccept</servlet-name>
+		<servlet-class>art_Gallery.NegoAcceptServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>negoAccept</servlet-name>
+		<url-pattern>/negoAccept</url-pattern>
 	</servlet-mapping>
   <!-- end of Loch -->
-
+<!-- sasiru -->
 </web-app>
-
+</element>

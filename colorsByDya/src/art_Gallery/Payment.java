@@ -1,4 +1,4 @@
-package art_Gallery;
+ackage art_Gallery;
 
 import java.sql.Date;
 
@@ -8,10 +8,10 @@ public class Payment {
 	private Date expDate;
 	private int cvv;
 	
-	public Payment(int cardNo, String nameOnCard, Date expDate, int cvv) {
+	public Payment(int cardNo, String nameOnCard, Date expDate2, int cvv) {
 		this.cardNo = cardNo;
 		this.nameOnCard = nameOnCard;
-		this.expDate = expDate;
+		this.expDate = expDate2;
 		this.cvv = cvv;
 	}
 
