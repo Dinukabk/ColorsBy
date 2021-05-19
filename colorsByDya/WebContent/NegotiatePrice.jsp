@@ -125,7 +125,7 @@
 
   
   <div>
-  	<form name="negoForm" action="negoInsert" method="post" onsubmit="return validateForm()">
+  	<form name="negoForm" action="negotiateInsertServlet" method="post" onsubmit="return validateForm()">
   		<label>Please enter the Price</label><br>
   		<input type="number" placeholder="Price in LKR" name="message" class="form__input"><br>
   		<%-- <input name="painting_id" value="<%=rs.getInt("painting_id")%>" class="form__input"><br> --%>

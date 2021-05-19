@@ -6,28 +6,66 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Get event details</title>
-<!-- 
 <style>
-input[], select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
-.container {
-  border-radius: 1px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
 
-h1{
-	color : gray;
-}
+	table {
+  		border-collapse: collapse;
+  		width: 100%;
+	}
+
+	th, td {
+  		text-align: left;
+  		padding: 8px;
+	}
+	
+	td {
+  		color: #464866;
+  		font-family: Roboto;
+	}
+
+	th {
+ 		background-color: #7395AE;
+  		color: white;
+	}
+	
+	
+	input {
+  			background: #fff;
+  			color: #525865;
+  			border: 1.2px solid #d1d1d1;							
+  			border-radius: 3px;
+ 			font-family: Roboto;
+  			line-height: 1.5;
+  			width: 350px;
+  			height: 40px;
+		}
+	
+	.submit{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			padding-top:25px;
+			font-size:16px;
+		}
+	
+	h1{
+			color : white;
+			font-weight : 700;
+			width:800px;
+			background-color:rgb(0,0,0,6);
+			margin:auto;
+			color:#FFFFFF;
+			padding:200px 0px 10px 0px;
+			text-align:center;
+			border-radius:15px 15px 0px 0px:;
+			font-family: Roboto;
+		}
+
+
+
 </style>	
+
+
 
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
@@ -40,9 +78,7 @@ h1{
   	
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  	<script>
- -->
- 
+  	<script> 
 </head>
 <body>
 
@@ -100,8 +136,7 @@ h1{
 	<tr>
 		<td>ID	</td>			
 		<td>${eve.id} </td>
-	</tr>
-	
+	</tr>	
 		
 	<tr>	
 		<td>Name</td>				
@@ -114,6 +149,22 @@ h1{
 		<td>${eve.date}</td>
 	</tr>	
 	
+	<tr>
+		<td>Status	</td>		
+		<td>${eve.status}</td>
+	</tr>	
+	
+		
+	<tr>
+		<td>Description </td>	
+		<td>${eve.description}</td>	
+	</tr>	
+	
+		
+	<tr>	
+		<td>AdminID	</td>			
+		<td>${eve.adminID}</td>
+	</tr>	
 	
 	<tr>
 		<td>Status	</td>		
@@ -160,11 +211,10 @@ h1{
 		</c:url>
 	
 		<a href="${eveupdate}" >
-		<input type="button" name="update" value="Update event">
+		<input type="button" name="update" value="Update an event">
 		</a>
 		
 		<br>
-		
 		
 		<c:url value="EventDelete.jsp" var="eveDelete">
 			<c:param name = "id" value = "${id}"/>
@@ -178,12 +228,20 @@ h1{
 		
 		
 		<a href="${eveDelete}">
-		<input type="button" name="delete" value="Delete event">
+		<input type="button" name="delete" value="Delete an event">
 		</a>
 		
+		<br>
 		
-
-
+		<a href="InsertEvent.jsp">
+		<input type="submit" name="submit" value="Insert an event">
+		</a>
+		
+		<br>
+		
+		<a href="EventGenerateReport.jsp">
+		<input type="submit" name="submit" value="Generate event report">
+		</a>
 
 
 
