@@ -44,6 +44,7 @@
 			padding:200px 0px 10px 0px;
 			text-align:center;
 			border-radius:15px 15px 0px 0px:;
+			font-family: Roboto;
 		}
 		
 		
@@ -74,6 +75,7 @@
   			line-height: 1.5;
   			width: 350px;
   			height: 40px;
+  			font-family: Roboto;
 		}
 		
 		.inname{
