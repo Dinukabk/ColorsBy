@@ -109,6 +109,13 @@
 			font-size:16px;
 		}
 		
+		.submit{
+			padding-left : 230px;
+			padding-bottom : 20px;
+			padding-top:25px;
+			font-size:16px;
+		}
+		
 	
 	
 	
@@ -174,7 +181,7 @@
 	%>
 
 	<div class="topic">
-	<h1>DELETE EVENT</h1>
+	<h1>DELETE AN EVENT</h1>
 	</div>
 
 	<div class="main">
@@ -211,10 +218,10 @@
 	
 	</form>
 		
-	<center>
+	<div class="submit">
 	<a href="success.jsp">
-	 	<input type="submit" name="UsubmitEvent" value="Delete Event"><br></center></a>
-		
+	 	<input type="submit" name="UsubmitEvent" value="Delete Event"></a>
+	</div>
 	
 	
 	</div>

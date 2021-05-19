@@ -105,6 +105,13 @@
 			font-size:16px;
 		}
 		
+		
+		.submit{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			padding-top:25px;
+			font-size:16px;
+		}
 	
 	
 	
@@ -157,35 +164,36 @@
 	
 	
 	<div class="topic">
-	<h1>INSERT EVENT</h1>
+	<h1>INSERT AN EVENT</h1>
 	</div>
 	
 	<div class="main">
 	 <form action="insertEvent" method="post">
 		
-	<div class="inname">
+		<div class="inname">
 		<h2>Name</h2>
 		<input type="text" name="name" placeholder="Enter event name" ><br></div>
 	
-	 <div class="indate">
+	 	<div class="indate">
 	 	<h2>Date</h2>
 	 	<input type="text" name="date" id="datepicker" placeholder="Enter event date" ><br></div>
 
-	 <div class="insta">	
+	 	<div class="insta">	
 	 	<h2>Status</h2>
 	 	<input type="text" name="status" placeholder="Enter event status" ><br></div>
 	
-	 <div class="des">	
+		 <div class="des">	
 	 	<h2>Description</h2>
 	 	<input type="text" name="description" placeholder="Enter description" ><br></div>
 
-	<div class="inad">
+		<div class="inad">
 	 	<h2>AdminID</h2>
 	 	<input type="text" name="adminID" placeholder="Enter admin ID" ><br></div>
 	 	
 	 	
-	 	<center>
-	 	<input type="submit" name="submitEvent" id="button" value="Insert Event"><br></center>
+	 	<div class="submit">
+	 	<input type="submit" name="submitEvent" id="button" value="Insert Event">
+	 	</div>
 	 	
 	 </form>
 	

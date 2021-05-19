@@ -58,7 +58,8 @@
 	}
 	
 	td {
-  		color: #5D5C61;
+  		color: #464866;
+  		font-family: Roboto;
 	}
 
 	th {
@@ -185,7 +186,7 @@
 
 
 </table>
-
+	<a href="EventDetailsRetri.jsp"
 	<div class="submit">
 		<input type="submit" name="submit" value="Manage events">
 	</div>

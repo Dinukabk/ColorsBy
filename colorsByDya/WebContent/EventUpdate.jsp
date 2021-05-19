@@ -109,6 +109,12 @@
 		}
 		
 	
+		.submit{
+			padding-left : 230px;
+			padding-bottom : 20px;
+			padding-top:25px;
+			font-size:16px;
+		}
 	
 	
 	
@@ -176,7 +182,7 @@
 	%>
 	
 	<div class="topic">
-	<h1>UPDATE EVENT</h1>
+	<h1>UPDATE AN EVENT</h1>
 	</div>
 	
 	<div class="main">
@@ -214,11 +220,10 @@
 	
 	</form>
 	
-	<center>
+	<div class="submit">
 	<a href="success.jsp">
-	 	<input type="submit" name="UsubmitEvent" value="Update Event"><br></center></a>
-	
-	
+	 	<input type="submit" name="UsubmitEvent" value="Update Event">
+	 </a>
 	</div>
 	
 	

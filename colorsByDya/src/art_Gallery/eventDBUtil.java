@@ -130,7 +130,7 @@ public class eventDBUtil {
 			int aid = Integer.parseInt(adminID);
 			
 			String sql = "update customer set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
-					+ "where id = '"+ID+"'";
+					+ "where event_id = '"+ID+"'";
 			
 			int rs = stmt.executeUpdate(sql);
 			

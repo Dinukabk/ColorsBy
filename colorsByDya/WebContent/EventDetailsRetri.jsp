@@ -5,25 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Get event details</title>
-<!--  
-<style>
-input[text], select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
-.container {
-  border-radius: 1px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-</style>	-->
+</style>
 
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
@@ -205,33 +188,13 @@ input[text], select {
 		</div>
 		
 		<div class="submit">
-		<input type="submit" name="submit" value="Check event">
+		<input type="submit" name="submit" value="Admin event login">
 		</div>
 	
 	
 	</form>
 
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
