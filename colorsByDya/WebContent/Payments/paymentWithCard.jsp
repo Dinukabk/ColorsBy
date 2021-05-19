@@ -63,7 +63,7 @@
 			<dt class="col-sm-9 text-dark h6">Delivery Method:</dt>
 			<dd class="col-sm-3 text-right">NULL</dd>
 		</dl>
-		<button type="button" class="btn btn-light border border-primary" onclick="location.href = ''">Chose Delivery Method</button>
+		<button type="button" class="btn btn-light border border-primary" onclick="location.href = 'DeliveryHomaPage.jsp'">Chose Delivery Method</button>
 	</div>
 	
 	<!-- Card -->
