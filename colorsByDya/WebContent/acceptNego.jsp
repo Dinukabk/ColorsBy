@@ -61,7 +61,7 @@
 	%>
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-	<form action="negoAccept" method="post">
+	<form action="NegoAcceptServlet" method="post">
 		<%-- <input type="text" name="title" value="<%=title%>" readonly><br> --%>
 		<h1 name="title"><%=title%></h1>
 		<%-- <input type="text" name="image_url" value="<%=image_url%>" readonly><br> --%>
