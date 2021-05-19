@@ -29,17 +29,17 @@ public class NegoAcceptServlet extends HttpServlet {
 		isTrue = RequestDBUtil.updateNegoAccept(price_req_id, full_name, phone_no, title, image_url, message);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("requestSuccess.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("ArtistList.jsp");
 			dis.forward(request, response);
 			try {
-				MailUtil.sendMail("it19971490@my.sliit.lk");
+				MailUtilCustomer.sendMail("lochanawijerathna27@gmail.com");
 			} catch (MessagingException e) {
 				
 				e.printStackTrace();
 			}
 		}
 		else {
-			RequestDispatcher dis = request.getRequestDispatcher("requestUnsuccess.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
 			dis.forward(request, response);
 		}
 	}

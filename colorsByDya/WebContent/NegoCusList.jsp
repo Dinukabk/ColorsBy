@@ -38,7 +38,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -51,8 +51,6 @@
 	
 	<tr>
 		<th>Negotiate ID</th>
-		<th>Customer Name</th>
-		<th>Phone Number</th>
 		<th>Title</th>
 		<th>Painting</th>
 		<th>Price</th>
@@ -62,21 +60,11 @@
 	
 	<tr>
 		<td>${nego.price_req_id}</td>
-		<td>${nego.full_name}</td>
-		<td>${nego.phone_no}</td>
+		<%-- <td>${nego.full_name}</td> --%>
 		<td>${nego.title}</td>
-		<td>${nego.image_url}</td>
+		<td><img src="images/${nego.image_url}" width="100px" height="100px"/></td>
 		<td>${nego.message}</td>
-		<td><input type="button" name="cart" value="Add to Cart"></td>
-		<%-- <form action="addCart" method="post" >
-                            		<input type="hidden" name="id" id="id" value="<%=rs.getInt("p_painting_id") %>" />
-		                    		<input type="number" class="form-control" style="width:30%" name="quantity" id="quantity" min="1" max="5" required>
-		                    		<br>
-		                    		<button class="btnNC" type="submit">
-						        		<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" title="ADD TO CART"> ADD TO CART
-						        		</button>
-		                        </form> --%>
-		
+		<td><input type="button" class="btn btn-secondary" name="cart" value="Add to Cart"></td>
 	</tr>
 	</c:forEach>
 	</table>

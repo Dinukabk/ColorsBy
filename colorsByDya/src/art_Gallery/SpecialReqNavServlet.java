@@ -18,11 +18,18 @@ public class SpecialReqNavServlet extends HttpServlet {
 
 		// Get session
 		HttpSession session = request.getSession(false);
+		if (session != null && session.getAttribute("userID") != null) { // If a session exists			
+			int userID = (int) session.getAttribute("userID");
+			request.setAttribute("userID", userID);
+			
+			String cusUsername = RequestDBUtil.getUserName(userID);
+			request.setAttribute("cusUsername", cusUsername);
 
-		if (session.getAttribute("userID") != null) {
+		//if (session.getAttribute("userID") != null) {
 			System.out.println("No user ID Detected in session...");
 			RequestDispatcher RD = request.getRequestDispatcher("SpecialRequest.jsp");
 			RD.forward(request, response);
+			
 		} else {
 			System.out.println("User ID detected in the session...");
 			RequestDispatcher RD = request.getRequestDispatcher("SpecialRequestNormal.jsp");

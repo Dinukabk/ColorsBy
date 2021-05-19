@@ -44,7 +44,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -54,72 +54,93 @@
 
   <h1>Negotiate the Price of the Painting</h1><br><br>
   
-  <div class="contact-in">
-  		<h3>We recommend you to contact the Artist before entering the Negotiate Price. Otherwise request may reject</h3>
-  </div><br><br>
-  
-  <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-  <center>
-  <div>
-  <!-- painting retrieve -->
-  <img src="images/deepthi_02.JPG" alt="Negotiate paint" width="300px" hight="300px">
-  </div></center><br><br>
-  
-  <div>
-  	<form name="negoForm" action="negoInsert" method="post" onsubmit="return validateForm()">
-  		<label>Please enter the Price</label><br>
-  		<input type="number" placeholder="Price in LKR" name="message" class="form__input"><br>
-  		
-  		<input type="submit" name="Submit" value="Send">
-  	</form>
-  </div>
-  <br>
-    <%-- <%@ page import="java.sql.ResultSet" %>
+  <%@ page import="java.sql.ResultSet" %>
 	<%@ page import="java.sql.Statement" %>
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
-  
-  <%
-				try
-				{
-					Class.forName("com.mysql.jdbc.Driver");
-					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-					String username="root";
-					String password="root";
-					String query="select * from negotiate_price";
-					
-					Connection conn=DriverManager.getConnection(url, username, password);
-					Statement stmt=conn.createStatement();
-					ResultSet rs=stmt.executeQuery(query);
-					
-					while(rs.next())
-					{
+	
+	<%@ page import="java.sql.PreparedStatement" %>
+	
+	
+	 <%
+	 int painting_id =Integer.parseInt(request.getParameter("painting_id")); 
+		
+	%>  
+	
+	<%
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+			String username="root";
+			String password="root";
 			
-			%>
+			/*
+			String query="SELECT * FROM painting";
+			Connection conn=DriverManager.getConnection(url, username, password);
+			Statement stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery(query);
+			*/
 			
-			<% 
-			boolean accepted = rs.getBoolean("accepted");
-			System.out.println("Boolean Value: "+accepted);
-			int val = (accepted) ? 1 : 0;
-			System.out.println("Integer value: "+val);
-			if(val == 1){ %>
-					       <input type="button" id="cart" name="cartBtn" value="Add to cart">
-			<% } %>
 			
-			<%
-					}
+			String query= "SELECT * FROM painting WHERE painting_id=?";
+			Connection conn=DriverManager.getConnection(url, username, password);
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setInt(1, painting_id);
 			
-			rs.close();
-			stmt.close();
-			conn.close();
-			}
-			catch(Exception e)
+			ResultSet rs=ps.executeQuery();
+			
+			
+			if(rs.next())
 			{
-			e.printStackTrace();
-			}
-		%> --%>
+				
+		
+		%>
+		
+		<div class="contact-in">
+	  		<h3 style="text-align:center">We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
+	  		<h2 style="text-align:center"> Otherwise request may be rejected</h2>
+  		</div><br><br>
+  
+  		<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
+		
+		<center>
+		<h3><%=rs.getString("title")%></h3><br>
+		<img src="images/<%=rs.getString("image_url")%>" width="200px" height="auto" ><br><br>
+		</center>
+		
+		<%
+			} // end of While
+		
+			rs.close();
+			ps.close();
+			//stmt.close();
+			conn.close();
+		}
+		catch(Exception e)
+		{
+		e.printStackTrace();
+		}
+		%> 
+
+  
+  <div>
+  	<form name="negoForm" action="negotiateInsertServlet" method="post" onsubmit="return validateForm()">
+  		<label>Please enter the Price</label><br>
+  		<input type="number" placeholder="Price in LKR" name="message" class="form__input"><br>
+  		<%-- <input name="painting_id" value="<%=rs.getInt("painting_id")%>" class="form__input"><br> --%>
+  		<input type="hidden" name="painting_id" value="<%= painting_id %>" readonly>
+  		<input type="hidden" name="userID" value="${userID}" readonly><br>
+  		
+  		<input type="submit" class="btn btn-secondary" name="Submit" value="Send" onClick="alert( 'We recommend you to contact the Artist before entering the Negotiate Price' )">
+  	</form>
+  </div>
+  <br>
+    
   
   </div>
+  
+  
   
   <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>

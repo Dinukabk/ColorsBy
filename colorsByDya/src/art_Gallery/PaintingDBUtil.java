@@ -17,6 +17,10 @@ public class PaintingDBUtil {
 	private static Connection connect = null;
 	private static Statement statement = null;
 	private static ResultSet resultSet = null;
+	
+	private static String cusUsername;
+	private static String artistUsername;
+	
 	/*
 	FileInputStream fs=null;
 	PreparedStatement ps=null;
@@ -49,9 +53,57 @@ public class PaintingDBUtil {
 	}// validate() end
 	
 	
+	// GET SESSION USERNAME --> CUSTOMER
+	public static String getUserName(int userID) {
+		Connection con;
+		PreparedStatement pst;
+		String UIDConverted = Integer.toString(userID);
+		ResultSet rs;
+		
+		try {
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement("SELECT full_name FROM registered_customer WHERE customer_id = ?");
+			pst.setString(1, UIDConverted);
+			rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				cusUsername = rs.getString(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return cusUsername;		
+	}
+	
+	// GET SESSION USERNAME --> ARTIST
+		public static String getArtistUsername(int artistUserID) {
+			Connection con;
+			PreparedStatement pst;
+			String UIDConverted = Integer.toString(artistUserID);
+			ResultSet rs;
+			
+			try {
+				con = DatabaseUtilizer.utilizeConnection();
+				pst = con.prepareStatement("SELECT name FROM artist WHERE artist_id = ?");
+				pst.setString(1, UIDConverted);
+				rs = pst.executeQuery();
+				
+				while(rs.next()) {
+					artistUsername = rs.getString(1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return artistUsername;		
+		}
+	
+	
+	
 	// INSERT
 	public static boolean insertPainting (String title, String description, String price, String drawn_date, String category,
-			String weight, String length, String width, String image_url, String material, String frame) {
+			String weight, String length, String width, String image_url, String material, String frame, int artistUserID) {
 		
 		isSuccess = false;
 		
@@ -61,7 +113,7 @@ public class PaintingDBUtil {
 			connect = DBConnect_Painting.getConnection();
 			statement = connect.createStatement();
 			    		
-    		String sql = "insert into painting (title, description, price, drawn_date ,category ,weight, length, width, image_url ,material, frame, a_artist_id) values('"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"','"+category+"' ,'"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', '"+frame+"', 4 )";
+    		String sql = "insert into painting (title, description, price, drawn_date ,category ,weight, length, width, image_url ,material, frame, a_artist_id) values('"+title+"', '"+description+"', '"+price+"', '"+drawn_date+"','"+category+"' ,'"+weight+"', '"+length+"', '"+width+"', '"+image_url+"' ,'"+material+"', '"+frame+"', '"+artistUserID+"' )";
     					
     		int resultSet = statement.executeUpdate(sql);
     		
@@ -141,7 +193,7 @@ public class PaintingDBUtil {
     		statement = connect.createStatement();
     		    		
     		String sql = "UPDATE painting SET title='"+title+"' , description='"+description+"' , price='"+price+"' , drawn_date='"+drawn_date+"', category= '"+category+"', weight='"+weight+"' , length='"+length+"' , width='"+width+"' , image_url= '"+image_url+"', material='"+material+"' , in_stock= 1, frame='"+frame+"'"
-    				+ "WHERE painting_id='"+painting_id+"'"; 
+    				+ " WHERE painting_id='"+painting_id+"'"; 
     		
     		int resultSet = statement.executeUpdate(sql);
     		

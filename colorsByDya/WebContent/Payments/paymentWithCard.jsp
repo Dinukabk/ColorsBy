@@ -42,7 +42,7 @@
 								<a onclick="location.href = 'SessionFlusher'" class="nav-link text-uppercase font-weight-bold">Log out</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase font-weight-bold">${userName }</a>
+								<a onclick="location.href = 'LoginRedirector'" class="nav-link text-uppercase font-weight-bold">${userName }</a>
 							</li>
 						</ul>
 					</div>
@@ -63,7 +63,7 @@
 			<dt class="col-sm-9 text-dark h6">Delivery Method:</dt>
 			<dd class="col-sm-3 text-right">NULL</dd>
 		</dl>
-		<button type="button" class="btn btn-light border border-primary" onclick="location.href = ''">Chose Delivery Method</button>
+		<button type="button" class="btn btn-light border border-primary" onclick="location.href = 'DeliveryMethodController'">Chose Delivery Method</button>
 	</div>
 	
 	<!-- Card -->
@@ -93,7 +93,7 @@
 						<p class="text-dark h6 text-right">Card Number:</p>
 					</td>
 					<td>
-						<input type="text" class="border border-dark bg-light rounded pl-1" placeholder="Card Number" value="${cardNo }" disabled>
+						<input type="number" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="Card Number" value="${cardNo }" disabled>
 					</td>
 				</tr>
 				<tr>
@@ -101,7 +101,7 @@
 						<p class="text-dark h6 text-right">Name on Card:</p>
 					</td>
 					<td>
-						<input type="text" class="border border-dark bg-light rounded pl-1" placeholder="Name on Card" value="${nameOnCard }" disabled>
+						<input type="text" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="Name on Card" value="${nameOnCard }" disabled>
 					</td>
 				</tr>
 				<tr>
@@ -109,7 +109,7 @@
 						<p class="text-dark h6 text-right">Expiration Date:</p>
 					</td>
 					<td>
-						<input type="text" class="border border-dark bg-light rounded pl-1" placeholder="Expiration Date" value="${expDate }" disabled>
+						<input type="date" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="Expiration Date" value="${expDate }" disabled>
 					</td>
 				</tr>	
 				<tr>
@@ -117,15 +117,16 @@
 						<p class="text-dark h6 text-right">CVV:</p>
 					</td>
 					<td>
-						<input type="text" class="border border-dark bg-light rounded pl-1" placeholder="CVV" value="${cvv }" disabled>
+						<input type="number" class="border border-dark bg-light rounded pl-1 col-sm" placeholder="CVV" value="${cvv }" disabled>
 					</td>
 				</tr>
 				<tr>
 					<td>
+						<input type="submit" class="btn btn-light border border-primary" value="Edit or Change Card" formaction="PaymentEditRedirector"/>
+						<input type="submit" class="btn btn-light border border-primary" value="Delete Card" onClick="confirm( 'Delete Request?' )" formaction="PaymentDeleteCardServlet"/>
 					</td>
 					<td>
-						<button type="submit" class="btn btn-primary border border-primary mb-2">Pay now</button><br/>
-						<button type="" class="btn btn-light border border-primary">Edit or Change Card</button>
+						<button type="submit" class="btn btn-primary border border-primary mb-2">Pay now</button>
 					</td>
 				</tr>
 				<tr>
