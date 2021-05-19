@@ -24,10 +24,6 @@ public class DeliveryDBUtil {
 
 		try {
 			con = DBConnect.getConnection();
-			// stmt = con.createStatement();
-			// String sql = "select * from delivery where username='"+userName+"' and
-			// password='"+password+"'";
-			// rs = stmt.executeQuery(sql);
 			pst = con.prepareStatement("SELECT * FROM registered_customer WHERE username=? AND password=?;");
 
 			if (rs.next()) {
@@ -54,7 +50,8 @@ public class DeliveryDBUtil {
 
 		return deliCus;
 	}
-
+	
+	//insert method 
 	public static boolean insertDeliery(String fullName, String AdddLineOne, String AdddLineTwo, String postalCord,
 			String province, String City, String Country, int pid) {
 
@@ -73,11 +70,7 @@ public class DeliveryDBUtil {
 			pst.setString(7, Country);
 			pst.setInt(8, pid);
 			int RS = pst.executeUpdate();
-			// stmt = con.createStatement();
-			// String sql = "insert into delivery values ('"+fDeliId+"', '"+fullName+"',
-			// '"+AdddLineOne+"', '"+AdddLineTwo+"', '"+postalCord+"', '"+province+"',
-			// '"+City+"', '"+Country+"', '"+Status+"', '"+paymentId+"')";
-			// int rs = stmt.executeUpdate(sql);
+		
 
 			if (RS > 0) {
 				isSuccess = true;
@@ -90,7 +83,7 @@ public class DeliveryDBUtil {
 		return isSuccess;
 	}
 
-	// Retrieve information from delivery table
+	//Retrieve information from delivery table
 	public static DeliveryCustomer retriveDeliveryInfo(int pid) throws SQLException {
 
 		con = DBConnect.getConnection();
@@ -101,7 +94,7 @@ public class DeliveryDBUtil {
 		DeliveryCustomer deliveryCustomer = new DeliveryCustomer();
 		ResultSet rs = ptR.executeQuery();
 
-		// get data
+		//get data from table
 		while (rs.next()) {
 
 			deliveryCustomer.setDelivery_id(rs.getInt(1));
@@ -119,7 +112,7 @@ public class DeliveryDBUtil {
 		return deliveryCustomer;
 	}
 
-	// update method
+	//update method
 	public static boolean updatedDeliveryInfo(DeliveryCustomer d) throws SQLException {
 		con = DBConnect.getConnection();
 
@@ -144,97 +137,6 @@ public class DeliveryDBUtil {
 		}
 
 	}
-
-//	//get cus
-//	public static List<DeliveryCustomer> getCustomer(String userName) {
-//		
-//		ArrayList<DeliveryCustomer> customer = new ArrayList<>();
-//		
-//		try {
-//			
-//			con = DBConnect.getConnection();
-//			stmt = con.createStatement();
-//			String sql = "select * from customer where username='"+userName+"'";
-//			rs = stmt.executeQuery(sql);
-//			
-//			while (rs.next()) {
-//				int id = rs.getInt(1);
-//				String name = rs.getString(2);
-//				String email = rs.getString(3);
-//				String phone = rs.getString(4);
-//				String username = rs.getString(5);
-//				String password = rs.getString(6);
-//				
-//				DeliveryCustomer cus = new delivery(delivery_id,full_name,add_line_01,add_line_02,postal_code,province, city, country, status, p_payment_id);
-//				cus.add(cus);
-//			}
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		return customer;	
-//	}
-
-//	//getcust de method
-//	 
-//    public static List<Customer> getCustomerDetails(String Id) {
-//    	
-//    	int convertedID = Integer.parseInt(Id);
-//    	
-//    	ArrayList<DeliveryCustomer> cus = new ArrayList<>();
-//    	
-//    	try {
-//    		
-//    		con = DBConnect.getConnection();
-//    		stmt = con.createStatement();
-//    		String sql = "select * from delivery where delivery_id='"+convertedID+"'";
-//    		rs = stmt.executeQuery(sql);
-//    		
-//    		while(rs.next()) {
-//    			int id = rs.getInt(1);
-//    			String name = rs.getString(2);
-//    			String email = rs.getString(3);
-//    			String phone = rs.getString(4);
-//    			String username = rs.getString(5);
-//    			String password = rs.getString(6);
-//    			
-//    			DeliveryCustomer c = new delivery(delivery_id,full_name,add_line_01,add_line_02,postal_code,province, city, country, status, p_payment_id);
-//    			cus.add(c);
-//    		}
-//    		
-//    	}
-//    	catch(Exception e) {
-//    		e.printStackTrace();
-//    	}	
-//    	return cus;	
-//    }
-
-	// Delete method
-//	public static boolean deleteDelivery(String id) {
-//		con = DBConnect.getConnection();
-//		
-//		String deletequery = "delete from colorbydiyaa.delivery where id= ?;";
-//		PreparedStatement preparedStatement = con.prepareStatement(deletequery);
-//	
-//		preparedStatement.setInt(1, d.delivery_id());
-//		preparedStatement.setString(2, d.getAdd_line_01());
-//		preparedStatement.setString(3, d.getAdd_line_02());
-//		preparedStatement.setInt(4, d.getPostal_code());
-//		preparedStatement.setString(5, d.getProvince());
-//		preparedStatement.setString(6, d.getCity());
-//		preparedStatement.setString(7, d.getCountry());
-//		preparedStatement.setInt(8, d.getDelivery_id());
-//		
-//		int res = preparedStatement.executeUpdate();
-//		if(res == 1) {
-//			return true;
-//		}
-//		else {
-//			return false;
-//		}
-//    }
-//	
-//	
+	
 
 }

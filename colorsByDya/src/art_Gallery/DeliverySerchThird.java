@@ -42,8 +42,8 @@ public class DeliverySerchThird extends HttpServlet {
 			
 			out.println("<style>");
 			out.println("tr {");
-			out.println("color:blue;");
-			out.println("background-color:yellow;");
+			out.println("color:black;");
+			out.println("background-color:white;");
 			out.println("border: 1px solid black;");
 			out.println("}");
 			out.println("</style>");
@@ -53,11 +53,13 @@ public class DeliverySerchThird extends HttpServlet {
 			out.println("<br>");
 			out.println("<br>");
 			out.println("<br>");
+			out.println("<br>");
+
 			
 			out.println("<style>");
 			out.println("body {");
 			
-			out.println("background-image: url('./DelivryImages/9a.jpg');");
+			out.println("background-image: url('./DelivryImages/9aa.jpg');");
 			out.println("background-image:./DelivryImages/9a.jpg;");
 			out.println("background-repeat: no-repeat;");
 			out.println("background-size: cover;");

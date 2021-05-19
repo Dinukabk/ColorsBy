@@ -98,7 +98,21 @@
 		  location.replace("./DeliverySerchTwo.jsp") <!--It shold go index.jsp-->
 		  
 		}
-	</script>
+		</script>
+		
+		<center>
+			<button onclick="myFunction10()">SEARCH Hera</button>
+		</center>
+		<br>
+		
+		<script>
+		function myFunction10() {
+		  location.replace("./DeliverySerachThird.jsp") <!--It shold go index.jsp-->
+		  
+		}
+		</script>
+		
+		
 		<center>
 			<button onclick="myFunction2()">FINISH</button>
 		</center>
@@ -109,7 +123,7 @@
 		  location.replace("./DeliveryHomaPage.jsp") <!--It shold go index.jsp-->
 		  
 		}
-	</script>
+		</script>
 
 	</div>
 </body>
