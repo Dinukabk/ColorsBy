@@ -45,7 +45,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold">${artistUserName}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -78,7 +78,7 @@
 			String username="root";
 			String password="root";
 			
-			
+			int artistUserID= Integer.parseInt(request.getParameter("artistUserID"));
 			//String query="select p.painting_id, p.title, p.category, pay.status FROM painting p, artist a, payment pay WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id=1";
 			
 						
@@ -89,7 +89,7 @@
 					" ("+
 					  " SELECT p.category as Category, COUNT(*) AS Sales_Count"+
 				      " FROM painting p, artist a, payment pay"+ 
-				      " WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id=1 AND pay.status=true"+
+				      " WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id='"+artistUserID+"' AND pay.status=true"+
 				      " GROUP BY category"+
 				      " ORDER BY Sales_Count desc"+ 
 				      " )"+
@@ -121,7 +121,7 @@
 			
 			String query_2 = " SELECT p.category as Category, COUNT(*) AS Sales_Count"+
 				      " FROM painting p, artist a, payment pay"+ 
-				      " WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id=1 AND pay.status=true"+
+				      " WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id='"+artistUserID+"' AND pay.status=true"+
 				      " GROUP BY category"+
 				      " ORDER BY Sales_Count desc";
 				

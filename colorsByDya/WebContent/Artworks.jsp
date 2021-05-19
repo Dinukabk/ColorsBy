@@ -49,6 +49,8 @@
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="#"
 								class="nav-link text-uppercase font-weight-bold">${artistUserName}</a></li>
+							<%-- <li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">${artistUserID}</a></li> --%>
 						</ul>
 					</div>
 				</div>
@@ -60,7 +62,7 @@
 	<!-- <input type="button" name="report" value="Generate JAVA Report" onclick="location.href='Servlet_Gallery_Paint_PDF'"> <br> -->
 	
 	<!-- <input type="button" class="btn"  name="report" value="View Report" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp'"> <br> -->
-	<button class="btn" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp'">
+	<button class="btn" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp?artistUserID=${artistUserID}'">
 		<img id="pdfButton" alt="" src="images/summarize_black_24dp.svg" width="30px"> VIEW REPORT
 	</button> <br><br>
 	
