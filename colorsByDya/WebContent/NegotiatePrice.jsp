@@ -138,7 +138,7 @@
   		<input type="hidden" name="painting_id" value="<%= painting_id %>" readonly>
   		<input type="hidden" name="userID" value="${userID}" readonly><br>
   		
-  		<input type="submit" class="btn btn-secondary" name="Submit" value="Send">
+  		<input type="submit" class="btn btn-secondary" name="Submit" value="Send" onClick="alert( 'We recommend you to contact the Artist before entering the Negotiate Price' )">
   	</form>
   </div>
   <br>

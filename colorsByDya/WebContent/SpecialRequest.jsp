@@ -204,10 +204,10 @@
             			}
             		%> --%>
             
-            
+            <!-- onClick="alert( 'Special Request will send ' )" -->
             
             <input class="btn btn-secondary" type="reset" name="Reset" value="Reset">
-            <input class="btn btn-secondary" type="submit" name="submit" value="Send ">
+            <input class="btn btn-secondary" type="submit" name="submit" value="Send">
             
             </fieldset>
          </form>
