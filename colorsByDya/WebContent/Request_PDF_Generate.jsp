@@ -89,6 +89,13 @@
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
 	
+	<%
+	 //int artistUserID =${artistUserID}; 
+	 int artistUserID =Integer.parseInt(request.getParameter("artistUserID"));
+	  System.out.println(artistUserID);
+		
+	%> 
+	
 	<div id="content">
 	
 		<h1>Accepted Requests Report</h1>	
@@ -106,7 +113,7 @@
 			Statement stmt=conn.createStatement();
 			
 			//counting all requests
-			String sql_1 = "SELECT COUNT(*) AS RCount from special_request where artist_name=3";
+			String sql_1 = "SELECT COUNT(*) AS RCount from special_request where artist_name='"+artistUserID+"'";
 			ResultSet rs1 = stmt.executeQuery(sql_1);
 			
 			if(rs1.next()) {
@@ -122,7 +129,7 @@
 	
 	<%
 	//counting accepted requests
-	String sql_2 = "SELECT COUNT(*) AS RCountA from special_request where artist_name=3 AND accept=1";
+	String sql_2 = "SELECT COUNT(*) AS RCountA from special_request where artist_name='"+artistUserID+"' AND accept=1";
 	ResultSet rs2 = stmt.executeQuery(sql_2);
 	
 	if(rs2.next()) {
@@ -150,7 +157,7 @@
 			
 	<%
 			
-			String query="select sr.request_id,sr.name,sr.phone,sr.message FROM special_request sr, artist a WHERE sr.artist_name=a.artist_id AND a.artist_id=3 AND sr.accept=1";
+			String query="select sr.request_id,sr.name,sr.phone,sr.message FROM special_request sr, artist a WHERE sr.artist_name=a.artist_id AND a.artist_id='"+artistUserID+"' AND sr.accept=1";
 						
 			
 			ResultSet rs=stmt.executeQuery(query);

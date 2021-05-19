@@ -69,7 +69,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -109,6 +109,16 @@
       </div>
       
    </div>
+  <%--  <%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.Statement" %>
+	<%@ page import="java.sql.Connection" %>
+	<%@ page import="java.sql.DriverManager" %>
+	<%@ page import="java.sql.PreparedStatement" %> --%>
+   
+   <%-- <%
+	 int userID =Integer.parseInt(request.getParameter("userID")); 
+		
+	%> --%>
    <!-- onsubmit="return validateForm()" -->
    <!-- enctype="multipart/form-data" -->
    <div>
@@ -136,6 +146,7 @@
             <input type="text" placeholder="Province" name="province"><br>
             <input type="text" placeholder="City" name="city">
             <input type="text" placeholder="Country" name="country"><br><br>
+            <input type="hidden" name="userID" value="${userID}" readonly>
             <label>Choose the Artist</label>
             	<!-- <select>
             		<option>Deepthi Wijewardana</option>
@@ -144,19 +155,19 @@
 				<%@page import="java.sql.ResultSet"%>
 				<%@page import="java.sql.Statement"%>
 				<%@page import="java.sql.Connection"%>
-            	<select>
+            	<select id="list" name="artist_name">
             		<%
             			try{
             				Class.forName("com.mysql.jdbc.Driver");
             				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
             				Statement st = con.createStatement();
-            				String query = "select name from artist";
+            				String query = "select * from artist";
             				//get table data
             				ResultSet rs = st.executeQuery(query);
             				//get artist name one by one
             				while(rs.next()){
             					%>
-            					<option name="artist_name"><%=rs.getString("name") %></option>
+            					<option value="<%=rs.getString("name") %>"><%=rs.getString("name") %></option>
             					<%
             				}
             				
@@ -165,11 +176,38 @@
             			}
             		%>
             	</select><br><br>
+            	<!-- <script>
+            		function getSelectValue(){
+            			var selectedValue = document.getElementById("list").value;
+            			console.log(selectedValue);
+            		}
+            		getSelectValue();
+            	</script> -->
+            	
+            	<%-- <%
+            			try{
+            				Class.forName("com.mysql.jdbc.Driver");
+            				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
+            				Statement st = con.createStatement();
+            				String query = "select artist_id from artist where name=<%=rs.getString("name") %>";
+            				//get table data
+            				ResultSet rs = st.executeQuery(query);
+            				//get artist name one by one
+            				while(rs.next()){
+            					%>
+            					<option value="artist_name_option"><%=rs.getString("name") %></option>
+            					<%
+            				}
+            				
+            			}catch (Exception e){
+            				
+            			}
+            		%> --%>
             
-            
+            <!-- onClick="alert( 'Special Request will send ' )" -->
             
             <input class="btn btn-secondary" type="reset" name="Reset" value="Reset">
-            <input class="btn btn-secondary" type="submit" name="submit" value="Send ">
+            <input class="btn btn-secondary" type="submit" name="submit" value="Send">
             
             </fieldset>
          </form>

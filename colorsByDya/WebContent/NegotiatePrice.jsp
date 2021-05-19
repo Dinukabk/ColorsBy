@@ -44,7 +44,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -98,14 +98,15 @@
 		%>
 		
 		<div class="contact-in">
-  <center>
-  		<h3>We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
-  		<h2> Otherwise request may be rejected</h2>
-  </center>
-  </div><br><br>
+	  		<h3 style="text-align:center">We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
+	  		<h2 style="text-align:center"> Otherwise request may be rejected</h2>
+  		</div><br><br>
+  
+  		<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 		
 		<center>
-		<img src="images/<%=rs.getString("image_url")%>" width="200px" height="auto" >
+		<h3><%=rs.getString("title")%></h3><br>
+		<img src="images/<%=rs.getString("image_url")%>" width="200px" height="auto" ><br><br>
 		</center>
 		
 		<%
@@ -121,23 +122,17 @@
 		e.printStackTrace();
 		}
 		%> 
-  
-  
-  <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-  <center>
-  <div>
-  <!-- painting retrieve -->
-  <!-- <img src="images/deepthi_02.JPG" alt="Negotiate paint" width="300px" hight="300px"> -->
-  </div></center><br><br>
+
   
   <div>
   	<form name="negoForm" action="negoInsert" method="post" onsubmit="return validateForm()">
   		<label>Please enter the Price</label><br>
   		<input type="number" placeholder="Price in LKR" name="message" class="form__input"><br>
   		<%-- <input name="painting_id" value="<%=rs.getInt("painting_id")%>" class="form__input"><br> --%>
-  		<input type="hidden" name="painting_id" value="<%= painting_id %>" readonly><br>
+  		<input type="hidden" name="painting_id" value="<%= painting_id %>" readonly>
+  		<input type="hidden" name="userID" value="${userID}" readonly><br>
   		
-  		<input type="submit" class="btn btn-secondary" name="Submit" value="Send">
+  		<input type="submit" class="btn btn-secondary" name="Submit" value="Send" onClick="alert( 'We recommend you to contact the Artist before entering the Negotiate Price' )">
   	</form>
   </div>
   <br>

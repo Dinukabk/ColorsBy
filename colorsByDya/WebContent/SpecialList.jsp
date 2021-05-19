@@ -98,7 +98,7 @@ $('#search-input').on('keyup',function(){
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold">${artistUserName}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -108,7 +108,7 @@ $('#search-input').on('keyup',function(){
 
 	<h1>Special Requests</h1><br>
 	
-	<input type="button" class="btn btn-secondary" name="report" value="Generate Report" onclick="location.href='Request_PDF_Generate.jsp'">
+	<input type="button" class="btn btn-secondary" name="report" value="Generate Report" onclick="location.href='Request_PDF_Generate.jsp?artistUserID=${artistUserID}'">
 	
 	<div class="topnav">
 	<div class="search-container">

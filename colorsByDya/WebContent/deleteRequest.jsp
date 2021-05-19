@@ -85,7 +85,7 @@
 		Customer ID <input type="text" name="c_customer_id" value="<%= c_customer_id %>" readonly><br>
 		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br><br>
 		
-		<input type="submit" class="btn btn-secondary" name="submit" value="Delete Request"><br>
+		<input type="submit" class="btn btn-secondary" name="submit" value="Delete Request" onClick="confirm( 'Delete Request?' )"><br>
 	</form>
 	</div>
 	

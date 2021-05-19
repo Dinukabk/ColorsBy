@@ -20,10 +20,11 @@ public class negotiateInsertServlet extends HttpServlet {
 		int painting_id =Integer.parseInt(request.getParameter("painting_id"));
 		System.out.println("painting id insert"+painting_id);
 		//String intString = Integer.toString(painting_id);
+		int userID =Integer.parseInt(request.getParameter("userID"));
 		
 		boolean isTrue;
 		
-		isTrue = RequestDBUtil.insertNegotiate(message,painting_id);
+		isTrue = RequestDBUtil.insertNegotiate(message,userID,painting_id);
 		
 		if(isTrue==true) {
 			RequestDispatcher dis = request.getRequestDispatcher("Gallery_All_Logged.jsp");
