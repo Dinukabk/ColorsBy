@@ -155,19 +155,19 @@
 				<%@page import="java.sql.ResultSet"%>
 				<%@page import="java.sql.Statement"%>
 				<%@page import="java.sql.Connection"%>
-            	<select>
+            	<select id="list" name="artist_name">
             		<%
             			try{
             				Class.forName("com.mysql.jdbc.Driver");
             				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
             				Statement st = con.createStatement();
-            				String query = "select name from artist";
+            				String query = "select * from artist";
             				//get table data
             				ResultSet rs = st.executeQuery(query);
             				//get artist name one by one
             				while(rs.next()){
             					%>
-            					<option name="artist_name"><%=rs.getString("name") %></option>
+            					<option value="<%=rs.getString("name") %>"><%=rs.getString("name") %></option>
             					<%
             				}
             				
@@ -176,6 +176,33 @@
             			}
             		%>
             	</select><br><br>
+            	<!-- <script>
+            		function getSelectValue(){
+            			var selectedValue = document.getElementById("list").value;
+            			console.log(selectedValue);
+            		}
+            		getSelectValue();
+            	</script> -->
+            	
+            	<%-- <%
+            			try{
+            				Class.forName("com.mysql.jdbc.Driver");
+            				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
+            				Statement st = con.createStatement();
+            				String query = "select artist_id from artist where name=<%=rs.getString("name") %>";
+            				//get table data
+            				ResultSet rs = st.executeQuery(query);
+            				//get artist name one by one
+            				while(rs.next()){
+            					%>
+            					<option value="artist_name_option"><%=rs.getString("name") %></option>
+            					<%
+            				}
+            				
+            			}catch (Exception e){
+            				
+            			}
+            		%> --%>
             
             
             
