@@ -65,9 +65,13 @@ input[text], select {
 		
 		.main{
 		
-			background-color:;
+			/* background-color:; */
 			width:800px;
 			margin:auto;
+			border-radius: 1px;
+  			background-color: #557A95;
+  			padding: 20px;
+  			opacity : 0.7;
 		}
 		
 		form{
@@ -122,6 +126,12 @@ input[text], select {
 			font-size:16px;
 		}
 		
+		.submit{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			padding-top:25px;
+			font-size:16px;
+		}
 	
 	
 	
@@ -192,9 +202,9 @@ input[text], select {
 		<h4>AdminID</h4>	 		 <input type = "text" name="AdminID" placeholder = "Enter admin ID"><br>
 		</div>
 		
-		<center>
+		<div class="submit">
 		<input type="submit" name="submit" value="Check event">
-		</center>
+		</div>
 	
 	
 	</form>

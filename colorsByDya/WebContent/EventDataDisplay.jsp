@@ -46,7 +46,7 @@ h1{
 </head>
 <body>
 
- <!-- Navbar 
+ <!-- Navbar -->
 	<header class="header" class="py-5 mt-5">
 		<nav class="navbar navbar-expand-lg fixed-top py-3">
 			<div class="container">
@@ -84,7 +84,7 @@ h1{
 	</header>
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
- -->
+ 
 
 
 
@@ -95,7 +95,7 @@ h1{
 		<c:set var="date" value = "${eve.date}"/>
 		<c:set var="status" value = "${eve.status}"/>
 		<c:set var="description" value = "${eve.description}"/>
-		<c:set var="adminId" value = "${eve.adminID}"/> 
+		<c:set var="adminID" value = "${eve.adminID}"/> 
 	
 	<tr>
 		<td>ID	</td>			
@@ -154,7 +154,7 @@ h1{
 			<c:param name = "description" value = "${description}"/>
 			
 			
-			<c:param name  = "admnId" value = "${adminId}"/>	
+			<c:param name  = "admnId" value = "${adminID}"/>	
 			
 			
 		</c:url>
@@ -172,7 +172,7 @@ h1{
 			<c:param name = "date" value = "${date}"/>
 			<c:param name = "status" value = "${status}"/>
 			<c:param name = "description" value = "${description}"/>
-			<c:param name  = "adminId" value = "${adminId}"/>	
+			<c:param name  = "adminId" value = "${adminID}"/>	
 		</c:url>	
 		
 		
