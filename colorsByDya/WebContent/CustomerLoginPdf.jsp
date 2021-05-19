@@ -68,13 +68,7 @@
 			} //end of while
 			
 			
-		/* 	String query_2 = " SELECT p.category as Category, COUNT(*) AS Sales_Count"+
-				      " FROM painting p, artist a, payment pay"+ 
-				      " WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id=1 AND pay.status=true"+
-				      " GROUP BY category"+
-				      " ORDER BY Sales_Count desc";
-				
-			ResultSet rs_2 = stmt.executeQuery(query_2); */
+
 			
 			%>
 			
