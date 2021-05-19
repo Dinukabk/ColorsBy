@@ -77,7 +77,7 @@
 			String username = "root";
 			String password = "root";
 
-			//String query="select p.painting_id, p.title, p.category, pay.status FROM painting p, artist a, payment pay WHERE p.a_artist_id = a.artist_id AND p.painting_id = pay.p_painting_id AND a.artist_id=1";
+			//Report genarating database connectrion
 
 			Connection conn = DriverManager.getConnection(url, username, password);
 			Statement stmt = conn.createStatement();
