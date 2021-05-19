@@ -94,7 +94,7 @@ public class DeliveryDBUtil {
 		DeliveryCustomer deliveryCustomer = new DeliveryCustomer();
 		ResultSet rs = ptR.executeQuery();
 
-		//get data from table
+		//get data from database table
 		while (rs.next()) {
 
 			deliveryCustomer.setDelivery_id(rs.getInt(1));
@@ -112,7 +112,7 @@ public class DeliveryDBUtil {
 		return deliveryCustomer;
 	}
 
-	//update method
+	//update method 
 	public static boolean updatedDeliveryInfo(DeliveryCustomer d) throws SQLException {
 		con = DBConnect.getConnection();
 
