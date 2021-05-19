@@ -67,7 +67,7 @@
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
 			
-				
+				<!-- comment test -->
 		<h1> Artwork Sales - Category Report.</h1> <br>
 	
 	<%
