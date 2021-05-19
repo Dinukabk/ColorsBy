@@ -193,8 +193,58 @@ public class eventDBUtil {
 	
 	
 	
+	public static List<EventClass> getEvents() {
 	
-	
+	{
+		ArrayList<EventClass> eveList = new ArrayList<>();
+		
+		//db connection
+		con = EventDBconnect.getConnection();
+		try {
+			stmt = con.createStatement();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+				
+				
+		String sql = "select * from event";
+		
+		try {
+			rs = stmt.executeQuery(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		try {
+			while (rs.next()) {
+				
+				int id = rs.getInt(1);
+				String name = rs.getString(2);
+				String date = rs.getString(3);
+				int status = rs.getInt(4);
+				String description = rs.getString(5);
+				int adminId = rs.getInt(6);
+				
+				
+				EventClass e = new EventClass(id,name,date,status,description,adminId);
+				
+				eveList.add(e);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		return eveList;
+		
+		
+	}
+	}
 	
 	
 	
@@ -215,5 +265,7 @@ public class eventDBUtil {
 	
 	
 
+
+	
 }
  
