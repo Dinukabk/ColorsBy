@@ -332,6 +332,34 @@ version="2.5"
 		<url-pattern>/acceptNego</url-pattern>
 	</servlet-mapping>
   <!-- end of Loch -->
+  
+ <!--  Ashu start-->
+ <servlet>
+		<servlet-name>artistinsert</servlet-name>
+		<servlet-class>art_Gallery.ArtistInsert</servlet-class>
+	</servlet>
+	
+	
+    <servlet>
+    	<servlet-name>updateartist</servlet-name>
+    	<servlet-class>art_Gallery.updateArtistServlet</servlet-class>
+    </servlet>
+    
+
+	<servlet>
+		<servlet-name>deleteartist</servlet-name>
+		<servlet-class>art_Gallery.ArtistDelete</servlet-class>
+	</servlet>
+	
+	
+	
+	
+	
+	
+	
+	
+  
+  
 
 </web-app>
 
