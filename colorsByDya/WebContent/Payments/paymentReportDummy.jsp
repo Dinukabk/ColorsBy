@@ -48,9 +48,10 @@
 	</div>
 
 	<!-- Report Button -->
-	<div id="content" class="container p-3 my-2 rounded col-md-4 form" style="
+	<div id="content1" class="container p-3 my-2 rounded col-md-4 form" style="
 			background-color: rgba(255, 255, 255, 0.7); 
 			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+			display: none;
 		">
 		<table>
 			<tr>
@@ -79,7 +80,10 @@
 	</div>
 	
 	<!-- Report -->
-	<div id="content1">
+	<div id="content" class="container p-3 my-2 rounded col-md-4 form" style="
+			background-color: rgba(255, 255, 255, 0.7); 
+			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+		">
 	    <%@ page import="java.sql.Connection" %>
 	    <%@ page import="java.sql.PreparedStatement" %>
 	    <%@ page import="java.sql.SQLException" %>
@@ -98,16 +102,31 @@
             PreparedStatement pst = null;
             
             Connection conn = DriverManager.getConnection(url, username, password);
-            pst = conn.prepareStatement("SELECT card_id, customer_id FROM rc_card");
+            pst = conn.prepareStatement("SELECT r.full_name, p.paid_amount, g.title FROM payment p, painting g, registered_customer r WHERE p.p_painting_id = g.painting_id AND p.c_customer_id = r.customer_id;");
             ResultSet rs_1 = pst.executeQuery();
-            
-            while(rs_1.next()) { 
-                %>
-                <h3> Card ID : <%=rs_1.getInt("card_id")%></h3>
-                <h3> Customer ID : <%=rs_1.getInt("customer_id")%></h3>
-            	<%
-            } //end of while
             %>
+            <table>
+            <tr>
+                <th>Customer Name</th>
+                <th>Paid Amount</th>
+                <th>Painting Title</th>
+            </tr>
+           
+    		<%
+   
+    		while(rs_1.next()) {
+        	%>
+            <tr>
+               
+                <td><%=rs_1.getString("full_name")%></td>
+                <td><%=rs_1.getDouble("paid_amount")%></td>
+                <td><%=rs_1.getString("title")%></td>
+            </tr>
+    		<%
+    		} //end of while
+    		%>
+   
+    		</table>
                 
             <%         
             rs_1.close();
@@ -117,6 +136,8 @@
             e.printStackTrace();
         }
         %>    
+        <br/>
+        <button type="button" class="btn btn-light border border-primary" onclick="generate_PDF();">Generate a report of payments</button>
     </div>
     <div id="elementH"></div>
     <%
