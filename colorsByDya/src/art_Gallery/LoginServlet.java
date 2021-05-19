@@ -18,30 +18,23 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// HttpSession session = request.getSession(false);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		System.out.println("Mekawath Print weyan redda...");
-
 		// Getting the user_name and password in the login page
 		String n = request.getParameter("email");
 		String p = request.getParameter("password");
 		
-		// try {
-		// }
-		// catch(Exception e){
-		// 	e.printStackTrace();
-		// }
-
 		// The session
-	HttpSession session = request.getSession();
-	System.out.println("Test Print 02");
-	if (session != null) {
+		HttpSession session = request.getSession();
+		System.out.println("Test Print 02");
+		if (session != null) {
 			System.out.println("Test Print...");
 			// session.setAttribute("l_id", n);
 			int login = LoginDao.validate(n, p);

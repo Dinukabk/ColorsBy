@@ -19,7 +19,7 @@ public class SpecialReqNavServlet extends HttpServlet {
 		// Get session
 		HttpSession session = request.getSession(false);
 		
-		if (session != null) { // If a session exists			
+		if (session != null && session.getAttribute("userID") != null) { // If a session exists			
 			int userID = (int) session.getAttribute("userID");
 			request.setAttribute("userID", userID);
 			
