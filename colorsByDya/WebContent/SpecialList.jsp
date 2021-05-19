@@ -69,6 +69,10 @@ $('#search-input').on('keyup',function(){
 }
 </style>
 
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/jquery.dataTables.css">
+
+	<script charset="utf8" src="assets/js/jquery.dataTables.js"></script> -->
+
 </head>
 <body>
 
@@ -110,16 +114,18 @@ $('#search-input').on('keyup',function(){
 	
 	<input type="button" class="btn btn-secondary" name="report" value="Generate Report" onclick="location.href='Request_PDF_Generate.jsp?artistUserID=${artistUserID}'">
 	
-	<div class="topnav">
+	<!-- <div class="topnav">
 	<div class="search-container">
     <form action="#" method="post">
       <input type="text" id="search-input" placeholder="Search.." name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
-  </div>
+  </div> -->
 	
-	<table border="1">
+    <!-- <input type="search" class="" placeholder="" aria-controls="tableRequest"> -->
+	
+	<table border="1" id="tableRequest">
 	
 	<tr>
 		<th>Request ID</th>
@@ -343,3 +349,8 @@ body {
 </style>	
 </body>
 </html>
+<!-- <script>
+$(document).ready( function () {
+    $('#tableRequest').DataTable();
+} );
+</script> -->
