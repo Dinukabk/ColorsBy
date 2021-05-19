@@ -6,7 +6,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Get event details</title>
- 
 <style>
 
 
@@ -79,9 +78,7 @@
   	
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  	<script>
-
- 
+  	<script> 
 </head>
 <body>
 
@@ -139,8 +136,7 @@
 	<tr>
 		<td>ID	</td>			
 		<td>${eve.id} </td>
-	</tr>
-	
+	</tr>	
 		
 	<tr>	
 		<td>Name</td>				
@@ -153,6 +149,22 @@
 		<td>${eve.date}</td>
 	</tr>	
 	
+	<tr>
+		<td>Status	</td>		
+		<td>${eve.status}</td>
+	</tr>	
+	
+		
+	<tr>
+		<td>Description </td>	
+		<td>${eve.description}</td>	
+	</tr>	
+	
+		
+	<tr>	
+		<td>AdminID	</td>			
+		<td>${eve.adminID}</td>
+	</tr>	
 	
 	<tr>
 		<td>Status	</td>		

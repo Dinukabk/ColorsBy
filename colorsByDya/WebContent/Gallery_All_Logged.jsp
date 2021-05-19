@@ -9,33 +9,28 @@
 <title>Gallery Logged</title>
 
 <!-- Gallery testing links -->
-<script type="text/javascript" href="js/frontpage.js"></script>
- -<link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 
-	<!-- Google Webfonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	
-	Animate.css
-	<link rel="stylesheet" href="css/animate.css">
-	Icomoon Icon Fonts
-	<link rel="stylesheet" href="css/icomoon.css">
-	Magnific Popup
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	Salvattore
-	<link rel="stylesheet" href="css/salvattore.css">
-	Theme Style
-	<link rel="stylesheet" href="css/style1.css">
-	Modernizr JS
-	<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<!-- SEARCH BAR LINKS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
-	
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/styles.css">
-	<link rel="stylesheet" href="./css/home.css">
-	
-	<link rel="stylesheet" href="css/styles_Gallery.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/magnific-popup.css?version=1">
+<link rel="stylesheet" href="css/salvattore.css">
+
+<link rel="stylesheet" href="css/style1.css?version=1"> 
+
+<!-- <script src="js/modernizr-2.6.2.min.js"></script> -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css?version=1">
+<link rel="stylesheet" href="css/home.css">
+
+<link rel="stylesheet" href="css/styles_Gallery.css?"> 
+
 
 </head>
 <body>
@@ -55,9 +50,9 @@
 						<i class="fa fa-bars"></i>
 					</button>
 
-					<div id="navbarSupportedContent" class="collapse navbar-collapse">
+					<div id="navbarSupportedContent" class="collapse navbar-collapse" style="font-size:16px">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item active"><a href="#"
+							<li class="nav-item active"><a href="userDashboard.jsp"
 								class="nav-link text-uppercase font-weight-bold">Home <span
 									class="sr-only"></span></a></li>
 							<li class="nav-item"><a href="#"
@@ -66,180 +61,135 @@
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</header>
 	</div>
-
-
-	
+<!-- SEARCH BAR  -->
+	<div class="topnav">
+	    <div class="search-container">
+		    <form action="#" method="post">
+		      <input type="text" id="search-input" placeholder="Search.." name="search">
+		      <button type="submit"><i class="fa fa-search"></i></button>
+		    </form>
+	  	</div>
+	 </div>
 	
 	<%@ page import="java.sql.ResultSet" %>
 	<%@ page import="java.sql.Statement" %>
 	<%@ page import="java.sql.Connection" %>
 	<%@ page import="java.sql.DriverManager" %>
 	
-	<form method="post">
-	
-		<!-- <table border="2">
-			<tr>
-				<th>Painting ID</th>
-				<th>Title</th>
-				<th>Description</th>
-				<th>Price</th>
-				<th>Drawn Date</th>
-				<th>Category</th>
-				<th>Weight</th>
-				<th>Length</th>
-				<th>Width</th>
-				<th>Image</th>
-				<th>Material</th>
-				<th>In-stock</th>
-				<th>Frame</th>
-				<th>Artist ID</th>
-				<th>Cart ID</th>
-			</tr> -->
-			
-			<%
-				try
-				{
-					Class.forName("com.mysql.jdbc.Driver");
-					String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-					String username="root";
-					String password="root";
-					String query="select * from painting";
-					
-					Connection conn=DriverManager.getConnection(url, username, password);
-					Statement stmt=conn.createStatement();
-					ResultSet rs=stmt.executeQuery(query);
-					
-					while(rs.next())
-					{
-			
-			%>
-			
-			
-			
+				
 			<!--Gallery testing  -->
 			
 			<div id="fh5co-main">
-		<div class="container">
+				<div class="container">
+					<div class="row">
+					
+						<div id="fh5co-board" data-columns>
+        				
+	        				<%
+					try
+					{
+						Class.forName("com.mysql.jdbc.Driver");
+						String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+						String username="root";
+						String password="root";
+						
+						
+						Connection conn=DriverManager.getConnection(url, username, password);
+						Statement stmt=conn.createStatement();
+						
+						String query="select * from painting p, artist a WHERE p.a_artist_id = a.artist_id";
+						ResultSet rs=stmt.executeQuery(query);
+						
+						while(rs.next())
+						{
+						%>
 
-			<div class="row">
-
-        <div id="fh5co-board" data-columns>
-
-        	<div class="item">
-        		<div class="animate-box">
+        					<div class="item">
+        						<div class="animate-box"> 
         			
-	        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
-	        		<img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
-        		</div>
-        		<div class="fh5co-desc"><input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
-        		<input type="button" id="cartButton" value="ADD TO CART"><h4>Nature</h4></div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/img_23.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Black and white</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/img_3.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc"> Abstract</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/img_4.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc">Colour Pencils</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="images/img_5.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc"></div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/img_6.jpg" class="image-popup fh5co-board-img"><img src="images/img_6.jpg" alt="Free HTML5 Bootstrap template"></a>
-	        		<div class="fh5co-desc"></div>
-        		</div>
-        	</div>
-        	
-        	</div>
-        </div>
-       </div>
-	</div>
-			
-			
-			<%-- 
-						<tr>
-						<td><%=rs.getInt("painting_id") %></td>
-						<td><%=rs.getString("title") %></td>
-						<td><%=rs.getString("description") %></td>
-						<td><%=rs.getString("price") %></td>
-						<td><%=rs.getDate("drawn_date") %></td>
-						<td><%=rs.getString("category") %></td>
-						<td><%=rs.getDouble("weight") %></td>
-						<td><%=rs.getDouble("length") %></td>
-						<td><%=rs.getDouble("width") %></td>
-						<td><%=rs.getString("image_url") %></td>
-						<td><%=rs.getString("material") %></td>
-						<td><%=rs.getString("in_stock") %></td>
-						<td><%=rs.getString("frame") %></td>
-						<td><%=rs.getInt("a_artist_id") %></td>
-						<td><%=rs.getInt("c_cart_id") %></td>
-						
-						<td>
-							<input type="button" id="negotiateButton" value="NEGOTIATE PRICE" onclick="location.href='negoNavServlet'">
-						</td>
-						<td><input type="button" id="cartButton" value="ADD TO CART"></td>
-						</tr>
-						
-			 --%>
-			 <%
-			
-					}
-			%>
-		</table>
-		<%
-			rs.close();
-			stmt.close();
-			conn.close();
-			}
-			catch(Exception e)
-			{
-			e.printStackTrace();
-			}
+					        		<a href="images/<%=rs.getString("image_url") %>" class="image-popup fh5co-board-img" title="<%=rs.getString("title") %>">
+					        		<%-- title="<%=rs.getString("title") %>" --%>
+					        		
+					        		<img src="images/<%=rs.getString("image_url") %>" alt="Free HTML5 Bootstrap template"></a>
+					        		
+					        		<!-- VIEW MORE DETAILS -->
+					        		<a target="_blank" href="Gallery_singlePainting_Details.jsp?painting_id=<%= rs.getInt("painting_id")%>&artistName=<%=rs.getString("a.name")%>&cusUsername=${cusUsername}" style = "text-align:right; margin: 5px 10px 5px 5px;"> View more details </a>
+					        		
+        						</div>
+        						<div class="fh5co-desc">  		
+					        		<h3><b><%=rs.getString("title") %></b></h3>
+					        		<h6>by <%=rs.getString("a.name") %></h6>
+					        		
+					        		<%if(rs.getString("price").equals("Negotiate Price")){ %>
+					        	
+						        		<button class="btnNC" onclick="location.href='negoNavServlet?painting_id=<%= rs.getInt("painting_id")%>'">
+						        			<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet?painting_id=<%= rs.getInt("painting_id")%>'" data-title="NEGOTIATE PRICE"> NEGOTIATE
+						        		</button>
+
+					        		
+					        		<% } 
+					        		else
+					        		{ %> 
+					        		
+					        			<h5><b>Rs. <%=rs.getString("price") %>.00</b></h5>
+					        			
+					        			<!-- <input type="button" id="cartButton" value="ADD TO CART"> -->
+						        		
+						        		
+						        		<form action="addCart" method="post" >
+                            		<input type="hidden" name="id" id="id" value="<%=rs.getInt("painting_id") %>" />
+		                    		    <input type="number" class="form-control" style="width:30%" name="quantity" id="quantity" min="1" max="5" required>
+		                    		    <br>
+		                    		    <button class="btnNC" type="submit">
+						        		        <img alt="Cart Icon" src="images/cart-plus.svg" width="25px" title="ADD TO CART"> ADD TO CART
+						        		        </button>
+		                        </form>
+					        		
+					        		<%} %>
+					        	</div>
+        					</div>
+        					
+        					<%
+					} //WHILE ends
+				
+				rs.close();
+				stmt.close();
+				conn.close();
+				}
+				catch(Exception e)
+				{
+				e.printStackTrace();
+				}
 		%>
-	</form>
+        					
+        					
+        				</div>
+        			</div>
+      	 		</div>
+			</div>
+			
+			
 	
+<!-- <script type="text/javascript" href="js/frontpage.js"></script>	 -->
+<script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
 	
-<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
-<script type="text/javascript" src="./js/script.js"></script>
-
-
-	jQuery
-	<script src="js/jquery.min.js"></script>
-	jQuery Easing
-	<script src="js/jquery.easing.1.3.js"></script>
-	Bootstrap
-	<script src="js/bootstrap.min.js"></script>
-	Waypoints
-	<script src="js/jquery.waypoints.min.js"></script>
-	Magnific Popup
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	Salvattore
-	<script src="js/salvattore.min.js"></script>
-	Main JS
-	<script src="js/main1.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/salvattore.min.js"></script>
+<script src="js/main1.js"></script>
 
 
 </body>

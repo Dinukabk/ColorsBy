@@ -12,10 +12,112 @@
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/req2.css">
 <link type="text/css" rel="stylesheet" href="../css/frontpage.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Special Request list</title>
+<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+$('#search-input').on('keyup',function(){
+	var value = $(this).val()
+	console.log('Value:',value)
+})
+
+</script>
+
+<style>
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+</style>
+
 </head>
 <body>
+
+	<!-- Navbar -->
+	<div class="container" style="height: 132px;">
+		<header class="header" class="py-5 mt-5">
+			<nav class="navbar navbar-expand-lg fixed-top py-3">
+				<div class="container">
+					<img alt="logo" src="./pictures/Logo.png" width="100" height="100">
+					<button type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation"
+						class="navbar-toggler navbar-toggler-right">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<div id="navbarSupportedContent" class="collapse navbar-collapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Home <span
+									class="sr-only"></span></a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">About</a></li>
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
+								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
+							<li class="nav-item"><a href="../Payments/payment.jsp"
+								class="nav-link text-uppercase font-weight-bold">${artistUserName}</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
+
 	<h1>Special Requests</h1><br>
+	
+	<input type="button" class="btn btn-secondary" name="report" value="Generate Report" onclick="location.href='Request_PDF_Generate.jsp?artistUserID=${artistUserID}'">
+	
+	<div class="topnav">
+	<div class="search-container">
+    <form action="#" method="post">
+      <input type="text" id="search-input" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  </div>
 	
 	<table border="1">
 	
@@ -33,11 +135,24 @@
 		<th>City</th>
 		<th>Country</th>
 		<th>Customer ID</th>
-		<th>Artist Name</th>
+		
 		<th></th>
 	</tr>
 	
 	<c:forEach var="req" items="${reqList}">
+	
+	<c:set var="request_id" value="${req.request_id}"/>
+	<c:set var="name" value="${req.name}"/>
+	<c:set var="phone" value="${req.phone}"/>
+	<c:set var="email" value="${req.email}"/>
+	<c:set var="message" value="${req.message}"/>
+	<c:set var="photograph" value="${req.photograph}"/>
+	<c:set var="add_line_01" value="${req.add_line_01}"/>
+	<c:set var="add_line_02" value="${req.add_line_02}"/>
+	<c:set var="postal_code" value="${req.postal_code}"/>
+	<c:set var="province" value="${req.province}"/>
+	<c:set var="city" value="${req.city}"/>
+	<c:set var="country" value="${req.country}"/>
 		
 	<tr>
 		<td>${req.request_id}</td>
@@ -45,7 +160,7 @@
 		<td>${req.phone}</td>
 		<td>${req.email}</td>
 		<td>${req.message}</td>
-		<td>${req.photograph}</td>
+		<td><img src="images/${req.photograph}" width="100px" height="100px"/></td>
 		<td>${req.add_line_01}</td>
 		<td>${req.add_line_02}</td>
 		<td>${req.postal_code}</td>
@@ -53,17 +168,38 @@
 		<td>${req.city}</td>
 		<td>${req.country}</td>
 		<td>${req.c_customer_id}</td>
-		<td>${req.artist_name}</td>
+		<%-- <td>${req.artist_name}</td> --%>
 		
 		<td>
-			<input type="button" name="accept" value="Accept">
-			<input type="button" name="reject" value="Reject">
+		
+			<c:url value="acceptSpecialReq.jsp" var="prAccept">
+				<c:param name="request_id" value="${request_id}"/>
+				<c:param name="name" value="${name}"/>
+				<c:param name="phone" value="${phone}"/>
+				<c:param name="email" value="${email}"/>
+				<c:param name="message" value="${message}"/>
+				<c:param name="photograph" value="${photograph}"/>
+				<c:param name="add_line_01" value="${add_line_01}"/>
+				<c:param name="add_line_02" value="${add_line_02}"/>
+				<c:param name="postal_code" value="${postal_code}"/>
+				<c:param name="province" value="${province}"/>
+				<c:param name="city" value="${city}"/>
+				<c:param name="country" value="${country}"/>
+			</c:url>
+			
+			<a href="${prAccept}">
+			<input type="button" class="btn btn-secondary" id="acceptSpecialArt" name="accept" value="Accept">
+			</a>
 			
 		</td>
 	</tr>	
 	
 	</c:forEach>
 	</table>
+	
+    <!-- <input type="button" name="report" value="Generate Report" onclick="location.href='PDFrequestServlet'">  -->
+	<!-- <a location.href="PDFrequestServlet" download="Request.pdf">Download</a> -->
+	<!-- <input type="button" value="test" id="testBtn" onclick="myFunction()"> -->
 
 <style>
 $font-family:   "Roboto";

@@ -188,7 +188,7 @@
 	<div class="main">
 	<form action="updateEvent" method="post">
 		<div class="inname">
-		<h4>ID	</h4>							<input type="text" name="ID" placeholder="ID" value="5" readonly><br>
+		<h4>ID	</h4>							<input type="text" name="ID" placeholder="ID" value="<%=id%>" readonly><br>
 		</div>
 		
 		
@@ -213,13 +213,16 @@
 	 	
 	 	
 	 	<div class="inad">
-	 	<h4>AdminID	</h4>						<input type="number" name="UadminID" placeholder="Enter admin ID" value="1" readonly ><br>
+	 	<h4>AdminID	</h4>						<input type="number" name="UadminID" placeholder="Enter admin ID" value="<%=adminID%>" readonly ><br>
 	 	</div>
 	 	
+	 	
+	 	<center>
+	 	<input type="submit" name="UsubmitEvent" value="Update Event"><br>
+	 	</center>
 	
 	
 	</form>
-	
 	<div class="submit">
 	<a href="success.jsp">
 	 	<input type="submit" name="UsubmitEvent" value="Update Event">
