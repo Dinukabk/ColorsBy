@@ -19,12 +19,23 @@ public class negoNavServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//getting painting id
+		int painting_id =Integer.parseInt(request.getParameter("painting_id"));
+		System.out.println("painting id "+painting_id);
 		
 		// Get session
 				HttpSession session = request.getSession(false);
+				
+				if (session != null) { // If a session exists			
+					int userID = (int) session.getAttribute("userID");
+					request.setAttribute("userID", userID);
+					
+					String cusUsername = RequestDBUtil.getUserName(userID);
+					request.setAttribute("cusUsername", cusUsername);
 
-				if (session.getAttribute("userID") != null) {
+				//if (session.getAttribute("userID") != null) {
 					System.out.println("No user ID Detected in session...");
 					RequestDispatcher RD = request.getRequestDispatcher("NegotiatePrice.jsp");
 					RD.forward(request, response);

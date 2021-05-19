@@ -113,7 +113,7 @@
 					<td>
 					</td>
 					<td>
-						<button type="submit" class="btn btn-primary">Pay now</button>
+						<button type="submit" class="btn btn-primary">Save Card</button>
 					</td>
 				</tr>
 			</table>

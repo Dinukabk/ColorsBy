@@ -32,7 +32,7 @@ public class AddCustomer extends HttpServlet {
 		
 		boolean isTrue;
 		
-		isTrue = CustomerDbUtill.UpdateCustomer(fname, UserName, Password, pNumber, Address1, Address2, pCode, Province, City, Country, Password);
+		isTrue = CustomerDbUtill.insertcustomer(fname, UserName, Password, pNumber, Address1, Address2, pCode, Province, City, Country);
 		
 		if(isTrue == true) {
 			

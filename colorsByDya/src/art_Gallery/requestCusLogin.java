@@ -23,6 +23,9 @@ public class requestCusLogin extends HttpServlet {
 		int userID = (int) session.getAttribute("userID");
 		System.out.println("UserID in custLogin: " + userID);
 		
+		String cusUsername = RequestDBUtil.getUserName(userID);
+		request.setAttribute("cusUsername", cusUsername);
+		
 		try {
 			 List<Request> reqCusList = RequestDBUtil.validateCus(userID);
 			 request.setAttribute("reqCusList", reqCusList);

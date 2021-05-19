@@ -1,6 +1,7 @@
 package art_Gallery;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,10 +27,11 @@ public class PaymentAddCardFormServlet extends HttpServlet {
 		if (saveCard != null) { // If save card checkBox is ticked...
 			Boolean querySuccess = PaymentsDatabaseUtil.addPaymentCard(userID, cardNumber, nameOnCard, expDate, CVV, saveCard);
 			if (querySuccess == true) { // If query executed correctly
-				request.setAttribute("cardNumber", cardNumber);
-				request.setAttribute("nameOnCard", nameOnCard);
-				request.setAttribute("expDate", expDate);
-				request.setAttribute("CVV", CVV);
+				PaymentsDatabaseUtil.getCardDetails(userID);
+				request.setAttribute("cardNo", PaymentsDatabaseUtil.getCardNo());
+				request.setAttribute("nameOnCard", PaymentsDatabaseUtil.getNameOnCard());
+				request.setAttribute("expDate", PaymentsDatabaseUtil.getExpDate());
+				request.setAttribute("cvv", PaymentsDatabaseUtil.getCVV());
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 				RD.forward(request, response);
 			} else { // Display error message if query not successful...

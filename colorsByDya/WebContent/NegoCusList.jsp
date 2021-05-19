@@ -38,7 +38,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
+								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -51,8 +51,6 @@
 	
 	<tr>
 		<th>Negotiate ID</th>
-		<th>Customer Name</th>
-		<th>Phone Number</th>
 		<th>Title</th>
 		<th>Painting</th>
 		<th>Price</th>
@@ -62,12 +60,11 @@
 	
 	<tr>
 		<td>${nego.price_req_id}</td>
-		<td>${nego.full_name}</td>
-		<td>${nego.phone_no}</td>
+		<%-- <td>${nego.full_name}</td> --%>
 		<td>${nego.title}</td>
-		<td>${nego.image_url}</td>
+		<td><img src="images/${nego.image_url}" width="100px" height="100px"/></td>
 		<td>${nego.message}</td>
-		<td><input type="button" name="cart" value="Add to Cart"></td>
+		<td><input type="button" class="btn btn-secondary" name="cart" value="Add to Cart"></td>
 	</tr>
 	</c:forEach>
 	</table>
