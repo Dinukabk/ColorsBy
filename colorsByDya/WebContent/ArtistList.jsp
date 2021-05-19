@@ -18,6 +18,28 @@
 	</style>
 </head>
 <body>
+	<div class="navbar">
+        <a href="index.jsp">Home</a>
+        <a href="About_us.jsp">About Us</a>
+        <a href="My_profile.jsp">My Profile</a>
+        <a href="Exhibition.jsp">Exhibitions</a>
+        <a href="gallery_option.jsp">Gallery options</a>
+        <a onclick="location.href = 'Servlet_GalleryLogin'">Artwork</a>
+        <a onclick="location.href = 'Servlet_AddPainting'">Upload Painting</a>
+        <a onclick="location.href = 'requestLoginServlet'">Special Requests</a>
+        <a onclick="location.href = 'NegoLoginServlet'">Negotiate Price Requests</a>
+        <a href="frontpage.jsp">Logout</a>
+        <a href="#" class="navbar1">
+            <% HttpSession httpSession=request.getSession();
+                                      String id = request.getParameter("email");
+                                      httpSession.setAttribute("login1",id );
+                                      out.println("hii "+httpSession.getAttribute("login1"));
+                                      String a = (String)httpSession.getAttribute("login1");
+     
+     
+      %>
+        </a>
+    </div>
 
 	<table>
 	<c:forEach var="art" items="${artDetails}">
