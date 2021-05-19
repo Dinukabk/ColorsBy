@@ -103,9 +103,12 @@
   		<h2> Otherwise request may be rejected</h2>
   </center>
   </div><br><br>
+  
+  		<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 		
 		<center>
-		<img src="images/<%=rs.getString("image_url")%>" width="200px" height="auto" >
+		<h3><%=rs.getString("title")%></h3><br>
+		<img src="images/<%=rs.getString("image_url")%>" width="200px" height="auto" ><br><br>
 		</center>
 		
 		<%
@@ -121,14 +124,7 @@
 		e.printStackTrace();
 		}
 		%> 
-  
-  
-  <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-  <center>
-  <div>
-  <!-- painting retrieve -->
-  <!-- <img src="images/deepthi_02.JPG" alt="Negotiate paint" width="300px" hight="300px"> -->
-  </div></center><br><br>
+
   
   <div>
   	<form name="negoForm" action="negoInsert" method="post" onsubmit="return validateForm()">
