@@ -98,11 +98,9 @@
 		%>
 		
 		<div class="contact-in">
-  <center>
-  		<h3>We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
-  		<h2> Otherwise request may be rejected</h2>
-  </center>
-  </div><br><br>
+	  		<h3 style="text-align:center">We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
+	  		<h2 style="text-align:center"> Otherwise request may be rejected</h2>
+  		</div><br><br>
   
   		<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 		
