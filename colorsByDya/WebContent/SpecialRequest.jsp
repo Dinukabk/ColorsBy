@@ -87,7 +87,7 @@
       <div class="contact-form"><br>
         <h3>Phone Number</h3>
         <p><i>Mr Deepthi Wijewardana:</i><br><b>071 4727470</b></p>
-        <p><i>Mr Lahuru Wijewardana:</i><br><b>071 4276146</b></p><br><br>
+        <p><i>Mr Lahiru Wijewardana:</i><br><b>071 4276146</b></p><br><br>
         <h3>Address</h3>
         <p>6/98,<br>Lake Road,<br>Wickramasinheapura,<br>Baththaramulla,</p><br><br>
         <div class="wrapper">
