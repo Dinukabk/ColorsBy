@@ -86,7 +86,7 @@
 	<div class="myDiv7">
 	<h2 aling ="center">Confirm The Details Required For Delivery </h2> <br>
 	<table>
-	<form action="Deliveyinsert" method ="post" onsubmit="return InsertValidation()">
+	<form action="DeliveryInsert" method ="post" onsubmit="return InsertValidation()">
 	
 	<tr>
 		<td>Full Name</td> 
