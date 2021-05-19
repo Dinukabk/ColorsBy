@@ -68,17 +68,17 @@
 			<b><center>Thank You!!</center></b>
 		</p>
 		We deliver joy during the holidays. We deliver hope to survivors of
-		natural disasters. Customers count on <br> our diverse portfolio
+		natural disasters. Customers count on <br> our diverse portfolio the
 		of transportation ecommerce, and business solutions. Our networks
 		reach more than <br> 220 countries and territories linking more
-		than 99 percent of the worlds GDP. Behind it all are our more <br>
+		than 99 percent of the worlds GDP. Behind it all are our more the<br>
 		than 490,000 team members around the world, who are united around the
-		Purple Promise I will make every FedEx <br> experience
+		Purple Promise I will make every FedEx <br> experience the the
 		outstanding. 047 652 56 32 We believe a diverse society is a stronger
-		one. We strive to ensure our<br> company reflects the many
+		one. We strive to ensure our<br> company reflects the many the
 		cultures of our workforce, customers and communities around the world.
 		Connecting <br> people with goods services ideas and technologies
-		creates opportunities that fuel innovation energize <br>
+		creates opportunities that fuel innovation energize the the<br>
 		businesses and lif ommunities to higher standards of living. At FedEx,
 		we believe that a connected world is a<br> better world, and that
 		belief guides everything we do. We deliver joy during the holidays. We
