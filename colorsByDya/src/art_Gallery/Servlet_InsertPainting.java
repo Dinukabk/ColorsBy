@@ -74,13 +74,15 @@ public class Servlet_InsertPainting extends HttpServlet {
 		 //String in_stock = request.getParameter();
 		 
 		 String frame = request.getParameter("artworkFrame");
-		// String a_artist_id = request.getParameter("artworkFrame");
+		 int artistUserID = Integer.parseInt(request.getParameter("artistUserID"));
+		 
+		 //String a_artist_id = request.getParameter("a_artist_id");
 		// String c_cart_id = request.getParameter("artworkFrame");
 		 
 		 
 		 boolean insertSuccess;
 		 
-		insertSuccess = PaintingDBUtil.insertPainting(title, description, price, drawn_date, category, weight, length, width, image_url, material, frame);
+		insertSuccess = PaintingDBUtil.insertPainting(title, description, price, drawn_date, category, weight, length, width, image_url, material, frame, artistUserID);
 		 
 		 if(insertSuccess == true) {
 			 RequestDispatcher dispatchSuccess = request.getRequestDispatcher("Artist.jsp");

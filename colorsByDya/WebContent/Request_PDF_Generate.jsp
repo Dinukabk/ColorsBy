@@ -1,17 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Negotiate List - Colors by Diyaa</title>
+<title>PDF report of Requests</title>
 <link rel="stylesheet" href="css/frontpage.css">
+
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/home.css">
+
+<!-- jQuery library -->
+<script src="js/jquery.min.js"></script>
+
+<!-- jsPDF library -->
+<script type="text/javascript" src="https://unpkg.com/jspdf@1.5.3/dist/jspdf.min.js"></script>
+
+<!-- <script src="js/jsPDF/dist/jspdf.min.js"></script> -->
+
+<script type="text/javascript">
+
+	function generate_PDF(){
+		
+		var doc = new jsPDF();
+		var elementHTML = $('#content').html();
+		
+		var specialElementHandlers = {
+		    '#elementH': function (element, renderer) {
+		        return true;
+		    }
+		};
+		doc.fromHTML(elementHTML, 15, 15, {
+		    'width': 170,
+		    'elementHandlers': specialElementHandlers
+		});
+
+		// Save the PDF
+		doc.save('Requests.pdf');
+		
+	}
+</script>
+
 </head>
 <body>
+
 	<!-- Navbar -->
 	<div class="container" style="height: 132px;">
 		<header class="header" class="py-5 mt-5">
@@ -46,33 +79,148 @@
 		</header>
 	</div>
 
-	<table border="1">
+	<br><br>
+	<button onclick="generate_PDF();" class="btn btn-secondary">Download Report</button>
 	
 	
-	<tr>
-		<th>Negotiate ID</th>
-		<th>Title</th>
-		<th>Painting</th>
-		<th>Price</th>
-		<th></th>
-	</tr>
-	<c:forEach var="nego" items="${negoCusList}">
+
+	<%@ page import="java.sql.ResultSet" %>
+	<%@ page import="java.sql.Statement" %>
+	<%@ page import="java.sql.Connection" %>
+	<%@ page import="java.sql.DriverManager" %>
 	
-	<tr>
-		<td>${nego.price_req_id}</td>
-		<%-- <td>${nego.full_name}</td> --%>
-		<td>${nego.title}</td>
-		<td><img src="images/${nego.image_url}" width="100px" height="100px"/></td>
-		<td>${nego.message}</td>
-		<td><input type="button" class="btn btn-secondary" name="cart" value="Add to Cart"></td>
-	</tr>
-	</c:forEach>
-	</table>
+	<div id="content">
+	
+		<h1>Accepted Requests Report</h1>	
+	
+	<%
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			String url="jdbc:mysql://localhost:3306/colorbydiyaa";
+			String username="root";
+			String password="root";
+			//String query="select * from painting";
+			
+			Connection conn=DriverManager.getConnection(url, username, password);
+			Statement stmt=conn.createStatement();
+			
+			//counting all requests
+			String sql_1 = "SELECT COUNT(*) AS RCount from special_request where artist_name=3";
+			ResultSet rs1 = stmt.executeQuery(sql_1);
+			
+			if(rs1.next()) {
+				double count = rs1.getInt("RCount");
+				System.out.println(count);
+				//listR.add(new ListItem("No of Requests : " + count));
+			}
+			
+	%>	
+	
+	<h3>No of Requests : <%=rs1.getInt("RCount")%></h3>
+	<%-- <h3><%=rs1.getInt("RCount")%></h3> --%>
+	
+	<%
+	//counting accepted requests
+	String sql_2 = "SELECT COUNT(*) AS RCountA from special_request where artist_name=3 AND accept=1";
+	ResultSet rs2 = stmt.executeQuery(sql_2);
+	
+	if(rs2.next()) {
+		double acceptCount = rs2.getInt("RCountA");
+		//listR.add(new ListItem("No of Accepted Requests : " + acceptCount));
+		
+	} 
+	%>
+	
+	
+	<h3>No of Accepted Requests : <%=rs2.getInt("RCountA")%></h3>
+	
+	
+	<%-- <h3><%=rs2.getInt("RCountA")%></h3> --%>
+	<h2>List of Accepted Requests</h2>
+	
+			<table>
+				<tr>
+					<th>Request ID</th>
+					<th>Customer</th>
+					<th>Phone Number</th>
+					<th>Message</th>					
+				</tr>	
+	
+			
+	<%
+			
+			String query="select sr.request_id,sr.name,sr.phone,sr.message FROM special_request sr, artist a WHERE sr.artist_name=a.artist_id AND a.artist_id=3 AND sr.accept=1";
+						
+			
+			ResultSet rs=stmt.executeQuery(query);
+			
+			while(rs.next())
+			{
+	
+	%>
+	
+		<!-- <div id="content">
+			<table>
+				<tr>
+					<th>Painting ID</th>
+					<th>Title</th>
+					<th>Category</th>
+					<th>Sold-Out</th>					
+				</tr> -->
+				<tr>
+					<td><%=rs.getInt("request_id") %></td>
+					<td><%=rs.getString("name") %></td>
+					<td><%=rs.getInt("phone") %></td>
+					<td><%=rs.getString("message") %></td>
+				<!-- </tr>
+			</table>
+		
+		</div> -->
+	
+	<%-- <%double perc = (rs2.getInt("RCountA")*100.0)/rs1.getInt("RCount"); %> --%>
+        					
+        <%
+			} //end of while
+				
+		/* double perc = (rs2.getInt("RCountA")*100.0)/rs1.getInt("RCount"); */ %>
+		
+		
+		<% 
+			rs.close();
+			stmt.close();
+			conn.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		%>
+		
+			</tr>
+		</table>
+		<%-- <h3>No of Accepted Percentage : <%=perc%></h3> --%>
+	</div>
+	
+	<div id="elementH"></div>
+<!-- 
+	<button onclick="generate_PDF();">Download Report</button>
+
+	 <div id="content">
+		<h1> Artwork Report</h1>
+		<p>
+			Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia
+		</p>
+	</div>  -->
+	
+	
+	
+	<%System.out.println("Read upto here..."); %>
 	
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
 	
-<style>
+	<style>
 $font-family:   "Roboto";
 $font-size:     14px;
 
@@ -211,7 +359,7 @@ body {
 .container {
     max-width: 540px;
 }
-</style>	
+</style>
 
 </body>
 </html>

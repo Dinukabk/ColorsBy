@@ -87,7 +87,7 @@
 		<td>${nego.full_name}</td>
 		<td>${nego.phone_no}</td>
 		<td>${nego.title}</td>
-		<td>${nego.image_url}</td>
+		<td><img src="images/${nego.image_url}" width="100px" height="100px"/></td>
 		<td>${nego.message}</td>
 		<td>
 		
@@ -103,10 +103,9 @@
 		
 		
 		<a href="${negoAccept}">
-		<input type="button" name="accept" value="Accept">
+		<input type="button" class="btn btn-secondary" name="accept" value="Accept">
 		</a>
 		
-		<input type="button" name="reject" onclick="location.href='NegoRejectServlet?'" value="Reject">
 		</td>
 	</tr>
 

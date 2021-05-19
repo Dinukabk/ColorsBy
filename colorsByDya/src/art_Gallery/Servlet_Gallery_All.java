@@ -24,19 +24,26 @@ public class Servlet_Gallery_All extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		// Get session
 		HttpSession session = request.getSession(false);
+		
+		if (session != null) {
+			int userID = (int) session.getAttribute("userID");
 
-		 if (session.getAttribute("userID") != null) {
-		System.out.println("No user ID Detected in session...");
-		RequestDispatcher RD = request.getRequestDispatcher("Gallery_All_Logged.jsp");
-		RD.forward(request, response);
-		} else {
-		System.out.println("User ID detected in the session...");
-		RequestDispatcher RD = request.getRequestDispatcher("Gallery_All.jsp");
-		RD.forward(request, response);
+		 //if (session.getAttribute("userID") != null) {
+			 String cusUsername = PaintingDBUtil.getUserName(userID);
+			 request.setAttribute("cusUsername", cusUsername);
+			 
+			 System.out.println("No user ID Detected in session...");
+			 RequestDispatcher RD = request.getRequestDispatcher("Gallery_All_Logged.jsp");
+			 RD.forward(request, response);
+		} 
+		 else {
+			System.out.println("User ID detected in the session...");
+			RequestDispatcher RD = request.getRequestDispatcher("Gallery_All.jsp");
+			RD.forward(request, response);
 		}
 	}
 

@@ -17,13 +17,28 @@
 
 <script src="js/Request.js"></script>
 <script src="js/request22.js"></script>
-<script src="js/Gallery_JScript.js"></script>
+<script src="js/Gallery_JScript.js"></script> 
 
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
-<link rel="stylesheet" href="css/common.css">
+<!-- <link rel="stylesheet" href="css/common.css"> -->
+
+<script>
+	function phonenumber(phone)
+	{
+	  var phone = /^\d{10}$/;
+	  if((inputtxt.value.match(phone))){
+		 return true;
+	}
+	  else
+	        {
+	        alert("Phone number should contain TEN numbers");
+	        return false;
+	        }
+	}
+</script>
 
 </head>
 <body>
@@ -94,9 +109,10 @@
       </div>
       
    </div>
-   
+   <!-- onsubmit="return validateForm()" -->
+   <!-- enctype="multipart/form-data" -->
    <div>
-      <form name="requestForm" action="insertRequest" method="post" class="specialRForm" onsubmit="return validateForm()" >
+      <form name="requestForm" action="insertRequest" method="post" class="specialRForm" >
       
       <fieldset>
       <legend style="padding:20px 0; font-size:30px;">We like to have a Special Request from you:</legend>
@@ -104,9 +120,9 @@
             <label>Full Name</label><br>
             <input type="text" placeholder="Enter Full Name" name="name" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Name');"><br><br>
             <label>Phone Number</label><br>
-            <input type="number" placeholder="Enter Phone Number" name="phone" class="SRInput" class="form__input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required oninvalid= "alert('Please enter the Phone Number');"><br><br>
+            <input type="" placeholder="Enter Phone Number" name="phone" class="SRInput" class="form__input" pattern="[0][0-9]{9}" required oninvalid= "alert('Please enter valid Phone Number');" ><br><br>
             <label>Email Address</label><br>
-            <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Email Address');"><br><br>
+            <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Email Address');" title="Enter valid email"><br><br>
             <label>Message</label><br>
             <textarea placeholder="Enter a message" name="message" class="SRInput" class="form__input"></textarea><br><br>
             <label>Upload Your photograph that you want to be drawn</label><br>
@@ -140,7 +156,7 @@
             				//get artist name one by one
             				while(rs.next()){
             					%>
-            					<option><%=rs.getString("name") %></option>
+            					<option name="artist_name"><%=rs.getString("name") %></option>
             					<%
             				}
             				
@@ -152,8 +168,8 @@
             
             
             
-            <input class = "btn btn1" type="reset" name="Reset" value="Reset">
-            <input class = "btn btn2" type="submit" name="submit" value="Send ">
+            <input class="btn btn-secondary" type="reset" name="Reset" value="Reset">
+            <input class="btn btn-secondary" type="submit" name="submit" value="Send ">
             
             </fieldset>
          </form>
@@ -161,8 +177,8 @@
    
    </div>
 	
-	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
-	<script type="text/javascript" src="./js/script.js"></script>
+	<script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 	
 <style>
 $font-family:   "Roboto";

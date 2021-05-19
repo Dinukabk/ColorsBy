@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 //import java.io.InputStream;
 
-
+import javax.mail.MessagingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,6 +40,8 @@ public class RequestServlet extends HttpServlet {
 		String province = request.getParameter("province");
 		String city = request.getParameter("city");
 		String country = request.getParameter("country");
+		String c_customer_id = request.getParameter("1");
+		String artist_name = request.getParameter("artist_name");
 		
 		
 		
@@ -60,16 +62,18 @@ public class RequestServlet extends HttpServlet {
 		
 		boolean isTrue;
 		
-		isTrue = RequestDBUtil.insertSRequest(name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country);
+		isTrue = RequestDBUtil.insertSRequest(name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country,c_customer_id,artist_name);
 		
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("SpecialRequest.jsp");
 			dis.forward(request, response);
-			/*
-			 * System.out.println("<script type=\"text/javascript\">");
-			 * System.out.println("alert('User or password incorrect');");
-			 * System.out.println("</script>");
-			 */
+			
+			try {
+				MailUtil.sendMail("it19971490@my.sliit.lk");
+			} catch (MessagingException e) {
+				
+				e.printStackTrace();
+			}
 		}
 		else {
 			RequestDispatcher dis2 = request.getRequestDispatcher("requestUnsuccess.jsp");
