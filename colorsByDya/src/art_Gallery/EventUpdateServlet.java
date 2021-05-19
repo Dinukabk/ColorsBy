@@ -30,7 +30,7 @@ public class EventUpdateServlet extends HttpServlet {
 		
 		if(isTrue == true)
 		{
-			RequestDispatcher dis = request.getRequestDispatcher("success.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("EventAllRetriv.jsp");
 			dis.forward(request, response);
 		}
 		else

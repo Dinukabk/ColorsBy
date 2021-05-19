@@ -1,14 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+
+<%
+	String driver = "com.mysql.jdbc.Driver";
+	String connectionUrl = "jdbc:mysql://localhost:3306/colorbydiyaa";
+	String userid = "root";
+	String password = "root";
+	
+	try {
+		Class.forName(driver);
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	}
+	
+	Connection connection = null;
+	Statement statement = null;
+	ResultSet resultSet = null;
+%>
+
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Get event details</title>
+<title>Events</title>
 
-</style>
 
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
+
+<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/home.css">
 	
@@ -19,22 +43,52 @@
   	
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  	<script>
-  		$( function() {
-    		$( "#datepicker" ).datepicker();
-  		} );
-  	</script>
-  	
-  	
-  	  	
-	<style type ="text/css">
-		
-	  *{
-		margin:0;
-		padding:0;
+
+
+
+<style>
+	table {
+  		border-collapse: collapse;
+  		width: 100%;
+	}
+
+	th, td {
+  		text-align: left;
+  		padding: 8px;
+	}
+	
+	td {
+  		color: #464866;
+  		font-family: Roboto;
+	}
+
+	th {
+ 		background-color: #7395AE;
+  		color: white;
+	}
+	
+	
+	input {
+  			background: #fff;
+  			color: #525865;
+  			border: 1.2px solid #d1d1d1;							
+  			border-radius: 3px;
+ 			font-family: Roboto;
+  			line-height: 1.5;
+  			width: 350px;
+  			height: 40px;
 		}
-		
-		.topic{
+	
+	.submit{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			padding-top:25px;
+			font-size:16px;
+		}
+	
+	h1{
+			color : white;
+			font-weight : 700;
 			width:800px;
 			background-color:rgb(0,0,0,6);
 			margin:auto;
@@ -44,93 +98,17 @@
 			border-radius:15px 15px 0px 0px:;
 			font-family: Roboto;
 		}
-		
-		
-		
-		.main{
-		
-			/* background-color:; */
-			width:800px;
-			margin:auto;
-			border-radius: 1px;
-  			background-color: #557A95;
-  			padding: 20px;
-  			opacity : 0.7;
-		}
-		
-		form{
-			padding:10px;
-		}
-		
-		h4{
-			color : white;
-			font-weight : 700;
-		}
-		
-		
-		input {
-  			background: #fff;
-  			color: #525865;
-  			border: 1.2px solid #d1d1d1;							
-  			border-radius: 3px;
- 			font-family: Roboto;
-  			line-height: 1.5;
-  			width: 350px;
-  			height: 40px;  			
-		}
-		
-		.inname{
-			padding-left : 220px;
-			padding-bottom : 20px;
-			font-size:16px;
-		}
-		
-		.indate{
-			padding-left : 220px;
-			padding-bottom : 20px;
-			font-size:16px;
-		}
-		
-		
-		.insta{
-			padding-left : 220px;
-			padding-bottom : 20px;
-			font-size:16px;
-		}
-		
-		.des{
-			padding-left : 220px;
-			padding-bottom : 20px;
-			font-size:16px;
-		}
-		
-		.inad{
-			padding-left : 220px;
-			padding-bottom : 20px;
-			font-size:16px;
-		}
-		
-		.submit{
-			padding-left : 220px;
-			padding-bottom : 20px;
-			padding-top:25px;
-			font-size:16px;
-		}
 	
 	
-	
-	
-	</style>
-	
-  	
-  	
-  	
-  	
+</style>
+
+
+
+
 
 </head>
 <body>
 
-<!-- Navbar -->
 	<header class="header" class="py-5 mt-5">
 		<nav class="navbar navbar-expand-lg fixed-top py-3">
 			<div class="container">
@@ -168,31 +146,50 @@
 	</header>
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
+
+
+
+
+
+	<h1>EVENTS</h1>
+	<table>
+	<tr>
+		<th>Event name</th>
+		<th>Event date</th>
+		<th>Description</th>
+	</tr>
 	
 	
-	<div class="topic">
-	<h1>RETRIEVE EVENT</h1>
+	<%
+	try{
+		connection = DriverManager.getConnection(connectionUrl, userid, password);
+		statement=connection.createStatement();
+		String sql ="select * from event";
+		resultSet = statement.executeQuery(sql);
+	while(resultSet.next()){
+	%>
+
+	<tr>
+		<td><%=resultSet.getString("name") %></td>
+		<td><%=resultSet.getString("date") %></td>
+		<td><%=resultSet.getString("description") %></td>
+	</tr>
+
+	<%
+	}
+		connection.close();
+		} 
+	catch (Exception e) {
+		e.printStackTrace();
+		}
+%>
+
+
+</table>
+	<a href="EventDetailsRetri.jsp"
+	<div class="submit">
+		<input type="submit" name="submit" value="Manage events">
 	</div>
 
-	<div class="main">
-	<form action="retrieveEvent" method="post">
-	
-	
-		<div class="inname">
-		<h4>Event name</h4>		 	 <input type = "text" name="EventName" placeholder = "Enter event name"><br>
-		</div>
-		
-		<div class="inname">
-		<h4>AdminID</h4>	 		 <input type = "text" name="AdminID" placeholder = "Enter admin ID"><br>
-		</div>
-		
-		<div class="submit">
-		<input type="submit" name="submit" value="Admin event login">
-		</div>
-	
-	
-	</form>
-
-	</div>
 </body>
 </html>
