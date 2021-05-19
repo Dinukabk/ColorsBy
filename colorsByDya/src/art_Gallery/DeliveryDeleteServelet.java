@@ -18,28 +18,26 @@ import com.mysql.jdbc.Connection;
 @WebServlet("/DeliveryDeleteServelet")
 public class DeliveryDeleteServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
 
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	
-	
-	int fullName = Integer.parseInt(request.getParameter("P_id"));
-	System.out.println(fullName);
-	try {
-	Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa?autoReconnect=true&useSSL=false", "root", "root");
-	PreparedStatement pst = con.prepareStatement(
-			"delete from delivery where p_payment_id = ?");
-	pst.setInt(1, fullName);
-    pst.executeUpdate();
-    RequestDispatcher dis2 = request.getRequestDispatcher("DeliveryHomaPage.jsp");
-	dis2.forward(request, response);
-	}
-	catch(Exception e)
-	{
-		e.printStackTrace();
-	}
-		
-	}
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// create object of DeliveryCustomer
+		int fullName = Integer.parseInt(request.getParameter("P_id"));
+		System.out.println(fullName);
+		try {
+			// get data from database table
+			Connection con = (Connection) DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/colorbydiyaa?autoReconnect=true&useSSL=false", "root", "root");
+			PreparedStatement pst = con.prepareStatement("delete from delivery where p_payment_id = ?");
+			pst.setInt(1, fullName);
+			pst.executeUpdate();
+			RequestDispatcher dis2 = request.getRequestDispatcher("DeliveryHomaPage.jsp");
+			dis2.forward(request, response); //Rederect to the DeliveryHome jsp page
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}//End of doPost bracket
+
 }

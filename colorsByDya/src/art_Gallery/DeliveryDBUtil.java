@@ -81,7 +81,8 @@ public class DeliveryDBUtil {
 			e.printStackTrace();
 		}
 		return isSuccess;
-	}
+	}//End of insertDeliery method
+	
 
 	//Retrieve information from delivery table
 	public static DeliveryCustomer retriveDeliveryInfo(int pid) throws SQLException {
@@ -110,12 +111,12 @@ public class DeliveryDBUtil {
 		}
 
 		return deliveryCustomer;
-	}
+	}//End of retriveDeliveryInfo method
 
 	//update method 
 	public static boolean updatedDeliveryInfo(DeliveryCustomer d) throws SQLException {
 		con = DBConnect.getConnection();
-
+		//Establish the Database connection
 		String updatequery = "UPDATE `colorbydiyaa`.`delivery`\r\n"
 				+ "SET `full_name` = ?,`add_line_01` = ?,`add_line_02` = ?,`postal_code` = ?,`province` = ?,`city` = ?,`country` = ? WHERE `delivery_id` = ?";
 		PreparedStatement preparedStatement = con.prepareStatement(updatequery);
@@ -136,7 +137,6 @@ public class DeliveryDBUtil {
 			return false;
 		}
 
-	}
+	}//End of updatedDeliveryInfo method
 	
-
 }

@@ -5,31 +5,23 @@ import java.sql.DriverManager;
 
 public class DBConnect {
 
-	private static String url ="jdbc:mysql://localhost:3306/colorbydiyaa";
+	private static String url = "jdbc:mysql://localhost:3306/colorbydiyaa";
 	private static String user = "root";
 	private static String pass = "root";
 	private static Connection con;
-	
-	//String url = "jdbc:mysql://localhost:3306/colorbydiyaa";
-	//String user = "root";
-	//String pass = "root";
-	
-	
+
 	public static Connection getConnection() {
-		
+
 		try {
-			
+
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url, user, pass);
-			
-			
-			
-		}
-		catch(Exception e) {
+
+		} catch (Exception e) {
 			System.out.println("Database connection is Not sucsess!!");
 		}
-		
+
 		return con;
 	}
-		
+
 }
