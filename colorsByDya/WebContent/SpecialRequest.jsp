@@ -122,7 +122,7 @@
    <!-- onsubmit="return validateForm()" -->
    <!-- enctype="multipart/form-data" -->
    <div>
-      <form name="requestForm" action="insertRequest" method="post" class="specialRForm" >
+      <form name="requestForm" action="RequestServlet" method="post" class="specialRForm" >
       
       <fieldset>
       <legend style="padding:20px 0; font-size:30px;">We like to have a Special Request from you:</legend>

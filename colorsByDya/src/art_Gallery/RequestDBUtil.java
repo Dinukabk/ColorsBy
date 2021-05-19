@@ -170,7 +170,7 @@ public class RequestDBUtil {
 	public static boolean insertSRequest(String name,String phone,String email,String message,String photograph,
 			String add_line_01,String add_line_02,String postal_code,String province,String city,String country,int userID,String artist_name_list) {
 		
-		int artName=3;
+		int artName=201;
 		System.out.println(artist_name_list);
 		boolean isSuccess = false;
 		//String UIDConverted = Integer.toString(userID);
