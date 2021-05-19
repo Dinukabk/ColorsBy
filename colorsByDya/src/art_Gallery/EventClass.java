@@ -1,7 +1,5 @@
 package art_Gallery;
 
-import java.util.Date;
-
 public class EventClass {
 	private int id;
 	private String name;
