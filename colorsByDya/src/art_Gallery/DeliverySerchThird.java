@@ -57,7 +57,7 @@ public class DeliverySerchThird extends HttpServlet {
 			out.println("<style>");
 			out.println("body {");
 			
-			out.println("background-image: url('./DelivryImages/1a.jpg');");
+			out.println("background-image: url('./DelivryImages/9a.jpg');");
 			out.println("background-image:./DelivryImages/9a.jpg;");
 			out.println("background-repeat: no-repeat;");
 			out.println("background-size: cover;");
