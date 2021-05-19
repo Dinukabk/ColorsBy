@@ -38,8 +38,6 @@ public class DeliverySerchThird extends HttpServlet {
 			pst.setString(1, name);
 			rs = pst.executeQuery();
 			
-			
-			
 			out.println("<style>");
 			out.println("tr {");
 			out.println("color:black;");
@@ -54,19 +52,15 @@ public class DeliverySerchThird extends HttpServlet {
 			out.println("<br>");
 			out.println("<br>");
 			out.println("<br>");
-
 			
 			out.println("<style>");
 			out.println("body {");
-			
 			out.println("background-image: url('./DelivryImages/9aa.jpg');");
 			out.println("background-image:./DelivryImages/9a.jpg;");
 			out.println("background-repeat: no-repeat;");
 			out.println("background-size: cover;");
 			out.println("}");
 			out.println("</style>");
-			
-			
 			
 			out.println("<center> <h2> Results of Relavent Province </h2></center>");
 			out.println("<br>");

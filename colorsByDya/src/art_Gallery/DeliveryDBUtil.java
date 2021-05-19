@@ -12,7 +12,7 @@ import com.ibm.db2.jcc.a.d;
 
 public class DeliveryDBUtil {
 
-	// second time coding
+	//second time coding
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
