@@ -43,7 +43,7 @@
 <div class="navbar">
   <a href="frontpage.jsp">Home</a>
   <a href="#news">Paintings</a>
-  <a herf="search.jsp">Search</a>
+  <a href="search.jsp">Search</a>
   
 <!-- 
 

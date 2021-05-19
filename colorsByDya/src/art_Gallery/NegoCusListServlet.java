@@ -24,6 +24,9 @@ public class NegoCusListServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			int userID = (int) session.getAttribute("userID");
+			
+			String cusUsername = RequestDBUtil.getUserName(userID);
+			request.setAttribute("cusUsername", cusUsername);
 
 			try {
 				List<NegoAll> negoCusList = RequestDBUtil.negotiateCustomerList(userID);

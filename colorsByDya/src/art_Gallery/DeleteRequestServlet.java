@@ -23,7 +23,7 @@ public class DeleteRequestServlet extends HttpServlet {
 		isTrue = RequestDBUtil.deleteRequest(request_id);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("SpecialRequest.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("userDashboard.jsp");
 			dis.forward(request, response);
 		}
 		else {

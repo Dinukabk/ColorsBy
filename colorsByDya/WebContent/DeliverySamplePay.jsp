@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Display Painting Details</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h1>Display Painting Details</h1>
+<!--sample pay ID   -->
+
+
+
+
 </body>
 </html>

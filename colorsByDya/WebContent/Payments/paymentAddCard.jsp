@@ -90,7 +90,7 @@
 						<p class="text-dark h6 text-right">Expiration Date:</p>
 					</td>
 					<td>
-						<input type="number" class="border border-dark bg-light rounded pl-1" name="expDate" placeholder="Expiration Date">
+						<input type="date" class="border border-dark bg-light rounded pl-1" name="expDate" placeholder="Expiration Date">
 					</td>
 				</tr>
 				<tr>
@@ -113,7 +113,7 @@
 					<td>
 					</td>
 					<td>
-						<button type="submit" class="btn btn-primary">Pay now</button>
+						<button type="submit" class="btn btn-primary">Save Card</button>
 					</td>
 				</tr>
 			</table>
