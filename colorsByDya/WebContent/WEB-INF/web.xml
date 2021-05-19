@@ -341,5 +341,44 @@
          	<url-pattern>/delete</url-pattern>
          </servlet-mapping>
 		<!-- gayashanEnd -->
+    
+    <!-- Dev start -->
+      <servlet>
+          <servlet-name>insertEvent</servlet-name>
+          <servlet-class>art_Gallery.EveInsertServlet</servlet-class>
+      </servlet>
+
+      <servlet-mapping>
+          <servlet-name>insertEvent</servlet-name>
+          <url-pattern>/insertEvent</url-pattern>
+      </servlet-mapping>
+ 
+    <servlet>
+        <servlet-name>retrieveEvent</servlet-name>
+        <servlet-class>art_Gallery.EventRetrieve</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>retrieveEvent</servlet-name>
+        <url-pattern>/retrieveEvent</url-pattern>
+    </servlet-mapping>
+ 
+    <servlet>
+        <servlet-name>updateEvent</servlet-name>
+        <servlet-class>art_Gallery.EventUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateEvent</servlet-name>
+        <url-pattern>/updateEvent</url-pattern>
+    </servlet-mapping>
+ 
+    <servlet>
+        <servlet-name>deleteEvent</servlet-name>
+        <servlet-class>art_Gallery.EventDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteEvent</servlet-name>
+        <url-pattern>/deleteEvent</url-pattern>
+    </servlet-mapping>
+    <!-- Devinda End -->
 	</web-app>
 </element>
