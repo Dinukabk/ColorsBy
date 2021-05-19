@@ -185,15 +185,16 @@ public class RequestDBUtil {
 			
 			
 			  try {
-				  System.out.println("inside the try");
+				  System.out.println("inside the try"+artist_name_list);
 				  //artist name  
-				  String query ="select artist_id from artist where name='"+artist_name_list+"'";
-			  
+				  String sql_1 ="select * from artist a where a.name='"+artist_name_list+"'";
 				  //get table data 
-				  ResultSet rs1 = stmt.executeQuery(query);
+				  ResultSet rs1 = stmt.executeQuery(sql_1);
+				  System.out.println("no issue ");
+				  
 				  if(rs1.next()){
-					  artName = rs1.getInt("artist_id"); 
-					  System.out.println("try "+artName); 
+					  int artName_new = rs1.getInt("artist_id"); 
+					  System.out.println("try "+artName_new); 
 					  }//end of if next 
 				  } catch(Exception e) { 
 					  e.printStackTrace(); 
