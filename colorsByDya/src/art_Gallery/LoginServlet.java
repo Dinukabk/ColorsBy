@@ -21,10 +21,18 @@ public class LoginServlet extends HttpServlet {
 		// Getting the user_name and password in the login page
 		String n = request.getParameter("email");
 		String p = request.getParameter("password");
+		
+		try {
+		List<CustomerNew> cusDeatils = CustomerDbUtill.validate(n, p);
+		request.setAttribute("cusDeatils", cusDeatils);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 
 		// The session
-		HttpSession session = request.getSession(false);
-		if (session != null) {
+	HttpSession session = request.getSession(false);
+	if (session != null) {
 			// session.setAttribute("l_id", n);
 			int login = LoginDao.validate(n, p);
 			if (login > 0) {
