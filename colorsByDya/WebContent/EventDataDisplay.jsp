@@ -224,6 +224,12 @@
 		<a href="InsertEvent.jsp">
 		<input type="submit" name="submit" value="Insert an event">
 		</a>
+		
+		<br>
+		
+		<a href="EventGenerateReport.jsp">
+		<input type="submit" name="submit" value="Generate event report">
+		</a>
 
 
 
