@@ -79,7 +79,7 @@
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.2);">
 	
-	<form action="deletepaint" method="post" class="form">
+	<form action="Servlet_deletePainting" method="post" class="form">
 	
 		<div class="form__group">
 			<label>Painting ID</label>

@@ -195,7 +195,7 @@ body {
 
 <div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.2);">
 
-	<form action="insertpaint" method="post" class="form" name="insertForm" onsubmit="return validateForm()">
+	<form action="Servlet_InsertPainting" method="post" class="form" name="insertForm" onsubmit="return validateForm()">
 	<div style="float:;">
 		<div class="form__group">
 			<label>Title</label> 
