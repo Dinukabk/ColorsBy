@@ -30,7 +30,7 @@
 
 					<div id="navbarSupportedContent" class="collapse navbar-collapse">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item active"><a href="#"
+							<li class="nav-item active"><a href="userDashboard.jsp"
 								class="nav-link text-uppercase font-weight-bold">Home <span
 									class="sr-only"></span></a></li>
 							<li class="nav-item"><a href="#"

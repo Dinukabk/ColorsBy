@@ -68,7 +68,7 @@
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-							<li class="nav-item"><a href="../Payments/payment.jsp"
+							<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
 								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>

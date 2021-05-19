@@ -6,9 +6,11 @@
 <!-- Redirect to another page if a session doesn't exist -->
 <meta charset="ISO-8859-1">
 <title>Payment - Colors by Diyaa</title>
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/styles.css">
-<link rel="stylesheet" href="./css/home.css">
+	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/home.css">
 <!-- <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../css/stylesPayment.css"> -->
 </head>
@@ -38,7 +40,7 @@
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-							<li class="nav-item"><a href="../Payments/payment.jsp"
+							<li class="nav-item"><a href="#"
 								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
 						</ul>
 					</div>
@@ -48,16 +50,16 @@
 	</div>
 
 	<!-- Order Summary -->
-	<div class="container p-3 my-2 rounded col-md-4" style="
-			background-color: rgba(255, 255, 255, 0.9); 
+	<div class="container p-3 my-2 rounded col-md-4 form" style="
+			background-color: rgba(255, 255, 255, 0.7); 
 			box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 		">
-		<h3>Order Summary</h3>
+		<p class="h3">Order Summary</p>
 		<dl class="row">
-			<dt class="col-sm-9">Total:</dt>
+			<dt class="col-sm-9 text-dark h6">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
 		</dl>
-		<button type="button" class="btn btn-primary" onclick="location.href = 'PaymentAddCardServlet'">Add payment card</button>
+		<button type="button" class="btn btn-light border border-primary" onclick="location.href = 'PaymentAddCardServlet'">Add payment card</button>
 	</div>
 	
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>

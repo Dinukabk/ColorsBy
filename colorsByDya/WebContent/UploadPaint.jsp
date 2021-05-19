@@ -15,8 +15,6 @@
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/home.css">
 
-<script src="js/Gallery_JScript.js"></script>
-
 <!-- Preview image links -->
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 
@@ -225,7 +223,8 @@ body {
 			<input type="radio" id="artworkRadioFixed" name="radio_price" value="artworkRadioFixed" onclick="ShowHideDiv()">
 			<label for="fixed">Fixed Price</label>
 			
-			<input type="number" class="form__input" style="display: none" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" placeholder="Enter Price of the Artwork here" >
+			<input type="number" class="form__input" style="display: none" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" min="10000" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Enter Price of the Artwork here" >
 					
 					
 		</div>
@@ -239,7 +238,7 @@ body {
 				oninvalid="this.setCustomValidity('Choose a category here')"
 	  			oninput="this.setCustomValidity('')">
 	  			
-				<option value="" disabled selected hidden>Choose a category</option>
+				<option selected="true" disabled="disabled" hidden>Choose a category</option>
 				<option value="Abstract">Abstract</option>
 				<option value="Nature">Nature</option>
 				<option value="Black and White">Black n White</option>
@@ -255,7 +254,7 @@ body {
 		</div>
 		<div>
 			<label>Drawn Date</label>
-			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here" min="1970-01-01" max="2021-05-17"  class="form__input">
+			<input type="date" id="drawnDate" name="drawnDate" placeholder="Enter the Drawn Date here" min="1970-01-01" class="form__input">
 		</div>
 		
 		<div>
@@ -273,16 +272,17 @@ body {
 		<div style="float:;">
 		<div>
 			<label>Length in cm</label>
-			<input type="number"  class="form__input" id="artworkLength" name="artworkLength" placeholder="Enter Length of the Artwork here"> 
+			<!-- step=".01" oninput="validity.valid||(value='');" -->
+			<input type="number"  class="form__input" id="artworkLength" name="artworkLength" min="0" oninput="this.value = Math.abs(this.value)" placeholder="Enter Length of the Artwork here"> 
 		</div>
 		<div>
 			<label>Width in cm</label>
-			<input type="number"  class="form__input" id="artworkWidth" name="artworkWidth" placeholder="Enter Width of the Artwork here">
+			<input type="number"  class="form__input" id="artworkWidth" name="artworkWidth" min="0" oninput="this.value = Math.abs(this.value)" placeholder="Enter Width of the Artwork here">
 		</div>
 		
 		<div>
 			<label>Weight in kg</label>
-			<input type="number"  class="form__input" id="artworkWeight" name="artworkWeight" placeholder="Enter Weight of the Artwork here">
+			<input type="number"  class="form__input" id="artworkWeight" name="artworkWeight" min="0" oninput="this.value = Math.abs(this.value)" placeholder="Enter Weight of the Artwork here">
 		</div>
 		<div>
 			<label>Material</label>
@@ -293,7 +293,7 @@ body {
 			<input type="text"  class="form__input" id="artworkFrame" name="artworkFrame" placeholder="Enter Frame of the Artwork here">
 		</div>
 		
-		<input type="hidden" name="artistUserID" value="${artistUserID}">
+		<input type="hidden" name="artistUserID" value="${artistUserID}"> 
 		
 		</div>
 		
@@ -303,14 +303,37 @@ body {
 </form>
 
 
-
-
-
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
 <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
+
+<script type="text/javascript">
+/**************** RESTRICT FUTURE DATES -- DATE PICKER **************/
+
+/* $(function(){
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var maxDate = year + '-' + month + '-' + day;
+	//var maxDate = dtToday.toISOString().substr(0, 10);
+
+    alert(maxDate);
+    $('#drawnDate').attr('max', maxDate);
+}); */
+</script>
+
+<script src="js/Gallery_JScript.js"></script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 	
 </body>
 </html>

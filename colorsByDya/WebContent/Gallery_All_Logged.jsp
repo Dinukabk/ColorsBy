@@ -52,7 +52,7 @@
 
 					<div id="navbarSupportedContent" class="collapse navbar-collapse" style="font-size:16px">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item active"><a href="#"
+							<li class="nav-item active"><a href="userDashboard.jsp"
 								class="nav-link text-uppercase font-weight-bold">Home <span
 									class="sr-only"></span></a></li>
 							<li class="nav-item"><a href="#"
@@ -69,8 +69,6 @@
 			</nav>
 		</header>
 	</div>
-
-
 <!-- SEARCH BAR  -->
 	<div class="topnav">
 	    <div class="search-container">
@@ -80,7 +78,6 @@
 		    </form>
 	  	</div>
 	 </div>
-	
 	
 	<%@ page import="java.sql.ResultSet" %>
 	<%@ page import="java.sql.Statement" %>
@@ -144,9 +141,17 @@
 					        		
 					        			<h5><b>Rs. <%=rs.getString("price") %>.00</b></h5>
 					        			
-						        		<button class="btnNC" onclick="location.href=' '">
-						        			<img alt="Cart Icon" src="images/cart-plus.svg" width="25px" onclick="location.href=' '" title="ADD TO CART"> ADD TO CART
-						        		</button>
+					        			<!-- <input type="button" id="cartButton" value="ADD TO CART"> -->
+						        		
+						        		
+						        		<form action="addCart" method="post" >
+                            		<input type="hidden" name="id" id="id" value="<%=rs.getInt("painting_id") %>" />
+		                    		    <input type="number" class="form-control" style="width:30%" name="quantity" id="quantity" min="1" max="5" required>
+		                    		    <br>
+		                    		    <button class="btnNC" type="submit">
+						        		        <img alt="Cart Icon" src="images/cart-plus.svg" width="25px" title="ADD TO CART"> ADD TO CART
+						        		        </button>
+		                        </form>
 					        		
 					        		<%} %>
 					        	</div>

@@ -119,7 +119,8 @@
 		</div>
 		<div class="form__group">
 			<label>Category</label>
-			<select name="category" class="form__input" id="category" value="<%= category %>" required oninvalid= "alert('Please choose a category');">
+			<select name="category" class="form__input" id="category" required oninvalid= "alert('Please choose a category');">
+					<option selected="true" disabled="disabled" hidden><%= category %></option>
 					<option value="Abstract">Abstract</option>
 					<option value="Nature">Nature</option>
 					<option value="Black and White">Black n White</option>
