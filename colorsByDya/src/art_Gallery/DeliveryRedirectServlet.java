@@ -13,13 +13,14 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/DeliveryRedirectServlet")
 public class DeliveryRedirectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+
 		HttpSession session = request.getSession(false);
 		int userID = (int) session.getAttribute("userID");
-		
+
 		if (userID > 0) {
 			RequestDispatcher RD = request.getRequestDispatcher("DeliveryInsert.jsp");
 			RD.forward(request, response);

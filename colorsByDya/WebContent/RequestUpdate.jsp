@@ -47,6 +47,8 @@
 			</nav>
 		</header>
 	</div>
+	
+	<h1>Update Request</h1>
 
 	<%
 		String request_id = request.getParameter("request_id");
@@ -67,12 +69,13 @@
 
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	<form action="updateRequest" method="post" class="form">
+	    <%-- <img name="photograph" src="images/<%=photograph%>" width="200px" height="200px"/><br> --%>
 		Request ID <input type="text" name="request_id" value="<%= request_id %>" readonly><br>
 		Name <input type="text" name="name" value="<%= name %>"><br>
 		Phone Number <input type="text" name="phone" value="<%= phone %>"><br>
 		Email Address <input type="text" name="email" value="<%= email %>"><br>
 		Message <input type="text" name="message" value="<%= message %>"><br>
-		Photograph <input type="text" name="photograph" value="<%= photograph %>"><br>
+		Photograph <input type="text" name="photograph" value="<%= photograph %>" readonly><br> 
 		Address line 01 <input type="text" name="add_line_01" value="<%= add_line_01 %>"><br>
 		Address line 02 <input type="text" name="add_line_02" value="<%= add_line_02 %>"><br>
 		Postal code <input type="text" name="postal_code" value="<%= postal_code %>"><br>
@@ -80,11 +83,12 @@
 		City <input type="text" name="city" value="<%= city %>"><br>
 		Country <input type="text" name="country" value="<%= country %>"><br>
 		Customer ID <input type="text" name="c_customer_id" value="<%= c_customer_id %>" readonly><br>
-		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br>
+		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br><br>
 		
-		<input type="submit" name="submit" value="Update Request"><br>
+		<input type="submit" class="btn btn-secondary" name="submit" value="Update Request"><br>
 	</form>
 	</div>
+	
 	
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
