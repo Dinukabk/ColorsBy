@@ -175,8 +175,8 @@
 			    </div>
 			    <div class="single_painitng_price">
 			    	<% if(rs.getString("price").equals("Negotiate Price")){ %>
-		        		<button class="btnNC" style="margin-top:10px;">
-		        			<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet'" data-title="NEGOTIATE PRICE"> NEGOTIATE
+		        		<button class="btnNC" style="margin-top:10px;" onclick="location.href='negoNavServlet?painting_id=<%= rs.getInt("painting_id")%>'">
+		        			<img id="negotiateButton" alt="Negotiate Icon" src="images/negotiate.svg" width="30px" onclick="location.href='negoNavServlet?painting_id=<%= rs.getInt("painting_id")%>'" data-title="NEGOTIATE PRICE"> NEGOTIATE
 		        		</button>
 	        		<% } 
 			    	
