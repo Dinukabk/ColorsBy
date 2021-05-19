@@ -18,6 +18,7 @@ public class PaymentsDatabaseUtil {
 	private static Date expDate;
 	private static int cvv;
 	private static int rsInt = 0;
+	private static int total;
 
 	public static int getCartTotal(int userID) {
 		String UIDConverted = Integer.toString(userID);
@@ -214,6 +215,36 @@ public class PaymentsDatabaseUtil {
 		}
 	}
 	
+	public static int checkCartTotal(int userID) {
+		PreparedStatement pst = null;
+		Connection con = null;
+		try {
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement("SELECT SUM(p.price) FROM cart c, painting p WHERE c.painting_id = p.painting_id AND c.userid = ?;");
+			pst.setInt(1, userID);
+			ResultSet rs = pst.executeQuery();
+			
+			while (rs.next()) {
+				total = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return total;
+	}
+	
+	public static int checkDeliveryMethod(int userID) {
+		PreparedStatement pst = null;
+		Connection con = null;
+		try {
+			con = DatabaseUtilizer.utilizeConnection();
+			pst = con.prepareStatement("");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return 0;
+	}
+	
 	public static int getCardNo() {
 		return cardNo;
 	}
@@ -229,5 +260,6 @@ public class PaymentsDatabaseUtil {
 	public static int getCVV() {
 		return cvv;
 	}
+
 
 }
