@@ -1,91 +1,157 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ page import="java.sql.*"%>
-<%@ page import="java.io.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	
+	<style type="text/css">
+		body{
+			font-family: Hind SemiBold;
+		}
+	
+		table, th, td {
+  			border: 1px solid black;
+		}
+	</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="css/frontpage.css">
-
-<title>artist_info</title>
-
 </head>
 <h1>Colors By Diyaa</h1>
 <body>
 <form action="Customer" method="post">
 <div class="navbar">
-  <a href="#home">Home</a>
-  <a href="Paintings.jsp">Paintings</a>
+  <a href="frontpage.jsp">Home</a>
+  <a href="paintings.jsp">Paintings</a>
   <a href="Exhibition.jsp">Exhibitions</a>
- <a href=""WebContent/css/icomoon.css"frontpage.jsp">Logout</a>
+ <a href="frontpage.jsp">Logout</a>
   </div>
-  <a href="#" class="navbar1"> <% HttpSession httpSession=request.getSession();
-      								out.println("hii "+httpSession.getAttribute("login1"));
- String a = (String) httpSession.getAttribute("login1");%>
-</div>
-<div class="form-style-5">
+  
 
-<br>
-<br>
-<%
-String url = "jdbc:mysql://localhost:3306/";
-String dbName = "art_gallery";
-String driver = "com.mysql.jdbc.Driver";
-String userName = "root";
-String password = "rutuja8079";
-String query= "select * from artist where email = '" + a +"'";
-/* String query2="select * from gallery where g_id in(select * from artist where email = ?)";
-String query3 ="select * from painting where email = ?"; */
+	<table>
+	<c:forEach var="art" items="${artDetails}">
+	
+	<c:set var="artist_id" value="${art.artist_id}"/>
+		<c:set var="name" value="${art.name}"/>
+			<c:set var="phone_no" value="${art.phone_no}"/>
+				<c:set var="email" value="${art.email}"/>
+					<c:set var="description" value="${art.description}"/>
+						<c:set var="add_line_01" value="${art.add_line_02}"/>
+							<c:set var="add_line_02" value="${art.add_line_02}"/>
+								<c:set var="postal_code" value="${art.postal_code}"/>
+									<c:set var="province" value="${art.province}"/>
+										<c:set var="city" value="${art.city}"/>
+											<c:set var="country" value="${art.country}"/>
+												<c:set var="username" value="${art.usernme}"/>
+													<c:set var="password" value="${art.password}"/>
+													<c:set var="a_admin_id" value="${art.a_admin_id}"/>
+														
+															
+	
+	
 
-try {
-    Class.forName(driver).newInstance();
-    Connection conn = DriverManager.getConnection(url + dbName, userName, password);
+	<tr>
+		<td>Artist ID</td>
+		<td>${art.artist_id}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist Name</td>
+		<td>${art.name}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist Phone</td>
+		<td>${art.phone_no}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist Email</td>
+		<td>${art.email}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist Description</td>
+		<td>${art.description}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist Address1</td>
+		<td>${art.add_line_01}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist Address02</td>
+		<td>${art.add_line_02}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist Postal Code</td>
+		<td>${art.postal_code}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist Province</td>
+		<td>${art.province}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist City</td>
+		<td>${art.city}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist Country</td>
+		<td>${art.country}</td>
+	</tr>
+	
+	<tr>
+		<td>Artist UserName</td>
+		<td>${art.username}</td>
+	</tr>
+	
+	<tr>
+		<td>Administration ID</td>
+		<td>${art.a_admin_id}</td>
+	</tr>
 
-    Statement st = conn.createStatement();
-   
-    ResultSet rs = st.executeQuery(query);
-  /*   PreparedStatement p1 = conn.prepareStatement(query2);
-    p1.setString(1, a);
-    PreparedStatement p2 = conn.prepareStatement(query3);
-    p2.setString(1, a);
-    ResultSet rs1 = p1.executeQuery();
-    ResultSet rs2 = p2.executeQuery(); */
-
-    while(rs.next()){
-    	%>
-    	<fieldset>
-<legend><span class="number">1</span> Artist Info</legend>
-<!-- <a href="edit.jsp"> Edit Info</a><br><br> -->
-Id:<input type="text" name="field1" placeholder="Name *" value="<%= rs.getString(1) %>"> 
-email:<input type="text" name="field2" placeholder="Artist ID *" value="<%= rs.getString(2) %>" >
-Name:<input type="text" name="field2" placeholder="State *" value="<%= rs.getString(3) %>" >
-
-State:<input type="text" name="field2" placeholder="city *" value="<%= rs.getString(4) %>" >
-City:<input type="text" name="field2" placeholder="pincode *" value="<%= rs.getString(5) %>" >
-Pincode:<input type="text" name="field2" placeholder="phone no *" value="<%= rs.getString(6) %>" >
-Phone no.:<input type="text" name="field2" placeholder="phone no *" value="<%= rs.getString(7) %>" >
-Gallery:<input type="text" name="field2" placeholder="phone no *" value="<%= rs.getString(8) %>" >
-</select>   
-</fieldset>
-<fieldset>
-<legend><span class="number">2</span> Additional Info</legend>
-<textarea name="field3" placeholder="About Artist"></textarea>
-</fieldset>
-
-    	
-   <%} %>
-   <%rs.close();
-   st.close();
-   conn.close();
-   }
-   catch (Exception e) {
-	   System.out.println(e.getMessage());
-   }
-   %>
-
-
-</div>
-</form>
+	</c:forEach>
+	</table>
+	
+	
+	<c:url value="updateartist.jsp" var="artupdate">
+		<c:param name="artist_id" value="${artist_id}"/>
+		<c:param name="name" value="${name}"/>
+		<c:param name="phone_no" value="${phone_no}"/>
+		<c:param name="email" value="${email}"/>
+		<c:param name="description" value="${description}"/>
+		<c:param name="add_line_01" value="${add_line_01}"/>
+		<c:param name="add_line_02" value="${add_line_02}"/>
+		<c:param name="postal_code" value="${postal_code}"/>
+		<c:param name="province" value="${province}"/>
+		<c:param name="city" value="${city}"/>
+		<c:param name="country" value="${country}"/>
+		<c:param name="username" value="${usename}"/>
+		<c:param name="password" value="${password}"/>
+		<c:param name="a_admin_id" value="${a_admin_id}"/>
+	
+	
+	</c:url>
+	
+	<a href="${artupdate}">
+	<input type="button" name="update" value="Update Artist Details">
+	</a>
+	
+	
+	
+	
+	
 </body>
 </html>
+
+
+
+
+

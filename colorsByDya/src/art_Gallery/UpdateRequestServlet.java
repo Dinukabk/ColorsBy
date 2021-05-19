@@ -32,10 +32,11 @@ public class UpdateRequestServlet extends HttpServlet {
 		String country = request.getParameter("country");
 		String c_customer_id = request.getParameter("c_customer_id");
 		String artist_name = request.getParameter("artist_name");
+		String accept = request.getParameter("accept");
 		
 		boolean isTrue;
 		
-		isTrue = RequestDBUtil.updateRequest(request_id, name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country, c_customer_id, artist_name);
+		isTrue = RequestDBUtil.updateRequest(request_id, name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country, c_customer_id, artist_name,accept);
 		
 		if(isTrue == true) {
 			

@@ -41,3 +41,12 @@ $('.tab a').on('click', function (e) {
   $(target).fadeIn(600);
   
 });
+
+$(function () {
+    $('input, select').on('focus', function () {
+        $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
+    });
+    $('input, select').on('blur', function () {
+        $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
+    });
+});

@@ -44,7 +44,10 @@
   <a href="frontpage.jsp">Home</a>
   <a href="#news">Paintings</a>
   <a herf="search.jsp">Search</a>
-<!--   <div class="dropdown1">
+  
+<!-- 
+
+   <div class="dropdown1">
     <button class="dropbtn1">SignUp
       <i class="fa fa-caret-down"></i>
     </button>
@@ -62,10 +65,14 @@
       <a href="index1.jsp">Customer</a>
       <a href="index.jsp">Artist</a>
     </div>
-  </div>-->
+  </div>
+  
+   -->
+  
 </div>
 
- <!-- <img src="Images/nature1.jpg">
+ <!-- 
+<img src="Images/nature1.jpg">
 <img src="Images/nature2.jpg">
 <img src="Images/nature3.jpg">
 <img src="Images/nature4.jpg">
@@ -257,7 +264,9 @@ function showSlides() {
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 2000); // Change image every 2 seconds
-}--> -->
+}
+-->
+
 </script> 
  <div id="fh5co-main">
 		<div class="container">
@@ -268,19 +277,19 @@ function showSlides() {
 
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP5gbBJlpb9xTj7CYBT-p4e-oqjniHdvwe8tnMG0Srr-SfbxZ5" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP5gbBJlpb9xTj7CYBT-p4e-oqjniHdvwe8tnMG0Srr-SfbxZ5" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/swing.jpg" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="images/swing.jpg" alt="Free HTML5 Bootstrap template"></a>
         		</div>
         		<div class="fh5co-desc">Nature</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZ7RkIj3EdeDqsWiz_mcdID9L9IhJnga9HCTuWoCaiZOyew1FyA" class="image-popup fh5co-board-img"><img src="images/img_23.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Lights</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="https://images.pexels.com/photos/207153/pexels-photo-207153.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="images/img_3.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Amazing Abstract</div>
         		</div>
         	</div>

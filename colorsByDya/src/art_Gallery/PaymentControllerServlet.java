@@ -1,5 +1,3 @@
-// JSP's data passes to this controller 
-
 package art_Gallery;
 
 import java.io.IOException;
@@ -17,8 +15,7 @@ import javax.servlet.http.HttpSession;
 public class PaymentControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if (session != null) { // If a session exists
 			int userID = (int) session.getAttribute("userID");
@@ -26,21 +23,28 @@ public class PaymentControllerServlet extends HttpServlet {
 			// Getting payment total...
 			int pTotal = PaymentsDatabaseUtil.getCartTotal(userID);
 			Boolean cardAvailability;
-			System.out.println("On payment servlet...");
-			System.out.println("Payment total: " + pTotal);
 			
 			request.setAttribute("payTotal", pTotal);
-			System.out.println("Payment total in servletRequest: " + request.getAttribute("payTotal"));
 			
 			// Checking if a payment card available on user profile
 			cardAvailability = PaymentsDatabaseUtil.checkCard(userID);
-			// List<Payment> paymentList = PaymentsDatabaseUtil.checkCardList(userID);
-			// Payment userName = paymentList.get(1);
 			String userName = PaymentsDatabaseUtil.getUserName(userID); 
 			
+			// For debugging 
+			System.out.println("On payment servlet...");
+			System.out.println("Payment total: " + pTotal);
+			System.out.println("Payment total in servletRequest: " + request.getAttribute("payTotal"));
 			System.out.println("Card availability in payment servlet: " + cardAvailability);
+			
 			if (cardAvailability == true) {
+				PaymentsDatabaseUtil.getCardDetails(userID);
+				
 				request.setAttribute("userName", userName);
+				request.setAttribute("cardNo", PaymentsDatabaseUtil.getCardNo());
+				request.setAttribute("nameOnCard", PaymentsDatabaseUtil.getNameOnCard());
+				request.setAttribute("expDate", PaymentsDatabaseUtil.getExpDate());
+				request.setAttribute("cvv", PaymentsDatabaseUtil.getCVV());
+				
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 				RD.forward(request, response);
 			} else {

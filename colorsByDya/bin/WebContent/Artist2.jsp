@@ -30,65 +30,7 @@
      <a href="upload_paintings.jsp">Upload Paintings</a>
       <a href="frontpage.jsp">Logout</a>
       <a href="#" class="navbar1">
-      <% HttpSession httpSession=request.getSession();
-      out.println("hii "+httpSession.getAttribute("login1"));
-      String a = (String)session.getAttribute("login1");
-      								%>
- 
-      </a>  
-</div>
-<div id="fh5co-main">
-		<div class="container">
-
-			<div class="row">
-
-        <div id="fh5co-board" data-columns>
-        <%
-String url = "jdbc:mysql://localhost:3306/";
-String dbName = "art_gallery";
-String driver = "com.mysql.jdbc.Driver";
-String userName = "root";
-String password = "rutuja8079";
-String query= "select * from painting where email = '" + a + "'";
-String q1 = "update artist set g_id=? where email=?";
-String id1 = request.getParameter("value");
-try {
-    Class.forName(driver).newInstance();
-    Connection conn = DriverManager.getConnection(url + dbName, userName, password);
-	
-    
-	/*/*  while(rs.next()){
-		System.out.println("1111");
-    	System.out.println(a);
-    	//String id = rs.getString(1);
-    	System.out.println(id1);
-    	System.out.println(a);
-    	System.out.println(a);
-        PreparedStatement pst1 =(PreparedStatement) conn.prepareStatement(q1);
-        pst1.setString(1, id1);
-        pst1.setString(2, a);
-        //ResultSet rs1 = pst1.executeQuery();
-        pst1.executeUpdate();
-        System.out.println("55555");
-        if(request.getParameter("join") != null){
-            	
-            	 RequestDispatcher rd=request.getRequestDispatcher("Artist.jsp");  
-                 rd.forward(request,response);  
-        }
-        		
-   } */ 
-	PreparedStatement p1 = conn.prepareStatement(q1);
-    p1.setString(1, id1);
-    p1.setString(2, a);
-    p1.executeUpdate();
-    
-   %>
-   <%
-   conn.close();
-   }
-   catch (Exception e) {
-   }
-   %>
+      
         	
         	
         <!-- <<div class="item">

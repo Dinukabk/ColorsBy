@@ -19,11 +19,8 @@ public class requestCusLogin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		// String username = request.getParameter("uid");
-		// String password = request.getParameter("pass");
 		HttpSession session = request.getSession(false);
 		int userID = (int) session.getAttribute("userID");
-		// String userID = "1";
 		System.out.println("UserID in custLogin: " + userID);
 		
 		try {
