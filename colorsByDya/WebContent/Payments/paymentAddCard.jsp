@@ -39,7 +39,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item">
-								<a href="../Payments/payment.jsp" class="nav-link text-uppercase font-weight-bold">${userName }</a>
+								<a href="#" class="nav-link text-uppercase font-weight-bold">${userName }</a>
 							</li>
 						</ul>
 					</div>
@@ -113,7 +113,7 @@
 					<td>
 					</td>
 					<td>
-						<button type="submit" class="btn btn-primary">Pay now</button>
+						<button type="submit" class="btn btn-primary">Save Card</button>
 					</td>
 				</tr>
 			</table>

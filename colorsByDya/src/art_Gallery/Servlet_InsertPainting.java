@@ -1,16 +1,21 @@
 package art_Gallery;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 
+
+@MultipartConfig
 @WebServlet("/Servlet_InsertPainting")
 
 public class Servlet_InsertPainting extends HttpServlet {
@@ -39,6 +44,17 @@ public class Servlet_InsertPainting extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 
+		/*
+		  Part file = request.getPart("imagePainting"); 
+		  String imageFileName= Paths.get(file.get)
+				  //file.getSubmittedFileName();
+		  String imageFileName2= file.getParameterValues();
+		  
+		  String uploadFilePath = "C:/Users/user/git/ColorsByDiyaa/colorsByDya/WebContent/images/"+imageFileName;
+		 
+		 */
+	
+		
 		 String title = request.getParameter("artworkTitle");
 		 String description = request.getParameter("artworkDescription");
 		 
@@ -67,6 +83,8 @@ public class Servlet_InsertPainting extends HttpServlet {
 		 String length = request.getParameter("artworkLength");
 		 String width = request.getParameter("artworkWidth");
 		 
+		
+		
 		 String image_url = request.getParameter("imagePainting");
 		 
 		 String material = request.getParameter("artworkMaterial");
@@ -74,13 +92,15 @@ public class Servlet_InsertPainting extends HttpServlet {
 		 //String in_stock = request.getParameter();
 		 
 		 String frame = request.getParameter("artworkFrame");
-		// String a_artist_id = request.getParameter("artworkFrame");
+		 int artistUserID = Integer.parseInt(request.getParameter("artistUserID"));
+		 
+		 //String a_artist_id = request.getParameter("a_artist_id");
 		// String c_cart_id = request.getParameter("artworkFrame");
 		 
 		 
 		 boolean insertSuccess;
 		 
-		insertSuccess = PaintingDBUtil.insertPainting(title, description, price, drawn_date, category, weight, length, width, image_url, material, frame);
+		insertSuccess = PaintingDBUtil.insertPainting(title, description, price, drawn_date, category, weight, length, width, image_url, material, frame, artistUserID);
 		 
 		 if(insertSuccess == true) {
 			 RequestDispatcher dispatchSuccess = request.getRequestDispatcher("Artist.jsp");

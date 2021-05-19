@@ -33,6 +33,8 @@ public class Servlet_updatePainting extends HttpServlet {
 		String material = request.getParameter("material");
 		String in_stock = request.getParameter("in_stock");
 		String frame = request.getParameter("frame");
+		
+		//int artistUserID = Integer.parseInt(request.getParameter("artistUserID"));
 		/*
 		 * String a_artist_id = request.getParameter("a_artist_id"); String c_cart_id =
 		 * request.getParameter("c_cart_id");

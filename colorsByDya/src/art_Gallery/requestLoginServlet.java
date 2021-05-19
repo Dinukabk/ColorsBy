@@ -23,6 +23,12 @@ public class requestLoginServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			int artistUserID = (int) session.getAttribute("artistUserID");
+			
+			request.setAttribute("artistUserID", artistUserID);
+			
+			String artistUserName = RequestDBUtil.getArtistUsername(artistUserID);
+			request.setAttribute("artistUserName", artistUserName);
+			
 			try {
 				List<Request> reqList = RequestDBUtil.validate(artistUserID);
 				request.setAttribute("reqList", reqList);

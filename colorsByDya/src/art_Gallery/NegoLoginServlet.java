@@ -24,6 +24,10 @@ public class NegoLoginServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			int artistUserID = (int) session.getAttribute("artistUserID");
+			request.setAttribute("artistUserID", artistUserID);
+			
+			String artistUserName = RequestDBUtil.getArtistUsername(artistUserID);
+			request.setAttribute("artistUserName", artistUserName);
 
 			try {
 				List<NegoAll> negoArtList = RequestDBUtil.negotiateListValidate(artistUserID);

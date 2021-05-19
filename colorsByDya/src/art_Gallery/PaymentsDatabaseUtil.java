@@ -213,7 +213,7 @@ public class PaymentsDatabaseUtil {
 			return false;
 		}
 	}
-
+	
 	public static int getCardNo() {
 		return cardNo;
 	}
