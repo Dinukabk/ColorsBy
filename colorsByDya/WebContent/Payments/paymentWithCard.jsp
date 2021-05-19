@@ -123,7 +123,7 @@
 				<tr>
 					<td>
 						<input type="submit" class="btn btn-light border border-primary" value="Edit or Change Card" formaction="PaymentEditRedirector"/>
-						<input type="submit" class="btn btn-light border border-primary" value="Delete Card" formaction="PaymentDeleteCardServlet"/>
+						<input type="submit" class="btn btn-light border border-primary" value="Delete Card" onClick="confirm( 'Delete Request?' )" formaction="PaymentDeleteCardServlet"/>
 					</td>
 					<td>
 						<button type="submit" class="btn btn-primary border border-primary mb-2">Pay now</button>

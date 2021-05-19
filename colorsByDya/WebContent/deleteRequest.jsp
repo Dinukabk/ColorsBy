@@ -68,7 +68,7 @@
 	%>
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-	<form action="deleteRequest" method="post" class="form">
+	<form action="DeleteRequestServlet" method="post" class="form">
 		<img name="photograph" src="images/<%=photograph%>" width="200px" height="200px"/><br>
 		Request ID <input type="text" name="request_id" value="<%= request_id %>" readonly><br>
 		Name <input type="text" name="name" value="<%= name %>" readonly><br>
