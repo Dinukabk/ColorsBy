@@ -21,18 +21,14 @@ public class PaymentControllerServlet extends HttpServlet {
 			int userID = (int) session.getAttribute("userID");
 			
 			// Getting payment total...
-			int pTotal = PaymentsDatabaseUtil.checkCartTotal(userID);
+			int pTotal = PaymentsDatabaseUtil.getCartTotal(userID);
+			Boolean cardAvailability;
+			
 			request.setAttribute("payTotal", pTotal);
 			
 			// Checking if a payment card available on user profile
-			Boolean cardAvailability;
 			cardAvailability = PaymentsDatabaseUtil.checkCard(userID);
-			
-			// Checking userName
 			String userName = PaymentsDatabaseUtil.getUserName(userID); 
-			
-			// Checking delivery method
-			int deliveryMethod = PaymentsDatabaseUtil.checkDeliveryMethod(userID);
 			
 			// For debugging 
 			System.out.println("On payment servlet...");
@@ -41,13 +37,22 @@ public class PaymentControllerServlet extends HttpServlet {
 			System.out.println("Card availability in payment servlet: " + cardAvailability);
 			
 			if (cardAvailability == true) {
-				PaymentsDatabaseUtil.getCardDetails(userID);
+				List<Payment> cardDetails = null;
+				cardDetails = PaymentsDatabaseUtil.getCardDetails(userID);
+				int cardNo = PaymentsDatabaseUtil.getCardNo();
+				String nameOnCard = PaymentsDatabaseUtil.getNameOnCard();
+				int expDate = PaymentsDatabaseUtil.getExpDate();
+				int cvv = PaymentsDatabaseUtil.getCVV();
+				
+				System.out.println("Card details added to the servlet..."); // @
+				System.out.println(cardDetails);
 				
 				request.setAttribute("userName", userName);
-				request.setAttribute("cardNo", PaymentsDatabaseUtil.getCardNo());
-				request.setAttribute("nameOnCard", PaymentsDatabaseUtil.getNameOnCard());
-				request.setAttribute("expDate", PaymentsDatabaseUtil.getExpDate());
-				request.setAttribute("cvv", PaymentsDatabaseUtil.getCVV());
+				request.setAttribute("cardNo", cardNo);
+				request.setAttribute("nameOnCard", nameOnCard);
+				request.setAttribute("expDate", expDate);
+				request.setAttribute("cvv", cvv);
+				request.setAttribute("cardDetails", cardDetails);
 				
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 				RD.forward(request, response);

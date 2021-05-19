@@ -10,15 +10,8 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/home.css">
-
-<script src="js/Request.js"></script>
-
 <title>Customer View Request</title>
 </head>
-                <%@page import="java.sql.DriverManager"%>
-				<%@page import="java.sql.ResultSet"%>
-				<%@page import="java.sql.Statement"%>
-				<%@page import="java.sql.Connection"%>
 <body>
 
 	<!-- Navbar -->
@@ -47,7 +40,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
 						</ul>
 					</div>
 				</div>
@@ -56,9 +49,7 @@
 	</div>
 
 	<h1>All Special Requests that requested</h1>
-	
-	
-	
+
 	<table>
 	
 		
@@ -77,7 +68,7 @@
 		<th>Country</th>
 		<th>Customer ID</th>
 		<th>Artist Name</th>
-		
+		<th></th>
 	</tr>
 	
 	<c:forEach var="req" items="${reqCusList}">
@@ -97,7 +88,6 @@
 	<c:set var="country" value="${req.country}"/>
 	<c:set var="c_customer_id" value="${req.c_customer_id}"/>
 	<c:set var="artist_name" value="${req.artist_name}"/>
-	<c:set var="accept" value="${req.accept}"/>
 	
 	<tr>
 		<td>${req.request_id}</td>
@@ -105,7 +95,7 @@
 		<td>${req.phone}</td>
 		<td>${req.email}</td>
 		<td>${req.message}</td>
-		<td><img src="images/${req.photograph}" width="100px" height="100px"/></td>
+		<td>${req.photograph}</td>
 		<td>${req.add_line_01}</td>
 		<td>${req.add_line_02}</td>
 		<td>${req.postal_code}</td>
@@ -135,86 +125,12 @@
 		<c:param name="artist_name" value="${artist_name}"/>
 		
 	</c:url>
-	<!-- here -->
-	<%-- <%@ page import="java.sql.ResultSet" %>
-	<%@ page import="java.sql.Statement" %>
-	<%@ page import="java.sql.Connection" %>
-	<%@ page import="java.sql.DriverManager" %>
 	
-	
-	<%
-		try
-		{
-			Class.forName("com.mysql.jdbc.Driver");
-			String url="jdbc:mysql://localhost:3306/colorbydiyaa";
-			String username="root";
-			String password="root";
-			String query="select * from special_request";
-			
-			Connection conn=DriverManager.getConnection(url, username, password);
-			Statement stmt=conn.createStatement();
-			ResultSet rs=stmt.executeQuery(query);
-			
-			while(rs.next())
-			{
-			
-		%>
-	
-     
-     
-     <% 
-     boolean accept = rs.getBoolean("accept");
-     System.out.println("Boolean Value: "+accept); --%>
-     <%-- //Boolean.compare(boolean a, boolean b)
-     // boolean
-     /*  boolean bool = true;
-      System.out.println("Boolean Value: "+bool);
-      int val = (bool) ? 1 : 0;
-      // Integer
-      System.out.println("Integer value: "+val); */
-      
-      int val = (accept) ? 1 : 0;
-      System.out.println("Integer value: "+val);
-     if(val == 0){ %>
-     		<td>
-			<a href="${requpdate}">
-			<input type="button" id="disButton" name="update" value="Update Request">
-			</a>
-			</td>
-	<% }
-			
-			
-			}
-			
-			rs.close();
-			stmt.close();
-			conn.close();
-			}
-			catch(Exception e)
-			{
-			e.printStackTrace();
-			}
-		%>  --%>
-	    <%-- <%
-	        int accept = Integer.toString(${req.accept}); 
-			if(accept==0){
-		%>	
-			<td>
-			<a href="${requpdate}">
-			<input type="button" id="disButton" name="update" value="Update Request">
-			</a>
-		</td>
-		<% }%> --%>
-		
-		
-		
-		<!-- Original one -->
-		 <td>
-			<a href="${requpdate}">
-			<input type="button" id="disButton" class="btn btn-secondary" name="update" value="Update Request">
-			</a>
-		</td> 
-	
+	<td>
+	<a href="${requpdate}">
+	<input type="button" name="update" value="Update Request">
+	</a>
+	</td>
 	
 	<c:url value="deleteRequest.jsp" var="reqdelete">
 		<c:param name="request_id" value="${request_id}"/>
@@ -235,14 +151,13 @@
 	
 	<td>
 	<a href="${reqdelete}">
-	<input type="button" id="disButton" class="btn btn-secondary" name="delete" value="Delete Request">
+	<input type="button" name="delete" value="Delete Request">
 	</a>
 	</td>
 	
-	
+	</c:forEach>
 	
 	</tr>
-	</c:forEach>
 	</table>
 	
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>

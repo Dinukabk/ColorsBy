@@ -15,11 +15,10 @@ public class Request {
 	private String country;
 	private int c_customer_id;
 	private int artist_name;
-	private boolean accept;
 	
 	public Request(int request_id, String name, int phone, String email, String message, String photograph,
 			String add_line_01, String add_line_02, int postal_code, String province, String city, String country,int c_customer_id,
-			int artist_name,boolean accept) {
+			int artist_name) {
 		
 		this.request_id = request_id;
 		this.name = name;
@@ -35,15 +34,6 @@ public class Request {
 		this.country = country;
 		this.c_customer_id = c_customer_id;
 		this.artist_name = artist_name;
-		this.accept = accept;
-	}
-
-	public boolean isAccept() {
-		return accept;
-	}
-
-	public void setAccept(boolean accept) {
-		this.accept = accept;
 	}
 
 	public int getRequest_id() {

@@ -76,7 +76,8 @@
  			font-family: Roboto;
   			line-height: 1.5;
   			width: 350px;
-  			height: 40px;  			
+  			height: 40px;
+  			
 		}
 		
 		.inname{
@@ -194,5 +195,11 @@
 	</form>
 
 	</div>
+
+
+
+
+
+
 </body>
 </html>

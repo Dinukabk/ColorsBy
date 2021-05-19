@@ -1,15 +1,17 @@
 package art_Gallery;
 
+import java.util.Date;
+
 public class EventClass {
 	private int id;
 	private String name;
-	private String date;
-	private int status;
+	private Date date;
+	private boolean status;
 	private String description;
 	private int adminID;
 	
 	
-	public EventClass(int id, String name, String date, int status, String description, int adminID) {
+	public EventClass(int id, String name, Date date, boolean status, String description, int adminID) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -30,12 +32,12 @@ public class EventClass {
 	}
 
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
 
-	public int getStatus() {
+	public boolean isStatus() {
 		return status;
 	}
 

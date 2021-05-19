@@ -20,8 +20,4 @@ function validateForm() {
 
 }
 
-function disableBtn() {
-  document.getElementById("disButton").disabled = true;
-}
-
 

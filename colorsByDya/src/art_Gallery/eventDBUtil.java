@@ -1,6 +1,8 @@
 package art_Gallery;
 
 import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,7 +24,7 @@ public class eventDBUtil {
 			con = EventDBconnect.getConnection();
 			stmt = con.createStatement();
 			
-			int stats = Integer.parseInt(status);
+			boolean stats = Boolean.parseBoolean(status);
 			int admin = Integer.parseInt(adminID);
 			
 			String sql = "insert into event values (0,  '"+name+"', '"+date+"', '"+stats+"', '"+description+"', '"+admin+"')";  
@@ -74,7 +76,7 @@ public class eventDBUtil {
 		int adID = Integer.parseInt(adminID);
 				
 				
-		String sql = "select * from event where name = '"+Ename+"' and a_admin_id = '"+adID+"'";
+		String sql =  "select * from event where name = '"+Ename+"' and a_admin_id = '"+adID+"'";
 		
 		try {
 			rs = stmt.executeQuery(sql);
@@ -89,11 +91,10 @@ public class eventDBUtil {
 				
 				int id = rs.getInt(1);
 				String name = rs.getString(2);
-				String date = rs.getString(3);
-				int status = rs.getInt(4);
+				Date date = rs.getDate(3);
+				Boolean status = rs.getBoolean(4);
 				String description = rs.getString(5);
 				int adminId = rs.getInt(6);
-				
 				
 				EventClass e = new EventClass(id,name,date,status,description,adminId);
 				
@@ -124,7 +125,7 @@ public class eventDBUtil {
 			stmt = con.createStatement();
 			
 			int ID = Integer.parseInt(id);
-			int sts = Integer.parseInt(status);
+			boolean sts = Boolean.valueOf(status);
 			int aid = Integer.parseInt(adminID);
 			
 			String sql = "update customer set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
@@ -191,57 +192,27 @@ public class eventDBUtil {
 	
 	
 	
-	public static List<EventClass> getEvents() {
 	
-	{
-		ArrayList<EventClass> eveList = new ArrayList<>();
-		
-		//db connection
-		con = EventDBconnect.getConnection();
-		try {
-			stmt = con.createStatement();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-				
-				
-		String sql = "select * from event";
-		
-		try {
-			rs = stmt.executeQuery(sql);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		
-		
-		try {
-			while (rs.next()) {
-				
-				int id = rs.getInt(1);
-				String name = rs.getString(2);
-				String date = rs.getString(3);
-				int status = rs.getInt(4);
-				String description = rs.getString(5);
-				int adminId = rs.getInt(6);
-				
-				
-				EventClass e = new EventClass(id,name,date,status,description,adminId);
-				
-				eveList.add(e);
-				
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		
-		
-		return eveList;
-		
-		
-	}
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 }
  

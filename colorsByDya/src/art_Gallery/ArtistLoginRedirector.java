@@ -25,7 +25,7 @@ public class ArtistLoginRedirector extends HttpServlet {
 			RD.forward(request, response);
 		} else {
 			System.out.println("User ID detected in the session...");
-			RequestDispatcher RD = request.getRequestDispatcher("ArtistList.jsp");
+			RequestDispatcher RD = request.getRequestDispatcher("Artist.jsp");
 			RD.forward(request, response);
 		}
 	}

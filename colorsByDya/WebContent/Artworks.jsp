@@ -9,14 +9,12 @@
 <title>Artist_ Artwork</title>
 
 	 <!-- <link rel="stylesheet" href="css/frontpage.css"> --> 
-	 
-	 <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 	
-	<link rel="stylesheet" href="./css/bootstrap.min.css?">
-	<link rel="stylesheet" href="./css/styles.css?">
-	<link rel="stylesheet" href="./css/home.css?">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/home.css">
 	
-	<link rel="stylesheet" href="css/styles_Gallery.css?version=2">
+	<link rel="stylesheet" href="css/styles_Gallery.css">
 	
 
 </head>
@@ -47,10 +45,8 @@
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-							<li class="nav-item"><a href="#"
-								class="nav-link text-uppercase font-weight-bold">${artistUserName}</a></li>
-							<%-- <li class="nav-item"><a href="#"
-								class="nav-link text-uppercase font-weight-bold">${artistUserID}</a></li> --%>
+							<li class="nav-item"><a href="../Payments/payment.jsp"
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
 						</ul>
 					</div>
 				</div>
@@ -59,18 +55,11 @@
 	</div>
 
 
-	<!-- <input type="button" name="report" value="Generate JAVA Report" onclick="location.href='Servlet_Gallery_Paint_PDF'"> <br> -->
-	
-	<!-- <input type="button" class="btn"  name="report" value="View Report" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp'"> <br> -->
-	<button class="btn" target="_blank" onclick="location.href='Gallery_Painitng_PDF.jsp?artistUserID=${artistUserID}'">
-		<img id="pdfButton" alt="" src="images/summarize_black_24dp.svg" width="30px"> VIEW REPORT
-	</button> <br><br>
-	
-	
+
 		
 	<div class="table-responsive" style="width:auto; margin:0 auto;">
 
-	<table>
+	<table >
 		<c:forEach var="paint" items="${paintingDetails}">
 		
 		<c:set var="painting_id" value="${paint.painting_id}"/>
@@ -87,7 +76,7 @@
 		<c:set var="in_stock" value="${paint.in_stock}"/>
 		<c:set var="frame" value="${paint.frame}"/>
 		<c:set var="a_artist_id" value="${paint.a_artist_id}"/>
-		<c:set var="artistUserName" value="${artistUserName}"/>
+		<c:set var="c_cart_id" value="${paint.c_cart_id}"/>
 		
 		<tr>
 			<!-- <th>Artwork ID</th> -->
@@ -115,7 +104,7 @@
 			<td>${paint.weight}</td>
 			<td>${paint.length}</td>
 			<td>${paint.width}</td>
-			<td><img src="images/${paint.image_url}" width="100px"></td>
+			<td>${paint.image_url}</td>
 			<td>${paint.material}</td>
 			<%-- <td>${paint.in_stock}</td> --%>
 			<td>${paint.frame}</td>
@@ -139,7 +128,7 @@
 			<c:param name="in_stock" value="${in_stock}"/>
 			<c:param name="frame" value="${frame}"/>
 			<c:param name="a_artist_id" value="${a_artist_id}"/>
-			<c:param name="artistUserName" value="${artistUserName}"/>
+			<c:param name="c_cart_id" value="${c_cart_id}"/>
 			
 		</c:url>
 		
@@ -160,7 +149,7 @@
 			<c:param name="in_stock" value="${in_stock}"/>
 			<c:param name="frame" value="${frame}"/>
 			<c:param name="a_artist_id" value="${a_artist_id}"/>
-			<c:param name="artistUserName" value="${artistUserName}"/>
+			<c:param name="c_cart_id" value="${c_cart_id}"/>
 			
 		</c:url>
 		
@@ -185,15 +174,6 @@
 		
 <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
-<script type="text/javascript" src="js/jquery.dataTables.js"></script>
-
-<script type="text/javascript">
-$(document).ready( function () {
-    $('#myTable').DataTable();
-} );
-</script>
-
-
 
 </body>
 </html>

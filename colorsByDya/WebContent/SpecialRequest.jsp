@@ -17,28 +17,13 @@
 
 <script src="js/Request.js"></script>
 <script src="js/request22.js"></script>
-<script src="js/Gallery_JScript.js"></script> 
+<script src="js/Gallery_JScript.js"></script>
 
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
-<!-- <link rel="stylesheet" href="css/common.css"> -->
-
-<script>
-	function phonenumber(phone)
-	{
-	  var phone = /^\d{10}$/;
-	  if((inputtxt.value.match(phone))){
-		 return true;
-	}
-	  else
-	        {
-	        alert("Phone number should contain TEN numbers");
-	        return false;
-	        }
-	}
-</script>
+<link rel="stylesheet" href="css/common.css">
 
 </head>
 <body>
@@ -68,8 +53,8 @@
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-							<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
-								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
+							<li class="nav-item"><a href="../Payments/payment.jsp"
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
 						</ul>
 					</div>
 				</div>
@@ -87,7 +72,7 @@
       <div class="contact-form"><br>
         <h3>Phone Number</h3>
         <p><i>Mr Deepthi Wijewardana:</i><br><b>071 4727470</b></p>
-        <p><i>Mr Lahiru Wijewardana:</i><br><b>071 4276146</b></p><br><br>
+        <p><i>Mr Lahuru Wijewardana:</i><br><b>071 4276146</b></p><br><br>
         <h3>Address</h3>
         <p>6/98,<br>Lake Road,<br>Wickramasinheapura,<br>Baththaramulla,</p><br><br>
         <div class="wrapper">
@@ -109,20 +94,9 @@
       </div>
       
    </div>
-  <%--  <%@ page import="java.sql.ResultSet" %>
-	<%@ page import="java.sql.Statement" %>
-	<%@ page import="java.sql.Connection" %>
-	<%@ page import="java.sql.DriverManager" %>
-	<%@ page import="java.sql.PreparedStatement" %> --%>
    
-   <%-- <%
-	 int userID =Integer.parseInt(request.getParameter("userID")); 
-		
-	%> --%>
-   <!-- onsubmit="return validateForm()" -->
-   <!-- enctype="multipart/form-data" -->
    <div>
-      <form name="requestForm" action="RequestServlet" method="post" class="specialRForm" >
+      <form name="requestForm" action="insertRequest" method="post" class="specialRForm" onsubmit="return validateForm()" >
       
       <fieldset>
       <legend style="padding:20px 0; font-size:30px;">We like to have a Special Request from you:</legend>
@@ -130,9 +104,9 @@
             <label>Full Name</label><br>
             <input type="text" placeholder="Enter Full Name" name="name" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Name');"><br><br>
             <label>Phone Number</label><br>
-            <input type="" placeholder="Enter Phone Number" name="phone" class="SRInput" class="form__input" pattern="[0][0-9]{9}" required oninvalid= "alert('Please enter valid Phone Number');" ><br><br>
+            <input type="number" placeholder="Enter Phone Number" name="phone" class="SRInput" class="form__input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required oninvalid= "alert('Please enter the Phone Number');"><br><br>
             <label>Email Address</label><br>
-            <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Email Address');" title="Enter valid email"><br><br>
+            <input type="email" placeholder="Enter Email Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="SRInput" class="form__input" required oninvalid= "alert('Please enter the Email Address');"><br><br>
             <label>Message</label><br>
             <textarea placeholder="Enter a message" name="message" class="SRInput" class="form__input"></textarea><br><br>
             <label>Upload Your photograph that you want to be drawn</label><br>
@@ -146,7 +120,6 @@
             <input type="text" placeholder="Province" name="province"><br>
             <input type="text" placeholder="City" name="city">
             <input type="text" placeholder="Country" name="country"><br><br>
-            <input type="hidden" name="userID" value="${userID}" readonly>
             <label>Choose the Artist</label>
             	<!-- <select>
             		<option>Deepthi Wijewardana</option>
@@ -155,19 +128,19 @@
 				<%@page import="java.sql.ResultSet"%>
 				<%@page import="java.sql.Statement"%>
 				<%@page import="java.sql.Connection"%>
-            	<select id="list" name="artist_name">
+            	<select>
             		<%
             			try{
             				Class.forName("com.mysql.jdbc.Driver");
             				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
             				Statement st = con.createStatement();
-            				String query = "select * from artist";
+            				String query = "select name from artist";
             				//get table data
             				ResultSet rs = st.executeQuery(query);
             				//get artist name one by one
             				while(rs.next()){
             					%>
-            					<option value="<%=rs.getString("name") %>"><%=rs.getString("name") %></option>
+            					<option><%=rs.getString("name") %></option>
             					<%
             				}
             				
@@ -176,38 +149,11 @@
             			}
             		%>
             	</select><br><br>
-            	<!-- <script>
-            		function getSelectValue(){
-            			var selectedValue = document.getElementById("list").value;
-            			console.log(selectedValue);
-            		}
-            		getSelectValue();
-            	</script> -->
-            	
-            	<%-- <%
-            			try{
-            				Class.forName("com.mysql.jdbc.Driver");
-            				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/colorbydiyaa","root","root");
-            				Statement st = con.createStatement();
-            				String query = "select artist_id from artist where name=<%=rs.getString("name") %>";
-            				//get table data
-            				ResultSet rs = st.executeQuery(query);
-            				//get artist name one by one
-            				while(rs.next()){
-            					%>
-            					<option value="artist_name_option"><%=rs.getString("name") %></option>
-            					<%
-            				}
-            				
-            			}catch (Exception e){
-            				
-            			}
-            		%> --%>
             
-            <!-- onClick="alert( 'Special Request will send ' )" -->
             
-            <input class="btn btn-secondary" type="reset" name="Reset" value="Reset">
-            <input class="btn btn-secondary" type="submit" name="submit" value="Send">
+            
+            <input class = "btn btn1" type="reset" name="Reset" value="Reset">
+            <input class = "btn btn2" type="submit" name="submit" value="Send ">
             
             </fieldset>
          </form>
@@ -215,8 +161,8 @@
    
    </div>
 	
-	<script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
 	
 <style>
 $font-family:   "Roboto";

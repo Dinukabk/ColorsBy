@@ -1,7 +1,6 @@
 package art_Gallery;
 
 import java.io.IOException;
-import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,14 +23,19 @@ public class PaymentAddCardFormServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		int userID = (int) session.getAttribute("userID");
 		
+		// System.out.println("Credit card number: " + cardNumber);
+		// System.out.println("Name on credit card: " + nameOnCard);
+		// System.out.println("Expiration date: " + expDate);
+		// System.out.println("CVV Number: " + CVV);
+		// System.out.println("Check box: " + saveCard);
+		
 		if (saveCard != null) { // If save card checkBox is ticked...
 			Boolean querySuccess = PaymentsDatabaseUtil.addPaymentCard(userID, cardNumber, nameOnCard, expDate, CVV, saveCard);
 			if (querySuccess == true) { // If query executed correctly
-				PaymentsDatabaseUtil.getCardDetails(userID);
-				request.setAttribute("cardNo", PaymentsDatabaseUtil.getCardNo());
-				request.setAttribute("nameOnCard", PaymentsDatabaseUtil.getNameOnCard());
-				request.setAttribute("expDate", PaymentsDatabaseUtil.getExpDate());
-				request.setAttribute("cvv", PaymentsDatabaseUtil.getCVV());
+				request.setAttribute("cardNumber", cardNumber);
+				request.setAttribute("nameOnCard", nameOnCard);
+				request.setAttribute("expDate", expDate);
+				request.setAttribute("CVV", CVV);
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 				RD.forward(request, response);
 			} else { // Display error message if query not successful...

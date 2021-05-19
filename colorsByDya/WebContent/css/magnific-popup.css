@@ -284,13 +284,10 @@ img.mfp-img {
 
 .mfp-title {
   text-align: left;
-  line-height: 20px;
+  line-height: 18px;
   color: #f3f3f3;
   word-wrap: break-word;
-  padding-right: 36px; 
-  font-size: 15px;
-  font-weight: bold;
-  }
+  padding-right: 36px; }
 
 .mfp-image-holder .mfp-content {
   max-width: 100%; }

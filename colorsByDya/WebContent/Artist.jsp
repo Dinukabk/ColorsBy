@@ -2,174 +2,144 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="java.io.*"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script src="css/artist.js"></script>
-<link rel="stylesheet" href="css/artist.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-    <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
-    
-    
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Artist_page</title>
+<link type="text/css" rel="stylesheet" href="css/frontpage.css" />
+<link rel="shortcut icon" href="favicon.ico">
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500'
+	rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
+	rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/salvattore.css">
+<link rel="stylesheet" href="css/style1.css">
+<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
+<h1>Colors By Diyaa</h1>
+<body>
 
-<body class="profile-page">
- 
-        
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="dropdown nav-item">
-                      <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
-                          <i class="material-icons">apps</i> Components
-                      </a>
-                      <div class="dropdown-menu dropdown-with-icons">
-                        <a href="../index.html" class="dropdown-item">
-                            <i class="material-icons">layers</i> All Components
-                        </a>
-                        
-                        <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
-                            <i class="material-icons">content_paste</i> Documentation
-                        </a>
-                      </div>
-                    </li>
-      				<li class="nav-item">
-      					<a class="nav-link" href="javascript:void(0)">
-      						<i class="material-icons">cloud_download</i> Download
-      					</a>
-      				</li>
-      				<li class="nav-item">
-      					<a class="nav-link" href="https://twitter.com/CreativeTim" target="_blank">
-      						<i class="fa fa-twitter"></i>
-      					</a>
-      				</li>
-      				<li class="nav-item">
-      					<a class="nav-link" href="https://www.facebook.com/CreativeTim" target="_blank">
-      						<i class="fa fa-facebook-square"></i>
-      					</a>
-      				</li>
-      				<li class="nav-item">
-      					<a class="nav-link"  href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-      						<i class="fa fa-instagram"></i>
-      					</a>
-      				</li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
-    <div class="main main-raised">
-		<div class="profile-content">
-            <div class="container">
-                <div class="row">
-	                <div class="col-md-6 ml-auto mr-auto">
-        	           <div class="profile">
-	                        <div class="avatar">
-	                            <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-	                        </div>
-	                        <div class="name">
-	                            <h3 class="title">Deepthi Wijewardana</h3>
-								<h6>Artist</h6>
-								<a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                                <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
-                                <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-pinterest"></i></a>
-	                        </div>
-	                    </div>
-    	            </div>
-                </div>
-                <div class="description text-center">
-                    <p></p>
-                </div>
-				<div class="row">
-					<div class="col-md-6 ml-auto mr-auto">
-                        <div class="profile-tabs">
-                          <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
-                                  <i class="material-icons">camera</i>
-                                  Upload
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#works" role="tab" data-toggle="tab">
-                                  <i class="material-icons">palette</i>
-                                    Paintings
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#favorite" role="tab" data-toggle="tab">
-                                  <i class="material-icons">favorite</i>
-                                    Favorite
-                                </a>
-                            </li>
-                          </ul>
-                        </div>
-    	    	</div>
-            </div>
-        
-          <div class="tab-content tab-space">
-            <div class="tab-pane active text-center gallery" id="studio">
-  				<div class="row">
-  					<div class="col-md-3 ml-auto">
-  					    <img src="https://images.unsplash.com/photo-1524498250077-390f9e378fc0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=83079913579babb9d2c94a5941b2e69d&auto=format&fit=crop&w=751&q=80" class="rounded">
-  						<img src="https://images.unsplash.com/photo-1528249227670-9ba48616014f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=66b8e7db17b83084f16fdeadfc93b95b&auto=format&fit=crop&w=357&q=80" class="rounded">
-  					</div>
-  					<div class="col-md-3 mr-auto">
-  						<img src="https://images.unsplash.com/photo-1521341057461-6eb5f40b07ab?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=72da2f550f8cbd0ec252ad6fb89c96b2&auto=format&fit=crop&w=334&q=80" class="rounded">
-  						<img src="https://images.unsplash.com/photo-1506667527953-22eca67dd919?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6326214b7ce18d74dde5e88db4a12dd5&auto=format&fit=crop&w=750&q=80" class="rounded">
-  					</div>
-  				</div>
-  			</div>
-            <div class="tab-pane text-center gallery" id="works">
-      			<div class="row">
-      				<div class="col-md-3 ml-auto">
-                      <img src="https://images.unsplash.com/photo-1524498250077-390f9e378fc0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=83079913579babb9d2c94a5941b2e69d&auto=format&fit=crop&w=751&q=80" class="rounded">
-  					  <img src="https://images.unsplash.com/photo-1506667527953-22eca67dd919?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6326214b7ce18d74dde5e88db4a12dd5&auto=format&fit=crop&w=750&q=80" class="rounded">
-  					  <img src="https://images.unsplash.com/photo-1505784045224-1247b2b29cf3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ec2bdc92a9687b6af5089b335691830e&auto=format&fit=crop&w=750&q=80" class="rounded">  					</div>
-      				<div class="col-md-3 mr-auto">
-                      <img src="https://images.unsplash.com/photo-1504346466600-714572c4b726?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6754ded479383b7e3144de310fa88277&auto=format&fit=crop&w=750&q=80" class="rounded">
-                      <img src="https://images.unsplash.com/photo-1494028698538-2cd52a400b17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=83bf0e71786922a80c420c17b664a1f5&auto=format&fit=crop&w=334&q=80" class="rounded">
-      				</div>
-      			</div>
-  			</div>
-            <div class="tab-pane text-center gallery" id="favorite">
-      			<div class="row">
-      				<div class="col-md-3 ml-auto">
-      				  <img src="https://images.unsplash.com/photo-1504346466600-714572c4b726?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6754ded479383b7e3144de310fa88277&auto=format&fit=crop&w=750&q=80" class="rounded">
-                      <img src="https://images.unsplash.com/photo-1494028698538-2cd52a400b17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=83bf0e71786922a80c420c17b664a1f5&auto=format&fit=crop&w=334&q=80" class="rounded">
-      				</div>
-      				<div class="col-md-3 mr-auto">
-      				  <img src="https://images.unsplash.com/photo-1505784045224-1247b2b29cf3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ec2bdc92a9687b6af5089b335691830e&auto=format&fit=crop&w=750&q=80" class="rounded">  					
-      				  <img src="https://images.unsplash.com/photo-1524498250077-390f9e378fc0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=83079913579babb9d2c94a5941b2e69d&auto=format&fit=crop&w=751&q=80" class="rounded">
-  					  <img src="https://images.unsplash.com/photo-1506667527953-22eca67dd919?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6326214b7ce18d74dde5e88db4a12dd5&auto=format&fit=crop&w=750&q=80" class="rounded">
-      			    </div>
-      			</div>
-      		</div>
-          </div>
-
-        
-            </div>
-        </div>
+	<div class="navbar">
+		<a href="frontpage.jsp">Home</a> 
+		<a href="About_us.jsp">About Us</a> 
+		<a href="My_profile.jsp">My Profile</a> 
+		<a href="Exhibition.jsp">Exhibitions</a>
+		<a href="gallery_option.jsp">Gallery options</a> 
+		<a onclick="location.href = 'Servlet_GalleryLogin'">Artwork</a>
+		<a onclick="location.href = 'Servlet_AddPainting'">Upload Painting</a>
+		<a onclick="location.href = 'requestLoginServlet'">Special Requests</a>
+		<a onclick="location.href = 'NegoLoginServlet'">Negotiate Price Requests</a>
+		<a href="frontpage.jsp">Logout</a> 
+		<a href="#" class="navbar1">
+			<% HttpSession httpSession=request.getSession();
+      								String id = request.getParameter("email");
+      								httpSession.setAttribute("login1",id );
+      								out.println("hii "+httpSession.getAttribute("login1"));
+      								String a = (String)httpSession.getAttribute("login1");
+      
+      
+      %>
+		</a>
 	</div>
+	<div id="fh5co-main">
+		<div class="container">
+
+			<div class="row">
+
+				<div id="fh5co-board" data-columns>
+					<%
+String url = "jdbc:mysql://localhost:3306/";
+String dbName = "art_gallery";
+String driver = "com.mysql.jdbc.Driver";
+String userName = "root";
+String password = "rutuja8079";
+String a_id = null;
+String query= "select * from painting where email = '" + a + "'";
+try {
+    Class.forName(driver).newInstance();
+    Connection conn = DriverManager.getConnection(url + dbName, userName, password);
 	
-	<footer class="footer text-center ">
-        <p>Made with <a href="#" target="_blank">Colors By Diyaa</a> </p>
-    </footer>
-  
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    Statement st = conn.createStatement();
+    ResultSet rs = st.executeQuery(query);
+    
+    while(rs.next()){
+    	%>
+					<div class="item">
+						<div class="animate-box">
+							<a href=<%= rs.getString("url") %>
+								class="image-popup fh5co-board-img"><img
+								src=<%= rs.getString("url") %>
+								alt="Free HTML5 Bootstrap template"></a>
+							<div class="image-popup fh5co-desc"><%= rs.getString("title") %>
+
+							</div>
+						</div>
+					</div>
+					<%} %>
+					<%rs.close();
+   st.close();
+   conn.close();
+   }
+   catch (Exception e) {
+   }
+   %>
 
 
-   
+					<
+					<div class="item">
+						<div class="animate-box">
+							<a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxlVqMSd30Qah-lV4zXbDimmEc0-BYovuJMdDvvAhNIU6l79Nd"
+								alt="Free HTML5 Bootstrap template"></a>
+							<div class="fh5co-desc">#</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="animate-box">
+							<a href="images/img_30.jpg" class="image-popup fh5co-board-img"><img
+								src="images/img_30.jpg" alt="Free HTML5 Bootstrap template"></a>
+							<div class="fh5co-desc">#</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="fh5co-footer">
+
+	<div class="container">
+		<div class="row row-padded">
+			<div class="col-md-12 text-center">
+				<p class="fh5co-social-icons">
+					<a href="#"><i class="icon-twitter"></i></a> <a href="#"><i
+						class="icon-facebook"></i></a> <a href="#"><i
+						class="icon-instagram"></i></a> <a href="#"><i
+						class="icon-dribbble"></i></a> <a href="#"><i class="icon-youtube"></i></a>
+				</p>
+				<p>
+					<small>&copy; All Rights Reserved. <br>Designed by: <a
+						href="http://freehtml5.co/" target="_blank">Ashu</a></small>
+				</p>
+			</div>
+		</div>
+	</div>
+	</footer>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/salvattore.min.js"></script>
+	<script src="js/main1.js"></script>
 
 </body>
-
 </html>
-
-
-   

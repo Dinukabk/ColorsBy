@@ -31,7 +31,7 @@ public class ArtistLoginServlet extends HttpServlet {
 			int login = LoginDao.validateArtist(n, p);
 			if (login > 0) {
 				session.setAttribute("artistUserID", login);
-				RequestDispatcher RD = request.getRequestDispatcher("ArtistList.jsp");
+				RequestDispatcher RD = request.getRequestDispatcher("Artist.jsp");
 				RD.forward(request, response);
 			} else {
 				RequestDispatcher RD = request.getRequestDispatcher("artistLogin.jsp");

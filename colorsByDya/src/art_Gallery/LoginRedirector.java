@@ -1,7 +1,6 @@
 package art_Gallery;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,13 +25,9 @@ public class LoginRedirector extends HttpServlet {
 			RD.forward(request, response);
 		} else {
 			System.out.println("User ID detected in the session...");
-			
-			String userID = String.valueOf(session.getAttribute("userID"));
-			List<CustomerNew> cusDeatils = CustomerDbUtill.getCustomerDetails(userID);
-			request.setAttribute("cusDeatils", cusDeatils);
-			
 			RequestDispatcher RD = request.getRequestDispatcher("userDashboard.jsp");
 			RD.forward(request, response);
 		}
 	}
+
 }

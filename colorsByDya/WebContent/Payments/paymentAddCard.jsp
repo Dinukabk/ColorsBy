@@ -39,7 +39,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase font-weight-bold">${userName }</a>
+								<a href="../Payments/payment.jsp" class="nav-link text-uppercase font-weight-bold">${userName }</a>
 							</li>
 						</ul>
 					</div>
@@ -90,7 +90,7 @@
 						<p class="text-dark h6 text-right">Expiration Date:</p>
 					</td>
 					<td>
-						<input type="date" class="border border-dark bg-light rounded pl-1" name="expDate" placeholder="Expiration Date">
+						<input type="number" class="border border-dark bg-light rounded pl-1" name="expDate" placeholder="Expiration Date">
 					</td>
 				</tr>
 				<tr>
@@ -113,7 +113,7 @@
 					<td>
 					</td>
 					<td>
-						<button type="submit" class="btn btn-primary">Save Card</button>
+						<button type="submit" class="btn btn-primary">Pay now</button>
 					</td>
 				</tr>
 			</table>

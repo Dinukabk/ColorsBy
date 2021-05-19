@@ -53,21 +53,3 @@ function phonenumber(phone)
         return false;
         }
 }
-
-
-function changeButton(){
-	document.getElementById("acceptSpecialArt").innerText="Accepted";
-}
-
-
-
-
-
-
-
-
-
-
-
-
-

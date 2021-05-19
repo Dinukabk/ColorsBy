@@ -18,29 +18,19 @@ public class Servlet_AddPainting extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		HttpSession session = request.getSession(false);
-		
-		if (session != null) { // If a session exists			
-			int artistUserID = (int) session.getAttribute("artistUserID");
-			request.setAttribute("artistUserID", artistUserID);
 
-		 //if (session.getAttribute("artistUserID") != null) { 
-			 
-			String artistUserName = PaintingDBUtil.getArtistUsername(artistUserID);
-			request.setAttribute("artistUserName", artistUserName);
-			
-			System.out.println("No user ID Detected in session...");
-			RequestDispatcher RD = request.getRequestDispatcher("UploadPaint.jsp");
-			RD.forward(request, response);
-			} 
-		
-		else {
-			System.out.println("User ID detected in the session...");
-			RequestDispatcher RD = request.getRequestDispatcher("artistLogin.jsp");
-			RD.forward(request, response);
-			}
+		 if (session.getAttribute("artistUserID") != null) {
+		System.out.println("No user ID Detected in session...");
+		RequestDispatcher RD = request.getRequestDispatcher("UploadPaint.jsp");
+		RD.forward(request, response);
+		} else {
+		System.out.println("User ID detected in the session...");
+		RequestDispatcher RD = request.getRequestDispatcher("artistLogin.jsp");
+		RD.forward(request, response);
+		}
 		
 	}
 

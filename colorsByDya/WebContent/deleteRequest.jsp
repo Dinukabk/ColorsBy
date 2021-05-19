@@ -47,8 +47,6 @@
 			</nav>
 		</header>
 	</div>
-	
-	<h1>Delete Request</h1>
 
 	<%
 		String request_id = request.getParameter("request_id");
@@ -68,14 +66,13 @@
 	%>
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
-	<form action="DeleteRequestServlet" method="post" class="form">
-		<img name="photograph" src="images/<%=photograph%>" width="200px" height="200px"/><br>
+	<form action="deleteRequest" method="post" class="form">
 		Request ID <input type="text" name="request_id" value="<%= request_id %>" readonly><br>
 		Name <input type="text" name="name" value="<%= name %>" readonly><br>
 		Phone Number <input type="text" name="phone" value="<%= phone %>" readonly><br>
 		Email Address <input type="text" name="email" value="<%= email %>" readonly><br>
 		Message <input type="text" name="message" value="<%= message %>" readonly><br>
-		<%-- Photograph <input type="text" name="photograph" value="<%= photograph %>" readonly><br> --%>
+		Photograph <input type="text" name="photograph" value="<%= photograph %>" readonly><br>
 		Address line 01 <input type="text" name="add_line-01" value="<%= add_line_01 %>" readonly><br>
 		Address line 02 <input type="text" name="add_line_02" value="<%= add_line_02 %>" readonly><br>
 		Postal code <input type="text" name="postal_code" value="<%= postal_code %>" readonly><br>
@@ -83,9 +80,9 @@
 		City <input type="text" name="city" value="<%= city %>" readonly><br>
 		Country <input type="text" name="country" value="<%= country %>" readonly><br>
 		Customer ID <input type="text" name="c_customer_id" value="<%= c_customer_id %>" readonly><br>
-		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br><br>
+		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br>
 		
-		<input type="submit" class="btn btn-secondary" name="submit" value="Delete Request" onClick="confirm( 'Delete Request?' )"><br>
+		<input type="submit" name="submit" value="Delete Request"><br>
 	</form>
 	</div>
 	

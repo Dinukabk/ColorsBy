@@ -5,9 +5,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 //import java.io.InputStream;
-import java.io.PrintWriter;
 
-import javax.mail.MessagingException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,15 +40,6 @@ public class RequestServlet extends HttpServlet {
 		String province = request.getParameter("province");
 		String city = request.getParameter("city");
 		String country = request.getParameter("country");
-		//String userID = request.getParameter("userID");
-		int userID =Integer.parseInt(request.getParameter("userID"));
-		//String artist_name = request.getParameter("artist_name");
-		String artist_name_list=" ";
-	      response.setContentType("text/html");
-	      PrintWriter pw = response.getWriter();
-	      String[] artist_name = request.getParameterValues("artist_name");
-	      for(int i=0; i<artist_name.length; i++){artist_name_list+=artist_name[i]+" ";
-	      }
 		
 		
 		
@@ -70,18 +60,16 @@ public class RequestServlet extends HttpServlet {
 		
 		boolean isTrue;
 		
-		isTrue = RequestDBUtil.insertSRequest(name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country,userID,artist_name_list);
+		isTrue = RequestDBUtil.insertSRequest(name, phone, email, message, photograph, add_line_01, add_line_02, postal_code, province, city, country);
 		
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("SpecialRequest.jsp");
 			dis.forward(request, response);
-			
-			try {
-				MailUtil.sendMail("it19971490@my.sliit.lk");
-			} catch (MessagingException e) {
-				
-				e.printStackTrace();
-			}
+			/*
+			 * System.out.println("<script type=\"text/javascript\">");
+			 * System.out.println("alert('User or password incorrect');");
+			 * System.out.println("</script>");
+			 */
 		}
 		else {
 			RequestDispatcher dis2 = request.getRequestDispatcher("requestUnsuccess.jsp");

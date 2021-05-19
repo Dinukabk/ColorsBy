@@ -20,16 +20,10 @@ public class Servlet_GalleryLogin extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		
 		if (session != null) {
-			int artistUserID = (int) session.getAttribute("artistUserID");
-			request.setAttribute("artistUserID", artistUserID);
-			
-			String artistUserName = PaintingDBUtil.getArtistUsername(artistUserID);
-			request.setAttribute("artistUserName", artistUserName);
-			
-			System.out.println("Artist ID in servlet: " + artistUserID);
-			
+			int ArtistUserID = (int) session.getAttribute("artistUserID");
+			System.out.println("Artist ID in servlet: " + ArtistUserID);
 			try {
-				List<Painting> paintingDetails = PaintingDBUtil.displayPaintingList(artistUserID);
+				List<Painting> paintingDetails = PaintingDBUtil.displayPaintingList(ArtistUserID);
 				request.setAttribute("paintingDetails", paintingDetails);
 				RequestDispatcher dispatch = request.getRequestDispatcher("Artworks.jsp");
 				dispatch.forward(request, response);

@@ -18,27 +18,6 @@
 
 <body>
 
-<%
-	// Catch data coming through the url from Artworks.jsp page
-	
-		String painting_id = request.getParameter("painting_id");
-		String title = request.getParameter("title");
-		String description = request.getParameter("description");
-		String price = request.getParameter("price");
-		String drawn_date = request.getParameter("drawn_date");
-		String category = request.getParameter("category");
-		String weight = request.getParameter("weight");
-		String length = request.getParameter("length");
-		String width = request.getParameter("width");
-		String image_url = request.getParameter("image_url");
-		String material = request.getParameter("material");
-		String in_stock = request.getParameter("in_stock");
-		String frame = request.getParameter("frame");
-		String a_artist_id = request.getParameter("a_artist_id");
-		String artistUserName = request.getParameter("artistUserName");
-	%>
-
-
 	<!-- Navbar -->
 	<div class="container" style="height: 132px;">
 		<header class="header" class="py-5 mt-5">
@@ -65,7 +44,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
-								class="nav-link text-uppercase font-weight-bold"><%= artistUserName %></a></li>
+								class="nav-link text-uppercase font-weight-bold">${userName }</a></li>
 						</ul>
 					</div>
 				</div>
@@ -75,108 +54,102 @@
 
 
 
-	<!-- Was Here -->
+	<%
+	// Catch data coming through the url from Artworks.jsp page
 	
-	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.2);">
+		String painting_id = request.getParameter("painting_id");
+		String title = request.getParameter("title");
+		String description = request.getParameter("description");
+		String price = request.getParameter("price");
+		String drawn_date = request.getParameter("drawn_date");
+		String category = request.getParameter("category");
+		String weight = request.getParameter("weight");
+		String length = request.getParameter("length");
+		String width = request.getParameter("width");
+		String image_url = request.getParameter("image_url");
+		String material = request.getParameter("material");
+		String in_stock = request.getParameter("in_stock");
+		String frame = request.getParameter("frame");
+		String a_artist_id = request.getParameter("a_artist_id");
+		String c_cart_id = request.getParameter("c_cart_id");
+	%>
 	
-	<form action="Servlet_deletePainting" method="post" class="form">
 	
-		<div class="form__group">
-			<label>Painting ID</label>
-			<input class="form__input" type="text" name=painting_id value="<%= painting_id %>" readonly>
-		</div>
-		<div class="form__group">
-			<label>Title</label>
-			<input class="form__input" type="text" name="title" value="<%= title %>" readonly>
-		</div>
-		<div class="form__group">
-			<label>Description</label>
-			<textarea class="form__input" rows="" cols="" name="description" readonly><%= description %></textarea>
-			<%-- <input type="text" class="form__input" name="description" value="<%= description %>"> --%>
-		</div>
-		<div class="form__group">
-			<label>Price (LKR)</label>
-			<input type="text" class="form__input" name="price" value="<%= price %>" readonly> 
-		</div>
-		<div class="form__group">
-			<label>Drawn Date</label>
-			<input type="text" class="form__input" name="drawn_date" value="<%= drawn_date %>" readonly>
-		</div>
-		<div class="form__group">
-			<label>Category</label>
-			<input type="text" class="form__input" name="category" value="<%= category %>" readonly>
-		</div>
-		<div class="form__group">
-			<label>Weight (KG)</label>
-			<input type="number" class="form__input" name="weight" value="<%= weight %>" readonly> 
-		</div>
-		<div class="form__group">
-			<label>Length (CM)</label>
-			<input type="number" class="form__input" name="length" value="<%= length %>" readonly> 
-		</div>
-		<div class="form__group">
-			<label>Width (CM)</label>
-			<input type="number" class="form__input" name="width" value="<%= width %>" readonly>
-		</div>
-		<div class="form__group">
-			<label>Image</label>
-			<input type="text" class="form__input" name="image_url" value="<%= image_url %>" readonly>
-		</div>
-		<div class="form__group">
-			<label>Material</label>
-			<input type="text" class="form__input" name="material" value="<%= material %>" readonly>
-		</div>
-		<div class="form__group">
-			<label>Frame</label>
-			<input type="text" class="form__input" name="frame" value="<%= frame %>" readonly>
-		</div>
 	
-	<%-- 
-			Painting ID
-			<input type="text" name=painting_id value="<%= painting_id %>" readonly>
-			Title
-			<input type="text" name="title" value="<%= title %>" readonly>
-			Description
-			<input type="text" name="description" value="<%= description %>" readonly>
-			Price
-			<input type="text" name="price" value="<%= price %>" readonly>
-			Drawn Date
-			<input type="text" name="drawn_date" value="<%= drawn_date %>" readonly>
-			Category
-			<input type="text" name="category" value="<%= category %>" readonly>
-			Weight
-			<input type="number" name="weight" value="<%= weight %>" readonly>
-			Length
-			<input type="number" name="length" value="<%= length %>" readonly>
-			Width
-			<input type="number" name="width" value="<%= width %>" readonly>
-			Image
-			<input type="text" name="image_url" value="<%= image_url %>" readonly>
-			Material
-			<input type="text" name="material" value="<%= material %>" readonly>
-			Frame
-			<input type="text" name="frame" value="<%= frame %>" readonly>
-		 --%>
+	<form action="deletepaint" method="post">
 	
-		<br>
-		<input type="submit" name="submit" value="DELETE" class="btn">
+	<table style="width:auto; margin:0 auto;">
+		 <tr>
+			<td>Painting ID</td>
+			<td><input type="text" name=painting_id value="<%= painting_id %>" readonly></td>
+		</tr> 
+		<tr>
+			<td>Title</td>
+			<td><input type="text" name="title" value="<%= title %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td><input type="text" name="description" value="<%= description %>" readonly></td>
+		</tr>
+		<tr>
+			<td> Price</td>
+			<td><input type="text" name="price" value="<%= price %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Drawn Date</td>
+			<td><input type="text" name="drawn_date" value="<%= drawn_date %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Category</td>
+			<td><input type="text" name="category" value="<%= category %>" readonly></td>
+		</tr>	
+		<tr>
+			<td>Weight</td>
+			<td><input type="number" name="weight" value="<%= weight %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Length</td>
+			<td><input type="number" name="length" value="<%= length %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Width</td>
+			<td><input type="number" name="width" value="<%= width %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Image</td>
+			<td><input type="text" name="image_url" value="<%= image_url %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Material</td>
+			<td><input type="text" name="material" value="<%= material %>" readonly></td>
+		</tr>
+		<%-- <tr>
+			<td>In-Stock</td>
+			<td><input type="text" name="in_stock" value="<%= in_stock %>" readonly></td>
+		</tr> --%>
+		<tr>
+			<td>Frame</td>
+			<td><input type="text" name="frame" value="<%= frame %>" readonly></td>
+		</tr>
+		<%-- <tr>
+			<td>Artist ID</td>
+			<td><input type="text" name="a_artist_id" value="<%= a_artist_id %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Cart ID</td>
+			<td><input type="text" name="c_cart_id" value="<%= c_cart_id %>" readonly></td>
+		</tr> --%>
+		
+	</table>
+	<br>
+	<input type="submit" name="submit" value="DELETE" class="btn">
+	
+	
 	
 	</form>
-	
-	</div>
 
 <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-

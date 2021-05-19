@@ -43,7 +43,7 @@
 <div class="navbar">
   <a href="frontpage.jsp">Home</a>
   <a href="#news">Paintings</a>
-  <a href="search.jsp">Search</a>
+  <a herf="search.jsp">Search</a>
   
 <!-- 
 
@@ -295,7 +295,7 @@ function showSlides() {
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/deepthi_02.JPG" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="images/img_4.jpg" alt="Free HTML5 Bootstrap template"></a>
 	        		<div class="fh5co-desc">Colour Pencils</div>
         		</div>
         	</div>
