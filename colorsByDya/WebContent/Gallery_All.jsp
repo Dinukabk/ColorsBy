@@ -32,6 +32,7 @@
 <link rel="stylesheet" href="css/styles_Gallery.css?"> 
 
 
+
 </head>
 <body>
 
@@ -162,7 +163,11 @@
       	 		</div>
 			</div>
 			
-			
+	<script>
+$(document).ready( function () {
+    $('#table1').DataTable();
+} );
+</script>		
 	
 <!-- <script type="text/javascript" href="js/frontpage.js"></script>	 -->
 <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
