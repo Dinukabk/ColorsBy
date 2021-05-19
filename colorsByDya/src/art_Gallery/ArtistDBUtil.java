@@ -108,14 +108,14 @@ boolean isSuccess = false;
 		
 	}
 	
-	// Details retreve
+	// Details retrieve
 	public static List<Artist> getArtistDetails(String id){
 		int convertedID = Integer.parseInt(id);
 		ArrayList<Artist>art = new ArrayList<>();
 		try {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM artist EHERE artist_id= '"+convertedID+"' ";
+			String sql = "SELECT * FROM artist WHERE artist_id= '"+convertedID+"' ";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {

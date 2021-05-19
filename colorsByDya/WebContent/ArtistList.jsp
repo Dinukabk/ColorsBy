@@ -81,12 +81,12 @@
 	<c:set var="password" value="${art.password}"/>
 	</c:url>
 	
-	<a href="${cusupdate}">
+	<a href="${artupdate}">
 	<input type="button" name="update" value="Update My Data">
 	</a>
 	
 	<br>
-	<c:url value="ArtistDelete.jsp" var="cusdelete">
+	<c:url value="ArtistDelete.jsp" var="artdelete">
 		<c:set var="artist_id" value="${art.artist_id}"/>
 	<c:set var="name" value="${art.name}"/>
 	<c:set var="email" value="${art.email}"/>
@@ -101,7 +101,7 @@
 	<c:set var="username" value="${art.username}"/>
 	<c:set var="password" value="${art.password}"/>
 	</c:url>
-	<a href="${cusdelete}">
+	<a href="${artdelete}">
 	<input type="button" name="updateartist" value="Delete My Account">
 	</a>
 	

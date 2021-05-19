@@ -41,17 +41,17 @@ public class updateArtistServlet extends HttpServlet {
 		if(isTrue == true) {
 			
 			//after update get the details and update
-			List<Artist> cusDeatils = ArtistDBUtil.getArtistDetails(artist_id);
-			request.setAttribute("cusDeatils", cusDeatils);
+			List<Artist> artDeatils = ArtistDBUtil.getArtistDetails(artist_id);
+			request.setAttribute("artDeatils", artDeatils);
 			
-			RequestDispatcher dis = request.getRequestDispatcher("userDashboard.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("ArtistList.jsp");
 			dis.forward(request, response);
 			
 		}else {
-			List<Artist> cusDeatils = ArtistDBUtil.getArtistDetails(artist_id);
-			request.setAttribute("cusDeatils", cusDeatils);
+			List<Artist> artDeatils = ArtistDBUtil.getArtistDetails(artist_id);
+			request.setAttribute("artDeatils", artDeatils);
 			
-			RequestDispatcher dis = request.getRequestDispatcher("userDashboard.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("ArtistList.jsp");
 			dis.forward(request, response);
 			
 		}

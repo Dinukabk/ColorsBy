@@ -30,7 +30,7 @@ public class ArtistDelete extends HttpServlet {
 			List<Artist> artDetails = ArtistDBUtil.getArtistDetails(id);
 			request.setAttribute("artDetails", artDetails);
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("userDashboard.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("ArtistList.jsp");
 			dispatcher.forward(request, response);
 		}
 		
