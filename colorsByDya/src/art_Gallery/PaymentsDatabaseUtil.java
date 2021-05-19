@@ -213,6 +213,13 @@ public class PaymentsDatabaseUtil {
 			return false;
 		}
 	}
+	
+	/*
+	 * public static void getPaymentDetails() { PreparedStatement pst = null;
+	 * Connection con = null; try {
+	 * 
+	 * } catch (Exception e) { e.printStackTrace(); } }
+	 */
 
 	public static int getCardNo() {
 		return cardNo;
