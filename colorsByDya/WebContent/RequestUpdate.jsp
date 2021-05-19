@@ -71,9 +71,9 @@
 	<form action="UpdateRequestServlet" method="post" class="form">
 	    <%-- <img name="photograph" src="images/<%=photograph%>" width="200px" height="200px"/><br> --%>
 		Request ID <input type="text" name="request_id" value="<%= request_id %>" readonly><br>
-		Name <input type="text" name="name" value="<%= name %>"><br>
-		Phone Number <input type="text" name="phone" value="<%= phone %>"><br>
-		Email Address <input type="text" name="email" value="<%= email %>"><br>
+		Name <input type="text" name="name" value="<%= name %>" required oninvalid= "alert('Please enter the Name');"><br>
+		Phone Number <input type="text" name="phone" value="<%= phone %>" pattern="{10}" required oninvalid= "alert('Please enter valid Phone Number');"><br>
+		Email Address <input type="text" name="email" value="<%= email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required oninvalid= "alert('Please enter the Email Address');" title="Enter valid email"><br>
 		Message <input type="text" name="message" value="<%= message %>"><br>
 		Photograph <input type="text" name="photograph" value="<%= photograph %>" readonly><br> 
 		Address line 01 <input type="text" name="add_line_01" value="<%= add_line_01 %>"><br>
