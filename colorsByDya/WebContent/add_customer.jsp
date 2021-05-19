@@ -153,17 +153,17 @@ input:required, textarea:required {
 <body>
 	<div class="navbar">
 		<a href="frontpage.jsp">Home</a> <a href="#news">About us</a> <a
-			href="#home">Change Password</a> <a href="frontpage.jsp">Logout</a>
+			href="#home"></a> <a href="frontpage.jsp"></a>
 	</div>
 
 	<div id="contact-form">
 		<div>
-			<h1>Customers Details</h1>
+			<h1>Customers Register</h1>
 		</div>
 		<form action="AddCustomer" method="post">
 			<div>
 				<label for="ID"> <span class="required">Full Name</span>
-					<input type="text" id="" name="fullname" value="" pattern=""
+					<input type="text" id="" name="fullname" value=""
 					placeholder="Full Name" required="required" autofocus="autofocus"
 					 />
 				</label>
@@ -171,7 +171,7 @@ input:required, textarea:required {
 			<div>
 				<label for="Name"> <span class="required">Phone Number
 						 </span> <input type="text" id="" name="phoneNo" value=""
-					pattern="" placeholder="Phone Number" required="required"
+					placeholder="Phone Number" required="required"
 					 />
 				</label>
 			</div>
@@ -190,38 +190,44 @@ input:required, textarea:required {
 			<div>
 				<label for="Phone no"> <span class="required">Postal Code
 						 </span> <input type="" id="" name="PCode" value=""
-					Pattern="" placeholder="Postal Code" required="required"
+					 placeholder="Postal Code" required="required"
 					 />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">City
 						 </span> <input type="" id="" name="City" value=""
-					Pattern="" placeholder="City" required="required" />
+					 placeholder="City" required="required" />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">Province
 						 </span> <input type="" id="" name="Province" value=""
-					Pattern="" placeholder="Province"
+					 placeholder="Province"
 				    required="required" />
 				</label>
 			</div>
 			<div>
 				<label for="Phone no"> <span class="required">Country
 						 </span> <input type="" id="" name="Country" value=""
-					Pattern="" placeholder="Country" required="required" />
+					 placeholder="Country" required="required" />
 				</label>
 			</div>
 			<div>
-				<label for="Cost"> <span class="required">User Name
+				<label for="Cost"> <span class="required">Gmail
 						 </span> <input type="text" id="" name="username" value=""
-					placeholder="User Name" required="required" />
+					placeholder="mail" required="required" />
 				</label>
 			</div>
 				<div>
 				<label for="Cost"> <span class="required">Password
-						 </span> <input type="text" id="" name="password" value=""
+						 </span> <input type="password" id="" name="password" value=""
+					placeholder="Password" required="required" />
+				</label>
+			</div>
+			<div>
+				<label for="Cost"> <span class="required">Re-enter the Password
+						 </span> <input type="password" id="" name="password" value=""
 					placeholder="Password" required="required" />
 				</label>
 			</div>

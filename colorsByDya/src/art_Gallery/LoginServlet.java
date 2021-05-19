@@ -2,6 +2,8 @@ package art_Gallery;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,25 +19,28 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		System.out.println("Mekawath Print weyan redda...");
 
 		// Getting the user_name and password in the login page
 		String n = request.getParameter("email");
 		String p = request.getParameter("password");
 		
-		try {
-		List<CustomerNew> cusDeatils = CustomerDbUtill.validate(n, p);
-		request.setAttribute("cusDeatils", cusDeatils);
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
+		// try {
+		// }
+		// catch(Exception e){
+		// 	e.printStackTrace();
+		// }
 
 		// The session
-	HttpSession session = request.getSession(false);
+	HttpSession session = request.getSession();
+	System.out.println("Test Print 02");
 	if (session != null) {
+			System.out.println("Test Print...");
 			// session.setAttribute("l_id", n);
 			int login = LoginDao.validate(n, p);
 			if (login > 0) {
+				List<CustomerNew> cusDeatils = CustomerDbUtill.validate(n, p);
+				request.setAttribute("cusDeatils", cusDeatils);
 				session.setAttribute("userID", login);
 				RequestDispatcher RD = request.getRequestDispatcher("userDashboard.jsp");
 				RD.forward(request, response);

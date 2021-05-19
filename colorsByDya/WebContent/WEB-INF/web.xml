@@ -351,7 +351,11 @@ version="2.5"
 		<servlet-name>negoAccept</servlet-name>
 		<url-pattern>/negoAccept</url-pattern>
 	</servlet-mapping>
-  <!-- end of Loch -->
-<!-- sasiru -->
+	  <!-- end of Loch -->
+	<!-- sasiru -->
+	<servlet-mapping>
+		<servlet-name>AddCusomer</servlet-name>
+		<url-pattern>/AddCustomer</url-pattern>
+	</servlet-mapping>
 </web-app>
 </element>

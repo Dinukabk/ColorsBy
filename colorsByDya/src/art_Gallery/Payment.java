@@ -1,4 +1,4 @@
-ackage art_Gallery;
+package art_Gallery;
 
 import java.sql.Date;
 

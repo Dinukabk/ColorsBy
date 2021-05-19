@@ -1,7 +1,6 @@
 package art_Gallery;
 
 import java.io.IOException;
-import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,12 +24,12 @@ public class PaymentAddCardFormServlet extends HttpServlet {
 		int userID = (int) session.getAttribute("userID");
 		
 		if (saveCard != null) { // If save card checkBox is ticked...
-			int querySuccess = PaymentsDatabaseUtil.addPaymentCard(userID, cardNumber, nameOnCard, expDate, CVV, saveCard);
-			if (querySuccess > 0) { // If query executed correctly
-				request.setAttribute("cardNumber", Integer.parseInt(cardNumber));
+			Boolean querySuccess = PaymentsDatabaseUtil.addPaymentCard(userID, cardNumber, nameOnCard, expDate, CVV, saveCard);
+			if (querySuccess == true) { // If query executed correctly
+				request.setAttribute("cardNumber", cardNumber);
 				request.setAttribute("nameOnCard", nameOnCard);
-				request.setAttribute("expDate", Date.valueOf(expDate));
-				request.setAttribute("CVV", Integer.parseInt(CVV));
+				request.setAttribute("expDate", expDate);
+				request.setAttribute("CVV", CVV);
 				RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 				RD.forward(request, response);
 			} else { // Display error message if query not successful...
@@ -43,10 +42,10 @@ public class PaymentAddCardFormServlet extends HttpServlet {
 				RD.forward(request, response);
 			}			
 		} else { // If save card checkBox is not ticked
-			request.setAttribute("cardNumber", Integer.parseInt(cardNumber));
+			request.setAttribute("cardNumber", cardNumber);
 			request.setAttribute("nameOnCard", nameOnCard);
-			request.setAttribute("expDate", Date.valueOf(expDate));
-			request.setAttribute("CVV", Integer.parseInt(CVV));
+			request.setAttribute("expDate", expDate);
+			request.setAttribute("CVV", CVV);
 			RequestDispatcher RD = request.getRequestDispatcher("./Payments/paymentWithCard.jsp");
 			RD.forward(request, response);
 		}
