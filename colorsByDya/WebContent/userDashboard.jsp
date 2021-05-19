@@ -21,6 +21,9 @@
 
 </head>
 <body>
+
+
+
 	<!-- Navbar -->
 	<header class="header" class="py-5 mt-5">
 		<nav class="navbar navbar-expand-lg fixed-top py-3">
@@ -37,7 +40,7 @@
 				<div id="navbarSupportedContent" class="collapse navbar-collapse">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a href="#" class="nav-link text-uppercase font-weight-bold">Home<span class="sr-only"></span></a>
+							<a href="index.jsp" class="nav-link text-uppercase font-weight-bold">Home<span class="sr-only"></span></a>
 						</li>
 						<li class="nav-item">
 							<a href="#" class="nav-link text-uppercase font-weight-bold">About</a>
@@ -62,7 +65,7 @@
 	<div class="container">
 		<div class="pt-5 text-white">
 			<header class="py-5 mt-5">
-				<h1 class="display-4">User Dash</h1>
+				<h1 class="display-4">Welcome User</h1>
 				<div class="container p-3 my-2 rounded  float-left"
 					style="background-color: rgba(255, 255, 255, 0.5);">
 					<button type="button" class="btn btn-primary"
@@ -100,7 +103,6 @@
 		<td>ID</td>
 		<td>fullname</td>
 		<td>Username</td>
-		<td>Password</td>
 		<td>Phone No</td>
 		<td>Address line1</td>
 		<td>Address line2</td>
@@ -114,7 +116,6 @@
 		<td>${cus.customer_id}</td>
 		<td>${cus.full_name}</td>
 		<td>${cus.username}</td>
-		<td>${cus.password}</td>
 		<td>${cus.phone_no}</td>
 		<td>${cus.add_line_01}</td>
 		<td>${cus.add_line_02}</td>

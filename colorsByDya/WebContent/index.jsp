@@ -35,7 +35,7 @@
 				<div id="navbarSupportedContent" class="collapse navbar-collapse">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active"><a href="#"
-							class="nav-link text-uppercase font-weight-bold">Home <span
+							class="nav-link text-uppercase font-weight-bold">Home<span
 								class="sr-only"></span></a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link text-uppercase font-weight-bold">About</a></li>
@@ -46,7 +46,7 @@
 						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
 							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
 							
-							<li class="nav-item"><a onclick="location.href = 'add_customer.jsp'"
+							<li class="nav-item"><a href="add_customer.jsp"
 							class="nav-link text-uppercase font-weight-bold">Sign up</a></li>
 
 					<!-- 	<li class="nav-item"><a onclick="location.href = 'ArtistLoginRedirector'"
@@ -126,18 +126,18 @@ body {
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 2s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .0} 
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .0} 
   to {opacity: 1}
 }
 
@@ -198,7 +198,7 @@ function showSlides() {
     }
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
 }
 </script>
 			
