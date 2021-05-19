@@ -193,22 +193,22 @@
 		
 		
 		<div class="inname">
-		<h4>Update event name</h4>				<input type="text" name="Uname" placeholder="Enter event name" value="test3" ><br>
+		<h4>Update event name</h4>				<input type="text" name="Uname" placeholder="Enter event name" value="test3" required><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="indate">
-	 	<h4>Update event date</h4>				<input type="text" name="Udate" id="datepicker" placeholder="Enter event date" value="05/17/2021" ><br>
+	 	<h4>Update event date</h4>				<input type="text" name="Udate" id="datepicker" placeholder="Enter event date" value="05/17/2021" required><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="insta">
-	 	<h4>Update event status</h4>			<input type="number" name="Ustatus" placeholder="Enter event status" value="1" ><br>
+	 	<h4>Update event status</h4>			<input type="number" name="Ustatus" placeholder="Enter event status" value="1" required><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="des">
-	 	<h4>Update event description</h4>		<input type="text" name="Udescription" placeholder="Enter description" value="test3" ><br>
+	 	<h4>Update event description</h4>		<input type="text" name="Udescription" placeholder="Enter description" value="test3" required><br>
 	 	</div>
 	 	
 	 	

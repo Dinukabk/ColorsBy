@@ -19,10 +19,19 @@
   	
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	
+  	
   	<script>
-  		$( function() {
-    		$( "#datepicker" ).datepicker();
-  		} );
+  		
+  	function validateForm() {
+  		
+  		
+  	}
+  		
+  	
+  	
+  	
+  	
   	</script>
 		
 
@@ -172,23 +181,23 @@
 		
 		<div class="inname">
 		<h2>Name</h2>
-		<input type="text" name="name" placeholder="Enter event name" ><br></div>
+		<input type="text" name="name" placeholder="Enter event name" required ><br></div>
 	
 	 	<div class="indate">
 	 	<h2>Date</h2>
-	 	<input type="text" name="date" id="datepicker" placeholder="Enter event date" ><br></div>
+	 	<input type="text" name="date" id="datepicker" placeholder="Enter event date" required><br></div>
 
 	 	<div class="insta">	
 	 	<h2>Status</h2>
-	 	<input type="text" name="status" placeholder="Enter event status" ><br></div>
+	 	<input type="text" name="status" placeholder="Enter event status" required><br></div>
 	
 		 <div class="des">	
 	 	<h2>Description</h2>
-	 	<input type="text" name="description" placeholder="Enter description" ><br></div>
+	 	<input type="text" name="description" placeholder="Enter description" required><br></div>
 
 		<div class="inad">
 	 	<h2>AdminID</h2>
-	 	<input type="text" name="adminID" placeholder="Enter admin ID" ><br></div>
+	 	<input type="text" name="adminID" placeholder="Enter admin ID" required><br></div>
 	 	
 	 	
 	 	<div class="submit">
@@ -199,7 +208,8 @@
 	
 	</div>
 	
-	
 
+
+	
 </body>
 </html>
