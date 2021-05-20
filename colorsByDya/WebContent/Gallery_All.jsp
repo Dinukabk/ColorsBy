@@ -32,6 +32,7 @@
 <link rel="stylesheet" href="css/styles_Gallery.css?"> 
 
 
+
 </head>
 <body>
 
@@ -71,14 +72,14 @@
 
 
 <!-- SEARCH BAR  -->
-	<div class="topnav">
+	<!-- <div class="topnav">
 	    <div class="search-container">
 		    <form action="#" method="post">
 		      <input type="text" id="search-input" placeholder="Search.." name="search">
 		      <button type="submit"><i class="fa fa-search"></i></button>
 		    </form>
 	  	</div>
-	 </div>
+	 </div> -->
 	
 	
 	<%@ page import="java.sql.ResultSet" %>
@@ -162,7 +163,11 @@
       	 		</div>
 			</div>
 			
-			
+	<script>
+$(document).ready( function () {
+    $('#table1').DataTable();
+} );
+</script>		
 	
 <!-- <script type="text/javascript" href="js/frontpage.js"></script>	 -->
 <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>

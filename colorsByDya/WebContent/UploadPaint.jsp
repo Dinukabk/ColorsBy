@@ -176,9 +176,30 @@ body {
 								class="nav-link text-uppercase font-weight-bold">Home <span
 									class="sr-only"></span></a></li>
 							<li class="nav-item"><a href="#"
-								class="nav-link text-uppercase font-weight-bold">About</a></li>
+								class="nav-link text-uppercase font-weight-bold">About</a></li>								
+							<!-- 	
 							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">My Profile</a></li>
+								
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Exhibitions</a></li>
+								 -->
+							<li class="nav-item"><a onclick="location.href = 'Servlet_Gallery_All'"
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+								
+							<li class="nav-item"><a onclick="location.href = 'Servlet_GalleryLogin'"
+								class="nav-link text-uppercase font-weight-bold">Artwork</a></li>
+								
+							<li class="nav-item"><a onclick="location.href = 'Servlet_AddPainting'"
+								class="nav-link text-uppercase font-weight-bold">Upload Painting</a></li>
+							<!-- 	
+							<li class="nav-item"><a onclick="location.href = 'requestLoginServlet'"
+								class="nav-link text-uppercase font-weight-bold">Special Requests</a></li>
+								
+							<li class="nav-item"><a onclick="location.href = 'NegoLoginServlet'"
+								class="nav-link text-uppercase font-weight-bold">Negotiate Price Requests</a></li>
+								-->
+							
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="#"
@@ -224,7 +245,7 @@ body {
 			<label for="fixed">Fixed Price</label>
 			
 			<input type="number" class="form__input" style="display: none" id="artworkFixedValue" name="artworkFixedValue" value="artworkFixedValue" min="10000" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Enter Price of the Artwork here" >
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" step=".01" placeholder="Enter Price of the Artwork here" >
 					
 					
 		</div>
@@ -273,16 +294,16 @@ body {
 		<div>
 			<label>Length in cm</label>
 			<!-- step=".01" oninput="validity.valid||(value='');" -->
-			<input type="number"  class="form__input" id="artworkLength" name="artworkLength" min="0" oninput="this.value = Math.abs(this.value)" placeholder="Enter Length of the Artwork here"> 
+			<input type="number"  class="form__input" id="artworkLength" name="artworkLength" min="0" oninput="this.value = Math.abs(this.value)" step=".01" placeholder="Enter Length of the Artwork here"> 
 		</div>
 		<div>
 			<label>Width in cm</label>
-			<input type="number"  class="form__input" id="artworkWidth" name="artworkWidth" min="0" oninput="this.value = Math.abs(this.value)" placeholder="Enter Width of the Artwork here">
+			<input type="number"  class="form__input" id="artworkWidth" name="artworkWidth" min="0" oninput="this.value = Math.abs(this.value)" step=".01" placeholder="Enter Width of the Artwork here">
 		</div>
 		
 		<div>
 			<label>Weight in kg</label>
-			<input type="number"  class="form__input" id="artworkWeight" name="artworkWeight" min="0" oninput="this.value = Math.abs(this.value)" placeholder="Enter Weight of the Artwork here">
+			<input type="number"  class="form__input" id="artworkWeight" name="artworkWeight" min="0" oninput="this.value = Math.abs(this.value)" step=".01" placeholder="Enter Weight of the Artwork here">
 		</div>
 		<div>
 			<label>Material</label>
