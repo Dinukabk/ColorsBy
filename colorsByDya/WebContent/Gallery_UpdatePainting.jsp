@@ -18,9 +18,9 @@
 		.form__inputImg {
 		    border-radius: 6px;
 		    display: block;
-		    width: 50%;
+		    width: 100%;
 		    padding: 20px;
-		    margin-left:100px;
+		    /* margin-left:100px; */
 		    font-family: $font-family;
 		    -webkit-appearance: none;
 		    border: 0;
@@ -156,7 +156,7 @@
 		</div>
 		<div class="form__group">
 			<label>Drawn Date</label>
-			<input type="date" class="form__input" name="drawn_date" value="<%= drawn_date %>" min="1970-01-01" max="2021-05-17">
+			<input type="date" id="drawnDate" class="form__input" name="drawn_date" value="<%= drawn_date %>" min="1970-01-01" max="2021-05-17">
 		</div>
 		<div class="form__group">
 			<label>Category</label>
@@ -282,6 +282,8 @@
 
 <script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
+
+<script src="js/Gallery_JScript.js"></script>
 
 </body>
 </html>
