@@ -193,64 +193,14 @@ input:required, textarea:required {
 				</label>
 			</div>
 			<div>
-				<label for="Name"> <span class="required">Phone Number
-						 </span> <input type="text" id="" name="phoneNo" value="<%= PhoneNo %>"
-					pattern="" placeholder="Phone Number" readonly
-					 />
-				</label>
-			</div>
-			<div>
-				<label for="Address"> <span class="required">Address Line1
-						 </span> <input type="text" id="" name="Address1" value="<%= address1 %>"
-					placeholder="Line 1"  readonly />
-				</label>
-			</div>
-			<div>
-				<label for="Address"> <span class="required">Address Line2
-						 </span> <input type="text" id="" name="Address2" value="<%= address2 %>"
-					placeholder="Line" readonly />
-				</label>
-			</div>
-			<div>
-				<label for="Phone no"> <span class="required">Postal Code
-						 </span> <input type="" id="" name="PCode" value="<%= pCode %>"
-					Pattern="" placeholder="Postal Code" readonly
-					 />
-				</label>
-			</div>
-			<div>
-				<label for="Phone no"> <span class="required">City
-						 </span> <input type="" id="" name="City" value="<%= City %>"
-					Pattern="" placeholder="City"  readonly />
-				</label>
-			</div>
-			<div>
-				<label for="Phone no"> <span class="required">Province
-						 </span> <input type="" id="" name="Province" value="<%= Provence %>"
-					Pattern="" placeholder="Province" readonly
-				    />
-				</label>
-			</div>
-			<div>
-				<label for="Phone no"> <span class="required">Country
-						 </span> <input type="" id="" name="Country" value="<%= Country %>"
-					Pattern="" placeholder="Country" readonly/>
-				</label>
-			</div>
-			<div>
 				<label for="Cost"> <span class="required">User Name
 						 </span> <input type="text" id="" name="username" value="<%= username %>"
 					placeholder="User Name"  readonly />
 				</label>
 			</div>
-				<div>
-				<label for="Cost"> <span class="required">Password
-						 </span> <input type="password" id="" name="password" value="<%= Password %>"
-					placeholder="Password" readonly  />
-				</label>
-			</div>
+				
 			<div>
-				<button name="submit" type="submit" id="submit">DELETE ACCOUNT</button>
+				<button name="submit" type="submit" id="submit">CONFIRM AND DELETE ACCOUNT</button>
 			</div>
 		</form>
 
