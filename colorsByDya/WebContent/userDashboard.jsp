@@ -65,7 +65,7 @@
 			
 			<c:forEach var="cus" items="${cusDeatils}">
 			
-				<h1 class="display-4">Welcome ${cus.full_name}</h1>
+				<h1 class="display-5">Welcome ${cus.full_name}</h1>
 				
 				</c:forEach>
 				<div class="container p-3 my-2 rounded  float-left"
@@ -83,7 +83,7 @@
 				<p class="lead mb-0">Your Details</p>
 				
 				<!--  data retreve part start-->
-				<table>
+				<table class="">
 				<c:forEach var="cus" items="${cusDeatils}">
 				
 				<c:set var="id" value="${cus.customer_id}"/>
