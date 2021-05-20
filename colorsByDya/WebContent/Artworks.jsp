@@ -81,7 +81,7 @@
 		</header>
 	</div>
 
-<input type="search" class="" placeholder="" aria-controls="table1">
+<!-- <input type="search" class="" placeholder="" aria-controls="table1"> -->
 
 	<!-- <input type="button" name="report" value="Generate JAVA Report" onclick="location.href='Servlet_Gallery_Paint_PDF'"> <br> -->
 	

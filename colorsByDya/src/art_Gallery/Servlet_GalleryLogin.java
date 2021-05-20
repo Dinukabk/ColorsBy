@@ -31,6 +31,7 @@ public class Servlet_GalleryLogin extends HttpServlet {
 			try {
 				List<Painting> paintingDetails = PaintingDBUtil.displayPaintingList(artistUserID);
 				request.setAttribute("paintingDetails", paintingDetails);
+				
 				RequestDispatcher dispatch = request.getRequestDispatcher("Artworks.jsp");
 				dispatch.forward(request, response);
 			}
