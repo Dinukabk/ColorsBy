@@ -21,11 +21,7 @@
   	
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  	<script>
-  		$( function() {
-    		$( "#datepicker" ).datepicker();
-  		} );
-  	</script>
+ 
 
 
 
@@ -110,7 +106,7 @@
 		}
 		
 		.submit{
-			padding-left : 230px;
+			padding-left : 220px;
 			padding-bottom : 20px;
 			padding-top:25px;
 			font-size:16px;
@@ -187,42 +183,37 @@
 	<div class="main">
 	<form action="deleteEvent" method="post">
 		<div class="inname">
-		<h4>ID	</h4>							<input type="text" name="DID" placeholder="ID" value="5" readonly><br>
+		<h4>ID	</h4>							<input type="text" name="DID" placeholder="ID" value="<%=id%>" readonly><br>
 		</div>
 		
 		<div class="inname">
-		<h4>Event name</h4>						<input type="text" name="Dname" placeholder="Enter event name" value="test3" readonly><br>
+		<h4>Event name</h4>						<input type="text" name="Dname" placeholder="Enter event name" value="<%=name%>" readonly><br>
 		</div>
 		
 	 	<div class="indate">
-	 	<h4>Event date</h4>						<input type="text" name="Ddate" id="datepicker" placeholder="Enter event date" value="05/17/2021" readonly><br>
+	 	<h4>Event date</h4>						<input type="text" name="Ddate" id="datepicker" placeholder="Enter event date" value="<%=date%>" readonly><br>
 	 	</div>
 	 	
 	 	<div class="insta">
-	 	<h4>Event status</h4>					<input type="number" name="Dstatus" placeholder="Enter event status" value="1" readonly><br>
+	 	<h4>Event status</h4>					<input type="text" name="Dstatus" placeholder="Enter event status" value="<%=status%>" readonly><br>
 	 	</div>
 	 	
 	 	<div class="des">	
-	 	<h4>Event description</h4>				<input type="text" name="Ddescription" placeholder="Enter description" value="test3" readonly><br>
+	 	<h4>Event description</h4>				<input type="text" name="Ddescription" placeholder="Enter description" value="<%=description%>" readonly><br>
 	 	</div>
 	 	
 	 	<div class="inad">
-	 	<h4>AdminID	</h4>						<input type="number" name="DadminID" placeholder="Enter admin ID" value="1" readonly ><br>
+	 	<h4>AdminID	</h4>						<input type="text" name="DadminID" placeholder="Enter admin ID" value="<%=adminID%>" readonly ><br>
 	 	</div>
 	 	
 	 	
-	 	<!--  
-	 	<center>
-	 	<input type="submit" name="DsubmitEvent" value="Delete Event"><br></center>
-		-->
-	
+	 	
+	 	<div class="submit">
+	 	<input type="submit" name="DsubmitEvent" value="Delete Event">
+		</div>
+		
 	</form>
 		
-	<div class="submit">
-	<a href="success.jsp">
-	 	<input type="submit" name="UsubmitEvent" value="Delete Event"></a>
-	</div>
-	
 	
 	</div>
 

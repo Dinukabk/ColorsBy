@@ -18,6 +18,7 @@
 	th, td {
   		text-align: left;
   		padding: 8px;
+  		border-bottom: 1px solid #ddd;
 	}
 	
 	td {
@@ -124,7 +125,9 @@
 	<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
  
-
+ 
+ 
+	<h1>EVENT DETAILS</h1><br>
 
 
 	<table>
@@ -137,37 +140,37 @@
 		<c:set var="adminID" value = "${eve.adminID}"/> 
 	
 	<tr>
-		<td>ID	</td>			
+		<th>ID	</th>			
 		<td>${eve.id} </td>
 	</tr>
 	
 		
 	<tr>	
-		<td>Name</td>				
+		<th>Name</th>				
 		<td>${eve.name} </td>
 	</tr>	
 	
 	
 	<tr>	
-		<td>Date</td>			
+		<th>Date</th>			
 		<td>${eve.date}</td>
 	</tr>	
 	
 	
 	<tr>
-		<td>Status	</td>		
+		<th>Status	</th>		
 		<td>${eve.status}</td>
 	</tr>	
 	
 		
 	<tr>
-		<td>Description </td>	
+		<th>Description </th>	
 		<td>${eve.description}</td>	
 	</tr>	
 	
 		
 	<tr>	
-		<td>AdminID	</td>			
+		<th>AdminID	</th>			
 		<td>${eve.adminID}</td>
 	</tr>	
 	
@@ -193,16 +196,17 @@
 			<c:param name = "description" value = "${description}"/>
 			
 			
-			<c:param name  = "admnId" value = "${adminID}"/>	
+			<c:param name  = "adminId" value = "${adminID}"/>	
 			
 			
 		</c:url>
+		<br>
 	
 		<a href="${eveupdate}" >
 		<input type="button" name="update" value="Update an event">
 		</a>
 		
-		<br>
+		<br><br>
 		
 		<c:url value="EventDelete.jsp" var="eveDelete">
 			<c:param name = "id" value = "${id}"/>
@@ -219,13 +223,13 @@
 		<input type="button" name="delete" value="Delete an event">
 		</a>
 		
-		<br>
+		<br><br>
 		
 		<a href="InsertEvent.jsp">
 		<input type="submit" name="submit" value="Insert an event">
 		</a>
 		
-		<br>
+		<br><br>
 		
 		<a href="EventGenerateReport.jsp">
 		<input type="submit" name="submit" value="Generate a report">

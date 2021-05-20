@@ -53,7 +53,7 @@
 			width:800px;
 			margin:auto;
 			border-radius: 1px;
-  			background-color: #557A95;
+  			/* background-color: gray; */
   			padding: 20px;
   			opacity : 0.7;
 		}

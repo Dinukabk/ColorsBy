@@ -24,7 +24,7 @@ public class eventDBUtil {
 			con = EventDBconnect.getConnection();
 			stmt = con.createStatement();
 			
-			boolean stats = Boolean.parseBoolean(status);
+			int stats = Integer.parseInt(status);
 			int admin = Integer.parseInt(adminID);
 			
 			String sql = "insert into event values (0,  '"+name+"', '"+date+"', '"+stats+"', '"+description+"', '"+admin+"')";  
@@ -125,10 +125,10 @@ public class eventDBUtil {
 			stmt = con.createStatement();
 			
 			int ID = Integer.parseInt(id);
-			boolean sts = Boolean.valueOf(status);
+			int sts = Integer.parseInt(status);
 			int aid = Integer.parseInt(adminID);
 			
-			String sql = "update customer set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
+			String sql = "update event set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
 					+ "where event_id = '"+ID+"'";
 			
 			int rs = stmt.executeUpdate(sql);
