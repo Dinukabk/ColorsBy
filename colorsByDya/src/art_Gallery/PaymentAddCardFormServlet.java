@@ -24,6 +24,22 @@ public class PaymentAddCardFormServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		int userID = (int) session.getAttribute("userID");
 		
+		// Checking userName
+		String userName = PaymentsDatabaseUtil.getUserName(userID);
+		request.setAttribute("userName", userName);
+		
+		// Getting payment total...
+		int pTotal = PaymentsDatabaseUtil.checkCartTotal(userID);
+		request.setAttribute("payTotal", pTotal);
+		
+		// Checking delivery method
+		Boolean deliveryMethod = PaymentsDatabaseUtil.checkDeliveryMethod(userID);
+		if (deliveryMethod == true) {
+			request.setAttribute("deliveryMethod", "Home Delivery");				
+		} else {
+			request.setAttribute("deliveryMethod", "Pick up at ColorsByDiyaa");
+		}
+		
 		if (saveCard != null) { // If save card checkBox is ticked...
 			Boolean querySuccess = PaymentsDatabaseUtil.addPaymentCard(userID, cardNumber, nameOnCard, expDate, CVV, saveCard);
 			if (querySuccess == true) { // If query executed correctly

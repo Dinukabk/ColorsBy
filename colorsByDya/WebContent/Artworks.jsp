@@ -16,6 +16,9 @@
 	<link rel="stylesheet" href="./css/styles.css?">
 	<link rel="stylesheet" href="./css/home.css?">
 	
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.dataTables.css">
+	<script charset="utf8" src="assets/js/jquery.dataTables.js"></script>
+	
 	<link rel="stylesheet" href="css/styles_Gallery.css?version=2">
 	
 
@@ -43,8 +46,28 @@
 									class="sr-only"></span></a></li>
 							<li class="nav-item"><a href="#"
 								class="nav-link text-uppercase font-weight-bold">About</a></li>
+							<!-- 	
 							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">My Profile</a></li>
+								
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Exhibitions</a></li>
+								 -->
+							<li class="nav-item"><a onclick="location.href = 'Servlet_Gallery_All'"
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+								
+							<li class="nav-item"><a onclick="location.href = 'Servlet_GalleryLogin'"
+								class="nav-link text-uppercase font-weight-bold">Artwork</a></li>
+								
+							<li class="nav-item"><a onclick="location.href = 'Servlet_AddPainting'"
+								class="nav-link text-uppercase font-weight-bold">Upload Painting</a></li>
+							<!-- 	
+							<li class="nav-item"><a onclick="location.href = 'requestLoginServlet'"
+								class="nav-link text-uppercase font-weight-bold">Special Requests</a></li>
+								
+							<li class="nav-item"><a onclick="location.href = 'NegoLoginServlet'"
+								class="nav-link text-uppercase font-weight-bold">Negotiate Price Requests</a></li>
+								 -->
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="#"
@@ -58,6 +81,7 @@
 		</header>
 	</div>
 
+<!-- <input type="search" class="" placeholder="" aria-controls="table1"> -->
 
 	<!-- <input type="button" name="report" value="Generate JAVA Report" onclick="location.href='Servlet_Gallery_Paint_PDF'"> <br> -->
 	

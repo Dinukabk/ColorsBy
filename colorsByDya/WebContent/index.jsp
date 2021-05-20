@@ -124,7 +124,7 @@
 						<li class="nav-item active"><a href="#"
 							class="nav-link text-uppercase font-weight-bold">Home <span
 								class="sr-only"></span></a></li>
-						<li class="nav-item"><a href="#"
+						<li class="nav-item"><a href="EventAllRetriv.jsp"
 							class="nav-link text-uppercase font-weight-bold">About</a></li>
 							
 						<li class="nav-item"><a onclick="location.href = 'Servlet_Gallery_All'"

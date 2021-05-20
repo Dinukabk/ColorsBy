@@ -19,6 +19,7 @@ public class PaymentsDatabaseUtil {
 	private static int cvv;
 	private static int rsInt = 0;
 	private static int total;
+	private static Boolean homeDelivery;
 
 	public static int getCartTotal(int userID) {
 		String UIDConverted = Integer.toString(userID);
@@ -233,16 +234,26 @@ public class PaymentsDatabaseUtil {
 		return total;
 	}
 	
-	public static int checkDeliveryMethod(int userID) {
+	public static Boolean checkDeliveryMethod(int userID) {
 		PreparedStatement pst = null;
 		Connection con = null;
 		try {
 			con = DatabaseUtilizer.utilizeConnection();
-			pst = con.prepareStatement("");
+			pst = con.prepareStatement("SELECT r.full_name FROM delivery d, payment p, registered_customer r WHERE d.p_payment_id = p.payment_id AND p.c_customer_id = r.customer_id AND r.customer_id = ?;");
+			pst.setInt(1, userID);
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				String userName = rs.getString(1);
+				if (userName != null) {
+					homeDelivery = true;
+				} else {
+					homeDelivery = false;
+				}
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return 0;
+		return homeDelivery;
 	}
 	
 	public static int getCardNo() {

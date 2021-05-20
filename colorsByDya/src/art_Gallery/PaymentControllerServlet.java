@@ -32,7 +32,12 @@ public class PaymentControllerServlet extends HttpServlet {
 			String userName = PaymentsDatabaseUtil.getUserName(userID); 
 			
 			// Checking delivery method
-			int deliveryMethod = PaymentsDatabaseUtil.checkDeliveryMethod(userID);
+			Boolean deliveryMethod = PaymentsDatabaseUtil.checkDeliveryMethod(userID);
+			if (deliveryMethod == true) {
+				request.setAttribute("deliveryMethod", "Home Delivery");				
+			} else {
+				request.setAttribute("deliveryMethod", "Pick up at ColorsByDiyaa");
+			}
 			
 			// For debugging 
 			System.out.println("On payment servlet...");

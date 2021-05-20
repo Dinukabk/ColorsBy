@@ -14,6 +14,22 @@
 		table, th, td {
 		  border: 1px solid black;
 		}
+		
+		.form__inputImg {
+		    border-radius: 6px;
+		    display: block;
+		    width: 50%;
+		    padding: 20px;
+		    margin-left:100px;
+		    font-family: $font-family;
+		    -webkit-appearance: none;
+		    border: 0;
+		    outline: 0;
+		    transition: 0.3s;
+		    &: focus {;
+		    background: darken(#fff, 3%);
+		    }: ;
+		}
 	</style>
 	
 <!-- <link rel="stylesheet" href="css/frontpage.css"> -->
@@ -76,8 +92,28 @@
 									class="sr-only"></span></a></li>
 							<li class="nav-item"><a href="#"
 								class="nav-link text-uppercase font-weight-bold">About</a></li>
+							<!-- 	
 							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">My Profile</a></li>
+								
+							<li class="nav-item"><a href="#"
+								class="nav-link text-uppercase font-weight-bold">Exhibitions</a></li>
+								 -->
+							<li class="nav-item"><a onclick="location.href = 'Servlet_Gallery_All'"
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+								
+							<li class="nav-item"><a onclick="location.href = 'Servlet_GalleryLogin'"
+								class="nav-link text-uppercase font-weight-bold">Artwork</a></li>
+								
+							<li class="nav-item"><a onclick="location.href = 'Servlet_AddPainting'"
+								class="nav-link text-uppercase font-weight-bold">Upload Painting</a></li>
+							<!-- 	
+							<li class="nav-item"><a onclick="location.href = 'requestLoginServlet'"
+								class="nav-link text-uppercase font-weight-bold">Special Requests</a></li>
+								
+							<li class="nav-item"><a onclick="location.href = 'NegoLoginServlet'"
+								class="nav-link text-uppercase font-weight-bold">Negotiate Price Requests</a></li>
+								-->
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item"><a href="../Payments/payment.jsp"
@@ -96,10 +132,14 @@
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	
 	<form action="Servlet_updatePainting" method="post" onsubmit="return validateForm()" class="form">
+		
+		<input class="form__input" type="hidden" name=painting_id value="<%= painting_id %>" readonly>
 		<div class="form__group">
-			<label>Painting ID</label>
-			<input class="form__input" type="text" name=painting_id value="<%= painting_id %>" readonly>
+			
+			<%-- <input type="text" class="form__input" name="image_url" value="<%= image_url %>" --%> 
+			<img class="form__inputImg" src="images/<%= image_url %>" width="100px">
 		</div>
+		
 		<div class="form__group">
 			<label>Title</label>
 			<input class="form__input" type="text" name="title" value="<%= title %>" required oninvalid= "alert('Please enter the title');">
@@ -111,7 +151,8 @@
 		</div>
 		<div class="form__group">
 			<label>Price (LKR)</label>
-			<input type="text" class="form__input" name="price" value="<%= price %>" required oninvalid= "alert('Please enter the price');" > 
+			<input type="text" class="form__input" name="price" value="<%= price %>" required oninvalid= "alert('Please enter the price');" min="10000" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" step=".01"> 
 		</div>
 		<div class="form__group">
 			<label>Drawn Date</label>
@@ -134,20 +175,22 @@
 		</div>
 		<div class="form__group">
 			<label>Weight (KG)</label>
-			<input type="number" class="form__input" name="weight" value="<%= weight %>"> 
+			<input type="number" class="form__input" name="weight" value="<%= weight %>" min="0" oninput="this.value = Math.abs(this.value)" step=".01"> 
 		</div>
 		<div class="form__group">
 			<label>Length (CM)</label>
-			<input type="number" class="form__input" name="length" value="<%= length %>"> 
+			<input type="number" class="form__input" name="length" value="<%= length %>" min="0" oninput="this.value = Math.abs(this.value)" step=".01"> 
 		</div>
 		<div class="form__group">
 			<label>Width (CM)</label>
-			<input type="number" class="form__input" name="width" value="<%= width %>">
+			<input type="number" class="form__input" name="width" value="<%= width %>" min="0" oninput="this.value = Math.abs(this.value)" step=".01">
 		</div>
-		<div class="form__group">
-			<label>Image</label>
-			<input type="text" class="form__input" name="image_url" value="<%= image_url %>" readonly>
+		
+		<div class="form__group">			
+			<input type="hidden" class="form__input" name="image_url" value="<%= image_url %>"
+			
 		</div>
+		
 		<div class="form__group">
 			<label>Material</label>
 			<input type="text" class="form__input" name="material" value="<%= material %>">

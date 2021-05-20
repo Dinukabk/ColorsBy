@@ -12,6 +12,7 @@ public class DBConnect_Painting {
 	
 	private static Connection connect;
 
+// connection method passed to DBUtil	
 	public static Connection getConnection() {
 		
 		try {
