@@ -67,8 +67,6 @@
 				<div class="container p-3 my-2 rounded  float-left"
 					style="background-color: rgba(255, 255, 255, 0.5);">
 					<button type="button" class="btn btn-primary"
-						onclick="location.href = ''">Edit Profile</button>
-					<button type="button" class="btn btn-primary"
 						onclick="location.href = 'myCart.jsp'">Shopping Cart</button>
 					<button type="button" class="btn btn-primary"
 						onclick="location.href = 'requestCusLogin'">View My Requests</button>
