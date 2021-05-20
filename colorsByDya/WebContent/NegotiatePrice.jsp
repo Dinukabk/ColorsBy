@@ -127,7 +127,8 @@
   <div>
   	<form name="negoForm" action="negotiateInsertServlet" method="post" onsubmit="return validateForm()">
   		<label>Please enter the Price</label><br>
-  		<input type="number" placeholder="Price in LKR" name="message" class="form__input"><br>
+  		<input type="number" placeholder="Price in LKR" name="message" class="form__input" min="10000" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"><br>
   		<%-- <input name="painting_id" value="<%=rs.getInt("painting_id")%>" class="form__input"><br> --%>
   		<input type="hidden" name="painting_id" value="<%= painting_id %>" readonly>
   		<input type="hidden" name="userID" value="${userID}" readonly><br>
