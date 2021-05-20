@@ -57,7 +57,7 @@
 		String email = request.getParameter("email");
 		String message = request.getParameter("message");
 		String photograph = request.getParameter("photograph");
-		String add_line_01 = request.getParameter("add_line-01");
+		String add_line_01 = request.getParameter("add_line_01");
 		String add_line_02 = request.getParameter("add_line_02");
 		String postal_code = request.getParameter("postal_code");
 		String province = request.getParameter("province");
