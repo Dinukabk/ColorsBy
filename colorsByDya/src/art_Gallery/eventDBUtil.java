@@ -92,7 +92,7 @@ public class eventDBUtil {
 				int id = rs.getInt(1);
 				String name = rs.getString(2);
 				Date date = rs.getDate(3);
-				Boolean status = rs.getBoolean(4);
+				boolean status = rs.getBoolean(4);
 				String description = rs.getString(5);
 				int adminId = rs.getInt(6);
 				

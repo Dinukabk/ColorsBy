@@ -93,25 +93,33 @@
  
 	<script type="text/javascript">
 
- 
+ 	
+	//button click function calling
 
     function generate_PDF(){
         
+    	
+    	//use to instantiate and use the jsPDF object
         var doc = new jsPDF();
+    	
+    	//adding data
         var elementHTML = $('#eve').html(); 
         
+    	//retrieve html context
         var specialElementHandlers = {
+        		
             '#eveRep': function (element, renderer) {
                 return true;
             }
         };
         
+    	//Convert HTML content of the specific part of the web page and generate PDF
         doc.fromHTML(elementHTML, 30, 15, {
             'width': 500,
             'elementHandlers': specialElementHandlers
         });
 
- 
+ 		//save pdf
         doc.save('EventReport.pdf');
         
     }
