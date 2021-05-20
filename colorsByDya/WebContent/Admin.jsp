@@ -53,7 +53,7 @@
                             <a class="menu-box-tab" href="DeliverySerchTwo.jsp"><span class="icon entypo-calendar scnd-font-color"></span>Generate Delivery Report<div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="paymentReportDummy.jsp"><span class="icon entypo-cog scnd-font-color"></span>Generate Payment Report</a>
+                            <a class="menu-box-tab" onclick="location.href = 'PaymentReportRedirector'"><span class="icon entypo-cog scnd-font-color"></span>Generate Payment Report</a>
                         </li>
                         <li>
                             <a class="menu-box-tab" href="CustomerLoginPdf.jsp"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>Generate Customer Report  </a>
