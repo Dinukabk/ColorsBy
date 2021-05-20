@@ -138,7 +138,6 @@
 				<c:param name="Country" value="${Country}"/>
 
 	</c:url>
-				<br>
 				
 				<a href="${cusupdate}">
 				<div class="conta"><input type="button" name= "Update" value="UPDATE DEATILS" class="btncss"></div>
@@ -171,10 +170,10 @@
 			</header>
 			<div class="py-5">
 				<p class="lead">
-					Strong<strong class="font-weight-bold">Test 3</strong> Test 2 <strong
-						class="font-weight-bold"> Test 04</strong>Test 05
+					<strong class="font-weight">Colors by Diya is an online art gallery providing a platform for artists to display their artwork and for customers interested in quality artworks to buy them at a fair price.</strong> 
+					<strong class="font-weight-bold"> </strong>
 				</p>
-				<p class="lead">Lorem ipsum dolor sit amet</p>
+				<h5>Team Colors by Diyaa</h5>
 
 				<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 				<script type="text/javascript" src="./js/script.js"></script>
