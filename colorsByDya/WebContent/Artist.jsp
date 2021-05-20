@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/home.css">
 <script src="css/artist.js"></script>
 <link rel="stylesheet" href="css/artist.css">
 <link rel="stylesheet"
