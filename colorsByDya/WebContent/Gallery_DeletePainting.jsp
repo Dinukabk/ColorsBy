@@ -5,6 +5,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Delete Painting</title>
+
+<style type="text/css">
+				
+	.form__inputImg {
+	    border-radius: 6px;
+	    display: block;
+	    width: 50%;
+	    padding: 20px;
+	    margin-left:100px;
+	    font-family: $font-family;
+	    -webkit-appearance: none;
+	    border: 0;
+	    outline: 0;
+	    transition: 0.3s;
+	    &: focus {;
+	    background: darken(#fff, 3%);
+	    }: ;
+	}
+	</style>
+
 </head>
 
 <!-- <link rel="stylesheet" href="css/frontpage.css">  -->
@@ -101,10 +121,15 @@
 	
 	<form action="Servlet_deletePainting" method="post" class="form">
 	
+		
+		<input class="form__input" type="hidden" name=painting_id value="<%= painting_id %>" readonly>
+		
 		<div class="form__group">
-			<label>Painting ID</label>
-			<input class="form__input" type="text" name=painting_id value="<%= painting_id %>" readonly>
+			
+			<%-- <input type="text" class="form__input" name="image_url" value="<%= image_url %>" --%> 
+			<img class="form__inputImg" src="images/<%= image_url %>" width="100px">
 		</div>
+		
 		<div class="form__group">
 			<label>Title</label>
 			<input class="form__input" type="text" name="title" value="<%= title %>" readonly>
@@ -139,8 +164,8 @@
 			<input type="number" class="form__input" name="width" value="<%= width %>" readonly>
 		</div>
 		<div class="form__group">
-			<label>Image</label>
-			<input type="text" class="form__input" name="image_url" value="<%= image_url %>" readonly>
+			
+			<input type="hidden" class="form__input" name="image_url" value="<%= image_url %>" readonly>
 		</div>
 		<div class="form__group">
 			<label>Material</label>
