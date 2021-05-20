@@ -233,7 +233,7 @@
 					LANKA
 				</h2>
 				<div class="current-day">
-					<p class="current-day-date">FRI 29/06</p>
+					<p class="current-day-date">THU 20/05</p>
 					<p class="current-day-temperature">
 						24º<span class="icon-cloudy"></span>
 					</p>
