@@ -50,14 +50,17 @@
                             <a class="menu-box-tab" href="#8"><span class="icon entypo-paper-plane scnd-font-color"></span>Request<div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="#"><span class="icon entypo-calendar scnd-font-color"></span>Generate Delivery Report<div class="menu-box-number"></div></a>                            
+                            <a class="menu-box-tab" href="DeliverySerchTwo.jsp"><span class="icon entypo-calendar scnd-font-color"></span>Generate Delivery Report<div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>Generate Payment Report</a>
+                            <a class="menu-box-tab" href="paymentReportDummy.jsp"><span class="icon entypo-cog scnd-font-color"></span>Generate Payment Report</a>
                         </li>
                         <li>
                             <a class="menu-box-tab" href="CustomerLoginPdf.jsp"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>Generate Customer Report  </a>
-                        </li>                        
+                        </li>
+                         <li>
+                            <a class="menu-box-tab" href="DeliverySerachThird.jsp"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>Search Delivery Details  </a>
+                        </li>                           
                     </ul>
                 </div>
                 <div class="donut-chart-block block"> <!-- DONUT CHART BLOCK (LEFT-CONTAINER) -->
@@ -69,7 +72,7 @@
                         <div id="porcion3" class="recorte"><div class="quesito win" data-rel="31"></div></div>
                         <div id="porcionFin" class="recorte"><div class="quesito linux" data-rel="9"></div></div>
                         <!-- END DONUT-CHART by @kseso https://codepen.io/Kseso/pen/phiyL -->    
-                        <p class="center-date">JUNE<br><span class="scnd-font-color">2021</span></p> 
+                        <p class="center-date">MAY<br><span class="scnd-font-color">2021</span></p> 
                     </div>
                     <ul class="os-percentages horizontal-list">
                         <li>
@@ -259,7 +262,7 @@
                 <div class="loading block"> <!-- LOADING (RIGHT-CONTAINER) -->
                     
                     <div class="progress-bar uploading"></div>
-                    <p><span class="icon fontawesome-cloud-upload scnd-font-color"></span>Uploading...</p>
+                    <p><span class="icon fontawesome-cloud-upload scnd-font-color"></span>Uploaded</p>
                     <p class="percentage">43<sup>%</sup></p>
                 </div>
                 <div class="calendar-day block"> <!-- CALENDAR DAY (RIGHT-CONTAINER) -->
@@ -322,7 +325,7 @@
                                 <td><a class="scnd-font-color" href="#116">17</a></td>
                                 <td><a class="scnd-font-color" href="#117">18</a></td>
                                 <td><a class="scnd-font-color" href="#118">19</a></td>
-                                <td><a class="scnd-font-color" href="#119">20</a></td>
+                                <td><a class="today" href="#119">20</a></td>
                                 <td><a class="scnd-font-color" href="#120">21</a></td>
                                 <td><a class="scnd-font-color" href="#121">22</a></td>
                             </tr>
@@ -330,7 +333,7 @@
                                 <td><a class="scnd-font-color" href="#122">23</a></td>
                                 <td><a class="scnd-font-color" href="#123">24</a></td>
                                 <td><a class="scnd-font-color" href="#124">25</a></td>
-                                <td><a class="today" href="#125">26</a></td>
+                                <td><a class="scnd-font-color" href="#125">26</a></td>
                                 <td><a href="#126">27</a></td>
                                 <td><a href="#127">28</a></td>
                                 <td><a href="#128">29</a></td>
