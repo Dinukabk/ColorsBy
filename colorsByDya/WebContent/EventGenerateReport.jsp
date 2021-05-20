@@ -12,6 +12,8 @@
 </head>
 <body>
 
+	<!-- Generate an event report about already held events -->
+
     <button onclick="generate_PDF();">Download Report</button> 
 
 
