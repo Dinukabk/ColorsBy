@@ -62,7 +62,12 @@
 	<div class="container">
 		<div class="pt-5 text-white">
 			<header class="py-5 mt-5">
-				<h1 class="display-4">User Dash</h1>
+			
+			<c:forEach var="cus" items="${cusDeatils}">
+			
+				<h1 class="display-5">Welcome ${cus.full_name}</h1>
+				
+				</c:forEach>
 				<div class="container p-3 my-2 rounded  float-left"
 					style="background-color: rgba(255, 255, 255, 0.5);">
 					<button type="button" class="btn btn-primary"
@@ -75,10 +80,10 @@
 						onclick="location.href = 'NegoCusListServlet'">Negotiate Price Requests</button>
 				</div>
 				<br> <br> <br> <br>
-				<p class="lead mb-0">USER DEATILS</p>
+				<p class="lead mb-0">Your Details</p>
 				
 				<!--  data retreve part start-->
-				<table>
+				<table class="">
 				<c:forEach var="cus" items="${cusDeatils}">
 				
 				<c:set var="id" value="${cus.customer_id}"/>
@@ -97,7 +102,6 @@
 		<td>ID</td>
 		<td>fullname</td>
 		<td>Username</td>
-		<td>Password</td>
 		<td>Phone No</td>
 		<td>Address line1</td>
 		<td>Address line2</td>
@@ -111,7 +115,6 @@
 		<td>${cus.customer_id}</td>
 		<td>${cus.full_name}</td>
 		<td>${cus.username}</td>
-		<td>${cus.password}</td>
 		<td>${cus.phone_no}</td>
 		<td>${cus.add_line_01}</td>
 		<td>${cus.add_line_02}</td>
@@ -139,7 +142,7 @@
 				<c:param name="Country" value="${Country}"/>
 
 	</c:url>
-				
+				<br>
 				
 				<a href="${cusupdate}">
 				<input type="button" name= "Update" value="UPDATE DEATILS">
