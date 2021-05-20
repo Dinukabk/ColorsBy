@@ -12,11 +12,7 @@
 
 	<style type="text/css">
 	
-		table, th, td {
-  			border: 2px solid black;
-  			padding: 2px;
-  			text-align: center;
-		}
+
 	</style>
 
 </head>
@@ -83,7 +79,7 @@
 				<p class="lead mb-0">Your Details</p>
 				
 				<!--  data retreve part start-->
-				<table class="">
+				<table class="TableStyle">
 				<c:forEach var="cus" items="${cusDeatils}">
 				
 				<c:set var="id" value="${cus.customer_id}"/>
@@ -99,16 +95,16 @@
 				<c:set var="Country" value="${cus.country}"/>
 				
 	<tr>
-		<td>ID</td>
-		<td>fullname</td>
-		<td>Username</td>
-		<td>Phone No</td>
-		<td>Address line1</td>
-		<td>Address line2</td>
-		<td>Postal Code</td>
-		<td>Provence</td>
-		<td>City</td>
-		<td>Country</td>
+		<th>ID</th>
+		<th>fullname</th>
+		<th>Username</th>
+		<th>Phone No</th>
+		<th>Address line1</th>
+		<th>Address line2</th>
+		<th>Postal Code</th>
+		<th>Provence</th>
+		<th>City</th>
+		<th>Country</th>
 	</tr>
 	<tr>
 		
@@ -145,7 +141,7 @@
 				<br>
 				
 				<a href="${cusupdate}">
-				<input type="button" name= "Update" value="UPDATE DEATILS">
+				<div class="conta"><input type="button" name= "Update" value="UPDATE DEATILS" class="btncss"></div>
 				</a>
 				
 				
@@ -166,7 +162,7 @@
 				</c:url>
 				
 				<a href="${cusdelete}">
-				<input type="button" name= "delete" value="Delet Account">
+				<div class="conta"><input type="button" name= "delete" value="DELETE ACCOUNT" class="btncss"></div>
 				</a>
 				 
 				
@@ -182,6 +178,62 @@
 
 				<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
 				<script type="text/javascript" src="./js/script.js"></script>
+				
+				<style>
+				.TableStyle {
+					border-collapse: collapse;
+					margin: 30px 0;
+					font-size: 0.9em;
+					min-width: 400px;
+					
+					}
+					
+				.TableStyle tr th{
+					background-color: #92DFF3 ;
+					color: black;
+					text-align: left;
+				}
+				.TableStyle tr th,
+				.TableStyle tr td{
+					padding: 12px 15px;
+					border-bottom: 1px solid #010203;
+				}
+				.conta{
+				margin: 0;
+				padding: 0;
+				hight: 20px;
+				width: 30px;
+				
+				}
+				
+				.btncss{
+					border: 1px solid #3498db;
+					background: none;	
+					padding: 10px 20px;
+					font-size: 15px;
+					cursor: pointer;
+					margin: 10px;
+					color: #010203;
+					TRANSITION: 0.5s;
+					overflow: hidden; 
+				}
+				.btncss:hover{
+					color: #fff;
+				}
+				.btncss:before{
+					content:"";
+					position: absolute;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: #010203;
+					z-index: -1;
+				}
+				
+
+				
+				
+				</style>
 </body>
 </html>
 
