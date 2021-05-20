@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<!-- Generate an event report about already held events -->
+	<!-- Generate an event report about held events -->
 
     <button onclick="generate_PDF();">Download Report</button> 
 
@@ -25,7 +25,7 @@
     <%@ page import="java.sql.DriverManager" %>
             
                 
-        <h1>Event report</h1> <br>
+        <h1>Generates an event about held events</h1> <br>
     
     <%
         try
