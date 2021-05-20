@@ -61,7 +61,7 @@
 			<dt class="col-sm-9 text-dark h6">Total:</dt>
 			<dd class="col-sm-3 text-right">${payTotal }</dd>
 			<dt class="col-sm-9 text-dark h6">Delivery Method:</dt>
-			<dd class="col-sm-3 text-right">NULL</dd>
+			<dd class="col-sm-3 text-right">${deliveryMethod }</dd>
 		</dl>
 		<button type="button" class="btn btn-light border border-primary" onclick="location.href = 'DeliveryMethodController'">Chose Delivery Method</button>
 	</div>
