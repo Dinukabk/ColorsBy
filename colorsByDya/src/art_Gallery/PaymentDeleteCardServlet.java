@@ -24,6 +24,14 @@ public class PaymentDeleteCardServlet extends HttpServlet {
 		
 		boolean isSuccess = PaymentsDatabaseUtil.deleteCard(userID);
 		
+		// Checking userName
+		String userName = PaymentsDatabaseUtil.getUserName(userID);
+		request.setAttribute("userName", userName);
+		
+		// Getting payment total...
+		int pTotal = PaymentsDatabaseUtil.checkCartTotal(userID);
+		request.setAttribute("payTotal", pTotal);
+		
 		if (isSuccess == true) {
 			Boolean cardAvailability = PaymentsDatabaseUtil.checkCard(userID);
 			if (cardAvailability == true) {
