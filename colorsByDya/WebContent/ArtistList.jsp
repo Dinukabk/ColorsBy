@@ -47,7 +47,7 @@
             <header class="block">
                 <ul class="header-menu horizontal-list">
                     <li>
-                        <a class="header-menu-tab" href="#1"><span class="icon entypo-cog scnd-font-color"></span>Paintings</a>
+                        <a class="header-menu-tab" href="Gallery_All.jsp"><span class="icon entypo-cog scnd-font-color"></span>Paintings</a>
                     </li>
                     <li>
                         <a class="header-menu-tab" href="Artist.jsp"><span class="icon fontawesome-user scnd-font-color"></span>Artist Profile</a>
