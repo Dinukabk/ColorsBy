@@ -180,11 +180,11 @@
 	
 	
 		<div class="inname">
-		<h4>Event name</h4>		 	 <input type = "text" name="EventName" placeholder = "Enter event name"><br>
+		<h4>Event name</h4>		 	 <input type = "text" name="EventName" placeholder = "Enter event name" required><br>
 		</div>
 		
 		<div class="inname">
-		<h4>AdminID</h4>	 		 <input type = "text" name="AdminID" placeholder = "Enter admin ID"><br>
+		<h4>AdminID</h4>	 		 <input type = "text" name="AdminID" placeholder = "Enter admin ID" required><br>
 		</div>
 		
 		<div class="submit">

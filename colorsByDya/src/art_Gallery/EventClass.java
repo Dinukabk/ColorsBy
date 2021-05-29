@@ -37,7 +37,7 @@ public class EventClass {
 	}
 
 
-	public boolean isStatus() {
+	public boolean getStatus() {
 		return status;
 	}
 

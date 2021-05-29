@@ -7,6 +7,61 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Event report</title>
+<style>
+	table {
+  		border-collapse: collapse;
+  		width: 100%;
+	}
+
+	th, td {
+  		text-align: left;
+  		padding: 8px;
+  		border-bottom: 1px solid #ddd;
+	}
+	
+	td {
+  		color: #464866;
+  		font-family: Roboto;
+	}
+
+	th {
+ 		background-color: #7395AE;
+  		color: white;
+	}
+	
+	
+	input {
+  			background: #fff;
+  			color: #525865;
+  			border: 1.2px solid #d1d1d1;							
+  			border-radius: 3px;
+ 			font-family: Roboto;
+  			line-height: 1.5;
+  			width: 350px;
+  			height: 40px;
+		}
+	
+	.submit{
+			padding-left : 220px;
+			padding-bottom : 20px;
+			padding-top:25px;
+			font-size:16px;
+		}
+	
+	h1{
+			color : black;
+			font-weight : 700;
+			width:800px;
+			background-color:rgb(0,0,0,6);
+			margin:auto;
+			padding:200px 0px 10px 0px;
+			text-align:center;
+			border-radius:15px 15px 0px 0px:;
+			font-family: Roboto;
+		}
+	
+	
+</style>
 
  
 </head>
