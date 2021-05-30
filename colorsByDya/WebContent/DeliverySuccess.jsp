@@ -64,6 +64,41 @@
 }
 </style>
 
+<script>
+	   function InsertValidation() {
+		   
+		  if( document.getElementById('Fname').value == ""){
+			  alert("Please Enter Full Name Before You Submit The Details");
+			  return false;
+		  }
+		  if( document.getElementById('addLineOne').value == ""){
+			  alert("Please Enter AddressLine 01 Before You Submit The Details");
+			  return false;
+		  }
+		  if( document.getElementById('addLineTwo').value == ""){
+			  alert("Please Enter AddressLine 02 Before You Submit The Details");
+			  return false;
+		  }
+		  if( document.getElementById('PostalCo').value == ""){
+			  alert("Please Enter Postal code Before You Submit The Details");
+			  return false;
+		  }
+		  if( document.getElementById('DeliveryPro').value == ""){
+			  alert("Please Enter Province Before You Submit The Details");
+			  return false;
+		  }
+		  if( document.getElementById('eliveryCityy').value == ""){
+			  alert("Please Enter City Before You Submit The Details");
+			  return false;
+		  }
+		  if( document.getElementById('DelivertCountry').value == ""){
+			  alert("Please Enter Country Before You Submit The Details");
+			  return false;
+		  }
+	}
+	
+	</script>
+
 </head>
 <body>
 	<!-- Navbar -->
@@ -207,8 +242,8 @@
 		<form method="post"
 			action="DeliveryDeleteServelet">
 			<div class="btn2">
-				<input type="hidden" name="P_id" value="<%=d.getP_payment_id()%>">
-				<br> <input type="submit" name="submit" value="Cancel My Order">
+				<input type="hidden" id="Fname" name="P_id" value="<%=d.getP_payment_id()%>">
+				<br> <input type="submit"  name="submit" value="Cancel My Order">
 			</div>
 		</form>
 		<!--Delete part End	-->

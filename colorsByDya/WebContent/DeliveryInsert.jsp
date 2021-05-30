@@ -123,7 +123,7 @@
 		<td><input type="text" name="DelivertCountry" id="DelivertCountry" placeholder="Eg: Sri Lanka"></td>
 	</tr>
 		<tr>
-		<td>PaymentID</td> 
+		<td>RegCust_ID</td> 
 		<td><input type="text" id="Pid" name="Pid" placeholder="Your payment ID goes here" value="${userID }"></td>
 	</tr>
 		
