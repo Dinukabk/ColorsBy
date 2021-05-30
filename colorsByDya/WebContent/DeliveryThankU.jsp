@@ -87,11 +87,11 @@
 		
 		<!--Report buttopn -->
 
-		<br>
+	<!-- 	<br>
 		<center>
 			<button onclick="myFunction6()">GENARATE A REPORT</button>
 		</center>
-		<br>
+		<br> -->
 
 		<script>
 		function myFunction6() {

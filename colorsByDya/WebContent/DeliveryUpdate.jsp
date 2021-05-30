@@ -160,7 +160,7 @@
 				<input type="hidden" name="d_id" value="<%=d.getDelivery_id()%>">
 				<input type="hidden" name="p_id" value="<%=d.getP_payment_id()%>">
 		</table>
-		<br> <input type="submit" name="submit" value="Update Data">
+		<br> <input type="submit" name="submit" value="Update details">
 		</form>
 	</div>
 

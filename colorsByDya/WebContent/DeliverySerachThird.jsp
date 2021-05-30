@@ -28,6 +28,22 @@
 	cursor: pointer;
 }
 
+.myDiv4SearchImage{
+	position: absolute;
+	margin-top: 419px;
+	margin-left: 0x;
+}
+
+.myDiv4SearchPara{
+	background-color: #dddddd;
+	position: absolute;
+	margin-top: 229px;
+	margin-left: 258px;
+	padding: 10px 20px 30px 20px;
+	border-radius: 7px;
+}
+
+
 input[type=text] {
 	border: none;
 	border-bottom: 2px solid red;
@@ -75,10 +91,24 @@ input[type=text] {
 	<div class="myDiv4Search">
 		<form method="post" action="DeliverySerchThird">
 			<dev class="myDiv4Searchbar"> <input type="text" id="search"
-				name="search" placeholder="Seache Hera"> </dev>
-			<input type="submit" value="Serach">
+				name="search" placeholder="Searche Here"> </dev>
+			<input type="submit" value="Search">
 		</form>
 	</div>
+	
+	<dev class="myDiv4SearchPara">
+		Arrange a one-time shipment pickup,<br>
+	and well send a FedEx courier to your<br>
+	location.You can schedule a pickup <br>
+	through the pickup application or while <br>
+	creating a label in FedEx Ship Manager<br>
+	</dev>
+	
+	<dev class="myDiv4SearchImage">
+		<img src="./DelivryImages/1c.jpg" width="1340" height="220" alt="img">
+	</dev>
+	
+	
 
 </body>
 </html>
