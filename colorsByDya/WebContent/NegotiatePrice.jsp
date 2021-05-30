@@ -98,8 +98,8 @@
 		%>
 		
 		<div class="contact-in">
-	  		<h3 style="text-align:center">We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
-	  		<h2 style="text-align:center"> Otherwise request may be rejected</h2>
+	  		<h3 style="margin-left: 100px;">We recommend you to contact the Artist before entering the Negotiate Price.</h3><br>
+	  		<h2 style="margin-left: 300px;"> Otherwise request may be rejected</h2>
   		</div><br><br>
   
   		<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
@@ -160,13 +160,15 @@ $color-primary: #ABA194;
 }
 
 body {
-    font-family: $font-family;
-    font-size: $font-size;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
-    height: 100vh
+    /* transform: translate3d(0, 0, 0); */
+    background: linear-gradient(45deg, #04404a 10%, #A2C7E5 90%);
+    /* background: linear-gradient(45deg, #04404a 10%, #4ca1af 90%); */
+    /* height: 100vh */
+    min-height: 110vh;
 }
 
 /* .user {

@@ -72,19 +72,21 @@
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	<form action="acceptSRservlet" method="post">
-		<img name="photograph" src="images/<%=photograph%>" width="200px" height="200px"/><br>
-		Request ID <input type="text" name="request_id" value="<%=request_id%>" readonly><br>
-		Customer Name <input type="text" name="name" value="<%=name%>" readonly><br>
-		Phone number <input type="text" name="phone" value="<%=phone%>" readonly><br>
-		Email Address <input type="text" name="email" value="<%=email%>" readonly><br>
-		Message <input type="text" name="message" value="<%=message%>" readonly><br>
+		<center><img name="photograph" src="images/<%=photograph%>" width="200px" height="200px"/></center><br>
+		<table>
+		<tr><td>Request ID</td><td> <input type="text" name="request_id" value="<%=request_id%>" readonly></td></tr>
+		<tr><td>Customer Name</td><td> <input type="text" name="name" value="<%=name%>" readonly></td></tr>
+		<tr><td>Phone number</td><td> <input type="text" name="phone" value="<%=phone%>" readonly></td></tr>
+		<tr><td>Email Address</td><td> <input type="text" name="email" value="<%=email%>" readonly></td></tr>
+		<tr><td>Message</td><td> <input type="text" name="message" value="<%=message%>" readonly></td></tr>
 		<%-- Photograph <input type="text" name="photograph" value="<%=photograph%>" readonly><br> --%>
-		Address line 01 <input type="text" name="add_line_01" value="<%=add_line_01%>" readonly><br>
-		Address line 02 <input type="text" name="add_line_02" value="<%=add_line_02%>" readonly><br>
-		Postal code <input type="text" name="postal_code" value="<%=postal_code%>" readonly><br>
-		Province <input type="text" name="province" value="<%=province%>" readonly><br>
-		City <input type="text" name="city" value="<%=city%>" readonly><br>
-		Country <input type="text" name="country" value="<%=country%>" readonly><br><br>
+		<tr><td>Address line 01</td><td> <input type="text" name="add_line_01" value="<%=add_line_01%>" readonly></td></tr>
+		<tr><td>Address line 02</td><td> <input type="text" name="add_line_02" value="<%=add_line_02%>" readonly></td></tr>
+		<tr><td>Postal code</td><td> <input type="text" name="postal_code" value="<%=postal_code%>" readonly></td></tr>
+		<tr><td>Province</td><td> <input type="text" name="province" value="<%=province%>" readonly></td></tr>
+		<tr><td>City</td><td> <input type="text" name="city" value="<%=city%>" readonly></td></tr>
+		<tr><td>Country</td><td> <input type="text" name="country" value="<%=country%>" readonly></td></tr>
+		</table><br><br>
 		
 		<input type="submit" class="btn btn-secondary" name="submit" value="Accept Request"><br>
 		
@@ -107,13 +109,15 @@ $color-primary: #ABA194;
 }
 
 body {
-    font-family: $font-family;
-    font-size: $font-size;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
-    height: 100vh
+    /* transform: translate3d(0, 0, 0); */
+    background: linear-gradient(45deg, #04404a 10%, #A2C7E5 90%);
+    /* background: linear-gradient(45deg, #04404a 10%, #4ca1af 90%); */
+    /* height: 100vh */
+    min-height: 110vh;
 }
 
 /* .user {

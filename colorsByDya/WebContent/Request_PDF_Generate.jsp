@@ -124,7 +124,7 @@
 			
 	%>	
 	
-	<h3>No of Requests : <%=rs1.getInt("RCount")%></h3>
+	<h3 style="color:white;">No of Requests : <%=rs1.getInt("RCount")%></h3>
 	<%-- <h3><%=rs1.getInt("RCount")%></h3> --%>
 	
 	<%
@@ -140,7 +140,7 @@
 	%>
 	
 	
-	<h3>No of Accepted Requests : <%=rs2.getInt("RCountA")%></h3>
+	<h3 style="color:white;">No of Accepted Requests : <%=rs2.getInt("RCountA")%></h3>
 	
 	
 	<%-- <h3><%=rs2.getInt("RCountA")%></h3> --%>
@@ -240,13 +240,15 @@ $color-primary: #ABA194;
 }
 
 body {
-    font-family: $font-family;
-    font-size: $font-size;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
-    height: 100vh
+    /* transform: translate3d(0, 0, 0); */
+    background: linear-gradient(45deg, #04404a 10%, #A2C7E5 90%);
+    /* background: linear-gradient(45deg, #04404a 10%, #4ca1af 90%); */
+    /* height: 100vh */
+    min-height: 110vh;
 }
 
 /* .user {

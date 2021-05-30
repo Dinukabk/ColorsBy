@@ -65,11 +65,13 @@
 		<%-- <input type="text" name="title" value="<%=title%>" readonly><br> --%>
 		<h1 name="title"><%=title%></h1>
 		<%-- <input type="text" name="image_url" value="<%=image_url%>" readonly><br> --%>
-		<img name="image_url" src="images/<%=image_url%>" width="200px" height="200px"/><br>
-	    Negotiate ID <input type="text" name="price_req_id" value="<%=price_req_id%>" readonly><br>
-		Customer Name <input type="text" name="full_name" value="<%=full_name%>" readonly><br>
-		Phone Number <input type="text" name="phone_no" value="<%=phone_no%>" readonly><br>
-		Price <input type="text" name="message" value="<%=message%>" readonly><br><br>
+		<center><img name="image_url" src="images/<%=image_url%>" width="200px" height="200px"/></center><br>
+		<table>
+	    <tr><td>Negotiate ID</td><td> <input type="text" name="price_req_id" value="<%=price_req_id%>" readonly></td></tr>
+		<tr><td>Customer Name</td><td> <input type="text" name="full_name" value="<%=full_name%>" readonly></td></tr>
+		<tr><td>Phone Number</td><td> <input type="text" name="phone_no" value="<%=phone_no%>" readonly></td></tr>
+		<tr><td>Price</td><td> <input type="text" name="message" value="<%=message%>" readonly></td></tr>
+		</table><br><br>
 		
 		<input type="submit" class="btn btn-secondary" name="submit" value="Accept Negotiate Price"><br>
 	</form>
@@ -91,13 +93,15 @@ $color-primary: #ABA194;
 }
 
 body {
-    font-family: $font-family;
-    font-size: $font-size;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
-    height: 100vh
+    /* transform: translate3d(0, 0, 0); */
+    background: linear-gradient(45deg, #04404a 10%, #A2C7E5 90%);
+    /* background: linear-gradient(45deg, #04404a 10%, #4ca1af 90%); */
+    /* height: 100vh */
+    min-height: 110vh;
 }
 
 /* .user {

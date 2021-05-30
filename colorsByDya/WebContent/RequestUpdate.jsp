@@ -70,20 +70,22 @@
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	<form action="UpdateRequestServlet" method="post" class="form">
 	    <%-- <img name="photograph" src="images/<%=photograph%>" width="200px" height="200px"/><br> --%>
-		Request ID <input type="text" name="request_id" value="<%= request_id %>" readonly><br>
-		Name <input type="text" name="name" value="<%= name %>" required oninvalid= "alert('Please enter the Name');"><br>
-		Phone Number <input type="text" name="phone" value="<%= phone %>" pattern="{10}" required oninvalid= "alert('Please enter valid Phone Number');"><br>
-		Email Address <input type="text" name="email" value="<%= email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required oninvalid= "alert('Please enter the Email Address');" title="Enter valid email"><br>
-		Message <input type="text" name="message" value="<%= message %>"><br>
-		Photograph <input type="text" name="photograph" value="<%= photograph %>" readonly><br> 
-		Address line 01 <input type="text" name="add_line_01" value="<%= add_line_01 %>"><br>
-		Address line 02 <input type="text" name="add_line_02" value="<%= add_line_02 %>"><br>
-		Postal code <input type="text" name="postal_code" value="<%= postal_code %>"><br>
-		Province <input type="text" name="province" value="<%= province %>"><br>
-		City <input type="text" name="city" value="<%= city %>"><br>
-		Country <input type="text" name="country" value="<%= country %>"><br>
-		Customer ID <input type="text" name="c_customer_id" value="<%= c_customer_id %>" readonly><br>
-		Artist Name <input type="text" name="artist_name" value="<%= artist_name %>" readonly><br><br>
+	    <table>
+		<tr><td>Request ID</td><td> <input type="text" name="request_id" value="<%= request_id %>" readonly></td></tr>
+		<tr><td>Name</td><td> <input type="text" name="name" value="<%= name %>" required oninvalid= "alert('Please enter the Name');"></td></tr>
+		<tr><td>Phone Number</td><td> <input type="text" name="phone" value="<%= phone %>" pattern="{10}" required oninvalid= "alert('Please enter valid Phone Number');"></td></tr>
+		<tr><td>Email Address</td><td> <input type="text" name="email" value="<%= email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required oninvalid= "alert('Please enter the Email Address');" title="Enter valid email"></td></tr>
+		<tr><td>Message</td><td> <input type="text" name="message" value="<%= message %>"></td></tr>
+		<tr><td>Photograph</td><td> <input type="text" name="photograph" value="<%= photograph %>" readonly></td></tr> 
+		<tr><td>Address line 01</td><td> <input type="text" name="add_line_01" value="<%= add_line_01 %>"></td></tr>
+		<tr><td>Address line 02</td><td> <input type="text" name="add_line_02" value="<%= add_line_02 %>"></td></tr>
+		<tr><td>Postal code</td><td> <input type="text" name="postal_code" value="<%= postal_code %>"></td></tr>
+		<tr><td>Province</td><td> <input type="text" name="province" value="<%= province %>"></td></tr>
+		<tr><td>City</td><td> <input type="text" name="city" value="<%= city %>"></td></tr>
+		<tr><td>Country</td><td> <input type="text" name="country" value="<%= country %>"></td></tr>
+		<tr><td>Customer ID</td><td> <input type="text" name="c_customer_id" value="<%= c_customer_id %>" readonly></td></tr>
+		<tr><td>Artist Name</td><td> <input type="text" name="artist_name" value="<%= artist_name %>" readonly></td></tr>
+		</table><br><br>
 		
 		<input type="submit" class="btn btn-secondary" name="submit" value="Update Request"><br>
 	</form>
@@ -106,13 +108,15 @@ $color-primary: #ABA194;
 }
 
 body {
-    font-family: $font-family;
-    font-size: $font-size;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
-    height: 100vh
+    /* transform: translate3d(0, 0, 0); */
+    background: linear-gradient(45deg, #04404a 10%, #A2C7E5 90%);
+    /* background: linear-gradient(45deg, #04404a 10%, #4ca1af 90%); */
+    /* height: 100vh */
+    min-height: 110vh;
 }
 
 /* .user {
