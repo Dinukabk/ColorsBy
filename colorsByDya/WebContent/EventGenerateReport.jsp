@@ -52,7 +52,6 @@
 			color : black;
 			font-weight : 700;
 			width:800px;
-			background-color:rgb(0,0,0,6);
 			margin:auto;
 			padding:200px 0px 10px 0px;
 			text-align:center;

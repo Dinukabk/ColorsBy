@@ -91,7 +91,6 @@
 			color : white;
 			font-weight : 700;
 			width:800px;
-			background-color:rgb(0,0,0,6);
 			margin:auto;
 			color:#FFFFFF;
 			padding:200px 0px 10px 0px;
@@ -187,6 +186,7 @@
 
 
 </table>
+<br>
 	<a href="EventDetailsRetri.jsp"
 	<div class="submit">
 		<input type="submit" name="submit" value="Manage events">

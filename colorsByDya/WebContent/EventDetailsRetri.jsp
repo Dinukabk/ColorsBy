@@ -36,9 +36,7 @@
 		
 		.topic{
 			width:800px;
-			background-color:rgb(0,0,0,6);
 			margin:auto;
-			color:#FFFFFF;
 			padding:200px 0px 10px 0px;
 			text-align:center;
 			border-radius:15px 15px 0px 0px:;

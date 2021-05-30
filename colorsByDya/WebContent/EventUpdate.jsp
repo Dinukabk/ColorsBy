@@ -38,9 +38,7 @@
 		
 		.topic{
 			width:800px;
-			background-color:rgb(0,0,0,6);
 			margin:auto;
-			color:#FFFFFF;
 			padding:200px 0px 10px 0px;
 			text-align:center;
 			border-radius:15px 15px 0px 0px:;
@@ -188,7 +186,7 @@
 	<div class="main">
 	<form action="updateEvent" method="post">
 		<div class="inname">
-		<h4>ID	</h4>							<input type="text" name="ID" placeholder="ID" value="<%=id%>" readonly><br>
+		<h4>ID	</h4>							<input type="text" name="ID" placeholder="ID" value="<%=id%>" ><br>
 		</div>
 		
 		
@@ -213,7 +211,7 @@
 	 	
 	 	
 	 	<div class="inad">
-	 	<h4>AdminID	</h4>						<input type="text" name="UadminID" placeholder="Enter admin ID" value="<%=adminID%>" readonly><br>
+	 	<h4>AdminID	</h4>						<input type="text" name="UadminID" placeholder="Enter admin ID" value="<%=adminID%>" ><br>
 	 	</div>
 	 	
 	
