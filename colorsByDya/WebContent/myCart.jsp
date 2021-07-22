@@ -109,7 +109,7 @@
 		        </table>
 
 	<a href="createPdf" class="edit btn btn-primary btn-sm">Create Report</a>
-	<a href="#" class="edit btn btn-primary btn-sm">Place Order</a>
+	<a onclick="location.href = 'PaymentControllerServlet'" class="edit btn btn-primary btn-sm">Place Order</a>
 <style>
 $font-family:   "Roboto";
 $font-size:     14px;

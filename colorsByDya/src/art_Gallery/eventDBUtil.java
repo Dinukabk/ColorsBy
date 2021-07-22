@@ -129,8 +129,8 @@ public class eventDBUtil {
 			int sts = Integer.parseInt(status);
 			int aid = Integer.parseInt(adminID);
 			
-			String sql = "update event set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
-					+ "where id = '"+ID+"'";
+			String sql = "update customer set name= '"+name+"',date= '"+date+"', status='"+sts+"', description = '"+description+"', a_admin_id='"+aid+"' "
+					+ "where event_id = '"+ID+"'";
 			
 			int rs = stmt.executeUpdate(sql);
 			
@@ -245,27 +245,5 @@ public class eventDBUtil {
 		
 	}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-	
 }
  

@@ -137,8 +137,8 @@
 							<li class="nav-item"><a onclick="location.href = 'add_customer.jsp'"
 							class="nav-link text-uppercase font-weight-bold">Sign up</a></li>
 
-					<!-- 	<li class="nav-item"><a onclick="location.href = 'ArtistLoginRedirector'"
-							class="nav-link text-uppercase font-weight-bold">Log in as an Artist</a></li> -->
+							<li class="nav-item"><a onclick="location.href = 'ArtistLoginRedirector'"
+							class="nav-link text-uppercase font-weight-bold">Log in as an Artist</a></li>
 
 						<li class="nav-item"><a onclick="location.href = 'SpecialReqNavServlet'"
 							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>

@@ -1,16 +1,21 @@
 package art_Gallery;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 
+
+@MultipartConfig
 @WebServlet("/Servlet_InsertPainting")
 
 public class Servlet_InsertPainting extends HttpServlet {
@@ -39,6 +44,17 @@ public class Servlet_InsertPainting extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 
+		/*
+		  Part file = request.getPart("imagePainting"); 
+		  String imageFileName= Paths.get(file.get)
+				  //file.getSubmittedFileName();
+		  String imageFileName2= file.getParameterValues();
+		  
+		  String uploadFilePath = "C:/Users/user/git/ColorsByDiyaa/colorsByDya/WebContent/images/"+imageFileName;
+		 
+		 */
+	
+		
 		 String title = request.getParameter("artworkTitle");
 		 String description = request.getParameter("artworkDescription");
 		 
@@ -67,6 +83,8 @@ public class Servlet_InsertPainting extends HttpServlet {
 		 String length = request.getParameter("artworkLength");
 		 String width = request.getParameter("artworkWidth");
 		 
+		
+		
 		 String image_url = request.getParameter("imagePainting");
 		 
 		 String material = request.getParameter("artworkMaterial");
@@ -85,11 +103,11 @@ public class Servlet_InsertPainting extends HttpServlet {
 		insertSuccess = PaintingDBUtil.insertPainting(title, description, price, drawn_date, category, weight, length, width, image_url, material, frame, artistUserID);
 		 
 		 if(insertSuccess == true) {
-			 RequestDispatcher dispatchSuccess = request.getRequestDispatcher("Artist.jsp");
+			 RequestDispatcher dispatchSuccess = request.getRequestDispatcher("ArtistList.jsp");
 			 dispatchSuccess.forward(request, response);
 		 }
 		 else {
-			 RequestDispatcher dispatchFail = request.getRequestDispatcher("fail.jsp");
+			 RequestDispatcher dispatchFail = request.getRequestDispatcher("unsuccess.jsp");
 			 dispatchFail.forward(request, response);
 		 }
 	

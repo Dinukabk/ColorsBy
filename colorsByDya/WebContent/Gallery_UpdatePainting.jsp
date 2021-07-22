@@ -95,7 +95,7 @@
 	
 	<div class="container p-3 my-3 rounded col-md-4" style="background-color: rgba(255, 255, 255, 0.5);">
 	
-	<form action="updatepaint" method="post" onsubmit="return validateForm()" class="form">
+	<form action="Servlet_updatePainting" method="post" onsubmit="return validateForm()" class="form">
 		<div class="form__group">
 			<label>Painting ID</label>
 			<input class="form__input" type="text" name=painting_id value="<%= painting_id %>" readonly>

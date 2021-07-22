@@ -73,8 +73,8 @@
 							class="nav-link text-uppercase font-weight-bold">About</a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
-							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
+						<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
+							class="nav-link text-uppercase font-weight-bold">Log Out</a></li>
 						<li class="nav-item"><a onclick="location.href = 'SpecialReqNavServlet'"
 							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>
 					</ul>
@@ -124,7 +124,7 @@
 	</tr>
 		<tr>
 		<td>PaymentID</td> 
-		<td><input type="text" id="Pid" name="Pid" placeholder="Eg: Sri Lanka"></td>
+		<td><input type="text" id="Pid" name="Pid" placeholder="Your payment ID goes here" value="${userID }"></td>
 	</tr>
 		
 		

@@ -14,12 +14,11 @@ public class SpecialReqNavServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		// Get session
 		HttpSession session = request.getSession(false);
-		
-		if (session != null) { // If a session exists			
+		if (session != null && session.getAttribute("userID") != null) { // If a session exists			
 			int userID = (int) session.getAttribute("userID");
 			request.setAttribute("userID", userID);
 			

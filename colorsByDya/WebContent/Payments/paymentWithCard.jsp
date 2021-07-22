@@ -63,7 +63,7 @@
 			<dt class="col-sm-9 text-dark h6">Delivery Method:</dt>
 			<dd class="col-sm-3 text-right">NULL</dd>
 		</dl>
-		<button type="button" class="btn btn-light border border-primary" onclick="location.href = 'DeliveryHomaPage.jsp'">Chose Delivery Method</button>
+		<button type="button" class="btn btn-light border border-primary" onclick="location.href = 'DeliveryMethodController'">Chose Delivery Method</button>
 	</div>
 	
 	<!-- Card -->
@@ -123,7 +123,7 @@
 				<tr>
 					<td>
 						<input type="submit" class="btn btn-light border border-primary" value="Edit or Change Card" formaction="PaymentEditRedirector"/>
-						<input type="submit" class="btn btn-light border border-primary" value="Delete Card" formaction="PaymentDeleteCardServlet"/>
+						<input type="submit" class="btn btn-light border border-primary" value="Delete Card" onClick="confirm( 'Delete Request?' )" formaction="PaymentDeleteCardServlet"/>
 					</td>
 					<td>
 						<button type="submit" class="btn btn-primary border border-primary mb-2">Pay now</button>

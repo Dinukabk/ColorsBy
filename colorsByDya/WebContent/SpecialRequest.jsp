@@ -68,7 +68,7 @@
 								class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
-							<li class="nav-item"><a href="../Payments/payment.jsp"
+							<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
 								class="nav-link text-uppercase font-weight-bold">${cusUsername}</a></li>
 						</ul>
 					</div>
@@ -87,7 +87,7 @@
       <div class="contact-form"><br>
         <h3>Phone Number</h3>
         <p><i>Mr Deepthi Wijewardana:</i><br><b>071 4727470</b></p>
-        <p><i>Mr Lahuru Wijewardana:</i><br><b>071 4276146</b></p><br><br>
+        <p><i>Mr Lahiru Wijewardana:</i><br><b>071 4276146</b></p><br><br>
         <h3>Address</h3>
         <p>6/98,<br>Lake Road,<br>Wickramasinheapura,<br>Baththaramulla,</p><br><br>
         <div class="wrapper">
@@ -122,7 +122,7 @@
    <!-- onsubmit="return validateForm()" -->
    <!-- enctype="multipart/form-data" -->
    <div>
-      <form name="requestForm" action="insertRequest" method="post" class="specialRForm" >
+      <form name="requestForm" action="RequestServlet" method="post" class="specialRForm" >
       
       <fieldset>
       <legend style="padding:20px 0; font-size:30px;">We like to have a Special Request from you:</legend>

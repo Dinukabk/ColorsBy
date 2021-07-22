@@ -44,6 +44,7 @@
 			padding:200px 0px 10px 0px;
 			text-align:center;
 			border-radius:15px 15px 0px 0px:;
+			font-family: Roboto;
 		}
 		
 		
@@ -74,6 +75,7 @@
   			line-height: 1.5;
   			width: 350px;
   			height: 40px;
+  			font-family: Roboto;
 		}
 		
 		.inname{
@@ -104,6 +106,13 @@
 		.inad{
 			padding-left : 220px;
 			padding-bottom : 20px;
+			font-size:16px;
+		}
+		
+		.submit{
+			padding-left : 230px;
+			padding-bottom : 20px;
+			padding-top:25px;
 			font-size:16px;
 		}
 		
@@ -172,7 +181,7 @@
 	%>
 
 	<div class="topic">
-	<h1>DELETE EVENT</h1>
+	<h1>DELETE AN EVENT</h1>
 	</div>
 
 	<div class="main">
@@ -203,9 +212,12 @@
 	 	
 	 	
 	
-	 	<center>
-	 	<input type="submit" name="DsubmitEvent" value="Delete Event"><br>
-	 	</center>
+	</form>
+		
+	<div class="submit">
+	<a href="success.jsp">
+	 	<input type="submit" name="UsubmitEvent" value="Delete Event"></a>
+	</div>
 	
 	
 	</form>

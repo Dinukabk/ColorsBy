@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/ArtistInsert")
+@WebServlet("/artistinsert")
 public class ArtistInsert extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		
+		String artist_id = request.getParameter("artist_id");
 		String name = request.getParameter("name");
 		String phone_no = request.getParameter("phone_no");
 		String email= request.getParameter("email");
@@ -29,6 +29,7 @@ public class ArtistInsert extends HttpServlet {
 		String country = request.getParameter("country");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+	
 		
 		
 		boolean isTrue;

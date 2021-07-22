@@ -44,12 +44,13 @@
 			padding:200px 0px 10px 0px;
 			text-align:center;
 			border-radius:15px 15px 0px 0px:;
+			font-family: Roboto;
 		}
 		
 		
 		
 		.main{
-		
+			
 			background-color:;
 			width:800px;
 			margin:auto;
@@ -108,6 +109,12 @@
 		}
 		
 	
+		.submit{
+			padding-left : 230px;
+			padding-bottom : 20px;
+			padding-top:25px;
+			font-size:16px;
+		}
 	
 	
 	
@@ -175,7 +182,7 @@
 	%>
 	
 	<div class="topic">
-	<h1>UPDATE EVENT</h1>
+	<h1>UPDATE AN EVENT</h1>
 	</div>
 	
 	<div class="main">
@@ -186,22 +193,22 @@
 		
 		
 		<div class="inname">
-		<h4>Update event name</h4>				<input type="text" name="Uname" placeholder="Enter event name" value="<%=name%>" ><br>
+		<h4>Update event name</h4>				<input type="text" name="Uname" placeholder="Enter event name" value="test3" required><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="indate">
-	 	<h4>Update event date</h4>				<input type="text" name="Udate" id="datepicker" placeholder="Enter event date" value="<%=date%>" ><br>
+	 	<h4>Update event date</h4>				<input type="text" name="Udate" id="datepicker" placeholder="Enter event date" value="05/17/2021" required><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="insta">
-	 	<h4>Update event status</h4>			<input type="number" name="Ustatus" placeholder="Enter event status" value="<%=status%>" ><br>
+	 	<h4>Update event status</h4>			<input type="number" name="Ustatus" placeholder="Enter event status" value="1" required><br>
 	 	</div>
 	 	
 	 	
 	 	<div class="des">
-	 	<h4>Update event description</h4>		<input type="text" name="Udescription" placeholder="Enter description" value="<%=description%>" ><br>
+	 	<h4>Update event description</h4>		<input type="text" name="Udescription" placeholder="Enter description" value="test3" required><br>
 	 	</div>
 	 	
 	 	
@@ -216,11 +223,10 @@
 	
 	
 	</form>
-	
-		
-	
-	
-	
+	<div class="submit">
+	<a href="success.jsp">
+	 	<input type="submit" name="UsubmitEvent" value="Update Event">
+	 </a>
 	</div>
 	
 	

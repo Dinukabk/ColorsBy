@@ -32,7 +32,7 @@ public class CartService {
 		}
 
 	}
-	
+//Display Cart	
 	public ArrayList<Cart> getCart(String userid) {
 		
 		ArrayList<Cart> cartList = new ArrayList<Cart>();
@@ -72,7 +72,7 @@ public class CartService {
 	
 		return cartList;
 	}
-
+//Update Cart
 	public void update(int q,int id) {
 		Connection connection;
 		PreparedStatement preparedStatement;
@@ -92,8 +92,8 @@ public class CartService {
 		}
 		
 	}
-
-	public void deleteCart(int parseInt) {
+//Delete Cart
+	public void deleteCart(int id) {
 		
 		Connection connection;
 		PreparedStatement preparedStatement;
@@ -101,9 +101,9 @@ public class CartService {
 		try {
 			connection = DBConnect.getDBConnection();
 			
-			//delete cart 
+			 
 			preparedStatement = connection.prepareStatement("DELETE FROM cart WHERE id=?");
-			preparedStatement.setInt(1, parseInt);
+			preparedStatement.setInt(1, id);
 			preparedStatement.execute();
 			
 		

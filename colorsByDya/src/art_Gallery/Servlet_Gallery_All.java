@@ -29,7 +29,7 @@ public class Servlet_Gallery_All extends HttpServlet {
 		// Get session
 		HttpSession session = request.getSession(false);
 		
-		if (session != null) {
+		if (session != null && session.getAttribute("userID") != null) {
 			int userID = (int) session.getAttribute("userID");
 
 		 //if (session.getAttribute("userID") != null) {

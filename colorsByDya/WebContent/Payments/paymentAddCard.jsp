@@ -39,7 +39,7 @@
 							<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
 								class="nav-link text-uppercase font-weight-bold">Log out</a></li>
 							<li class="nav-item">
-								<a href="../Payments/payment.jsp" class="nav-link text-uppercase font-weight-bold">${userName }</a>
+								<a href="#" class="nav-link text-uppercase font-weight-bold">${userName }</a>
 							</li>
 						</ul>
 					</div>

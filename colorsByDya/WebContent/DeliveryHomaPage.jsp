@@ -37,8 +37,8 @@
 							class="nav-link text-uppercase font-weight-bold">About</a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-						<li class="nav-item"><a onclick="location.href = 'LoginRedirector'"
-							class="nav-link text-uppercase font-weight-bold">Log in</a></li>
+						<li class="nav-item"><a onclick="location.href = 'SessionFlusher'"
+							class="nav-link text-uppercase font-weight-bold">Log Out</a></li>
 						<li class="nav-item"><a onclick="location.href = 'SpecialReqNavServlet'"
 							class="nav-link text-uppercase font-weight-bold">Contact US</a></li>
 					</ul>
@@ -56,7 +56,7 @@
 	through the pickup application or while <br>
 	creating a label in FedEx Ship Manager<br>
 	
-	<br><center><button onclick="myFunction1()">HOME DELIVERY</button></center><br>
+	<br><center><button onclick="location.href = 'DeliveryHomeIns'">HOME DELIVERY</button></center><br>
 		
 	<script>
 		function myFunction1() {

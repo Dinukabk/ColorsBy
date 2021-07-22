@@ -21,14 +21,18 @@ public class PaymentControllerServlet extends HttpServlet {
 			int userID = (int) session.getAttribute("userID");
 			
 			// Getting payment total...
-			int pTotal = PaymentsDatabaseUtil.getCartTotal(userID);
-			Boolean cardAvailability;
-			
+			int pTotal = PaymentsDatabaseUtil.checkCartTotal(userID);
 			request.setAttribute("payTotal", pTotal);
 			
 			// Checking if a payment card available on user profile
+			Boolean cardAvailability;
 			cardAvailability = PaymentsDatabaseUtil.checkCard(userID);
+			
+			// Checking userName
 			String userName = PaymentsDatabaseUtil.getUserName(userID); 
+			
+			// Checking delivery method
+			int deliveryMethod = PaymentsDatabaseUtil.checkDeliveryMethod(userID);
 			
 			// For debugging 
 			System.out.println("On payment servlet...");
